@@ -1,4 +1,4 @@
-# unslouch.app website
+# unslouch.ru website
 
 Static site built with Astro: English at `/`, Russian at `/ru/`. No analytics, cookies, external fonts or
 scripts. The exercise catalog, figures, desk calculator, sounds and app translations are imported from `../src`,
@@ -59,13 +59,10 @@ GitHub Actions secrets (Settings → Secrets and variables → Actions):
    bucket → issue S3 keys → put them into the GitHub secrets above.
 3. **CDN resource.** CDN → create a resource with the bucket (its website endpoint) as the origin. Turn on
    "respect origin Cache-Control", gzip/brotli compression and HTTP → HTTPS redirect.
-4. **Domains.** Add `unslouch.app` (and `www.unslouch.app` with a redirect to it) and `zasidelsya.ru` as
-   personal domains of the CDN resource, then create the CNAME records at the DNS provider as Selectel shows.
+4. **Domain.** Add `unslouch.ru` (and `www.unslouch.ru` with a redirect to it) as
+   a personal domain of the CDN resource, then create the CNAME records at the DNS provider as Selectel shows.
    For the apex domain use ALIAS/ANAME or the DNS provider's CNAME flattening.
 5. **HTTPS.** Issue free Let's Encrypt certificates for every domain in the CDN resource settings.
-6. **zasidelsya.ru.** Until the Russian domain gets its own build, point it at `/ru/` with a CDN rewrite or
-   redirect `zasidelsya.ru/*` → `unslouch.app/ru/*`. See the TODO in `astro.config.mjs` and `src/i18n/index.ts`
-   (`RU_ORIGIN`) for switching canonical and hreflang links to the Russian domain.
 
-After the first deploy, check `https://unslouch.app/sitemap-index.xml` and submit it to Google Search Console and
+After the first deploy, check `https://unslouch.ru/sitemap-index.xml` and submit it to Google Search Console and
 Yandex Webmaster.

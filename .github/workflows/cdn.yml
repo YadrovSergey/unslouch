@@ -23,7 +23,7 @@ jobs:
         run: gh release download "$TAG" --repo "$REPO" --dir files
       - name: Point latest.json at the CDN
         env:
-          # Repository variable, e.g. https://unslouch.app (not a secret).
+          # Repository variable, e.g. https://unslouch.ru (not a secret).
           CDN_BASE_URL: ${{ vars.CDN_BASE_URL }}
           TAG: ${{ github.event.release.tag_name }}
           REPO: ${{ github.repository }}

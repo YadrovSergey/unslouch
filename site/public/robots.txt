@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://unslouch.app/sitemap-index.xml
+Sitemap: https://unslouch.ru/sitemap-index.xml

@@ -80,7 +80,7 @@ only if you click it.
 
 ## The website
 
-The unslouch.app website is static. It has no cookies, no visitor counters and no analytics.
+The unslouch.ru website is static. It has no cookies, no visitor counters and no analytics.
 It is served by Selectel's CDN. Like any hosting provider, Selectel keeps standard technical
 request logs (IP address, time, requested file, browser). We do not analyse them or use them to
 identify you.

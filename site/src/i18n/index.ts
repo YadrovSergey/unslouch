@@ -12,9 +12,8 @@ export const DEFAULT_LANG: Lang = "en";
 const DICTS: Record<Lang, Dict> = { en, ru };
 const APP: Record<Lang, typeof appEn> = { en: appEn, ru: appRu as typeof appEn };
 
-export const ORIGIN = "https://unslouch.app";
-// TODO: when https://zasidelsya.ru serves the Russian pages, point RU_ORIGIN there (and drop the /ru prefix
-// for that host) so hreflang and canonical links use the Russian domain.
+export const ORIGIN = "https://unslouch.ru";
+// Russian pages live on the same domain under /ru/. Kept separate in case they ever get their own domain.
 export const RU_ORIGIN = ORIGIN;
 
 export const GITHUB = "https://github.com/YadrovSergey/unslouch";

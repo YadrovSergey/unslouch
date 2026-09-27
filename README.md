@@ -111,12 +111,9 @@ Selectel setup: [site/README.md](site/README.md).
 Selectel bucket `unslouch` (region ru-1) is public and in website mode (`/index.html`, error page `/404.html`).
 The site deploy never deletes `releases/`, where `cdn.yml` keeps the installers.
 
-When the domains `unslouch.app` and `zasidelsya.ru` are connected to the Selectel CDN:
-
-1. set the `CDN_BASE_URL` variable to `https://unslouch.app`;
-2. check the update endpoints in `src-tauri/tauri.conf.json` (the first one is `https://unslouch.app/releases/latest.json`,
-   GitHub releases is the fallback);
-3. switch `RU_ORIGIN` in `site/src/i18n/index.ts` and the TODO in `site/astro.config.mjs` to `https://zasidelsya.ru`.
+The site's domain is `unslouch.ru` (English at `/`, Russian at `/ru/`). When it is connected to the Selectel CDN
+with an HTTPS certificate, set the `CDN_BASE_URL` variable to `https://unslouch.ru`. Update checks already go to
+`https://unslouch.ru/releases/latest.json` first, with GitHub releases as the fallback.
 
 ## Contributing
 
@@ -190,8 +187,6 @@ Linux, 15 языков. Без аккаунтов, без сбора данны�
 - ключ подписи обновлений не продлевается, но его нельзя терять: без него установленные приложения
   больше не смогут обновиться.
 
-**Когда подключим домены** `unslouch.app` и `zasidelsya.ru`:
-
-1. поменять переменную `CDN_BASE_URL` на `https://unslouch.app`;
-2. проверить адреса обновлений в `src-tauri/tauri.conf.json`;
-3. переключить `RU_ORIGIN` в `site/src/i18n/index.ts` на `https://zasidelsya.ru`.
+**Домен** сайта `unslouch.ru`: английская версия в корне, русская в `/ru/`. Когда домен подключён к CDN Selectel
+и у него есть сертификат HTTPS, поменять переменную `CDN_BASE_URL` на `https://unslouch.ru`. Приложение уже
+проверяет обновления сначала на `https://unslouch.ru/releases/latest.json`, запасной вариант GitHub.
