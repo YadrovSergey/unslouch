@@ -47,7 +47,20 @@ jobs:
       - run: npm run build
         working-directory: site
 
+      # Until the Selectel bucket and its keys are set up, only check that the site builds.
+      - name: Is Selectel configured?
+        id: selectel
+        env:
+          BUCKET: ${{ secrets.SELECTEL_S3_BUCKET }}
+        run: |
+          if [ -n "$BUCKET" ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "::notice::Selectel is not set up yet (no SELECTEL_S3_* secrets): the site was built, upload skipped."
+          fi
+
       - name: Upload to Selectel S3
+        if: steps.selectel.outputs.ready == 'true'
         working-directory: site/dist
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.SELECTEL_S3_ACCESS_KEY }}
