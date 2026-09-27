@@ -41,3 +41,6 @@ AuthKey_*.p8
 # `tauri signer generate` output
 *.tauri-key
 *.key.pub
+
+# Private notes for Claude
+CLAUDE.local.md

@@ -39,6 +39,8 @@ jobs:
           # Selectel S3 does not accept the new default checksums of AWS CLI 2.23+.
           AWS_REQUEST_CHECKSUM_CALCULATION: when_required
           AWS_RESPONSE_CHECKSUM_VALIDATION: when_required
+          # AWS CLI ships its own CA list without GlobalSign Root R6, which signs Selectel's certificate.
+          AWS_CA_BUNDLE: /etc/ssl/certs/ca-certificates.crt
           BUCKET: ${{ secrets.SELECTEL_S3_BUCKET }}
           TAG: ${{ github.event.release.tag_name }}
         run: |
