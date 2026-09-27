@@ -28,6 +28,7 @@ const ru: Dict = {
     author: "Автор: Сергей Ядров",
   },
   download: {
+    more: "Другие файлы:",
     button: "Скачать для {os}",
     title: "Скачать",
     free: "Бесплатно",

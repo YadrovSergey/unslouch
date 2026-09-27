@@ -23,7 +23,7 @@ jobs:
         run: gh release download "$TAG" --repo "$REPO" --dir files
       - name: Point latest.json at the CDN
         env:
-          # Repository variable, e.g. https://unslouch.ru (not a secret).
+          # Repository variable, e.g. https://unslouch.health-diet.ru (not a secret).
           CDN_BASE_URL: ${{ vars.CDN_BASE_URL }}
           TAG: ${{ github.event.release.tag_name }}
           REPO: ${{ github.repository }}
@@ -46,6 +46,20 @@ jobs:
         run: |
           ENDPOINT=https://s3.ru-1.storage.selcloud.ru
           aws s3 sync files "s3://$BUCKET/releases/$TAG/" --endpoint-url "$ENDPOINT"
+          # Stable names for the website's download buttons: releases/latest/Unslouch.dmg and so on.
+          mkdir latest
+          copy() { f=$(ls files/$1 2>/dev/null | head -1); [ -n "$f" ] && cp "$f" "latest/$2" || echo "::warning::no $1 in the release"; }
+          copy '*_universal.dmg' Unslouch.dmg
+          copy '*_x64-setup.exe' Unslouch-Setup-x64.exe
+          copy '*_arm64-setup.exe' Unslouch-Setup-arm64.exe
+          copy '*_amd64.AppImage' Unslouch-x86_64.AppImage
+          copy '*_aarch64.AppImage' Unslouch-aarch64.AppImage
+          copy '*_amd64.deb' unslouch_amd64.deb
+          copy '*_arm64.deb' unslouch_arm64.deb
+          copy '*.x86_64.rpm' unslouch.x86_64.rpm
+          copy '*.aarch64.rpm' unslouch.aarch64.rpm
+          aws s3 sync latest "s3://$BUCKET/releases/latest/" --endpoint-url "$ENDPOINT" \
+            --cache-control "no-cache" --content-disposition attachment
           # latest.json last: clients see a new version only when its files are already there.
           aws s3 cp files/latest.json "s3://$BUCKET/releases/latest.json" --endpoint-url "$ENDPOINT" \
             --cache-control "no-cache" --content-type application/json

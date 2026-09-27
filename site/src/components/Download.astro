@@ -1,5 +1,5 @@
 ---
-import { RELEASES, fill, href, t, type Lang } from "../i18n";
+import { DOWNLOADS, RELEASES, fill, href, t, type Lang } from "../i18n";
 interface Props {
   lang: Lang;
   id?: string;
@@ -7,9 +7,17 @@ interface Props {
 const { lang, id } = Astro.props;
 const d = t(lang).download;
 const items = [
-  { os: "mac", label: d.mac, file: d.macFile },
-  { os: "win", label: d.win, file: d.winFile },
-  { os: "linux", label: d.linux, file: d.linuxFile },
+  { os: "mac", label: d.mac, file: d.macFile, url: DOWNLOADS.mac },
+  { os: "win", label: d.win, file: d.winFile, url: DOWNLOADS.win },
+  { os: "linux", label: d.linux, file: d.linuxFile, url: DOWNLOADS.linux },
+];
+const more = [
+  { label: "Windows ARM", url: DOWNLOADS.winArm },
+  { label: "Linux .deb", url: DOWNLOADS.deb },
+  { label: "Linux .rpm", url: DOWNLOADS.rpm },
+  { label: "Linux ARM AppImage", url: DOWNLOADS.linuxArm },
+  { label: "Linux ARM .deb", url: DOWNLOADS.debArm },
+  { label: "Linux ARM .rpm", url: DOWNLOADS.rpmArm },
 ];
 ---
 
@@ -17,13 +25,22 @@ const items = [
   <div class="download__buttons">
     {
       items.map((i) => (
-        <a class="btn download__btn" href={RELEASES} data-os={i.os}>
+        <a class="btn download__btn" href={i.url} data-os={i.os} download>
           <span>{fill(d.button, { os: i.label })}</span>
           <small>{i.file}</small>
         </a>
       ))
     }
   </div>
+  <p class="download__more">
+    {d.more}{" "}
+    {more.map((m, n) => (
+      <>
+        {n > 0 && " · "}
+        <a href={m.url} download>{m.label}</a>
+      </>
+    ))}
+  </p>
   <div class="download__meta">
     <span><span class="badge-free">{d.free}</span></span>
     <a href={RELEASES}>{d.all}</a>

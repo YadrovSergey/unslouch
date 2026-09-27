@@ -1,4 +1,4 @@
-# unslouch.ru website
+# unslouch.health-diet.ru website
 
 Static site built with Astro: English at `/`, Russian at `/ru/`. No analytics, cookies, external fonts or
 scripts. The exercise catalog, figures, desk calculator, sounds and app translations are imported from `../src`,
@@ -59,10 +59,9 @@ GitHub Actions secrets (Settings → Secrets and variables → Actions):
    bucket → issue S3 keys → put them into the GitHub secrets above.
 3. **CDN resource.** CDN → create a resource with the bucket (its website endpoint) as the origin. Turn on
    "respect origin Cache-Control", gzip/brotli compression and HTTP → HTTPS redirect.
-4. **Domain.** Add `unslouch.ru` (and `www.unslouch.ru` with a redirect to it) as
-   a personal domain of the CDN resource, then create the CNAME records at the DNS provider as Selectel shows.
-   For the apex domain use ALIAS/ANAME or the DNS provider's CNAME flattening.
-5. **HTTPS.** Issue free Let's Encrypt certificates for every domain in the CDN resource settings.
+4. **Domain.** Add `unslouch.health-diet.ru` as a personal domain of the CDN resource. The DNS of
+   `health-diet.ru` is on Selectel too: add the CNAME record `unslouch` there, pointing where the CDN resource says.
+5. **HTTPS.** Issue a free Let's Encrypt certificate for the domain in the CDN resource settings (it renews itself).
 
-After the first deploy, check `https://unslouch.ru/sitemap-index.xml` and submit it to Google Search Console and
+After the first deploy, check `https://unslouch.health-diet.ru/sitemap-index.xml` and submit it to Google Search Console and
 Yandex Webmaster.

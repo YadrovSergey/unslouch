@@ -19,7 +19,7 @@ const { lang, path, title, description, alternates = true, noindex = false } = A
 const d = t(lang);
 const other: Lang = lang === "en" ? "ru" : "en";
 const canonical = absolute(lang, path);
-const ogImage = new URL(`/og-${lang}.png`, "https://unslouch.ru").toString();
+const ogImage = new URL(`/og-${lang}.png`, "https://unslouch.health-diet.ru").toString();
 const nav = [
   { path: "/tools/", label: d.nav.tools },
   { path: "/app/", label: d.nav.browser },

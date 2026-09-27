@@ -4,7 +4,7 @@ import Download from "../../components/Download.astro";
 import WaterStage from "../../components/WaterStage.astro";
 import ToolGrid from "../../components/ToolGrid.astro";
 import { ExerciseLoop } from "../../components/islands/common";
-import { GITHUB, RELEASES, app, href, langPaths, t, type Lang } from "../../i18n";
+import { DOWNLOADS, GITHUB, ORIGIN, app, href, langPaths, t, type Lang } from "../../i18n";
 import { ANCHORS } from "../../lib/science";
 
 export const getStaticPaths = langPaths;
@@ -41,7 +41,7 @@ const jsonLd = [
     applicationCategory: "HealthApplication",
     operatingSystem: "macOS, Windows, Linux",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-    downloadUrl: RELEASES,
+    downloadUrl: [DOWNLOADS.mac, DOWNLOADS.win, DOWNLOADS.linux].map((p) => ORIGIN + p),
     license: "https://opensource.org/licenses/MIT",
     author: { "@type": "Person", name: lang === "ru" ? "Сергей Ядров" : "Sergey Yadrov" },
     inLanguage: lang,

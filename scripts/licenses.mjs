@@ -3,8 +3,10 @@
 import { execSync } from "node:child_process";
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
+import { fileURLToPath } from "node:url";
 
-const root = new URL("..", import.meta.url).pathname;
+// fileURLToPath, not .pathname: on Windows the latter gives "/D:/..." and every command fails to start.
+const root = fileURLToPath(new URL("..", import.meta.url));
 const rows = [];
 
 const meta = JSON.parse(

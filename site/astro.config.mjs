@@ -5,7 +5,7 @@ import sitemap from "@astrojs/sitemap";
 import { fileURLToPath } from "node:url";
 
 // The one domain for every language: English at /, Russian at /ru/.
-const SITE = "https://unslouch.ru";
+const SITE = "https://unslouch.health-diet.ru";
 
 // The app sources (exercise catalog, figures, desk calculator, locales) live one level up and are shared
 // with the site. They import `react`, so React is deduped to the site's own copy.

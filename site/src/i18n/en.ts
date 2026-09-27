@@ -28,6 +28,7 @@ const en = {
     author: "Made by Sergey Yadrov",
   },
   download: {
+    more: "Other files:",
     button: "Download for {os}",
     title: "Download",
     free: "Free",

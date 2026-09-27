@@ -1728,3 +1728,14 @@ input[type="checkbox"] {
   clip: rect(0 0 0 0);
   white-space: nowrap;
 }
+
+.download__more {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.download__more a {
+  color: var(--muted);
+}

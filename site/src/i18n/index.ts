@@ -12,12 +12,24 @@ export const DEFAULT_LANG: Lang = "en";
 const DICTS: Record<Lang, Dict> = { en, ru };
 const APP: Record<Lang, typeof appEn> = { en: appEn, ru: appRu as typeof appEn };
 
-export const ORIGIN = "https://unslouch.ru";
+export const ORIGIN = "https://unslouch.health-diet.ru";
 // Russian pages live on the same domain under /ru/. Kept separate in case they ever get their own domain.
 export const RU_ORIGIN = ORIGIN;
 
 export const GITHUB = "https://github.com/YadrovSergey/unslouch";
 export const RELEASES = "https://github.com/YadrovSergey/unslouch/releases/latest";
+/** Installers with stable names, copied to the same bucket as the site by cdn.yml on every release. */
+export const DOWNLOADS = {
+  mac: "/releases/latest/Unslouch.dmg",
+  win: "/releases/latest/Unslouch-Setup-x64.exe",
+  winArm: "/releases/latest/Unslouch-Setup-arm64.exe",
+  linux: "/releases/latest/Unslouch-x86_64.AppImage",
+  linuxArm: "/releases/latest/Unslouch-aarch64.AppImage",
+  deb: "/releases/latest/unslouch_amd64.deb",
+  debArm: "/releases/latest/unslouch_arm64.deb",
+  rpm: "/releases/latest/unslouch.x86_64.rpm",
+  rpmArm: "/releases/latest/unslouch.aarch64.rpm",
+} as const;
 export const EMAIL = "support@health-diet.ru";
 
 export const t = (lang: Lang): Dict => DICTS[lang];

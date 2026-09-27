@@ -92,7 +92,7 @@ export type BreakResult = "done" | "skipped" | "postponed";
 export type SettingsPatch = Partial<Settings> | ((s: Settings) => Partial<Settings>);
 
 export const REPO_URL = "https://github.com/YadrovSergey/unslouch";
-export const SITE_URL = "https://unslouch.ru";
+export const SITE_URL = "https://unslouch.health-diet.ru";
 
 /** Numbers behind each preset. "custom" keeps whatever the user set. */
 export const PRESETS: Record<Exclude<Preset, "custom">, Partial<Settings>> = {

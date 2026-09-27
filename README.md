@@ -111,9 +111,9 @@ Selectel setup: [site/README.md](site/README.md).
 Selectel bucket `unslouch` (region ru-1) is public and in website mode (`/index.html`, error page `/404.html`).
 The site deploy never deletes `releases/`, where `cdn.yml` keeps the installers.
 
-The site's domain is `unslouch.ru` (English at `/`, Russian at `/ru/`). When it is connected to the Selectel CDN
-with an HTTPS certificate, set the `CDN_BASE_URL` variable to `https://unslouch.ru`. Update checks already go to
-`https://unslouch.ru/releases/latest.json` first, with GitHub releases as the fallback.
+The site's domain is `unslouch.health-diet.ru` (English at `/`, Russian at `/ru/`). When it is connected to the Selectel CDN
+with an HTTPS certificate, set the `CDN_BASE_URL` variable to `https://unslouch.health-diet.ru`. Update checks already go to
+`https://unslouch.health-diet.ru/releases/latest.json` first, with GitHub releases as the fallback.
 
 ## Contributing
 
@@ -187,6 +187,6 @@ Linux, 15 языков. Без аккаунтов, без сбора данны�
 - ключ подписи обновлений не продлевается, но его нельзя терять: без него установленные приложения
   больше не смогут обновиться.
 
-**Домен** сайта `unslouch.ru`: английская версия в корне, русская в `/ru/`. Когда домен подключён к CDN Selectel
-и у него есть сертификат HTTPS, поменять переменную `CDN_BASE_URL` на `https://unslouch.ru`. Приложение уже
-проверяет обновления сначала на `https://unslouch.ru/releases/latest.json`, запасной вариант GitHub.
+**Домен** сайта `unslouch.health-diet.ru`: английская версия в корне, русская в `/ru/`. Когда домен подключён к CDN Selectel
+и у него есть сертификат HTTPS, поменять переменную `CDN_BASE_URL` на `https://unslouch.health-diet.ru`. Приложение уже
+проверяет обновления сначала на `https://unslouch.health-diet.ru/releases/latest.json`, запасной вариант GitHub.
