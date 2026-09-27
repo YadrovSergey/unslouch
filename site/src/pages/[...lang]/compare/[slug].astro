@@ -1,0 +1,85 @@
+---
+import Base from "../../../layouts/Base.astro";
+import Cta from "../../../components/Cta.astro";
+import { LANGS, DEFAULT_LANG, href, t, fill, type Lang } from "../../../i18n";
+import { COMPETITORS, OURS, ROWS, type App } from "../../../lib/competitors";
+
+export function getStaticPaths() {
+  return LANGS.flatMap((lang) =>
+    COMPETITORS.map((app) => ({
+      params: { lang: lang === DEFAULT_LANG ? undefined : lang, slug: app.slug },
+      props: { lang, app },
+    })),
+  );
+}
+const { lang, app: x } = Astro.props as { lang: Lang; app: App };
+const d = t(lang);
+const c = d.compare;
+const title =
+  lang === "ru"
+    ? `Бесплатная альтернатива ${x.name} для Mac, Windows и Linux | ${d.name}`
+    : `Free ${x.name} alternative for Mac, Windows and Linux | ${d.name}`;
+const description =
+  lang === "ru"
+    ? `«${d.name}» и ${x.name}: цена, системы, упражнения, пауза на созвонах и приватность. Спокойное сравнение по официальным данным.`
+    : `${d.name} and ${x.name} side by side: price, platforms, exercises, pause during calls and privacy. A calm comparison based on official information.`;
+const rows = ROWS.filter((r) => x.cells[r] || OURS[r]);
+---
+
+<Base lang={lang} path={`/compare/${x.slug}/`} title={title} description={description}>
+  <div class="wrap" style="max-width:920px">
+    <div class="page-head">
+      <nav class="crumbs" aria-label="breadcrumbs">
+        <a href={href(lang, "/")}>{d.nav.home}</a> / <a href={href(lang, "/compare/")}>{d.nav.compare}</a>
+      </nav>
+      <h1>{fill(c.alternative, { name: x.name })}</h1>
+      <p class="lead">{x.summary[lang]}</p>
+      <p><a href={x.url} rel="noopener">{c.visit}: {x.name}</a></p>
+    </div>
+
+    <h2>{c.commonTitle}</h2>
+    <p>{x.common[lang]}</p>
+
+    <div class="table-wrap" tabindex="0" role="region" aria-label={`${d.name} / ${x.name}`} style="margin-top:24px">
+      <table class="compare compare--two">
+        <thead>
+          <tr>
+            <th scope="col">{c.feature}</th>
+            <th scope="col" class="ours">{d.name}</th>
+            <th scope="col">{x.name}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            rows.map((row) => (
+              <tr>
+                <th scope="row">{c.rows[row]}</th>
+                <td class="ours">{OURS[row]?.[lang]}</td>
+                {x.cells[row] ? <td>{x.cells[row]![lang]}</td> : <td class="none"><span class="visually-hidden">{c.empty}</span></td>}
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <p class="tool-note">{c.checked}</p>
+
+    <h2 style="margin-top:40px">{fill(c.suitsTitle, { name: x.name })}</h2>
+    <ul class="ticks">{x.suits[lang].map((s) => <li>{s}</li>)}</ul>
+
+    <h2 style="margin-top:40px">{c.oursTitle}</h2>
+    <ul class="ticks">{ROWS.filter((r) => r !== "languages").map((r) => <li>{OURS[r]?.[lang]}</li>)}</ul>
+
+    <Cta lang={lang} />
+    <p>
+      {
+        COMPETITORS.filter((o) => o.slug !== x.slug).map((o, i) => (
+          <>
+            {i > 0 && " · "}
+            <a href={href(lang, `/compare/${o.slug}/`)}>{fill(c.alternative, { name: o.name })}</a>
+          </>
+        ))
+      }
+    </p>
+  </div>
+</Base>

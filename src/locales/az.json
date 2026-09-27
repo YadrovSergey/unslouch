@@ -1,0 +1,508 @@
+{
+  "app": {
+    "name": "Unslouch"
+  },
+  "tray": {
+    "nextBreak": "Növbəti fasilə: {{n}} dəq",
+    "pausedUntil": "Pauza: saat {{time}}-dək",
+    "focusUntil": "Fokus: saat {{time}}-dək",
+    "outsideHours": "İş vaxtı deyil",
+    "inCall": "Zəngdəsiniz, xatırlatmalar gözləyir",
+    "dnd": "«Narahat etməyin», xatırlatmalar gözləyir",
+    "breaksOff": "Fasilələr söndürülüb",
+    "microNow": "Göz üçün fasilə",
+    "movementNow": "İndi hərəkət edin",
+    "breathingNow": "Bir dəqiqə nəfəs alın",
+    "focus": "Fokus",
+    "focus25": "25 dəqiqə",
+    "focus50": "50 dəqiqə",
+    "focusStop": "Fokusu bitir",
+    "pause": "Pauza",
+    "pause30": "30 dəqiqəlik",
+    "pause60": "Bir saatlıq",
+    "pauseTomorrow": "Sabaha qədər",
+    "resume": "Davam et",
+    "today": "Bu günkü fasilələr: {{done}} · kompüter arxasında {{time}}",
+    "hm": "{{h}} saat {{m}} dəq",
+    "m": "{{m}} dəq",
+    "stats": "Statistika…",
+    "settings": "Ayarlar…",
+    "about": "Proqram haqqında",
+    "mzr": "MZR qidalanma gündəliyi",
+    "quit": "Çıxış",
+    "update": "{{v}} versiyasını quraşdır"
+  },
+  "time": {
+    "hm": "{{h}} saat {{m}} dəq",
+    "m": "{{m}} dəq"
+  },
+  "break": {
+    "lookFar": "Uzağa baxın",
+    "lookFarHint": "Pəncərədən çölə və ya uzaq divara, 6 metrdən uzağa. Yaxına fokuslanmanı saxlayan əzələ bu vaxt dincəlir.",
+    "standUp": "Ayağa qalxın",
+    "standUpHint": "Bel və ayaqlar üçün bir-iki hərəkət, sonra bir az gəzin.",
+    "walkHint": "Pəncərəyə qədər, su dalınca, pilləkənlə. Yeri gəlmişkən, su için.",
+    "longTitle": "Uzun fasilə",
+    "longHint": "Kompüterdən aralanın: gəzin, nahar edin, çölə çıxın. Ekran gözləyər.",
+    "neckTitle": "Boyun və çiyinlər üçün iki dəqiqə",
+    "neckHint": "Gündə bir dəfə qısa güc məşqi. Yavaş hərəkət edin.",
+    "breathTitle": "Bir dəqiqə yavaş nəfəs",
+    "breathHint": "Dairəni izləyin: 4 saya nəfəs alın, 6 saya nəfəs verin.",
+    "done": "Hazırdır, işə qayıda bilərsiniz",
+    "seconds_one": "saniyə",
+    "seconds_other": "saniyə",
+    "minutes_one": "dəqiqə",
+    "minutes_other": "dəqiqə",
+    "repeat": "{{n}} / {{total}}",
+    "postpone": "{{n}} dəq təxirə sal",
+    "skip": "Keç",
+    "tip": "Məsləhət",
+    "noPain": "Ağrısız. Ağrıyırsa, dayanın.",
+    "tips": [
+      "Ekranı uzadılmış qol məsafəsində, 50–70 sm aralıda saxlayın.",
+      "Ekranın yuxarı kənarı göz səviyyəsində və ya bir az aşağıda olsun. Bir az aşağı baxanda göz az açılır və az quruyur.",
+      "Kondisioner və ventilyator üzünüzə əsməməlidir. Qışda nəmləndirici kömək edir.",
+      "Ekranın parlaqlığını otaqdakı işığa uyğunlaşdırın. Qaranlıq otaqda parlaq ekran daha çox yorur.",
+      "Gözlərinizi qıymalı olursunuzsa, şrifti böyüdün.",
+      "Süni göz yaşı damcılarını həkim seçməlidir, özünüzə özünüz təyin etməyin.",
+      "Vəziyyətinizi tez-tez dəyişin. Ən yaxşı duruş növbəti duruşdur.",
+      "Siçanı klaviaturanın yanında saxlayın ki, ona uzanmayasınız.",
+      "Nahar vaxtı ən azı 10 dəqiqəlik çölə, gün işığına çıxın."
+    ]
+  },
+  "endOfDay": {
+    "title": "İş günü bitdi",
+    "hint": "İş vərəqlərini bağlayın, qalanını sabaha saxlayın. İşdən sonra dincəlmək daha yaxşı yatmağa kömək edir.",
+    "breaks": "fasilə",
+    "atComputer": "kompüter arxasında",
+    "longestSitting": "ən uzun oturuş",
+    "continue": "Hələ işləyəcəm",
+    "finish": "Bitirirəm"
+  },
+  "wellbeing": {
+    "title": "Bu həftə necəsiniz?",
+    "hint": "Həftədə bir dəfə dörd sual. Cavablardan fasilələrin məhz sizə kömək edib-etmədiyi görünür. Bu, tibbi test deyil.",
+    "eyes": "Gözlər",
+    "neck": "Boyun və çiyinlər",
+    "back": "Bel",
+    "hands": "Əllər",
+    "level0": "Narahat etmir",
+    "level1": "Bir az",
+    "level2": "Hiss olunur",
+    "level3": "Çox",
+    "skip": "İndi yox",
+    "save": "Yadda saxla",
+    "chartTitle": "Həftələr üzrə özünühiss",
+    "chartHint": "Bazar ertəsi cavablarınız. Yaşıl: narahat etmir, qırmızı: çox narahat edir.",
+    "empty": "Hələ cavab yoxdur. Suallar ilk fasilədən sonra bazar ertəsi gələcək."
+  },
+  "cue": {
+    "blink": "Göz qırpın",
+    "posture": "Vəziyyəti dəyişin",
+    "water": "Su için",
+    "drank": "İçdim",
+    "logInMzr": "MZR-də qeyd et",
+    "close": "Bağla"
+  },
+  "tabs": {
+    "settings": "Ayarlar",
+    "stats": "Statistika",
+    "exercises": "Məşqlər",
+    "about": "Haqqında"
+  },
+  "sections": {
+    "eyes": "Gözlər",
+    "eyesHint": "Uzağa baxmaq və göz qırpma məşqi",
+    "neck": "Boyun və çiyinlər",
+    "neckHint": "Çənəni geri çəkmək, kürək sümükləri, əyilmələr",
+    "back": "Bel",
+    "backHint": "Geri əyilmə, burulma, «ayağa qalx» fasilələrində «pişik»",
+    "hands": "Əllər",
+    "handsHint": "Yumruq və ovuc, vətər sürüşməsi, bilək dartılması",
+    "legs": "Ayaqlar",
+    "legsHint": "Ayaq pəncəsi hərəkəti, barmaqlar üstə qalxma, gəzinti",
+    "breath": "Stress",
+    "breathHint": "Gündə bir dəfə yavaş nəfəs"
+  },
+  "settings": {
+    "rhythm": "Ritm",
+    "preset": "Rejim",
+    "presets": {
+      "recommended": "Tövsiyə olunan",
+      "pomodoro": "Pomodoro",
+      "hourly": "Saatda bir",
+      "custom": "Öz rejimim"
+    },
+    "presetHint": {
+      "recommended": "Hər 20 dəqiqədən bir göz fasiləsi, hər 45 dəqiqədən bir ayağa qalxmaq",
+      "pomodoro": "25 dəqiqə iş, 5 dəqiqə fasilə, hər 2 saatdan bir uzun fasilə",
+      "hourly": "Hər 20 dəqiqədən bir göz fasiləsi, saatda bir dəfə ayağa qalxmaq",
+      "custom": "Ayarlarınız aşağıdadır"
+    },
+    "body": "Nəyi qoruyuram",
+    "bodyHint": "Məşqlər yalnız açıq bölmələrdən götürülür.",
+    "microSection": "Mikrofasilə",
+    "microEnabled": "Göz fasiləsi",
+    "microHint": "Bir qısa məşq və uzağa baxmaq",
+    "every": "Hər",
+    "lookFarFor": "Uzağa baxmaq",
+    "movementSection": "Ayağa qalx",
+    "movementEnabled": "Ayağa qalxmağı xatırlat",
+    "movementHint": "Bel və ayaq məşqləri, qısa gəzinti",
+    "duration": "Müddət",
+    "longEnabled": "Uzun fasilə",
+    "longHint": "Bir-iki saatdan bir daha uzağa gedin: nahar, gəzinti",
+    "cuesSection": "Sakit siqnallar",
+    "cuesHint": "Pəncərə və düymə olmadan, işə mane olmur.",
+    "blinkCue": "Göz qırp",
+    "blinkCueHint": "Ekranın kənarları bir saniyəlik qaralır",
+    "postureCue": "Vəziyyəti dəyiş",
+    "postureCueHint": "Yuxarıda bir neçə saniyəlik kiçik zolaq",
+    "water": "Su",
+    "waterHint": "Küncdə özü yox olan kart",
+    "dailySection": "Gündə bir dəfə",
+    "neckDaily": "Boyun və çiyinlər üçün iki dəqiqə",
+    "neckDailyHint": "Saat 11:00-dan sonra güc məşqi. Araşdırmalara görə, gündə 2 dəqiqə boyun ağrısını azaldır",
+    "breathingDaily": "Bir dəqiqə nəfəs",
+    "breathingDailyHint": "Saat 15:00-dan sonra, bir göz fasiləsinin əvəzinə",
+    "endOfDay": "İş gününün sonu",
+    "endOfDayHint": "Bitirməyi xatırladır və günün yekununu göstərir",
+    "at": "Saat",
+    "workSection": "İş vaxtı",
+    "workHours": "Yalnız iş vaxtı xatırlat",
+    "workHoursHint": "Qalan vaxt proqram susur",
+    "workDays": "Günlər",
+    "from": "Başlanğıc",
+    "to": "Son",
+    "quietSection": "Mane olma",
+    "pauseOnCalls": "Zəngin bitməsini gözlə",
+    "pauseOnCallsHint": "Başqa proqram kameranı və ya mikrofonu istifadə edəndə. Biz onları heç vaxt özümüz açmırıq",
+    "pauseInFullscreen": "Video və ya təqdimat tam ekranda açıq olanda gözlə",
+    "waylandNoFullscreen": "Wayland bunu bildirmir",
+    "respectDnd": "«Narahat etməyin» rejimini nəzərə al",
+    "respectDndMac": "Mac-da «Fokus» rejimi həmişə oxunmur. Menyudakı öz «Fokus» rejimimiz daha etibarlıdır",
+    "snooze": "«Təxirə sal» müddəti",
+    "idleReset": "Kompüterdən uzaqda",
+    "idleResetHint": "Siçan və klaviatura olmadan bu qədər vaxt fasilə sayılır",
+    "usageSection": "Proqramlar üzrə vaxt",
+    "usageEnabled": "Proqramlar üzrə vaxtı say",
+    "usagePrivacy": "Yalnız proqramların adlarını sayırıq. Pəncərə başlıqlarını və saytları oxumuruq. Hər şey kompüterinizdə qalır",
+    "usageUnsupported": "Burada mümkün deyil: Wayland hansı pəncərənin aktiv olduğunu bildirmir",
+    "usageExcluded": "Sayma",
+    "usageExcludedHint": "Bu proqramlar heç qeydə alınmır",
+    "usageAddPlaceholder": "Ad və Enter",
+    "usageClear": "Proqram tarixçəsini sil",
+    "usageClearConfirm": "Proqramlar üzrə vaxtın bütün tarixçəsi silinsin?",
+    "usageCleared": "Tarixçə silindi",
+    "workplaceSection": "İş yeri",
+    "generalSection": "Ümumi",
+    "theme": "Mövzu",
+    "themeSystem": "Sistemdəki kimi",
+    "themeLight": "Açıq",
+    "themeDark": "Tünd",
+    "language": "Dil",
+    "systemLanguage": "Sistemdəki kimi",
+    "sound": "Fasilənin sonunda səs",
+    "soundHint": "Ekrana baxmadan fasilənin bitdiyini bilmək üçün",
+    "autostart": "Kompüterlə birlikdə başlat",
+    "checkUpdates": "Yeniləmələri yoxla",
+    "checkUpdatesHint": "Gündə bir dəfə versiya nömrəsi olan fayl yükləyirik. Başqa heç nə göndərilmir",
+    "defaults": "Tövsiyə olunanları qaytar",
+    "min": "dəq",
+    "sec": "san"
+  },
+  "data": {
+    "title": "Başqa kompüterə köçürmə",
+    "hint": "Ayarlar və statistika bir faylda",
+    "export": "Fayla saxla",
+    "import": "Fayldan yüklə",
+    "exported": "Fayl saxlanıldı",
+    "imported": "Məlumatlar yükləndi",
+    "importFailed": "Faylı oxumaq alınmadı"
+  },
+  "why": {
+    "toggle": "Bu nə üçündür",
+    "doctor": "Həkimə müraciət edin:",
+    "eyes": {
+      "text": "Ekran qarşısında 2–3 dəfə az göz qırpırıq və qırpmaların yarısı natamam olur, buna görə göz quruyur. Yaxına fokuslanmanı saxlayan əzələ saatlarla dincəlmir. Uzağa baxmaq xatırlatmaları gözdə yanmanı və yorğunluğu azaldır.",
+      "doctor": "gözləriniz ağrıyır, qızarır, ikiləşmə olur və ya görmə pisləşibsə."
+    },
+    "neck": {
+      "text": "Başı bir az irəli uzadıb uzun müddət oturanda boyun və çiyin əzələləri daim bir az gərgin olur. Ən çox qısa güc məşqləri kömək edir: gündə hətta 2 dəqiqə ağrını azaldır.",
+      "doctor": "ağrı və ya keyimə qola keçirsə, qol zəifləyirsə və ya ağrı 6 həftədən çox davam edirsə."
+    },
+    "back": {
+      "text": "Belə zərəri «səhv» duruş yox, hərəkətsizlik verir. Ən yaxşı duruş növbəti duruşdur. Hər 20–30 dəqiqədən bir qısa gəzinti yeməkdən sonra qanda şəkəri də azaldır.",
+      "doctor": "qasıqda keyimə varsa, ayaqlar zəifləyirsə, ağrı gecələr güclüdürsə və ya 4–6 həftə keçmirsə."
+    },
+    "hands": {
+      "text": "Qolun ön hissəsinin əzələləri fasiləsiz işləyir, bilək çox vaxt bükülü olur. Hər 20 dəqiqədən bir fasilələr qollardakı narahatlığı azaldır. Kompüterlə karpal tunel sindromu arasında əlaqə sübut olunmayıb, ona görə onun qarşısını alacağımızı vəd etmirik.",
+      "doctor": "baş, şəhadət və orta barmaqlar, xüsusən gecələr, keyiyirsə və ya əşyalar əlinizdən düşürsə."
+    },
+    "legs": {
+      "text": "Baldır əzələləri qanı ayaqlardan qovan nasos kimi işləyir. Oturanda bu nasos sönür və axşama ayaqlar şişir. Ən azı saatda bir dəfə qalxıb gəzmək kömək edir.",
+      "doctor": "təcili, bir ayaq şişib, ağrıyır və qızarıbsa və ya təngnəfəslik və sinə ağrısı yaranıbsa."
+    },
+    "breath": {
+      "text": "Uzun nəfəsvermə ilə dəqiqədə təxminən 6 nəfəs olan yavaş tənəffüs gərginliyi azaldır. Təsiri kiçikdir, amma bir neçə dəqiqəyə hiss olunur.",
+      "doctor": "həyəcan həftələrlə yaşamağa mane olursa: nəfəs məşqi mütəxəssis köməyini əvəz etmir."
+    },
+    "water": {
+      "text": "Hətta yüngül su çatışmazlığı diqqəti və əhval-ruhiyyəni pisləşdirir, baş ağrısı da ola bilər. Gündəlik norma sırımırıq: susuzluğa görə için. Çay və qəhvə də sayılır.",
+      "doctor": "həkim sizə mayeni məhdudlaşdırıbsa, onun məsləhətinə əməl edin və bu xatırlatmanı söndürün."
+    },
+    "workplace": {
+      "text": "Düzgün qurulmuş iş yeri narahatlığın bir hissəsini aradan qaldırır, amma tək özü az şey dəyişir. Fasilələr və hərəkət daha çox fayda verir.",
+      "doctor": "iş yerini qurduqdan və fasilələr verdikdən sonra da ağrı keçmirsə."
+    }
+  },
+  "checklist": {
+    "height": "Boyunuz",
+    "cm": "sm",
+    "seat": "oturacağın hündürlüyü",
+    "desk": "masanın hündürlüyü",
+    "screenTop": "ekranın yuxarısı yerdən",
+    "standingDesk": "ayaq üstə iş masası",
+    "calcNote": "Təxminidir, orta bədən nisbətlərinə görə. Hisslərinizlə yoxlayın: dirsəklər təxminən 90°, ayaqlar yerdə.",
+    "screenHeight": "Ekranın yuxarı kənarı göz səviyyəsində və ya bir az aşağıda",
+    "screenDistance": "Ekran uzadılmış qol məsafəsində, 50–70 sm",
+    "elbows": "Dirsəklər təxminən 90°, çiyinlər aşağıda, qolların ön hissəsi sərbəst",
+    "wrists": "Biləklər düz, siçan klaviaturanın yanında",
+    "feet": "Ayaqlar yerə və ya altlığa tam basır",
+    "back": "Stulun söykənəcəyi beli dəstəkləyir",
+    "light": "Ekranda parıltı yoxdur, pəncərə yanda, arxanızda deyil"
+  },
+  "stats": {
+    "tabs": {
+      "overview": "İcmal",
+      "apps": "Proqramlar",
+      "wellbeing": "Özünühiss",
+      "achievements": "Nailiyyətlər"
+    },
+    "today": "Bu gün",
+    "done": "Edilib",
+    "skipped": "Buraxılıb",
+    "atComputer": "Kompüter arxasında",
+    "longestSitting": "Ən uzun oturuş",
+    "streak": "Ardıcıl günlər",
+    "sittingWarning": "Bu gün 2 saatdan çox qalxmadan oturdunuz. Bu tez-tez olarsa, ayaq venaları üçün risk artır. Ən azı saatda bir dəfə qalxmağa çalışın.",
+    "week": "Həftə",
+    "empty": "Hələ boşdur. İlk fasilə 20 dəqiqəlik işdən sonra olacaq.",
+    "year": "İl",
+    "less": "Az",
+    "more": "Çox",
+    "appsOff": "Proqramlar üzrə vaxt ayarlarda söndürülüb.",
+    "appsEmpty": "Hələ məlumat yoxdur.",
+    "longestIn": "Fasiləsiz ən uzun müddəti {{app}} proqramında keçirdiniz: {{time}}",
+    "programs": "Proqramlar",
+    "category": "Kateqoriya",
+    "categories": {
+      "work": "İş",
+      "communication": "Ünsiyyət",
+      "entertainment": "Əyləncə",
+      "other": "Digər"
+    },
+    "otherApps": "Qalanları",
+    "byCategory": "Kateqoriyalar üzrə",
+    "byHour": "Saatlar üzrə",
+    "exclude": "Bu proqramı nəzərə alma"
+  },
+  "achievements": {
+    "title": "Nailiyyətlər",
+    "firstBreak": {
+      "title": "İlk fasilə",
+      "hint": "Başlanğıc qoyuldu"
+    },
+    "streak7": {
+      "title": "Ardıcıl bir həftə",
+      "hint": "Fasiləli 7 iş günü"
+    },
+    "streak30": {
+      "title": "Ardıcıl bir ay",
+      "hint": "Fasiləli 30 iş günü"
+    },
+    "breaks100": {
+      "title": "100 fasilə",
+      "hint": "Cəmi edilmiş fasilələr"
+    },
+    "breaks1000": {
+      "title": "1000 fasilə",
+      "hint": "Vərdiş artıq sizindir"
+    },
+    "standUp100": {
+      "title": "100 dəfə qalxdınız",
+      "hint": "«Ayağa qalx» fasilələri"
+    },
+    "water50": {
+      "title": "50 stəkan",
+      "hint": "Suda «İçdim» qeyd olunub"
+    },
+    "noLongSitting5": {
+      "title": "Uzun oturuşsuz",
+      "hint": "2 saatlıq oturuş olmadan 5 iş günü"
+    }
+  },
+  "share": {
+    "button": "Paylaş",
+    "streak_one": "Ardıcıl {{count}} gün",
+    "streak_other": "Ardıcıl {{count}} gün",
+    "total_one": "Kompüter arxasında {{count}} fasilə",
+    "total_other": "Kompüter arxasında {{count}} fasilə",
+    "footer": "Unslouch: kompüter arxasında sağlamlıq üçün pulsuz proqram · unslouch.app",
+    "saved": "Şəkil saxlanıldı"
+  },
+  "about": {
+    "text": "Proqram bütün günü kompüter arxasında keçirən insanlara həkimlərin tövsiyə etdiklərini xatırladır: daha tez-tez göz qırpın, hər 20 dəqiqədən bir 20 saniyə uzağa baxın, ayağa qalxıb hərəkət edin, boynunuzu, çiyinlərinizi və əllərinizi açın, su için.",
+    "disclaimer": "Proqram heç nəyi müalicə etmir və həkimi əvəz etmir. Məşqləri ağrısız edin. Nəsə ağrıyırsa, keyiyirsə və ya görmə pisləşibsə, həkimə müraciət edin.",
+    "site": "Sayt",
+    "openSource": "GitHub-da açıq mənbə kodu",
+    "science": "Araşdırmalar nə deyir",
+    "privacy": "Məxfilik siyasəti",
+    "terms": "İstifadə şərtləri",
+    "licenses": "Üçüncü tərəf lisenziyaları",
+    "translation": "Tərcümədə səhv tapdınız?",
+    "privacyShort": "Heç bir məlumat toplamırıq: hər şey yalnız kompüterinizdə saxlanılır.",
+    "version": "Versiya {{v}}"
+  },
+  "onboarding": {
+    "title": "Unslouch işləyir",
+    "whereMac": "Kiçik adam nişanı indi menyu zolağında, yuxarı sağdadır.",
+    "whereWin": "Kiçik adam nişanı indi sistem trayında, saatın yanındadır. Görünmürsə, «^» oxuna klikləyin.",
+    "whereLinux": "Kiçik adam nişanı indi sistem trayındadır. GNOME-da bunun üçün AppIndicator genişlənməsi lazımdır, Ubuntu-da o artıq quraşdırılıb.",
+    "how": "Hər 20 dəqiqədən bir proqram yarım dəqiqəlik ara verməyi xahiş edəcək: bir məşq və uzağa bir baxış. Hər 45 dəqiqədən bir ayağa qalxmağı təklif edəcək. Fasilələr arasında sakit siqnallar olacaq: göz qırpmaq, vəziyyəti dəyişmək, su içmək.",
+    "disclaimer": "Proqram heç nəyi müalicə etmir və həkimi əvəz etmir. Məşqləri ağrısız edin.",
+    "next": "İrəli",
+    "back": "Geri",
+    "finish": "Hazırdır",
+    "concernsTitle": "Sizi nə narahat edir?",
+    "concernsHint": "Nəyi qorumaq istədiyinizi seçin. Sonra ayarlarda dəyişə bilərsiniz.",
+    "concern": {
+      "eyes": "Gözlər yorulur, quruyur, yanır",
+      "neck": "Boyun tutulur, çiyinlər gərilir",
+      "back": "Bel sızıldayır",
+      "hands": "Əllər və biləklər yorulur",
+      "legs": "Axşama ayaqlar şişir",
+      "breath": "Gərginlik, stress"
+    },
+    "workplaceTitle": "İş yerinizi qurun",
+    "workplaceHint": "Bir-iki dəqiqə çəkəcək. Bəndləri sonra ayarlarda qeyd edə bilərsiniz.",
+    "workHours": "Yalnız iş vaxtı: bazar ertəsindən cüməyə, {{from}}–{{to}}",
+    "workHoursHint": "Həftəsonu da işləyirsinizsə, söndürün. Günlər və saatlar ayarlarda dəyişir"
+  },
+  "promo": {
+    "title": "Mənim sağlam rasionum",
+    "text": "Eyni müəlliflərdən qidalanma gündəliyi: kalori, zülal, yağ və karbohidrat, su və çəki. Telefonda və brauzerdə.",
+    "button": "Aç"
+  },
+  "ex": {
+    "blink": {
+      "title": "Tam göz qırpma",
+      "close": "Gözlərinizi yumşaqca yumun",
+      "squeeze": "Göz qapaqlarını bir az sıxın",
+      "open": "Açın"
+    },
+    "chinTuck": {
+      "title": "Çənəni geri çəkmək",
+      "tuck": "Başınızı geri çəkin, sanki qoşa çənə yaradırsınız. Düz qabağa baxın",
+      "release": "Rahatlayın"
+    },
+    "shoulderBlades": {
+      "title": "Kürək sümüklərini birləşdirmək",
+      "squeeze": "Çiyinləri endirin, kürək sümüklərini geriyə və aşağı birləşdirin",
+      "release": "Buraxın"
+    },
+    "shrugs": {
+      "title": "Çiyinlər yuxarı-aşağı",
+      "up": "Çiyinləri qulaqlara doğru qaldırın",
+      "down": "Endirin və rahatlayın"
+    },
+    "sideTilt": {
+      "title": "Başı çiyinə əymək",
+      "right": "Sağ qulaq sağ çiyinə, çiyinlər aşağıda qalsın",
+      "center": "Baş düz",
+      "left": "Sol qulaq sol çiyinə"
+    },
+    "headTurns": {
+      "title": "Başı çevirmək",
+      "right": "Başınızı yavaşca sağa çevirin",
+      "left": "İndi sola"
+    },
+    "standingExtension": {
+      "title": "Ayaq üstə geri əyilmə",
+      "lean": "Əllər beldə, yumşaqca geri əyilin",
+      "return": "Düz vəziyyətə qayıdın"
+    },
+    "seatedTwist": {
+      "title": "Oturaraq burulma",
+      "right": "Ayaqlar yerdə, bədəninizi sağa çevirin",
+      "center": "Qayıdın",
+      "left": "Sola çevirin"
+    },
+    "catCow": {
+      "title": "Oturaraq «pişik»",
+      "round": "Kürəyinizi yumrulayın, çənə sinəyə",
+      "arch": "Əyilin, sinə irəli"
+    },
+    "fistOpen": {
+      "title": "Yumruq və ovuc",
+      "fist": "Yumruq sıxın",
+      "open": "Barmaqlarınızı geniş açın"
+    },
+    "tendonGlides": {
+      "title": "Vətər sürüşməsi",
+      "straight": "Düz ovuc",
+      "hook": "Qarmaq: barmaqları bükün",
+      "fist": "Yumruq",
+      "table": "Masa: barmaqlar düz, kökündən bükülü",
+      "straightFist": "Düz yumruq"
+    },
+    "flexorStretch": {
+      "title": "Bilək dartılması, ovuc irəli",
+      "right": "Sağ qol irəli, ovuc irəli. Sol əllə barmaqları yumşaqca özünüzə çəkin",
+      "left": "İndi sol qol"
+    },
+    "extensorStretch": {
+      "title": "Bilək dartılması, ovuc özünüzə",
+      "right": "Sağ qol irəli, əl aşağı. Sol əllə əlin üstünə yumşaqca basın",
+      "left": "İndi sol qol"
+    },
+    "shake": {
+      "title": "Əlləri silkələmək",
+      "shake": "Əllərinizi rahatlayıb silkələyin"
+    },
+    "anklePumps": {
+      "title": "Ayaq pəncəsi nasosu",
+      "up": "Barmaqlar özünüzə",
+      "down": "Barmaqlar irəli"
+    },
+    "calfRaises": {
+      "title": "Barmaqlar üstə qalxma",
+      "up": "Masadan tutaraq barmaqlarınızın ucuna qalxın",
+      "down": "Yavaşca enin"
+    },
+    "walk": {
+      "title": "Bir az gəzin",
+      "walk": "Gəzin: pəncərəyə, su dalınca, pilləkənlə"
+    },
+    "lateralRaise": {
+      "title": "Qolları yana qaldırma",
+      "up": "Düz qolları yanlara çiyin səviyyəsinə qaldırın",
+      "down": "Yavaşca endirin"
+    },
+    "reverseFly": {
+      "title": "Əyilərək qolları açmaq",
+      "open": "Əyilin, kürək sümüklərini birləşdirərək qolları geri açın",
+      "close": "Qolları endirin"
+    },
+    "shrugHold": {
+      "title": "Çiyinləri qaldırıb saxlamaq",
+      "up": "Çiyinləri qaldırın və saxlayın",
+      "down": "Endirin"
+    },
+    "breathing": {
+      "title": "Yavaş nəfəs",
+      "in": "Burunla nəfəs alın",
+      "out": "Yavaş nəfəs verin"
+    }
+  }
+}

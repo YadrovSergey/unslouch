@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://unslouch.app/sitemap-index.xml

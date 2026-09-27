@@ -1,0 +1,46 @@
+---
+import Base from "./Base.astro";
+import { href, t, type Lang } from "../i18n";
+import { fixLinks } from "../lib/markdown";
+
+interface Props {
+  lang: Lang;
+  path: string;
+  title: string;
+  description: string;
+  html: string;
+  toc?: { slug: string; text: string }[];
+  notice?: string;
+}
+const { lang, path, title, description, html, toc, notice } = Astro.props;
+const d = t(lang);
+---
+
+<Base lang={lang} path={path} title={title} description={description}>
+  <div class="wrap">
+    <div class="page-head">
+      <nav class="crumbs" aria-label="breadcrumbs"><a href={href(lang, "/")}>{d.nav.home}</a></nav>
+    </div>
+    <div class={toc ? "doc" : ""}>
+      {
+        toc && (
+          <nav class="toc" aria-label={d.science.toc}>
+            <b>{d.science.toc}</b>
+            <ul>
+              {toc.map((h) => (
+                <li>
+                  <a href={`#${h.slug}`}>{h.text}</a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )
+      }
+      <article class="prose">
+        {notice && <p class="notice">{notice}</p>}
+        <Fragment set:html={fixLinks(html, lang)} />
+      </article>
+    </div>
+    <div style="max-width:860px"><slot /></div>
+  </div>
+</Base>

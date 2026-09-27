@@ -1,0 +1,40 @@
+---
+import Base from "../../layouts/Base.astro";
+import Why from "../../components/Why.astro";
+import Cta from "../../components/Cta.astro";
+import WebApp from "../../components/islands/WebApp";
+import { SOURCES } from "@app/lib/sources";
+import { app, href, langPaths, t, type Lang } from "../../i18n";
+import { islandText } from "../../lib/islandText";
+import { ANCHORS } from "../../lib/science";
+
+export const getStaticPaths = langPaths;
+const { lang } = Astro.props as { lang: Lang };
+const d = t(lang);
+const a = app(lang);
+const b = d.browserApp;
+---
+
+<Base lang={lang} path="/app/" title={d.meta.browserApp.title} description={d.meta.browserApp.description}>
+  <div class="wrap">
+    <div class="page-head">
+      <nav class="crumbs" aria-label="breadcrumbs"><a href={href(lang, "/")}>{d.nav.home}</a></nav>
+      <h1>{b.title}</h1>
+      <p class="lead">{b.lead}</p>
+    </div>
+    <WebApp
+      client:load
+      text={islandText(lang)}
+      t={b}
+      common={d.common}
+      sections={d.sections}
+      notifyTitle={d.tools.eyeTimer.notifyTitle}
+      notifyBody={d.tools.eyeTimer.notifyBody}
+    />
+    <p class="notice">{b.limits}</p>
+    <div style="max-width:860px">
+      <Why lang={lang} text={[a.why.eyes.text, a.why.hands.text]} doctor={a.why.eyes.doctor} sources={[...SOURCES.eyes.slice(0, 2), SOURCES.hands[0]]} anchor={ANCHORS[lang].micro} />
+      <Cta lang={lang} />
+    </div>
+  </div>
+</Base>

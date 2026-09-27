@@ -1,0 +1,508 @@
+{
+  "app": {
+    "name": "Unslouch"
+  },
+  "tray": {
+    "nextBreak": "Next break in {{n}} min",
+    "pausedUntil": "Paused until {{time}}",
+    "focusUntil": "Focus until {{time}}",
+    "outsideHours": "Outside work hours",
+    "inCall": "In a call, reminders wait",
+    "dnd": "Do Not Disturb, reminders wait",
+    "breaksOff": "Breaks are off",
+    "microNow": "Eye break now",
+    "movementNow": "Stretch now",
+    "breathingNow": "Breathe for a minute",
+    "focus": "Focus",
+    "focus25": "25 minutes",
+    "focus50": "50 minutes",
+    "focusStop": "End focus",
+    "pause": "Pause",
+    "pause30": "For 30 minutes",
+    "pause60": "For an hour",
+    "pauseTomorrow": "Until tomorrow",
+    "resume": "Resume",
+    "today": "Breaks today: {{done}} · at the computer {{time}}",
+    "hm": "{{h}} h {{m}} min",
+    "m": "{{m}} min",
+    "stats": "Statistics…",
+    "settings": "Settings…",
+    "about": "About",
+    "mzr": "MZR food diary",
+    "quit": "Quit",
+    "update": "Install version {{v}}"
+  },
+  "time": {
+    "hm": "{{h}} h {{m}} min",
+    "m": "{{m}} min"
+  },
+  "break": {
+    "lookFar": "Look into the distance",
+    "lookFarHint": "Out of the window or at a far wall, more than 6 metres (20 feet) away. The muscle that holds close focus gets to rest.",
+    "standUp": "Stand up",
+    "standUpHint": "A couple of exercises for your back and legs, then walk around.",
+    "walkHint": "To the window, for water, up the stairs. Drink some water too.",
+    "longTitle": "Long break",
+    "longHint": "Step away from the computer: walk, have lunch, go outside. The screen can wait.",
+    "neckTitle": "Two minutes for neck and shoulders",
+    "neckHint": "A short strength routine once a day. Move slowly.",
+    "breathTitle": "A minute of slow breathing",
+    "breathHint": "Follow the circle: breathe in for 4, out for 6.",
+    "done": "Done, back to work",
+    "seconds_one": "second",
+    "seconds_other": "seconds",
+    "minutes_one": "minute",
+    "minutes_other": "minutes",
+    "repeat": "{{n}} of {{total}}",
+    "postpone": "Postpone {{n}} min",
+    "skip": "Skip",
+    "tip": "Tip",
+    "noPain": "No pain. If it hurts, stop.",
+    "tips": [
+      "Keep the screen at arm's length, 50–70 cm (20–28 inches).",
+      "Keep the top of the screen at eye level or a little below. Looking slightly down keeps the eye less open, so it dries out less.",
+      "Air conditioners and fans should not blow into your face. A humidifier helps in winter.",
+      "Match screen brightness to the room light. A bright screen in a dark room is more tiring.",
+      "Make the font bigger if you catch yourself squinting.",
+      "Artificial tear drops should be chosen by a doctor, not by yourself.",
+      "Change position often. The best posture is the next one.",
+      "Keep the mouse next to the keyboard so you don't reach for it.",
+      "At lunch, get at least 10 minutes of daylight outside."
+    ]
+  },
+  "endOfDay": {
+    "title": "The work day is over",
+    "hint": "Close the work tabs and leave the rest for tomorrow. Switching off after work helps you sleep better.",
+    "breaks": "breaks",
+    "atComputer": "at the computer",
+    "longestSitting": "longest time sitting",
+    "continue": "Keep working",
+    "finish": "I'm done"
+  },
+  "wellbeing": {
+    "title": "How was this week?",
+    "hint": "Four questions once a week. Your answers show whether breaks help you in particular. This is not a medical test.",
+    "eyes": "Eyes",
+    "neck": "Neck and shoulders",
+    "back": "Back",
+    "hands": "Hands",
+    "level0": "Fine",
+    "level1": "A little",
+    "level2": "Noticeably",
+    "level3": "A lot",
+    "skip": "Not now",
+    "save": "Save",
+    "chartTitle": "Wellbeing by week",
+    "chartHint": "Your Monday answers. Green: fine, red: bothers a lot.",
+    "empty": "No answers yet. The questions come on Monday after the first break."
+  },
+  "cue": {
+    "blink": "Blink",
+    "posture": "Change position",
+    "water": "Drink some water",
+    "drank": "Done",
+    "logInMzr": "Log in MZR",
+    "close": "Close"
+  },
+  "tabs": {
+    "settings": "Settings",
+    "stats": "Statistics",
+    "exercises": "Exercises",
+    "about": "About"
+  },
+  "sections": {
+    "eyes": "Eyes",
+    "eyesHint": "Looking into the distance and a blink exercise",
+    "neck": "Neck and shoulders",
+    "neckHint": "Chin tucks, shoulder blades, tilts",
+    "back": "Back",
+    "backHint": "Back bend, twist, cat-cow in stand-up breaks",
+    "hands": "Hands",
+    "handsHint": "Fist and spread, tendon glides, wrist stretches",
+    "legs": "Legs",
+    "legsHint": "Ankle pumps, calf raises, walking",
+    "breath": "Stress",
+    "breathHint": "Slow breathing once a day"
+  },
+  "settings": {
+    "rhythm": "Rhythm",
+    "preset": "Mode",
+    "presets": {
+      "recommended": "Recommended",
+      "pomodoro": "Pomodoro",
+      "hourly": "Hourly",
+      "custom": "Custom"
+    },
+    "presetHint": {
+      "recommended": "An eye break every 20 minutes, stand up every 45",
+      "pomodoro": "25 minutes of work, a 5-minute break, a long one every 2 hours",
+      "hourly": "An eye break every 20 minutes, stand up once an hour",
+      "custom": "Your settings below"
+    },
+    "body": "What I look after",
+    "bodyHint": "Exercises come only from the sections that are on.",
+    "microSection": "Micro-break",
+    "microEnabled": "Eye break",
+    "microHint": "One short exercise and looking into the distance",
+    "every": "Every",
+    "lookFarFor": "Look into the distance for",
+    "movementSection": "Stand up",
+    "movementEnabled": "Remind me to stand up",
+    "movementHint": "Back and legs exercises, a short walk",
+    "duration": "For",
+    "longEnabled": "Long break",
+    "longHint": "Every couple of hours step further away: lunch, a walk",
+    "cuesSection": "Gentle cues",
+    "cuesHint": "No windows or buttons, they don't get in the way.",
+    "blinkCue": "Blink",
+    "blinkCueHint": "The screen edges darken for a second",
+    "postureCue": "Change position",
+    "postureCueHint": "A small banner at the top for a few seconds",
+    "water": "Water",
+    "waterHint": "A card in the corner that goes away by itself",
+    "dailySection": "Once a day",
+    "neckDaily": "Two minutes for neck and shoulders",
+    "neckDailyHint": "Strength routine after 11:00. Research shows 2 minutes a day reduces neck pain",
+    "breathingDaily": "A minute of breathing",
+    "breathingDailyHint": "After 15:00, instead of one eye break",
+    "endOfDay": "End of the work day",
+    "endOfDayHint": "Reminds you to finish and shows the day's summary",
+    "at": "At",
+    "workSection": "Work hours",
+    "workHours": "Remind me only during work hours",
+    "workHoursHint": "The rest of the time the app stays quiet",
+    "workDays": "Days",
+    "from": "From",
+    "to": "To",
+    "quietSection": "Don't disturb",
+    "pauseOnCalls": "Wait until a call ends",
+    "pauseOnCallsHint": "When another program uses the camera or microphone. We never turn them on ourselves",
+    "pauseInFullscreen": "Wait while a video or presentation is fullscreen",
+    "waylandNoFullscreen": "Wayland does not report this",
+    "respectDnd": "Respect Do Not Disturb",
+    "respectDndMac": "On Mac, Focus mode can't always be read. Our Focus in the menu is more reliable",
+    "snooze": "Postpone for",
+    "idleReset": "Away from the computer",
+    "idleResetHint": "This long without mouse and keyboard counts as a break",
+    "usageSection": "Time per program",
+    "usageEnabled": "Track time per program",
+    "usagePrivacy": "Only program names are counted. We don't read window titles or websites. Everything stays on your computer",
+    "usageUnsupported": "Not available here: Wayland does not tell which window is active",
+    "usageExcluded": "Don't track",
+    "usageExcludedHint": "These programs are never recorded",
+    "usageAddPlaceholder": "Name and Enter",
+    "usageClear": "Delete program history",
+    "usageClearConfirm": "Delete all time-per-program history?",
+    "usageCleared": "History deleted",
+    "workplaceSection": "Workstation",
+    "generalSection": "General",
+    "theme": "Theme",
+    "themeSystem": "System",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "language": "Language",
+    "systemLanguage": "System default",
+    "sound": "Sound at the end of a break",
+    "soundHint": "So you know the break is over without looking at the screen",
+    "autostart": "Start with the computer",
+    "checkUpdates": "Check for updates",
+    "checkUpdatesHint": "Once a day we download a file with the version number. Nothing else is sent",
+    "defaults": "Restore recommended",
+    "min": "min",
+    "sec": "sec"
+  },
+  "data": {
+    "title": "Move to another computer",
+    "hint": "Settings and statistics in one file",
+    "export": "Save to file",
+    "import": "Load from file",
+    "exported": "File saved",
+    "imported": "Data loaded",
+    "importFailed": "Couldn't read the file"
+  },
+  "why": {
+    "toggle": "Why this",
+    "doctor": "See a doctor",
+    "eyes": {
+      "text": "At a screen we blink 2–3 times less often, and half the blinks are incomplete, so the eyes dry out. The muscle that holds close focus doesn't rest for hours. Reminders to look into the distance reduce burning and eye fatigue.",
+      "doctor": "if your eyes hurt, are red, you see double or your vision gets worse."
+    },
+    "neck": {
+      "text": "Sitting for long with the head slightly forward keeps the neck and shoulder muscles a little tense all the time. Short strength exercises help most: even 2 minutes a day reduces pain.",
+      "doctor": "if pain or numbness goes into the arm, the arm gets weak, or pain lasts more than 6 weeks."
+    },
+    "back": {
+      "text": "It's not a \"wrong\" posture that harms the back, it's not moving. The best posture is the next one. Short walks every 20–30 minutes also lower blood sugar after meals.",
+      "doctor": "if you feel numb in the groin, your legs get weak, the pain is severe at night or lasts 4–6 weeks."
+    },
+    "hands": {
+      "text": "Forearm muscles work without rest, the wrist is often bent. Breaks every 20 minutes reduce discomfort in the arms. A link between computer use and carpal tunnel syndrome is not proven, so we don't promise to prevent it.",
+      "doctor": "if your thumb, index and middle fingers go numb, especially at night, or you drop things."
+    },
+    "legs": {
+      "text": "Calf muscles work as a pump that moves blood out of the legs. Sitting switches the pump off, and by evening the legs swell. Standing up and walking at least once an hour helps.",
+      "doctor": "urgently, if one leg is swollen, painful and red, or you get short of breath with chest pain."
+    },
+    "breath": {
+      "text": "Slow breathing, about 6 breaths a minute with a long exhale, lowers tension. The effect is small but noticeable within minutes.",
+      "doctor": "if anxiety has been getting in the way of life for weeks: breathing is not a replacement for professional help."
+    },
+    "water": {
+      "text": "Even mild lack of water worsens attention and mood, and can cause a headache. We don't push a daily amount: go by thirst. Tea and coffee count too.",
+      "doctor": "if a doctor limited your fluids, follow their advice and turn this reminder off."
+    },
+    "workplace": {
+      "text": "A well set-up workstation removes some discomfort but by itself does little. Breaks and movement do more.",
+      "doctor": "if pain continues after setting up the workstation and taking breaks."
+    }
+  },
+  "checklist": {
+    "height": "Your height",
+    "cm": "cm",
+    "seat": "seat height",
+    "desk": "desk height",
+    "screenTop": "top of screen from floor",
+    "standingDesk": "standing desk",
+    "calcNote": "Approximate, from average body proportions. Check by feel: elbows about 90°, feet on the floor.",
+    "screenHeight": "Top of the screen at eye level or a little below",
+    "screenDistance": "Screen at arm's length, 50–70 cm",
+    "elbows": "Elbows about 90°, shoulders down, forearms relaxed",
+    "wrists": "Wrists straight, mouse next to the keyboard",
+    "feet": "Feet flat on the floor or a footrest",
+    "back": "The chair back supports your lower back",
+    "light": "No glare on the screen, window at the side, not behind you"
+  },
+  "stats": {
+    "tabs": {
+      "overview": "Overview",
+      "apps": "Programs",
+      "wellbeing": "Wellbeing",
+      "achievements": "Achievements"
+    },
+    "today": "Today",
+    "done": "Done",
+    "skipped": "Skipped",
+    "atComputer": "At the computer",
+    "longestSitting": "Longest sitting",
+    "streak": "Days in a row",
+    "sittingWarning": "Today you sat for more than 2 hours without getting up. Doing this often raises the risk for leg veins. Try to stand up at least once an hour.",
+    "week": "Week",
+    "empty": "Nothing yet. The first break comes after 20 minutes of work.",
+    "year": "Year",
+    "less": "Less",
+    "more": "More",
+    "appsOff": "Time per program is turned off in settings.",
+    "appsEmpty": "No data yet.",
+    "longestIn": "Your longest stretch without a break was in {{app}}: {{time}}",
+    "programs": "Programs",
+    "category": "Category",
+    "categories": {
+      "work": "Work",
+      "communication": "Communication",
+      "entertainment": "Entertainment",
+      "other": "Other"
+    },
+    "otherApps": "Others",
+    "byCategory": "By category",
+    "byHour": "By hour",
+    "exclude": "Don't track this program"
+  },
+  "achievements": {
+    "title": "Achievements",
+    "firstBreak": {
+      "title": "First break",
+      "hint": "A good start"
+    },
+    "streak7": {
+      "title": "A week in a row",
+      "hint": "7 work days with breaks"
+    },
+    "streak30": {
+      "title": "A month in a row",
+      "hint": "30 work days with breaks"
+    },
+    "breaks100": {
+      "title": "100 breaks",
+      "hint": "Breaks done in total"
+    },
+    "breaks1000": {
+      "title": "1000 breaks",
+      "hint": "The habit is yours"
+    },
+    "standUp100": {
+      "title": "Stood up 100 times",
+      "hint": "Stand-up breaks"
+    },
+    "water50": {
+      "title": "50 glasses",
+      "hint": "Marked \"Done\" on water"
+    },
+    "noLongSitting5": {
+      "title": "No long sitting",
+      "hint": "5 work days without 2-hour stretches"
+    }
+  },
+  "share": {
+    "button": "Share",
+    "streak_one": "{{count}} day in a row",
+    "streak_other": "{{count}} days in a row",
+    "total_one": "{{count}} break at the computer",
+    "total_other": "{{count}} breaks at the computer",
+    "footer": "Unslouch: a free app for health at the computer · unslouch.app",
+    "saved": "Image saved"
+  },
+  "about": {
+    "text": "The app reminds you of what doctors recommend to people who spend all day at a computer: blink more often, every 20 minutes look into the distance for 20 seconds, stand up and move, stretch your neck, shoulders and hands, drink water.",
+    "disclaimer": "The app does not treat anything and does not replace a doctor. Do the exercises without pain. If something hurts, goes numb, or your vision gets worse, see a doctor.",
+    "site": "Website",
+    "openSource": "Open source on GitHub",
+    "science": "What research says",
+    "privacy": "Privacy policy",
+    "terms": "Terms of use",
+    "licenses": "Third-party licenses",
+    "translation": "Found a translation mistake?",
+    "privacyShort": "We don't collect any data: everything stays on your computer.",
+    "version": "Version {{v}}"
+  },
+  "onboarding": {
+    "title": "Unslouch is running",
+    "whereMac": "The little figure icon is now in the menu bar, top right.",
+    "whereWin": "The little figure icon is now in the system tray next to the clock. If you can't see it, click the “^” arrow.",
+    "whereLinux": "The little figure icon is now in the system tray. GNOME needs the AppIndicator extension for it; Ubuntu has it already.",
+    "how": "Every 20 minutes the app asks you to take half a minute: one exercise and a look into the distance. Every 45 minutes it suggests standing up. Between breaks there are gentle cues: blink, change position, drink water.",
+    "disclaimer": "The app does not treat anything and does not replace a doctor. Do the exercises without pain.",
+    "next": "Next",
+    "back": "Back",
+    "finish": "Done",
+    "concernsTitle": "What bothers you?",
+    "concernsHint": "Pick what you want to look after. You can change it later in settings.",
+    "concern": {
+      "eyes": "Tired, dry, burning eyes",
+      "neck": "Stiff neck, tight shoulders",
+      "back": "Aching lower back",
+      "hands": "Tired hands and wrists",
+      "legs": "Swollen legs by evening",
+      "breath": "Tension, stress"
+    },
+    "workplaceTitle": "Set up your workstation",
+    "workplaceHint": "Takes a couple of minutes. You can tick the items later in settings.",
+    "workHours": "Only during work hours: Monday to Friday, {{from}} to {{to}}",
+    "workHoursHint": "Turn off if you also work on weekends. Days and hours can be changed in settings"
+  },
+  "promo": {
+    "title": "My Healthy Diet",
+    "text": "A food diary from the same authors: calories, protein, fat and carbs, water and weight. On your phone and in the browser.",
+    "button": "Open"
+  },
+  "ex": {
+    "blink": {
+      "title": "Full blink",
+      "close": "Gently close your eyes",
+      "squeeze": "Lightly squeeze your eyelids",
+      "open": "Open"
+    },
+    "chinTuck": {
+      "title": "Chin tuck",
+      "tuck": "Draw your head back as if making a double chin. Keep looking ahead",
+      "release": "Relax"
+    },
+    "shoulderBlades": {
+      "title": "Shoulder blade squeeze",
+      "squeeze": "Drop your shoulders and squeeze the blades back and down",
+      "release": "Release"
+    },
+    "shrugs": {
+      "title": "Shoulder shrugs",
+      "up": "Lift your shoulders to your ears",
+      "down": "Drop and relax"
+    },
+    "sideTilt": {
+      "title": "Neck side tilt",
+      "right": "Right ear toward the right shoulder, shoulders stay down",
+      "center": "Head straight",
+      "left": "Left ear toward the left shoulder"
+    },
+    "headTurns": {
+      "title": "Head turns",
+      "right": "Slowly turn your head to the right",
+      "left": "Now to the left"
+    },
+    "standingExtension": {
+      "title": "Standing back bend",
+      "lean": "Hands on your lower back, gently lean back",
+      "return": "Come back upright"
+    },
+    "seatedTwist": {
+      "title": "Seated twist",
+      "right": "Feet on the floor, turn your upper body to the right",
+      "center": "Come back",
+      "left": "Turn to the left"
+    },
+    "catCow": {
+      "title": "Seated cat-cow",
+      "round": "Round your back, chin to chest",
+      "arch": "Arch, chest forward"
+    },
+    "fistOpen": {
+      "title": "Fist and spread",
+      "fist": "Make a fist",
+      "open": "Spread your fingers wide"
+    },
+    "tendonGlides": {
+      "title": "Tendon glides",
+      "straight": "Straight hand",
+      "hook": "Hook: bend your fingers",
+      "fist": "Fist",
+      "table": "Tabletop: fingers straight, bent at the knuckles",
+      "straightFist": "Straight fist"
+    },
+    "flexorStretch": {
+      "title": "Wrist stretch, palm out",
+      "right": "Right arm forward, palm out. Gently pull the fingers back with the left hand",
+      "left": "Now the left arm"
+    },
+    "extensorStretch": {
+      "title": "Wrist stretch, palm in",
+      "right": "Right arm forward, hand down. Gently press the back of the hand",
+      "left": "Now the left arm"
+    },
+    "shake": {
+      "title": "Shake out",
+      "shake": "Relax and shake out your hands"
+    },
+    "anklePumps": {
+      "title": "Ankle pumps",
+      "up": "Toes up",
+      "down": "Toes down"
+    },
+    "calfRaises": {
+      "title": "Calf raises",
+      "up": "Holding the desk, rise onto your toes",
+      "down": "Slowly lower"
+    },
+    "walk": {
+      "title": "Walk around",
+      "walk": "Walk: to the window, for water, up the stairs"
+    },
+    "lateralRaise": {
+      "title": "Lateral raise",
+      "up": "Raise straight arms out to shoulder height",
+      "down": "Slowly lower"
+    },
+    "reverseFly": {
+      "title": "Bent-over reverse fly",
+      "open": "Lean forward, open your arms back, squeezing the shoulder blades",
+      "close": "Lower your arms"
+    },
+    "shrugHold": {
+      "title": "Shrug and hold",
+      "up": "Lift your shoulders and hold",
+      "down": "Lower"
+    },
+    "breathing": {
+      "title": "Slow breathing",
+      "in": "Breathe in through the nose",
+      "out": "Slow breath out"
+    }
+  }
+}

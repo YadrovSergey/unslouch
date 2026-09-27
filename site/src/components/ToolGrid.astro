@@ -1,0 +1,35 @@
+---
+import { href, t, type Lang } from "../i18n";
+import { TOOL_ORDER, type ToolKey } from "../lib/tools";
+interface Props {
+  lang: Lang;
+  exclude?: ToolKey;
+  withApp?: boolean;
+}
+const { lang, exclude, withApp = false } = Astro.props;
+const d = t(lang);
+const tools = TOOL_ORDER.filter((k) => k !== exclude).map((k) => d.tools.list[k]);
+---
+
+<ul class="grid grid--4 tool-grid" role="list" style="list-style:none;padding:0;margin:16px 0 0">
+  {
+    withApp && (
+      <li>
+        <a class="card" href={href(lang, "/app/")}>
+          <h3>{d.browserApp.title}</h3>
+          <p>{d.meta.browserApp.description}</p>
+        </a>
+      </li>
+    )
+  }
+  {
+    tools.map((tool) => (
+      <li>
+        <a class="card" href={href(lang, `/tools/${tool.slug}/`)}>
+          <h3>{tool.title}</h3>
+          <p>{tool.short}</p>
+        </a>
+      </li>
+    ))
+  }
+</ul>

@@ -1,0 +1,18 @@
+---
+import ToolPage from "../../../layouts/ToolPage.astro";
+import { SOURCES } from "@app/lib/sources";
+import { app, langPaths, t, type Lang } from "../../../i18n";
+import { islandText } from "../../../lib/islandText";
+import { ANCHORS, EXTRA_SOURCES } from "../../../lib/science";
+import DeskCalc from "../../../components/islands/DeskCalc";
+export const getStaticPaths = langPaths;
+const { lang } = Astro.props as { lang: Lang };
+const a = app(lang);
+const d = t(lang);
+const text = islandText(lang);
+const anchors = ANCHORS[lang];
+---
+
+<ToolPage lang={lang} tool="deskHeight" why={a.why.workplace.text} doctor={a.why.workplace.doctor} sources={SOURCES.workplace} anchor={anchors.workplace}>
+  <DeskCalc client:load text={d.tools.deskHeight} imperial={lang === "en"} />
+</ToolPage>

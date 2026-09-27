@@ -1,0 +1,23 @@
+---
+import ToolPage from "../../../layouts/ToolPage.astro";
+import { SOURCES } from "@app/lib/sources";
+import { app, langPaths, t, type Lang } from "../../../i18n";
+import { islandText } from "../../../lib/islandText";
+import { ANCHORS, EXTRA_SOURCES } from "../../../lib/science";
+import Checklist from "../../../components/islands/Checklist";
+import DeskCalc from "../../../components/islands/DeskCalc";
+export const getStaticPaths = langPaths;
+const { lang } = Astro.props as { lang: Lang };
+const a = app(lang);
+const d = t(lang);
+const text = islandText(lang);
+const anchors = ANCHORS[lang];
+const keys = ["screenHeight", "screenDistance", "elbows", "wrists", "feet", "back", "light"] as const;
+const items = keys.map((key) => ({ key, text: a.checklist[key] }));
+---
+
+<ToolPage lang={lang} tool="checklist" why={a.why.workplace.text} doctor={a.why.workplace.doctor} sources={SOURCES.workplace} anchor={anchors.workplace}>
+  <Checklist client:load items={items} t={d.tools.checklist} />
+  <h2>{d.tools.checklist.calcTitle}</h2>
+  <DeskCalc client:visible text={d.tools.deskHeight} imperial={lang === "en"} />
+</ToolPage>

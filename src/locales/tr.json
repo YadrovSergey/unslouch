@@ -1,0 +1,508 @@
+{
+  "app": {
+    "name": "Unslouch"
+  },
+  "tray": {
+    "nextBreak": "Sonraki mola: {{n}} dk",
+    "pausedUntil": "{{time}} saatine kadar duraklatıldı",
+    "focusUntil": "{{time}} saatine kadar odak",
+    "outsideHours": "Mesai saati dışında",
+    "inCall": "Görüşmede, hatırlatmalar bekliyor",
+    "dnd": "Rahatsız Etmeyin açık, hatırlatmalar bekliyor",
+    "breaksOff": "Molalar kapalı",
+    "microNow": "Şimdi göz molası",
+    "movementNow": "Şimdi biraz hareket",
+    "breathingNow": "Bir dakika nefes al",
+    "focus": "Odak",
+    "focus25": "25 dakika",
+    "focus50": "50 dakika",
+    "focusStop": "Odağı bitir",
+    "pause": "Duraklat",
+    "pause30": "30 dakika",
+    "pause60": "Bir saat",
+    "pauseTomorrow": "Yarına kadar",
+    "resume": "Devam et",
+    "today": "Bugünkü molalar: {{done}} · bilgisayar başında {{time}}",
+    "hm": "{{h}} sa {{m}} dk",
+    "m": "{{m}} dk",
+    "stats": "İstatistikler…",
+    "settings": "Ayarlar…",
+    "about": "Hakkında",
+    "mzr": "MZR beslenme günlüğü",
+    "quit": "Çıkış",
+    "update": "{{v}} sürümünü yükle"
+  },
+  "time": {
+    "hm": "{{h}} sa {{m}} dk",
+    "m": "{{m}} dk"
+  },
+  "break": {
+    "lookFar": "Uzağa bakın",
+    "lookFarHint": "Pencereden dışarıya ya da uzaktaki bir duvara, 6 metreden daha uzağa. Yakına odaklanmayı sağlayan kas bu sırada dinlenir.",
+    "standUp": "Ayağa kalkın",
+    "standUpHint": "Sırt ve bacaklar için birkaç egzersiz, sonra biraz yürüyün.",
+    "walkHint": "Pencereye kadar, su almaya, merdivenlerden. Bu arada biraz su için.",
+    "longTitle": "Uzun mola",
+    "longHint": "Bilgisayardan uzaklaşın: yürüyün, öğle yemeği yiyin, dışarı çıkın. Ekran bekleyebilir.",
+    "neckTitle": "Boyun ve omuzlar için iki dakika",
+    "neckHint": "Günde bir kez kısa bir güç egzersizi. Yavaş hareket edin.",
+    "breathTitle": "Bir dakika yavaş nefes",
+    "breathHint": "Daireyi takip edin: 4 sayarak nefes alın, 6 sayarak verin.",
+    "done": "Tamam, işe dönebilirsiniz",
+    "seconds_one": "saniye",
+    "seconds_other": "saniye",
+    "minutes_one": "dakika",
+    "minutes_other": "dakika",
+    "repeat": "{{n}} / {{total}}",
+    "postpone": "{{n}} dk ertele",
+    "skip": "Atla",
+    "tip": "İpucu",
+    "noPain": "Ağrı olmadan. Acırsa durun.",
+    "tips": [
+      "Ekranı bir kol boyu uzakta tutun, 50–70 cm.",
+      "Ekranın üst kenarı göz hizasında ya da biraz altında olsun. Hafifçe aşağı bakarken göz daha az açık kalır ve daha az kurur.",
+      "Klima ve vantilatör yüzünüze doğru esmemeli. Kışın nemlendirici işe yarar.",
+      "Ekran parlaklığını odadaki ışığa göre ayarlayın. Karanlık odada parlak ekran daha çok yorar.",
+      "Gözlerinizi kısıyorsanız yazı boyutunu büyütün.",
+      "Suni gözyaşı damlalarını doktor seçmeli, kendi kendinize kullanmaya başlamayın.",
+      "Pozisyonunuzu sık değiştirin. En iyi duruş, bir sonraki duruştur.",
+      "Fareyi klavyenin yanında tutun, ona uzanmak zorunda kalmayın.",
+      "Öğle arasında en az 10 dakika dışarıda gün ışığına çıkın."
+    ]
+  },
+  "endOfDay": {
+    "title": "İş günü bitti",
+    "hint": "İş sekmelerini kapatın, kalanı yarına bırakın. İşten sonra kafayı boşaltmak daha iyi uyumaya yardımcı olur.",
+    "breaks": "mola",
+    "atComputer": "bilgisayarda",
+    "longestSitting": "en uzun oturma süresi",
+    "continue": "Biraz daha çalışacağım",
+    "finish": "Bitiriyorum"
+  },
+  "wellbeing": {
+    "title": "Bu hafta nasılsınız?",
+    "hint": "Haftada bir kez dört soru. Yanıtlarınız molaların size özellikle yardımcı olup olmadığını gösterir. Bu tıbbi bir test değildir.",
+    "eyes": "Gözler",
+    "neck": "Boyun ve omuzlar",
+    "back": "Sırt",
+    "hands": "Eller",
+    "level0": "Rahatsız etmiyor",
+    "level1": "Biraz",
+    "level2": "Belirgin",
+    "level3": "Çok",
+    "skip": "Şimdi değil",
+    "save": "Kaydet",
+    "chartTitle": "Haftalara göre durumunuz",
+    "chartHint": "Pazartesi yanıtlarınız. Yeşil: rahatsız etmiyor, kırmızı: çok rahatsız ediyor.",
+    "empty": "Henüz yanıt yok. Sorular ilk moladan sonra pazartesi gelir."
+  },
+  "cue": {
+    "blink": "Göz kırpın",
+    "posture": "Pozisyon değiştirin",
+    "water": "Biraz su için",
+    "drank": "İçtim",
+    "logInMzr": "MZR'ye kaydet",
+    "close": "Kapat"
+  },
+  "tabs": {
+    "settings": "Ayarlar",
+    "stats": "İstatistikler",
+    "exercises": "Egzersizler",
+    "about": "Hakkında"
+  },
+  "sections": {
+    "eyes": "Gözler",
+    "eyesHint": "Uzağa bakma ve göz kırpma egzersizi",
+    "neck": "Boyun ve omuzlar",
+    "neckHint": "Çene geri çekme, kürek kemikleri, yana eğilmeler",
+    "back": "Sırt",
+    "backHint": "Geriye esneme, dönme, ayağa kalkma molalarında kedi-inek",
+    "hands": "Eller",
+    "handsHint": "Yumruk ve açma, tendon kaydırma, bilek esnetme",
+    "legs": "Bacaklar",
+    "legsHint": "Ayak bileği pompası, parmak ucunda yükselme, yürüyüş",
+    "breath": "Stres",
+    "breathHint": "Günde bir kez yavaş nefes"
+  },
+  "settings": {
+    "rhythm": "Ritim",
+    "preset": "Mod",
+    "presets": {
+      "recommended": "Önerilen",
+      "pomodoro": "Pomodoro",
+      "hourly": "Saatlik",
+      "custom": "Özel"
+    },
+    "presetHint": {
+      "recommended": "Her 20 dakikada göz molası, her 45 dakikada ayağa kalkma",
+      "pomodoro": "25 dakika çalışma, 5 dakika mola, her 2 saatte bir uzun mola",
+      "hourly": "Her 20 dakikada göz molası, saatte bir ayağa kalkma",
+      "custom": "Aşağıdaki ayarlarınız"
+    },
+    "body": "Neye dikkat ediyorum",
+    "bodyHint": "Egzersizler yalnızca açık olan bölümlerden gelir.",
+    "microSection": "Mikro mola",
+    "microEnabled": "Göz molası",
+    "microHint": "Kısa bir egzersiz ve uzağa bakma",
+    "every": "Her",
+    "lookFarFor": "Uzağa bakma süresi",
+    "movementSection": "Ayağa kalk",
+    "movementEnabled": "Ayağa kalkmayı hatırlat",
+    "movementHint": "Sırt ve bacak egzersizleri, kısa bir yürüyüş",
+    "duration": "Süre",
+    "longEnabled": "Uzun mola",
+    "longHint": "Birkaç saatte bir daha uzağa gidin: öğle yemeği, yürüyüş",
+    "cuesSection": "Nazik işaretler",
+    "cuesHint": "Pencere ya da düğme yok, işinizi bölmezler.",
+    "blinkCue": "Göz kırp",
+    "blinkCueHint": "Ekran kenarları bir saniyeliğine kararır",
+    "postureCue": "Pozisyon değiştir",
+    "postureCueHint": "Üstte birkaç saniyelik küçük bir şerit",
+    "water": "Su",
+    "waterHint": "Köşede kendiliğinden kaybolan bir kart",
+    "dailySection": "Günde bir kez",
+    "neckDaily": "Boyun ve omuzlar için iki dakika",
+    "neckDailyHint": "Saat 11:00'den sonra güç egzersizi. Araştırmalara göre günde 2 dakika boyun ağrısını azaltır",
+    "breathingDaily": "Bir dakika nefes",
+    "breathingDailyHint": "Saat 15:00'ten sonra, bir göz molası yerine",
+    "endOfDay": "İş gününün sonu",
+    "endOfDayHint": "Bitirmenizi hatırlatır ve günün özetini gösterir",
+    "at": "Saat",
+    "workSection": "Çalışma saatleri",
+    "workHours": "Yalnızca çalışma saatlerinde hatırlat",
+    "workHoursHint": "Geri kalan zamanda uygulama sessiz kalır",
+    "workDays": "Günler",
+    "from": "Başlangıç",
+    "to": "Bitiş",
+    "quietSection": "Rahatsız etme",
+    "pauseOnCalls": "Görüşme bitene kadar bekle",
+    "pauseOnCallsHint": "Başka bir program kamerayı ya da mikrofonu kullandığında. Onları asla kendimiz açmayız",
+    "pauseInFullscreen": "Video ya da sunum tam ekrandayken bekle",
+    "waylandNoFullscreen": "Wayland bunu bildirmiyor",
+    "respectDnd": "Rahatsız Etmeyin moduna uy",
+    "respectDndMac": "Mac'te Odak modu her zaman okunamıyor. Menüdeki kendi Odak modumuz daha güvenilir",
+    "snooze": "Erteleme süresi",
+    "idleReset": "Bilgisayardan uzakta",
+    "idleResetHint": "Fare ve klavye bu kadar süre kullanılmazsa mola sayılır",
+    "usageSection": "Program başına süre",
+    "usageEnabled": "Program başına süreyi say",
+    "usagePrivacy": "Yalnızca program adları sayılır. Pencere başlıklarını ve siteleri okumayız. Her şey bilgisayarınızda kalır",
+    "usageUnsupported": "Burada kullanılamıyor: Wayland hangi pencerenin etkin olduğunu bildirmiyor",
+    "usageExcluded": "Sayma",
+    "usageExcludedHint": "Bu programlar hiç kaydedilmez",
+    "usageAddPlaceholder": "Ad yazıp Enter",
+    "usageClear": "Program geçmişini sil",
+    "usageClearConfirm": "Program başına sürenin tüm geçmişi silinsin mi?",
+    "usageCleared": "Geçmiş silindi",
+    "workplaceSection": "Çalışma yeri",
+    "generalSection": "Genel",
+    "theme": "Tema",
+    "themeSystem": "Sistem",
+    "themeLight": "Açık",
+    "themeDark": "Koyu",
+    "language": "Dil",
+    "systemLanguage": "Sistem dili",
+    "sound": "Mola sonunda ses",
+    "soundHint": "Ekrana bakmadan molanın bittiğini anlamanız için",
+    "autostart": "Bilgisayarla birlikte başlat",
+    "checkUpdates": "Güncellemeleri denetle",
+    "checkUpdatesHint": "Günde bir kez sürüm numarasını içeren bir dosya indiririz. Başka hiçbir şey gönderilmez",
+    "defaults": "Önerilene dön",
+    "min": "dk",
+    "sec": "sn"
+  },
+  "data": {
+    "title": "Başka bilgisayara taşı",
+    "hint": "Ayarlar ve istatistikler tek dosyada",
+    "export": "Dosyaya kaydet",
+    "import": "Dosyadan yükle",
+    "exported": "Dosya kaydedildi",
+    "imported": "Veriler yüklendi",
+    "importFailed": "Dosya okunamadı"
+  },
+  "why": {
+    "toggle": "Neden",
+    "doctor": "Doktora başvurun:",
+    "eyes": {
+      "text": "Ekran başında 2–3 kat daha seyrek göz kırparız ve kırpmaların yarısı tam olmaz, bu yüzden gözler kurur. Yakına odaklanmayı sağlayan kas saatlerce dinlenmez. Uzağa bakma hatırlatmaları yanmayı ve göz yorgunluğunu azaltır.",
+      "doctor": "gözleriniz ağrıyor, kızarıyorsa, çift görüyorsanız ya da görmeniz kötüleşiyorsa."
+    },
+    "neck": {
+      "text": "Başı hafifçe öne uzatarak uzun süre oturmak boyun ve omuz kaslarını sürekli biraz gergin tutar. En çok kısa güç egzersizleri yardımcı olur: günde 2 dakika bile ağrıyı azaltır.",
+      "doctor": "ağrı ya da uyuşma kola yayılıyorsa, kolunuz güçsüzleşiyorsa veya ağrı 6 haftadan uzun sürüyorsa."
+    },
+    "back": {
+      "text": "Sırta zarar veren “yanlış” duruş değil, hareketsizliktir. En iyi duruş, bir sonraki duruştur. Her 20–30 dakikada kısa yürüyüşler yemekten sonra kan şekerini de düşürür.",
+      "doctor": "kasıklarınızda uyuşma varsa, bacaklarınız güçsüzleşiyorsa, ağrı geceleri şiddetliyse ya da 4–6 hafta sürüyorsa."
+    },
+    "hands": {
+      "text": "Ön kol kasları dinlenmeden çalışır, bilek çoğu zaman bükülüdür. Her 20 dakikada verilen molalar kollardaki rahatsızlığı azaltır. Bilgisayar kullanımı ile karpal tünel sendromu arasındaki bağlantı kanıtlanmamıştır, bu yüzden onu önlemeyi vaat etmiyoruz.",
+      "doctor": "başparmak, işaret ve orta parmaklarınız özellikle geceleri uyuşuyorsa ya da elinizden bir şeyler düşürüyorsanız."
+    },
+    "legs": {
+      "text": "Baldır kasları kanı bacaklardan yukarı iten bir pompa gibi çalışır. Oturunca bu pompa durur ve akşama doğru bacaklar şişer. En az saatte bir kalkıp yürümek yardımcı olur.",
+      "doctor": "hemen, bir bacağınız şişmiş, ağrılı ve kızarmışsa ya da nefes darlığı ve göğüs ağrısı başladıysa."
+    },
+    "breath": {
+      "text": "Uzun nefes vermeyle dakikada yaklaşık 6 nefes alınan yavaş soluma gerginliği azaltır. Etkisi küçüktür ama birkaç dakika içinde fark edilir.",
+      "doctor": "kaygı haftalardır hayatınızı zorlaştırıyorsa: nefes egzersizi uzman yardımının yerini tutmaz."
+    },
+    "water": {
+      "text": "Hafif susuzluk bile dikkati ve ruh halini bozar, baş ağrısı yapabilir. Günlük miktar dayatmıyoruz: susuzluk hissinize göre için. Çay ve kahve de sayılır.",
+      "doctor": "doktorunuz sıvı alımınızı kısıtladıysa, onun önerisine uyun ve bu hatırlatmayı kapatın."
+    },
+    "workplace": {
+      "text": "İyi düzenlenmiş bir çalışma yeri rahatsızlığın bir kısmını giderir ama tek başına pek bir şey değiştirmez. Molalar ve hareket daha çok işe yarar.",
+      "doctor": "çalışma yerini düzenleyip mola verdikten sonra da ağrı geçmiyorsa."
+    }
+  },
+  "checklist": {
+    "height": "Boyunuz",
+    "cm": "cm",
+    "seat": "oturak yüksekliği",
+    "desk": "masa yüksekliği",
+    "screenTop": "ekranın üst kenarının yerden yüksekliği",
+    "standingDesk": "ayakta çalışma masası",
+    "calcNote": "Ortalama vücut oranlarına göre yaklaşık değer. Nasıl hissettiğinize göre kontrol edin: dirsekler yaklaşık 90°, ayaklar yerde.",
+    "screenHeight": "Ekranın üst kenarı göz hizasında ya da biraz altında",
+    "screenDistance": "Ekran bir kol boyu uzakta, 50–70 cm",
+    "elbows": "Dirsekler yaklaşık 90°, omuzlar aşağıda, ön kollar gevşek",
+    "wrists": "Bilekler düz, fare klavyenin yanında",
+    "feet": "Ayaklar yere ya da ayak desteğine tam basıyor",
+    "back": "Sandalyenin arkalığı belinizi destekliyor",
+    "light": "Ekranda parlama yok, pencere yanda, arkanızda değil"
+  },
+  "stats": {
+    "tabs": {
+      "overview": "Genel bakış",
+      "apps": "Programlar",
+      "wellbeing": "İyi oluş",
+      "achievements": "Başarılar"
+    },
+    "today": "Bugün",
+    "done": "Yapılan",
+    "skipped": "Atlanan",
+    "atComputer": "Bilgisayarda",
+    "longestSitting": "En uzun oturma",
+    "streak": "Art arda gün",
+    "sittingWarning": "Bugün kalkmadan 2 saatten fazla oturdunuz. Bunu sık yapmak bacak damarları için riski artırır. En az saatte bir kalkmaya çalışın.",
+    "week": "Hafta",
+    "empty": "Henüz bir şey yok. İlk mola 20 dakikalık çalışmadan sonra gelir.",
+    "year": "Yıl",
+    "less": "Az",
+    "more": "Çok",
+    "appsOff": "Program başına süre ayarlarda kapalı.",
+    "appsEmpty": "Henüz veri yok.",
+    "longestIn": "Molasız en uzun süreniz {{app}} içindeydi: {{time}}",
+    "programs": "Programlar",
+    "category": "Kategori",
+    "categories": {
+      "work": "İş",
+      "communication": "İletişim",
+      "entertainment": "Eğlence",
+      "other": "Diğer"
+    },
+    "otherApps": "Diğerleri",
+    "byCategory": "Kategoriye göre",
+    "byHour": "Saate göre",
+    "exclude": "Bu programı sayma"
+  },
+  "achievements": {
+    "title": "Başarılar",
+    "firstBreak": {
+      "title": "İlk mola",
+      "hint": "İyi bir başlangıç"
+    },
+    "streak7": {
+      "title": "Art arda bir hafta",
+      "hint": "Molalı 7 iş günü"
+    },
+    "streak30": {
+      "title": "Art arda bir ay",
+      "hint": "Molalı 30 iş günü"
+    },
+    "breaks100": {
+      "title": "100 mola",
+      "hint": "Toplam yapılan mola"
+    },
+    "breaks1000": {
+      "title": "1000 mola",
+      "hint": "Bu alışkanlık artık sizin"
+    },
+    "standUp100": {
+      "title": "100 kez kalktınız",
+      "hint": "Ayağa kalkma molaları"
+    },
+    "water50": {
+      "title": "50 bardak",
+      "hint": "Suda “İçtim” işaretlendi"
+    },
+    "noLongSitting5": {
+      "title": "Uzun oturma yok",
+      "hint": "2 saatlik oturma olmadan 5 iş günü"
+    }
+  },
+  "share": {
+    "button": "Paylaş",
+    "streak_one": "Art arda {{count}} gün",
+    "streak_other": "Art arda {{count}} gün",
+    "total_one": "Bilgisayarda {{count}} mola",
+    "total_other": "Bilgisayarda {{count}} mola",
+    "footer": "Unslouch: bilgisayar başında sağlık için ücretsiz uygulama · unslouch.app",
+    "saved": "Görsel kaydedildi"
+  },
+  "about": {
+    "text": "Uygulama, tüm gününü bilgisayar başında geçiren kişilere doktorların önerdiklerini hatırlatır: daha sık göz kırpın, her 20 dakikada 20 saniye uzağa bakın, ayağa kalkıp hareket edin, boynunuzu, omuzlarınızı ve ellerinizi esnetin, su için.",
+    "disclaimer": "Uygulama hiçbir şeyi tedavi etmez ve doktorun yerini tutmaz. Egzersizleri ağrı olmadan yapın. Bir yeriniz ağrırsa, uyuşursa ya da görmeniz kötüleşirse doktora başvurun.",
+    "site": "Web sitesi",
+    "openSource": "GitHub'da açık kaynak",
+    "science": "Araştırmalar ne diyor",
+    "privacy": "Gizlilik politikası",
+    "terms": "Kullanım koşulları",
+    "licenses": "Üçüncü taraf lisansları",
+    "translation": "Çeviride hata mı buldunuz?",
+    "privacyShort": "Hiçbir veri toplamıyoruz: her şey bilgisayarınızda kalır.",
+    "version": "Sürüm {{v}}"
+  },
+  "onboarding": {
+    "title": "Unslouch çalışıyor",
+    "whereMac": "Küçük insan simgesi artık menü çubuğunda, sağ üstte.",
+    "whereWin": "Küçük insan simgesi artık sistem tepsisinde, saatin yanında. Görmüyorsanız “^” okuna tıklayın.",
+    "whereLinux": "Küçük insan simgesi artık sistem tepsisinde. GNOME'da bunun için AppIndicator eklentisi gerekir; Ubuntu'da zaten yüklüdür.",
+    "how": "Uygulama her 20 dakikada yarım dakikanızı ister: bir egzersiz ve uzağa bir bakış. Her 45 dakikada ayağa kalkmayı önerir. Molalar arasında nazik işaretler olur: göz kırpın, pozisyon değiştirin, su için.",
+    "disclaimer": "Uygulama hiçbir şeyi tedavi etmez ve doktorun yerini tutmaz. Egzersizleri ağrı olmadan yapın.",
+    "next": "İleri",
+    "back": "Geri",
+    "finish": "Tamam",
+    "concernsTitle": "Sizi ne rahatsız ediyor?",
+    "concernsHint": "Neye dikkat etmek istediğinizi seçin. Daha sonra ayarlardan değiştirebilirsiniz.",
+    "concern": {
+      "eyes": "Yorgun, kuru, yanan gözler",
+      "neck": "Tutulan boyun, gergin omuzlar",
+      "back": "Bel ağrısı",
+      "hands": "Yorgun eller ve bilekler",
+      "legs": "Akşama doğru şişen bacaklar",
+      "breath": "Gerginlik, stres"
+    },
+    "workplaceTitle": "Çalışma yerinizi düzenleyin",
+    "workplaceHint": "Birkaç dakika sürer. Maddeleri daha sonra ayarlardan işaretleyebilirsiniz.",
+    "workHours": "Yalnızca çalışma saatlerinde: pazartesiden cumaya, {{from}}–{{to}}",
+    "workHoursHint": "Hafta sonları da çalışıyorsanız kapatın. Günler ve saatler ayarlardan değiştirilebilir"
+  },
+  "promo": {
+    "title": "My Healthy Diet",
+    "text": "Aynı yazarlardan bir beslenme günlüğü: kalori, protein, yağ ve karbonhidrat, su ve kilo. Telefonda ve tarayıcıda.",
+    "button": "Aç"
+  },
+  "ex": {
+    "blink": {
+      "title": "Tam göz kırpma",
+      "close": "Gözlerinizi yavaşça kapatın",
+      "squeeze": "Göz kapaklarınızı hafifçe sıkın",
+      "open": "Açın"
+    },
+    "chinTuck": {
+      "title": "Çene geri çekme",
+      "tuck": "Çift çene yapar gibi başınızı geriye çekin. İleriye bakmaya devam edin",
+      "release": "Gevşeyin"
+    },
+    "shoulderBlades": {
+      "title": "Kürek kemiklerini sıkma",
+      "squeeze": "Omuzlarınızı indirin, kürek kemiklerinizi geriye ve aşağıya doğru sıkın",
+      "release": "Bırakın"
+    },
+    "shrugs": {
+      "title": "Omuz silkme",
+      "up": "Omuzlarınızı kulaklarınıza doğru kaldırın",
+      "down": "İndirin ve gevşeyin"
+    },
+    "sideTilt": {
+      "title": "Boynu yana eğme",
+      "right": "Sağ kulak sağ omza doğru, omuzlar aşağıda kalsın",
+      "center": "Baş dik",
+      "left": "Sol kulak sol omza doğru"
+    },
+    "headTurns": {
+      "title": "Baş çevirme",
+      "right": "Başınızı yavaşça sağa çevirin",
+      "left": "Şimdi sola"
+    },
+    "standingExtension": {
+      "title": "Ayakta geriye esneme",
+      "lean": "Ellerinizi belinize koyun, hafifçe geriye doğru eğilin",
+      "return": "Dik duruşa dönün"
+    },
+    "seatedTwist": {
+      "title": "Oturarak dönme",
+      "right": "Ayaklar yerde, üst gövdenizi sağa çevirin",
+      "center": "Geri dönün",
+      "left": "Sola çevirin"
+    },
+    "catCow": {
+      "title": "Oturarak kedi-inek",
+      "round": "Sırtınızı yuvarlayın, çene göğse",
+      "arch": "Sırtınızı içe doğru bükün, göğüs öne"
+    },
+    "fistOpen": {
+      "title": "Yumruk ve açma",
+      "fist": "Yumruk yapın",
+      "open": "Parmaklarınızı iyice açın"
+    },
+    "tendonGlides": {
+      "title": "Tendon kaydırma",
+      "straight": "Düz el",
+      "hook": "Kanca: parmaklarınızı bükün",
+      "fist": "Yumruk",
+      "table": "Masa: parmaklar düz, eklem köklerinden bükülü",
+      "straightFist": "Düz yumruk"
+    },
+    "flexorStretch": {
+      "title": "Bilek esnetme, avuç dışa",
+      "right": "Sağ kol önde, avuç dışa dönük. Sol elinizle parmakları hafifçe geriye çekin",
+      "left": "Şimdi sol kol"
+    },
+    "extensorStretch": {
+      "title": "Bilek esnetme, avuç içe",
+      "right": "Sağ kol önde, el aşağıda. Elin üstüne hafifçe bastırın",
+      "left": "Şimdi sol kol"
+    },
+    "shake": {
+      "title": "Silkeleme",
+      "shake": "Ellerinizi gevşetip silkeleyin"
+    },
+    "anklePumps": {
+      "title": "Ayak bileği pompası",
+      "up": "Parmak uçları yukarı",
+      "down": "Parmak uçları aşağı"
+    },
+    "calfRaises": {
+      "title": "Parmak ucunda yükselme",
+      "up": "Masaya tutunarak parmak uçlarınızda yükselin",
+      "down": "Yavaşça inin"
+    },
+    "walk": {
+      "title": "Biraz yürüyün",
+      "walk": "Yürüyün: pencereye kadar, su almaya, merdivenlerden"
+    },
+    "lateralRaise": {
+      "title": "Yana kol kaldırma",
+      "up": "Düz kollarınızı yanlara, omuz hizasına kadar kaldırın",
+      "down": "Yavaşça indirin"
+    },
+    "reverseFly": {
+      "title": "Eğilerek ters açış",
+      "open": "Öne eğilin, kürek kemiklerinizi sıkarak kollarınızı geriye açın",
+      "close": "Kollarınızı indirin"
+    },
+    "shrugHold": {
+      "title": "Omuz kaldırıp tutma",
+      "up": "Omuzlarınızı kaldırın ve tutun",
+      "down": "İndirin"
+    },
+    "breathing": {
+      "title": "Yavaş nefes",
+      "in": "Burundan nefes alın",
+      "out": "Yavaşça nefes verin"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+---
+import Base from "../layouts/Base.astro";
+import { ExerciseLoop } from "../components/islands/common";
+import { app, t } from "../i18n";
+// One 404 file for the whole bucket: English first, with a Russian line and link.
+const d = t("en");
+const ru = t("ru");
+const ex = app("en").ex as unknown as Record<string, Record<string, string>>;
+---
+
+<Base lang="en" path="/404/" title={d.meta.notFound.title} description={d.meta.notFound.description} alternates={false} noindex>
+  <div class="wrap notfound">
+    <ExerciseLoop client:load id="headTurns" ex={ex} />
+    <h1>{d.notFound.title}</h1>
+    <p class="lead" style="margin:0 auto 16px">{d.notFound.text}</p>
+    <p lang="ru" class="muted">{ru.notFound.title}. {ru.notFound.text}</p>
+    <div class="button-row" style="justify-content:center">
+      <a class="btn btn--primary" href="/">{d.notFound.home}</a>
+      <a class="btn" href="/ru/" lang="ru">{ru.notFound.home}</a>
+    </div>
+  </div>
+</Base>

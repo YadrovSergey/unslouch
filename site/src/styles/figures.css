@@ -1,0 +1,341 @@
+/* Exercise illustrations (.fig, .hand, .eye, .breath, .walk, .twist), countdown and step bar.
+   Copied from ../src/styles.css so the site draws the same figures as the app. Keep in sync. */
+.countdown {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.countdown svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.countdown circle {
+  fill: none;
+  stroke-width: 6;
+}
+
+.countdown__track {
+  stroke: rgba(233, 241, 238, 0.12);
+}
+
+.countdown__bar {
+  stroke: #7fd3a0;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.1s linear;
+}
+
+.countdown__value {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.countdown__value b {
+  font-size: 56px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.countdown__value small {
+  color: #8fa9a3;
+  margin-top: 4px;
+}
+
+.eye {
+  width: 220px;
+  height: 132px;
+}
+
+.eye__ball {
+  transform-origin: 100px 60px;
+  transition: transform 0.6s ease-in-out;
+}
+
+.eye--closed .eye__ball {
+  transform: scaleY(0.02);
+}
+
+.eye__white {
+  fill: #e9f1ee;
+}
+
+.eye__iris {
+  fill: #2f9e8a;
+}
+
+.eye__pupil {
+  fill: #0f1d24;
+}
+
+.eye__lid,
+.eye__lashes path {
+  fill: none;
+  stroke: #e9f1ee;
+  stroke-width: 4;
+  stroke-linecap: round;
+  transition: opacity 0.4s;
+}
+
+.eye--open .eye__lid,
+.eye--open .eye__lashes {
+  opacity: 0;
+}
+
+.eye--squeeze .eye__lid {
+  stroke-width: 7;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.fig,
+.hand {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.fig line,
+.hand line,
+.hand path {
+  stroke: var(--figure, #e9f1ee);
+  stroke-width: 10;
+  stroke-linecap: round;
+  fill: none;
+}
+
+.fig__head,
+.fig__hand {
+  fill: var(--figure, #e9f1ee);
+}
+
+.fig .fig__far .fig__hand {
+  fill: var(--figure-far, rgba(233, 241, 238, 0.45));
+}
+
+.fig .fig__torso {
+  stroke-width: 15;
+}
+
+.fig .fig__foot {
+  stroke-width: 8;
+}
+
+.fig__shadow {
+  fill: rgba(0, 0, 0, 0.22);
+}
+
+.fig__prop {
+  fill: var(--figure-prop, rgba(233, 241, 238, 0.16));
+}
+
+.fig__prop--seat {
+  fill: var(--figure-prop-strong, rgba(233, 241, 238, 0.28));
+}
+
+.fig__eye {
+  fill: var(--figure-bg, #1a3440);
+}
+
+.fig .fig__far line {
+  stroke: var(--figure-far, rgba(233, 241, 238, 0.45));
+}
+
+.fig .fig__chair line {
+  stroke: var(--figure-prop, rgba(233, 241, 238, 0.16));
+  stroke-width: 6;
+}
+
+.fig g,
+.fig circle,
+.fig line {
+  transition: transform 0.7s ease-in-out, cx 0.7s ease-in-out, x1 0.7s ease-in-out, x2 0.7s ease-in-out,
+    y1 0.7s ease-in-out, y2 0.7s ease-in-out;
+}
+
+.hand line {
+  stroke-width: 11;
+}
+
+.hand .hand__palm {
+  stroke-width: 30;
+}
+
+.hand .hand__arm {
+  stroke-width: 26;
+  stroke: var(--figure-far, rgba(233, 241, 238, 0.45));
+}
+
+.hand .hand__back line {
+  stroke: var(--figure-far, rgba(233, 241, 238, 0.45));
+}
+
+.hand .hand__helper {
+  stroke: var(--figure-accent, #7fd3a0);
+  stroke-width: 12;
+}
+
+.hand__joint {
+  transition: transform 0.7s ease-in-out;
+}
+
+.hand--shake .hand__rig {
+  animation: shake 0.25s ease-in-out infinite alternate;
+}
+
+@keyframes shake {
+  from {
+    transform: translateY(-5px);
+  }
+  to {
+    transform: translateY(5px);
+  }
+}
+
+.breath__guide {
+  fill: none;
+  stroke: var(--figure-prop, rgba(233, 241, 238, 0.22));
+  stroke-width: 3;
+}
+
+.breath__ball {
+  fill: var(--figure-accent, #7fd3a0);
+  opacity: 0.85;
+  transform-origin: 100px 100px;
+  transform: scale(0.35);
+}
+
+.breath--in .breath__ball {
+  transform: scale(1);
+  transition: transform 4s ease-in-out;
+}
+
+.breath--out .breath__ball {
+  transform: scale(0.35);
+  transition: transform 6s ease-in-out;
+}
+
+.walk {
+  width: 100%;
+  height: 100%;
+  animation: walk-bob 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes walk-bob {
+  to {
+    transform: translateY(-3px);
+  }
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 16px;
+  background: #1a3440;
+  min-height: 100%;
+  --figure: #e9f1ee;
+}
+
+.gallery__card {
+  margin: 0;
+  background: linear-gradient(180deg, rgba(233, 241, 238, 0.07), rgba(233, 241, 238, 0.03));
+  border-radius: 12px;
+  padding: 12px;
+  color: #e9f1ee;
+}
+
+.gallery__visual {
+  height: 170px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery__visual .eye {
+  width: 150px;
+}
+
+.gallery figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 14px;
+}
+
+.gallery figcaption span {
+  color: #9fb7b1;
+  font-size: 13px;
+}
+
+.fig .fig__arrow line,
+.fig .fig__arrow path,
+.twist__path {
+  stroke: var(--figure-accent, #7fd3a0);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.fig__arrow {
+  animation: fade-in 0.6s ease-out;
+}
+
+.twist__seat {
+  fill: none;
+  stroke: var(--figure-prop, rgba(233, 241, 238, 0.22));
+  stroke-width: 5;
+}
+
+.fig .twist__hips {
+  stroke: var(--figure-far, rgba(233, 241, 238, 0.45));
+  stroke-width: 12;
+}
+
+.fig .twist__upper line {
+  stroke-width: 14;
+}
+
+.twist__upper {
+  transform-origin: 100px 105px;
+  transition: transform 1s ease-in-out;
+}
+
+/* ---------- Break screen v2 ---------- */
+
+.step-bar {
+  width: 180px;
+  height: 4px;
+  border-radius: 2px;
+  background: rgba(233, 241, 238, 0.14);
+  overflow: hidden;
+  margin: 4px 0 8px;
+}
+
+.step-bar span {
+  display: block;
+  height: 100%;
+  background: #7fd3a0;
+  transform-origin: left;
+  animation: step-fill linear forwards;
+}
+
+@keyframes step-fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}

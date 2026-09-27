@@ -1,0 +1,18 @@
+---
+import Doc from "../../layouts/Doc.astro";
+import * as en from "../../../../docs/science.en.md";
+import * as ru from "../../../../docs/science.ru.md";
+import { langPaths, t, type Lang } from "../../i18n";
+import Cta from "../../components/Cta.astro";
+
+export const getStaticPaths = langPaths;
+const { lang } = Astro.props as { lang: Lang };
+const md = { en, ru }[lang];
+const d = t(lang);
+const html = await md.compiledContent();
+const toc = md.getHeadings().filter((h) => h.depth === 2);
+---
+
+<Doc lang={lang} path="/science/" title={d.meta.science.title} description={d.meta.science.description} html={html} toc={toc}>
+  <Cta lang={lang} />
+</Doc>

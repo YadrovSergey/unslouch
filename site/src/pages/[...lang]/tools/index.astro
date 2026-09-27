@@ -1,0 +1,21 @@
+---
+import Base from "../../../layouts/Base.astro";
+import ToolGrid from "../../../components/ToolGrid.astro";
+import Cta from "../../../components/Cta.astro";
+import { href, langPaths, t, type Lang } from "../../../i18n";
+export const getStaticPaths = langPaths;
+const { lang } = Astro.props as { lang: Lang };
+const d = t(lang);
+---
+
+<Base lang={lang} path="/tools/" title={d.meta.tools.title} description={d.meta.tools.description}>
+  <div class="wrap">
+    <div class="page-head">
+      <nav class="crumbs" aria-label="breadcrumbs"><a href={href(lang, "/")}>{d.nav.home}</a></nav>
+      <h1>{d.tools.indexTitle}</h1>
+      <p class="lead">{d.tools.indexLead}</p>
+    </div>
+    <ToolGrid lang={lang} withApp />
+    <Cta lang={lang} />
+  </div>
+</Base>

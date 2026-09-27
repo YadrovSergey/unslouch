@@ -1,0 +1,14 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "overlays",
+  "description": "Break and cue windows: nothing beyond the basics and one link to the MZR diary",
+  "windows": ["break-*", "cue-*"],
+  "permissions": [
+    "core:default",
+    "core:window:allow-set-theme",
+    {
+      "identifier": "opener:allow-open-url",
+      "allow": [{ "url": "https://health-diet.ru/*" }]
+    }
+  ]
+}

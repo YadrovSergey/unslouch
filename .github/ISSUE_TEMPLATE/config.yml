@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability / Уязвимость
+    url: mailto:support@health-diet.ru
+    about: Please report security issues by email, not in public issues. / Об уязвимостях пишите на почту, не в открытые issues.
+  - name: Email support / Написать на почту
+    url: mailto:support@health-diet.ru
+    about: Questions that are not bugs. / Вопросы, которые не ошибки.

@@ -1,0 +1,508 @@
+{
+  "app": {
+    "name": "Unslouch"
+  },
+  "tray": {
+    "nextBreak": "Tanaffusgacha: {{n}} daq",
+    "pausedUntil": "{{time}} gacha pauza",
+    "focusUntil": "{{time}} gacha fokus",
+    "outsideHours": "Ish vaqtidan tashqari",
+    "inCall": "Qoʻngʻiroqda, eslatmalar kutadi",
+    "dnd": "«Bezovta qilmang», eslatmalar kutadi",
+    "breaksOff": "Tanaffuslar oʻchirilgan",
+    "microNow": "Koʻzlar uchun tanaffus",
+    "movementNow": "Hozir badanni yozing",
+    "breathingNow": "Bir daqiqa nafas oling",
+    "focus": "Fokus",
+    "focus25": "25 daqiqa",
+    "focus50": "50 daqiqa",
+    "focusStop": "Fokusni tugatish",
+    "pause": "Pauza",
+    "pause30": "30 daqiqaga",
+    "pause60": "Bir soatga",
+    "pauseTomorrow": "Ertagacha",
+    "resume": "Davom ettirish",
+    "today": "Bugungi tanaffuslar: {{done}} · kompyuterda {{time}}",
+    "hm": "{{h}} soat {{m}} daq",
+    "m": "{{m}} daq",
+    "stats": "Statistika…",
+    "settings": "Sozlamalar…",
+    "about": "Dastur haqida",
+    "mzr": "MZR ovqatlanish kundaligi",
+    "quit": "Chiqish",
+    "update": "{{v}} versiyasini oʻrnatish"
+  },
+  "time": {
+    "hm": "{{h}} soat {{m}} daq",
+    "m": "{{m}} daq"
+  },
+  "break": {
+    "lookFar": "Uzoqqa qarang",
+    "lookFarHint": "Derazadan tashqariga yoki uzoqdagi devorga, 6 metrdan uzoqroqqa. Yaqinga fokusni ushlab turuvchi mushak shu paytda dam oladi.",
+    "standUp": "Oʻrningizdan turing",
+    "standUpHint": "Bel va oyoqlar uchun bir-ikki mashq, keyin biroz yuring.",
+    "walkHint": "Derazagacha, suv olish uchun, zinapoyadan. Yoʻl-yoʻlakay suv iching.",
+    "longTitle": "Katta tanaffus",
+    "longHint": "Kompyuterdan uzoqlashing: yuring, tushlik qiling, tashqariga chiqing. Ekran kutib turadi.",
+    "neckTitle": "Boʻyin va yelkalar uchun ikki daqiqa",
+    "neckHint": "Kuniga bir marta qisqa kuch mashqi. Sekin harakatlaning.",
+    "breathTitle": "Bir daqiqa sekin nafas",
+    "breathHint": "Doira bilan birga nafas oling: 4 sanoqda nafas oling, 6 sanoqda chiqaring.",
+    "done": "Tayyor, ishlasangiz boʻladi",
+    "seconds_one": "soniya",
+    "seconds_other": "soniya",
+    "minutes_one": "daqiqa",
+    "minutes_other": "daqiqa",
+    "repeat": "{{n}} / {{total}}",
+    "postpone": "{{n}} daqiqaga qoldirish",
+    "skip": "Oʻtkazib yuborish",
+    "tip": "Maslahat",
+    "noPain": "Ogʻriqsiz. Ogʻrisa, toʻxtang.",
+    "tips": [
+      "Ekranni choʻzilgan qoʻl masofasida, 50–70 sm uzoqlikda tuting.",
+      "Ekranning yuqori cheti koʻz darajasida yoki biroz pastda boʻlsin. Biroz pastga qaraganda koʻz kamroq ochiladi va kamroq quriydi.",
+      "Konditsioner va ventilyator yuzingizga esmasligi kerak. Qishda namlagich yordam beradi.",
+      "Ekran yorqinligini xonadagi yorugʻlikka moslang. Qorongʻi xonada yorqin ekran koʻproq charchatadi.",
+      "Koʻzingizni qisishga toʻgʻri kelsa, shriftni kattalashtiring.",
+      "«Sunʼiy koʻz yoshi» tomchilarini shifokor tanlaydi. Ularni oʻzingizga oʻzingiz buyurmang.",
+      "Holatingizni tez-tez oʻzgartiring. Eng yaxshi holat bu keyingi holat.",
+      "Sichqonchani klaviatura yonida tuting, unga choʻzilmaslik uchun.",
+      "Tushlikda kamida 10 daqiqa tashqarida, kunduzgi yorugʻlikda boʻling."
+    ]
+  },
+  "endOfDay": {
+    "title": "Ish kuni tugadi",
+    "hint": "Ish varaqlarini yoping va qolganini ertaga qoldiring. Ishdan keyin dam olish yaxshiroq uxlashga yordam beradi.",
+    "breaks": "tanaffus",
+    "atComputer": "kompyuterda",
+    "longestSitting": "eng uzoq oʻtirish",
+    "continue": "Yana ishlayman",
+    "finish": "Tugataman"
+  },
+  "wellbeing": {
+    "title": "Bu hafta qalaysiz?",
+    "hint": "Haftada bir marta toʻrtta savol. Javoblardan tanaffuslar aynan sizga yordam beryaptimi, yoʻqmi, koʻrinadi. Bu tibbiy test emas.",
+    "eyes": "Koʻzlar",
+    "neck": "Boʻyin va yelkalar",
+    "back": "Bel",
+    "hands": "Qoʻllar",
+    "level0": "Bezovta qilmaydi",
+    "level1": "Biroz",
+    "level2": "Sezilarli",
+    "level3": "Kuchli",
+    "skip": "Hozir emas",
+    "save": "Saqlash",
+    "chartTitle": "Haftalar boʻyicha holat",
+    "chartHint": "Dushanba kungi javoblaringiz. Yashil: bezovta qilmaydi, qizil: kuchli bezovta qiladi.",
+    "empty": "Hozircha javoblar yoʻq. Savollar birinchi tanaffusdan keyin dushanba kuni chiqadi."
+  },
+  "cue": {
+    "blink": "Koʻzingizni pirpirating",
+    "posture": "Holatni oʻzgartiring",
+    "water": "Suv iching",
+    "drank": "Ichdim",
+    "logInMzr": "MZRda belgilash",
+    "close": "Yopish"
+  },
+  "tabs": {
+    "settings": "Sozlamalar",
+    "stats": "Statistika",
+    "exercises": "Mashqlar",
+    "about": "Dastur haqida"
+  },
+  "sections": {
+    "eyes": "Koʻzlar",
+    "eyesHint": "Uzoqqa qarash va pirpiratish mashqi",
+    "neck": "Boʻyin va yelkalar",
+    "neckHint": "Iyakni orqaga tortish, kuraklar, egilishlar",
+    "back": "Bel",
+    "backHint": "Orqaga egilish, burilish, «turish» tanaffusida «mushuk»",
+    "hands": "Qoʻllar",
+    "handsHint": "Musht va kaft, paylar sirpanishi, bilakni choʻzish",
+    "legs": "Oyoqlar",
+    "legsHint": "Oyoq uchlarini tortish, oyoq uchida koʻtarilish, yurish",
+    "breath": "Stress",
+    "breathHint": "Kuniga bir marta sekin nafas"
+  },
+  "settings": {
+    "rhythm": "Ritm",
+    "preset": "Rejim",
+    "presets": {
+      "recommended": "Tavsiya etilgan",
+      "pomodoro": "Pomodoro",
+      "hourly": "Soatiga bir",
+      "custom": "Oʻzimniki"
+    },
+    "presetHint": {
+      "recommended": "Har 20 daqiqada koʻzlar uchun pauza, har 45 daqiqada turish",
+      "pomodoro": "25 daqiqa ish, 5 daqiqa tanaffus, har 2 soatda katta tanaffus",
+      "hourly": "Har 20 daqiqada koʻzlar uchun pauza, soatiga bir marta turish",
+      "custom": "Sozlamalaringiz quyida"
+    },
+    "body": "Nimani asrayman",
+    "bodyHint": "Mashqlar faqat yoqilgan boʻlimlardan olinadi.",
+    "microSection": "Mikropauza",
+    "microEnabled": "Koʻzlar uchun pauza",
+    "microHint": "Bitta qisqa mashq va uzoqqa qarash",
+    "every": "Har",
+    "lookFarFor": "Uzoqqa qarash",
+    "movementSection": "Turish",
+    "movementEnabled": "Turishni eslatish",
+    "movementHint": "Bel va oyoq mashqlari, biroz yurish",
+    "duration": "Davomiyligi",
+    "longEnabled": "Katta tanaffus",
+    "longHint": "Bir-ikki soatda bir uzoqroqqa keting: tushlik, sayr",
+    "cuesSection": "Sokin signallar",
+    "cuesHint": "Oynalar va tugmalarsiz, ishga xalaqit bermaydi.",
+    "blinkCue": "Pirpiratish",
+    "blinkCueHint": "Ekran chetlari bir soniyaga qorayadi",
+    "postureCue": "Holatni oʻzgartirish",
+    "postureCueHint": "Yuqorida bir necha soniyalik kichik yozuv",
+    "water": "Suv",
+    "waterHint": "Burchakdagi karta, oʻzi yoʻqoladi",
+    "dailySection": "Kuniga bir marta",
+    "neckDaily": "Boʻyin va yelkalar uchun ikki daqiqa",
+    "neckDailyHint": "11:00 dan keyin kuch mashqi. Tadqiqotlarga koʻra, kuniga 2 daqiqa boʻyin ogʻrigʻini kamaytiradi",
+    "breathingDaily": "Bir daqiqa nafas",
+    "breathingDailyHint": "15:00 dan keyin, koʻzlar uchun bitta pauza oʻrniga",
+    "endOfDay": "Ish kunining oxiri",
+    "endOfDayHint": "Tugatishni eslatadi va kun yakunini koʻrsatadi",
+    "at": "Soat",
+    "workSection": "Ish vaqti",
+    "workHours": "Faqat ish vaqtida eslatish",
+    "workHoursHint": "Qolgan vaqtda dastur jim turadi",
+    "workDays": "Kunlar",
+    "from": "Dan",
+    "to": "Gacha",
+    "quietSection": "Xalaqit bermaslik",
+    "pauseOnCalls": "Qoʻngʻiroq tugashini kutish",
+    "pauseOnCallsHint": "Boshqa dastur kamera yoki mikrofonni band qilganda. Biz ularni oʻzimiz hech qachon yoqmaymiz",
+    "pauseInFullscreen": "Video yoki taqdimot butun ekranda ochiq boʻlsa, kutish",
+    "waylandNoFullscreen": "Wayland buni xabar qilmaydi",
+    "respectDnd": "«Bezovta qilmang» rejimini hisobga olish",
+    "respectDndMac": "Mac tizimida «Fokus» rejimini har doim ham oʻqib boʻlmaydi. Menyudagi oʻzimizning «Fokus» ishonchliroq",
+    "snooze": "«Qoldirish» muddati",
+    "idleReset": "Kompyuterdan uzoqda",
+    "idleResetHint": "Sichqoncha va klaviaturasiz shuncha vaqt tanaffus hisoblanadi",
+    "usageSection": "Dasturlar boʻyicha vaqt",
+    "usageEnabled": "Dasturlar boʻyicha vaqtni hisoblash",
+    "usagePrivacy": "Faqat dasturlar nomlarini hisoblaymiz. Oyna sarlavhalari va saytlarni oʻqimaymiz. Hammasi kompyuteringizda qoladi",
+    "usageUnsupported": "Bu yerda mavjud emas: Wayland qaysi oyna faolligini xabar qilmaydi",
+    "usageExcluded": "Hisobga olmaslik",
+    "usageExcludedHint": "Bu dasturlar umuman yozilmaydi",
+    "usageAddPlaceholder": "Nomi va Enter",
+    "usageClear": "Dasturlar tarixini oʻchirish",
+    "usageClearConfirm": "Dasturlar boʻyicha vaqtning butun tarixi oʻchirilsinmi?",
+    "usageCleared": "Tarix oʻchirildi",
+    "workplaceSection": "Ish joyi",
+    "generalSection": "Umumiy",
+    "theme": "Mavzu",
+    "themeSystem": "Tizimdagidek",
+    "themeLight": "Yorugʻ",
+    "themeDark": "Qorongʻi",
+    "language": "Til",
+    "systemLanguage": "Tizimdagidek",
+    "sound": "Tanaffus oxirida ovoz",
+    "soundHint": "Ekranga qaramasdan tanaffus tugaganini bilish uchun",
+    "autostart": "Kompyuter bilan birga ishga tushirish",
+    "checkUpdates": "Yangilanishlarni tekshirish",
+    "checkUpdatesHint": "Kuniga bir marta versiya raqami yozilgan faylni yuklab olamiz. Boshqa hech narsa yuborilmaydi",
+    "defaults": "Tavsiya etilganlarni qaytarish",
+    "min": "daq",
+    "sec": "s"
+  },
+  "data": {
+    "title": "Boshqa kompyuterga koʻchirish",
+    "hint": "Sozlamalar va statistika bitta faylda",
+    "export": "Faylga saqlash",
+    "import": "Fayldan yuklash",
+    "exported": "Fayl saqlandi",
+    "imported": "Maʼlumotlar yuklandi",
+    "importFailed": "Faylni oʻqib boʻlmadi"
+  },
+  "why": {
+    "toggle": "Bu nima uchun",
+    "doctor": "Shifokorga murojaat qiling:",
+    "eyes": {
+      "text": "Ekran oldida biz 2–3 marta kamroq pirpiratamiz, pirpiratishlarning yarmi esa chala boʻladi, shuning uchun koʻz quriydi. Yaqinga fokusni ushlab turuvchi mushak soatlab dam olmaydi. Uzoqqa qarash haqidagi eslatmalar koʻzdagi achishish va charchoqni kamaytiradi.",
+      "doctor": "agar koʻzlar ogʻrisa, qizarsa, narsalar ikkita boʻlib koʻrinsa yoki koʻrish yomonlashsa."
+    },
+    "neck": {
+      "text": "Boshni biroz oldinga chiqarib uzoq oʻtirganda boʻyin va yelka mushaklari doim biroz tarang boʻladi. Eng koʻp qisqa kuch mashqlari yordam beradi: kuniga hatto 2 daqiqa ham ogʻriqni kamaytiradi.",
+      "doctor": "agar ogʻriq yoki uvishish qoʻlga oʻtsa, qoʻl kuchsizlansa yoki ogʻriq 6 haftadan uzoq davom etsa."
+    },
+    "back": {
+      "text": "Belga «notoʻgʻri» holat emas, harakatsizlik zarar qiladi. Eng yaxshi holat bu keyingi holat. Har 20–30 daqiqada qisqa yurish ovqatdan keyin qondagi qandni ham pasaytiradi.",
+      "doctor": "agar chovda uvishish boʻlsa, oyoqlar kuchsizlansa, ogʻriq kechalari kuchli boʻlsa yoki 4–6 hafta davom etsa."
+    },
+    "hands": {
+      "text": "Qoʻl mushaklari dam olmay ishlaydi, bilak koʻpincha bukilgan boʻladi. Har 20 daqiqadagi tanaffuslar qoʻllardagi noqulaylikni kamaytiradi. Kompyuter bilan karpal tunnel sindromi oʻrtasidagi bogʻliqlik isbotlanmagan, shuning uchun uning oldini olishni vaʼda qilmaymiz.",
+      "doctor": "agar bosh, koʻrsatkich va oʻrta barmoqlar, ayniqsa kechasi, uvishsa yoki narsalar qoʻlingizdan tushib ketsa."
+    },
+    "legs": {
+      "text": "Boldir mushaklari qonni oyoqlardan haydaydigan nasos kabi ishlaydi. Oʻtirganda bu nasos oʻchadi va kechga borib oyoqlar shishadi. Hech boʻlmasa soatiga bir marta turib yurish yordam beradi.",
+      "doctor": "zudlik bilan, agar bir oyoq shishib, ogʻrisa va qizarsa yoki hansirash va koʻkrakda ogʻriq paydo boʻlsa."
+    },
+    "breath": {
+      "text": "Uzun nafas chiqarish bilan daqiqasiga taxminan 6 marta sekin nafas olish taranglikni pasaytiradi. Taʼsiri kichik, lekin bir necha daqiqada seziladi.",
+      "doctor": "agar xavotir haftalab yashashga xalaqit bersa: nafas mashqi mutaxassis yordamining oʻrnini bosmaydi."
+    },
+    "water": {
+      "text": "Hatto yengil suvsizlik ham diqqat va kayfiyatni yomonlashtiradi, bosh ogʻrigʻi ham boʻlishi mumkin. Kunlik meʼyorni majburlamaymiz: chanqoqqa qarab iching. Choy va qahva ham hisobga kiradi.",
+      "doctor": "agar shifokor sizga suyuqlikni cheklagan boʻlsa, uning maslahatiga amal qiling va bu eslatmani oʻchiring."
+    },
+    "workplace": {
+      "text": "Toʻgʻri sozlangan ish joyi noqulayliklarning bir qismini yoʻqotadi, lekin oʻzi yolgʻiz kam narsa beradi. Tanaffuslar va harakat koʻproq foyda beradi.",
+      "doctor": "agar ish joyini sozlab, tanaffuslar qilgandan keyin ham ogʻriq oʻtmasa."
+    }
+  },
+  "checklist": {
+    "height": "Boʻyingiz",
+    "cm": "sm",
+    "seat": "oʻrindiq balandligi",
+    "desk": "stol balandligi",
+    "screenTop": "ekran yuqorisi poldan",
+    "standingDesk": "tik turib ishlash stoli",
+    "calcNote": "Taxminan, tananing oʻrtacha nisbatlariga koʻra. Sezgilaringiz boʻyicha tekshiring: tirsaklar taxminan 90°, oyoq kaftlari polda.",
+    "screenHeight": "Ekran yuqorisi koʻz darajasida yoki biroz pastda",
+    "screenDistance": "Ekran choʻzilgan qoʻl masofasida, 50–70 sm",
+    "elbows": "Tirsaklar taxminan 90°, yelkalar tushirilgan, qoʻllar erkin",
+    "wrists": "Bilaklar tekis, sichqoncha klaviatura yonida",
+    "feet": "Oyoq kaftlari polda yoki tagliqda",
+    "back": "Kreslo suyanchigʻi belni tutib turadi",
+    "light": "Ekranda yaltirash yoʻq, deraza yonda, orqada emas"
+  },
+  "stats": {
+    "tabs": {
+      "overview": "Umumiy",
+      "apps": "Dasturlar",
+      "wellbeing": "Holat",
+      "achievements": "Yutuqlar"
+    },
+    "today": "Bugun",
+    "done": "Bajarildi",
+    "skipped": "Oʻtkazildi",
+    "atComputer": "Kompyuterda",
+    "longestSitting": "Eng uzoq oʻtirish",
+    "streak": "Ketma-ket kunlar",
+    "sittingWarning": "Bugun turmasdan 2 soatdan koʻproq oʻtirdingiz. Tez-tez shunday oʻtirilsa, oyoq venalari uchun xavf ortadi. Hech boʻlmasa soatiga bir marta turishga harakat qiling.",
+    "week": "Hafta",
+    "empty": "Hozircha boʻsh. Birinchi tanaffus 20 daqiqa ishdan keyin boʻladi.",
+    "year": "Yil",
+    "less": "Kamroq",
+    "more": "Koʻproq",
+    "appsOff": "Dasturlar boʻyicha vaqt sozlamalarda oʻchirilgan.",
+    "appsEmpty": "Hozircha maʼlumot yoʻq.",
+    "longestIn": "Tanaffussiz eng uzoq vaqtni {{app}} dasturida oʻtkazdingiz: {{time}}",
+    "programs": "Dasturlar",
+    "category": "Turkum",
+    "categories": {
+      "work": "Ish",
+      "communication": "Muloqot",
+      "entertainment": "Koʻngilochar",
+      "other": "Boshqa"
+    },
+    "otherApps": "Qolganlari",
+    "byCategory": "Turkumlar boʻyicha",
+    "byHour": "Soatlar boʻyicha",
+    "exclude": "Bu dasturni hisobga olmaslik"
+  },
+  "achievements": {
+    "title": "Yutuqlar",
+    "firstBreak": {
+      "title": "Birinchi tanaffus",
+      "hint": "Yaxshi boshlanish"
+    },
+    "streak7": {
+      "title": "Ketma-ket bir hafta",
+      "hint": "Tanaffusli 7 ish kuni"
+    },
+    "streak30": {
+      "title": "Ketma-ket bir oy",
+      "hint": "Tanaffusli 30 ish kuni"
+    },
+    "breaks100": {
+      "title": "100 tanaffus",
+      "hint": "Jami bajarilgan tanaffuslar"
+    },
+    "breaks1000": {
+      "title": "1000 tanaffus",
+      "hint": "Odat endi sizniki"
+    },
+    "standUp100": {
+      "title": "100 marta turdingiz",
+      "hint": "«Turish» tanaffuslari"
+    },
+    "water50": {
+      "title": "50 stakan",
+      "hint": "Suvda «Ichdim» belgilandi"
+    },
+    "noLongSitting5": {
+      "title": "Uzoq oʻtirishsiz",
+      "hint": "2 soatdan uzoq oʻtirishsiz 5 ish kuni"
+    }
+  },
+  "share": {
+    "button": "Ulashish",
+    "streak_one": "Ketma-ket {{count}} kun",
+    "streak_other": "Ketma-ket {{count}} kun",
+    "total_one": "Kompyuterda {{count}} ta tanaffus",
+    "total_other": "Kompyuterda {{count}} ta tanaffus",
+    "footer": "Unslouch: kompyuterda ishlaganda salomatlik uchun bepul dastur · unslouch.app",
+    "saved": "Rasm saqlandi"
+  },
+  "about": {
+    "text": "Dastur kun boʻyi kompyuterda oʻtiradigan odamlarga shifokorlar maslahat beradigan narsalarni eslatadi: tez-tez pirpirating, har 20 daqiqada 20 soniya uzoqqa qarang, turib harakatlaning, boʻyin, yelka va qoʻllaringizni yozing, suv iching.",
+    "disclaimer": "Dastur hech narsani davolamaydi va shifokor oʻrnini bosmaydi. Mashqlarni ogʻriqsiz bajaring. Agar biror joy ogʻrisa, uvishsa yoki koʻrish yomonlashsa, shifokorga koʻrining.",
+    "site": "Dastur sayti",
+    "openSource": "GitHub saytida ochiq kod",
+    "science": "Tadqiqotlar nima deydi",
+    "privacy": "Maxfiylik siyosati",
+    "terms": "Foydalanish shartlari",
+    "licenses": "Uchinchi tomon litsenziyalari",
+    "translation": "Tarjimada xato topdingizmi?",
+    "privacyShort": "Biz hech qanday maʼlumot toʻplamaymiz: hammasi faqat kompyuteringizda saqlanadi.",
+    "version": "Versiya {{v}}"
+  },
+  "onboarding": {
+    "title": "Unslouch ishlayapti",
+    "whereMac": "Odamcha belgisi endi menyu satrida, yuqori oʻngda.",
+    "whereWin": "Odamcha belgisi endi tizim treyida, soat yonida. Koʻrinmasa, «^» strelkasini bosing.",
+    "whereLinux": "Odamcha belgisi endi tizim treyida. GNOME muhitida buning uchun AppIndicator kengaytmasi kerak, Ubuntu tizimida u allaqachon oʻrnatilgan.",
+    "how": "Har 20 daqiqada dastur yarim daqiqaga chalgʻishni soʻraydi: bitta mashq va uzoqqa bir qarash. Har 45 daqiqada turishni taklif qiladi. Tanaffuslar orasida sokin signallar boʻladi: pirpiratish, holatni oʻzgartirish, suv ichish.",
+    "disclaimer": "Dastur hech narsani davolamaydi va shifokor oʻrnini bosmaydi. Mashqlarni ogʻriqsiz bajaring.",
+    "next": "Keyingi",
+    "back": "Orqaga",
+    "finish": "Tayyor",
+    "concernsTitle": "Sizni nima bezovta qiladi?",
+    "concernsHint": "Nimani asramoqchi ekaningizni belgilang. Keyin sozlamalarda oʻzgartirish mumkin.",
+    "concern": {
+      "eyes": "Koʻzlar charchaydi, quriydi, achishadi",
+      "neck": "Boʻyin qotadi, yelkalar tortishadi",
+      "back": "Bel zirqiraydi",
+      "hands": "Qoʻllar va bilaklar charchaydi",
+      "legs": "Kechga oyoqlar shishadi",
+      "breath": "Taranglik, stress"
+    },
+    "workplaceTitle": "Ish joyingizni sozlang",
+    "workplaceHint": "Bir-ikki daqiqa oladi. Bandlarni keyin sozlamalarda belgilash mumkin.",
+    "workHours": "Faqat ish vaqtida: dushanbadan jumagacha, {{from}}–{{to}}",
+    "workHoursHint": "Dam olish kunlari ham ishlasangiz, oʻchiring. Kunlar va soatlar sozlamalarda oʻzgaradi"
+  },
+  "promo": {
+    "title": "Mening sogʻlom ratsionim",
+    "text": "Oʻsha mualliflardan ovqatlanish kundaligi: kaloriya, oqsil, yogʻ va uglevodlar, suv va vazn. Telefonda va brauzerda.",
+    "button": "Ochish"
+  },
+  "ex": {
+    "blink": {
+      "title": "Toʻliq pirpiratish",
+      "close": "Koʻzlaringizni yumshoq yuming",
+      "squeeze": "Qovoqlarni biroz qising",
+      "open": "Oching"
+    },
+    "chinTuck": {
+      "title": "Iyakni orqaga tortish",
+      "tuck": "Boshingizni orqaga torting, xuddi ikki qavat iyak qilayotgandek. Toʻgʻriga qarang",
+      "release": "Boʻshashing"
+    },
+    "shoulderBlades": {
+      "title": "Kuraklarni birlashtirish",
+      "squeeze": "Yelkalarni tushiring va kuraklarni orqaga va pastga birlashtiring",
+      "release": "Qoʻyib yuboring"
+    },
+    "shrugs": {
+      "title": "Yelkalar yuqoriga va pastga",
+      "up": "Yelkalarni quloqlarga tomon koʻtaring",
+      "down": "Tushiring va boʻshashing"
+    },
+    "sideTilt": {
+      "title": "Boshni yelkaga egish",
+      "right": "Oʻng quloq oʻng yelkaga, yelkalarni koʻtarmang",
+      "center": "Boshni toʻgʻri tuting",
+      "left": "Chap quloq chap yelkaga"
+    },
+    "headTurns": {
+      "title": "Boshni burish",
+      "right": "Boshingizni sekin oʻngga buring",
+      "left": "Endi chapga"
+    },
+    "standingExtension": {
+      "title": "Tik turib orqaga egilish",
+      "lean": "Qoʻllar belda, yumshoq orqaga egiling",
+      "return": "Toʻgʻri holatga qayting"
+    },
+    "seatedTwist": {
+      "title": "Oʻtirib burilish",
+      "right": "Oyoqlar polda, gavdani oʻngga buring",
+      "center": "Qayting",
+      "left": "Gavdani chapga buring"
+    },
+    "catCow": {
+      "title": "Oʻtirib «mushuk»",
+      "round": "Orqangizni bukchaytiring, iyak koʻkrakka",
+      "arch": "Egiling, koʻkrak oldinga"
+    },
+    "fistOpen": {
+      "title": "Musht va kaft",
+      "fist": "Musht qiling",
+      "open": "Barmoqlarni keng yoying"
+    },
+    "tendonGlides": {
+      "title": "Paylar sirpanishi",
+      "straight": "Toʻgʻri kaft",
+      "hook": "Ilmoq: barmoqlarni buking",
+      "fist": "Musht",
+      "table": "Stolcha: barmoqlar toʻgʻri, asosidan bukilgan",
+      "straightFist": "Toʻgʻri musht"
+    },
+    "flexorStretch": {
+      "title": "Bilakni choʻzish, kaft oldinga",
+      "right": "Oʻng qoʻl oldinga, kaft oldinga qaragan. Chap qoʻl bilan barmoqlarni yumshoq oʻzingizga torting",
+      "left": "Endi chap qoʻl"
+    },
+    "extensorStretch": {
+      "title": "Bilakni choʻzish, kaft oʻzingizga",
+      "right": "Oʻng qoʻl oldinga, panja pastga. Chap qoʻl bilan kaft ustini yumshoq bosing",
+      "left": "Endi chap qoʻl"
+    },
+    "shake": {
+      "title": "Qoʻllarni silkitish",
+      "shake": "Qoʻllarni boʻshashtirib silkiting"
+    },
+    "anklePumps": {
+      "title": "Boldir uchun nasos",
+      "up": "Oyoq uchlari oʻzingizga",
+      "down": "Oyoq uchlari oldinga"
+    },
+    "calfRaises": {
+      "title": "Oyoq uchida koʻtarilish",
+      "up": "Stolni ushlab, oyoq uchlariga koʻtariling",
+      "down": "Sekin tushing"
+    },
+    "walk": {
+      "title": "Biroz yuring",
+      "walk": "Yuring: derazagacha, suv olish uchun, zinapoyadan"
+    },
+    "lateralRaise": {
+      "title": "Qoʻllarni yonga koʻtarish",
+      "up": "Toʻgʻri qoʻllarni yonga yelka balandligigacha koʻtaring",
+      "down": "Sekin tushiring"
+    },
+    "reverseFly": {
+      "title": "Egilib qoʻllarni yoyish",
+      "open": "Egiling, kuraklarni birlashtirib, qoʻllarni orqaga yoying",
+      "close": "Qoʻllarni tushiring"
+    },
+    "shrugHold": {
+      "title": "Yelkalarni koʻtarib ushlash",
+      "up": "Yelkalarni koʻtaring va ushlab turing",
+      "down": "Tushiring"
+    },
+    "breathing": {
+      "title": "Sekin nafas",
+      "in": "Burun orqali nafas oling",
+      "out": "Sekin nafas chiqaring"
+    }
+  }
+}

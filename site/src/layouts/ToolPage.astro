@@ -1,0 +1,54 @@
+---
+import type { Source } from "@app/lib/sources";
+import Base from "./Base.astro";
+import Why from "../components/Why.astro";
+import Cta from "../components/Cta.astro";
+import ToolGrid from "../components/ToolGrid.astro";
+import { href, t, type Lang } from "../i18n";
+import type { ToolKey } from "../lib/tools";
+
+interface Props {
+  lang: Lang;
+  tool: ToolKey;
+  why: string | string[];
+  sources: Source[];
+  doctor?: string;
+  anchor?: string;
+}
+const { lang, tool, why, sources, doctor, anchor } = Astro.props;
+const d = t(lang);
+const info = d.tools.list[tool];
+const path = `/tools/${info.slug}/`;
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  name: info.title,
+  description: info.description,
+  applicationCategory: "HealthApplication",
+  operatingSystem: "Any (web browser)",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  inLanguage: lang,
+};
+---
+
+<Base lang={lang} path={path} title={info.seoTitle} description={info.description}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+  <div class="wrap tool-wrap">
+    <div class="page-head">
+      <nav class="crumbs" aria-label="breadcrumbs">
+        <a href={href(lang, "/")}>{d.nav.home}</a> / <a href={href(lang, "/tools/")}>{d.nav.tools}</a>
+      </nav>
+      <h1>{info.title}</h1>
+      <p class="lead">{info.intro}</p>
+    </div>
+    <slot />
+    <Why lang={lang} text={why} sources={sources} doctor={doctor} anchor={anchor} />
+    <Cta lang={lang} />
+  </div>
+  <section class="section section--tight">
+    <div class="wrap">
+      <h2>{d.home.toolsTitle}</h2>
+      <ToolGrid lang={lang} exclude={tool} />
+    </div>
+  </section>
+</Base>

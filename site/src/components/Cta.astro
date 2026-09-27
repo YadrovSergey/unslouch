@@ -1,0 +1,15 @@
+---
+import { t, type Lang } from "../i18n";
+import Download from "./Download.astro";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const d = t(lang).cta;
+---
+
+<aside class="cta">
+  <h2>{d.title}</h2>
+  <p class="muted">{d.text}</p>
+  <Download lang={lang} />
+</aside>

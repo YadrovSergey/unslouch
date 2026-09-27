@@ -1,0 +1,49 @@
+name: Installers to CDN
+
+# Runs when a draft release is published by hand on GitHub: copies the installers and latest.json
+# to Selectel, so downloads and updates work from Russia without GitHub.
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    # A pre-release must not replace latest.json for everyone.
+    if: ${{ !github.event.release.prerelease }}
+    steps:
+      - name: Download release files
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ github.event.release.tag_name }}
+          REPO: ${{ github.repository }}
+        run: gh release download "$TAG" --repo "$REPO" --dir files
+      - name: Point latest.json at the CDN
+        env:
+          # Repository variable, e.g. https://unslouch.app (not a secret).
+          CDN_BASE_URL: ${{ vars.CDN_BASE_URL }}
+          TAG: ${{ github.event.release.tag_name }}
+          REPO: ${{ github.repository }}
+        run: |
+          test -n "$CDN_BASE_URL" || { echo "Set the CDN_BASE_URL repository variable"; exit 1; }
+          sed -i "s#https://github.com/$REPO/releases/download/$TAG/#$CDN_BASE_URL/releases/$TAG/#g" files/latest.json
+          grep -q "$CDN_BASE_URL" files/latest.json
+      - name: Upload to Selectel
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.SELECTEL_S3_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.SELECTEL_S3_SECRET_KEY }}
+          AWS_DEFAULT_REGION: ru-1
+          # Selectel S3 does not accept the new default checksums of AWS CLI 2.23+.
+          AWS_REQUEST_CHECKSUM_CALCULATION: when_required
+          AWS_RESPONSE_CHECKSUM_VALIDATION: when_required
+          BUCKET: ${{ secrets.SELECTEL_S3_BUCKET }}
+          TAG: ${{ github.event.release.tag_name }}
+        run: |
+          ENDPOINT=https://s3.ru-1.storage.selcloud.ru
+          aws s3 sync files "s3://$BUCKET/releases/$TAG/" --endpoint-url "$ENDPOINT"
+          # latest.json last: clients see a new version only when its files are already there.
+          aws s3 cp files/latest.json "s3://$BUCKET/releases/latest.json" --endpoint-url "$ENDPOINT" \
+            --cache-control "no-cache" --content-type application/json

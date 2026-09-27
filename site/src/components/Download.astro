@@ -1,0 +1,44 @@
+---
+import { RELEASES, fill, href, t, type Lang } from "../i18n";
+interface Props {
+  lang: Lang;
+  id?: string;
+}
+const { lang, id } = Astro.props;
+const d = t(lang).download;
+const items = [
+  { os: "mac", label: d.mac, file: d.macFile },
+  { os: "win", label: d.win, file: d.winFile },
+  { os: "linux", label: d.linux, file: d.linuxFile },
+];
+---
+
+<div class="download" id={id}>
+  <div class="download__buttons">
+    {
+      items.map((i) => (
+        <a class="btn download__btn" href={RELEASES} data-os={i.os}>
+          <span>{fill(d.button, { os: i.label })}</span>
+          <small>{i.file}</small>
+        </a>
+      ))
+    }
+  </div>
+  <div class="download__meta">
+    <span><span class="badge-free">{d.free}</span></span>
+    <a href={RELEASES}>{d.all}</a>
+    <a href={href(lang, "/app/")}>{d.browser}</a>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    var ua = (navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || navigator.userAgent || "";
+    ua = ua.toLowerCase();
+    var os = /mac|iphone|ipad/.test(ua) ? "mac" : /win/.test(ua) ? "win" : /linux|x11|cros/.test(ua) && !/android/.test(ua) ? "linux" : "";
+    if (!os) return;
+    document.querySelectorAll('.download__btn[data-os="' + os + '"]').forEach(function (a) {
+      a.classList.add("is-primary");
+    });
+  })();
+</script>

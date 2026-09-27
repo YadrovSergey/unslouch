@@ -1,0 +1,508 @@
+{
+  "app": {
+    "name": "Unslouch"
+  },
+  "tray": {
+    "nextBreak": "Nächste Pause in {{n}} Min.",
+    "pausedUntil": "Pausiert bis {{time}}",
+    "focusUntil": "Fokus bis {{time}}",
+    "outsideHours": "Außerhalb der Arbeitszeit",
+    "inCall": "Im Gespräch, Pausen warten",
+    "dnd": "„Nicht stören“, Pausen warten",
+    "breaksOff": "Pausen ausgeschaltet",
+    "microNow": "Jetzt Augenpause",
+    "movementNow": "Jetzt bewegen",
+    "breathingNow": "Eine Minute atmen",
+    "focus": "Fokus",
+    "focus25": "25 Minuten",
+    "focus50": "50 Minuten",
+    "focusStop": "Fokus beenden",
+    "pause": "Pausieren",
+    "pause30": "Für 30 Minuten",
+    "pause60": "Für eine Stunde",
+    "pauseTomorrow": "Bis morgen",
+    "resume": "Fortsetzen",
+    "today": "Pausen heute: {{done}} · am Computer {{time}}",
+    "hm": "{{h}} Std. {{m}} Min.",
+    "m": "{{m}} Min.",
+    "stats": "Statistik…",
+    "settings": "Einstellungen…",
+    "about": "Über",
+    "mzr": "MZR-Ernährungstagebuch",
+    "quit": "Beenden",
+    "update": "Version {{v}} installieren"
+  },
+  "time": {
+    "hm": "{{h}} Std. {{m}} Min.",
+    "m": "{{m}} Min."
+  },
+  "break": {
+    "lookFar": "Schauen Sie in die Ferne",
+    "lookFarHint": "Aus dem Fenster oder auf eine entfernte Wand, mehr als 6 Meter weit. Der Muskel, der die Nahsicht hält, kann sich dabei entspannen.",
+    "standUp": "Stehen Sie auf",
+    "standUpHint": "Ein paar Übungen für Rücken und Beine, dann gehen Sie ein paar Schritte.",
+    "walkHint": "Zum Fenster, zum Wasserholen, die Treppe hinauf. Trinken Sie dabei etwas Wasser.",
+    "longTitle": "Lange Pause",
+    "longHint": "Gehen Sie weg vom Computer: ein Spaziergang, Mittagessen, frische Luft. Der Bildschirm kann warten.",
+    "neckTitle": "Zwei Minuten für Nacken und Schultern",
+    "neckHint": "Ein kurzes Krafttraining einmal am Tag. Bewegen Sie sich langsam.",
+    "breathTitle": "Eine Minute langsam atmen",
+    "breathHint": "Folgen Sie dem Kreis: 4 Takte einatmen, 6 Takte ausatmen.",
+    "done": "Fertig, weiterarbeiten",
+    "seconds_one": "Sekunde",
+    "seconds_other": "Sekunden",
+    "minutes_one": "Minute",
+    "minutes_other": "Minuten",
+    "repeat": "{{n}} von {{total}}",
+    "postpone": "{{n}} Min. später",
+    "skip": "Überspringen",
+    "tip": "Tipp",
+    "noPain": "Ohne Schmerzen. Wenn es wehtut, hören Sie auf.",
+    "tips": [
+      "Halten Sie den Bildschirm auf Armlänge, 50–70 cm.",
+      "Die Oberkante des Bildschirms auf Augenhöhe oder etwas darunter. Beim Blick leicht nach unten ist das Auge weniger geöffnet und trocknet weniger aus.",
+      "Klimaanlage und Ventilator sollten nicht ins Gesicht blasen. Im Winter hilft ein Luftbefeuchter.",
+      "Passen Sie die Helligkeit des Bildschirms an das Raumlicht an. Ein heller Bildschirm in einem dunklen Raum ermüdet mehr.",
+      "Vergrößern Sie die Schrift, wenn Sie merken, dass Sie die Augen zusammenkneifen.",
+      "Künstliche Tränen sollte ein Arzt auswählen, nicht Sie selbst.",
+      "Wechseln Sie oft die Haltung. Die beste Haltung ist die nächste.",
+      "Legen Sie die Maus direkt neben die Tastatur, damit Sie nicht nach ihr greifen müssen.",
+      "Gehen Sie mittags mindestens 10 Minuten ins Tageslicht."
+    ]
+  },
+  "endOfDay": {
+    "title": "Der Arbeitstag ist vorbei",
+    "hint": "Schließen Sie die Arbeits-Tabs und lassen Sie den Rest für morgen. Nach der Arbeit abzuschalten hilft, besser zu schlafen.",
+    "breaks": "Pausen",
+    "atComputer": "am Computer",
+    "longestSitting": "längste Zeit im Sitzen",
+    "continue": "Weiterarbeiten",
+    "finish": "Feierabend"
+  },
+  "wellbeing": {
+    "title": "Wie war diese Woche?",
+    "hint": "Vier Fragen einmal pro Woche. Ihre Antworten zeigen, ob die Pausen gerade Ihnen helfen. Das ist kein medizinischer Test.",
+    "eyes": "Augen",
+    "neck": "Nacken und Schultern",
+    "back": "Rücken",
+    "hands": "Hände",
+    "level0": "Gut",
+    "level1": "Etwas",
+    "level2": "Spürbar",
+    "level3": "Stark",
+    "skip": "Nicht jetzt",
+    "save": "Speichern",
+    "chartTitle": "Befinden pro Woche",
+    "chartHint": "Ihre Antworten vom Montag. Grün: gut, rot: stört stark.",
+    "empty": "Noch keine Antworten. Die Fragen kommen am Montag nach der ersten Pause."
+  },
+  "cue": {
+    "blink": "Blinzeln",
+    "posture": "Haltung wechseln",
+    "water": "Etwas Wasser trinken",
+    "drank": "Erledigt",
+    "logInMzr": "In MZR eintragen",
+    "close": "Schließen"
+  },
+  "tabs": {
+    "settings": "Einstellungen",
+    "stats": "Statistik",
+    "exercises": "Übungen",
+    "about": "Über"
+  },
+  "sections": {
+    "eyes": "Augen",
+    "eyesHint": "In die Ferne schauen und eine Blinzelübung",
+    "neck": "Nacken und Schultern",
+    "neckHint": "Kinn zurück, Schulterblätter, Neigungen",
+    "back": "Rücken",
+    "backHint": "Rückbeuge, Drehung, Katze-Kuh in den Steh-Pausen",
+    "hands": "Hände",
+    "handsHint": "Faust und Spreizen, Sehnengleiten, Handgelenke dehnen",
+    "legs": "Beine",
+    "legsHint": "Fußwippen, Zehenstand, Gehen",
+    "breath": "Stress",
+    "breathHint": "Langsames Atmen einmal am Tag"
+  },
+  "settings": {
+    "rhythm": "Rhythmus",
+    "preset": "Modus",
+    "presets": {
+      "recommended": "Empfohlen",
+      "pomodoro": "Pomodoro",
+      "hourly": "Stündlich",
+      "custom": "Eigene"
+    },
+    "presetHint": {
+      "recommended": "Alle 20 Minuten eine Augenpause, alle 45 aufstehen",
+      "pomodoro": "25 Minuten Arbeit, 5 Minuten Pause, alle 2 Stunden eine lange",
+      "hourly": "Alle 20 Minuten eine Augenpause, einmal pro Stunde aufstehen",
+      "custom": "Ihre Einstellungen unten"
+    },
+    "body": "Worauf ich achte",
+    "bodyHint": "Übungen kommen nur aus den eingeschalteten Bereichen.",
+    "microSection": "Kurzpause",
+    "microEnabled": "Augenpause",
+    "microHint": "Eine kurze Übung und ein Blick in die Ferne",
+    "every": "Alle",
+    "lookFarFor": "In die Ferne schauen für",
+    "movementSection": "Aufstehen",
+    "movementEnabled": "Ans Aufstehen erinnern",
+    "movementHint": "Übungen für Rücken und Beine, ein paar Schritte gehen",
+    "duration": "Dauer",
+    "longEnabled": "Lange Pause",
+    "longHint": "Alle paar Stunden weiter weg: Mittagessen, Spaziergang",
+    "cuesSection": "Sanfte Hinweise",
+    "cuesHint": "Ohne Fenster und Knöpfe, sie stören nicht.",
+    "blinkCue": "Blinzeln",
+    "blinkCueHint": "Die Bildschirmränder werden kurz dunkler",
+    "postureCue": "Haltung wechseln",
+    "postureCueHint": "Ein kleines Banner oben für ein paar Sekunden",
+    "water": "Wasser",
+    "waterHint": "Eine Karte in der Ecke, die von selbst verschwindet",
+    "dailySection": "Einmal am Tag",
+    "neckDaily": "Zwei Minuten für Nacken und Schultern",
+    "neckDailyHint": "Krafttraining nach 11:00. Studien zeigen: 2 Minuten am Tag verringern Nackenschmerzen",
+    "breathingDaily": "Eine Minute atmen",
+    "breathingDailyHint": "Nach 15:00, anstelle einer Augenpause",
+    "endOfDay": "Ende des Arbeitstags",
+    "endOfDayHint": "Erinnert ans Aufhören und zeigt die Tagesbilanz",
+    "at": "Um",
+    "workSection": "Arbeitszeit",
+    "workHours": "Nur während der Arbeitszeit erinnern",
+    "workHoursHint": "Den Rest der Zeit bleibt die App still",
+    "workDays": "Tage",
+    "from": "Von",
+    "to": "Bis",
+    "quietSection": "Nicht stören",
+    "pauseOnCalls": "Warten, bis ein Anruf endet",
+    "pauseOnCallsHint": "Wenn ein anderes Programm Kamera oder Mikrofon nutzt. Wir schalten sie nie selbst ein",
+    "pauseInFullscreen": "Warten, solange ein Video oder eine Präsentation im Vollbild läuft",
+    "waylandNoFullscreen": "Wayland meldet das nicht",
+    "respectDnd": "„Nicht stören“ beachten",
+    "respectDndMac": "Auf dem Mac lässt sich der Fokus-Modus nicht immer auslesen. Unser Fokus im Menü ist zuverlässiger",
+    "snooze": "Verschieben um",
+    "idleReset": "Abwesend vom Computer",
+    "idleResetHint": "So lange ohne Maus und Tastatur zählt als Pause",
+    "usageSection": "Zeit pro Programm",
+    "usageEnabled": "Zeit pro Programm erfassen",
+    "usagePrivacy": "Es werden nur Programmnamen gezählt. Fenstertitel und Websites lesen wir nicht. Alles bleibt auf Ihrem Computer",
+    "usageUnsupported": "Hier nicht verfügbar: Wayland meldet nicht, welches Fenster aktiv ist",
+    "usageExcluded": "Nicht erfassen",
+    "usageExcludedHint": "Diese Programme werden nie aufgezeichnet",
+    "usageAddPlaceholder": "Name und Enter",
+    "usageClear": "Programmverlauf löschen",
+    "usageClearConfirm": "Den gesamten Verlauf der Programmzeiten löschen?",
+    "usageCleared": "Verlauf gelöscht",
+    "workplaceSection": "Arbeitsplatz",
+    "generalSection": "Allgemein",
+    "theme": "Design",
+    "themeSystem": "System",
+    "themeLight": "Hell",
+    "themeDark": "Dunkel",
+    "language": "Sprache",
+    "systemLanguage": "Systemsprache",
+    "sound": "Ton am Ende der Pause",
+    "soundHint": "So wissen Sie, dass die Pause vorbei ist, ohne auf den Bildschirm zu schauen",
+    "autostart": "Mit dem Computer starten",
+    "checkUpdates": "Nach Updates suchen",
+    "checkUpdatesHint": "Einmal am Tag laden wir eine Datei mit der Versionsnummer herunter. Sonst wird nichts gesendet",
+    "defaults": "Empfehlung wiederherstellen",
+    "min": "Min.",
+    "sec": "Sek."
+  },
+  "data": {
+    "title": "Auf einen anderen Computer übertragen",
+    "hint": "Einstellungen und Statistik in einer Datei",
+    "export": "In Datei speichern",
+    "import": "Aus Datei laden",
+    "exported": "Datei gespeichert",
+    "imported": "Daten geladen",
+    "importFailed": "Datei konnte nicht gelesen werden"
+  },
+  "why": {
+    "toggle": "Warum das",
+    "doctor": "Zum Arzt:",
+    "eyes": {
+      "text": "Am Bildschirm blinzeln wir 2–3-mal seltener, und die Hälfte der Lidschläge ist unvollständig, deshalb trocknen die Augen aus. Der Muskel für die Nahsicht ruht stundenlang nicht. Erinnerungen, in die Ferne zu schauen, verringern Brennen und müde Augen.",
+      "doctor": "wenn die Augen schmerzen oder gerötet sind, Sie doppelt sehen oder die Sicht schlechter wird."
+    },
+    "neck": {
+      "text": "Wer lange mit leicht nach vorn geschobenem Kopf sitzt, hält Nacken- und Schultermuskeln ständig etwas angespannt. Am meisten helfen kurze Kraftübungen: Schon 2 Minuten am Tag verringern die Schmerzen.",
+      "doctor": "wenn Schmerz oder Taubheit in den Arm ausstrahlt, der Arm schwächer wird oder der Schmerz länger als 6 Wochen anhält."
+    },
+    "back": {
+      "text": "Nicht eine „falsche“ Haltung schadet dem Rücken, sondern fehlende Bewegung. Die beste Haltung ist die nächste. Kurze Gänge alle 20–30 Minuten senken außerdem den Blutzucker nach dem Essen.",
+      "doctor": "wenn die Leistengegend taub wird, die Beine schwach werden, der Schmerz nachts stark ist oder 4–6 Wochen anhält."
+    },
+    "hands": {
+      "text": "Die Unterarmmuskeln arbeiten ohne Pause, das Handgelenk ist oft gebeugt. Pausen alle 20 Minuten verringern Beschwerden in den Armen. Ein Zusammenhang zwischen Computerarbeit und Karpaltunnelsyndrom ist nicht belegt, daher versprechen wir nicht, ihm vorzubeugen.",
+      "doctor": "wenn Daumen, Zeige- und Mittelfinger taub werden, besonders nachts, oder Ihnen Dinge aus der Hand fallen."
+    },
+    "legs": {
+      "text": "Die Wadenmuskeln arbeiten wie eine Pumpe, die das Blut aus den Beinen zurückbefördert. Im Sitzen ist diese Pumpe aus, und abends schwellen die Beine an. Mindestens einmal pro Stunde aufzustehen und zu gehen hilft.",
+      "doctor": "sofort, wenn ein Bein geschwollen, schmerzhaft und gerötet ist oder Sie Atemnot mit Brustschmerzen bekommen."
+    },
+    "breath": {
+      "text": "Langsames Atmen, etwa 6 Atemzüge pro Minute mit langer Ausatmung, senkt die Anspannung. Der Effekt ist klein, aber schon nach wenigen Minuten spürbar.",
+      "doctor": "wenn Angst Sie seit Wochen im Alltag einschränkt: Atmen ersetzt keine professionelle Hilfe."
+    },
+    "water": {
+      "text": "Schon leichter Wassermangel verschlechtert Aufmerksamkeit und Stimmung und kann Kopfschmerzen auslösen. Wir geben keine Tagesmenge vor: Trinken Sie nach Durst. Tee und Kaffee zählen auch.",
+      "doctor": "wenn ein Arzt Ihre Trinkmenge begrenzt hat: Folgen Sie seinem Rat und schalten Sie diese Erinnerung aus."
+    },
+    "workplace": {
+      "text": "Ein gut eingerichteter Arbeitsplatz nimmt einen Teil der Beschwerden, bewirkt allein aber wenig. Pausen und Bewegung bringen mehr.",
+      "doctor": "wenn die Schmerzen trotz eingerichtetem Arbeitsplatz und Pausen bleiben."
+    }
+  },
+  "checklist": {
+    "height": "Ihre Körpergröße",
+    "cm": "cm",
+    "seat": "Sitzhöhe",
+    "desk": "Tischhöhe",
+    "screenTop": "Bildschirmoberkante über dem Boden",
+    "standingDesk": "Stehtisch",
+    "calcNote": "Ungefähr, nach durchschnittlichen Körperproportionen. Prüfen Sie nach Gefühl: Ellbogen etwa 90°, Füße auf dem Boden.",
+    "screenHeight": "Bildschirmoberkante auf Augenhöhe oder etwas darunter",
+    "screenDistance": "Bildschirm auf Armlänge, 50–70 cm",
+    "elbows": "Ellbogen etwa 90°, Schultern unten, Unterarme locker",
+    "wrists": "Handgelenke gerade, Maus neben der Tastatur",
+    "feet": "Füße flach auf dem Boden oder auf einer Fußstütze",
+    "back": "Die Rückenlehne stützt den unteren Rücken",
+    "light": "Keine Spiegelungen auf dem Bildschirm, Fenster seitlich, nicht hinter Ihnen"
+  },
+  "stats": {
+    "tabs": {
+      "overview": "Übersicht",
+      "apps": "Programme",
+      "wellbeing": "Befinden",
+      "achievements": "Erfolge"
+    },
+    "today": "Heute",
+    "done": "Erledigt",
+    "skipped": "Übersprungen",
+    "atComputer": "Am Computer",
+    "longestSitting": "Längstes Sitzen",
+    "streak": "Tage in Folge",
+    "sittingWarning": "Heute haben Sie über 2 Stunden gesessen, ohne aufzustehen. Wenn das oft vorkommt, steigt das Risiko für die Beinvenen. Versuchen Sie, mindestens einmal pro Stunde aufzustehen.",
+    "week": "Woche",
+    "empty": "Noch nichts. Die erste Pause kommt nach 20 Minuten Arbeit.",
+    "year": "Jahr",
+    "less": "Weniger",
+    "more": "Mehr",
+    "appsOff": "Die Zeit pro Programm ist in den Einstellungen ausgeschaltet.",
+    "appsEmpty": "Noch keine Daten.",
+    "longestIn": "Am längsten ohne Pause saßen Sie in {{app}}: {{time}}",
+    "programs": "Programme",
+    "category": "Kategorie",
+    "categories": {
+      "work": "Arbeit",
+      "communication": "Kommunikation",
+      "entertainment": "Unterhaltung",
+      "other": "Sonstiges"
+    },
+    "otherApps": "Andere",
+    "byCategory": "Nach Kategorie",
+    "byHour": "Nach Stunde",
+    "exclude": "Dieses Programm nicht erfassen"
+  },
+  "achievements": {
+    "title": "Erfolge",
+    "firstBreak": {
+      "title": "Erste Pause",
+      "hint": "Ein guter Anfang"
+    },
+    "streak7": {
+      "title": "Eine Woche am Stück",
+      "hint": "7 Arbeitstage mit Pausen"
+    },
+    "streak30": {
+      "title": "Ein Monat am Stück",
+      "hint": "30 Arbeitstage mit Pausen"
+    },
+    "breaks100": {
+      "title": "100 Pausen",
+      "hint": "Pausen insgesamt"
+    },
+    "breaks1000": {
+      "title": "1000 Pausen",
+      "hint": "Die Gewohnheit gehört Ihnen"
+    },
+    "standUp100": {
+      "title": "100-mal aufgestanden",
+      "hint": "Steh-Pausen"
+    },
+    "water50": {
+      "title": "50 Gläser",
+      "hint": "Beim Wasser „Erledigt“ gewählt"
+    },
+    "noLongSitting5": {
+      "title": "Kein langes Sitzen",
+      "hint": "5 Arbeitstage ohne 2 Stunden am Stück im Sitzen"
+    }
+  },
+  "share": {
+    "button": "Teilen",
+    "streak_one": "{{count}} Tag in Folge",
+    "streak_other": "{{count}} Tage in Folge",
+    "total_one": "{{count}} Pause am Computer",
+    "total_other": "{{count}} Pausen am Computer",
+    "footer": "Unslouch: eine kostenlose App für die Gesundheit am Computer · unslouch.app",
+    "saved": "Bild gespeichert"
+  },
+  "about": {
+    "text": "Die App erinnert Sie an das, was Ärzte Menschen empfehlen, die den ganzen Tag am Computer sitzen: öfter blinzeln, alle 20 Minuten 20 Sekunden in die Ferne schauen, aufstehen und sich bewegen, Nacken, Schultern und Hände lockern, Wasser trinken.",
+    "disclaimer": "Die App behandelt nichts und ersetzt keinen Arzt. Machen Sie die Übungen ohne Schmerzen. Wenn etwas wehtut, taub wird oder Ihre Sicht schlechter wird, gehen Sie zum Arzt.",
+    "site": "Website",
+    "openSource": "Quellcode auf GitHub",
+    "science": "Was die Forschung sagt",
+    "privacy": "Datenschutzerklärung",
+    "terms": "Nutzungsbedingungen",
+    "licenses": "Lizenzen von Drittanbietern",
+    "translation": "Fehler in der Übersetzung gefunden?",
+    "privacyShort": "Wir sammeln keine Daten: Alles bleibt auf Ihrem Computer.",
+    "version": "Version {{v}}"
+  },
+  "onboarding": {
+    "title": "Unslouch läuft",
+    "whereMac": "Das Symbol mit dem Männchen ist jetzt in der Menüleiste oben rechts.",
+    "whereWin": "Das Symbol mit dem Männchen ist jetzt im Infobereich neben der Uhr. Wenn Sie es nicht sehen, klicken Sie auf den Pfeil „^“.",
+    "whereLinux": "Das Symbol mit dem Männchen ist jetzt im Infobereich. GNOME braucht dafür die Erweiterung AppIndicator, unter Ubuntu ist sie schon installiert.",
+    "how": "Alle 20 Minuten bittet die App Sie um eine halbe Minute: eine Übung und ein Blick in die Ferne. Alle 45 Minuten schlägt sie vor, aufzustehen. Zwischen den Pausen gibt es sanfte Hinweise: blinzeln, Haltung wechseln, Wasser trinken.",
+    "disclaimer": "Die App behandelt nichts und ersetzt keinen Arzt. Machen Sie die Übungen ohne Schmerzen.",
+    "next": "Weiter",
+    "back": "Zurück",
+    "finish": "Fertig",
+    "concernsTitle": "Was stört Sie?",
+    "concernsHint": "Wählen Sie, worauf Sie achten möchten. Sie können das später in den Einstellungen ändern.",
+    "concern": {
+      "eyes": "Müde, trockene, brennende Augen",
+      "neck": "Steifer Nacken, verspannte Schultern",
+      "back": "Schmerzender unterer Rücken",
+      "hands": "Müde Hände und Handgelenke",
+      "legs": "Abends geschwollene Beine",
+      "breath": "Anspannung, Stress"
+    },
+    "workplaceTitle": "Richten Sie Ihren Arbeitsplatz ein",
+    "workplaceHint": "Dauert ein paar Minuten. Die Punkte können Sie später in den Einstellungen abhaken.",
+    "workHours": "Nur während der Arbeitszeit: Mo bis Fr, {{from}} bis {{to}}",
+    "workHoursHint": "Ausschalten, wenn Sie auch am Wochenende arbeiten. Tage und Zeiten lassen sich in den Einstellungen ändern"
+  },
+  "promo": {
+    "title": "My Healthy Diet",
+    "text": "Ein Ernährungstagebuch von denselben Autoren: Kalorien, Eiweiß, Fett und Kohlenhydrate, Wasser und Gewicht. Auf dem Handy und im Browser.",
+    "button": "Öffnen"
+  },
+  "ex": {
+    "blink": {
+      "title": "Vollständiges Blinzeln",
+      "close": "Schließen Sie sanft die Augen",
+      "squeeze": "Drücken Sie die Lider leicht zusammen",
+      "open": "Öffnen"
+    },
+    "chinTuck": {
+      "title": "Kinn zurückziehen",
+      "tuck": "Ziehen Sie den Kopf zurück, als würden Sie ein Doppelkinn machen. Blick geradeaus",
+      "release": "Entspannen"
+    },
+    "shoulderBlades": {
+      "title": "Schulterblätter zusammenziehen",
+      "squeeze": "Senken Sie die Schultern und ziehen Sie die Schulterblätter nach hinten unten",
+      "release": "Lösen"
+    },
+    "shrugs": {
+      "title": "Schultern heben",
+      "up": "Heben Sie die Schultern zu den Ohren",
+      "down": "Senken und entspannen"
+    },
+    "sideTilt": {
+      "title": "Kopf zur Seite neigen",
+      "right": "Rechtes Ohr zur rechten Schulter, die Schultern bleiben unten",
+      "center": "Kopf gerade",
+      "left": "Linkes Ohr zur linken Schulter"
+    },
+    "headTurns": {
+      "title": "Kopf drehen",
+      "right": "Drehen Sie den Kopf langsam nach rechts",
+      "left": "Jetzt nach links"
+    },
+    "standingExtension": {
+      "title": "Rückbeuge im Stehen",
+      "lean": "Hände auf den unteren Rücken, sanft nach hinten lehnen",
+      "return": "Wieder aufrichten"
+    },
+    "seatedTwist": {
+      "title": "Drehung im Sitzen",
+      "right": "Füße auf dem Boden, drehen Sie den Oberkörper nach rechts",
+      "center": "Zurück zur Mitte",
+      "left": "Nach links drehen"
+    },
+    "catCow": {
+      "title": "Katze-Kuh im Sitzen",
+      "round": "Machen Sie den Rücken rund, Kinn zur Brust",
+      "arch": "Hohlkreuz, Brust nach vorn"
+    },
+    "fistOpen": {
+      "title": "Faust und Spreizen",
+      "fist": "Machen Sie eine Faust",
+      "open": "Spreizen Sie die Finger weit"
+    },
+    "tendonGlides": {
+      "title": "Sehnengleiten",
+      "straight": "Gerade Hand",
+      "hook": "Haken: Finger beugen",
+      "fist": "Faust",
+      "table": "Tisch: Finger gerade, in den Grundgelenken gebeugt",
+      "straightFist": "Gerade Faust"
+    },
+    "flexorStretch": {
+      "title": "Handgelenk dehnen, Handfläche nach außen",
+      "right": "Rechten Arm nach vorn, Handfläche nach außen. Ziehen Sie die Finger mit der linken Hand sanft zurück",
+      "left": "Jetzt der linke Arm"
+    },
+    "extensorStretch": {
+      "title": "Handgelenk dehnen, Handfläche nach innen",
+      "right": "Rechten Arm nach vorn, Hand nach unten. Drücken Sie sanft auf den Handrücken",
+      "left": "Jetzt der linke Arm"
+    },
+    "shake": {
+      "title": "Ausschütteln",
+      "shake": "Entspannen Sie die Hände und schütteln Sie sie aus"
+    },
+    "anklePumps": {
+      "title": "Fußwippen",
+      "up": "Zehen hoch",
+      "down": "Zehen runter"
+    },
+    "calfRaises": {
+      "title": "Zehenstand",
+      "up": "Halten Sie sich am Tisch fest und gehen Sie auf die Zehenspitzen",
+      "down": "Langsam absenken"
+    },
+    "walk": {
+      "title": "Ein paar Schritte gehen",
+      "walk": "Gehen Sie: zum Fenster, zum Wasserholen, die Treppe hinauf"
+    },
+    "lateralRaise": {
+      "title": "Seitheben",
+      "up": "Heben Sie die gestreckten Arme seitlich bis auf Schulterhöhe",
+      "down": "Langsam absenken"
+    },
+    "reverseFly": {
+      "title": "Vorgebeugtes Seitheben",
+      "open": "Beugen Sie sich vor, führen Sie die Arme nach hinten und ziehen Sie die Schulterblätter zusammen",
+      "close": "Arme senken"
+    },
+    "shrugHold": {
+      "title": "Schultern heben und halten",
+      "up": "Heben Sie die Schultern und halten Sie sie oben",
+      "down": "Senken"
+    },
+    "breathing": {
+      "title": "Langsames Atmen",
+      "in": "Durch die Nase einatmen",
+      "out": "Langsam ausatmen"
+    }
+  }
+}

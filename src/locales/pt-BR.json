@@ -1,0 +1,512 @@
+{
+  "app": {
+    "name": "Unslouch"
+  },
+  "tray": {
+    "nextBreak": "Próxima pausa em {{n}} min",
+    "pausedUntil": "Pausado até {{time}}",
+    "focusUntil": "Foco até {{time}}",
+    "outsideHours": "Fora do expediente",
+    "inCall": "Em chamada, lembretes aguardam",
+    "dnd": "Não perturbe, lembretes aguardam",
+    "breaksOff": "Pausas desligadas",
+    "microNow": "Pausa para os olhos",
+    "movementNow": "Alongar agora",
+    "breathingNow": "Respirar por um minuto",
+    "focus": "Foco",
+    "focus25": "25 minutos",
+    "focus50": "50 minutos",
+    "focusStop": "Encerrar foco",
+    "pause": "Pausar",
+    "pause30": "Por 30 minutos",
+    "pause60": "Por uma hora",
+    "pauseTomorrow": "Até amanhã",
+    "resume": "Retomar",
+    "today": "Pausas hoje: {{done}} · no computador {{time}}",
+    "hm": "{{h}} h {{m}} min",
+    "m": "{{m}} min",
+    "stats": "Estatísticas…",
+    "settings": "Configurações…",
+    "about": "Sobre",
+    "mzr": "Diário alimentar MZR",
+    "quit": "Sair",
+    "update": "Instalar versão {{v}}"
+  },
+  "time": {
+    "hm": "{{h}} h {{m}} min",
+    "m": "{{m}} min"
+  },
+  "break": {
+    "lookFar": "Olhe para longe",
+    "lookFarHint": "Pela janela ou para uma parede distante, a mais de 6 metros. O músculo que mantém o foco de perto descansa.",
+    "standUp": "Levante-se",
+    "standUpHint": "Alguns exercícios para as costas e as pernas, depois dê uma volta.",
+    "walkHint": "Até a janela, buscar água, pela escada. Aproveite para beber água.",
+    "longTitle": "Pausa longa",
+    "longHint": "Afaste-se do computador: caminhe, almoce, saia um pouco. A tela pode esperar.",
+    "neckTitle": "Dois minutos para pescoço e ombros",
+    "neckHint": "Uma sequência curta de força uma vez por dia. Mova-se devagar.",
+    "breathTitle": "Um minuto de respiração lenta",
+    "breathHint": "Siga o círculo: inspire contando 4, expire contando 6.",
+    "done": "Pronto, de volta ao trabalho",
+    "seconds_one": "segundo",
+    "seconds_many": "segundos",
+    "seconds_other": "segundos",
+    "minutes_one": "minuto",
+    "minutes_many": "minutos",
+    "minutes_other": "minutos",
+    "repeat": "{{n}} de {{total}}",
+    "postpone": "Adiar {{n}} min",
+    "skip": "Pular",
+    "tip": "Dica",
+    "noPain": "Sem dor. Se doer, pare.",
+    "tips": [
+      "Mantenha a tela à distância do braço estendido, de 50 a 70 cm.",
+      "Deixe o topo da tela na altura dos olhos ou um pouco abaixo. Olhando levemente para baixo, o olho fica menos aberto e resseca menos.",
+      "Ar-condicionado e ventilador não devem soprar no seu rosto. No inverno, um umidificador ajuda.",
+      "Ajuste o brilho da tela à luz do ambiente. Uma tela clara num quarto escuro cansa mais.",
+      "Aumente a fonte se perceber que está apertando os olhos.",
+      "O colírio de lágrima artificial deve ser escolhido pelo médico, não por conta própria.",
+      "Mude de posição com frequência. A melhor postura é a próxima.",
+      "Deixe o mouse ao lado do teclado para não ter que esticar o braço.",
+      "No almoço, fique pelo menos 10 minutos na luz do dia, ao ar livre."
+    ]
+  },
+  "endOfDay": {
+    "title": "O expediente acabou",
+    "hint": "Feche as abas de trabalho e deixe o resto para amanhã. Desligar depois do trabalho ajuda a dormir melhor.",
+    "breaks": "pausas",
+    "atComputer": "no computador",
+    "longestSitting": "maior tempo sentado",
+    "continue": "Continuar trabalhando",
+    "finish": "Terminei"
+  },
+  "wellbeing": {
+    "title": "Como foi esta semana?",
+    "hint": "Quatro perguntas uma vez por semana. As respostas mostram se as pausas ajudam você em particular. Isto não é um teste médico.",
+    "eyes": "Olhos",
+    "neck": "Pescoço e ombros",
+    "back": "Costas",
+    "hands": "Mãos",
+    "level0": "Tudo bem",
+    "level1": "Um pouco",
+    "level2": "Bastante",
+    "level3": "Muito",
+    "skip": "Agora não",
+    "save": "Salvar",
+    "chartTitle": "Bem-estar por semana",
+    "chartHint": "Suas respostas de segunda-feira. Verde: tudo bem, vermelho: incomoda muito.",
+    "empty": "Ainda não há respostas. As perguntas aparecem na segunda-feira, depois da primeira pausa."
+  },
+  "cue": {
+    "blink": "Pisque",
+    "posture": "Mude de posição",
+    "water": "Beba um pouco de água",
+    "drank": "Feito",
+    "logInMzr": "Registrar no MZR",
+    "close": "Fechar"
+  },
+  "tabs": {
+    "settings": "Configurações",
+    "stats": "Estatísticas",
+    "exercises": "Exercícios",
+    "about": "Sobre"
+  },
+  "sections": {
+    "eyes": "Olhos",
+    "eyesHint": "Olhar para longe e um exercício de piscar",
+    "neck": "Pescoço e ombros",
+    "neckHint": "Queixo para trás, escápulas, inclinações",
+    "back": "Costas",
+    "backHint": "Extensão, rotação e gato-vaca nas pausas para levantar",
+    "hands": "Mãos",
+    "handsHint": "Punho e abertura, deslizamento de tendões, alongamento dos pulsos",
+    "legs": "Pernas",
+    "legsHint": "Bomba de tornozelo, elevação de panturrilha, caminhada",
+    "breath": "Estresse",
+    "breathHint": "Respiração lenta uma vez por dia"
+  },
+  "settings": {
+    "rhythm": "Ritmo",
+    "preset": "Modo",
+    "presets": {
+      "recommended": "Recomendado",
+      "pomodoro": "Pomodoro",
+      "hourly": "De hora em hora",
+      "custom": "Personalizado"
+    },
+    "presetHint": {
+      "recommended": "Pausa para os olhos a cada 20 minutos, levantar a cada 45",
+      "pomodoro": "25 minutos de trabalho, 5 de pausa, uma pausa longa a cada 2 horas",
+      "hourly": "Pausa para os olhos a cada 20 minutos, levantar uma vez por hora",
+      "custom": "Suas configurações abaixo"
+    },
+    "body": "O que quero cuidar",
+    "bodyHint": "Os exercícios vêm só das seções ativadas.",
+    "microSection": "Micropausa",
+    "microEnabled": "Pausa para os olhos",
+    "microHint": "Um exercício curto e olhar para longe",
+    "every": "A cada",
+    "lookFarFor": "Olhar para longe por",
+    "movementSection": "Levantar",
+    "movementEnabled": "Lembrar de levantar",
+    "movementHint": "Exercícios para costas e pernas, uma caminhada curta",
+    "duration": "Duração",
+    "longEnabled": "Pausa longa",
+    "longHint": "A cada duas horas, afastar-se mais: almoço, uma caminhada",
+    "cuesSection": "Sinais discretos",
+    "cuesHint": "Sem janelas nem botões, não atrapalham.",
+    "blinkCue": "Piscar",
+    "blinkCueHint": "As bordas da tela escurecem por um segundo",
+    "postureCue": "Mudar de posição",
+    "postureCueHint": "Um pequeno aviso no topo por alguns segundos",
+    "water": "Água",
+    "waterHint": "Um cartão no canto que some sozinho",
+    "dailySection": "Uma vez por dia",
+    "neckDaily": "Dois minutos para pescoço e ombros",
+    "neckDailyHint": "Sequência de força depois das 11:00. Estudos mostram que 2 minutos por dia reduzem a dor no pescoço",
+    "breathingDaily": "Um minuto de respiração",
+    "breathingDailyHint": "Depois das 15:00, no lugar de uma pausa para os olhos",
+    "endOfDay": "Fim do expediente",
+    "endOfDayHint": "Lembra de encerrar e mostra o resumo do dia",
+    "at": "Às",
+    "workSection": "Horário de trabalho",
+    "workHours": "Lembrar só no horário de trabalho",
+    "workHoursHint": "No resto do tempo o app fica em silêncio",
+    "workDays": "Dias",
+    "from": "Das",
+    "to": "Até",
+    "quietSection": "Não incomodar",
+    "pauseOnCalls": "Esperar a chamada terminar",
+    "pauseOnCallsHint": "Quando outro programa usa a câmera ou o microfone. Nós nunca os ligamos",
+    "pauseInFullscreen": "Esperar enquanto um vídeo ou apresentação estiver em tela cheia",
+    "waylandNoFullscreen": "O Wayland não informa isso",
+    "respectDnd": "Respeitar o Não perturbe",
+    "respectDndMac": "No Mac, o modo Foco nem sempre pode ser lido. O nosso Foco no menu é mais confiável",
+    "snooze": "Adiar por",
+    "idleReset": "Longe do computador",
+    "idleResetHint": "Esse tempo sem mouse e teclado conta como pausa",
+    "usageSection": "Tempo por programa",
+    "usageEnabled": "Contar tempo por programa",
+    "usagePrivacy": "Contamos só os nomes dos programas. Não lemos títulos de janelas nem sites. Tudo fica no seu computador",
+    "usageUnsupported": "Indisponível aqui: o Wayland não informa qual janela está ativa",
+    "usageExcluded": "Não contar",
+    "usageExcludedHint": "Estes programas nunca são registrados",
+    "usageAddPlaceholder": "Nome e Enter",
+    "usageClear": "Apagar histórico de programas",
+    "usageClearConfirm": "Apagar todo o histórico de tempo por programa?",
+    "usageCleared": "Histórico apagado",
+    "workplaceSection": "Posto de trabalho",
+    "generalSection": "Geral",
+    "theme": "Tema",
+    "themeSystem": "Do sistema",
+    "themeLight": "Claro",
+    "themeDark": "Escuro",
+    "language": "Idioma",
+    "systemLanguage": "Padrão do sistema",
+    "sound": "Som no fim da pausa",
+    "soundHint": "Para saber que a pausa acabou sem olhar para a tela",
+    "autostart": "Iniciar com o computador",
+    "checkUpdates": "Verificar atualizações",
+    "checkUpdatesHint": "Uma vez por dia baixamos um arquivo com o número da versão. Nada mais é enviado",
+    "defaults": "Restaurar recomendado",
+    "min": "min",
+    "sec": "s"
+  },
+  "data": {
+    "title": "Levar para outro computador",
+    "hint": "Configurações e estatísticas em um só arquivo",
+    "export": "Salvar em arquivo",
+    "import": "Carregar de arquivo",
+    "exported": "Arquivo salvo",
+    "imported": "Dados carregados",
+    "importFailed": "Não foi possível ler o arquivo"
+  },
+  "why": {
+    "toggle": "Por quê",
+    "doctor": "Procure um médico",
+    "eyes": {
+      "text": "Diante da tela piscamos de 2 a 3 vezes menos, e metade das piscadas é incompleta, então os olhos ressecam. O músculo que mantém o foco de perto passa horas sem descansar. Lembretes para olhar para longe reduzem a ardência e o cansaço nos olhos.",
+      "doctor": "se os olhos doem, ficam vermelhos, você vê dobrado ou a visão piora."
+    },
+    "neck": {
+      "text": "Ficar sentado muito tempo com a cabeça um pouco para a frente mantém os músculos do pescoço e dos ombros sempre um pouco tensos. Exercícios curtos de força ajudam mais: até 2 minutos por dia reduzem a dor.",
+      "doctor": "se a dor ou a dormência desce para o braço, o braço fica fraco ou a dor dura mais de 6 semanas."
+    },
+    "back": {
+      "text": "O que faz mal às costas não é uma postura \"errada\", é a falta de movimento. A melhor postura é a próxima. Caminhadas curtas a cada 20 ou 30 minutos também baixam o açúcar no sangue depois das refeições.",
+      "doctor": "se sentir dormência na virilha, fraqueza nas pernas, dor forte à noite ou dor que dura de 4 a 6 semanas."
+    },
+    "hands": {
+      "text": "Os músculos do antebraço trabalham sem descanso, e o pulso costuma ficar dobrado. Pausas a cada 20 minutos reduzem o desconforto nos braços. A relação entre o uso do computador e a síndrome do túnel do carpo não está comprovada, por isso não prometemos preveni-la.",
+      "doctor": "se o polegar, o indicador e o dedo médio ficam dormentes, principalmente à noite, ou se você deixa as coisas caírem."
+    },
+    "legs": {
+      "text": "Os músculos da panturrilha funcionam como uma bomba que tira o sangue das pernas. Sentado, essa bomba fica desligada, e à noite as pernas incham. Levantar e caminhar pelo menos uma vez por hora ajuda.",
+      "doctor": "com urgência, se uma perna estiver inchada, doendo e vermelha, ou se aparecer falta de ar com dor no peito."
+    },
+    "breath": {
+      "text": "A respiração lenta, cerca de 6 respirações por minuto com expiração longa, reduz a tensão. O efeito é pequeno, mas perceptível em poucos minutos.",
+      "doctor": "se a ansiedade atrapalha a sua vida há semanas: respirar não substitui a ajuda de um profissional."
+    },
+    "water": {
+      "text": "Mesmo uma leve falta de água piora a atenção e o humor, e pode causar dor de cabeça. Não impomos uma quantidade diária: guie-se pela sede. Chá e café também contam.",
+      "doctor": "se um médico limitou a sua ingestão de líquidos, siga a orientação dele e desligue este lembrete."
+    },
+    "workplace": {
+      "text": "Um posto de trabalho bem ajustado tira parte do desconforto, mas sozinho faz pouco. Pausas e movimento fazem mais.",
+      "doctor": "se a dor continuar depois de ajustar o posto de trabalho e fazer pausas."
+    }
+  },
+  "checklist": {
+    "height": "Sua altura",
+    "cm": "cm",
+    "seat": "altura do assento",
+    "desk": "altura da mesa",
+    "screenTop": "topo da tela a partir do chão",
+    "standingDesk": "mesa para trabalhar em pé",
+    "calcNote": "Aproximado, com base nas proporções médias do corpo. Confira pela sensação: cotovelos a cerca de 90°, pés no chão.",
+    "screenHeight": "Topo da tela na altura dos olhos ou um pouco abaixo",
+    "screenDistance": "Tela à distância do braço estendido, 50–70 cm",
+    "elbows": "Cotovelos a cerca de 90°, ombros baixos, antebraços relaxados",
+    "wrists": "Pulsos retos, mouse ao lado do teclado",
+    "feet": "Pés apoiados no chão ou num apoio para os pés",
+    "back": "O encosto da cadeira apoia a lombar",
+    "light": "Sem reflexos na tela, janela ao lado, não atrás de você"
+  },
+  "stats": {
+    "tabs": {
+      "overview": "Visão geral",
+      "apps": "Programas",
+      "wellbeing": "Bem-estar",
+      "achievements": "Conquistas"
+    },
+    "today": "Hoje",
+    "done": "Feitas",
+    "skipped": "Puladas",
+    "atComputer": "No computador",
+    "longestSitting": "Maior tempo sentado",
+    "streak": "Dias seguidos",
+    "sittingWarning": "Hoje você ficou sentado mais de 2 horas sem se levantar. Se isso acontece com frequência, aumenta o risco para as veias das pernas. Tente se levantar pelo menos uma vez por hora.",
+    "week": "Semana",
+    "empty": "Nada ainda. A primeira pausa vem depois de 20 minutos de trabalho.",
+    "year": "Ano",
+    "less": "Menos",
+    "more": "Mais",
+    "appsOff": "O tempo por programa está desligado nas configurações.",
+    "appsEmpty": "Ainda não há dados.",
+    "longestIn": "Seu maior período sem pausa foi no {{app}}: {{time}}",
+    "programs": "Programas",
+    "category": "Categoria",
+    "categories": {
+      "work": "Trabalho",
+      "communication": "Comunicação",
+      "entertainment": "Entretenimento",
+      "other": "Outros"
+    },
+    "otherApps": "Outros",
+    "byCategory": "Por categoria",
+    "byHour": "Por hora",
+    "exclude": "Não registrar este programa"
+  },
+  "achievements": {
+    "title": "Conquistas",
+    "firstBreak": {
+      "title": "Primeira pausa",
+      "hint": "Um bom começo"
+    },
+    "streak7": {
+      "title": "Uma semana seguida",
+      "hint": "7 dias úteis com pausas"
+    },
+    "streak30": {
+      "title": "Um mês seguido",
+      "hint": "30 dias úteis com pausas"
+    },
+    "breaks100": {
+      "title": "100 pausas",
+      "hint": "Pausas feitas no total"
+    },
+    "breaks1000": {
+      "title": "1000 pausas",
+      "hint": "O hábito já é seu"
+    },
+    "standUp100": {
+      "title": "Levantou 100 vezes",
+      "hint": "Pausas para levantar"
+    },
+    "water50": {
+      "title": "50 copos",
+      "hint": "Marcou \"Feito\" na água"
+    },
+    "noLongSitting5": {
+      "title": "Sem ficar muito sentado",
+      "hint": "5 dias úteis sem períodos de 2 horas"
+    }
+  },
+  "share": {
+    "button": "Compartilhar",
+    "streak_one": "{{count}} dia seguido",
+    "streak_many": "{{count}} dias seguidos",
+    "streak_other": "{{count}} dias seguidos",
+    "total_one": "{{count}} pausa no computador",
+    "total_many": "{{count}} pausas no computador",
+    "total_other": "{{count}} pausas no computador",
+    "footer": "Unslouch: um app gratuito para a saúde no computador · unslouch.app",
+    "saved": "Imagem salva"
+  },
+  "about": {
+    "text": "O app lembra você do que os médicos recomendam a quem passa o dia inteiro no computador: piscar com mais frequência, a cada 20 minutos olhar para longe por 20 segundos, levantar e se mexer, alongar o pescoço, os ombros e as mãos, beber água.",
+    "disclaimer": "O app não trata nada e não substitui um médico. Faça os exercícios sem dor. Se algo doer, ficar dormente ou a visão piorar, procure um médico.",
+    "site": "Site",
+    "openSource": "Código aberto no GitHub",
+    "science": "O que dizem os estudos",
+    "privacy": "Política de privacidade",
+    "terms": "Termos de uso",
+    "licenses": "Licenças de terceiros",
+    "translation": "Achou um erro de tradução?",
+    "privacyShort": "Não coletamos nenhum dado: tudo fica no seu computador.",
+    "version": "Versão {{v}}"
+  },
+  "onboarding": {
+    "title": "O Unslouch está funcionando",
+    "whereMac": "O ícone do bonequinho agora está na barra de menus, no canto superior direito.",
+    "whereWin": "O ícone do bonequinho agora está na bandeja do sistema, perto do relógio. Se não aparecer, clique na seta \"^\".",
+    "whereLinux": "O ícone do bonequinho agora está na bandeja do sistema. No GNOME é preciso a extensão AppIndicator; o Ubuntu já vem com ela.",
+    "how": "A cada 20 minutos o app pede meio minuto: um exercício e um olhar para longe. A cada 45 minutos sugere que você se levante. Entre as pausas há sinais discretos: piscar, mudar de posição, beber água.",
+    "disclaimer": "O app não trata nada e não substitui um médico. Faça os exercícios sem dor.",
+    "next": "Avançar",
+    "back": "Voltar",
+    "finish": "Pronto",
+    "concernsTitle": "O que incomoda você?",
+    "concernsHint": "Escolha o que quer cuidar. Dá para mudar depois nas configurações.",
+    "concern": {
+      "eyes": "Olhos cansados, secos, ardendo",
+      "neck": "Pescoço rígido, ombros tensos",
+      "back": "Dor na lombar",
+      "hands": "Mãos e pulsos cansados",
+      "legs": "Pernas inchadas à noite",
+      "breath": "Tensão, estresse"
+    },
+    "workplaceTitle": "Ajuste seu posto de trabalho",
+    "workplaceHint": "Leva uns dois minutos. Você pode marcar os itens depois nas configurações.",
+    "workHours": "Só no horário de trabalho: de segunda a sexta, das {{from}} às {{to}}",
+    "workHoursHint": "Desative se você também trabalha nos fins de semana. Dias e horários podem ser alterados nas configurações"
+  },
+  "promo": {
+    "title": "My Healthy Diet",
+    "text": "Um diário alimentar dos mesmos autores: calorias, proteínas, gorduras e carboidratos, água e peso. No celular e no navegador.",
+    "button": "Abrir"
+  },
+  "ex": {
+    "blink": {
+      "title": "Piscada completa",
+      "close": "Feche os olhos suavemente",
+      "squeeze": "Aperte levemente as pálpebras",
+      "open": "Abra"
+    },
+    "chinTuck": {
+      "title": "Queixo para trás",
+      "tuck": "Leve a cabeça para trás, como se fizesse papada. Continue olhando para a frente",
+      "release": "Relaxe"
+    },
+    "shoulderBlades": {
+      "title": "Juntar as escápulas",
+      "squeeze": "Abaixe os ombros e junte as escápulas para trás e para baixo",
+      "release": "Solte"
+    },
+    "shrugs": {
+      "title": "Encolher os ombros",
+      "up": "Suba os ombros até as orelhas",
+      "down": "Abaixe e relaxe"
+    },
+    "sideTilt": {
+      "title": "Inclinação lateral do pescoço",
+      "right": "Orelha direita em direção ao ombro direito, ombros baixos",
+      "center": "Cabeça reta",
+      "left": "Orelha esquerda em direção ao ombro esquerdo"
+    },
+    "headTurns": {
+      "title": "Giros de cabeça",
+      "right": "Vire a cabeça devagar para a direita",
+      "left": "Agora para a esquerda"
+    },
+    "standingExtension": {
+      "title": "Extensão em pé",
+      "lean": "Mãos na lombar, incline-se suavemente para trás",
+      "return": "Volte à posição reta"
+    },
+    "seatedTwist": {
+      "title": "Rotação sentado",
+      "right": "Pés no chão, gire o tronco para a direita",
+      "center": "Volte",
+      "left": "Gire para a esquerda"
+    },
+    "catCow": {
+      "title": "Gato-vaca sentado",
+      "round": "Arredonde as costas, queixo no peito",
+      "arch": "Arqueie, peito para a frente"
+    },
+    "fistOpen": {
+      "title": "Punho e abertura",
+      "fist": "Feche a mão",
+      "open": "Abra bem os dedos"
+    },
+    "tendonGlides": {
+      "title": "Deslizamento de tendões",
+      "straight": "Mão reta",
+      "hook": "Gancho: dobre os dedos",
+      "fist": "Punho fechado",
+      "table": "Mesa: dedos retos, dobrados na base",
+      "straightFist": "Punho reto"
+    },
+    "flexorStretch": {
+      "title": "Alongamento do pulso, palma para fora",
+      "right": "Braço direito à frente, palma para fora. Com a mão esquerda puxe os dedos suavemente para trás",
+      "left": "Agora o braço esquerdo"
+    },
+    "extensorStretch": {
+      "title": "Alongamento do pulso, palma para dentro",
+      "right": "Braço direito à frente, mão para baixo. Pressione suavemente o dorso da mão",
+      "left": "Agora o braço esquerdo"
+    },
+    "shake": {
+      "title": "Sacudir as mãos",
+      "shake": "Relaxe e sacuda as mãos"
+    },
+    "anklePumps": {
+      "title": "Bomba de tornozelo",
+      "up": "Pontas dos pés para cima",
+      "down": "Pontas dos pés para baixo"
+    },
+    "calfRaises": {
+      "title": "Elevação de panturrilha",
+      "up": "Apoiado na mesa, suba na ponta dos pés",
+      "down": "Desça devagar"
+    },
+    "walk": {
+      "title": "Dê uma volta",
+      "walk": "Caminhe: até a janela, buscar água, pela escada"
+    },
+    "lateralRaise": {
+      "title": "Elevação lateral",
+      "up": "Levante os braços esticados para os lados até a altura dos ombros",
+      "down": "Abaixe devagar"
+    },
+    "reverseFly": {
+      "title": "Crucifixo invertido inclinado",
+      "open": "Incline-se para a frente, abra os braços para trás juntando as escápulas",
+      "close": "Abaixe os braços"
+    },
+    "shrugHold": {
+      "title": "Encolher e segurar",
+      "up": "Suba os ombros e segure",
+      "down": "Abaixe"
+    },
+    "breathing": {
+      "title": "Respiração lenta",
+      "in": "Inspire pelo nariz",
+      "out": "Expire devagar"
+    }
+  }
+}

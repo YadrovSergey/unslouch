@@ -1,0 +1,226 @@
+---
+import Base from "../../layouts/Base.astro";
+import Download from "../../components/Download.astro";
+import WaterStage from "../../components/WaterStage.astro";
+import ToolGrid from "../../components/ToolGrid.astro";
+import { ExerciseLoop } from "../../components/islands/common";
+import { GITHUB, RELEASES, app, href, langPaths, t, type Lang } from "../../i18n";
+import { ANCHORS } from "../../lib/science";
+
+export const getStaticPaths = langPaths;
+const { lang } = Astro.props as { lang: Lang };
+const d = t(lang);
+const a = app(lang);
+const h = d.home;
+const ex = a.ex as unknown as Record<string, Record<string, string>>;
+const anchors = ANCHORS[lang];
+
+const parts = [
+  { key: "eyes", ex: "blink", anchor: anchors.eyes },
+  { key: "neck", ex: "chinTuck", anchor: anchors.neck },
+  { key: "back", ex: "catCow", anchor: anchors.back },
+  { key: "hands", ex: "tendonGlides", anchor: anchors.hands },
+  { key: "legs", ex: "calfRaises", anchor: anchors.legs },
+  { key: "water", ex: "", anchor: anchors.water },
+  { key: "breath", ex: "breathing", anchor: anchors.breath },
+] as const;
+
+// A decorative year heatmap: fixed pattern, so every build draws the same picture.
+const cells = Array.from({ length: 26 * 7 }, (_, i) => {
+  const v = (i * 37 + (i % 7) * 11) % 10;
+  return i % 7 >= 5 ? 0 : v > 6 ? 3 : v > 3 ? 2 : v > 1 ? 1 : 0;
+});
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: d.name,
+    alternateName: lang === "ru" ? "Unslouch" : "Засиделся",
+    description: d.meta.home.description,
+    applicationCategory: "HealthApplication",
+    operatingSystem: "macOS, Windows, Linux",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    downloadUrl: RELEASES,
+    license: "https://opensource.org/licenses/MIT",
+    author: { "@type": "Person", name: lang === "ru" ? "Сергей Ядров" : "Sergey Yadrov" },
+    inLanguage: lang,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: h.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+  },
+];
+---
+
+<Base lang={lang} path="/" title={d.meta.home.title} description={d.meta.home.description}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div>
+        <p class="kicker">{h.kicker}</p>
+        <h1>{h.title}</h1>
+        <p class="hero__promise">{h.promise}</p>
+        <p class="hero__sub">{h.sub}</p>
+        <Download lang={lang} id="download" />
+        <ul class="facts">{h.facts.map((f) => <li>{f}</li>)}</ul>
+      </div>
+      <div class="hero__art">
+        <ExerciseLoop client:load ids={["blink", "chinTuck", "fistOpen", "shoulderBlades", "calfRaises", "headTurns"]} ex={ex} showTitle />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="wrap">
+      <h2>{h.rhythmTitle}</h2>
+      <ol class="rhythm grid grid--4">
+        {
+          h.rhythm.map((r) => (
+            <li class="card">
+              <span class="rhythm__time">{r.time}</span>
+              <h3>{r.title}</h3>
+              <p class="muted">{r.text}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="exercises">
+    <div class="wrap">
+      <h2>{h.bodyTitle}</h2>
+      <p class="lead">{h.bodyLead}</p>
+      <div class="parts">
+        {
+          parts.map((p) => (
+            <article class="card part" id={`part-${p.key}`}>
+              {p.ex ? <ExerciseLoop client:visible id={p.ex} ex={ex} /> : <WaterStage caption={a.cue.water} />}
+              <div class="part__body">
+                <h3>{h.body[p.key].title}</h3>
+                <p>{h.body[p.key].text}</p>
+                <a href={`${href(lang, "/science/")}#${p.anchor}`}>{h.scienceLink}</a>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="wrap">
+      <h2>{h.calmTitle}</h2>
+      <p class="lead">{h.calmText}</p>
+      <div class="grid grid--3" style="margin-top:24px">
+        {
+          h.calm.map((c) => (
+            <div class="card feature">
+              <h3>{c.title}</h3>
+              <p>{c.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap split">
+      <div>
+        <h2>{h.statsTitle}</h2>
+        <p class="lead">{h.statsText}</p>
+        <ul class="ticks">{h.stats.map((s) => <li>{s}</li>)}</ul>
+      </div>
+      <div class="card" aria-hidden="true">
+        <div class="tiles">
+          <div class="tile"><b>{lang === "ru" ? "6 ч 40 мин" : "6 h 40 min"}</b><span>{h.statsDemo.today}</span></div>
+          <div class="tile"><b>{lang === "ru" ? "52 мин" : "52 min"}</b><span>{h.statsDemo.longest}</span></div>
+          <div class="tile"><b>17</b><span>{h.statsDemo.breaks}</span></div>
+          <div class="tile"><b>12</b><span>{h.statsDemo.streak}</span></div>
+        </div>
+        <div class="heatmap">{cells.map((c) => <i class={c ? `l${c}` : undefined} />)}</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt" id="privacy">
+    <div class="wrap privacy-box">
+      <svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="5" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true">
+        <path d="M48 8 L80 20 V46 C80 66 66 80 48 88 C30 80 16 66 16 46 V20 Z"></path>
+        <path d="M34 48 L44 58 L63 38"></path>
+      </svg>
+      <div>
+        <h2>{h.privacyTitle}</h2>
+        <p class="lead">{h.privacyText}</p>
+        <a href={href(lang, "/privacy/")}>{h.privacyLink}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="install">
+    <div class="wrap">
+      <h2>{h.installTitle}</h2>
+      <div class="grid grid--2" style="margin-top:16px">
+        <div class="card">
+          <h3>{h.smartTitle}</h3>
+          <p class="muted">{h.smartText}</p>
+        </div>
+        <div class="card">
+          <h3>{h.linuxTitle}</h3>
+          <p class="muted">{h.linuxText}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="wrap">
+      <h2>{h.toolsTitle}</h2>
+      <p class="lead">{h.toolsText}</p>
+      <ToolGrid lang={lang} withApp />
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="wrap" style="max-width:860px">
+      <h2>{h.faqTitle}</h2>
+      <div class="faq">
+        {
+          h.faq.map((f) => (
+            <details>
+              <summary>{f.q}</summary>
+              <p>{f.a}</p>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class={`wrap grid ${d.cis ? "grid--2" : ""}`}>
+      <div class="card">
+        <h2>{h.openTitle}</h2>
+        <p class="muted">{h.openText}</p>
+        <a class="btn" href={GITHUB}>{h.openLink}</a>
+      </div>
+      {
+        d.cis && (
+          <div class="card promo">
+            <h2>{d.cis.title}</h2>
+            <p class="muted">{d.cis.text}</p>
+            <div>
+              <a class="btn" href="https://health-diet.ru/" rel="noopener">
+                {d.cis.link}
+              </a>
+            </div>
+          </div>
+        )
+      }
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,39 @@
+---
+import type { Source } from "@app/lib/sources";
+import { href, t, type Lang } from "../i18n";
+interface Props {
+  lang: Lang;
+  text: string | string[];
+  sources: Source[];
+  doctor?: string;
+  anchor?: string;
+}
+const { lang, text, sources, doctor, anchor = "" } = Astro.props;
+const d = t(lang).why;
+const paragraphs = Array.isArray(text) ? text : [text];
+---
+
+<section class="why">
+  <h2>{d.title}</h2>
+  {paragraphs.map((p) => <p>{p}</p>)}
+  {
+    doctor && (
+      <p class="why__doctor">
+        <b>{d.doctor}:</b> {doctor}
+      </p>
+    )
+  }
+  <h3>{d.sources}</h3>
+  <ul class="why__sources">
+    {
+      sources.map((s) => (
+        <li>
+          <a href={s.url} rel="noopener">
+            {s.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+  <p><a href={`${href(lang, "/science/")}${anchor ? `#${anchor}` : ""}`}>{d.more}</a></p>
+</section>

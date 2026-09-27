@@ -1,0 +1,73 @@
+/* Design tokens, copied from ../src/styles.css (the app). Keep in sync when the app palette changes. */
+:root {
+  --bg: #f6f7f5;
+  --surface: #ffffff;
+  --text: #1d2521;
+  --muted: #66716b;
+  --line: #e2e6e3;
+  --accent: #2f9e5a;
+  --accent-text: #ffffff;
+  --done: #2f9e5a;
+  --skipped: #d9a441;
+  --notice-bg: #fff6e6;
+  --notice-text: #6b4a12;
+  --figure: #2b3d37;
+  --figure-far: rgba(43, 61, 55, 0.4);
+  --figure-prop: rgba(43, 61, 55, 0.12);
+  --figure-prop-strong: rgba(43, 61, 55, 0.22);
+  --figure-accent: #2f9e5a;
+  --figure-bg: #ffffff;
+  --warn: #b7791f;
+  color-scheme: light;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, "Noto Sans", "Noto Sans Armenian",
+    "Noto Sans Georgian", sans-serif;
+  font-size: 15px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #161a18;
+    --surface: #1f2522;
+    --text: #e8ece9;
+    --muted: #9aa59f;
+    --line: #2e3632;
+    --accent: #45b86f;
+    --accent-text: #0e1a13;
+    --done: #45b86f;
+    --skipped: #d9a441;
+    --notice-bg: #33291a;
+    --notice-text: #f0d6a6;
+    --figure: #e9f1ee;
+    --figure-far: rgba(233, 241, 238, 0.45);
+    --figure-prop: rgba(233, 241, 238, 0.14);
+    --figure-prop-strong: rgba(233, 241, 238, 0.26);
+    --figure-accent: #7fd3a0;
+    --figure-bg: #1f2522;
+    --warn: #e0a043;
+  }
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #161a18;
+  --surface: #1f2522;
+  --text: #e8ece9;
+  --muted: #9aa59f;
+  --line: #2e3632;
+  --accent: #45b86f;
+  --accent-text: #0e1a13;
+  --done: #45b86f;
+  --skipped: #d9a441;
+  --notice-bg: #33291a;
+  --notice-text: #f0d6a6;
+  --figure: #e9f1ee;
+  --figure-far: rgba(233, 241, 238, 0.45);
+  --figure-prop: rgba(233, 241, 238, 0.14);
+  --figure-prop-strong: rgba(233, 241, 238, 0.26);
+  --figure-accent: #7fd3a0;
+  --figure-bg: #1f2522;
+  --warn: #e0a043;
+}

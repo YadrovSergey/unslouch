@@ -1,0 +1,18 @@
+---
+import ToolPage from "../../../layouts/ToolPage.astro";
+import { SOURCES } from "@app/lib/sources";
+import { app, langPaths, t, type Lang } from "../../../i18n";
+import { islandText } from "../../../lib/islandText";
+import { ANCHORS, EXTRA_SOURCES } from "../../../lib/science";
+import EyeTimer from "../../../components/islands/EyeTimer";
+export const getStaticPaths = langPaths;
+const { lang } = Astro.props as { lang: Lang };
+const a = app(lang);
+const d = t(lang);
+const text = islandText(lang);
+const anchors = ANCHORS[lang];
+---
+
+<ToolPage lang={lang} tool="eyeTimer" why={a.why.eyes.text} doctor={a.why.eyes.doctor} sources={SOURCES.eyes} anchor={anchors.eyes}>
+  <EyeTimer client:load text={text} t={d.tools.eyeTimer} common={d.common} />
+</ToolPage>

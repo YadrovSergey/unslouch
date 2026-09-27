@@ -1,0 +1,504 @@
+{
+  "app": {
+    "name": "Unslouch"
+  },
+  "tray": {
+    "nextBreak": "{{n}} 分钟后休息",
+    "pausedUntil": "暂停至 {{time}}",
+    "focusUntil": "专注至 {{time}}",
+    "outsideHours": "非工作时间",
+    "inCall": "通话中，提醒稍后进行",
+    "dnd": "勿扰模式，提醒稍后进行",
+    "breaksOff": "休息提醒已关闭",
+    "microNow": "现在让眼睛休息",
+    "movementNow": "现在活动一下",
+    "breathingNow": "呼吸一分钟",
+    "focus": "专注",
+    "focus25": "25 分钟",
+    "focus50": "50 分钟",
+    "focusStop": "结束专注",
+    "pause": "暂停",
+    "pause30": "30 分钟",
+    "pause60": "1 小时",
+    "pauseTomorrow": "直到明天",
+    "resume": "继续",
+    "today": "今日休息：{{done}} 次 · 电脑前 {{time}}",
+    "hm": "{{h}} 小时 {{m}} 分钟",
+    "m": "{{m}} 分钟",
+    "stats": "统计…",
+    "settings": "设置…",
+    "about": "关于",
+    "mzr": "MZR 饮食日记",
+    "quit": "退出",
+    "update": "安装版本 {{v}}"
+  },
+  "time": {
+    "hm": "{{h}} 小时 {{m}} 分钟",
+    "m": "{{m}} 分钟"
+  },
+  "break": {
+    "lookFar": "看看远处",
+    "lookFarHint": "看向窗外或远处的墙，距离 6 米以上。负责近距离对焦的肌肉这时可以放松。",
+    "standUp": "站起来",
+    "standUpHint": "做几个背部和腿部练习，然后走一走。",
+    "walkHint": "走到窗边、去接水、爬爬楼梯。顺便喝点水。",
+    "longTitle": "长休息",
+    "longHint": "离开电脑：走一走、吃午饭、到户外去。屏幕可以等一等。",
+    "neckTitle": "颈肩两分钟",
+    "neckHint": "每天一次简短的力量练习。动作要慢。",
+    "breathTitle": "一分钟慢呼吸",
+    "breathHint": "跟着圆圈呼吸：吸气 4 拍，呼气 6 拍。",
+    "done": "完成，可以继续工作了",
+    "seconds_other": "秒",
+    "minutes_other": "分钟",
+    "repeat": "{{n}} / {{total}}",
+    "postpone": "推迟 {{n}} 分钟",
+    "skip": "跳过",
+    "tip": "小提示",
+    "noPain": "不要有疼痛感。如果疼，请停下。",
+    "tips": [
+      "屏幕与眼睛保持一臂距离，50–70 厘米。",
+      "屏幕顶端与视线齐平或略低。稍微向下看时，眼睛睁得小一些，也就不那么容易干。",
+      "空调和风扇不要对着脸吹。冬天加湿器会有帮助。",
+      "根据房间光线调整屏幕亮度。在暗的房间里，亮屏幕更容易让人疲劳。",
+      "如果需要眯眼看，就把字体调大。",
+      "人工泪液应由医生来选，不要自己给自己开。",
+      "经常变换姿势。最好的姿势是下一个姿势。",
+      "鼠标放在键盘旁边，不用伸手去够。",
+      "午饭时到户外晒晒太阳，至少 10 分钟。"
+    ]
+  },
+  "endOfDay": {
+    "title": "今天的工作结束了",
+    "hint": "关掉工作标签页，剩下的事留到明天。下班后好好休息有助于睡得更好。",
+    "breaks": "次休息",
+    "atComputer": "使用电脑",
+    "longestSitting": "最长连续久坐",
+    "continue": "再工作一会儿",
+    "finish": "下班了"
+  },
+  "wellbeing": {
+    "title": "这周感觉怎么样？",
+    "hint": "每周四个问题。从回答中可以看出休息是否对您有帮助。这不是医学检测。",
+    "eyes": "眼睛",
+    "neck": "颈部和肩膀",
+    "back": "背部",
+    "hands": "手和手腕",
+    "level0": "没有不适",
+    "level1": "有一点",
+    "level2": "比较明显",
+    "level3": "很严重",
+    "skip": "以后再说",
+    "save": "保存",
+    "chartTitle": "每周身体感受",
+    "chartHint": "您每周一的回答。绿色：没有不适，红色：很严重。",
+    "empty": "还没有回答。问题会在周一第一次休息后出现。"
+  },
+  "cue": {
+    "blink": "眨眨眼",
+    "posture": "换个姿势",
+    "water": "喝点水",
+    "drank": "喝了",
+    "logInMzr": "在 MZR 中记录",
+    "close": "关闭"
+  },
+  "tabs": {
+    "settings": "设置",
+    "stats": "统计",
+    "exercises": "练习",
+    "about": "关于"
+  },
+  "sections": {
+    "eyes": "眼睛",
+    "eyesHint": "远眺和眨眼练习",
+    "neck": "颈部和肩膀",
+    "neckHint": "收下巴、肩胛骨、侧倾",
+    "back": "背部",
+    "backHint": "后仰、转体，“站起来”休息时做猫牛式",
+    "hands": "手和手腕",
+    "handsHint": "握拳张手、肌腱滑动、手腕拉伸",
+    "legs": "腿部",
+    "legsHint": "勾脚、踮脚、走动",
+    "breath": "压力",
+    "breathHint": "每天一次慢呼吸"
+  },
+  "settings": {
+    "rhythm": "节奏",
+    "preset": "模式",
+    "presets": {
+      "recommended": "推荐",
+      "pomodoro": "番茄钟",
+      "hourly": "每小时",
+      "custom": "自定义"
+    },
+    "presetHint": {
+      "recommended": "每 20 分钟让眼睛休息一次，每 45 分钟站起来",
+      "pomodoro": "工作 25 分钟，休息 5 分钟，每 2 小时一次长休息",
+      "hourly": "每 20 分钟让眼睛休息一次，每小时站起来一次",
+      "custom": "在下方自行设置"
+    },
+    "body": "我要照顾的部位",
+    "bodyHint": "练习只从已开启的部分中选取。",
+    "microSection": "短休息",
+    "microEnabled": "眼睛休息",
+    "microHint": "一个简短练习，再看看远处",
+    "every": "每隔",
+    "lookFarFor": "远眺时长",
+    "movementSection": "站起来",
+    "movementEnabled": "提醒我站起来",
+    "movementHint": "背部和腿部练习，走一走",
+    "duration": "时长",
+    "longEnabled": "长休息",
+    "longHint": "每隔几个小时走远一点：吃午饭、散散步",
+    "cuesSection": "轻提示",
+    "cuesHint": "没有窗口和按钮，不打扰工作。",
+    "blinkCue": "眨眼",
+    "blinkCueHint": "屏幕边缘暗一秒钟",
+    "postureCue": "换个姿势",
+    "postureCueHint": "顶部出现几秒钟的小横幅",
+    "water": "喝水",
+    "waterHint": "角落里的小卡片，会自动消失",
+    "dailySection": "每天一次",
+    "neckDaily": "颈肩两分钟",
+    "neckDailyHint": "11:00 以后做力量练习。研究表明，每天 2 分钟可以减轻颈部疼痛",
+    "breathingDaily": "一分钟呼吸",
+    "breathingDailyHint": "15:00 以后，代替一次眼睛休息",
+    "endOfDay": "工作日结束",
+    "endOfDayHint": "提醒您收工，并显示当天总结",
+    "at": "时间",
+    "workSection": "工作时间",
+    "workHours": "只在工作时间提醒",
+    "workHoursHint": "其余时间应用保持安静",
+    "workDays": "日期",
+    "from": "从",
+    "to": "到",
+    "quietSection": "免打扰",
+    "pauseOnCalls": "等通话结束",
+    "pauseOnCallsHint": "当其他程序在使用摄像头或麦克风时。我们自己从不打开它们",
+    "pauseInFullscreen": "全屏播放视频或演示时等待",
+    "waylandNoFullscreen": "Wayland 不提供这项信息",
+    "respectDnd": "遵循勿扰模式",
+    "respectDndMac": "在 Mac 上并不总能读取专注模式。菜单里我们自己的“专注”更可靠",
+    "snooze": "推迟时长",
+    "idleReset": "离开电脑",
+    "idleResetHint": "这么长时间不碰鼠标和键盘，就算作一次休息",
+    "usageSection": "各程序使用时间",
+    "usageEnabled": "统计各程序使用时间",
+    "usagePrivacy": "只统计程序名称。我们不读取窗口标题和网站。所有数据都留在您的电脑上",
+    "usageUnsupported": "此系统不支持：Wayland 不提供当前活动窗口的信息",
+    "usageExcluded": "不统计",
+    "usageExcludedHint": "这些程序完全不会被记录",
+    "usageAddPlaceholder": "输入名称后按 Enter",
+    "usageClear": "删除程序使用记录",
+    "usageClearConfirm": "删除全部程序使用时间记录？",
+    "usageCleared": "记录已删除",
+    "workplaceSection": "工作位",
+    "generalSection": "通用",
+    "theme": "主题",
+    "themeSystem": "跟随系统",
+    "themeLight": "浅色",
+    "themeDark": "深色",
+    "language": "语言",
+    "systemLanguage": "跟随系统",
+    "sound": "休息结束时播放声音",
+    "soundHint": "不看屏幕也能知道休息结束了",
+    "autostart": "开机时启动",
+    "checkUpdates": "检查更新",
+    "checkUpdatesHint": "每天下载一次包含版本号的文件。不发送任何其他内容",
+    "defaults": "恢复推荐设置",
+    "min": "分钟",
+    "sec": "秒"
+  },
+  "data": {
+    "title": "迁移到另一台电脑",
+    "hint": "设置和统计保存在一个文件中",
+    "export": "保存到文件",
+    "import": "从文件导入",
+    "exported": "文件已保存",
+    "imported": "数据已导入",
+    "importFailed": "无法读取文件"
+  },
+  "why": {
+    "toggle": "为什么要这样做",
+    "doctor": "何时就医",
+    "eyes": {
+      "text": "看屏幕时，我们眨眼的次数会减少到平时的二分之一到三分之一，而且一半是不完全眨眼，所以眼睛会干。负责近距离对焦的肌肉几个小时都得不到休息。提醒远眺可以减轻眼睛灼热和疲劳。",
+      "doctor": "如果眼睛疼痛、发红、看东西重影或视力下降。"
+    },
+    "neck": {
+      "text": "长时间头部稍微前倾地坐着，颈部和肩部肌肉会一直处于轻微紧张状态。简短的力量练习最有效：每天哪怕 2 分钟也能减轻疼痛。",
+      "doctor": "如果疼痛或麻木放射到手臂、手臂无力，或疼痛持续超过 6 周。"
+    },
+    "back": {
+      "text": "伤背的不是“错误”的姿势，而是一动不动。最好的姿势是下一个姿势。每 20–30 分钟走一小会儿，还能降低餐后血糖。",
+      "doctor": "如果腹股沟发麻、双腿无力、夜间剧痛，或疼痛持续 4–6 周不缓解。"
+    },
+    "hands": {
+      "text": "前臂肌肉一直在工作得不到休息，手腕也常常弯着。每 20 分钟休息一次可以减轻手臂的不适。使用电脑与腕管综合征之间的关系尚未得到证实，所以我们不承诺能预防它。",
+      "doctor": "如果拇指、食指和中指发麻，尤其是在夜间，或者拿不住东西。"
+    },
+    "legs": {
+      "text": "小腿肌肉像泵一样把血液从腿部送回去。坐着时这个泵就停了，到晚上腿会肿。至少每小时站起来走一走会有帮助。",
+      "doctor": "请立即就医：如果一条腿肿胀、疼痛并发红，或出现呼吸急促和胸痛。"
+    },
+    "breath": {
+      "text": "慢呼吸，每分钟大约 6 次，呼气拉长，可以缓解紧张。效果不大，但几分钟内就能感觉到。",
+      "doctor": "如果焦虑已经连续几周影响生活：呼吸练习不能代替专业帮助。"
+    },
+    "water": {
+      "text": "即使轻微缺水也会影响注意力和情绪，还可能引起头痛。我们不强求每天喝多少升：渴了就喝。茶和咖啡也算。",
+      "doctor": "如果医生限制了您的饮水量，请遵医嘱并关闭这个提醒。"
+    },
+    "workplace": {
+      "text": "调整好的工作位能减少一部分不适，但单靠它作用不大。休息和活动的帮助更大。",
+      "doctor": "如果调整工作位并坚持休息后，疼痛仍未缓解。"
+    }
+  },
+  "checklist": {
+    "height": "您的身高",
+    "cm": "厘米",
+    "seat": "座椅高度",
+    "desk": "桌面高度",
+    "screenTop": "屏幕顶端离地高度",
+    "standingDesk": "站立办公桌",
+    "calcNote": "按平均身体比例估算。请凭感觉检查：肘部约 90°，双脚平放在地上。",
+    "screenHeight": "屏幕顶端与视线齐平或略低",
+    "screenDistance": "屏幕在一臂距离，50–70 厘米",
+    "elbows": "肘部约 90°，肩膀放松下沉，前臂自然放置",
+    "wrists": "手腕伸直，鼠标在键盘旁边",
+    "feet": "双脚平放在地上或脚踏上",
+    "back": "椅背能托住腰部",
+    "light": "屏幕没有反光，窗户在侧面，而不是在身后"
+  },
+  "stats": {
+    "tabs": {
+      "overview": "概览",
+      "apps": "程序",
+      "wellbeing": "身体感受",
+      "achievements": "成就"
+    },
+    "today": "今天",
+    "done": "已完成",
+    "skipped": "已跳过",
+    "atComputer": "使用电脑",
+    "longestSitting": "最长连续久坐",
+    "streak": "连续天数",
+    "sittingWarning": "今天有一次连续坐了超过 2 小时没有起身。如果经常这样，腿部静脉的风险会增加。尽量至少每小时站起来一次。",
+    "week": "周",
+    "empty": "还没有数据。工作 20 分钟后会有第一次休息。",
+    "year": "年",
+    "less": "少",
+    "more": "多",
+    "appsOff": "各程序使用时间统计已在设置中关闭。",
+    "appsEmpty": "还没有数据。",
+    "longestIn": "您在 {{app}} 中连续使用最久没有休息：{{time}}",
+    "programs": "程序",
+    "category": "类别",
+    "categories": {
+      "work": "工作",
+      "communication": "沟通",
+      "entertainment": "娱乐",
+      "other": "其他"
+    },
+    "otherApps": "其他",
+    "byCategory": "按类别",
+    "byHour": "按小时",
+    "exclude": "不统计此程序"
+  },
+  "achievements": {
+    "title": "成就",
+    "firstBreak": {
+      "title": "第一次休息",
+      "hint": "好的开始"
+    },
+    "streak7": {
+      "title": "连续一周",
+      "hint": "连续 7 个工作日都有休息"
+    },
+    "streak30": {
+      "title": "连续一个月",
+      "hint": "连续 30 个工作日都有休息"
+    },
+    "breaks100": {
+      "title": "100 次休息",
+      "hint": "累计完成的休息次数"
+    },
+    "breaks1000": {
+      "title": "1000 次休息",
+      "hint": "习惯已经养成"
+    },
+    "standUp100": {
+      "title": "站起来 100 次",
+      "hint": "“站起来”休息"
+    },
+    "water50": {
+      "title": "50 杯水",
+      "hint": "喝水提醒点了“喝了”"
+    },
+    "noLongSitting5": {
+      "title": "告别久坐",
+      "hint": "5 个工作日没有连续坐超过 2 小时"
+    }
+  },
+  "share": {
+    "button": "分享",
+    "streak_other": "连续 {{count}} 天",
+    "total_other": "在电脑前休息了 {{count}} 次",
+    "footer": "Unslouch：免费的电脑前健康应用 · unslouch.app",
+    "saved": "图片已保存"
+  },
+  "about": {
+    "text": "这个应用会提醒您医生给整天坐在电脑前的人的建议：多眨眼，每 20 分钟远眺 20 秒，站起来活动，活动颈部、肩膀和手，多喝水。",
+    "disclaimer": "本应用不能治疗任何疾病，也不能代替医生。做练习时不要有疼痛感。如果有地方疼痛、发麻或视力下降，请去看医生。",
+    "site": "官网",
+    "openSource": "GitHub 上的开源代码",
+    "science": "研究怎么说",
+    "privacy": "隐私政策",
+    "terms": "使用条款",
+    "licenses": "第三方许可",
+    "translation": "发现翻译错误？",
+    "privacyShort": "我们不收集任何数据：所有内容都只保存在您的电脑上。",
+    "version": "版本 {{v}}"
+  },
+  "onboarding": {
+    "title": "Unslouch 已在运行",
+    "whereMac": "小人图标现在位于菜单栏右上角。",
+    "whereWin": "小人图标现在位于系统托盘中，时钟旁边。如果看不到，请点击“^”箭头。",
+    "whereLinux": "小人图标现在位于系统托盘中。GNOME 需要安装 AppIndicator 扩展才能显示托盘，Ubuntu 已经自带。",
+    "how": "每 20 分钟，应用会请您抽出半分钟：做一个练习，再看看远处。每 45 分钟会建议您站起来。两次休息之间会有轻提示：眨眨眼、换个姿势、喝点水。",
+    "disclaimer": "本应用不能治疗任何疾病，也不能代替医生。做练习时不要有疼痛感。",
+    "next": "下一步",
+    "back": "返回",
+    "finish": "完成",
+    "concernsTitle": "哪里不舒服？",
+    "concernsHint": "选择您想照顾的部位。以后可以在设置中更改。",
+    "concern": {
+      "eyes": "眼睛疲劳、干涩、灼热",
+      "neck": "脖子僵硬、肩膀紧绷",
+      "back": "腰部酸痛",
+      "hands": "手和手腕疲劳",
+      "legs": "傍晚腿部浮肿",
+      "breath": "紧张、压力"
+    },
+    "workplaceTitle": "调整您的工作位",
+    "workplaceHint": "只需几分钟。之后也可以在设置中勾选这些项目。",
+    "workHours": "仅在工作时间：周一至周五，{{from}} 至 {{to}}",
+    "workHoursHint": "如果周末也工作，请关闭。天数和时间可以在设置中修改"
+  },
+  "promo": {
+    "title": "My Healthy Diet",
+    "text": "同一团队开发的饮食日记：热量、蛋白质、脂肪、碳水化合物、饮水和体重。支持手机和浏览器。",
+    "button": "打开"
+  },
+  "ex": {
+    "blink": {
+      "title": "完全眨眼",
+      "close": "轻轻闭上眼睛",
+      "squeeze": "稍微挤紧眼睑",
+      "open": "睁开"
+    },
+    "chinTuck": {
+      "title": "收下巴",
+      "tuck": "头部向后收，就像做出双下巴。目视前方",
+      "release": "放松"
+    },
+    "shoulderBlades": {
+      "title": "夹肩胛骨",
+      "squeeze": "肩膀下沉，肩胛骨向后向下夹紧",
+      "release": "放松"
+    },
+    "shrugs": {
+      "title": "耸肩",
+      "up": "肩膀向耳朵方向抬起",
+      "down": "放下并放松"
+    },
+    "sideTilt": {
+      "title": "头部侧倾",
+      "right": "右耳靠向右肩，肩膀不要抬起",
+      "center": "头部回正",
+      "left": "左耳靠向左肩"
+    },
+    "headTurns": {
+      "title": "转头",
+      "right": "慢慢把头转向右边",
+      "left": "现在转向左边"
+    },
+    "standingExtension": {
+      "title": "站立后仰",
+      "lean": "双手扶住腰部，轻轻向后仰",
+      "return": "回到直立"
+    },
+    "seatedTwist": {
+      "title": "坐姿转体",
+      "right": "双脚踩地，上身向右转",
+      "center": "回正",
+      "left": "上身向左转"
+    },
+    "catCow": {
+      "title": "坐姿猫牛式",
+      "round": "背部拱起，下巴靠向胸口",
+      "arch": "背部下塌，挺胸向前"
+    },
+    "fistOpen": {
+      "title": "握拳张手",
+      "fist": "握紧拳头",
+      "open": "五指用力张开"
+    },
+    "tendonGlides": {
+      "title": "肌腱滑动",
+      "straight": "手掌伸直",
+      "hook": "钩状：弯曲手指",
+      "fist": "握拳",
+      "table": "桌面状：手指伸直，在指根处弯曲",
+      "straightFist": "直拳"
+    },
+    "flexorStretch": {
+      "title": "手腕拉伸，掌心向外",
+      "right": "右臂向前伸，掌心向外。用左手轻轻把手指向回拉",
+      "left": "现在换左臂"
+    },
+    "extensorStretch": {
+      "title": "手腕拉伸，掌心向内",
+      "right": "右臂向前伸，手掌向下。用左手轻轻按压手背",
+      "left": "现在换左臂"
+    },
+    "shake": {
+      "title": "甩手",
+      "shake": "放松双手并甩一甩"
+    },
+    "anklePumps": {
+      "title": "踝泵",
+      "up": "脚尖勾向自己",
+      "down": "脚尖向前绷直"
+    },
+    "calfRaises": {
+      "title": "踮脚",
+      "up": "扶着桌子，踮起脚尖",
+      "down": "慢慢放下"
+    },
+    "walk": {
+      "title": "走一走",
+      "walk": "走一走：到窗边、去接水、爬爬楼梯"
+    },
+    "lateralRaise": {
+      "title": "侧平举",
+      "up": "双臂伸直向两侧抬到肩高",
+      "down": "慢慢放下"
+    },
+    "reverseFly": {
+      "title": "俯身反向飞鸟",
+      "open": "身体前倾，双臂向后打开，夹紧肩胛骨",
+      "close": "放下双臂"
+    },
+    "shrugHold": {
+      "title": "耸肩保持",
+      "up": "抬起肩膀并保持",
+      "down": "放下"
+    },
+    "breathing": {
+      "title": "慢呼吸",
+      "in": "用鼻子吸气",
+      "out": "慢慢呼气"
+    }
+  }
+}

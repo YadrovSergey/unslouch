@@ -1,0 +1,26 @@
+name: Idea / Идея
+description: Suggest a feature or improvement / Предложить функцию или улучшение
+labels: [idea]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Health-related ideas: please add a source if you have one (see docs/science.en.md).
+        Идеи про здоровье: если есть источник, приложите его (см. docs/science.ru.md).
+  - type: textarea
+    id: problem
+    attributes:
+      label: What bothers you / Что мешает
+      description: The situation, not the solution yet.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea / Ваша идея
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source, if any / Источник, если есть

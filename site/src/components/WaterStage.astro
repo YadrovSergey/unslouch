@@ -1,0 +1,23 @@
+---
+/** A glass that fills up: the water cue has no exercise in the catalog, so it is drawn here. */
+interface Props {
+  caption: string;
+}
+const { caption } = Astro.props;
+---
+
+<div class="stage">
+  <div class="stage__visual">
+    <svg class="water" viewBox="0 0 200 200" aria-hidden="true">
+      <defs>
+        <clipPath id="glass-inside"><path d="M66 62 L134 62 L126 168 Q125 172 120 172 L80 172 Q75 172 74 168 Z"></path></clipPath>
+      </defs>
+      <g clip-path="url(#glass-inside)">
+        <rect class="water__fill" x="60" y="40" width="80" height="132"></rect>
+      </g>
+      <path class="water__glass" d="M62 56 L138 56 L129 170 Q128 176 122 176 L78 176 Q72 176 71 170 Z"></path>
+      <circle class="water__drop" cx="100" cy="20" r="6"></circle>
+    </svg>
+  </div>
+  <p class="stage__step">{caption}</p>
+</div>
