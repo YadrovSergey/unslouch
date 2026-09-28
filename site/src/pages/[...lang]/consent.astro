@@ -2,13 +2,26 @@
 import Doc from "../../layouts/Doc.astro";
 import * as en from "../../../../legal/consent.en.md";
 import * as ru from "../../../../legal/consent.ru.md";
-import { langPaths, t, type Lang } from "../../i18n";
+import { LEGAL_LANGS, langPaths, t, type Lang } from "../../i18n";
 
 export const getStaticPaths = langPaths;
 const { lang } = Astro.props as { lang: Lang };
-const md = { en, ru }[lang];
+// Legal texts exist in English and Russian only. Other languages show the English text with a notice on top,
+// point their canonical to the English page and stay out of the sitemap and hreflang.
+const translated = LEGAL_LANGS.includes(lang);
+const md = lang === "ru" ? ru : en;
 const d = t(lang);
 const html = await md.compiledContent();
 ---
 
-<Doc lang={lang} path="/consent/" title={d.meta.consent.title} description={d.meta.consent.description} html={html} />
+<Doc
+  lang={lang}
+  path="/consent/"
+  title={d.meta.consent.title}
+  description={d.meta.consent.description}
+  html={html}
+  notice={translated ? undefined : d.legalNotice}
+  docLang={translated ? undefined : "en"}
+  langs={LEGAL_LANGS}
+  canonicalLang={translated ? undefined : "en"}
+/>

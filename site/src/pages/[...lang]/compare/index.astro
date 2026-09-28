@@ -2,7 +2,7 @@
 import Base from "../../../layouts/Base.astro";
 import Cta from "../../../components/Cta.astro";
 import { href, langPaths, t, fill, type Lang } from "../../../i18n";
-import { COMPETITORS, OURS, ROWS } from "../../../lib/competitors";
+import { COMPETITORS, ROWS, appText, ours } from "../../../lib/competitors";
 
 export const getStaticPaths = langPaths;
 const { lang } = Astro.props as { lang: Lang };
@@ -31,10 +31,10 @@ const c = d.compare;
             ROWS.map((row) => (
               <tr>
                 <th scope="row">{c.rows[row]}</th>
-                <td class="ours">{OURS[row]?.[lang]}</td>
+                <td class="ours">{ours(lang, row)}</td>
                 {COMPETITORS.map((x) => {
-                  const cell = x.cells[row];
-                  return cell ? <td>{cell[lang]}</td> : <td class="none"><span class="visually-hidden">{c.empty}</span></td>;
+                  const cell = appText(lang, x).cell(row);
+                  return cell ? <td>{cell}</td> : <td class="none"><span class="visually-hidden">{c.empty}</span></td>;
                 })}
               </tr>
             ))
@@ -51,7 +51,7 @@ const c = d.compare;
           <li>
             <a class="card" href={href(lang, `/compare/${x.slug}/`)}>
               <h3>{fill(c.alternative, { name: x.name })}</h3>
-              <p>{x.summary[lang]}</p>
+              <p>{appText(lang, x).summary}</p>
             </a>
           </li>
         ))

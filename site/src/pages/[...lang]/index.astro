@@ -4,7 +4,7 @@ import Download from "../../components/Download.astro";
 import WaterStage from "../../components/WaterStage.astro";
 import ToolGrid from "../../components/ToolGrid.astro";
 import { ExerciseLoop } from "../../components/islands/common";
-import { DONATE, DOWNLOADS, GITHUB, ORIGIN, app, href, langPaths, t, type Lang } from "../../i18n";
+import { DOWNLOADS, GITHUB, ORIGIN, app, href, langPaths, t, type Lang } from "../../i18n";
 import { ANCHORS } from "../../lib/science";
 
 export const getStaticPaths = langPaths;
@@ -36,7 +36,7 @@ const jsonLd = [
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: d.name,
-    alternateName: lang === "ru" ? "Unslouch" : "Засиделся",
+    alternateName: d.name === "Unslouch" ? "Засиделся" : "Unslouch",
     description: d.meta.home.description,
     applicationCategory: "HealthApplication",
     operatingSystem: "macOS, Windows, Linux",
@@ -137,8 +137,8 @@ const jsonLd = [
       </div>
       <div class="card" aria-hidden="true">
         <div class="tiles">
-          <div class="tile"><b>{lang === "ru" ? "6 ч 40 мин" : "6 h 40 min"}</b><span>{h.statsDemo.today}</span></div>
-          <div class="tile"><b>{lang === "ru" ? "52 мин" : "52 min"}</b><span>{h.statsDemo.longest}</span></div>
+          <div class="tile"><b>{h.statsDemo.todayValue}</b><span>{h.statsDemo.today}</span></div>
+          <div class="tile"><b>{h.statsDemo.longestValue}</b><span>{h.statsDemo.longest}</span></div>
           <div class="tile"><b>17</b><span>{h.statsDemo.breaks}</span></div>
           <div class="tile"><b>12</b><span>{h.statsDemo.streak}</span></div>
         </div>
@@ -194,6 +194,7 @@ const jsonLd = [
             <details>
               <summary>{f.q}</summary>
               <p>{f.a}</p>
+              {f.link && <p><a href={href(lang, "/donate/")}>{f.link}</a></p>}
             </details>
           ))
         }
@@ -208,7 +209,7 @@ const jsonLd = [
         <p class="muted">{h.openText}</p>
         <p class="button-row">
           <a class="btn" href={GITHUB}>{h.openLink}</a>
-          <a class="btn" href={DONATE} rel="noopener">{h.donate}</a>
+          <a class="btn" href={href(lang, "/donate/")}>{h.donate}</a>
         </p>
         <p class="muted small">{h.donate}: {h.donateNote}</p>
       </div>

@@ -1,33 +1,27 @@
 import type { Source } from "@app/lib/sources";
-import type { Lang } from "../i18n";
+import { LANGS, type Lang } from "../i18n";
+import { SCIENCE_SECTIONS } from "./scienceDoc";
 
 export type Topic = "eyes" | "neck" | "back" | "hands" | "legs" | "water" | "breath" | "workplace" | "micro";
 
 /** Heading ids on the science page (generated from the headings of docs/science.*.md). */
-export const ANCHORS: Record<Lang, Record<Topic, string>> = {
-  en: {
-    eyes: "eyes",
-    neck: "neck-and-shoulders",
-    back: "back-and-long-sitting",
-    hands: "hands",
-    legs: "legs",
-    water: "water",
-    breath: "breathing",
-    workplace: "workstation",
-    micro: "micro-breaks-in-general",
-  },
-  ru: {
-    eyes: "глаза",
-    neck: "шея-и-плечи",
-    back: "спина-и-долгое-сидение",
-    hands: "кисти",
-    legs: "ноги",
-    water: "вода",
-    breath: "дыхание",
-    workplace: "рабочее-место",
-    micro: "микропаузы-в-целом",
-  },
-};
+export const ANCHORS = Object.fromEntries(
+  LANGS.map((l) => {
+    const x = SCIENCE_SECTIONS[l];
+    const topics: Record<Topic, string> = {
+      eyes: x.eyes.anchor,
+      neck: x.neck.anchor,
+      back: x.back.anchor,
+      hands: x.hands.anchor,
+      legs: x.legs.anchor,
+      water: x.water.anchor,
+      breath: x.breath.anchor,
+      workplace: x.workplace.anchor,
+      micro: x.microbreaks.anchor,
+    };
+    return [l, topics];
+  }),
+) as Record<Lang, Record<Topic, string>>;
 
 /** Sources used on the site that are listed in docs/science but not in src/lib/sources.ts. */
 export const EXTRA_SOURCES: Record<string, Source> = {

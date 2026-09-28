@@ -1,6 +1,7 @@
 # unslouch.health-diet.ru website
 
-Static site built with Astro: English at `/`, Russian at `/ru/`. No analytics, cookies, external fonts or
+Static site built with Astro in the same 15 languages as the app: English at `/`, the others under `/<code>/`
+(`/ru/`, `/de/`, `/pt-br/`, `/zh-cn/`...). No analytics, cookies, external fonts or
 scripts. The exercise catalog, figures, desk calculator, sounds and app translations are imported from `../src`,
 and the science, privacy and terms pages render `../docs/*.md` and `../legal/*.md` directly, so there is one
 source of truth for the app and the site.
@@ -27,9 +28,14 @@ node scripts/extract-ru-text.mjs /tmp/ru.txt && python3 path/to/live-text-check/
 
 ## Where things live
 
-- `src/i18n/en.ts`, `src/i18n/ru.ts`: all site texts. To add a language, copy `en.ts`, register it in
-  `src/i18n/index.ts` and in the sitemap `i18n` block of `astro.config.mjs`. Exercise names and health texts come
-  from `../src/locales/*.json`.
+- `src/i18n/<code>.ts`: all site texts, `en.ts` is the source and defines the shape. To add a language, copy `en.ts`,
+  register it in `src/i18n/index.ts` and in the sitemap `i18n` block of `astro.config.mjs`, add
+  `../docs/science.<code>.md` (same headings in the same order: section anchors are taken by position) and a `<code>`
+  object to every item of `../docs/sources.json`. Exercise names and health texts come from `../src/locales/*.json`.
+  `npm run check:i18n` compares every dictionary with `en.ts`, checks sources.json and the science translations.
+- Legal pages (privacy, terms, consent) exist in English and Russian only. Other languages show the English text
+  with a notice, a canonical link to the English page, no hreflang and no sitemap entry.
+- `/donate/`: CloudTips (Russian cards) and Boosty (any card). The desktop app links to `/<code>/donate/`.
 - `src/pages/[...lang]/`: every page exists once and is generated for each language.
 - `src/components/islands/`: interactive tools (React). `common.tsx` has the looping exercise card and the
   fullscreen break player.

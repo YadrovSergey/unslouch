@@ -1,7 +1,7 @@
 ---
 import Base from "../../../../layouts/Base.astro";
 import Cta from "../../../../components/Cta.astro";
-import { LANGS, DEFAULT_LANG, absolute, href, t, type Lang } from "../../../../i18n";
+import { LANGS, langParam, absolute, href, t, type Lang } from "../../../../i18n";
 import {
   SECTION_INFO,
   SOURCES,
@@ -18,7 +18,7 @@ import {
 export function getStaticPaths() {
   return LANGS.flatMap((lang) =>
     SOURCES.map((source) => ({
-      params: { lang: lang === DEFAULT_LANG ? undefined : lang, slug: source.slug },
+      params: { lang: langParam(lang), slug: source.slug },
       props: { lang, source },
     })),
   );

@@ -1,5 +1,6 @@
 import data from "../../../docs/sources.json";
-import { t, type Lang } from "../i18n";
+import { LANGS, t, type Lang } from "../i18n";
+import { SCIENCE_SECTIONS } from "./scienceDoc";
 
 /** Research sources cited in docs/science.*.md. docs/sources.json is the single source of truth: the reference
  * lists in the markdown and the /science/sources/ pages are built from it. */
@@ -15,7 +16,7 @@ interface Text {
   titleTranslation?: string;
 }
 
-export interface ResearchSource {
+interface SourceMeta {
   slug: string;
   n: number;
   kind: Kind;
@@ -31,44 +32,20 @@ export interface ResearchSource {
   links?: { label: string; url: string }[];
   sections: Section[];
   openAccess: boolean;
-  en: Text;
-  ru: Text;
 }
+
+/** Every source has a short retelling in each site language. */
+export type ResearchSource = SourceMeta & Record<Lang, Text>;
 
 export const SOURCES = data as ResearchSource[];
 
 export const SECTIONS: Section[] = ["eyes", "neck", "back", "hands", "legs", "water", "breath", "workplace", "microbreaks", "endofday"];
 
 /** Section headings of docs/science.*.md and their generated ids. */
-export const SECTION_INFO: Record<Lang, Record<Section, { label: string; anchor: string }>> = {
-  en: {
-    eyes: { label: "Eyes", anchor: "eyes" },
-    neck: { label: "Neck and shoulders", anchor: "neck-and-shoulders" },
-    back: { label: "Back and long sitting", anchor: "back-and-long-sitting" },
-    hands: { label: "Hands", anchor: "hands" },
-    legs: { label: "Legs", anchor: "legs" },
-    water: { label: "Water", anchor: "water" },
-    breath: { label: "Breathing", anchor: "breathing" },
-    workplace: { label: "Workstation", anchor: "workstation" },
-    microbreaks: { label: "Micro-breaks in general", anchor: "micro-breaks-in-general" },
-    endofday: { label: "End of the day", anchor: "end-of-the-day" },
-  },
-  ru: {
-    eyes: { label: "Глаза", anchor: "глаза" },
-    neck: { label: "Шея и плечи", anchor: "шея-и-плечи" },
-    back: { label: "Спина и долгое сидение", anchor: "спина-и-долгое-сидение" },
-    hands: { label: "Кисти", anchor: "кисти" },
-    legs: { label: "Ноги", anchor: "ноги" },
-    water: { label: "Вода", anchor: "вода" },
-    breath: { label: "Дыхание", anchor: "дыхание" },
-    workplace: { label: "Рабочее место", anchor: "рабочее-место" },
-    microbreaks: { label: "Микропаузы в целом", anchor: "микропаузы-в-целом" },
-    endofday: { label: "Конец дня", anchor: "конец-дня" },
-  },
-};
+export const SECTION_INFO: Record<Lang, Record<Section, { label: string; anchor: string }>> = SCIENCE_SECTIONS;
 
 /** Heading id of the reference list in docs/science.*.md. */
-export const REFERENCES_ANCHOR: Record<Lang, string> = { en: "references", ru: "список-источников" };
+export const REFERENCES_ANCHOR = Object.fromEntries(LANGS.map((l) => [l, SCIENCE_SECTIONS[l].references.anchor])) as Record<Lang, string>;
 
 export const sourcePath = (s: ResearchSource) => `/science/sources/${s.slug}/`;
 

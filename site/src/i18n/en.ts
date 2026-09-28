@@ -4,7 +4,6 @@ const en = {
   lang: "en",
   locale: "en-US",
   name: "Unslouch",
-  otherLangName: "Русский",
   skip: "Skip to content",
   nav: {
     home: "Home",
@@ -81,6 +80,7 @@ const en = {
       description: "Keep a tab open and get a 30-second break every 20 minutes with animated exercises. For work computers where you can't install apps.",
     },
     notFound: { title: "Page not found | Unslouch", description: "This page does not exist." },
+    donate: { title: "Support the developer | Unslouch", description: "Unslouch is free and will stay free. If you want to say thanks, here is how to support the developer, with money or for free." },
   },
   home: {
     kicker: "For people who sit at a computer all day",
@@ -125,7 +125,7 @@ const en = {
       "A weekly self-check: eyes, neck, back, hands",
       "Time per program, by program names only",
     ],
-    statsDemo: { today: "Today at the computer", longest: "Longest sitting stretch", breaks: "Breaks taken", streak: "Day streak" },
+    statsDemo: { today: "Today at the computer", longest: "Longest sitting stretch", breaks: "Breaks taken", streak: "Day streak", todayValue: "6 h 40 min", longestValue: "52 min" },
     privacyTitle: "The app collects nothing",
     privacyText: "No accounts, analytics, telemetry, crash reports or ads. Settings and statistics are files on your computer. The only request the app makes is a daily update check, and you can turn it off. This website counts visits with Yandex Metrica only if you agree.",
     privacyLink: "Privacy policy",
@@ -143,13 +143,13 @@ const en = {
       { q: "What does it know about me?", a: "Only what is stored on your computer: settings, break statistics, your weekly self-check and time per program. Nothing is sent anywhere. You can export or delete everything." },
       { q: "My work computer doesn't allow installing apps.", a: "Use the browser version: keep a tab open and it will show a break every 20 minutes with the same exercises." },
       { q: "Which languages?", a: "15: English, Russian, Ukrainian, Kazakh, Belarusian, Uzbek, Armenian, Georgian, Azerbaijani, German, Spanish, French, Portuguese (Brazil), Turkish and Simplified Chinese." },
-      { q: "How can I support the project?", a: "The app is free and will stay free; support is voluntary and does not unlock anything. If you want to say thanks, you can do it through CloudTips with a Russian bank card or SBP. A way for cards from other countries will come later." },
+      { q: "How can I support the project?", a: "The app is free and will stay free; support is voluntary and does not unlock anything. If you want to say thanks, you can do it through CloudTips with a Russian bank card or SBP, or through Boosty with a card from any country.", link: "How to support the developer" },
       { q: "How is the app made?", a: "One developer builds it together with AI: the code, texts and translations are written with Claude. The health advice comes from published research, and every study is linked in the Science section. Translations into other languages were also made by AI and have not been proofread by native speakers yet. If you spot a mistake, write to us or open an issue on GitHub." },
     ],
     openTitle: "Open source",
     openText: "The whole app is on GitHub under the MIT licence. Translations, fixes and ideas are welcome.",
     donate: "Support the project",
-    donateNote: "Russian bank cards and SBP for now",
+    donateNote: "CloudTips takes Russian bank cards and SBP, Boosty takes cards from other countries too",
     openLink: "Open on GitHub",
     toolsTitle: "Free tools in the browser",
     toolsText: "No install needed.",
@@ -444,6 +444,8 @@ const en = {
     count: "{n} sources",
   },
   compare: {
+    seoTitle: "Free {name} alternative for Mac, Windows and Linux",
+    seoDescription: "{app} and {name} side by side: price, platforms, exercises, pause during calls and privacy. A calm comparison based on official information.",
     title: "Break reminder apps compared",
     lead: "Several good apps remind you to take breaks. Each has its strengths. The table lists what we could check on the official sites. Where we couldn't confirm something, the cell is empty.",
     checked: "Checked on 27 September 2026 against official sites and app store pages. Prices and features change: if something is out of date, write to us and we'll fix it.",
@@ -469,8 +471,140 @@ const en = {
     oursTitle: "What Unslouch does",
     commonTitle: "What they have in common",
   },
+  donate: {
+    title: "Support the developer",
+    lead: "Unslouch is free and will stay free. Support is voluntary and does not unlock anything: everyone gets the same app. One developer builds it together with AI, and your thanks help keep the work going.",
+    moneyTitle: "Send a donation",
+    cloudtips: "Donate through CloudTips",
+    cloudtipsNote: "Russian bank cards and SBP",
+    boosty: "Donate through Boosty",
+    boostyNote: "Cards from other countries work too. A one-off donation or a monthly subscription.",
+    freeTitle: "Free ways to help",
+    star: "Star the project on GitHub",
+    starText: "Stars help other people find the app.",
+    tell: "Tell a friend",
+    tellText: "Send the link to a colleague who also sits at a computer all day.",
+    share: "Share the link",
+    copied: "Link copied",
+    shareText: "Unslouch: free break reminders for eyes, neck and back",
+    thanks: "Thank you!",
+  },
+  /** Comparison table texts. Cells missing here are shown empty (not checked). */
+  compareData: {
+    "ours": {
+      "price": "Free",
+      "source": "Open source, MIT",
+      "platforms": "macOS, Windows, Linux, plus free tools in the browser",
+      "eyes": "Every 20 min one small exercise, then look more than 6 m (20 ft) away for 20 s",
+      "exercises": "Animated exercises by body part: eyes, neck, back, hands, legs, breathing. With sources and when to see a doctor",
+      "cues": "Gentle cues without windows: screen edges darken to blink, a posture banner, a water card",
+      "calls": "Waits while another program uses the camera or microphone",
+      "quiet": "Waits in fullscreen and Do Not Disturb, outside work hours, during Focus 25/50",
+      "stats": "Time at the computer, longest sitting stretch, streaks, year heatmap, achievements, time per program. All on your computer",
+      "languages": "15",
+      "data": "Nothing is collected"
+    },
+    "apps": {
+      "stretchly": {
+        "cells": {
+          "price": "Free, donations welcome",
+          "source": "Open source, BSD-2-Clause",
+          "platforms": "macOS, Windows, Linux",
+          "eyes": "Mini breaks of 20 s every 10 min, long breaks of 5 min every 30 min (defaults, adjustable)",
+          "exercises": "Text break ideas, you can add your own",
+          "quiet": "Pauses in fullscreen, in Do Not Disturb and when idle",
+          "stats": "Break Health indicator for skipped breaks",
+          "languages": "Many, translated by the community"
+        },
+        "summary": "Stretchly is a well-known free and open-source break reminder for macOS, Windows and Linux. It has mini and long breaks, a strict mode and support for several monitors.",
+        "common": "Both are free and open source, run on all three desktop systems and wait in fullscreen and Do Not Disturb.",
+        "suits": [
+          "You want a strict mode that makes skipping breaks harder.",
+          "You like writing your own break ideas, with HTML and pictures.",
+          "You want a mature project with a long history and many translations."
+        ]
+      },
+      "lookaway": {
+        "cells": {
+          "price": "From $19 one-time on the site; in the Mac App Store a free download with subscription or lifetime options",
+          "platforms": "macOS 13 or later (Windows announced), iPhone and iPad companion",
+          "eyes": "Eye breaks every 20 minutes, short and long breaks",
+          "cues": "Posture and blink reminders",
+          "calls": "Smart Pause during meetings and calls",
+          "quiet": "Pauses for fullscreen games and apps, works with Focus Filters",
+          "stats": "Screen time dashboard, break history, app and website usage",
+          "languages": "8",
+          "data": "Anonymous analytics (Mixpanel) that can be turned off"
+        },
+        "summary": "LookAway is a polished paid break reminder for Mac by Mystical Bits. It has posture and blink reminders, Smart Pause for meetings and a screen time dashboard.",
+        "common": "Both remind you to look away every 20 minutes, remind you to blink and change posture, and wait during calls and in fullscreen.",
+        "suits": [
+          "You use only a Mac and want deep integration with macOS Focus Filters.",
+          "You want a companion app on iPhone or iPad that blocks apps during a break.",
+          "You want screen time and website usage in one dashboard."
+        ]
+      },
+      "breaktimer": {
+        "cells": {
+          "price": "Free",
+          "source": "Open source, GPL-3.0",
+          "platforms": "Windows, macOS, Linux",
+          "eyes": "Configurable interval and length, as a notification or a fullscreen break",
+          "quiet": "Working hours; the timer resets when you are idle"
+        },
+        "summary": "BreakTimer is a simple free and open-source app for Windows, macOS and Linux. You set how often and how long, and it shows a notification or a fullscreen break with your own text and colours.",
+        "common": "Both are free and open source, run on all three desktop systems, know your working hours and count being away as rest.",
+        "suits": [
+          "You need one simple timer and nothing else.",
+          "You want to write your own break message and pick colours."
+        ]
+      },
+      "time-out": {
+        "cells": {
+          "price": "Free, optional supporter purchases from $4.99",
+          "source": "Closed source",
+          "platforms": "macOS only",
+          "eyes": "Micro breaks of 15 s every 15 min, Normal breaks of 10 min every hour, your own types",
+          "exercises": "Break themes: HTML, websites, video, images, including desk exercise themes",
+          "calls": "Rules for apps, calendar events and video meetings",
+          "quiet": "Rules for fullscreen",
+          "stats": "Activity charts: breaks, app usage, time away",
+          "languages": "English",
+          "data": "App Store label: contact info and diagnostics linked to you"
+        },
+        "summary": "Time Out by Dejal is a long-standing break reminder for Mac. It has micro and normal breaks, flexible rules, themes and automation with AppleScript and Automator.",
+        "common": "Both have short and long breaks, wait during video meetings and in fullscreen, count time away as rest and keep statistics.",
+        "suits": [
+          "You use only a Mac and like to automate with AppleScript, Automator or scripts.",
+          "You want to show your own web pages or videos during a break.",
+          "You want rules tied to calendar events."
+        ]
+      },
+      "deskbreak": {
+        "cells": {
+          "price": "$39 one-time or $19 a year, 14-day trial; the Chrome extension is free",
+          "platforms": "macOS, Windows, Linux, extension for Chrome, Edge and Brave",
+          "eyes": "Preset for eye breaks every 20 minutes",
+          "exercises": "Desk exercise library",
+          "cues": "Hydration among break activities",
+          "calls": "Calendar integration so meetings are not interrupted",
+          "quiet": "Manual Focus Mode",
+          "stats": "Activity streaks, yearly graphs, analytics"
+        },
+        "summary": "DeskBreak is a paid desktop break reminder for macOS, Windows and Linux with a free browser extension. It has an eye break preset, a desk exercise library, calendar integration and streaks.",
+        "common": "Both work on macOS, Windows and Linux and in the browser, remind you about eyes and water, and count streaks.",
+        "suits": [
+          "You live by your calendar and want breaks to follow it.",
+          "You mostly work in Chrome, Edge or Brave and want an extension."
+        ]
+      }
+    }
+  },
+  /** Legal pages (privacy, terms, consent) exist in English and Russian only. Other languages show the English
+   * text with this notice on top. */
+  legalNotice: "",
   cis: null as null | { title: string; text: string; link: string },
-  notFound: { title: "Page not found", text: "There is no such page. Maybe it moved.", home: "Go to the home page", ru: "Русская версия" },
+  notFound: { title: "Page not found", text: "There is no such page. Maybe it moved.", home: "Go to the home page" },
 };
 
 export default en;

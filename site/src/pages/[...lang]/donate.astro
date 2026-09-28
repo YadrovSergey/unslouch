@@ -1,0 +1,84 @@
+---
+import Base from "../../layouts/Base.astro";
+import { BOOSTY, DONATE, GITHUB, absolute, href, langPaths, t, type Lang } from "../../i18n";
+
+export const getStaticPaths = langPaths;
+const { lang } = Astro.props as { lang: Lang };
+const d = t(lang);
+const x = d.donate;
+// CloudTips takes Russian cards and SBP only, so it comes first where most visitors have those cards.
+const cloudtipsFirst = ["ru", "be", "kk", "uk"].includes(lang);
+const options = [
+  { key: "cloudtips", url: DONATE, label: x.cloudtips, note: x.cloudtipsNote },
+  { key: "boosty", url: BOOSTY, label: x.boosty, note: x.boostyNote },
+];
+if (!cloudtipsFirst) options.reverse();
+const shareUrl = absolute(lang, "/");
+---
+
+<Base lang={lang} path="/donate/" title={d.meta.donate.title} description={d.meta.donate.description}>
+  <div class="wrap" style="max-width:860px">
+    <div class="page-head">
+      <nav class="crumbs" aria-label="breadcrumbs"><a href={href(lang, "/")}>{d.nav.home}</a></nav>
+      <h1>{x.title}</h1>
+      <p class="lead">{x.lead}</p>
+    </div>
+
+    <h2>{x.moneyTitle}</h2>
+    <div class="grid grid--2" style="margin-top:16px">
+      {
+        options.map((o, i) => (
+          <div class="card">
+            <p>
+              <a class={`btn ${i === 0 ? "btn--primary" : ""}`} href={o.url} rel="noopener">
+                {o.label}
+              </a>
+            </p>
+            <p class="muted">{o.note}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <h2 style="margin-top:40px">{x.freeTitle}</h2>
+    <div class="grid grid--2" style="margin-top:16px">
+      <div class="card">
+        <h3>{x.star}</h3>
+        <p class="muted">{x.starText}</p>
+        <p><a class="btn" href={GITHUB}>GitHub</a></p>
+      </div>
+      <div class="card">
+        <h3>{x.tell}</h3>
+        <p class="muted">{x.tellText}</p>
+        <p>
+          <button class="btn" type="button" data-share={shareUrl} data-share-text={x.shareText} data-copied={x.copied}>{x.share}</button>
+        </p>
+        <p class="muted small" data-share-status aria-live="polite"><a href={shareUrl}>{shareUrl}</a></p>
+      </div>
+    </div>
+
+    <p class="lead" style="margin-top:32px">{x.thanks}</p>
+  </div>
+</Base>
+
+<script is:inline>
+  // "Share the link": the system share sheet where there is one, otherwise copy the link.
+  (function () {
+    var btn = document.querySelector("[data-share]");
+    var status = document.querySelector("[data-share-status]");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      var url = btn.getAttribute("data-share");
+      var text = btn.getAttribute("data-share-text");
+      if (navigator.share) {
+        navigator.share({ title: text, text: text, url: url }).catch(function () {});
+        return;
+      }
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(url).then(function () {
+          status.textContent = btn.getAttribute("data-copied");
+        });
+      }
+    });
+  })();
+</script>

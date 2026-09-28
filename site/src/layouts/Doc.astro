@@ -11,12 +11,17 @@ interface Props {
   html: string;
   toc?: { slug: string; text: string }[];
   notice?: string;
+  /** Language of the document text when it differs from the page language (legal pages shown in English). */
+  docLang?: Lang;
+  /** Passed to Base: languages this page exists in and the canonical language. */
+  langs?: readonly Lang[];
+  canonicalLang?: Lang;
 }
-const { lang, path, title, description, html, toc, notice } = Astro.props;
+const { lang, path, title, description, html, toc, notice, docLang, langs, canonicalLang } = Astro.props;
 const d = t(lang);
 ---
 
-<Base lang={lang} path={path} title={title} description={description}>
+<Base lang={lang} path={path} title={title} description={description} langs={langs} canonicalLang={canonicalLang}>
   <div class="wrap">
     <div class="page-head">
       <nav class="crumbs" aria-label="breadcrumbs"><a href={href(lang, "/")}>{d.nav.home}</a></nav>
@@ -38,7 +43,7 @@ const d = t(lang);
       }
       <article class="prose">
         {notice && <p class="notice">{notice}</p>}
-        <Fragment set:html={fixLinks(html, lang)} />
+        {docLang ? <div lang={docLang} set:html={fixLinks(html, lang)} /> : <Fragment set:html={fixLinks(html, lang)} />}
         <slot name="article-end" />
       </article>
     </div>

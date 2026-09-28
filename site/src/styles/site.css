@@ -251,12 +251,42 @@ p {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
 }
 
+.lang-menu summary {
+  gap: 6px;
+}
+
+.lang-menu__code {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.lang-menu__panel {
+  min-width: 210px;
+  max-height: min(70vh, 600px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.lang-menu__panel a[aria-current] {
+  font-weight: 700;
+  background: var(--bg);
+}
+
+@media (max-width: 380px) {
+  .lang-menu__code {
+    display: none;
+  }
+}
+
 @media (min-width: 960px) {
   .nav {
     display: flex;
   }
   .menu {
     display: none;
+  }
+  .menu.lang-menu {
+    display: block;
   }
   .header .header__download {
     display: inline-flex;

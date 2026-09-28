@@ -1,10 +1,11 @@
 ---
 import Base from "../layouts/Base.astro";
 import { ExerciseLoop } from "../components/islands/common";
-import { app, t } from "../i18n";
-// One 404 file for the whole bucket: English first, with a Russian line and link.
+import { LANGS, app, href, t, urlCode } from "../i18n";
+// One 404 file for the whole bucket: English first. A line in the visitor's language (from the URL prefix, the saved
+// choice or the browser) is shown under it by a small script, with a link to that language's home page.
 const d = t("en");
-const ru = t("ru");
+const others = LANGS.filter((l) => l !== "en");
 const ex = app("en").ex as unknown as Record<string, Record<string, string>>;
 ---
 
@@ -13,10 +14,52 @@ const ex = app("en").ex as unknown as Record<string, Record<string, string>>;
     <ExerciseLoop client:load id="headTurns" ex={ex} />
     <h1>{d.notFound.title}</h1>
     <p class="lead" style="margin:0 auto 16px">{d.notFound.text}</p>
-    <p lang="ru" class="muted">{ru.notFound.title}. {ru.notFound.text}</p>
+    {
+      others.map((l) => (
+        <div data-nf={urlCode(l)} lang={l} hidden>
+          <p class="muted">
+            {t(l).notFound.title}. {t(l).notFound.text}
+          </p>
+        </div>
+      ))
+    }
     <div class="button-row" style="justify-content:center">
       <a class="btn btn--primary" href="/">{d.notFound.home}</a>
-      <a class="btn" href="/ru/" lang="ru">{ru.notFound.home}</a>
+      {
+        others.map((l) => (
+          <a class="btn" href={href(l, "/")} lang={l} data-nf={urlCode(l)} hidden>
+            {t(l).notFound.home}
+          </a>
+        ))
+      }
     </div>
   </div>
 </Base>
+
+<script is:inline>
+  (function () {
+    var codes = Array.prototype.map.call(document.querySelectorAll("div[data-nf]"), function (el) {
+      return el.getAttribute("data-nf");
+    });
+    var norm = function (tag) {
+      var base = String(tag || "").toLowerCase().split("-")[0];
+      return base === "pt" ? "pt-br" : base === "zh" ? "zh-cn" : base;
+    };
+    var pick = location.pathname.split("/")[1].toLowerCase();
+    if (codes.indexOf(pick) < 0) {
+      pick = null;
+      try { pick = localStorage.getItem("unslouch.lang"); } catch (e) {}
+      if (pick === "en") return;
+      if (codes.indexOf(pick) < 0) {
+        var list = navigator.languages || [navigator.language];
+        for (var i = 0; i < list.length; i++) {
+          var c = norm(list[i]);
+          if (c === "en") return;
+          if (codes.indexOf(c) >= 0) { pick = c; break; }
+        }
+      }
+    }
+    if (codes.indexOf(pick) < 0) return;
+    document.querySelectorAll('[data-nf="' + pick + '"]').forEach(function (el) { el.hidden = false; });
+  })();
+</script>

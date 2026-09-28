@@ -11,7 +11,8 @@
     "dev": "astro dev --port 4321",
     "build": "astro build",
     "preview": "astro preview --port 4321",
-    "check:ru-text": "node scripts/extract-ru-text.mjs"
+    "check:ru-text": "node scripts/extract-ru-text.mjs",
+    "check:i18n": "node scripts/check-i18n.mjs"
   },
   "dependencies": {
     "@astrojs/react": "^7.0.0",

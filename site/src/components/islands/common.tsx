@@ -17,6 +17,8 @@ export interface IslandText {
 // ---------- small helpers ----------
 
 export function plural(lang: string, forms: string[], n: number) {
+  // Languages without plural forms (Chinese) have one form; [one, other] or [one, few, many] otherwise.
+  if (forms.length === 1) return forms[0];
   const rule = new Intl.PluralRules(lang).select(n);
   if (forms.length === 2) return rule === "one" ? forms[0] : forms[1];
   return rule === "one" ? forms[0] : rule === "few" ? forms[1] : rule === "many" ? forms[2] : forms[1];
