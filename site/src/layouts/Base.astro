@@ -58,6 +58,27 @@ const current = (p: string) => (path === p || (p !== "/" && path.startsWith(p)) 
     <meta name="theme-color" content="#f6f7f5" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#161a18" media="(prefers-color-scheme: dark)" />
     <meta name="color-scheme" content="light dark" />
+    {
+      lang === "en" && alternates && (
+        <script is:inline>
+          // First visit from a Russian-speaking browser: open the Russian version of the same page before it
+          // renders. A language picked with the EN/RU button wins, and crawlers are never redirected, so the
+          // English pages stay in search.
+          (function () {
+            try {
+              var saved = null;
+              try { saved = localStorage.getItem("unslouch.lang"); } catch (e) {}
+              if (saved === "en") return;
+              if (/bot|crawl|spider|slurp|lighthouse|headless|preview/i.test(navigator.userAgent)) return;
+              var first = ((navigator.languages && navigator.languages[0]) || navigator.language || "").toLowerCase().split("-")[0];
+              if (saved === "ru" || first === "ru" || first === "be" || first === "kk") {
+                location.replace("/ru" + location.pathname + location.search + location.hash);
+              }
+            } catch (e) {}
+          })();
+        </script>
+      )
+    }
     <script is:inline>
       try {
         var saved = localStorage.getItem("unslouch.theme");
@@ -79,7 +100,7 @@ const current = (p: string) => (path === p || (p !== "/" && path.startsWith(p)) 
         </nav>
         <div class="header__tools">
           <a class="btn btn--primary btn--small header__download" href={`${href(lang, "/")}#download`}>{d.nav.download}</a>
-          <a class="icon-btn" href={href(other, path)} hreflang={other} lang={other} aria-label={`${d.nav.language}: ${d.otherLangName}`} title={d.otherLangName}>
+          <a class="icon-btn lang-switch" data-lang={other} href={href(other, path)} hreflang={other} lang={other} aria-label={`${d.nav.language}: ${d.otherLangName}`} title={d.otherLangName}>
             {other.toUpperCase()}
           </a>
           <button class="icon-btn theme-toggle" type="button" aria-label={d.nav.theme} title={d.nav.theme}>
@@ -130,6 +151,14 @@ const current = (p: string) => (path === p || (p !== "/" && path.startsWith(p)) 
       </div>
     </footer>
 
+    <script is:inline>
+      // The EN/RU button remembers the choice, so the automatic language pick never overrides it.
+      document.querySelectorAll(".lang-switch").forEach(function (a) {
+        a.addEventListener("click", function () {
+          try { localStorage.setItem("unslouch.lang", a.getAttribute("data-lang")); } catch (e) {}
+        });
+      });
+    </script>
     <script is:inline>
       (function () {
         var root = document.documentElement;
