@@ -499,6 +499,8 @@ const es: Dict = {
       "Seguirlo resultó más difícil que entenderlo. Trabajando no te acuerdas de parpadear, y menos aún de hacer pausas. Las buenas aplicaciones de recordatorios eran de pago, así que escribí la mía. Luego añadí pausas para el cuello, la espalda, las manos y las piernas: frente al ordenador no solo se cansan los ojos.",
       "Unslouch es gratis y de código abierto. Lo hago solo, junto con la IA, y lo uso yo mismo.",
     ],
+    support: "Si la aplicación cuida tus ojos y tu espalda, invítame a un café. {name} seguirá siendo gratis y sin anuncios, y el apoyo se destina al hosting, a nuevos ejercicios y a correcciones. Y cada aporte me dice que vale la pena seguir.",
+    supportButton: "Invitarme a un café",
   },
   /** Comparison table texts. Cells missing here are shown empty (not checked). */
   compareData: {

@@ -499,6 +499,8 @@ const fr: Dict = {
       "Le suivre s'est révélé plus difficile que le comprendre. Au travail, on oublie de cligner des yeux, et encore plus de faire des pauses. Les bonnes applications de rappel étaient payantes, alors j'ai écrit la mienne. Puis j'ai ajouté des pauses pour la nuque, le dos, les mains et les jambes : devant l'ordinateur, les yeux ne sont pas les seuls à se fatiguer.",
       "Unslouch est gratuit et open source. Je le développe seul, avec l'aide de l'IA, et je l'utilise moi-même.",
     ],
+    support: "Si l'application prend soin de vos yeux et de votre dos, offrez-moi un café. {name} restera gratuit et sans publicité, et votre soutien finance l'hébergement, de nouveaux exercices et des corrections. Et chaque don me montre que ce travail en vaut la peine.",
+    supportButton: "M'offrir un café",
   },
   compareData: {
     "ours": {

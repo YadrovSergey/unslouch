@@ -499,6 +499,8 @@ const az: Dict = {
       "Bunu etmək başa düşməkdən çətin oldu. İş vaxtı göz qırpmaq yada düşmür, fasilə isə daha çox. Yaxşı xatırladıcı proqramlar pullu idi və mən özümünkünü yazdım. Sonra boyun, bel, əllər və ayaqlar üçün fasilələr əlavə etdim: kompüter qarşısında təkcə gözlər yorulmur.",
       "Unslouch pulsuz və açıq kodludur. Onu tək, süni intellektlə birlikdə hazırlayıram və özüm də istifadə edirəm.",
     ],
+    support: "Tətbiq gözlərinizi və belinizi qoruyursa, mənə qəhvə alın. {name} pulsuz və reklamsız qalacaq, dəstək isə hostinqə, yeni məşqlərə və düzəlişlərə gedir. Hər köçürmə mənim üçün bu işi boş yerə görmədiyimin nişanəsidir.",
+    supportButton: "Qəhvə almaq",
   },
   /** Comparison table texts. Cells missing here are shown empty (not checked). */
   compareData: {

@@ -501,6 +501,8 @@ const en = {
       "Following it turned out harder than understanding it. At work you forget about blinking, let alone breaks. The good reminder apps were paid, so I wrote my own. Then I added breaks for the neck, back, hands and legs: the eyes are not the only thing that gets tired at a computer.",
       "Unslouch is free and open source. I build it alone, together with AI, and use it myself.",
     ],
+    support: "If the app looks after your eyes and back, buy me a coffee. {name} will stay free and ad-free, and support pays for hosting, new exercises and fixes. Every donation also tells me the work is worth doing.",
+    supportButton: "Buy me a coffee",
   },
   /** Comparison table texts. Cells missing here are shown empty (not checked). */
   compareData: {

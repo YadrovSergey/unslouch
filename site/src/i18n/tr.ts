@@ -499,6 +499,8 @@ const tr: Dict = {
       "Bunu uygulamak, anlamaktan daha zor çıktı. Çalışırken göz kırpmayı unutuyorsunuz, mola vermeyi ise hiç hatırlamıyorsunuz. İyi hatırlatma uygulamaları ücretliydi, ben de kendiminkini yazdım. Sonra boyun, sırt, eller ve bacaklar için molalar ekledim: bilgisayar başında yorulan yalnızca gözler değil.",
       "Unslouch ücretsiz ve açık kaynaklı. Onu yapay zekâyla birlikte tek başıma geliştiriyorum ve kendim de kullanıyorum.",
     ],
+    support: "Uygulama gözlerinizi ve sırtınızı koruyorsa bana bir kahve ısmarlayın. {name} ücretsiz ve reklamsız kalacak; destek barındırmaya, yeni egzersizlere ve düzeltmelere gidiyor. Her bağış da bana bu işin boşuna olmadığını gösteriyor.",
+    supportButton: "Kahve ısmarla",
   },
   /** Comparison table texts. Cells missing here are shown empty (not checked). */
   compareData: {

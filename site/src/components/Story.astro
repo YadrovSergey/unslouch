@@ -1,11 +1,11 @@
 ---
 // "Why I made Unslouch": the author's photo and story. The food diary's name is a link where the site
 // promotes it (CIS languages, `d.cis`), plain text elsewhere.
-import { mzrLink, t, type Lang } from "../i18n";
+import { fill, href, mzrLink, t, type Lang } from "../i18n";
 
 interface Props {
   lang: Lang;
-  /** Smaller photo, for the donate page where the story sits under the page title. */
+  /** Smaller photo and no "buy me a coffee" button: for the donate page, where the ways to support follow. */
   compact?: boolean;
 }
 const { lang, compact = false } = Astro.props;
@@ -35,6 +35,16 @@ const parts = s.paragraphs.map((p) => p.split("{mzr}"));
             {after}
           </p>
         ),
+      )
+    }
+    {
+      !compact && (
+        <div class="story__support">
+          <p>{fill(s.support, { name: d.name })}</p>
+          <a class="btn btn--primary" href={href(lang, "/donate/")}>
+            {s.supportButton}
+          </a>
+        </div>
       )
     }
   </div>

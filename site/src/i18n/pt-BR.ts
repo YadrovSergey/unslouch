@@ -499,6 +499,8 @@ const ptBR: Dict = {
       "Seguir o conselho foi mais difícil do que entendê-lo. Trabalhando, a gente esquece de piscar, e mais ainda de fazer pausas. Os bons aplicativos de lembrete eram pagos, então escrevi o meu. Depois acrescentei pausas para o pescoço, as costas, as mãos e as pernas: no computador, não são só os olhos que se cansam.",
       "O Unslouch é gratuito e de código aberto. Eu o desenvolvo sozinho, com a ajuda de IA, e eu mesmo o uso.",
     ],
+    support: "Se o app cuida dos seus olhos e das suas costas, me paga um café. O {name} vai continuar gratuito e sem anúncios, e o apoio vai para a hospedagem, novos exercícios e correções. E cada contribuição me mostra que vale a pena continuar.",
+    supportButton: "Me pagar um café",
   },
   compareData: {
     "ours": {

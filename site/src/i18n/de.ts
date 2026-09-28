@@ -499,6 +499,8 @@ const de: Dict = {
       "Das umzusetzen war schwerer, als es zu verstehen. Bei der Arbeit denkt man nicht ans Blinzeln, geschweige denn an Pausen. Die guten Erinnerungs-Apps kosteten Geld, also habe ich meine eigene geschrieben. Dann kamen Pausen für Nacken, Rücken, Hände und Beine dazu: Am Computer werden nicht nur die Augen müde.",
       "Unslouch ist kostenlos und quelloffen. Ich entwickle es allein, zusammen mit KI, und nutze es selbst.",
     ],
+    support: "Wenn die App Ihre Augen und Ihren Rücken schont, spendieren Sie mir einen Kaffee. {name} bleibt kostenlos und werbefrei, die Unterstützung fließt in Hosting, neue Übungen und Fehlerbehebungen. Und jede Spende zeigt mir, dass sich die Arbeit lohnt.",
+    supportButton: "Einen Kaffee spendieren",
   },
   /** Comparison table texts. Cells missing here are shown empty (not checked). */
   compareData: {

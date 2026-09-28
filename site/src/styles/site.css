@@ -1933,3 +1933,9 @@ input[type="checkbox"] {
     height: 140px;
   }
 }
+
+.story__support {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}

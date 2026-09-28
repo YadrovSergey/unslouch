@@ -499,6 +499,8 @@ const uz: Dict = {
       "Uni bajarish tushunishdan qiyinroq bo'lib chiqdi. Ish paytida ko'z qisish esga kelmaydi, tanaffus haqida esa undan ham. Yaxshi eslatuvchi dasturlar pullik edi, shuning uchun o'zimnikini yozdim. Keyin bo'yin, bel, qo'l va oyoqlar uchun tanaffuslar qo'shdim: kompyuter oldida faqat ko'zlar charchamaydi.",
       "Unslouch bepul va ochiq kodli. Men uni yolg'iz, sun'iy intellekt bilan birga yarataman va o'zim ham foydalanaman.",
     ],
+    support: "Ilova ko'zingiz va belingizni asrayotgan bo'lsa, menga qahva olib bering. {name} bepul va reklamasiz qoladi, qo'llab-quvvatlash esa xosting, yangi mashqlar va tuzatishlarga ketadi. Har bir o'tkazma men uchun bu ish behuda emasligining belgisi.",
+    supportButton: "Qahva olib berish",
   },
   compareData: {
     "ours": {
