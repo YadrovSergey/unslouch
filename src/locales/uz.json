@@ -365,7 +365,9 @@
     "privacyShort": "Biz hech qanday maʼlumot toʻplamaymiz: hammasi faqat kompyuteringizda saqlanadi.",
     "version": "Versiya {{v}}",
     "asIs": "Ilova «boricha», kafolatlarsiz taqdim etiladi va undan oʻz xavfingiz ostida foydalanasiz. Batafsil foydalanish shartlarida.",
-    "donate": "Loyihani qoʻllab-quvvatlash"
+    "donate": "Loyihani qoʻllab-quvvatlash",
+    "author": "Muallif: Sergey Yadrov",
+    "authorMzr": "«Мой здоровый рацион» ovqatlanish kundaligi dasturchisi"
   },
   "onboarding": {
     "title": "Unslouch ishlayapti",

@@ -365,7 +365,9 @@
     "privacyShort": "Heç bir məlumat toplamırıq: hər şey yalnız kompüterinizdə saxlanılır.",
     "version": "Versiya {{v}}",
     "asIs": "Tətbiq «olduğu kimi», zəmanətsiz təqdim olunur və ondan öz riskinizlə istifadə edirsiniz. Ətraflı istifadə şərtlərində.",
-    "donate": "Layihəni dəstəkləmək"
+    "donate": "Layihəni dəstəkləmək",
+    "author": "Müəllif: Sergey Yadrov",
+    "authorMzr": "«Мой здоровый рацион» qidalanma gündəliyinin tərtibatçısı"
   },
   "onboarding": {
     "title": "Unslouch işləyir",

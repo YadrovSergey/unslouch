@@ -365,7 +365,9 @@
     "privacyShort": "We don't collect any data: everything stays on your computer.",
     "version": "Version {{v}}",
     "asIs": "The app is provided \"as is\", without warranties, and you use it at your own risk. See the terms of use.",
-    "donate": "Support the project"
+    "donate": "Support the project",
+    "author": "Author: Sergey Yadrov",
+    "authorMzr": "developer of the My Healthy Diet food diary"
   },
   "onboarding": {
     "title": "Unslouch is running",

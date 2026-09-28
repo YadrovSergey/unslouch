@@ -489,6 +489,17 @@ const es: Dict = {
     shareText: "Unslouch: recordatorios de pausas gratis para ojos, cuello y espalda",
     thanks: "¡Gracias!",
   },
+  story: {
+    title: "Por qué hice Unslouch",
+    photoAlt: "Sergey Yadrov, desarrollador de Unslouch",
+    mzr: "My Healthy Diet",
+    paragraphs: [
+      "Me llamo Sergey Yadrov. Soy desarrollador y también hago {mzr}, un diario de alimentación en ruso.",
+      "Cuando empecé a programar mucho, al final del día se me cansaban y se me secaban los ojos. Fui al oftalmólogo. Me explicó que frente a la pantalla parpadeamos entre dos y tres veces menos, y el ojo se seca. El consejo fue sencillo: parpadear más y, cada 20 minutos, mirar a lo lejos, a unos 6 metros.",
+      "Seguirlo resultó más difícil que entenderlo. Trabajando no te acuerdas de parpadear, y menos aún de hacer pausas. Las buenas aplicaciones de recordatorios eran de pago, así que escribí la mía. Luego añadí pausas para el cuello, la espalda, las manos y las piernas: frente al ordenador no solo se cansan los ojos.",
+      "Unslouch es gratis y de código abierto. Lo hago solo, junto con la IA, y lo uso yo mismo.",
+    ],
+  },
   /** Comparison table texts. Cells missing here are shown empty (not checked). */
   compareData: {
     "ours": {

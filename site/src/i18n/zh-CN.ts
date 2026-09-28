@@ -489,6 +489,17 @@ const zhCN: Dict = {
     shareText: "Unslouch：免费的眼睛、颈部和背部休息提醒",
     thanks: "谢谢您！",
   },
+  story: {
+    title: "我为什么做了 Unslouch",
+    photoAlt: "Sergey Yadrov，Unslouch 的开发者",
+    mzr: "My Healthy Diet",
+    paragraphs: [
+      "我叫 Sergey Yadrov，是一名开发者。我还在做 {mzr}，一款俄语的饮食日记应用。",
+      "我开始大量编程后，每到傍晚眼睛就又累又干。我去看了眼科医生。他解释说，看屏幕时我们眨眼的次数会少两到三倍，眼睛就会变干。建议很简单：多眨眼，每 20 分钟看一看远处，大约 6 米开外。",
+      "做到比理解难。工作时根本想不起眨眼，更别说休息了。好用的提醒软件都要付费，于是我自己写了一个。后来又加上了颈部、背部、手部和腿部的休息：坐在电脑前，累的不只是眼睛。",
+      "Unslouch 免费且开源。我一个人借助 AI 开发它，自己也在用。",
+    ],
+  },
   compareData: {
     "ours": {
       "price": "免费",

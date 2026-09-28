@@ -489,6 +489,17 @@ const az: Dict = {
     shareText: "Unslouch: göz, boyun və bel üçün pulsuz fasilə xatırlatmaları",
     thanks: "Təşəkkür edirik!",
   },
+  story: {
+    title: "Unslouch-u niyə yaratdım",
+    photoAlt: "Sergey Yadrov, Unslouch-un tərtibatçısı",
+    mzr: "«Мой здоровый рацион»",
+    paragraphs: [
+      "Mənim adım Sergey Yadrovdur, {mzr} qidalanma gündəliyinin tərtibatçısıyam.",
+      "Çox proqramlaşdırmağa başlayanda axşama doğru gözlərim yorulub quruyurdu. Oftalmoloqa getdim. O izah etdi: ekrana baxanda iki-üç dəfə az göz qırpırıq və göz quruyur. Məsləhət sadə idi: daha tez-tez göz qırpmaq və hər 20 dəqiqədən bir uzağa, təxminən altı metrə baxmaq.",
+      "Bunu etmək başa düşməkdən çətin oldu. İş vaxtı göz qırpmaq yada düşmür, fasilə isə daha çox. Yaxşı xatırladıcı proqramlar pullu idi və mən özümünkünü yazdım. Sonra boyun, bel, əllər və ayaqlar üçün fasilələr əlavə etdim: kompüter qarşısında təkcə gözlər yorulmur.",
+      "Unslouch pulsuz və açıq kodludur. Onu tək, süni intellektlə birlikdə hazırlayıram və özüm də istifadə edirəm.",
+    ],
+  },
   /** Comparison table texts. Cells missing here are shown empty (not checked). */
   compareData: {
     "ours": {

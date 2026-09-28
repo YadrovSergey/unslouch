@@ -365,7 +365,9 @@
     "privacyShort": "Hiçbir veri toplamıyoruz: her şey bilgisayarınızda kalır.",
     "version": "Sürüm {{v}}",
     "asIs": "Uygulama \"olduğu gibi\", garantisiz sunulur ve riski size aittir. Ayrıntılar kullanım koşullarında.",
-    "donate": "Projeyi destekle"
+    "donate": "Projeyi destekle",
+    "author": "Geliştirici: Sergey Yadrov",
+    "authorMzr": "My Healthy Diet beslenme günlüğünün geliştiricisi"
   },
   "onboarding": {
     "title": "Unslouch çalışıyor",

@@ -3,6 +3,7 @@ import Base from "../../layouts/Base.astro";
 import Download from "../../components/Download.astro";
 import WaterStage from "../../components/WaterStage.astro";
 import ToolGrid from "../../components/ToolGrid.astro";
+import Story from "../../components/Story.astro";
 import { ExerciseLoop } from "../../components/islands/common";
 import { DOWNLOADS, GITHUB, ORIGIN, app, href, langPaths, t, type Lang } from "../../i18n";
 import { ANCHORS } from "../../lib/science";
@@ -185,7 +186,13 @@ const jsonLd = [
     </div>
   </section>
 
-  <section class="section" id="faq">
+  <section class="section" id="story">
+    <div class="wrap" style="max-width:860px">
+      <Story lang={lang} />
+    </div>
+  </section>
+
+  <section class="section section--alt" id="faq">
     <div class="wrap" style="max-width:860px">
       <h2>{h.faqTitle}</h2>
       <div class="faq">

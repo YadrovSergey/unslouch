@@ -369,7 +369,9 @@
     "privacyShort": "No recopilamos ningún dato: todo se queda en tu computadora.",
     "version": "Versión {{v}}",
     "asIs": "La app se ofrece «tal cual», sin garantías, y la usas bajo tu propio riesgo. Más detalles en las condiciones de uso.",
-    "donate": "Apoyar el proyecto"
+    "donate": "Apoyar el proyecto",
+    "author": "Autor: Sergey Yadrov",
+    "authorMzr": "desarrollador del diario de alimentación My Healthy Diet"
   },
   "onboarding": {
     "title": "Unslouch está en marcha",

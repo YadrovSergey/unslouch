@@ -8,6 +8,14 @@ export function AboutTab({ info }: { info: AppInfo }) {
   return (
     <Section title={t("app.name")}>
       <p>{t("about.text")}</p>
+      <p>
+        {t("about.author")}
+        {info.isCis && (
+          <>
+            , <ExternalLink href={info.mzrUrl}>{t("about.authorMzr")}</ExternalLink>
+          </>
+        )}
+      </p>
       <p className="notice">{t("about.disclaimer")}</p>
       <p className="muted">{t("about.asIs")}</p>
       <ul className="links">

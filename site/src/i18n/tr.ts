@@ -489,6 +489,17 @@ const tr: Dict = {
     shareText: "Unslouch: gözler, boyun ve sırt için ücretsiz mola hatırlatıcısı",
     thanks: "Teşekkürler!",
   },
+  story: {
+    title: "Unslouch'ı neden yaptım",
+    photoAlt: "Sergey Yadrov, Unslouch'ın geliştiricisi",
+    mzr: "My Healthy Diet",
+    paragraphs: [
+      "Adım Sergey Yadrov. Yazılım geliştiriciyim; ayrıca Rusça bir beslenme günlüğü olan {mzr} uygulamasını da yapıyorum.",
+      "Çok fazla kod yazmaya başladığımda akşama doğru gözlerim yorulup kurumaya başladı. Göz doktoruna gittim. Ekrana bakarken iki üç kat daha az göz kırptığımızı ve bu yüzden gözün kuruduğunu anlattı. Tavsiyesi basitti: daha sık göz kırpmak ve her 20 dakikada bir yaklaşık 6 metre uzağa bakmak.",
+      "Bunu uygulamak, anlamaktan daha zor çıktı. Çalışırken göz kırpmayı unutuyorsunuz, mola vermeyi ise hiç hatırlamıyorsunuz. İyi hatırlatma uygulamaları ücretliydi, ben de kendiminkini yazdım. Sonra boyun, sırt, eller ve bacaklar için molalar ekledim: bilgisayar başında yorulan yalnızca gözler değil.",
+      "Unslouch ücretsiz ve açık kaynaklı. Onu yapay zekâyla birlikte tek başıma geliştiriyorum ve kendim de kullanıyorum.",
+    ],
+  },
   /** Comparison table texts. Cells missing here are shown empty (not checked). */
   compareData: {
     "ours": {

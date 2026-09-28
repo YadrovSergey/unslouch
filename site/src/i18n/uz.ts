@@ -489,6 +489,17 @@ const uz: Dict = {
     shareText: "Unslouch: koʻzlar, boʻyin va bel uchun tanaffuslarni bepul eslatuvchi dastur",
     thanks: "Rahmat!",
   },
+  story: {
+    title: "Nega Unslouch'ni yaratdim",
+    photoAlt: "Sergey Yadrov, Unslouch dasturchisi",
+    mzr: "«Мой здоровый рацион»",
+    paragraphs: [
+      "Mening ismim Sergey Yadrov, men {mzr} ovqatlanish kundaligining dasturchisiman.",
+      "Ko'p dasturlashni boshlaganimda, kechga borib ko'zlarim charchab, quriydigan bo'ldi. Oftalmologga bordim. U tushuntirdi: ekranga qaraganda ikki-uch baravar kam ko'z qisamiz va ko'z quriydi. Maslahat oddiy edi: tez-tez ko'z qisish va har 20 daqiqada uzoqqa, taxminan olti metrga qarash.",
+      "Uni bajarish tushunishdan qiyinroq bo'lib chiqdi. Ish paytida ko'z qisish esga kelmaydi, tanaffus haqida esa undan ham. Yaxshi eslatuvchi dasturlar pullik edi, shuning uchun o'zimnikini yozdim. Keyin bo'yin, bel, qo'l va oyoqlar uchun tanaffuslar qo'shdim: kompyuter oldida faqat ko'zlar charchamaydi.",
+      "Unslouch bepul va ochiq kodli. Men uni yolg'iz, sun'iy intellekt bilan birga yarataman va o'zim ham foydalanaman.",
+    ],
+  },
   compareData: {
     "ours": {
       "price": "Bepul",

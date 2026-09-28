@@ -489,6 +489,17 @@ const ptBR: Dict = {
     shareText: "Unslouch: lembretes de pausa grátis para olhos, pescoço e costas",
     thanks: "Obrigado!",
   },
+  story: {
+    title: "Por que criei o Unslouch",
+    photoAlt: "Sergey Yadrov, desenvolvedor do Unslouch",
+    mzr: "My Healthy Diet",
+    paragraphs: [
+      "Meu nome é Sergey Yadrov. Sou desenvolvedor e também faço o {mzr}, um diário alimentar em russo.",
+      "Quando comecei a programar muito, meus olhos ficavam cansados e secos no fim do dia. Fui ao oftalmologista. Ele explicou que, diante da tela, piscamos de duas a três vezes menos, e o olho resseca. O conselho foi simples: piscar mais e, a cada 20 minutos, olhar para longe, a uns 6 metros.",
+      "Seguir o conselho foi mais difícil do que entendê-lo. Trabalhando, a gente esquece de piscar, e mais ainda de fazer pausas. Os bons aplicativos de lembrete eram pagos, então escrevi o meu. Depois acrescentei pausas para o pescoço, as costas, as mãos e as pernas: no computador, não são só os olhos que se cansam.",
+      "O Unslouch é gratuito e de código aberto. Eu o desenvolvo sozinho, com a ajuda de IA, e eu mesmo o uso.",
+    ],
+  },
   compareData: {
     "ours": {
       "price": "Grátis",

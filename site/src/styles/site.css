@@ -1892,3 +1892,44 @@ input[type="checkbox"] {
 .small {
   font-size: 13px;
 }
+
+/* "Why I made Unslouch": round photo next to the story, stacked on phones. */
+.story {
+  display: grid;
+  gap: 20px;
+  align-items: start;
+}
+
+.story__photo {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.story__text h2 {
+  margin-top: 0;
+}
+
+@media (min-width: 720px) {
+  .story {
+    grid-template-columns: 180px 1fr;
+    gap: 40px;
+  }
+
+  .story__photo {
+    width: 180px;
+    height: 180px;
+  }
+
+  .story--compact {
+    grid-template-columns: 140px 1fr;
+  }
+
+  .story--compact .story__photo {
+    width: 140px;
+    height: 140px;
+  }
+}

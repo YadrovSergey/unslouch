@@ -489,6 +489,19 @@ const en = {
     shareText: "Unslouch: free break reminders for eyes, neck and back",
     thanks: "Thank you!",
   },
+  /** "Why I made Unslouch": the author's story on the home and donate pages. {mzr} is the food diary's name,
+   * a link to health-diet.ru in CIS languages. */
+  story: {
+    title: "Why I made Unslouch",
+    photoAlt: "Sergey Yadrov, the developer of Unslouch",
+    mzr: "My Healthy Diet",
+    paragraphs: [
+      "My name is Sergey Yadrov. I'm a developer, and I also make {mzr}, a food diary app in Russian.",
+      "When I started programming a lot, my eyes got tired and dry by the evening. I went to an eye doctor. He explained that at a screen we blink two to three times less often, and the eyes dry out. The advice was simple: blink more, and every 20 minutes look into the distance, about 6 metres (20 feet) away.",
+      "Following it turned out harder than understanding it. At work you forget about blinking, let alone breaks. The good reminder apps were paid, so I wrote my own. Then I added breaks for the neck, back, hands and legs: the eyes are not the only thing that gets tired at a computer.",
+      "Unslouch is free and open source. I build it alone, together with AI, and use it myself.",
+    ],
+  },
   /** Comparison table texts. Cells missing here are shown empty (not checked). */
   compareData: {
     "ours": {

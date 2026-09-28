@@ -1,0 +1,41 @@
+---
+// "Why I made Unslouch": the author's photo and story. The food diary's name is a link where the site
+// promotes it (CIS languages, `d.cis`), plain text elsewhere.
+import { t, type Lang } from "../i18n";
+
+interface Props {
+  lang: Lang;
+  /** Smaller photo, for the donate page where the story sits under the page title. */
+  compact?: boolean;
+}
+const { lang, compact = false } = Astro.props;
+const d = t(lang);
+const s = d.story;
+const parts = s.paragraphs.map((p) => p.split("{mzr}"));
+---
+
+<div class={`story ${compact ? "story--compact" : ""}`}>
+  <img class="story__photo" src="/author.webp" width="180" height="180" alt={s.photoAlt} loading="lazy" decoding="async" />
+  <div class="story__text">
+    <h2>{s.title}</h2>
+    {
+      parts.map(([before, after]) =>
+        after === undefined ? (
+          <p>{before}</p>
+        ) : (
+          <p>
+            {before}
+            {d.cis ? (
+              <a href="https://health-diet.ru/" rel="noopener">
+                {s.mzr}
+              </a>
+            ) : (
+              s.mzr
+            )}
+            {after}
+          </p>
+        ),
+      )
+    }
+  </div>
+</div>

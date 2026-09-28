@@ -489,6 +489,17 @@ const fr: Dict = {
     shareText: "Unslouch : rappels de pause gratuits pour les yeux, la nuque et le dos",
     thanks: "Merci !",
   },
+  story: {
+    title: "Pourquoi j'ai créé Unslouch",
+    photoAlt: "Sergey Yadrov, développeur d'Unslouch",
+    mzr: "My Healthy Diet",
+    paragraphs: [
+      "Je m'appelle Sergey Yadrov. Je suis développeur et je crée aussi {mzr}, un journal alimentaire en russe.",
+      "Quand je me suis mis à beaucoup programmer, mes yeux étaient fatigués et secs le soir. Je suis allé voir un ophtalmologue. Il m'a expliqué que devant un écran on cligne des yeux deux à trois fois moins souvent, et que l'œil s'assèche. Le conseil était simple : cligner plus souvent et, toutes les 20 minutes, regarder au loin, à environ 6 mètres.",
+      "Le suivre s'est révélé plus difficile que le comprendre. Au travail, on oublie de cligner des yeux, et encore plus de faire des pauses. Les bonnes applications de rappel étaient payantes, alors j'ai écrit la mienne. Puis j'ai ajouté des pauses pour la nuque, le dos, les mains et les jambes : devant l'ordinateur, les yeux ne sont pas les seuls à se fatiguer.",
+      "Unslouch est gratuit et open source. Je le développe seul, avec l'aide de l'IA, et je l'utilise moi-même.",
+    ],
+  },
   compareData: {
     "ours": {
       "price": "Gratuit",

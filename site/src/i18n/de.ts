@@ -489,6 +489,17 @@ const de: Dict = {
     shareText: "Unslouch: kostenlose Pausenerinnerungen für Augen, Nacken und Rücken",
     thanks: "Vielen Dank!",
   },
+  story: {
+    title: "Warum ich Unslouch gemacht habe",
+    photoAlt: "Sergey Yadrov, Entwickler von Unslouch",
+    mzr: "My Healthy Diet",
+    paragraphs: [
+      "Ich heiße Sergey Yadrov und bin Entwickler. Außerdem mache ich {mzr}, ein Ernährungstagebuch auf Russisch.",
+      "Als ich anfing, viel zu programmieren, wurden meine Augen gegen Abend müde und trocken. Ich ging zum Augenarzt. Er erklärte, dass wir am Bildschirm zwei- bis dreimal seltener blinzeln und die Augen dadurch austrocknen. Der Rat war einfach: öfter blinzeln und alle 20 Minuten in die Ferne schauen, etwa 6 Meter weit.",
+      "Das umzusetzen war schwerer, als es zu verstehen. Bei der Arbeit denkt man nicht ans Blinzeln, geschweige denn an Pausen. Die guten Erinnerungs-Apps kosteten Geld, also habe ich meine eigene geschrieben. Dann kamen Pausen für Nacken, Rücken, Hände und Beine dazu: Am Computer werden nicht nur die Augen müde.",
+      "Unslouch ist kostenlos und quelloffen. Ich entwickle es allein, zusammen mit KI, und nutze es selbst.",
+    ],
+  },
   /** Comparison table texts. Cells missing here are shown empty (not checked). */
   compareData: {
     "ours": {
