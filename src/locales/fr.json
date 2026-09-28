@@ -110,7 +110,8 @@
     "settings": "Réglages",
     "stats": "Statistiques",
     "exercises": "Exercices",
-    "about": "À propos"
+    "about": "À propos",
+    "thanks": "Remercier"
   },
   "sections": {
     "eyes": "Yeux",
@@ -368,8 +369,7 @@
     "privacyShort": "Nous ne collectons aucune donnée : tout reste sur votre ordinateur.",
     "version": "Version {{v}}",
     "asIs": "L’application est fournie « telle quelle », sans garantie, et vous l’utilisez à vos propres risques. Détails dans les conditions d’utilisation.",
-    "donate": "Soutenir le projet",
-    "donateNote": "pour l’instant, cartes de banques russes et SBP uniquement"
+    "donate": "Soutenir le projet"
   },
   "onboarding": {
     "title": "Unslouch est lancé",

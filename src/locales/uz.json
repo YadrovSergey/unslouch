@@ -108,7 +108,8 @@
     "settings": "Sozlamalar",
     "stats": "Statistika",
     "exercises": "Mashqlar",
-    "about": "Dastur haqida"
+    "about": "Dastur haqida",
+    "thanks": "Minnatdorchilik"
   },
   "sections": {
     "eyes": "Koʻzlar",
@@ -364,8 +365,7 @@
     "privacyShort": "Biz hech qanday maʼlumot toʻplamaymiz: hammasi faqat kompyuteringizda saqlanadi.",
     "version": "Versiya {{v}}",
     "asIs": "Ilova «boricha», kafolatlarsiz taqdim etiladi va undan oʻz xavfingiz ostida foydalanasiz. Batafsil foydalanish shartlarida.",
-    "donate": "Loyihani qoʻllab-quvvatlash",
-    "donateNote": "hozircha faqat Rossiya banklari kartalari va SBP"
+    "donate": "Loyihani qoʻllab-quvvatlash"
   },
   "onboarding": {
     "title": "Unslouch ishlayapti",

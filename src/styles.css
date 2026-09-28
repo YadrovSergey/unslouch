@@ -1757,3 +1757,30 @@ input[type="number"] {
 .chip:disabled {
   cursor: default;
 }
+
+/* "Say thanks" in the top right corner of the settings window: opens the site's support page. */
+.tabs__thanks {
+  margin-left: auto;
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid var(--line);
+  background: none;
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 4px 12px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.tabs__thanks:hover {
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+.tabs__thanks svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}

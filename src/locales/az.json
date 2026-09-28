@@ -108,7 +108,8 @@
     "settings": "Ayarlar",
     "stats": "Statistika",
     "exercises": "Məşqlər",
-    "about": "Haqqında"
+    "about": "Haqqında",
+    "thanks": "Təşəkkür etmək"
   },
   "sections": {
     "eyes": "Gözlər",
@@ -364,8 +365,7 @@
     "privacyShort": "Heç bir məlumat toplamırıq: hər şey yalnız kompüterinizdə saxlanılır.",
     "version": "Versiya {{v}}",
     "asIs": "Tətbiq «olduğu kimi», zəmanətsiz təqdim olunur və ondan öz riskinizlə istifadə edirsiniz. Ətraflı istifadə şərtlərində.",
-    "donate": "Layihəni dəstəkləmək",
-    "donateNote": "hələlik yalnız Rusiya banklarının kartları və SBP"
+    "donate": "Layihəni dəstəkləmək"
   },
   "onboarding": {
     "title": "Unslouch işləyir",

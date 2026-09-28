@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { listen } from "@tauri-apps/api/event";
 import { openUrl } from "@tauri-apps/plugin-opener";
-import { AppInfo, SettingsPatch, getAppInfo, saveSettings } from "../api";
+import { AppInfo, SettingsPatch, donatePage, getAppInfo, saveSettings } from "../api";
 import { setLanguage } from "../i18n";
 import { applyTheme } from "../theme";
 import { AboutTab } from "./settings/AboutTab";
@@ -105,6 +105,12 @@ export function SettingsView() {
             {t(`tabs.${id}`)}
           </button>
         ))}
+        <button className="tabs__thanks" onClick={() => openUrl(donatePage(info.language))}>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" />
+          </svg>
+          {t("tabs.thanks")}
+        </button>
       </nav>
       <div className={`app__body ${tab === "exercises" ? "app__body--flush" : ""}`}>
         {tab === "settings" && <SettingsTab info={info} update={update} onImported={apply} />}

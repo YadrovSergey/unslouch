@@ -93,8 +93,12 @@ export type SettingsPatch = Partial<Settings> | ((s: Settings) => Partial<Settin
 
 export const REPO_URL = "https://github.com/YadrovSergey/unslouch";
 export const SITE_URL = "https://unslouch.health-diet.ru";
-/** Donations: CloudTips, Russian bank cards and SBP only for now. */
-export const DONATE_URL = "https://pay.cloudtips.ru/p/9f9a4590";
+/** The site's "thank the developer" page in the app's language: all ways to support live there,
+ * so a new payment option never needs an app update. English is at the root, others under /<code>/. */
+export function donatePage(language: string): string {
+  const prefix = language === "en" ? "" : `/${language.toLowerCase()}`;
+  return `${SITE_URL}${prefix}/donate/`;
+}
 
 /** Numbers behind each preset. "custom" keeps whatever the user set. */
 export const PRESETS: Record<Exclude<Preset, "custom">, Partial<Settings>> = {

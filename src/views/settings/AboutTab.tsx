@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { AppInfo, DONATE_URL, REPO_URL, SITE_URL } from "../../api";
+import { AppInfo, REPO_URL, SITE_URL, donatePage } from "../../api";
 import { ExternalLink, Section } from "./ui";
 
 export function AboutTab({ info }: { info: AppInfo }) {
@@ -33,7 +33,7 @@ export function AboutTab({ info }: { info: AppInfo }) {
           <ExternalLink href={`${REPO_URL}/issues/new?template=translation.yml`}>{t("about.translation")}</ExternalLink>
         </li>
         <li>
-          <ExternalLink href={DONATE_URL}>{t("about.donate")}</ExternalLink> <span className="muted">({t("about.donateNote")})</span>
+          <ExternalLink href={donatePage(info.language)}>{t("about.donate")}</ExternalLink>
         </li>
       </ul>
       <p className="muted">
