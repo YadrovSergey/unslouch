@@ -35,7 +35,7 @@ const shareUrl = absolute(lang, "/");
         options.map((o, i) => (
           <div class="card">
             <p>
-              <a class={`btn ${i === 0 ? "btn--primary" : ""}`} href={o.url} rel="noopener">
+              <a class={`btn ${i === 0 ? "btn--primary" : ""}`} href={o.url} target="_blank" rel="noopener">
                 {o.label}
               </a>
             </p>
