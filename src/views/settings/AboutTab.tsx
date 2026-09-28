@@ -12,7 +12,7 @@ export function AboutTab({ info }: { info: AppInfo }) {
         {t("about.author")}
         {info.isCis && (
           <>
-            , <ExternalLink href={info.mzrUrl}>{t("about.authorMzr")}</ExternalLink>
+            , <ExternalLink href={`${info.mzrUrl}&utm_content=about`}>{t("about.authorMzr")}</ExternalLink>
           </>
         )}
       </p>

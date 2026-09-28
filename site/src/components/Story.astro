@@ -1,7 +1,7 @@
 ---
 // "Why I made Unslouch": the author's photo and story. The food diary's name is a link where the site
 // promotes it (CIS languages, `d.cis`), plain text elsewhere.
-import { t, type Lang } from "../i18n";
+import { mzrLink, t, type Lang } from "../i18n";
 
 interface Props {
   lang: Lang;
@@ -26,7 +26,7 @@ const parts = s.paragraphs.map((p) => p.split("{mzr}"));
           <p>
             {before}
             {d.cis ? (
-              <a href="https://health-diet.ru/" rel="noopener">
+              <a href={mzrLink("story")} rel="noopener">
                 {s.mzr}
               </a>
             ) : (

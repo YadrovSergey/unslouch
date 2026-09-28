@@ -24,7 +24,10 @@ use tauri_plugin_autostart::MacosLauncher;
 use tauri_plugin_opener::OpenerExt;
 use usage::{DayUsage, Tracker, Usage};
 
-pub const MZR_URL: &str = "https://health-diet.ru/";
+/// The МЗР food diary, tagged so its analytics can tell visits from Unslouch. The interface adds `utm_content`
+/// with the place of the link (promo card, About, water card), the tray menu uses "tray".
+pub const MZR_URL: &str = "https://health-diet.ru/?utm_source=unslouch&utm_medium=app&utm_campaign=unslouch";
+const SITE_URL: &str = "https://unslouch.health-diet.ru";
 const TRAY_ID: &str = "main";
 /// "Pause until tomorrow" ends at this hour.
 const TOMORROW_HOUR: u32 = 4;
@@ -442,6 +445,7 @@ fn build_menu(app: &AppHandle, lang: &str, update: Option<&str>) -> tauri::Resul
             &item("stats", "tray.stats")?,
             &item("settings", "tray.settings")?,
             &item("about", "tray.about")?,
+            &item("thanks", "tabs.thanks")?,
         ],
     )?;
     if i18n::is_cis(lang) {
@@ -565,6 +569,15 @@ fn start_break_now(app: &AppHandle, kind: BreakKind) {
     present_break(app, info, lang, settings.sound_enabled, tip);
 }
 
+/// The site's "Say thanks" page in the app's language: English at the root, the others under /<code>/.
+fn donate_url(lang: &str) -> String {
+    if lang == "en" {
+        format!("{SITE_URL}/donate/")
+    } else {
+        format!("{SITE_URL}/{}/donate/", lang.to_lowercase())
+    }
+}
+
 fn with_sched(app: &AppHandle, f: impl FnOnce(&mut Scheduler)) {
     let state = app.state::<AppState>();
     f(&mut state.0.lock().unwrap().sched);
@@ -588,7 +601,11 @@ fn on_menu(app: &AppHandle, id: &str) {
         "settings" => overlay::show_settings(app, "settings"),
         "about" => overlay::show_settings(app, "about"),
         "mzr" => {
-            let _ = app.opener().open_url(MZR_URL, None::<&str>);
+            let _ = app.opener().open_url(format!("{MZR_URL}&utm_content=tray"), None::<&str>);
+        }
+        "thanks" => {
+            let lang = app.state::<AppState>().0.lock().unwrap().lang();
+            let _ = app.opener().open_url(donate_url(lang), None::<&str>);
         }
         "update" => {
             let state = app.state::<AppState>();

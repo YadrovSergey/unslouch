@@ -100,6 +100,9 @@ export const EMAIL = "support@health-diet.ru";
 export const DONATE = "https://pay.cloudtips.ru/p/9f9a4590";
 /** Donations: Boosty, one-off or monthly, takes cards from other countries too. */
 export const BOOSTY = "https://boosty.to/unslouch";
+/** The МЗР food diary, tagged so its analytics can tell visits from this site. `place` names the link. */
+export const mzrLink = (place: string) =>
+  `https://health-diet.ru/?utm_source=unslouch&utm_medium=site&utm_campaign=unslouch&utm_content=${place}`;
 
 export const t = (lang: Lang): Dict => DICTS[lang];
 export const app = (lang: Lang) => APP[lang];

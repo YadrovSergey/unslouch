@@ -5,7 +5,7 @@ import WaterStage from "../../components/WaterStage.astro";
 import ToolGrid from "../../components/ToolGrid.astro";
 import Story from "../../components/Story.astro";
 import { ExerciseLoop } from "../../components/islands/common";
-import { DOWNLOADS, GITHUB, ORIGIN, app, href, langPaths, t, type Lang } from "../../i18n";
+import { DOWNLOADS, GITHUB, ORIGIN, app, href, langPaths, mzrLink, t, type Lang } from "../../i18n";
 import { ANCHORS } from "../../lib/science";
 
 export const getStaticPaths = langPaths;
@@ -226,7 +226,7 @@ const jsonLd = [
             <h2>{d.cis.title}</h2>
             <p class="muted">{d.cis.text}</p>
             <div>
-              <a class="btn" href="https://health-diet.ru/" rel="noopener">
+              <a class="btn" href={mzrLink("home_card")} rel="noopener">
                 {d.cis.link}
               </a>
             </div>

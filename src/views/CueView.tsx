@@ -4,7 +4,7 @@ import { openUrl } from "@tauri-apps/plugin-opener";
 import { closeCue, waterDrunk } from "../api";
 
 const WATER_VISIBLE_MS = 15000;
-const MZR_WATER_URL = "https://health-diet.ru/";
+const MZR_WATER_URL = "https://health-diet.ru/?utm_source=unslouch&utm_medium=app&utm_campaign=unslouch&utm_content=water";
 
 /** Gentle cues. Blink and posture live in a transparent click-through window; water is a small card. */
 export function CueView({ params }: { params: URLSearchParams }) {
