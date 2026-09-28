@@ -89,6 +89,8 @@ jobs:
             --cache-control "no-cache"
           # Remove files that are no longer in the build (last, so pages never point to missing assets).
           # releases/ holds installers and latest.json from cdn.yml: never delete them from here.
+          # _astro/ is kept too: its file names are hashed, and a page the CDN still has cached from an older deploy
+          # refers to the old CSS and JS. Deleting them left such a page without styles.
           aws s3 sync . "s3://$BUCKET" --endpoint-url "$ENDPOINT" --delete --size-only \
-            --exclude "releases/*" \
+            --exclude "releases/*" --exclude "_astro/*" \
             --cache-control "no-cache"
