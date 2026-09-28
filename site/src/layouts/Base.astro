@@ -150,6 +150,7 @@ const current = (p: string) => (path === p || (p !== "/" && path.startsWith(p)) 
           <li><button class="linklike" type="button" data-open-consent>{d.footer.cookies}</button></li>
           <li><a href={GITHUB}>{d.footer.source}</a></li>
           <li><a href={`mailto:${EMAIL}`}>{d.footer.contact}: {EMAIL}</a></li>
+          <li><a href={`${GITHUB}/issues/new?template=bug.yml`}>{d.footer.bug}</a></li>
           <li class="muted">{d.footer.author}</li>
         </ul>
       </div>

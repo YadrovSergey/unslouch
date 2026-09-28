@@ -1795,3 +1795,66 @@ input[type="checkbox"] {
   text-decoration: underline;
   cursor: pointer;
 }
+
+/* ---------- research sources (/science/sources/) ---------- */
+
+.source-head h1 {
+  overflow-wrap: anywhere;
+  max-width: 36em;
+}
+
+.source-translation {
+  font-size: 17px;
+  margin: -4px 0 12px;
+  max-width: 44em;
+}
+
+.source-meta {
+  color: var(--muted);
+  margin: 0 0 8px;
+  overflow-wrap: anywhere;
+}
+
+.source-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.source-links a {
+  display: inline-block;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.source-links a:hover {
+  border-color: var(--accent);
+}
+
+.source .notice {
+  margin-top: 32px;
+}
+
+.source-index {
+  padding-left: 20px;
+}
+
+.source-index__more {
+  font-size: 14px;
+}
+
+.refs li {
+  margin-bottom: 10px;
+}
+
+.refs__links {
+  font-size: 14px;
+  white-space: normal;
+}

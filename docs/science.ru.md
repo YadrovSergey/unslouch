@@ -41,9 +41,12 @@
 
 ### Что говорят исследования
 
-- **Американская академия офтальмологии (AAO).** У экрана люди моргают реже, советуют правило
-  «20 минут, 20 секунд, 6 метров», искусственную слезу при сухости, экран на расстоянии вытянутой
-  руки. https://www.aao.org/eye-health/tips-prevention/computer-usage
+- **Американская академия офтальмологии (AAO).** У экрана люди моргают 5-7 раз в минуту вместо
+  15. Академия советует регулярно смотреть вдаль, капать искусственную слезу при сухости, держать
+  экран на расстоянии вытянутой руки. Само правило «20 минут, 20 секунд, 6 метров» академия
+  приводит в статье про очки с синим фильтром, там же пишет, что особые очки для компьютера
+  не нужны. https://www.aao.org/eye-health/tips-prevention/computer-usage ;
+  https://www.aao.org/eye-health/tips-prevention/are-computer-glasses-worth-it
 - **Американская оптометрическая ассоциация (AOA).** Экран на расстоянии от 50 до 70 см, центр
   экрана на 15-20° ниже уровня глаз, перерывы, коррекция зрения при необходимости.
   https://www.aoa.org/healthy-eyes/eye-and-vision-conditions/computer-vision-syndrome
@@ -54,16 +57,18 @@
   с жалобами две недели пользовались программой-напоминалкой про 20 секунд вдаль. Жалобы на
   усталость и сухость глаз уменьшились, объективные показатели почти не изменились. Работа
   маленькая и без контрольной группы. doi:10.1016/j.clae.2022.101744
-- **Kim и соавт., 2021, Contact Lens & Anterior Eye.** Упражнения на полное моргание при сухом
-  глазе. https://pubmed.ncbi.nlm.nih.gov/32409236/
-- **Contact Lens & Anterior Eye, 2025, «Optimisation of blinking exercises for dry eye disease».**
+- **Kim и соавт., 2021, Contact Lens & Anterior Eye 44(3):101329.** 41 человек с сухостью глаз
+  четыре недели делал короткое упражнение на моргание каждые 20 минут. Жалоб стало меньше,
+  неполных морганий 34% вместо 54%. Контрольной группы не было.
+  https://pubmed.ncbi.nlm.nih.gov/32409236/
+- **Wolffsohn и соавт., 2025, Contact Lens & Anterior Eye 48(5):102453.**
   15 повторов три раза в день в течение двух недель уменьшили жалобы и число неполных морганий.
-  https://www.sciencedirect.com/science/article/pii/S1367048425000876
-- **npj Digital Medicine, 2025.** Рандомизированное исследование тренировки моргания через
+  doi:10.1016/j.clae.2025.102453
+- **Xu и соавт., 2025, npj Digital Medicine 8:703.** Рандомизированное исследование тренировки моргания через
   приложение, 40 человек, 30 дней. Работа небольшая.
   https://www.nature.com/articles/s41746-025-02053-8
 - **Singh и соавт., 2023, Кокрейновский обзор CD013244.pub2.** Очки с фильтром синего света,
-  скорее всего, не уменьшают усталость глаз от экрана: 17 рандомизированных исследований,
+  возможно, не уменьшают усталость глаз от экрана: 17 рандомизированных исследований,
   619 участников, достоверность низкая. Поэтому такие очки мы не советуем.
   doi:10.1002/14651858.CD013244.pub2
 
@@ -104,11 +109,12 @@
 - **Andersen и соавт., 2008, Journal of Applied Physiology.** 42 женщины с болью в трапециевидной
   мышце. Силовые упражнения именно для этих мышц уменьшили боль на 42-49%, велотренажёр не помог.
   https://pubmed.ncbi.nlm.nih.gov/18948442/
-- **Andersen и соавт., 2011, Pain.** 198 офисных работников. 2 минуты в день пять раз в неделю
+- **Andersen и соавт., 2011, Pain 152(2):440-446.** 198 работающих взрослых. 2 минуты в день пять раз в неделю
   с эластичной лентой уменьшили боль в шее и плечах почти так же, как 12 минут.
-  https://www.sciencedirect.com/science/article/abs/pii/S0304395910007013
-- **Вторичный анализ того же исследования.** У тех, кто занимался, реже болела голова.
-  https://pubmed.ncbi.nlm.nih.gov/21617837
+  doi:10.1016/j.pain.2010.11.016
+- **Andersen и соавт., 2011, Scandinavian Journal of Work, Environment & Health.** Дополнительный
+  анализ того же исследования: дней с головной болью стало меньше на 43% (2 минуты в день)
+  и на 56% (12 минут). https://pubmed.ncbi.nlm.nih.gov/21617837/
 - **Mahmoud и соавт., 2019, Current Reviews in Musculoskeletal Medicine.** Голова, выдвинутая вперёд,
   связана с болью в шее у взрослых. Причинность не доказана. https://pubmed.ncbi.nlm.nih.gov/31773477/
 - **Про круговые движения головой.** Прямых данных о вреде нет. Физиотерапевты обычно советуют
@@ -184,7 +190,8 @@
 
 Мышь и клавиатура держат кисти и предплечья в одной позе часами. От этого бывают усталость
 и дискомфорт в предплечьях. Связь работы за компьютером с синдромом запястного канала
-не доказана: среди тех, кто много работает за компьютером, он встречается не чаще, чем у всех.
+не доказана: в исследованиях у тех, кто много работает за компьютером, он встречается
+не заметно чаще, чем у остальных, и разница не выходит за пределы случайной.
 Поэтому мы не обещаем, что упражнения от него защитят. Они нужны, чтобы кисти отдыхали
 и меняли положение.
 
@@ -199,10 +206,10 @@
 - **Thomsen, Gerr, Atroshi, 2008, BMC Musculoskeletal Disorders.** Систематический обзор:
   данных, что работа за компьютером вызывает синдром запястного канала, недостаточно.
   https://pubmed.ncbi.nlm.nih.gov/18838001/
-- **Mediouni и соавт., 2014, Journal of Occupational and Environmental Medicine.** Метаанализ:
-  у пользователей компьютеров синдром запястного канала встречается не чаще, чем в целом
-  по населению (OR 0,72).
-  https://journals.lww.com/joem/Fulltext/2014/02000/Is_Carpal_Tunnel_Syndrome_Related_to_Computer.18.aspx
+- **Mediouni и соавт., 2014, Journal of Occupational and Environmental Medicine.** Метаанализ
+  6 исследований: связь между работой за компьютером и синдромом запястного канала показать
+  не удалось (отношение шансов 1,67, 95% ДИ от 0,79 до 3,55, не значимо).
+  https://pubmed.ncbi.nlm.nih.gov/24451617/
 - **Page и соавт., 2012, Кокрейновский обзор CD009899.** Упражнения при синдроме запястного
   канала: доказательства слабые. https://pubmed.ncbi.nlm.nih.gov/22696387/
 - **Kim, 2015, Journal of Physical Therapy Science.** Обзор упражнений при синдроме запястного
@@ -246,12 +253,15 @@
 
 - **Healy и соавт., 2010, Journal of the Royal Society of Medicine 103:447.** Исследование
   «случай-контроль»: у тех, кто сидел 10 часов в день и больше и не вставал 2 часа и дольше,
-  риск венозного тромбоза был выше примерно в 2,8 раза. Цифру 2,8 мы взяли из вторичного источника
-  и в оригинале не сверяли. doi:10.1258/jrsm.2010.100155
-- **Braithwaite и соавт., 2016, JRSM Open.** Риск тромбоза растёт с каждым часом сидения
-  без перерыва. Точные значения риска мы не сверяли. https://pubmed.ncbi.nlm.nih.gov/27540486/
-- **Рандомизированное перекрёстное исследование сосудистой функции.** Ходьба по 2 минуты
-  каждые 30 минут улучшила кровоток в подколенной артерии.
+  шансы венозного тромбоза были выше в 2,8 раза (95% ДИ от 1,2 до 6,1).
+  doi:10.1258/jrsm.2010.100155
+- **Braithwaite и соавт., 2016, JRSM Open.** Второе, более крупное исследование той же группы:
+  200 заболевших и 200 человек для сравнения. Долгое сидение по тому же определению значимо
+  с тромбами не связано (отношение шансов 1,18), но каждый лишний час сидения в среднем за сутки
+  повышал шансы примерно на 8% (1,08). Связь слабая. https://pubmed.ncbi.nlm.nih.gov/27540486/
+- **Peddie и соавт., 2021, PLOS ONE.** Рандомизированное перекрёстное исследование, 18 человек.
+  Ходьба по 2 минуты каждые 30 минут увеличила кровоток в подколенной артерии примерно на 80%
+  по сравнению с сидением, а стояние на месте помогло ненадолго.
   https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7781669/
 
 ### Когда к врачу
@@ -294,7 +304,8 @@
   было немного. Насколько это переносится на обычный офисный день, неясно.
 - **EFSA, 2010.** Адекватное суммарное потребление воды: женщинам 2,0 л в день, мужчинам 2,5 л.
   Сюда входит вода из еды (около 20-30%) и все напитки. doi:10.2903/j.efsa.2010.1459
-- **Valtin, 2002.** Правило «8 стаканов в день» не основано на исследованиях.
+- **Valtin, 2002, American Journal of Physiology.** Обзор: правило «8 стаканов в день»
+  не основано на исследованиях.
   https://geiselmed.dartmouth.edu/news/2002_h2/08aug2002_water.shtml
 
 ### Когда к врачу
@@ -362,7 +373,7 @@
 
 - Верх экрана на уровне глаз или чуть ниже.
 - Экран на расстоянии вытянутой руки, от 50 до 100 см.
-- Локти согнуты примерно на 90-110°, запястья прямые.
+- Локти согнуты под углом от 90 до 120°, запястья прямые.
 - Стопы стоят на полу или на подставке.
 - Поясница опирается на спинку.
 - Между краем сиденья и подколенной ямкой 2-3 пальца.
@@ -374,7 +385,7 @@
   https://www.osha.gov/etools/computer-workstations ; про мониторы:
   https://www.osha.gov/etools/computer-workstations/components/monitors
 - **Hoe и соавт., 2018, Кокрейновский обзор.** Дополнительные перерывы, возможно, уменьшают
-  дискомфорт (качество доказательств низкое). Опора для рук и другие мыши дали смешанные
+  дискомфорт (качество доказательств очень низкое). Опора для рук и другие мыши дали смешанные
   результаты. Настройка рабочего места, столы для работы стоя и обучение эргономике эффекта
   не показали. https://pubmed.ncbi.nlm.nih.gov/30350850/
 
@@ -444,49 +455,50 @@
 
 ## Список источников
 
-1. American Academy of Ophthalmology. Computers, Digital Devices and Eye Strain. https://www.aao.org/eye-health/tips-prevention/computer-usage
+1. American Academy of Ophthalmology. Computers, Digital Devices, and Eye Strain. https://www.aao.org/eye-health/tips-prevention/computer-usage ; https://www.aao.org/eye-health/tips-prevention/are-computer-glasses-worth-it
 2. American Optometric Association. Computer vision syndrome. https://www.aoa.org/healthy-eyes/eye-and-vision-conditions/computer-vision-syndrome
-3. Sheppard A.L., Wolffsohn J.S. Digital eye strain: prevalence, measurement and amelioration. BMJ Open Ophthalmology. 2018;3:e000146. doi:10.1136/bmjophth-2018-000146
-4. Talens-Estarelles C. и соавт. Contact Lens & Anterior Eye. 2023;46(2):101744. doi:10.1016/j.clae.2022.101744
-5. Kim A.D. и соавт. Contact Lens & Anterior Eye. 2021. https://pubmed.ncbi.nlm.nih.gov/32409236/
-6. Optimisation of blinking exercises for dry eye disease. Contact Lens & Anterior Eye. 2025. https://www.sciencedirect.com/science/article/pii/S1367048425000876
-7. App-based blink training, randomised trial. npj Digital Medicine. 2025. https://www.nature.com/articles/s41746-025-02053-8
-8. Singh S. и соавт. Blue-light filtering spectacle lenses for visual performance, sleep, and macular health in adults. Cochrane Database of Systematic Reviews. 2023. CD013244.pub2. doi:10.1002/14651858.CD013244.pub2
-9. Chen X. и соавт. Physical Therapy. 2018;98(1):40-62. https://pubmed.ncbi.nlm.nih.gov/29088401/
-10. Andersen L.L. и соавт. Journal of Applied Physiology. 2008. https://pubmed.ncbi.nlm.nih.gov/18948442/
-11. Andersen L.L. и соавт. Pain. 2011. https://www.sciencedirect.com/science/article/abs/pii/S0304395910007013
-12. Andersen L.L. и соавт. Вторичный анализ: головная боль. https://pubmed.ncbi.nlm.nih.gov/21617837
-13. Mahmoud N.F. и соавт. The relationship between forward head posture and neck pain. Current Reviews in Musculoskeletal Medicine. 2019. https://pubmed.ncbi.nlm.nih.gov/31773477/
-14. Ekelund U. и соавт. Does physical activity attenuate, or even eliminate, the detrimental association of sitting time with mortality? The Lancet. 2016. https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(16)30370-1/abstract
-15. Bull F.C. и соавт. World Health Organization 2020 guidelines on physical activity and sedentary behaviour. British Journal of Sports Medicine. 2020. doi:10.1136/bjsports-2020-102955
-16. Dunstan D.W. и соавт. Breaking up prolonged sitting reduces postprandial glucose and insulin responses. Diabetes Care. 2012;35(5):976-983. doi:10.2337/dc11-1931
-17. Duran A.T., ..., Diaz K.M. Medicine & Science in Sports & Exercise. 2023;55(5):847-855. doi:10.1249/MSS.0000000000003109
-18. Shrestha N. и соавт. Workplace interventions for reducing sitting at work. Cochrane Database of Systematic Reviews. 2018. doi:10.1002/14651858.CD010912.pub5
-19. Swain C.T.V. и соавт. No consensus on causality of spine postures or physical exposure and low back pain. Journal of Biomechanics. 2020;102:109312. doi:10.1016/j.jbiomech.2019.08.006
-20. O'Sullivan P.B. и соавт. Back to basics: 10 facts every person should know about back pain. British Journal of Sports Medicine. 2020. https://pubmed.ncbi.nlm.nih.gov/31892534/
-21. Thomsen J.F., Gerr F., Atroshi I. Carpal tunnel syndrome and the use of computer mouse and keyboard: a systematic review. BMC Musculoskeletal Disorders. 2008. https://pubmed.ncbi.nlm.nih.gov/18838001/
-22. Mediouni Z. и соавт. Is carpal tunnel syndrome related to computer exposure at work? Journal of Occupational and Environmental Medicine. 2014. https://journals.lww.com/joem/Fulltext/2014/02000/Is_Carpal_Tunnel_Syndrome_Related_to_Computer.18.aspx
-23. Page M.J. и соавт. Exercise and mobilisation interventions for carpal tunnel syndrome. Cochrane Database of Systematic Reviews. 2012. CD009899. https://pubmed.ncbi.nlm.nih.gov/22696387/
-24. Kim S.D. Journal of Physical Therapy Science. 2015. https://pubmed.ncbi.nlm.nih.gov/26357452/
-25. McLean L. и соавт. Computer terminal work and the benefit of microbreaks. Applied Ergonomics. 2001. https://pubmed.ncbi.nlm.nih.gov/11394463/
-26. Galinsky T.L. и соавт. A field study of supplementary rest breaks for data-entry operators. Ergonomics. 2000. https://www.tandfonline.com/doi/abs/10.1080/001401300184297
-27. Galinsky T. и соавт. Supplementary breaks and stretching exercises for data entry operators: a follow-up field study. American Journal of Industrial Medicine. 2007. https://pubmed.ncbi.nlm.nih.gov/17514726/
-28. Healy B. и соавт. Journal of the Royal Society of Medicine. 2010;103:447. doi:10.1258/jrsm.2010.100155
-29. Braithwaite I. и соавт. JRSM Open. 2016. https://pubmed.ncbi.nlm.nih.gov/27540486/
-30. Рандомизированное перекрёстное исследование: перерывы в сидении и кровоток в ногах. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7781669/
-31. Wittbrodt M.T., Millard-Stafford M. Dehydration impairs cognitive performance: a meta-analysis. Medicine & Science in Sports & Exercise. 2018. https://journals.lww.com/acsm-msse/Fulltext/2018/11000/Dehydration_Impairs_Cognitive_Performance__A.21.aspx
-32. Armstrong L.E. и соавт. Mild dehydration affects mood in healthy young women. Journal of Nutrition. 2012. https://pubmed.ncbi.nlm.nih.gov/22190027/
-33. Ganio M.S. и соавт. Mild dehydration impairs cognitive performance and mood of men. British Journal of Nutrition. 2011. https://pubmed.ncbi.nlm.nih.gov/21736786/
-34. EFSA Panel on Dietetic Products, Nutrition and Allergies. Scientific Opinion on Dietary reference values for water. EFSA Journal. 2010. doi:10.2903/j.efsa.2010.1459
-35. Valtin H. «Drink at least eight glasses of water a day.» Really? 2002. https://geiselmed.dartmouth.edu/news/2002_h2/08aug2002_water.shtml
-36. Zaccaro A. и соавт. How breath-control can change your life: a systematic review on psycho-physiological correlates of slow breathing. Frontiers in Human Neuroscience. 2018. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6137615/
-37. Laborde S. и соавт. Effects of voluntary slow breathing on heart rate and heart rate variability: a systematic review and meta-analysis. Neuroscience & Biobehavioral Reviews. 2022. https://www.sciencedirect.com/science/article/abs/pii/S0149763422002007
-38. Fincham G.W. и соавт. Effect of breathwork on stress and mental health: a meta-analysis of randomised-controlled trials. Scientific Reports. 2023. https://www.nature.com/articles/s41598-022-27247-y
-39. Balban M.Y. и соавт. Brief structured respiration practices enhance mood and reduce physiological arousal. Cell Reports Medicine. 2023. https://www.cell.com/cell-reports-medicine/fulltext/S2666-3791(22)00474-8
-40. OSHA. Computer Workstations eTool. https://www.osha.gov/etools/computer-workstations ; Monitors: https://www.osha.gov/etools/computer-workstations/components/monitors
-41. Hoe V.C.W. и соавт. Cochrane Database of Systematic Reviews. 2018. https://pubmed.ncbi.nlm.nih.gov/30350850/
-42. Albulescu P. и соавт. «Give me a break!» A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance. PLOS ONE. 2022. https://pubmed.ncbi.nlm.nih.gov/36044424/
-43. Wendsche J., Lohmann-Haislah A. Frontiers in Psychology. 2017. https://pubmed.ncbi.nlm.nih.gov/28133454/
-44. Boubekri M. и соавт. Impact of windows and daylight exposure on overall health and sleep quality of office workers: a case-control pilot study. Journal of Clinical Sleep Medicine. 2014. https://pubmed.ncbi.nlm.nih.gov/24932139/
+3. Sheppard A.L., Wolffsohn J.S. Digital eye strain: prevalence, measurement and amelioration. BMJ Open Ophthalmology. 2018;3(1):e000146. doi:10.1136/bmjophth-2018-000146 https://pubmed.ncbi.nlm.nih.gov/29963645/
+4. Talens-Estarelles C. и соавт. The effects of breaks on digital eye strain, dry eye and binocular vision: Testing the 20-20-20 rule. Contact Lens & Anterior Eye. 2023;46(2):101744. doi:10.1016/j.clae.2022.101744 https://pubmed.ncbi.nlm.nih.gov/35963776/
+5. Kim A.D. и соавт. Therapeutic benefits of blinking exercises in dry eye disease. Contact Lens & Anterior Eye. 2021;44(3):101329. doi:10.1016/j.clae.2020.04.014 https://pubmed.ncbi.nlm.nih.gov/32409236/
+6. Wolffsohn J.S. и соавт. Optimisation of blinking exercises for dry eye disease. Contact Lens & Anterior Eye. 2025;48(5):102453. doi:10.1016/j.clae.2025.102453 https://pubmed.ncbi.nlm.nih.gov/40467388/
+7. Xu Z. и соавт. A smartphone-based blink training application for alleviating dry eye signs and symptoms. npj Digital Medicine. 2025;8(1):703. doi:10.1038/s41746-025-02053-8 https://pubmed.ncbi.nlm.nih.gov/41266739/
+8. Singh S. и соавт. Blue-light filtering spectacle lenses for visual performance, sleep, and macular health in adults. Cochrane Database of Systematic Reviews. 2023;(8):CD013244. doi:10.1002/14651858.CD013244.pub2 https://pubmed.ncbi.nlm.nih.gov/37593770/
+9. Chen X. и соавт. Workplace-Based Interventions for Neck Pain in Office Workers: Systematic Review and Meta-Analysis. Physical Therapy. 2018;98(1):40-62. doi:10.1093/ptj/pzx101 https://pubmed.ncbi.nlm.nih.gov/29088401/
+10. Andersen L.L. и соавт. Effect of physical training on function of chronically painful muscles: a randomized controlled trial. Journal of Applied Physiology. 2008;105(6):1796-1801. doi:10.1152/japplphysiol.91057.2008 https://pubmed.ncbi.nlm.nih.gov/18948442/
+11. Andersen L.L. и соавт. Effectiveness of small daily amounts of progressive resistance training for frequent neck/shoulder pain: randomised controlled trial. Pain. 2011;152(2):440-446. doi:10.1016/j.pain.2010.11.016 https://pubmed.ncbi.nlm.nih.gov/21177034/
+12. Andersen L.L. и соавт. Effect of brief daily exercise on headache among adults: secondary analysis of a randomized controlled trial. Scandinavian Journal of Work, Environment & Health. 2011;37(6):547-550. doi:10.5271/sjweh.3170 https://pubmed.ncbi.nlm.nih.gov/21617837/
+13. Mahmoud N.F. и соавт. The Relationship Between Forward Head Posture and Neck Pain: a Systematic Review and Meta-Analysis. Current Reviews in Musculoskeletal Medicine. 2019;12(4):562-577. doi:10.1007/s12178-019-09594-y https://pubmed.ncbi.nlm.nih.gov/31773477/
+14. Ekelund U. и соавт. Does physical activity attenuate, or even eliminate, the detrimental association of sitting time with mortality? A harmonised meta-analysis of data from more than 1 million men and women. The Lancet. 2016;388(10051):1302-1310. doi:10.1016/S0140-6736(16)30370-1 https://pubmed.ncbi.nlm.nih.gov/27475271/
+15. Bull F.C. и соавт. World Health Organization 2020 guidelines on physical activity and sedentary behaviour. British Journal of Sports Medicine. 2020;54(24):1451-1462. doi:10.1136/bjsports-2020-102955 https://pubmed.ncbi.nlm.nih.gov/33239350/
+16. Dunstan D.W. и соавт. Breaking up prolonged sitting reduces postprandial glucose and insulin responses. Diabetes Care. 2012;35(5):976-983. doi:10.2337/dc11-1931 https://pubmed.ncbi.nlm.nih.gov/22374636/
+17. Duran A.T. и соавт. Breaking Up Prolonged Sitting to Improve Cardiometabolic Risk: Dose-Response Analysis of a Randomized Crossover Trial. Medicine & Science in Sports & Exercise. 2023;55(5):847-855. doi:10.1249/MSS.0000000000003109 https://pubmed.ncbi.nlm.nih.gov/36728338/
+18. Shrestha N. и соавт. Workplace interventions for reducing sitting at work. Cochrane Database of Systematic Reviews. 2018;(12):CD010912. doi:10.1002/14651858.CD010912.pub5 https://pubmed.ncbi.nlm.nih.gov/30556590/
+19. Swain C.T.V. и соавт. No consensus on causality of spine postures or physical exposure and low back pain: A systematic review of systematic reviews. Journal of Biomechanics. 2020;102:109312. doi:10.1016/j.jbiomech.2019.08.006 https://pubmed.ncbi.nlm.nih.gov/31451200/
+20. O'Sullivan P.B. и соавт. Back to basics: 10 facts every person should know about back pain. British Journal of Sports Medicine. 2020;54(12):698-699. doi:10.1136/bjsports-2019-101611 https://pubmed.ncbi.nlm.nih.gov/31892534/
+21. Thomsen J.F., Gerr F., Atroshi I. Carpal tunnel syndrome and the use of computer mouse and keyboard: a systematic review. BMC Musculoskeletal Disorders. 2008;9:134. doi:10.1186/1471-2474-9-134 https://pubmed.ncbi.nlm.nih.gov/18838001/
+22. Mediouni Z. и соавт. Is carpal tunnel syndrome related to computer exposure at work? A review and meta-analysis. Journal of Occupational and Environmental Medicine. 2014;56(2):204-208. doi:10.1097/JOM.0000000000000080 https://pubmed.ncbi.nlm.nih.gov/24451617/
+23. Page M.J. и соавт. Exercise and mobilisation interventions for carpal tunnel syndrome. Cochrane Database of Systematic Reviews. 2012;(6):CD009899. doi:10.1002/14651858.CD009899 https://pubmed.ncbi.nlm.nih.gov/22696387/
+24. Kim S.D. Efficacy of tendon and nerve gliding exercises for carpal tunnel syndrome: a systematic review of randomized controlled trials. Journal of Physical Therapy Science. 2015;27(8):2645-2648. doi:10.1589/jpts.27.2645 https://pubmed.ncbi.nlm.nih.gov/26357452/
+25. McLean L. и соавт. Computer terminal work and the benefit of microbreaks. Applied Ergonomics. 2001;32(3):225-237. doi:10.1016/s0003-6870(00)00071-5 https://pubmed.ncbi.nlm.nih.gov/11394463/
+26. Galinsky T.L. и соавт. A field study of supplementary rest breaks for data-entry operators. Ergonomics. 2000;43(5):622-638. doi:10.1080/001401300184297 https://pubmed.ncbi.nlm.nih.gov/10877480/
+27. Galinsky T. и соавт. Supplementary breaks and stretching exercises for data entry operators: a follow-up field study. American Journal of Industrial Medicine. 2007;50(7):519-527. doi:10.1002/ajim.20472 https://pubmed.ncbi.nlm.nih.gov/17514726/
+28. Healy B. и соавт. Prolonged work- and computer-related seated immobility and risk of venous thromboembolism. Journal of the Royal Society of Medicine. 2010;103(11):447-454. doi:10.1258/jrsm.2010.100155 https://pubmed.ncbi.nlm.nih.gov/21037335/
+29. Braithwaite I. и соавт. Venous thromboembolism risk associated with protracted work- and computer-related seated immobility: A case-control study. JRSM Open. 2016;7(8):2054270416632670. doi:10.1177/2054270416632670 https://pubmed.ncbi.nlm.nih.gov/27540486/
+30. Peddie M.C. и соавт. The effects of prolonged sitting, prolonged standing, and activity breaks on vascular function, and postprandial glucose and insulin responses: A randomised crossover trial. PLOS ONE. 2021;16(1):e0244841. doi:10.1371/journal.pone.0244841 https://pubmed.ncbi.nlm.nih.gov/33395691/
+31. Wittbrodt M.T., Millard-Stafford M. Dehydration Impairs Cognitive Performance: A Meta-analysis. Medicine & Science in Sports & Exercise. 2018;50(11):2360-2368. doi:10.1249/MSS.0000000000001682 https://pubmed.ncbi.nlm.nih.gov/29933347/
+32. Armstrong L.E. и соавт. Mild dehydration affects mood in healthy young women. The Journal of Nutrition. 2012;142(2):382-388. doi:10.3945/jn.111.142000 https://pubmed.ncbi.nlm.nih.gov/22190027/
+33. Ganio M.S. и соавт. Mild dehydration impairs cognitive performance and mood of men. British Journal of Nutrition. 2011;106(10):1535-1543. doi:10.1017/S0007114511002005 https://pubmed.ncbi.nlm.nih.gov/21736786/
+34. EFSA Panel on Dietetic Products, Nutrition, and Allergies (NDA). Scientific Opinion on Dietary Reference Values for water. EFSA Journal. 2010;8(3):1459. doi:10.2903/j.efsa.2010.1459
+35. Valtin H. «Drink at least eight glasses of water a day.» Really? Is there scientific evidence for «8 x 8»? American Journal of Physiology: Regulatory, Integrative and Comparative Physiology. 2002;283(5):R993-R1004. doi:10.1152/ajpregu.00365.2002 https://pubmed.ncbi.nlm.nih.gov/12376390/ https://geiselmed.dartmouth.edu/news/2002_h2/08aug2002_water.shtml
+36. Zaccaro A. и соавт. How Breath-Control Can Change Your Life: A Systematic Review on Psycho-Physiological Correlates of Slow Breathing. Frontiers in Human Neuroscience. 2018;12:353. doi:10.3389/fnhum.2018.00353 https://pubmed.ncbi.nlm.nih.gov/30245619/
+37. Laborde S. и соавт. Effects of voluntary slow breathing on heart rate and heart rate variability: A systematic review and a meta-analysis. Neuroscience & Biobehavioral Reviews. 2022;138:104711. doi:10.1016/j.neubiorev.2022.104711 https://pubmed.ncbi.nlm.nih.gov/35623448/
+38. Fincham G.W. и соавт. Effect of breathwork on stress and mental health: A meta-analysis of randomised-controlled trials. Scientific Reports. 2023;13(1):432. doi:10.1038/s41598-022-27247-y https://pubmed.ncbi.nlm.nih.gov/36624160/
+39. Balban M.Y. и соавт. Brief structured respiration practices enhance mood and reduce physiological arousal. Cell Reports Medicine. 2023;4(1):100895. doi:10.1016/j.xcrm.2022.100895 https://pubmed.ncbi.nlm.nih.gov/36630953/
+40. Occupational Safety and Health Administration (OSHA). Computer Workstations eTool. https://www.osha.gov/etools/computer-workstations ; https://www.osha.gov/etools/computer-workstations/components/monitors
+41. Hoe V.C. и соавт. Ergonomic interventions for preventing work-related musculoskeletal disorders of the upper limb and neck among office workers. Cochrane Database of Systematic Reviews. 2018;(10):CD008570. doi:10.1002/14651858.CD008570.pub3 https://pubmed.ncbi.nlm.nih.gov/30350850/
+42. Albulescu P. и соавт. «Give me a break!» A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance. PLOS ONE. 2022;17(8):e0272460. doi:10.1371/journal.pone.0272460 https://pubmed.ncbi.nlm.nih.gov/36044424/
+43. Wendsche J., Lohmann-Haislah A. A Meta-Analysis on Antecedents and Outcomes of Detachment from Work. Frontiers in Psychology. 2017;7:2072. doi:10.3389/fpsyg.2016.02072 https://pubmed.ncbi.nlm.nih.gov/28133454/
+44. Boubekri M. и соавт. Impact of windows and daylight exposure on overall health and sleep quality of office workers: a case-control pilot study. Journal of Clinical Sleep Medicine. 2014;10(6):603-611. doi:10.5664/jcsm.3780 https://pubmed.ncbi.nlm.nih.gov/24932139/
 
-Где мы не уверены в точном названии работы, приводим только авторов, журнал, год и ссылку.
+У каждого источника есть страница на сайте с кратким пересказом простыми словами:
+https://unslouch.health-diet.ru/ru/science/sources/

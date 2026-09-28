@@ -1,0 +1,1881 @@
+[
+  {
+    "slug": "aao-computer-eye-strain",
+    "n": 1,
+    "kind": "webpage",
+    "authors": "American Academy of Ophthalmology",
+    "title": "Computers, Digital Devices, and Eye Strain",
+    "journal": "American Academy of Ophthalmology (aao.org)",
+    "year": 2024,
+    "url": "https://www.aao.org/eye-health/tips-prevention/computer-usage",
+    "openAccess": true,
+    "links": [
+      {
+        "label": "Are Blue Light-Blocking Glasses Worth It?",
+        "url": "https://www.aao.org/eye-health/tips-prevention/are-computer-glasses-worth-it"
+      }
+    ],
+    "sections": [
+      "eyes"
+    ],
+    "en": {
+      "short": "Computers, digital devices and eye strain",
+      "summary": "A patient guide from the American Academy of Ophthalmology on why screens tire the eyes. People normally blink about 15 times a minute but only 5-7 times at a screen, so the eye surface dries out. The Academy stresses that screens do not damage the eyes permanently. Its tips: blink, use artificial tears, look into the distance regularly, sit about an arm's length away and cut glare. A companion AAO article spells out the 20-20-20 rule.",
+      "findings": [
+        "Blinking drops from about 15 to 5-7 times a minute at a screen.",
+        "Screen about 25 inches (about 60 cm) away, gaze slightly downward.",
+        "Every 20 minutes, look at something at least 20 feet (6 m) away for at least 20 seconds (companion article on blue-light glasses).",
+        "Eye strain from screens is temporary; the Academy does not recommend special eyewear for computer use."
+      ],
+      "strength": "Expert guidance from a professional body, not a study. It summarises clinical experience and research without new data.",
+      "inApp": "The app's main eye cue follows this advice: every 20 minutes it suggests looking more than 6 metres away for 20 seconds. The blink cue at the screen edges comes from the point about reduced blinking."
+    },
+    "ru": {
+      "short": "Компьютер и усталость глаз",
+      "titleTranslation": "Компьютеры, цифровые устройства и усталость глаз",
+      "summary": "Памятка Американской академии офтальмологии о том, почему от экрана устают глаза. Обычно человек моргает около 15 раз в минуту, а у экрана всего 5-7 раз, и поверхность глаза подсыхает. Академия подчёркивает, что вреда зрению на всю жизнь экран не наносит. Советы простые: моргать, капать искусственную слезу, регулярно смотреть вдаль, сидеть на расстоянии вытянутой руки и убрать блики. Точную формулировку правила про перерывы академия даёт в соседней статье.",
+      "findings": [
+        "У экрана человек моргает 5-7 раз в минуту вместо 15.",
+        "Экран примерно в 60 см от глаз, взгляд чуть вниз.",
+        "Каждые 20 минут смотреть не меньше 20 секунд на предмет дальше 6 метров (соседняя статья академии про очки с синим фильтром).",
+        "Усталость глаз от экрана временная, специальные очки для компьютера академия не советует."
+      ],
+      "strength": "Это рекомендация профессионального общества, а не исследование. Новых данных здесь нет, только обобщённый клинический опыт.",
+      "inApp": "На этой памятке основана главная подсказка для глаз: раз в 20 минут приложение предлагает 20 секунд посмотреть вдаль, дальше 6 метров. Отсюда же подсказка моргнуть по краям экрана."
+    }
+  },
+  {
+    "slug": "aoa-computer-vision-syndrome",
+    "n": 2,
+    "kind": "webpage",
+    "authors": "American Optometric Association",
+    "title": "Computer vision syndrome",
+    "journal": "American Optometric Association (aoa.org)",
+    "year": null,
+    "url": "https://www.aoa.org/healthy-eyes/eye-and-vision-conditions/computer-vision-syndrome",
+    "openAccess": true,
+    "sections": [
+      "eyes"
+    ],
+    "en": {
+      "short": "Computer vision syndrome",
+      "summary": "The American Optometric Association's page on computer vision syndrome, also called digital eye strain. It lists the usual symptoms (tired eyes, blurred vision, dry eyes, headache, neck and shoulder pain) and their causes: poor lighting, glare, a badly placed screen and uncorrected vision problems. It then gives concrete setup advice for the screen and for breaks.",
+      "findings": [
+        "Screen about 50-70 cm (20-28 inches) from the eyes.",
+        "Centre of the screen 15-20 degrees below eye level.",
+        "Rest the eyes for 15 minutes after two hours of continuous screen use, and use the 20-20-20 rule.",
+        "Uncorrected or undercorrected vision makes symptoms worse."
+      ],
+      "strength": "Professional guidance, not a study. The distances and angles are expert recommendations, not results of a trial.",
+      "inApp": "The workstation checklist uses these screen distance and height tips. The eye breaks every 20 minutes and the advice to have your vision checked come from the same page."
+    },
+    "ru": {
+      "short": "Компьютерный зрительный синдром",
+      "titleTranslation": "Компьютерный зрительный синдром",
+      "summary": "Страница Американской ассоциации оптометристов о компьютерном зрительном синдроме, его ещё называют цифровым напряжением глаз. Там перечислены типичные жалобы: устают и сохнут глаза, картинка расплывается, болит голова, ноют шея и плечи. Причины тоже названы: плохой свет, блики, неудобно стоящий монитор, неисправленное зрение. Дальше идут конкретные советы, как поставить экран и когда отдыхать.",
+      "findings": [
+        "Экран в 50-70 см от глаз.",
+        "Центр экрана на 15-20 градусов ниже уровня глаз.",
+        "После двух часов непрерывной работы 15 минут отдыха для глаз, плюс короткие взгляды вдаль каждые 20 минут.",
+        "Неисправленное зрение усиливает жалобы."
+      ],
+      "strength": "Рекомендация профессиональной ассоциации, а не исследование. Расстояния и углы взяты из опыта специалистов, их не проверяли в испытаниях.",
+      "inApp": "Отсюда советы про расстояние и высоту экрана в разделе о рабочем месте. На этой же странице держатся перерывы для глаз каждые 20 минут и совет проверить зрение."
+    }
+  },
+  {
+    "slug": "sheppard-2018-digital-eye-strain",
+    "n": 3,
+    "kind": "review",
+    "authors": "Sheppard AL, Wolffsohn JS",
+    "title": "Digital eye strain: prevalence, measurement and amelioration",
+    "journal": "BMJ Open Ophthalmology",
+    "year": 2018,
+    "volume_pages": "3(1):e000146",
+    "doi": "10.1136/bmjophth-2018-000146",
+    "pmid": "29963645",
+    "pmcid": "PMC6020759",
+    "openAccess": true,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6020759/",
+    "sections": [
+      "eyes"
+    ],
+    "en": {
+      "short": "Digital eye strain",
+      "summary": "A narrative review of digital eye strain: how common it is, how it is measured and what helps. The authors estimate that half or more of computer users have symptoms. They split them into two groups: strain on focusing and eye alignment, and dry eye. Management options include correcting vision, treating dryness and taking regular screen breaks. Evidence for blue-light filtering lenses was mixed.",
+      "findings": [
+        "Digital eye strain may affect 50% or more of computer users.",
+        "Symptoms come from focusing effort and from dry eye.",
+        "Objective measures and symptom questionnaires often do not agree.",
+        "Helpful steps: correct refraction, manage dry eye, take regular breaks."
+      ],
+      "strength": "Narrative review by two optometry researchers, not a meta-analysis. Good overview, but the prevalence figure is an estimate from studies of varying quality.",
+      "inApp": "Supports the app's eye breaks and blink cue, and its advice to get your vision checked when symptoms persist. The mixed data on blue-light lenses is one reason the app does not recommend them."
+    },
+    "ru": {
+      "short": "Цифровое напряжение глаз",
+      "titleTranslation": "Цифровое напряжение глаз: распространённость, измерение и способы облегчить",
+      "summary": "Обзор о цифровом напряжении глаз: как часто оно бывает, как его измеряют и что помогает. По оценке авторов, жалобы есть у половины пользователей компьютера или даже больше. Причины две: глаз устаёт фокусироваться вблизи, и поверхность глаза пересыхает. Помогают правильные очки или линзы, уход за сухими глазами и регулярные перерывы. Про очки с фильтром синего света данные противоречивые.",
+      "findings": [
+        "Жалобы бывают у 50% пользователей компьютера и больше.",
+        "Две причины: работа мышцы, которая фокусирует глаз, и сухость.",
+        "Приборные измерения и ощущения людей часто не совпадают.",
+        "Помогают коррекция зрения, уход за сухостью глаз и перерывы."
+      ],
+      "strength": "Описательный обзор двух исследователей-оптометристов, не метаанализ. Хорошая общая картина, но цифра распространённости оценочная, исследования в основе разного качества.",
+      "inApp": "Поддерживает перерывы для глаз, подсказку моргнуть и совет проверить зрение, если усталость не проходит. Противоречивые данные про синий фильтр одна из причин, почему приложение такие очки не советует."
+    }
+  },
+  {
+    "slug": "talens-estarelles-2023-20-20-20-rule",
+    "n": 4,
+    "kind": "study",
+    "authors": "Talens-Estarelles C, Cerviño A, García-Lázaro S, Fogelton A, Sheppard A, Wolffsohn JS",
+    "title": "The effects of breaks on digital eye strain, dry eye and binocular vision: Testing the 20-20-20 rule",
+    "journal": "Contact Lens & Anterior Eye",
+    "year": 2023,
+    "volume_pages": "46(2):101744",
+    "doi": "10.1016/j.clae.2022.101744",
+    "pmid": "35963776",
+    "openAccess": false,
+    "url": "https://doi.org/10.1016/j.clae.2022.101744",
+    "sections": [
+      "eyes"
+    ],
+    "en": {
+      "short": "Testing the 20-20-20 rule",
+      "summary": "A before-and-after study of the 20-20-20 rule. Twenty-nine computer users with eye complaints installed software that watched their breaks through the webcam and reminded them to look away. After two weeks they took more breaks, and both eye strain and dry eye symptoms went down. Objective tear film and eye surface measures did not change, and the benefit faded a week after the reminders stopped.",
+      "findings": [
+        "29 symptomatic computer users, 2 weeks of break reminders.",
+        "More breaks per day and less continuous computer work.",
+        "Eye strain and dry eye symptoms decreased.",
+        "Tear film and eye surface signs did not change; symptoms returned a week after stopping."
+      ],
+      "strength": "Small study without a control group, so part of the effect may be expectation. Short follow-up.",
+      "inApp": "This is the closest test of what the app does: a reminder every 20 minutes to look into the distance. It also shows why the reminders are useful only while you keep them on."
+    },
+    "ru": {
+      "short": "Проверка правила перерывов для глаз",
+      "titleTranslation": "Как перерывы влияют на напряжение глаз, сухость и бинокулярное зрение: проверка правила «20 минут, 20 секунд, 6 метров»",
+      "summary": "Исследование «до и после» правила перерывов для глаз. 29 человек с жалобами на глаза поставили программу, которая через веб-камеру следила за перерывами и напоминала посмотреть вдаль. За две недели они стали чаще отвлекаться от экрана, и жалобы на усталость и сухость глаз уменьшились. Слёзная плёнка и поверхность глаза по приборам не изменились, а через неделю без напоминаний всё вернулось.",
+      "findings": [
+        "29 человек с жалобами, 2 недели напоминаний.",
+        "Перерывов в день стало больше, непрерывной работы меньше.",
+        "Жалобы на усталость и сухость глаз уменьшились.",
+        "По приборам глаза не изменились, через неделю без напоминаний жалобы вернулись."
+      ],
+      "strength": "Маленькое исследование без контрольной группы, часть эффекта может быть от ожиданий участников. Наблюдали недолго.",
+      "inApp": "Это самая близкая проверка того, что делает приложение: раз в 20 минут напомнить посмотреть вдаль. И заодно видно, что польза есть, пока напоминания включены."
+    }
+  },
+  {
+    "slug": "kim-2021-blinking-exercises-dry-eye",
+    "n": 5,
+    "kind": "study",
+    "authors": "Kim AD, Muntz A, Lee J, Wang MTM, Craig JP",
+    "title": "Therapeutic benefits of blinking exercises in dry eye disease",
+    "journal": "Contact Lens & Anterior Eye",
+    "year": 2021,
+    "volume_pages": "44(3):101329",
+    "doi": "10.1016/j.clae.2020.04.014",
+    "pmid": "32409236",
+    "openAccess": false,
+    "url": "https://doi.org/10.1016/j.clae.2020.04.014",
+    "sections": [
+      "eyes"
+    ],
+    "en": {
+      "short": "Blinking exercises for dry eye",
+      "summary": "People with dry eye symptoms were asked to do a ten-second cycle of blinking exercises every 20 minutes while awake, for four weeks. Of 54 who started, 41 finished. Dry eye questionnaire scores improved, the share of incomplete blinks fell from about 54% to 34%, and the tear film stayed stable a little longer. Tear volume and the oily tear layer did not change.",
+      "findings": [
+        "41 people completed 4 weeks, about 26 exercise cycles a day.",
+        "Incomplete blinks fell from 54% to 34%.",
+        "Dry eye symptom scores dropped noticeably (DEQ-5 from 11 to 7).",
+        "Tear breakup time rose modestly; tear volume did not change."
+      ],
+      "strength": "Small study without a control group, a quarter of participants dropped out. Symptoms improved more than objective measures.",
+      "inApp": "Supports the lid exercise in some breaks (close the eyes slowly, squeeze gently, open) and the blink cue every few minutes."
+    },
+    "ru": {
+      "short": "Упражнения на моргание при сухости глаз",
+      "titleTranslation": "Польза упражнений на моргание при синдроме сухого глаза",
+      "summary": "Людей с сухостью глаз попросили четыре недели делать десятисекундный цикл упражнений на моргание каждые 20 минут, пока они не спят. Начали 54 человека, закончили 41. Оценки по опросникам сухого глаза улучшились, доля неполных морганий упала примерно с 54% до 34%, слёзная плёнка стала держаться чуть дольше. Объём слезы и её жировой слой не изменились.",
+      "findings": [
+        "41 человек прошёл 4 недели, в среднем 26 циклов упражнений в день.",
+        "Неполных морганий стало 34% вместо 54%.",
+        "Баллы по опроснику сухого глаза снизились с 11 до 7.",
+        "Слёзная плёнка стала стабильнее ненамного, объём слезы не изменился."
+      ],
+      "strength": "Маленькое исследование без контрольной группы, четверть участников выбыла. Ощущения улучшились сильнее, чем приборные показатели.",
+      "inApp": "На этом держится упражнение для век в части перерывов (медленно закрыть глаза, слегка зажмуриться, открыть) и подсказка моргнуть раз в несколько минут."
+    }
+  },
+  {
+    "slug": "wolffsohn-2025-optimising-blinking-exercises",
+    "n": 6,
+    "kind": "study",
+    "authors": "Wolffsohn JS, Travé-Huarte S, Bahra I, Finch C, Anyaegbu U, Garcia-Porta N, Kingsnorth A",
+    "title": "Optimisation of blinking exercises for dry eye disease",
+    "journal": "Contact Lens & Anterior Eye",
+    "year": 2025,
+    "volume_pages": "48(5):102453",
+    "doi": "10.1016/j.clae.2025.102453",
+    "pmid": "40467388",
+    "openAccess": false,
+    "url": "https://doi.org/10.1016/j.clae.2025.102453",
+    "sections": [
+      "eyes"
+    ],
+    "en": {
+      "short": "The best routine for blinking exercises",
+      "summary": "A randomised study that looked for the best blinking exercise routine. In the first stage 98 people with dry eye tried different versions through an app for two weeks: with or without a squeeze step, 2 to 4 times a day, 5 to 25 repetitions. A squeeze step helped, and 15 repetitions beat 5. In a second group of 28 people, 15 close-squeeze-open cycles three times a day reduced symptoms and incomplete blinks.",
+      "findings": [
+        "98 people in the optimisation stage, 28 in the efficacy stage, 2 weeks each.",
+        "Adding a gentle squeeze reduced how often symptoms occurred.",
+        "Best routine: 15 close-squeeze-open cycles, 3 times a day.",
+        "Symptoms and incomplete blinks went down but returned two weeks after stopping."
+      ],
+      "strength": "Randomised comparison of routines, but short and fairly small, with no untreated control group in the efficacy stage.",
+      "inApp": "The lid exercise in the app follows this routine: close slowly, squeeze gently, open. It is a short version, not the full 15 repetitions."
+    },
+    "ru": {
+      "short": "Как лучше делать упражнения на моргание",
+      "titleTranslation": "Подбор лучшей схемы упражнений на моргание при сухости глаз",
+      "summary": "Рандомизированное исследование, где искали лучшую схему упражнений на моргание. Сначала 98 человек с сухостью глаз две недели пробовали разные варианты через приложение: с зажмуриванием или без, от 2 до 4 раз в день, от 5 до 25 повторов. Зажмуривание помогало, 15 повторов работали лучше 5. Во второй группе из 28 человек схема «закрыть, зажмуриться, открыть» 15 раз трижды в день уменьшила жалобы и число неполных морганий.",
+      "findings": [
+        "98 человек на этапе подбора и 28 на этапе проверки, по 2 недели.",
+        "Лёгкое зажмуривание снижало частоту жалоб.",
+        "Лучшая схема: 15 циклов «закрыть, зажмуриться, открыть» 3 раза в день.",
+        "Жалоб и неполных морганий стало меньше, но через 2 недели после отмены всё вернулось."
+      ],
+      "strength": "Схемы сравнивали рандомизированно, но исследование короткое и небольшое, на втором этапе не было группы без упражнений.",
+      "inApp": "Упражнение для век в приложении устроено так же: медленно закрыть глаза, слегка зажмуриться, открыть. Это короткий вариант, не все 15 повторов."
+    }
+  },
+  {
+    "slug": "xu-2025-blink-training-app",
+    "n": 7,
+    "kind": "study",
+    "authors": "Xu Z, Shen J, Jiang M, Wang Y, Sun Y, Lu F, Hu L",
+    "title": "A smartphone-based blink training application for alleviating dry eye signs and symptoms",
+    "journal": "npj Digital Medicine",
+    "year": 2025,
+    "volume_pages": "8(1):703",
+    "doi": "10.1038/s41746-025-02053-8",
+    "pmid": "41266739",
+    "pmcid": "PMC12635133",
+    "openAccess": true,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12635133/",
+    "sections": [
+      "eyes"
+    ],
+    "en": {
+      "short": "Blink training app for dry eye",
+      "summary": "A randomised trial of a smartphone app that trains people to blink fully. Forty adults with dry eye were split into an app group and a group with no intervention and followed for 30 days. The app group blinked more often and more completely, and their eye surface measures and symptom scores improved. The control group did not change. Longer training was linked to bigger improvement in symptoms.",
+      "findings": [
+        "40 participants, randomised, 30 days.",
+        "The app group had fewer incomplete blinks and a higher blink rate.",
+        "Dry eye symptoms and eye surface protection improved in the app group only.",
+        "More training time went with larger symptom improvement."
+      ],
+      "strength": "Small randomised trial, one month, participants were not blinded to their group.",
+      "inApp": "Supports the idea behind the app's blink cue: a simple reminder to blink can change blinking habits. The app does not claim to treat dry eye."
+    },
+    "ru": {
+      "short": "Тренировка моргания через приложение",
+      "titleTranslation": "Приложение для смартфона, которое тренирует моргание и облегчает признаки и симптомы сухого глаза",
+      "summary": "Рандомизированное исследование приложения, которое учит моргать полностью. 40 взрослых с сухостью глаз разделили на две группы: одна пользовалась приложением, другая ничего не делала. Наблюдали 30 дней. В первой группе моргания стали чаще и полнее, улучшились и оценки по опроснику, и состояние поверхности глаза. В контрольной группе изменений не было. Чем дольше человек тренировался, тем заметнее становилось лучше.",
+      "findings": [
+        "40 участников, рандомизация, 30 дней.",
+        "С приложением неполных морганий стало меньше, а морганий в минуту больше.",
+        "Жалобы на сухость и защита поверхности глаза улучшились только в группе с приложением.",
+        "Чем больше времени на тренировку, тем сильнее снижались жалобы."
+      ],
+      "strength": "Маленькое рандомизированное исследование на месяц, участники знали, в какой они группе.",
+      "inApp": "Поддерживает идею подсказки моргнуть: простое напоминание может изменить привычку. Лечить сухой глаз приложение не обещает."
+    }
+  },
+  {
+    "slug": "singh-2023-blue-light-lenses",
+    "n": 8,
+    "kind": "review",
+    "authors": "Singh S, Keller PR, Busija L, McMillan P, Makrai E, Lawrenson JG, Hull CC, Downie LE",
+    "title": "Blue-light filtering spectacle lenses for visual performance, sleep, and macular health in adults",
+    "journal": "Cochrane Database of Systematic Reviews",
+    "year": 2023,
+    "volume_pages": "(8):CD013244",
+    "doi": "10.1002/14651858.CD013244.pub2",
+    "pmid": "37593770",
+    "pmcid": "PMC10436683",
+    "openAccess": true,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10436683/",
+    "sections": [
+      "eyes"
+    ],
+    "en": {
+      "short": "Blue-light filtering glasses",
+      "summary": "A Cochrane systematic review of blue-light filtering spectacle lenses in adults. It included 17 randomised trials, with 5 to 156 participants each and follow-up from less than a day to five weeks. Compared with ordinary lenses, blue-light lenses may make no difference to eye strain from screens over the short term, and probably make little or no difference to sharpness of vision. Effects on sleep were inconsistent.",
+      "findings": [
+        "17 randomised trials, small samples, short follow-up.",
+        "No clear difference in visual fatigue with blue-light lenses (low certainty).",
+        "Probably no effect on visual acuity (moderate certainty).",
+        "Sleep results were mixed; long-term eye health was not studied."
+      ],
+      "strength": "Cochrane review, the most careful type of evidence summary, but the trials themselves were small, short and mostly at high risk of bias.",
+      "inApp": "This review argues against a popular claim. That is why Unslouch does not recommend blue-light glasses and relies on breaks and blinking instead."
+    },
+    "ru": {
+      "short": "Очки с фильтром синего света",
+      "titleTranslation": "Очки с фильтром синего света для зрения, сна и здоровья сетчатки у взрослых",
+      "summary": "Кокрейновский систематический обзор очков с фильтром синего света у взрослых. Вошли 17 рандомизированных исследований, от 5 до 156 участников в каждом, наблюдение от нескольких часов до пяти недель. По сравнению с обычными линзами такие очки, возможно, не уменьшают усталость глаз от экрана и, скорее всего, не влияют на остроту зрения. Про сон результаты противоречат друг другу.",
+      "findings": [
+        "17 рандомизированных исследований, маленькие группы, короткое наблюдение.",
+        "Разницы в усталости глаз не нашли (низкая достоверность).",
+        "На остроту зрения, скорее всего, не влияют (умеренная достоверность).",
+        "Про сон данные смешанные, долгосрочное влияние на глаза не изучали."
+      ],
+      "strength": "Кокрейновский обзор, самый тщательный тип сводки. Но сами исследования маленькие, короткие и в основном с высоким риском систематической ошибки.",
+      "inApp": "Этот обзор против популярного обещания. Поэтому приложение не советует очки с синим фильтром и делает ставку на перерывы и моргание."
+    }
+  },
+  {
+    "slug": "chen-2018-workplace-neck-pain",
+    "n": 9,
+    "kind": "review",
+    "authors": "Chen X, Coombes BK, Sjøgaard G, Jun D, O'Leary S, Johnston V",
+    "title": "Workplace-Based Interventions for Neck Pain in Office Workers: Systematic Review and Meta-Analysis",
+    "journal": "Physical Therapy",
+    "year": 2018,
+    "volume_pages": "98(1):40–62",
+    "doi": "10.1093/ptj/pzx101",
+    "pmid": "29088401",
+    "openAccess": false,
+    "url": "https://doi.org/10.1093/ptj/pzx101",
+    "sections": [
+      "neck"
+    ],
+    "en": {
+      "short": "Workplace interventions for neck pain",
+      "summary": "A systematic review and meta-analysis of 27 randomised trials of workplace programmes for neck pain in office workers. For workers who already had pain, strengthening exercises for the neck and shoulders reduced pain, and so did general fitness training, though to a lesser extent. People who exercised more often gained more. Evidence for ergonomic changes to the workstation was of low quality.",
+      "findings": [
+        "27 randomised trials in office workers.",
+        "Neck and shoulder strengthening reduced pain with a moderate effect (SMD 0.59), moderate-quality evidence.",
+        "General fitness training helped less (SMD 0.43).",
+        "Workstation ergonomics: low-quality evidence."
+      ],
+      "strength": "Systematic review with meta-analysis, moderate-quality evidence for exercise. Only English-language trials, some data could not be pooled.",
+      "inApp": "This is the main reason for the optional daily 2-minute neck and shoulder strength routine, and for putting movement ahead of workstation tweaks."
+    },
+    "ru": {
+      "short": "Программы на работе против боли в шее",
+      "titleTranslation": "Программы на рабочем месте при боли в шее у офисных работников: систематический обзор и метаанализ",
+      "summary": "Систематический обзор и метаанализ 27 рандомизированных исследований о том, что помогает офисным работникам при боли в шее. У тех, у кого шея уже болела, силовые упражнения для шеи и плеч уменьшали боль. Общая физкультура тоже помогала, но слабее. Кто занимался регулярнее, получал больше пользы. Данные о пользе перестановки рабочего места низкого качества.",
+      "findings": [
+        "27 рандомизированных исследований с офисными работниками.",
+        "Силовые упражнения для шеи и плеч уменьшали боль, эффект средний (SMD 0,59), качество данных умеренное.",
+        "Общая физкультура помогала слабее (SMD 0,43).",
+        "Эргономика рабочего места: качество данных низкое."
+      ],
+      "strength": "Систематический обзор с метаанализом, для упражнений качество доказательств умеренное. Брали только статьи на английском, часть данных не удалось объединить.",
+      "inApp": "Главная причина, почему в приложении есть необязательная силовая разминка для шеи и плеч на 2 минуты в день и почему движение для нас важнее настройки стола."
+    }
+  },
+  {
+    "slug": "andersen-2008-trapezius-strength-training",
+    "n": 10,
+    "kind": "study",
+    "authors": "Andersen LL, Andersen CH, Zebis MK, Nielsen PK, Søgaard K, Sjøgaard G",
+    "title": "Effect of physical training on function of chronically painful muscles: a randomized controlled trial",
+    "journal": "Journal of Applied Physiology",
+    "year": 2008,
+    "volume_pages": "105(6):1796–1801",
+    "doi": "10.1152/japplphysiol.91057.2008",
+    "pmid": "18948442",
+    "openAccess": false,
+    "url": "https://doi.org/10.1152/japplphysiol.91057.2008",
+    "sections": [
+      "neck"
+    ],
+    "en": {
+      "short": "Strength training for trapezius pain",
+      "summary": "A randomised trial in 42 employed women with chronic pain in the upper trapezius, the muscle between the neck and shoulder. For ten weeks they did specific neck and shoulder strength training, general fitness training on a bike, or no exercise. Only the strength training group changed: pain dropped by 42-49%, and the painful muscle became more active and stronger. Cycling did not reduce pain.",
+      "findings": [
+        "42 women with trapezius myalgia, 10 weeks, three groups.",
+        "Specific strength training reduced pain by 42-49%.",
+        "Shoulder strength rose by 18-53% in the strength group.",
+        "Leg cycling gave no significant change in pain."
+      ],
+      "strength": "Randomised trial, but small, women only and people who already had diagnosed muscle pain.",
+      "inApp": "This study is the basis of the Andersen protocol behind the optional daily neck and shoulder strength routine (shrugs or lateral raises with an elastic band)."
+    },
+    "ru": {
+      "short": "Силовые упражнения при боли в трапециевидной мышце",
+      "titleTranslation": "Как тренировки влияют на работу хронически болезненных мышц: рандомизированное исследование",
+      "summary": "Рандомизированное исследование с 42 работающими женщинами, у которых давно болела верхняя часть трапециевидной мышцы, между шеей и плечом. Десять недель одни делали силовые упражнения для шеи и плеч, другие крутили велотренажёр, третьи не тренировались. Изменения были только в силовой группе: боль уменьшилась на 42-49%, больная мышца стала сильнее и активнее. Велотренажёр боль не уменьшил.",
+      "findings": [
+        "42 женщины с болью в трапециевидной мышце, 10 недель, три группы.",
+        "Силовые упражнения уменьшили боль на 42-49%.",
+        "Сила плеча выросла на 18-53%.",
+        "Велотренажёр значимо боль не изменил."
+      ],
+      "strength": "Рандомизированное исследование, но маленькое, только женщины и только с уже поставленным диагнозом.",
+      "inApp": "На этой работе основан протокол Андерсена, по которому сделана необязательная ежедневная силовая разминка для шеи и плеч (подъёмы плеч или отведение рук с резинкой)."
+    }
+  },
+  {
+    "slug": "andersen-2011-two-minutes-daily-training",
+    "n": 11,
+    "kind": "study",
+    "authors": "Andersen LL, Saervoll CA, Mortensen OS, Poulsen OM, Hannerz H, Zebis MK",
+    "title": "Effectiveness of small daily amounts of progressive resistance training for frequent neck/shoulder pain: randomised controlled trial",
+    "journal": "Pain",
+    "year": 2011,
+    "volume_pages": "152(2):440–446",
+    "doi": "10.1016/j.pain.2010.11.016",
+    "pmid": "21177034",
+    "openAccess": false,
+    "url": "https://doi.org/10.1016/j.pain.2010.11.016",
+    "sections": [
+      "neck"
+    ],
+    "en": {
+      "short": "Two minutes a day of neck and shoulder training",
+      "summary": "A randomised trial in 198 working adults (174 women, 24 men) with frequent neck and shoulder pain. For ten weeks they did resistance training with an elastic band for 2 or 12 minutes a day, five days a week, or received weekly health information. Both exercise groups had less pain and tenderness and more strength than the control group, and 2 minutes worked almost as well as 12.",
+      "findings": [
+        "198 adults working at least 30 hours a week, 10 weeks.",
+        "Pain fell by 1.4 points (0-10 scale) with 2 minutes a day and 1.9 points with 12 minutes, versus control.",
+        "Muscle tenderness and strength improved in both exercise groups.",
+        "2 minutes a day was enough for a clinically relevant effect."
+      ],
+      "strength": "Good-sized randomised trial with a control group. Participants knew they were exercising, and the follow-up was only ten weeks.",
+      "inApp": "This is why the optional neck and shoulder routine takes only 2 minutes a day."
+    },
+    "ru": {
+      "short": "Две минуты тренировки в день для шеи и плеч",
+      "titleTranslation": "Небольшие ежедневные силовые тренировки при частой боли в шее и плечах: рандомизированное исследование",
+      "summary": "Рандомизированное исследование с 198 работающими взрослыми (174 женщины и 24 мужчины), у которых часто болели шея и плечи. Десять недель одни занимались с эластичной лентой по 2 минуты в день пять дней в неделю, другие по 12 минут, третьи раз в неделю получали письма о здоровье. В обеих группах с упражнениями боль и болезненность мышц уменьшились, сила выросла, и 2 минуты сработали почти как 12.",
+      "findings": [
+        "198 человек, работающих от 30 часов в неделю, 10 недель.",
+        "Боль по шкале от 0 до 10 снизилась на 1,4 балла при 2 минутах в день и на 1,9 балла при 12 минутах.",
+        "Болезненность мышц уменьшилась, сила выросла в обеих группах с упражнениями.",
+        "2 минут в день хватило для заметного эффекта."
+      ],
+      "strength": "Рандомизированное исследование приличного размера с контрольной группой. Участники знали, что тренируются, наблюдение всего 10 недель.",
+      "inApp": "Поэтому необязательная разминка для шеи и плеч в приложении занимает всего 2 минуты в день."
+    }
+  },
+  {
+    "slug": "andersen-2011-exercise-headache",
+    "n": 12,
+    "kind": "study",
+    "authors": "Andersen LL, Mortensen OS, Zebis MK, Jensen RH, Poulsen OM",
+    "title": "Effect of brief daily exercise on headache among adults: secondary analysis of a randomized controlled trial",
+    "journal": "Scandinavian Journal of Work, Environment & Health",
+    "year": 2011,
+    "volume_pages": "37(6):547–550",
+    "doi": "10.5271/sjweh.3170",
+    "pmid": "21617837",
+    "openAccess": true,
+    "url": "https://doi.org/10.5271/sjweh.3170",
+    "sections": [
+      "neck"
+    ],
+    "en": {
+      "short": "Brief daily exercise and headache",
+      "summary": "A secondary analysis of the same trial of 198 office workers with neck and shoulder pain. Besides neck pain, the researchers looked at headaches. After ten weeks of elastic band training for 2 or 12 minutes a day, people had headaches on fewer days than the control group: 43% and 56% fewer than at the start. How strong or long the remaining headaches were did not change.",
+      "findings": [
+        "198 office workers, 10 weeks, 2 or 12 minutes a day of training.",
+        "Headache frequency fell by 43% (2 min) and 56% (12 min) from baseline.",
+        "About 0.6-0.8 fewer headache days per week compared with control.",
+        "Intensity and duration of headaches did not change."
+      ],
+      "strength": "Headache was a secondary outcome, so this result is less reliable than the main one and needs confirming.",
+      "inApp": "An extra reason for the 2-minute neck and shoulder routine. The app does not promise to relieve headaches."
+    },
+    "ru": {
+      "short": "Короткая зарядка и головная боль",
+      "titleTranslation": "Короткие ежедневные упражнения и головная боль у взрослых: вторичный анализ рандомизированного исследования",
+      "summary": "Дополнительный анализ того же исследования с 198 офисными работниками, у которых болели шея и плечи. Кроме шеи, учёные посмотрели на головную боль. После десяти недель занятий с резинкой по 2 или 12 минут в день голова болела реже, чем в контрольной группе: на 43% и на 56% меньше дней, чем в начале. Сила и длительность оставшихся приступов не изменились.",
+      "findings": [
+        "198 офисных работников, 10 недель, 2 или 12 минут в день.",
+        "Дней с головной болью стало меньше на 43% и 56% от исходного.",
+        "Примерно на 0,6-0,8 дня с головной болью в неделю меньше, чем в контрольной группе.",
+        "Сила и длительность головной боли не изменились."
+      ],
+      "strength": "Головная боль была второстепенным показателем, поэтому результат менее надёжен, чем главный, и требует проверки.",
+      "inApp": "Ещё один довод за двухминутную разминку для шеи и плеч. Избавить от головной боли приложение не обещает."
+    }
+  },
+  {
+    "slug": "mahmoud-2019-forward-head-posture",
+    "n": 13,
+    "kind": "review",
+    "authors": "Mahmoud NF, Hassan KA, Abdelmajeed SF, Moustafa IM, Silva AG",
+    "title": "The Relationship Between Forward Head Posture and Neck Pain: a Systematic Review and Meta-Analysis",
+    "journal": "Current Reviews in Musculoskeletal Medicine",
+    "year": 2019,
+    "volume_pages": "12(4):562–577",
+    "doi": "10.1007/s12178-019-09594-y",
+    "pmid": "31773477",
+    "pmcid": "PMC6942109",
+    "openAccess": true,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6942109/",
+    "sections": [
+      "neck"
+    ],
+    "en": {
+      "short": "Forward head posture and neck pain",
+      "summary": "A systematic review and meta-analysis of 15 cross-sectional studies on whether forward head posture is linked to neck pain. Adults with neck pain held their heads further forward than adults without pain, and the more forward the head, the worse the pain and disability. In teenagers no such link was found. Age turned out to be an important confounder.",
+      "findings": [
+        "15 cross-sectional studies.",
+        "Adults with neck pain had more forward head posture than those without.",
+        "Moderate correlation with pain intensity (r = -0.55) and disability (r = -0.42) in adults.",
+        "No link in adolescents."
+      ],
+      "strength": "All included studies were cross-sectional, so they show an association, not cause and effect: pain may change posture as well as the other way round.",
+      "inApp": "Explains why the app talks about changing position and moving, and never promises to fix posture."
+    },
+    "ru": {
+      "short": "Голова вперёд и боль в шее",
+      "titleTranslation": "Связь между выдвинутой вперёд головой и болью в шее: систематический обзор и метаанализ",
+      "summary": "Систематический обзор и метаанализ 15 одномоментных исследований о том, связана ли голова, выдвинутая вперёд, с болью в шее. У взрослых с болью в шее голова в среднем была выдвинута сильнее, чем у тех, у кого шея не болела. Чем сильнее выдвинута голова, тем сильнее боль и тем больше она мешает жить. У подростков такой связи не нашли. Возраст оказался важным искажающим фактором.",
+      "findings": [
+        "15 одномоментных исследований.",
+        "У взрослых с болью в шее голова выдвинута вперёд сильнее.",
+        "Связь с силой боли средняя (r = -0,55), с ограничениями в жизни чуть слабее (r = -0,42).",
+        "У подростков связи нет."
+      ],
+      "strength": "Все исследования одномоментные, они показывают связь, а не причину: боль может менять осанку так же, как осанка боль.",
+      "inApp": "Поэтому приложение говорит о смене позы и движении и не обещает исправить осанку."
+    }
+  },
+  {
+    "slug": "ekelund-2016-sitting-activity-mortality",
+    "n": 14,
+    "kind": "review",
+    "authors": "Ekelund U, Steene-Johannessen J, Brown WJ, Fagerland MW, Owen N, Powell KE, Bauman A, Lee IM, Lancet Physical Activity Series 2 Executive Committe, Lancet Sedentary Behaviour Working Group",
+    "title": "Does physical activity attenuate, or even eliminate, the detrimental association of sitting time with mortality? A harmonised meta-analysis of data from more than 1 million men and women",
+    "journal": "The Lancet",
+    "year": 2016,
+    "volume_pages": "388(10051):1302–1310",
+    "doi": "10.1016/S0140-6736(16)30370-1",
+    "pmid": "27475271",
+    "openAccess": false,
+    "url": "https://doi.org/10.1016/S0140-6736(16)30370-1",
+    "sections": [
+      "back"
+    ],
+    "en": {
+      "short": "Can activity offset long sitting?",
+      "summary": "A harmonised meta-analysis of 16 prospective studies with more than one million adults followed for 2 to 18 years. It asked whether physical activity cancels out the extra risk of death linked to long sitting. People who sat more than 8 hours a day but were in the most active quarter had no raised mortality. That level of activity equals about 60-75 minutes of moderate activity a day.",
+      "findings": [
+        "About 1 million adults, 84,609 deaths during follow-up.",
+        "The least active people had a 12-59% higher death rate, depending on sitting time.",
+        "60-75 minutes a day of moderate activity removed the extra risk linked to sitting.",
+        "For TV time of 3+ hours a day, activity only reduced the risk."
+      ],
+      "strength": "Very large, but observational: sitting and activity were self-reported, and it cannot prove cause and effect.",
+      "inApp": "Supports the idea that the problem is too little movement rather than sitting itself, which is why the app nudges you to stand up and walk every 45 minutes."
+    },
+    "ru": {
+      "short": "Может ли движение перекрыть вред долгого сидения",
+      "titleTranslation": "Ослабляет ли физическая активность, а то и полностью убирает, вредную связь сидения со смертностью? Метаанализ данных более миллиона мужчин и женщин",
+      "summary": "Метаанализ 16 проспективных исследований, в которых больше миллиона взрослых наблюдали от 2 до 18 лет. Вопрос был такой: перекрывает ли физическая активность лишний риск смерти, связанный с долгим сидением. У тех, кто сидел больше 8 часов в день, но был среди самых активных 25%, смертность не была повышена. Такой уровень активности это примерно 60-75 минут умеренной нагрузки в день.",
+      "findings": [
+        "Около миллиона взрослых, за время наблюдения умерли 84 609 человек.",
+        "У самых малоактивных смертность была выше на 12-59%, в зависимости от времени сидения.",
+        "60-75 минут умеренной активности в день убирали лишний риск, связанный с сидением.",
+        "При 3 часах телевизора в день и больше активность риск только уменьшала."
+      ],
+      "strength": "Очень большой объём данных, но это наблюдение: время сидения и активность люди указывали сами, причинную связь такие работы не доказывают.",
+      "inApp": "Поддерживает мысль, что беда не в самом сидении, а в том, что мы мало двигаемся. Поэтому приложение каждые 45 минут предлагает встать и пройтись."
+    }
+  },
+  {
+    "slug": "bull-2020-who-physical-activity-guidelines",
+    "n": 15,
+    "kind": "guideline",
+    "authors": "Bull FC, Al-Ansari SS, Biddle S, Borodulin K, Buman MP, Cardon G, Carty C, Chaput JP, Chastin S, Chou R, Dempsey PC, DiPietro L, Ekelund U, Firth J, Friedenreich CM, Garcia L, Gichu M, Jago R, Katzmarzyk PT, Lambert E, Leitzmann M, Milton K, Ortega FB, Ranasinghe C, Stamatakis E, Tiedemann A, Troiano RP, van der Ploeg HP, Wari V, Willumsen JF",
+    "title": "World Health Organization 2020 guidelines on physical activity and sedentary behaviour",
+    "journal": "British Journal of Sports Medicine",
+    "year": 2020,
+    "volume_pages": "54(24):1451–1462",
+    "doi": "10.1136/bjsports-2020-102955",
+    "pmid": "33239350",
+    "pmcid": "PMC7719906",
+    "openAccess": true,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7719906/",
+    "sections": [
+      "back"
+    ],
+    "en": {
+      "short": "WHO 2020 physical activity guidelines",
+      "summary": "The 2020 World Health Organization guidelines on physical activity and sedentary behaviour, described by the expert group that wrote them. They cover children, adults, older adults, pregnant women and people with chronic conditions or disability. For the first time WHO recommends reducing sedentary time for everyone, but says the evidence is not enough to name a safe amount of sitting or how often to break it up.",
+      "findings": [
+        "Adults: 150-300 minutes of moderate or 75-150 minutes of vigorous activity a week.",
+        "Muscle-strengthening activity is recommended for all age groups.",
+        "Less sedentary time is recommended, but no threshold is given.",
+        "Some activity is better than none; more is better."
+      ],
+      "strength": "International guideline based on systematic reviews. The sitting advice is general because the data did not allow a specific number.",
+      "inApp": "The stand-up break every 45 minutes is our choice, not a WHO number: WHO only says to sit less and move more. The app says so openly."
+    },
+    "ru": {
+      "short": "Рекомендации ВОЗ по физической активности 2020",
+      "titleTranslation": "Рекомендации Всемирной организации здравоохранения 2020 года по физической активности и малоподвижному образу жизни",
+      "summary": "Рекомендации Всемирной организации здравоохранения 2020 года о физической активности и сидячем образе жизни, их описывает группа экспертов, которая их составила. Там есть советы для детей, взрослых, пожилых, беременных и людей с хроническими болезнями или инвалидностью. ВОЗ впервые советует всем меньше сидеть, но прямо пишет, что данных не хватает, чтобы назвать безопасное время сидения или частоту перерывов.",
+      "findings": [
+        "Взрослым: 150-300 минут умеренной или 75-150 минут интенсивной активности в неделю.",
+        "Силовые упражнения нужны в любом возрасте.",
+        "Сидеть меньше советуют, но конкретной границы не называют.",
+        "Немного активности лучше, чем ничего, а больше ещё лучше."
+      ],
+      "strength": "Международные рекомендации на основе систематических обзоров. Совет про сидение общий, потому что точной цифры данные не дали.",
+      "inApp": "Перерыв каждые 45 минут это наш выбор, а не цифра ВОЗ: ВОЗ в целом советует меньше сидеть и больше двигаться. Приложение этого не скрывает."
+    }
+  },
+  {
+    "slug": "dunstan-2012-breaking-up-sitting",
+    "n": 16,
+    "kind": "study",
+    "authors": "Dunstan DW, Kingwell BA, Larsen R, Healy GN, Cerin E, Hamilton MT, Shaw JE, Bertovic DA, Zimmet PZ, Salmon J, Owen N",
+    "title": "Breaking up prolonged sitting reduces postprandial glucose and insulin responses",
+    "journal": "Diabetes Care",
+    "year": 2012,
+    "volume_pages": "35(5):976–983",
+    "doi": "10.2337/dc11-1931",
+    "pmid": "22374636",
+    "pmcid": "PMC3329818",
+    "openAccess": true,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3329818/",
+    "sections": [
+      "back"
+    ],
+    "en": {
+      "short": "Breaking up sitting lowers blood sugar after a meal",
+      "summary": "A randomised crossover trial in 19 overweight or obese adults aged 45-65. On three separate days they sat for 7 hours without breaks, or got up every 20 minutes for 2 minutes of light or moderate walking on a treadmill. After a sugary, fatty test drink, both kinds of walking breaks lowered the rise in blood glucose and insulin compared with uninterrupted sitting.",
+      "findings": [
+        "19 adults, three test days, 2-minute walks every 20 minutes.",
+        "Glucose rise after the drink was about 24% lower with light walking and about 30% lower with moderate walking.",
+        "Insulin rise was about 23% lower with either kind of break.",
+        "Light walking worked almost as well as moderate."
+      ],
+      "strength": "Small crossover trial, 19 people, one day per condition, a lab setting and a test drink rather than a normal meal.",
+      "inApp": "One of the main reasons for regular stand-up breaks: short, easy walks between sitting stretches, not a workout."
+    },
+    "ru": {
+      "short": "Перерывы в сидении снижают сахар после еды",
+      "titleTranslation": "Перерывы в долгом сидении снижают подъём глюкозы и инсулина после еды",
+      "summary": "Рандомизированное перекрёстное исследование с 19 взрослыми 45-65 лет с лишним весом или ожирением. В три разных дня они либо сидели 7 часов без перерыва, либо каждые 20 минут вставали на 2 минуты лёгкой или умеренной ходьбы на дорожке. После сладкого и жирного пробного напитка оба варианта перерывов снизили подъём глюкозы и инсулина в крови по сравнению с непрерывным сидением.",
+      "findings": [
+        "19 человек, три дня, 2 минуты ходьбы каждые 20 минут.",
+        "Подъём глюкозы был ниже примерно на 24% при лёгкой ходьбе и на 30% при умеренной.",
+        "Подъём инсулина при любых перерывах был ниже примерно на 23%.",
+        "Лёгкая ходьба работала почти так же, как умеренная."
+      ],
+      "strength": "Маленькое перекрёстное исследование: 19 человек, по одному дню на вариант, лаборатория и пробный напиток вместо обычной еды.",
+      "inApp": "Одна из главных причин для регулярных перерывов с подъёмом: короткая лёгкая прогулка между отрезками сидения, а не тренировка."
+    }
+  },
+  {
+    "slug": "duran-2023-sitting-break-dose",
+    "n": 17,
+    "kind": "study",
+    "authors": "Duran AT, Friel CP, Serafini MA, Ensari I, Cheung YK, Diaz KM",
+    "title": "Breaking Up Prolonged Sitting to Improve Cardiometabolic Risk: Dose-Response Analysis of a Randomized Crossover Trial",
+    "journal": "Medicine & Science in Sports & Exercise",
+    "year": 2023,
+    "volume_pages": "55(5):847–855",
+    "doi": "10.1249/MSS.0000000000003109",
+    "pmid": "36728338",
+    "openAccess": false,
+    "url": "https://doi.org/10.1249/MSS.0000000000003109",
+    "sections": [
+      "back"
+    ],
+    "en": {
+      "short": "How often and how long to break up sitting",
+      "summary": "A randomised crossover trial in 11 middle-aged and older adults that compared different doses of walking breaks during an 8-hour sitting day. Breaks were 1 or 5 minutes of light walking every 30 or 60 minutes. Only 5 minutes every 30 minutes lowered blood glucose after meals. Every schedule lowered systolic blood pressure by a few mmHg compared with sitting straight through.",
+      "findings": [
+        "11 adults, five 8-hour lab days.",
+        "Glucose after meals fell only with 5 minutes of walking every 30 minutes.",
+        "All break schedules lowered systolic blood pressure, by up to about 4-5 mmHg.",
+        "Lower doses may be enough for blood pressure, but not for glucose."
+      ],
+      "strength": "Very small crossover trial, one day per condition, in a lab. Useful for comparing doses, not for predicting long-term health effects.",
+      "inApp": "Supports making stand-up breaks a few minutes long and repeating them through the day. The app's default is 3 minutes every 45 minutes, which you can change."
+    },
+    "ru": {
+      "short": "Как часто и надолго вставать",
+      "titleTranslation": "Перерывы в долгом сидении для снижения кардиометаболического риска: анализ доз в рандомизированном перекрёстном исследовании",
+      "summary": "Рандомизированное перекрёстное исследование с 11 людьми среднего и старшего возраста. Сравнивали разные «дозы» прогулок за 8-часовой день сидения: 1 или 5 минут лёгкой ходьбы каждые 30 или 60 минут. Сахар после еды снизился только при 5 минутах каждые 30 минут. Верхнее давление снижалось при любой схеме, на несколько миллиметров ртутного столба по сравнению с сидением без перерывов.",
+      "findings": [
+        "11 человек, пять лабораторных дней по 8 часов.",
+        "Сахар после еды снизился только при 5 минутах ходьбы каждые 30 минут.",
+        "Верхнее давление снижалось при любой схеме, до 4-5 мм рт. ст.",
+        "Для давления хватает и меньших доз, для сахара нет."
+      ],
+      "strength": "Очень маленькое перекрёстное исследование, по одному дню на вариант, в лаборатории. Годится, чтобы сравнить схемы, но не говорит о долгосрочном влиянии на здоровье.",
+      "inApp": "Поддерживает перерывы с подъёмом на несколько минут, повторяемые весь день. По умолчанию в приложении 3 минуты каждые 45 минут, это можно поменять."
+    }
+  },
+  {
+    "slug": "shrestha-2018-reducing-sitting-at-work",
+    "n": 18,
+    "kind": "review",
+    "authors": "Shrestha N, Kukkonen-Harjula KT, Verbeek JH, Ijaz S, Hermans V, Pedisic Z",
+    "title": "Workplace interventions for reducing sitting at work",
+    "journal": "Cochrane Database of Systematic Reviews",
+    "year": 2018,
+    "volume_pages": "(12):CD010912",
+    "doi": "10.1002/14651858.CD010912.pub5",
+    "pmid": "30556590",
+    "pmcid": "PMC6517221",
+    "openAccess": true,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6517221/",
+    "sections": [
+      "back"
+    ],
+    "en": {
+      "short": "Workplace interventions for reducing sitting",
+      "summary": "A Cochrane review of 34 studies with 3,397 office workers on ways to sit less at work. Sit-stand desks cut sitting at work by about 100 minutes a day in the first three months and by about an hour later on, but the evidence is of low quality. Short breaks every half hour reduced sitting more than two long breaks. Counselling and computer prompts gave inconsistent results.",
+      "findings": [
+        "34 studies, 3,397 participants, all in high-income countries.",
+        "Sit-stand desks: about 100 minutes less sitting per workday short term (84-116), low-quality evidence.",
+        "Short breaks of 1-2 minutes every half hour: about 40 minutes less sitting than two 15-minute breaks.",
+        "Health effects of sitting less were not established."
+      ],
+      "strength": "Cochrane review, but most evidence is low or very low quality, with small samples and short follow-up.",
+      "inApp": "Shows that frequent short breaks and prompts can change sitting habits, the core of the app. It also explains why the app does not insist on a standing desk."
+    },
+    "ru": {
+      "short": "Как сидеть меньше на работе",
+      "titleTranslation": "Способы сократить сидение на работе",
+      "summary": "Кокрейновский обзор 34 исследований с 3397 офисными работниками о том, как сидеть на работе меньше. Столы, за которыми можно и сидеть, и стоять, сокращали сидение примерно на 100 минут в день в первые три месяца и примерно на час позже, но качество этих данных низкое. Короткие перерывы каждые полчаса сокращали сидение сильнее, чем два длинных. Консультации и напоминания на экране дали разноречивые результаты.",
+      "findings": [
+        "34 исследования, 3397 участников, все из богатых стран.",
+        "Стол для работы стоя: примерно на 100 минут сидения меньше в день (от 84 до 116), качество данных низкое.",
+        "Перерывы по 1-2 минуты каждые полчаса: примерно на 40 минут сидения меньше, чем при двух перерывах по 15 минут.",
+        "Влияние на здоровье не установлено."
+      ],
+      "strength": "Кокрейновский обзор, но почти все данные низкого или очень низкого качества: маленькие группы, короткое наблюдение.",
+      "inApp": "Показывает, что частые короткие перерывы и напоминания меняют привычку сидеть, а на этом построено приложение. И объясняет, почему мы не настаиваем на столе для работы стоя."
+    }
+  },
+  {
+    "slug": "swain-2020-spine-posture-back-pain",
+    "n": 19,
+    "kind": "review",
+    "authors": "Swain CTV, Pan F, Owen PJ, Schmidt H, Belavy DL",
+    "title": "No consensus on causality of spine postures or physical exposure and low back pain: A systematic review of systematic reviews",
+    "journal": "Journal of Biomechanics",
+    "year": 2020,
+    "volume_pages": "102:109312",
+    "doi": "10.1016/j.jbiomech.2019.08.006",
+    "pmid": "31451200",
+    "openAccess": false,
+    "url": "https://doi.org/10.1016/j.jbiomech.2019.08.006",
+    "sections": [
+      "back"
+    ],
+    "en": {
+      "short": "Spine posture and low back pain: no proven cause",
+      "summary": "An umbrella review of 41 systematic reviews on whether spinal postures and physical exposures cause low back pain. The authors looked at sitting, standing, bending, twisting, awkward postures, vibration and heavy work. Many reviews found associations, but evidence that these exposures come before back pain or show a dose-response link was mixed. There is no consensus that any posture causes low back pain.",
+      "findings": [
+        "41 systematic reviews included out of 4,285 publications screened.",
+        "Associations with sitting, bending and other exposures were found in some reviews but not others.",
+        "Reviews of prospective studies were less consistent than meta-analyses.",
+        "Causality was not demonstrated for any posture or exposure."
+      ],
+      "strength": "Review of reviews, broad and systematic, but it inherits the weaknesses of the underlying observational studies.",
+      "inApp": "Supports the app's message that there is no single correct way to sit: it suggests changing position and moving, not holding a perfect posture."
+    },
+    "ru": {
+      "short": "Поза и боль в пояснице: причина не доказана",
+      "titleTranslation": "Нет единого мнения о том, вызывают ли позы позвоночника и физическая нагрузка боль в пояснице: систематический обзор систематических обзоров",
+      "summary": "Обзор 41 систематического обзора о том, вызывают ли определённые позы и нагрузки боль в пояснице. Смотрели на сидение, стояние, наклоны, повороты, неудобные позы, вибрацию и тяжёлую работу. Во многих обзорах связь находили, но данные о том, что нагрузка появляется раньше боли и что больше нагрузки значит сильнее боль, противоречивы. Единого мнения, что какая-то поза вызывает боль в пояснице, нет.",
+      "findings": [
+        "41 систематический обзор, отобранный из 4285 публикаций.",
+        "Связь с сидением, наклонами и другими нагрузками в одних обзорах есть, в других нет.",
+        "Обзоры проспективных исследований менее единодушны, чем метаанализы.",
+        "Причинная связь не доказана ни для одной позы или нагрузки."
+      ],
+      "strength": "Обзор обзоров, широкий и систематический, но у него те же слабости, что у исходных наблюдательных исследований.",
+      "inApp": "Поддерживает главную мысль приложения: единственно правильной позы нет. Приложение предлагает менять положение и двигаться, а не держать идеальную осанку."
+    }
+  },
+  {
+    "slug": "osullivan-2020-10-facts-back-pain",
+    "n": 20,
+    "kind": "review",
+    "authors": "O'Sullivan PB, Caneiro JP, O'Sullivan K, Lin I, Bunzli S, Wernli K, O'Keeffe M",
+    "title": "Back to basics: 10 facts every person should know about back pain",
+    "journal": "British Journal of Sports Medicine",
+    "year": 2020,
+    "volume_pages": "54(12):698–699",
+    "doi": "10.1136/bjsports-2019-101611",
+    "pmid": "31892534",
+    "openAccess": false,
+    "url": "https://doi.org/10.1136/bjsports-2019-101611",
+    "sections": [
+      "back"
+    ],
+    "en": {
+      "short": "10 facts about back pain",
+      "summary": "A short editorial by physiotherapists and pain researchers that lists ten evidence-based facts about back pain for the general public. It says back pain is common but rarely dangerous, scans often mislead, and the spine is strong. Pain is not a reliable sign of damage. Posture while sitting or lifting does not cause back pain, and gradual movement and activity help recovery more than rest.",
+      "findings": [
+        "Most back pain is not caused by serious damage.",
+        "Posture when sitting, standing or lifting does not cause back pain.",
+        "Movement and exercise help; long bed rest does not.",
+        "Scans rarely change the plan and can increase worry."
+      ],
+      "strength": "Expert opinion article that summarises research, not a systematic review. Well known and widely cited, but no new data.",
+      "inApp": "The source of the physiotherapy idea we quote, 'the best posture is the next posture', and of the app's focus on changing position rather than sitting 'correctly'."
+    },
+    "ru": {
+      "short": "10 фактов о боли в спине",
+      "titleTranslation": "Назад к основам: 10 фактов о боли в спине, которые стоит знать каждому",
+      "summary": "Короткая статья физиотерапевтов и исследователей боли с десятью фактами о боли в спине для всех, не только для врачей. Боль в спине бывает часто, но редко опасна. Снимки часто сбивают с толку, а позвоночник прочный. Боль не всегда значит повреждение. Поза, в которой сидят или поднимают тяжести, боль в спине не вызывает, а постепенное движение помогает восстановиться лучше, чем покой.",
+      "findings": [
+        "Чаще всего боль в спине не связана с серьёзным повреждением.",
+        "Поза при сидении, стоянии или подъёме тяжестей не причина боли.",
+        "Движение и упражнения помогают, долгий постельный режим нет.",
+        "Снимки редко что-то меняют и могут добавить тревоги."
+      ],
+      "strength": "Мнение экспертов, опирающееся на исследования, но не систематический обзор. Статья известная, её часто цитируют, новых данных в ней нет.",
+      "inApp": "Отсюда мысль физиотерапевтов, которую мы приводим: лучшая поза та, что будет следующей. Поэтому приложение предлагает менять позу, а не сидеть «правильно»."
+    }
+  },
+  {
+    "slug": "thomsen-2008-carpal-tunnel-computer",
+    "n": 21,
+    "kind": "review",
+    "authors": "Thomsen JF, Gerr F, Atroshi I",
+    "title": "Carpal tunnel syndrome and the use of computer mouse and keyboard: a systematic review",
+    "journal": "BMC Musculoskeletal Disorders",
+    "year": 2008,
+    "volume_pages": "9:134",
+    "doi": "10.1186/1471-2474-9-134",
+    "pmid": "18838001",
+    "pmcid": "PMC2569035",
+    "openAccess": true,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2569035/",
+    "sections": [
+      "hands"
+    ],
+    "en": {
+      "short": "Computer use and carpal tunnel syndrome",
+      "summary": "A systematic review of whether mouse and keyboard work causes carpal tunnel syndrome. The authors found eight epidemiological studies, all with limitations such as imprecise exposure measures or small samples. Three found some exposure-response link, three found risks below 1. Pressure inside the carpal tunnel during typical computer use was mostly below harmful levels. The conclusion: there is not enough evidence that computer work causes the syndrome.",
+      "findings": [
+        "8 epidemiological studies, all with methodological problems.",
+        "3 studies showed some link with exposure, 3 showed lower risk in computer users.",
+        "Carpal tunnel pressure during normal computer work was mostly below harmful levels.",
+        "Evidence that computer work causes carpal tunnel syndrome is insufficient."
+      ],
+      "strength": "Careful systematic review, but the studies it reviewed were weak, so the answer is 'not shown' rather than 'ruled out'.",
+      "inApp": "This is why the app does not claim its hand exercises protect against carpal tunnel syndrome. They are there to rest the hands and change position."
+    },
+    "ru": {
+      "short": "Компьютер и синдром запястного канала",
+      "titleTranslation": "Синдром запястного канала и работа с мышью и клавиатурой: систематический обзор",
+      "summary": "Систематический обзор о том, вызывает ли работа с мышью и клавиатурой синдром запястного канала. Авторы нашли восемь эпидемиологических исследований, и у всех были слабые места: неточная оценка нагрузки, маленькие выборки. В трёх нашли связь с нагрузкой, в трёх риск у пользователей компьютера оказался даже ниже. Давление в запястном канале при обычной работе за компьютером в основном ниже опасного. Вывод: данных, что работа за компьютером вызывает синдром, недостаточно.",
+      "findings": [
+        "8 эпидемиологических исследований, у всех есть недостатки.",
+        "В 3 нашли связь с нагрузкой, в 3 риск у пользователей компьютера ниже.",
+        "Давление в канале при обычной работе в основном ниже вредного.",
+        "Доказательств, что компьютер вызывает синдром, недостаточно."
+      ],
+      "strength": "Тщательный систематический обзор, но сами исследования слабые. Поэтому ответ звучит как «не доказано», а не «исключено».",
+      "inApp": "Поэтому приложение не обещает, что упражнения для кистей защищают от синдрома запястного канала. Они нужны, чтобы руки отдохнули и сменили положение."
+    }
+  },
+  {
+    "slug": "mediouni-2014-carpal-tunnel-computer-meta-analysis",
+    "n": 22,
+    "kind": "review",
+    "authors": "Mediouni Z, de Roquemaurel A, Dumontier C, Becour B, Garrabe H, Roquelaure Y, Descatha A",
+    "title": "Is carpal tunnel syndrome related to computer exposure at work? A review and meta-analysis",
+    "journal": "Journal of Occupational and Environmental Medicine",
+    "year": 2014,
+    "volume_pages": "56(2):204–208",
+    "doi": "10.1097/JOM.0000000000000080",
+    "pmid": "24451617",
+    "openAccess": false,
+    "url": "https://doi.org/10.1097/JOM.0000000000000080",
+    "sections": [
+      "hands"
+    ],
+    "en": {
+      "short": "Carpal tunnel syndrome and computer work: meta-analysis",
+      "summary": "A review and meta-analysis of epidemiological studies on carpal tunnel syndrome in computer workers. Six studies met the criteria. The pooled odds ratios were above 1 for computer use in general, for keyboard and for mouse, but none was statistically significant, and the studies differed a lot in how exposure was measured. The authors could not show a link between computer use and the syndrome, though some specific work conditions might matter.",
+      "findings": [
+        "6 studies with control groups met the criteria.",
+        "Computer use: meta-OR 1.67 (95% CI 0.79 to 3.55), not significant.",
+        "Keyboard: 1.11; mouse: 1.94, both not significant.",
+        "Results were contradictory because work exposure varied widely."
+      ],
+      "strength": "Meta-analysis of only six heterogeneous studies with wide confidence intervals, so it neither confirms nor rules out a link.",
+      "inApp": "Together with other reviews, this is why the app does not promise to protect against carpal tunnel syndrome and offers hand movements only for comfort."
+    },
+    "ru": {
+      "short": "Синдром запястного канала и компьютер: метаанализ",
+      "titleTranslation": "Связан ли синдром запястного канала с работой за компьютером? Обзор и метаанализ",
+      "summary": "Обзор и метаанализ эпидемиологических исследований о синдроме запястного канала у тех, кто работает за компьютером. Под критерии подошли шесть исследований. Общие отношения шансов для компьютера в целом, клавиатуры и мыши оказались выше единицы, но ни одно не было статистически значимым. К тому же нагрузку в исследованиях оценивали очень по-разному. Показать связь между компьютером и синдромом не удалось, хотя отдельные условия работы могут играть роль.",
+      "findings": [
+        "Подошли 6 исследований с контрольными группами.",
+        "Компьютер в целом: отношение шансов 1,67 (95% ДИ от 0,79 до 3,55), не значимо.",
+        "Клавиатура 1,11, мышь 1,94, тоже не значимо.",
+        "Результаты противоречивы, потому что нагрузка на работе сильно различалась."
+      ],
+      "strength": "Метаанализ всего шести разнородных исследований с широкими доверительными интервалами: связь он не подтверждает и не исключает.",
+      "inApp": "Вместе с другими обзорами это причина, почему приложение не обещает защиту от синдрома запястного канала и предлагает движения для кистей только ради удобства."
+    }
+  },
+  {
+    "slug": "page-2012-carpal-tunnel-exercise",
+    "n": 23,
+    "kind": "review",
+    "authors": "Page MJ, O'Connor D, Pitt V, Massy-Westropp N",
+    "title": "Exercise and mobilisation interventions for carpal tunnel syndrome",
+    "journal": "Cochrane Database of Systematic Reviews",
+    "year": 2012,
+    "volume_pages": "(6):CD009899",
+    "doi": "10.1002/14651858.CD009899",
+    "pmid": "22696387",
+    "pmcid": "PMC11536321",
+    "openAccess": true,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11536321/",
+    "sections": [
+      "hands"
+    ],
+    "en": {
+      "short": "Exercise and mobilisation for carpal tunnel syndrome",
+      "summary": "A Cochrane review of exercise and mobilisation for people who already have carpal tunnel syndrome. It included 16 randomised or quasi-randomised trials with 741 participants, comparing nerve and tendon gliding, bone and soft tissue mobilisation, yoga and other methods with no treatment or other non-surgical options. The trials were too different to combine, and the evidence of benefit was limited and of very low quality.",
+      "findings": [
+        "16 trials, 741 participants with carpal tunnel syndrome.",
+        "Interventions and outcomes varied too much for a meta-analysis.",
+        "Only 4 trials reported overall short-term improvement.",
+        "Limited, very low-quality evidence of benefit; safety data were scarce."
+      ],
+      "strength": "Cochrane review with rigorous methods, but the trials were small and mostly of uncertain quality.",
+      "inApp": "The app's hand movements are for rest and comfort during computer work, not a treatment for carpal tunnel syndrome. If you have its symptoms, see a doctor."
+    },
+    "ru": {
+      "short": "Упражнения при синдроме запястного канала",
+      "titleTranslation": "Упражнения и мобилизация при синдроме запястного канала",
+      "summary": "Кокрейновский обзор упражнений и мобилизации для людей, у которых синдром запястного канала уже есть. Вошли 16 рандомизированных и квазирандомизированных исследований с 741 участником. Скольжение нервов и сухожилий, мобилизацию костей и мягких тканей, йогу и другие методы сравнивали с отсутствием лечения или другими способами без операции. Исследования слишком разные, чтобы их объединить, а данные о пользе скудные и очень низкого качества.",
+      "findings": [
+        "16 исследований, 741 человек с синдромом запястного канала.",
+        "Методы и показатели слишком разные для метаанализа.",
+        "Общее улучшение в ближайшие месяцы оценивали только 4 исследования.",
+        "Польза подтверждена слабо, данных о безопасности почти нет."
+      ],
+      "strength": "Кокрейновский обзор со строгими методами, но исследования маленькие и в основном сомнительного качества.",
+      "inApp": "Движения для кистей в приложении нужны для отдыха за компьютером, это не лечение синдрома запястного канала. Если есть его признаки, идите к врачу."
+    }
+  },
+  {
+    "slug": "kim-2015-gliding-exercises-carpal-tunnel",
+    "n": 24,
+    "kind": "review",
+    "authors": "Kim SD",
+    "title": "Efficacy of tendon and nerve gliding exercises for carpal tunnel syndrome: a systematic review of randomized controlled trials",
+    "journal": "Journal of Physical Therapy Science",
+    "year": 2015,
+    "volume_pages": "27(8):2645–2648",
+    "doi": "10.1589/jpts.27.2645",
+    "pmid": "26357452",
+    "pmcid": "PMC4563334",
+    "openAccess": true,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4563334/",
+    "sections": [
+      "hands"
+    ],
+    "en": {
+      "short": "Tendon and nerve gliding exercises for carpal tunnel syndrome",
+      "summary": "A systematic review of randomised trials on tendon and nerve gliding exercises for carpal tunnel syndrome. Only four trials qualified, with low to moderate risk of bias, and the data could only be described, not pooled. When these exercises were added to usual care, symptoms and hand function improved more than with usual care alone. Whether the exercises work on their own remains unknown.",
+      "findings": [
+        "4 randomised trials, results described without meta-analysis.",
+        "Exercises plus usual care did better than usual care alone.",
+        "No good trials of the exercises used alone.",
+        "The author calls for more randomised trials."
+      ],
+      "strength": "Small review of four trials by a single author; cautious conclusions.",
+      "inApp": "Another reason the app offers hand movements only to relieve fatigue and does not claim a medical effect on carpal tunnel syndrome."
+    },
+    "ru": {
+      "short": "Скольжение сухожилий и нервов при синдроме запястного канала",
+      "titleTranslation": "Упражнения на скольжение сухожилий и нервов при синдроме запястного канала: систематический обзор рандомизированных исследований",
+      "summary": "Систематический обзор рандомизированных исследований упражнений на скольжение сухожилий и нервов при синдроме запястного канала. Подошли всего четыре исследования с низким или средним риском ошибки, объединить их данные не получилось, только описать. Если эти упражнения добавляли к обычному лечению, симптомы и работа кисти улучшались сильнее, чем от одного обычного лечения. Помогают ли упражнения сами по себе, неизвестно.",
+      "findings": [
+        "4 рандомизированных исследования, результаты описаны без метаанализа.",
+        "Упражнения вместе с обычным лечением работали лучше, чем одно лечение.",
+        "Хороших исследований упражнений без другого лечения нет.",
+        "Автор просит новых рандомизированных исследований."
+      ],
+      "strength": "Небольшой обзор четырёх исследований одного автора, выводы осторожные.",
+      "inApp": "Ещё одна причина, почему движения для кистей в приложении нужны только против усталости, а медицинского эффекта при синдроме запястного канала мы не обещаем."
+    }
+  },
+  {
+    "slug": "mclean-2001-microbreaks",
+    "n": 25,
+    "kind": "study",
+    "authors": "McLean L, Tingley M, Scott RN, Rickards J",
+    "title": "Computer terminal work and the benefit of microbreaks",
+    "journal": "Applied Ergonomics",
+    "year": 2001,
+    "volume_pages": "32(3):225–237",
+    "doi": "10.1016/s0003-6870(00)00071-5",
+    "pmid": "11394463",
+    "openAccess": false,
+    "url": "https://doi.org/10.1016/s0003-6870(00)00071-5",
+    "sections": [
+      "hands",
+      "microbreaks"
+    ],
+    "en": {
+      "short": "Computer work and the benefit of microbreaks",
+      "summary": "A randomised field study of computer workers doing their usual keying. Each person had sessions without breaks and sessions with micro-breaks, assigned to one of three schedules: at their own discretion, every 20 minutes or every 40 minutes. Micro-breaks reduced discomfort in the neck, lower back, shoulder and forearm, most clearly with breaks every 20 minutes. Productivity did not suffer.",
+      "findings": [
+        "Three schedules: at will, every 20 minutes, every 40 minutes.",
+        "Micro-breaks reduced discomfort in all body areas studied.",
+        "The effect was strongest with breaks every 20 minutes.",
+        "No loss of work output."
+      ],
+      "strength": "Small field study with muscle activity measurements; groups were small and discomfort was self-reported.",
+      "inApp": "This is where the default micro-break every 20 minutes comes from."
+    },
+    "ru": {
+      "short": "Микропаузы при работе за компьютером",
+      "titleTranslation": "Работа за компьютером и польза микропауз",
+      "summary": "Рандомизированное исследование на рабочих местах: люди печатали, как обычно. У каждого были рабочие отрезки без перерывов и с микропаузами по одной из трёх схем: когда захочется, каждые 20 минут или каждые 40 минут. Микропаузы уменьшали дискомфорт в шее, пояснице, плече и предплечье, сильнее всего при перерывах каждые 20 минут. Выработка при этом не падала.",
+      "findings": [
+        "Три схемы: по желанию, каждые 20 минут, каждые 40 минут.",
+        "Микропаузы уменьшали дискомфорт во всех изученных зонах.",
+        "Сильнее всего эффект при перерывах каждые 20 минут.",
+        "Производительность не снизилась."
+      ],
+      "strength": "Небольшое исследование на рабочих местах с записью активности мышц. Группы маленькие, дискомфорт люди оценивали сами.",
+      "inApp": "Отсюда микропауза каждые 20 минут, которая стоит в приложении по умолчанию."
+    }
+  },
+  {
+    "slug": "galinsky-2000-supplementary-breaks",
+    "n": 26,
+    "kind": "study",
+    "authors": "Galinsky TL, Swanson NG, Sauter SL, Hurrell JJ, Schleifer LM",
+    "title": "A field study of supplementary rest breaks for data-entry operators",
+    "journal": "Ergonomics",
+    "year": 2000,
+    "volume_pages": "43(5):622–638",
+    "doi": "10.1080/001401300184297",
+    "pmid": "10877480",
+    "openAccess": false,
+    "url": "https://doi.org/10.1080/001401300184297",
+    "sections": [
+      "hands",
+      "microbreaks"
+    ],
+    "en": {
+      "short": "Extra rest breaks for data-entry workers",
+      "summary": "A field study from the US National Institute for Occupational Safety and Health with 42 data-entry workers. Each worker alternated four-week periods of a usual schedule (two 15-minute breaks) and a schedule with an extra 5-minute break in every hour that had no break, 20 extra minutes in total. With the extra breaks, discomfort in several body areas and eye strain were lower, and data-entry performance did not drop.",
+      "findings": [
+        "42 data-entry workers, alternating 4-week schedules.",
+        "Extra breaks: four 5-minute breaks added to two 15-minute breaks.",
+        "Less discomfort and eye strain; the weekly build-up of forearm, wrist and hand discomfort disappeared.",
+        "No drop in data-entry performance."
+      ],
+      "strength": "Real workplace, each worker compared with themselves, but one company and one type of work.",
+      "inApp": "Supports frequent short breaks during the day and shows they need not cost productivity."
+    },
+    "ru": {
+      "short": "Дополнительные перерывы для операторов ввода данных",
+      "titleTranslation": "Полевое исследование дополнительных перерывов для операторов ввода данных",
+      "summary": "Исследование Национального института охраны труда США на рабочих местах 42 операторов ввода данных. Каждый по четыре недели чередовал обычный график с двумя перерывами по 15 минут и график, где в каждом часе без перерыва добавлялся ещё один на 5 минут, всего 20 минут отдыха сверху. С дополнительными перерывами дискомфорт в нескольких частях тела и усталость глаз были меньше, а скорость ввода не упала.",
+      "findings": [
+        "42 оператора, графики менялись каждые 4 недели.",
+        "К двум перерывам по 15 минут добавляли четыре по 5 минут.",
+        "Меньше дискомфорта и усталости глаз, дискомфорт в предплечье и кисти к концу недели перестал нарастать.",
+        "Скорость ввода данных не снизилась."
+      ],
+      "strength": "Настоящая работа, каждый сравнивался сам с собой, но одна компания и один вид работы.",
+      "inApp": "Поддерживает частые короткие перерывы в течение дня и показывает, что они не мешают работе."
+    }
+  },
+  {
+    "slug": "galinsky-2007-breaks-and-stretching",
+    "n": 27,
+    "kind": "study",
+    "authors": "Galinsky T, Swanson N, Sauter S, Dunkin R, Hurrell J, Schleifer L",
+    "title": "Supplementary breaks and stretching exercises for data entry operators: a follow-up field study",
+    "journal": "American Journal of Industrial Medicine",
+    "year": 2007,
+    "volume_pages": "50(7):519–527",
+    "doi": "10.1002/ajim.20472",
+    "pmid": "17514726",
+    "openAccess": false,
+    "url": "https://doi.org/10.1002/ajim.20472",
+    "sections": [
+      "hands",
+      "microbreaks"
+    ],
+    "en": {
+      "short": "Extra breaks and stretching for data-entry workers",
+      "summary": "A follow-up field study of extra breaks with 51 data-entry workers. Everyone spent four weeks with two 15-minute breaks a day and four weeks with four extra 5-minute breaks. Half were also asked to stretch during breaks. Extra breaks lowered discomfort and eye strain, and typing got faster, so output held up despite 20 minutes less work. Few people actually stretched, and stretching showed no measurable effect.",
+      "findings": [
+        "51 workers, 4 weeks per schedule.",
+        "Extra 5-minute breaks reduced discomfort and eye strain.",
+        "Typing speed rose enough to keep output the same.",
+        "Workers stretched in only 25-39% of breaks; no clear effect of stretching."
+      ],
+      "strength": "Real workplace and a randomised stretching arm, but low adherence made the stretching result uninformative.",
+      "inApp": "Supports frequent short breaks. It is also why the app keeps exercises short and optional: the break itself matters most."
+    },
+    "ru": {
+      "short": "Дополнительные перерывы и растяжка у операторов",
+      "titleTranslation": "Дополнительные перерывы и упражнения на растяжку для операторов ввода данных: повторное полевое исследование",
+      "summary": "Повторное исследование дополнительных перерывов, теперь с 51 оператором ввода данных. Все по четыре недели работали с двумя перерывами по 15 минут и с четырьмя дополнительными по 5 минут. Половину ещё попросили делать растяжку в перерывах. Дополнительные перерывы уменьшили дискомфорт и усталость глаз, а скорость печати выросла, и за день они вводили столько же данных, хотя работали на 20 минут меньше. Растягивались немногие, и заметного эффекта растяжка не дала.",
+      "findings": [
+        "51 оператор, по 4 недели на каждый график.",
+        "Дополнительные перерывы по 5 минут уменьшили дискомфорт и усталость глаз.",
+        "Скорость печати выросла настолько, что выработка осталась прежней.",
+        "Растяжку делали только в 25-39% перерывов, её влияние не выявлено."
+      ],
+      "strength": "Настоящая работа и случайное распределение на группы с растяжкой и без, но растяжку мало кто делал, поэтому про неё вывода нет.",
+      "inApp": "Поддерживает частые короткие перерывы. Поэтому упражнения в приложении короткие и необязательные: главное сам перерыв."
+    }
+  },
+  {
+    "slug": "healy-2010-seated-immobility-vte",
+    "n": 28,
+    "kind": "study",
+    "authors": "Healy B, Levin E, Perrin K, Weatherall M, Beasley R",
+    "title": "Prolonged work- and computer-related seated immobility and risk of venous thromboembolism",
+    "journal": "Journal of the Royal Society of Medicine",
+    "year": 2010,
+    "volume_pages": "103(11):447–454",
+    "doi": "10.1258/jrsm.2010.100155",
+    "pmid": "21037335",
+    "pmcid": "PMC2966881",
+    "openAccess": true,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2966881/",
+    "sections": [
+      "legs"
+    ],
+    "en": {
+      "short": "Long sitting at work and blood clots",
+      "summary": "A case-control study in New Zealand of 197 people with venous thromboembolism (clots in the leg veins or lungs) and 197 hospital controls, all aged 18-65. The researchers asked about sitting at work and at a home computer in the four weeks before. Sitting at least 10 hours a day and at least 2 hours at a time without getting up was linked to 2.8 times higher odds of a clot.",
+      "findings": [
+        "197 cases and 197 controls, aged 18-65.",
+        "Long seated immobility: 16.8% of cases versus 9.6% of controls.",
+        "Odds ratio 2.8 (95% CI 1.2 to 6.1) after adjusting for other factors.",
+        "Each extra hour seated per day raised the odds by about 10%."
+      ],
+      "strength": "Case-control study with self-reported sitting and heart patients as controls, which can bias the result. The authors' own later study found a weaker link.",
+      "inApp": "Part of the background for the stand-up break every 45 minutes and the 'longest stretch without standing' statistic. The app does not claim to prevent blood clots."
+    },
+    "ru": {
+      "short": "Долгое сидение на работе и тромбы",
+      "titleTranslation": "Долгая неподвижность сидя на работе и за компьютером и риск венозных тромбоэмболий",
+      "summary": "Исследование «случай-контроль» в Новой Зеландии: 197 человек с венозными тромбоэмболиями (тромбы в венах ног или в лёгких) и 197 пациентов больницы для сравнения, всем 18-65 лет. Их расспросили, как они сидели на работе и за домашним компьютером в последние четыре недели. Сидение не меньше 10 часов в сутки и не меньше 2 часов подряд без подъёма было связано с шансами тромба в 2,8 раза выше.",
+      "findings": [
+        "197 заболевших и 197 человек для сравнения, 18-65 лет.",
+        "Долго сидели без движения 16,8% заболевших и 9,6% в группе сравнения.",
+        "Отношение шансов 2,8 (95% ДИ от 1,2 до 6,1) с поправкой на другие факторы.",
+        "Каждый лишний час сидения в сутки повышал шансы примерно на 10%."
+      ],
+      "strength": "Исследование «случай-контроль», время сидения люди вспоминали сами, для сравнения взяли пациентов кардиологии, это может искажать результат. Более позднее исследование тех же авторов нашло связь слабее.",
+      "inApp": "Часть основы для перерыва с подъёмом каждые 45 минут и статистики самого долгого отрезка без подъёма. Защиту от тромбов приложение не обещает."
+    }
+  },
+  {
+    "slug": "braithwaite-2016-seated-immobility-vte",
+    "n": 29,
+    "kind": "study",
+    "authors": "Braithwaite I, Healy B, Cameron L, Weatherall M, Beasley R",
+    "title": "Venous thromboembolism risk associated with protracted work- and computer-related seated immobility: A case-control study",
+    "journal": "JRSM Open",
+    "year": 2016,
+    "volume_pages": "7(8):2054270416632670",
+    "doi": "10.1177/2054270416632670",
+    "pmid": "27540486",
+    "pmcid": "PMC4973402",
+    "openAccess": true,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4973402/",
+    "sections": [
+      "legs"
+    ],
+    "en": {
+      "short": "Long sitting and blood clots: a follow-up study",
+      "summary": "A second case-control study by the same New Zealand group, with 200 people who had venous thromboembolism and 200 controls treated for arm fractures. This time, the definition used before (10+ hours seated a day, 2+ hours without getting up) was not significantly linked to clots. But the average number of hours seated per day was: each extra hour went with about 8% higher odds.",
+      "findings": [
+        "200 cases and 200 controls with upper limb injuries.",
+        "Categorical long seated immobility: odds ratio 1.18, not significant.",
+        "Each extra hour of average daily sitting: odds ratio 1.08.",
+        "Overall a weak association."
+      ],
+      "strength": "Case-control design with self-reported sitting; a better control group than the 2010 study, and a weaker result.",
+      "inApp": "A reminder that the clot risk from office sitting is small and not fully proven. The app suggests getting up for comfort and circulation, not as clot prevention."
+    },
+    "ru": {
+      "short": "Долгое сидение и тромбы: повторное исследование",
+      "titleTranslation": "Риск венозных тромбоэмболий при долгой неподвижности сидя на работе и за компьютером: исследование «случай-контроль»",
+      "summary": "Второе исследование «случай-контроль» той же новозеландской группы: 200 человек с венозными тромбоэмболиями и 200 человек, лечившихся от переломов руки. На этот раз прежнее определение (не меньше 10 часов сидя в сутки и 2 часа без подъёма) значимой связи с тромбами не показало. А вот среднее время сидения в сутки показало: каждый лишний час давал примерно на 8% более высокие шансы.",
+      "findings": [
+        "200 заболевших и 200 человек с травмой руки для сравнения.",
+        "Долгая неподвижность по прежнему определению: отношение шансов 1,18, не значимо.",
+        "Каждый лишний час сидения в среднем за сутки: отношение шансов 1,08.",
+        "В целом связь слабая."
+      ],
+      "strength": "Исследование «случай-контроль», время сидения люди вспоминали сами. Группа сравнения удачнее, чем в работе 2010 года, а результат слабее.",
+      "inApp": "Напоминание, что риск тромба от офисного сидения невелик и до конца не доказан. Приложение предлагает вставать ради удобства и кровообращения, а не как защиту от тромбов."
+    }
+  },
+  {
+    "slug": "peddie-2021-sitting-standing-activity-breaks",
+    "n": 30,
+    "kind": "study",
+    "authors": "Peddie MC, Kessell C, Bergen T, Gibbons TD, Campbell HA, Cotter JD, Rehrer NJ, Thomas KN",
+    "title": "The effects of prolonged sitting, prolonged standing, and activity breaks on vascular function, and postprandial glucose and insulin responses: A randomised crossover trial",
+    "journal": "PLOS ONE",
+    "year": 2021,
+    "volume_pages": "16(1):e0244841",
+    "doi": "10.1371/journal.pone.0244841",
+    "pmid": "33395691",
+    "pmcid": "PMC7781669",
+    "openAccess": true,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7781669/",
+    "sections": [
+      "legs"
+    ],
+    "en": {
+      "short": "Sitting, standing and activity breaks: leg blood flow",
+      "summary": "A randomised crossover trial in 18 normal-weight adults comparing three 6-hour days: sitting the whole time, standing the whole time, and sitting with a 2-minute brisk uphill walk every 30 minutes. Walking breaks raised blood flow in the popliteal artery behind the knee by about 80% within an hour and kept it higher all day. Standing raised it only briefly. Walking breaks also lowered the insulin response to meals.",
+      "findings": [
+        "18 adults, three 6-hour conditions.",
+        "Walking breaks increased popliteal artery blood flow by about 80% versus sitting, for the full 6 hours.",
+        "Prolonged standing increased blood flow only at the 60-minute mark.",
+        "Insulin response was 28% lower than with sitting; flow-mediated dilation did not change."
+      ],
+      "strength": "Small crossover trial, one day per condition, in healthy normal-weight adults, so it shows short-term effects only.",
+      "inApp": "Supports the stand-up break with a short walk and calf raises: moving the legs helps blood flow more than simply standing."
+    },
+    "ru": {
+      "short": "Сидеть, стоять или ходить: кровоток в ногах",
+      "titleTranslation": "Как долгое сидение, долгое стояние и перерывы на движение влияют на работу сосудов, глюкозу и инсулин после еды: рандомизированное перекрёстное исследование",
+      "summary": "Рандомизированное перекрёстное исследование с 18 взрослыми с нормальным весом. Сравнивали три дня по 6 часов: всё время сидеть, всё время стоять или сидеть, но каждые 30 минут 2 минуты идти в горку бодрым шагом. Прогулки увеличили кровоток в подколенной артерии примерно на 80% через час и держали его выше весь день. Стояние подняло кровоток ненадолго. Прогулки ещё и снизили выброс инсулина после еды.",
+      "findings": [
+        "18 взрослых, три условия по 6 часов.",
+        "Прогулки увеличили кровоток в подколенной артерии примерно на 80% по сравнению с сидением, и так все 6 часов.",
+        "Стояние увеличило кровоток только к 60-й минуте.",
+        "Выброс инсулина на 28% ниже, чем при сидении; способность артерии расширяться не изменилась."
+      ],
+      "strength": "Маленькое перекрёстное исследование, по одному дню на условие, здоровые люди с нормальным весом. Показывает только быстрый эффект.",
+      "inApp": "Поддерживает перерыв с подъёмом, короткой прогулкой и подъёмами на носки: движение ногами помогает кровотоку сильнее, чем стоять на месте."
+    }
+  },
+  {
+    "slug": "wittbrodt-2018-dehydration-cognition",
+    "n": 31,
+    "kind": "review",
+    "authors": "Wittbrodt MT, Millard-Stafford M",
+    "title": "Dehydration Impairs Cognitive Performance: A Meta-analysis",
+    "journal": "Medicine & Science in Sports & Exercise",
+    "year": 2018,
+    "volume_pages": "50(11):2360–2368",
+    "doi": "10.1249/MSS.0000000000001682",
+    "pmid": "29933347",
+    "openAccess": false,
+    "url": "https://doi.org/10.1249/MSS.0000000000001682",
+    "sections": [
+      "water"
+    ],
+    "en": {
+      "short": "Dehydration and cognitive performance",
+      "summary": "A systematic review and meta-analysis of 33 studies with 413 people in whom dehydration was induced by exercise, heat, fluid restriction or diuretics, with body mass loss from 1% to 6%. Overall, dehydration impaired thinking slightly. Attention, executive function and motor coordination suffered most, while simple reaction time barely changed. The effect was larger when people lost more than 2% of body mass.",
+      "findings": [
+        "33 studies, 413 participants, 280 effect estimates.",
+        "Overall cognitive effect small but significant: ES -0.21.",
+        "Attention was hit hardest: ES -0.52.",
+        "Above 2% body mass loss the effect roughly doubled compared with 2% or less."
+      ],
+      "strength": "Meta-analysis with a fair number of studies, but they were small and used lab-induced dehydration, which is not the same as an ordinary office day.",
+      "inApp": "Background for the gentle water reminder every 90 minutes. The app does not tell you how much to drink."
+    },
+    "ru": {
+      "short": "Обезвоживание и работа мозга",
+      "titleTranslation": "Обезвоживание ухудшает когнитивные функции: метаанализ",
+      "summary": "Систематический обзор и метаанализ 33 исследований с 413 участниками, у которых обезвоживание вызывали нагрузкой, жарой, ограничением питья или мочегонными. Потеря массы тела была от 1% до 6%. В целом обезвоживание немного ухудшало мышление. Сильнее всего страдали внимание, управляющие функции и координация движений, а скорость простой реакции почти не менялась. При потере больше 2% массы тела эффект был сильнее.",
+      "findings": [
+        "33 исследования, 413 участников, 280 оценок эффекта.",
+        "Общий эффект на мышление небольшой, но значимый: -0,21.",
+        "Сильнее всего страдало внимание: -0,52.",
+        "При потере больше 2% массы тела эффект примерно вдвое сильнее, чем при меньшей."
+      ],
+      "strength": "Метаанализ с приличным числом исследований, но они маленькие, и обезвоживание в них вызывали специально. Обычный офисный день устроен иначе.",
+      "inApp": "Основа для мягкого напоминания о воде раз в 90 минут. Сколько пить, приложение не указывает."
+    }
+  },
+  {
+    "slug": "armstrong-2012-dehydration-mood-women",
+    "n": 32,
+    "kind": "study",
+    "authors": "Armstrong LE, Ganio MS, Casa DJ, Lee EC, McDermott BP, Klau JF, Jimenez L, Le Bellego L, Chevillotte E, Lieberman HR",
+    "title": "Mild dehydration affects mood in healthy young women",
+    "journal": "The Journal of Nutrition",
+    "year": 2012,
+    "volume_pages": "142(2):382–388",
+    "doi": "10.3945/jn.111.142000",
+    "pmid": "22190027",
+    "openAccess": false,
+    "url": "https://doi.org/10.3945/jn.111.142000",
+    "sections": [
+      "water"
+    ],
+    "en": {
+      "short": "Mild dehydration and mood in young women",
+      "summary": "A placebo-controlled study in 25 healthy young women. On three separate days they walked on a treadmill in a way that left them either dehydrated (with or without a diuretic) or normally hydrated. At an average loss of 1.36% of body mass, women felt worse: lower mood, less vigour, more fatigue, harder tasks, poorer concentration and more headaches. Most measures of cognitive performance did not change.",
+      "findings": [
+        "25 women aged about 23, three 8-hour trial days.",
+        "Average dehydration: 1.36% of body mass.",
+        "Worse mood, more fatigue, lower concentration and more headache.",
+        "Most cognitive test results were unaffected."
+      ],
+      "strength": "Small controlled study in young, fit women with exercise-induced dehydration; it tells us little about an office worker who simply forgot to drink.",
+      "inApp": "Supports the water reminder: even mild dehydration can make you feel tired and unfocused. The reminder is a small card, not a quota."
+    },
+    "ru": {
+      "short": "Лёгкое обезвоживание и настроение у женщин",
+      "titleTranslation": "Лёгкое обезвоживание влияет на настроение у здоровых молодых женщин",
+      "summary": "Исследование с плацебо и 25 здоровыми молодыми женщинами. В три разных дня они ходили на беговой дорожке так, что либо теряли воду (с мочегонным или без), либо оставались в норме. При потере в среднем 1,36% массы тела самочувствие ухудшалось: хуже настроение, меньше бодрости, больше усталости, задачи казались труднее, сосредоточиться было сложнее, чаще болела голова. Большинство тестов на мышление не изменилось.",
+      "findings": [
+        "25 женщин около 23 лет, три дня по 8 часов.",
+        "Обезвоживание в среднем 1,36% массы тела.",
+        "Хуже настроение, больше усталости, труднее сосредоточиться, чаще головная боль.",
+        "Результаты большинства когнитивных тестов не изменились."
+      ],
+      "strength": "Маленькое контролируемое исследование с молодыми спортивными женщинами и обезвоживанием от нагрузки. О человеке в офисе, который забыл попить, оно говорит мало.",
+      "inApp": "Поддерживает напоминание о воде: даже лёгкое обезвоживание может давать усталость и рассеянность. Напоминание это маленькая карточка, а не норма."
+    }
+  },
+  {
+    "slug": "ganio-2011-dehydration-men",
+    "n": 33,
+    "kind": "study",
+    "authors": "Ganio MS, Armstrong LE, Casa DJ, McDermott BP, Lee EC, Yamamoto LM, Marzano S, Lopez RM, Jimenez L, Le Bellego L, Chevillotte E, Lieberman HR",
+    "title": "Mild dehydration impairs cognitive performance and mood of men",
+    "journal": "British Journal of Nutrition",
+    "year": 2011,
+    "volume_pages": "106(10):1535–1543",
+    "doi": "10.1017/S0007114511002005",
+    "pmid": "21736786",
+    "openAccess": false,
+    "url": "https://doi.org/10.1017/S0007114511002005",
+    "sections": [
+      "water"
+    ],
+    "en": {
+      "short": "Mild dehydration, thinking and mood in men",
+      "summary": "A randomised, single-blind study in 26 young men, the companion to the study in women. Each did three trials of treadmill walking in a warm room: dehydrated with a diuretic, dehydrated with a placebo, or kept hydrated. At an average body mass loss of 1.59%, men made more errors on a visual vigilance task and were slower on a working memory task. They also reported more fatigue and tension.",
+      "findings": [
+        "26 men aged about 20, three trials each.",
+        "Average dehydration: 1.59% of body mass.",
+        "More vigilance errors and slower working memory responses.",
+        "More fatigue and tension or anxiety at rest."
+      ],
+      "strength": "Small controlled study in young men with exercise-induced dehydration in the heat; the effects were modest and limited to a few tests.",
+      "inApp": "Together with the study in women, it supports the water reminder every 90 minutes as a gentle nudge."
+    },
+    "ru": {
+      "short": "Лёгкое обезвоживание у мужчин",
+      "titleTranslation": "Лёгкое обезвоживание ухудшает мышление и настроение у мужчин",
+      "summary": "Рандомизированное простое слепое исследование с 26 молодыми мужчинами, пара к исследованию с женщинами. Каждый трижды ходил по беговой дорожке в тёплой комнате: с обезвоживанием и мочегонным, с обезвоживанием и плацебо или сохраняя норму воды. При потере в среднем 1,59% массы тела мужчины чаще ошибались в тесте на бдительность и медленнее отвечали в тесте на рабочую память. Ещё они чувствовали больше усталости и напряжения.",
+      "findings": [
+        "26 мужчин около 20 лет, по три испытания.",
+        "Обезвоживание в среднем 1,59% массы тела.",
+        "Больше ошибок на внимательность, медленнее рабочая память.",
+        "Больше усталости и тревожного напряжения в покое."
+      ],
+      "strength": "Маленькое контролируемое исследование с молодыми мужчинами и обезвоживанием от нагрузки в жару. Эффекты скромные и только в части тестов.",
+      "inApp": "Вместе с исследованием у женщин поддерживает мягкое напоминание о воде раз в 90 минут."
+    }
+  },
+  {
+    "slug": "efsa-2010-water-reference-values",
+    "n": 34,
+    "kind": "guideline",
+    "authors": "EFSA Panel on Dietetic Products, Nutrition, and Allergies (NDA)",
+    "title": "Scientific Opinion on Dietary Reference Values for water",
+    "journal": "EFSA Journal",
+    "year": 2010,
+    "volume_pages": "8(3):1459",
+    "doi": "10.2903/j.efsa.2010.1459",
+    "url": "https://doi.org/10.2903/j.efsa.2010.1459",
+    "openAccess": true,
+    "sections": [
+      "water"
+    ],
+    "en": {
+      "short": "EFSA reference values for water",
+      "summary": "The European Food Safety Authority's scientific opinion on how much water people need. It sets adequate total water intake for different ages. For adults in a temperate climate with moderate activity, that is 2.0 litres a day for women and 2.5 litres for men. The figures include water from food, which usually provides around 20-30%, and from all drinks, not only plain water.",
+      "findings": [
+        "Adequate intake: 2.0 L a day for women, 2.5 L for men.",
+        "The figure covers water from food as well as all beverages.",
+        "Food usually supplies roughly 20-30% of total water.",
+        "Needs rise with heat, physical activity, pregnancy and breastfeeding."
+      ],
+      "strength": "Official reference values from an expert panel, based on intake surveys and physiology rather than trials.",
+      "inApp": "The reason the app does not count glasses: tea, coffee and food count too. The water reminder only nudges you to drink when you feel like it."
+    },
+    "ru": {
+      "short": "Нормы воды от EFSA",
+      "titleTranslation": "Научное заключение о референсных нормах потребления воды",
+      "summary": "Научное заключение Европейского агентства по безопасности пищевых продуктов о том, сколько воды нужно человеку. Там указано достаточное общее потребление для разных возрастов. Взрослым в умеренном климате при обычной активности это 2,0 литра в день для женщин и 2,5 литра для мужчин. В эти цифры входит вода из еды, обычно около 20-30%, и из любых напитков, не только чистой воды.",
+      "findings": [
+        "Достаточное потребление: 2,0 л в день для женщин, 2,5 л для мужчин.",
+        "Сюда входит вода из еды и из всех напитков.",
+        "Еда обычно даёт примерно 20-30% всей воды.",
+        "В жару, при нагрузке, беременности и кормлении грудью нужно больше."
+      ],
+      "strength": "Официальные нормы от экспертной группы, основанные на опросах о питании и физиологии, а не на испытаниях.",
+      "inApp": "Поэтому приложение не считает стаканы: чай, кофе и еда тоже в счёт. Напоминание о воде только предлагает попить, если хочется."
+    }
+  },
+  {
+    "slug": "valtin-2002-eight-glasses-of-water",
+    "n": 35,
+    "kind": "review",
+    "authors": "Valtin H",
+    "title": "\"Drink at least eight glasses of water a day.\" Really? Is there scientific evidence for \"8 x 8\"?",
+    "journal": "American Journal of Physiology: Regulatory, Integrative and Comparative Physiology",
+    "year": 2002,
+    "volume_pages": "283(5):R993–R1004",
+    "doi": "10.1152/ajpregu.00365.2002",
+    "pmid": "12376390",
+    "openAccess": false,
+    "url": "https://doi.org/10.1152/ajpregu.00365.2002",
+    "links": [
+      {
+        "label": "Dartmouth Medical School news release, 8 August 2002",
+        "url": "https://geiselmed.dartmouth.edu/news/2002_h2/08aug2002_water.shtml"
+      }
+    ],
+    "sections": [
+      "water"
+    ],
+    "en": {
+      "short": "Eight glasses of water a day: really?",
+      "summary": "A review by a Dartmouth kidney physiologist who tried to trace the advice to drink at least eight 8-ounce glasses of water a day. He searched the literature and consulted nutrition experts and found no scientific studies behind it. Surveys of healthy adults suggest they get enough from food and all drinks, including coffee and tea, and the body's thirst system keeps water balance precise.",
+      "findings": [
+        "No scientific evidence was found for the '8 x 8' rule.",
+        "Caffeinated drinks count toward daily fluid intake.",
+        "Healthy adults in a temperate climate generally do not need that much plain water.",
+        "More fluid is needed for heavy work, exercise, hot weather and some illnesses."
+      ],
+      "strength": "Narrative review by one expert, not a systematic search. The conclusion is limited to healthy, mostly sedentary adults in a temperate climate.",
+      "inApp": "Why the app never mentions eight glasses: its water reminder is a gentle nudge, not a target."
+    },
+    "ru": {
+      "short": "Восемь стаканов воды в день: правда?",
+      "titleTranslation": "«Пейте не меньше восьми стаканов воды в день». Правда? Есть ли научные основания для правила «8 на 8»?",
+      "summary": "Обзор физиолога почек из Дартмута, который попытался найти, откуда взялся совет пить не меньше восьми стаканов воды в день. Он искал в литературе и расспрашивал специалистов по питанию, но научных исследований за этим советом не нашёл. Опросы здоровых взрослых говорят, что им хватает воды из еды и любых напитков, включая чай и кофе. А жажда точно поддерживает водный баланс.",
+      "findings": [
+        "Научных оснований для правила «8 стаканов» не нашлось.",
+        "Напитки с кофеином тоже считаются в дневной объём жидкости.",
+        "Здоровым взрослым в умеренном климате столько чистой воды обычно не нужно.",
+        "Больше жидкости нужно при тяжёлой работе, спорте, жаре и некоторых болезнях."
+      ],
+      "strength": "Описательный обзор одного эксперта, не систематический поиск. Вывод касается здоровых, в основном малоподвижных взрослых в умеренном климате.",
+      "inApp": "Поэтому в приложении нет «восьми стаканов»: напоминание о воде мягкое и без нормы."
+    }
+  },
+  {
+    "slug": "zaccaro-2018-slow-breathing",
+    "n": 36,
+    "kind": "review",
+    "authors": "Zaccaro A, Piarulli A, Laurino M, Garbella E, Menicucci D, Neri B, Gemignani A",
+    "title": "How Breath-Control Can Change Your Life: A Systematic Review on Psycho-Physiological Correlates of Slow Breathing",
+    "journal": "Frontiers in Human Neuroscience",
+    "year": 2018,
+    "volume_pages": "12:353",
+    "doi": "10.3389/fnhum.2018.00353",
+    "pmid": "30245619",
+    "pmcid": "PMC6137615",
+    "openAccess": true,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6137615/",
+    "sections": [
+      "breath"
+    ],
+    "en": {
+      "short": "Slow breathing: body and mind effects",
+      "summary": "A systematic review of 15 studies on slow breathing techniques, under 10 breaths a minute, in healthy people. Slow breathing was linked to higher heart rate variability and stronger breathing-related heart rhythm changes, a sign of increased vagal activity. Brain recordings showed more alpha and less theta activity. People reported feeling more relaxed, comfortable and alert, and less anxious, angry or confused.",
+      "findings": [
+        "15 studies selected from 2,461 abstracts.",
+        "Slow breathing raised heart rate variability.",
+        "EEG: more alpha, less theta activity.",
+        "People felt calmer and more alert, with less anxiety and anger."
+      ],
+      "strength": "Systematic review of small and varied studies in healthy adults, without a meta-analysis.",
+      "inApp": "Background for the optional breathing pause: in for 4 seconds, out for 6, about 6 breaths a minute."
+    },
+    "ru": {
+      "short": "Медленное дыхание: тело и психика",
+      "titleTranslation": "Как контроль дыхания может изменить жизнь: систематический обзор психофизиологических эффектов медленного дыхания",
+      "summary": "Систематический обзор 15 исследований медленного дыхания, реже 10 вдохов в минуту, у здоровых людей. Медленное дыхание было связано с ростом вариабельности сердечного ритма, то есть с усилением влияния блуждающего нерва на сердце. На ЭЭГ становилось больше альфа-ритма и меньше тета-ритма. Сами люди говорили, что чувствуют себя спокойнее, расслабленнее и бодрее, меньше тревожатся и злятся.",
+      "findings": [
+        "15 исследований, отобранных из 2461 аннотации.",
+        "Медленное дыхание повышало вариабельность сердечного ритма.",
+        "На ЭЭГ больше альфа-ритма и меньше тета-ритма.",
+        "Люди чувствовали себя спокойнее и бодрее, меньше тревожились и злились."
+      ],
+      "strength": "Систематический обзор маленьких и разнородных исследований у здоровых людей, без метаанализа.",
+      "inApp": "Основа для необязательной дыхательной паузы: вдох на 4 секунды, выдох на 6, около 6 вдохов в минуту."
+    }
+  },
+  {
+    "slug": "laborde-2022-slow-breathing-hrv",
+    "n": 37,
+    "kind": "review",
+    "authors": "Laborde S, Allen MS, Borges U, Dosseville F, Hosang TJ, Iskra M, Mosley E, Salvotti C, Spolverato L, Zammit N, Javelle F",
+    "title": "Effects of voluntary slow breathing on heart rate and heart rate variability: A systematic review and a meta-analysis",
+    "journal": "Neuroscience & Biobehavioral Reviews",
+    "year": 2022,
+    "volume_pages": "138:104711",
+    "doi": "10.1016/j.neubiorev.2022.104711",
+    "pmid": "35623448",
+    "openAccess": false,
+    "url": "https://doi.org/10.1016/j.neubiorev.2022.104711",
+    "sections": [
+      "breath"
+    ],
+    "en": {
+      "short": "Slow breathing and heart rate variability",
+      "summary": "A large systematic review and meta-analysis of 223 studies on voluntary slow breathing and heart rate variability. The authors looked at measures linked to the vagus nerve during a breathing session, right after one session, and after multi-session programmes. Vagally mediated heart rate variability went up in all three situations. They conclude that slow breathing is a cheap, low-risk way to engage the calming branch of the nervous system.",
+      "findings": [
+        "223 studies: 172 during breathing, 16 right after one session, 49 after a programme.",
+        "Vagally mediated heart rate variability rose during slow breathing.",
+        "It was also higher right after a single session and after several weeks of practice.",
+        "Few adverse effects are expected."
+      ],
+      "strength": "Large meta-analysis, but the included studies vary widely in quality, breathing rate and population.",
+      "inApp": "Main support for the pace of the breathing pause, about 6 breaths a minute. The app presents it as a way to calm down, not as treatment."
+    },
+    "ru": {
+      "short": "Медленное дыхание и вариабельность ритма сердца",
+      "titleTranslation": "Как произвольное медленное дыхание влияет на пульс и вариабельность сердечного ритма: систематический обзор и метаанализ",
+      "summary": "Большой систематический обзор и метаанализ 223 исследований о медленном дыхании и вариабельности сердечного ритма. Авторы смотрели на показатели, связанные с блуждающим нервом: во время дыхательного упражнения, сразу после одного занятия и после курса из нескольких занятий. Во всех трёх случаях вариабельность росла. Вывод авторов: медленное дыхание дешёвый способ с малым риском включить успокаивающую часть нервной системы.",
+      "findings": [
+        "223 исследования: 172 во время дыхания, 16 сразу после занятия, 49 после курса.",
+        "Во время медленного дыхания вариабельность ритма растёт.",
+        "Она выше и сразу после одного занятия, и после нескольких недель практики.",
+        "Побочных эффектов ожидается мало."
+      ],
+      "strength": "Большой метаанализ, но исследования очень разные по качеству, темпу дыхания и участникам.",
+      "inApp": "Главная опора для темпа дыхательной паузы, около 6 вдохов в минуту. Приложение подаёт её как способ успокоиться, а не как лечение."
+    }
+  },
+  {
+    "slug": "fincham-2023-breathwork-stress",
+    "n": 38,
+    "kind": "review",
+    "authors": "Fincham GW, Strauss C, Montero-Marin J, Cavanagh K",
+    "title": "Effect of breathwork on stress and mental health: A meta-analysis of randomised-controlled trials",
+    "journal": "Scientific Reports",
+    "year": 2023,
+    "volume_pages": "13(1):432",
+    "doi": "10.1038/s41598-022-27247-y",
+    "pmid": "36624160",
+    "pmcid": "PMC9828383",
+    "openAccess": true,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9828383/",
+    "sections": [
+      "breath"
+    ],
+    "en": {
+      "short": "Breathwork, stress and mental health",
+      "summary": "A meta-analysis of randomised controlled trials comparing breathwork with control conditions. For self-reported stress, 12 trials with 785 adults were pooled. Breathwork was linked to lower stress, a small-to-medium effect. Secondary analyses found similar effects on anxiety and depressive symptoms. Most trials had a moderate risk of bias, and the authors warn against hype.",
+      "findings": [
+        "12 randomised trials, 785 adults for the main outcome.",
+        "Lower self-reported stress: g = -0.35.",
+        "Anxiety: g = -0.32; depressive symptoms: g = -0.40.",
+        "Moderate heterogeneity and moderate risk of bias."
+      ],
+      "strength": "Meta-analysis of randomised trials, but small, heterogeneous studies; the authors themselves call for caution.",
+      "inApp": "Supports offering a short breathing pause to unwind. The app does not claim it treats anxiety or depression."
+    },
+    "ru": {
+      "short": "Дыхательные практики, стресс и психика",
+      "titleTranslation": "Влияние дыхательных практик на стресс и психическое здоровье: метаанализ рандомизированных контролируемых исследований",
+      "summary": "Метаанализ рандомизированных контролируемых исследований, где дыхательные практики сравнивали с контрольными условиями. По стрессу, который люди оценивали сами, объединили 12 исследований с 785 взрослыми. Дыхательные практики были связаны с меньшим стрессом, эффект от малого до среднего. Похожие эффекты нашли для тревоги и симптомов депрессии. Риск систематической ошибки у большинства исследований умеренный, и авторы предостерегают от завышенных ожиданий.",
+      "findings": [
+        "12 рандомизированных исследований, 785 взрослых для главного показателя.",
+        "Стресс ниже: g = -0,35.",
+        "Тревога: g = -0,32, симптомы депрессии: g = -0,40.",
+        "Умеренная разнородность и умеренный риск ошибки."
+      ],
+      "strength": "Метаанализ рандомизированных исследований, но они маленькие и разные. Авторы сами призывают к осторожности.",
+      "inApp": "Поддерживает короткую дыхательную паузу, чтобы выдохнуть. Лечить тревогу или депрессию приложение не обещает."
+    }
+  },
+  {
+    "slug": "balban-2023-cyclic-sighing",
+    "n": 39,
+    "kind": "study",
+    "authors": "Balban MY, Neri E, Kogon MM, Weed L, Nouriani B, Jo B, Holl G, Zeitzer JM, Spiegel D, Huberman AD",
+    "title": "Brief structured respiration practices enhance mood and reduce physiological arousal",
+    "journal": "Cell Reports Medicine",
+    "year": 2023,
+    "volume_pages": "4(1):100895",
+    "doi": "10.1016/j.xcrm.2022.100895",
+    "pmid": "36630953",
+    "pmcid": "PMC9873947",
+    "openAccess": true,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9873947/",
+    "sections": [
+      "breath"
+    ],
+    "en": {
+      "short": "Cyclic sighing versus meditation",
+      "summary": "A remote randomised controlled trial in which participants did 5 minutes a day of one of three breathing exercises or mindfulness meditation for a month. The exercises were cyclic sighing with long exhales, box breathing, and cyclic hyperventilation with breath holds. Breathwork, and exhale-focused cyclic sighing in particular, improved mood more and lowered resting breathing rate more than meditation.",
+      "findings": [
+        "5 minutes a day for 1 month, run remotely.",
+        "Three breathing techniques compared with mindfulness meditation.",
+        "Cyclic sighing gave the largest improvement in positive mood.",
+        "Breathwork lowered resting breathing rate more than meditation."
+      ],
+      "strength": "Single randomised study done remotely, with no passive control group and self-reported mood.",
+      "inApp": "Supports the long exhale in the app's breathing pause (in 4 seconds, out 6). The app avoids breath holds and forced breathing."
+    },
+    "ru": {
+      "short": "Циклические вздохи против медитации",
+      "titleTranslation": "Короткие дыхательные практики улучшают настроение и снижают физиологическое возбуждение",
+      "summary": "Дистанционное рандомизированное исследование: участники месяц по 5 минут в день делали одно из трёх дыхательных упражнений или медитацию осознанности. Упражнения такие: циклические вздохи с длинным выдохом, «квадратное» дыхание и циклическая гипервентиляция с задержками. Дыхательные упражнения, особенно вздохи с длинным выдохом, улучшали настроение и снижали частоту дыхания в покое сильнее, чем медитация.",
+      "findings": [
+        "5 минут в день, 1 месяц, всё дистанционно.",
+        "Три дыхательные техники сравнивали с медитацией осознанности.",
+        "Сильнее всего настроение улучшили вздохи с длинным выдохом.",
+        "Дыхательные упражнения снизили частоту дыхания в покое сильнее медитации."
+      ],
+      "strength": "Одно рандомизированное исследование, проведённое дистанционно, без группы, которая ничего не делала. Настроение оценивали сами участники.",
+      "inApp": "Поддерживает длинный выдох в дыхательной паузе приложения (вдох 4 секунды, выдох 6). Задержек и форсированного дыхания в приложении нет."
+    }
+  },
+  {
+    "slug": "osha-computer-workstations-etool",
+    "n": 40,
+    "kind": "webpage",
+    "authors": "Occupational Safety and Health Administration (OSHA)",
+    "title": "Computer Workstations eTool",
+    "journal": "U.S. Department of Labor, OSHA (osha.gov)",
+    "year": null,
+    "url": "https://www.osha.gov/etools/computer-workstations",
+    "openAccess": true,
+    "links": [
+      {
+        "label": "Workstation Components: Monitors",
+        "url": "https://www.osha.gov/etools/computer-workstations/components/monitors"
+      }
+    ],
+    "sections": [
+      "workplace"
+    ],
+    "en": {
+      "short": "OSHA computer workstations eTool",
+      "summary": "An interactive guide from the US Occupational Safety and Health Administration on setting up a computer workstation. It covers working postures, the chair, keyboard and mouse, the monitor, the desk, lighting and work habits, with checklists for each. The monitor section explains how far away and how high to place the screen and how to avoid glare.",
+      "findings": [
+        "Top of the screen at or slightly below eye level.",
+        "Screen about an arm's length away, roughly 50-100 cm.",
+        "Elbows close to the body at about 90-120 degrees, wrists straight.",
+        "Feet supported, lower back supported, no glare on the screen."
+      ],
+      "strength": "Official occupational safety guidance built on ergonomics practice, not on trials. Following it improves comfort; it does not guarantee health effects.",
+      "inApp": "The workstation checklist on the science page is based on this guide. The app itself does not check your workstation."
+    },
+    "ru": {
+      "short": "Руководство OSHA по рабочему месту за компьютером",
+      "titleTranslation": "Интерактивное руководство OSHA по рабочему месту за компьютером",
+      "summary": "Интерактивное руководство Управления по охране труда США о том, как устроить рабочее место за компьютером. Там разобраны позы, кресло, клавиатура и мышь, монитор, стол, освещение и привычки в работе, к каждому разделу есть список проверки. В разделе о мониторе объясняется, на каком расстоянии и на какой высоте ставить экран и как избавиться от бликов.",
+      "findings": [
+        "Верх экрана на уровне глаз или чуть ниже.",
+        "Экран на расстоянии вытянутой руки, примерно 50-100 см.",
+        "Локти у тела под углом примерно 90-120 градусов, запястья прямые.",
+        "Стопы и поясница на опоре, на экране нет бликов."
+      ],
+      "strength": "Официальные рекомендации по охране труда, основанные на практике эргономики, а не на испытаниях. Они убирают лишнее напряжение за столом, но пользу для здоровья не гарантируют.",
+      "inApp": "На этом руководстве основан список советов о рабочем месте на странице исследований. Само приложение рабочее место не проверяет."
+    }
+  },
+  {
+    "slug": "hoe-2018-ergonomic-interventions-office",
+    "n": 41,
+    "kind": "review",
+    "authors": "Hoe VC, Urquhart DM, Kelsall HL, Zamri EN, Sim MR",
+    "title": "Ergonomic interventions for preventing work-related musculoskeletal disorders of the upper limb and neck among office workers",
+    "journal": "Cochrane Database of Systematic Reviews",
+    "year": 2018,
+    "volume_pages": "(10):CD008570",
+    "doi": "10.1002/14651858.CD008570.pub3",
+    "pmid": "30350850",
+    "pmcid": "PMC6517177",
+    "openAccess": true,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6517177/",
+    "sections": [
+      "workplace"
+    ],
+    "en": {
+      "short": "Ergonomic interventions for office workers",
+      "summary": "A Cochrane review of 15 randomised trials with 2,165 office workers on ergonomic measures to avoid neck, shoulder and arm problems. Arm supports and alternative mice gave inconsistent results. Adjusting the workstation, sit-stand desks and ergonomics training showed no effect on upper limb pain or discomfort. Extra rest breaks reduced discomfort in the neck, shoulder and forearm, but with very low-quality evidence.",
+      "findings": [
+        "15 randomised trials, 2,165 office workers; 14 at high risk of bias.",
+        "Arm support plus alternative mouse: fewer neck and shoulder problems in two studies, other results mixed.",
+        "Workstation adjustment, sit-stand desks and training: no clear effect.",
+        "Supplementary breaks: less discomfort, very low-quality evidence."
+      ],
+      "strength": "Cochrane review with strict methods, but almost all trials were at high risk of bias, so the conclusions are weak.",
+      "inApp": "Explains why the app treats workstation setup as a one-off comfort step and puts more weight on regular breaks and movement."
+    },
+    "ru": {
+      "short": "Эргономика для офисных работников",
+      "titleTranslation": "Эргономические меры против связанных с работой нарушений в руках и шее у офисных работников",
+      "summary": "Кокрейновский обзор 15 рандомизированных исследований с 2165 офисными работниками об эргономических мерах против проблем с шеей, плечами и руками. Опоры для рук и мыши другой формы дали противоречивые результаты. Настройка рабочего места, столы для работы стоя и обучение эргономике на боль и дискомфорт в руках не повлияли. Дополнительные перерывы уменьшали дискомфорт в шее, плече и предплечье, но качество этих данных очень низкое.",
+      "findings": [
+        "15 рандомизированных исследований, 2165 офисных работников, у 14 высокий риск ошибки.",
+        "Опора для руки вместе с другой мышью: в двух исследованиях меньше проблем с шеей и плечами, остальное неоднозначно.",
+        "Настройка рабочего места, столы для работы стоя, обучение: явного эффекта нет.",
+        "Дополнительные перерывы: меньше дискомфорта, качество данных очень низкое."
+      ],
+      "strength": "Кокрейновский обзор со строгими методами, но почти у всех исследований высокий риск ошибки, поэтому выводы слабые.",
+      "inApp": "Поэтому приложение считает настройку рабочего места разовым делом ради удобства, а главную ставку делает на регулярные перерывы и движение."
+    }
+  },
+  {
+    "slug": "albulescu-2022-micro-breaks-meta-analysis",
+    "n": 42,
+    "kind": "review",
+    "authors": "Albulescu P, Macsinga I, Rusu A, Sulea C, Bodnaru A, Tulbure BT",
+    "title": "\"Give me a break!\" A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance",
+    "journal": "PLOS ONE",
+    "year": 2022,
+    "volume_pages": "17(8):e0272460",
+    "doi": "10.1371/journal.pone.0272460",
+    "pmid": "36044424",
+    "pmcid": "PMC9432722",
+    "openAccess": true,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9432722/",
+    "sections": [
+      "microbreaks"
+    ],
+    "en": {
+      "short": "Do micro-breaks work?",
+      "summary": "A systematic review and meta-analysis of micro-breaks, short breaks of up to 10 minutes between work tasks. It pooled 22 samples from 19 records with 2,335 people in experimental and quasi-experimental studies. Micro-breaks gave a small but clear boost to vigour and a reduction in fatigue. The effect on overall performance was not significant, though it appeared for less demanding tasks, and longer breaks helped performance more.",
+      "findings": [
+        "22 samples, 2,335 participants.",
+        "More vigour: d = 0.36; less fatigue: d = 0.35.",
+        "Overall performance: d = 0.16, not significant.",
+        "Longer breaks were linked to bigger performance gains."
+      ],
+      "strength": "Meta-analysis of a modest number of varied studies; effects are small, and many studies were short lab experiments.",
+      "inApp": "Supports the app's short micro-breaks for feeling less tired and its longer stand-up breaks. The app does not promise higher productivity."
+    },
+    "ru": {
+      "short": "Работают ли микропаузы",
+      "titleTranslation": "«Дайте передохнуть!» Систематический обзор и метаанализ пользы микропауз для самочувствия и работоспособности",
+      "summary": "Систематический обзор и метаанализ микропауз, то есть коротких перерывов до 10 минут между рабочими задачами. Объединили 22 выборки из 19 работ, всего 2335 человек, в экспериментальных и квазиэкспериментальных исследованиях. Микропаузы немного, но заметно добавляли бодрости и снижали усталость. На работоспособность в целом значимого влияния не нашли, хотя для несложных задач оно было, а более длинные перерывы помогали работе сильнее.",
+      "findings": [
+        "22 выборки, 2335 участников.",
+        "Бодрости больше: d = 0,36, усталости меньше: d = 0,35.",
+        "Работоспособность в целом: d = 0,16, не значимо.",
+        "Чем длиннее перерыв, тем больше польза для работы."
+      ],
+      "strength": "Метаанализ небольшого числа разных исследований, эффекты маленькие, многие исследования короткие и лабораторные.",
+      "inApp": "Поддерживает короткие микропаузы, чтобы меньше уставать, и более длинные перерывы с подъёмом. Роста продуктивности приложение не обещает."
+    }
+  },
+  {
+    "slug": "wendsche-2017-detachment-from-work",
+    "n": 43,
+    "kind": "review",
+    "authors": "Wendsche J, Lohmann-Haislah A",
+    "title": "A Meta-Analysis on Antecedents and Outcomes of Detachment from Work",
+    "journal": "Frontiers in Psychology",
+    "year": 2017,
+    "volume_pages": "7:2072",
+    "doi": "10.3389/fpsyg.2016.02072",
+    "pmid": "28133454",
+    "pmcid": "PMC5233687",
+    "openAccess": true,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5233687/",
+    "sections": [
+      "endofday"
+    ],
+    "en": {
+      "short": "Detachment from work after hours",
+      "summary": "A meta-analysis of 91 samples with more than 38,000 employees on psychological detachment, the ability to stop thinking about work in free time. People who detached better reported less exhaustion, more wellbeing and life satisfaction, better sleep and less physical discomfort. Higher job demands and working in free time went with less detachment. The results are correlations from mostly cross-sectional data.",
+      "findings": [
+        "86 publications, 91 samples, 38,124 employees.",
+        "Detachment was linked to less exhaustion, better sleep and more wellbeing.",
+        "Job demands and after-hours work were linked to less detachment.",
+        "Effects were small to medium, with high variation between studies."
+      ],
+      "strength": "Large meta-analysis, but of correlations, so it cannot show that detaching causes better sleep or wellbeing.",
+      "inApp": "Background for the optional end-of-day reminder that helps you close work for the day."
+    },
+    "ru": {
+      "short": "Умение отключиться от работы",
+      "titleTranslation": "Метаанализ причин и последствий психологического отключения от работы",
+      "summary": "Метаанализ 91 выборки, больше 38 тысяч работников, о психологическом отключении от работы, то есть умении не думать о ней в свободное время. Кто лучше отключался, реже чувствовал истощение, был больше доволен жизнью, лучше спал и меньше жаловался на телесный дискомфорт. Высокая нагрузка на работе и рабочие дела в свободное время мешали отключаться. Это корреляции, в основном из одномоментных данных.",
+      "findings": [
+        "86 публикаций, 91 выборка, 38 124 работника.",
+        "Отключение от работы связано с меньшим истощением, лучшим сном и самочувствием.",
+        "Высокая нагрузка и работа в нерабочее время связаны с худшим отключением.",
+        "Эффекты от малых до средних, исследования сильно различаются."
+      ],
+      "strength": "Большой метаанализ, но корреляций: он не доказывает, что отключение от работы само улучшает сон и самочувствие.",
+      "inApp": "Основа для необязательного напоминания в конце рабочего дня, которое помогает закончить работу."
+    }
+  },
+  {
+    "slug": "boubekri-2014-windows-daylight-sleep",
+    "n": 44,
+    "kind": "study",
+    "authors": "Boubekri M, Cheung IN, Reid KJ, Wang CH, Zee PC",
+    "title": "Impact of windows and daylight exposure on overall health and sleep quality of office workers: a case-control pilot study",
+    "journal": "Journal of Clinical Sleep Medicine",
+    "year": 2014,
+    "volume_pages": "10(6):603–611",
+    "doi": "10.5664/jcsm.3780",
+    "pmid": "24932139",
+    "pmcid": "PMC4031400",
+    "openAccess": true,
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4031400/",
+    "sections": [
+      "endofday"
+    ],
+    "en": {
+      "short": "Windows, daylight and sleep in office workers",
+      "summary": "A case-control pilot study of 49 office workers: 22 had daylight at their desks and 27 worked in windowless spaces or far from windows. Workers without daylight scored worse on vitality and on limits caused by physical problems, and reported poorer sleep quality. In a subset of 21 wearing activity trackers, those near windows got more light on workdays, tended to move more and slept longer, about 46 minutes a night.",
+      "findings": [
+        "49 office workers, 22 with windows and 27 without.",
+        "Workers without daylight: lower vitality scores and poorer sleep quality.",
+        "Actigraphy subset (21 people): more light exposure and longer sleep near windows.",
+        "Sleep was about 46 minutes longer per night in the window group."
+      ],
+      "strength": "Small pilot study, not randomised; the groups may have differed in ways other than daylight.",
+      "inApp": "A weak but friendly argument for getting some daylight, for example during a stand-up break or at the end of the day. The app treats it as a tip, not a proven effect."
+    },
+    "ru": {
+      "short": "Окна, дневной свет и сон офисных работников",
+      "titleTranslation": "Как окна и дневной свет влияют на общее здоровье и сон офисных работников: пилотное исследование «случай-контроль»",
+      "summary": "Пилотное исследование «случай-контроль» с 49 офисными работниками: у 22 было дневное освещение на рабочем месте, 27 работали без окон или далеко от них. Те, кто без дневного света, хуже оценивали свою бодрость и ограничения из-за физического состояния и хуже спали. В подгруппе из 21 человека с датчиками активности у работавших у окна было больше света в рабочие дни, они чуть больше двигались и спали дольше, примерно на 46 минут за ночь.",
+      "findings": [
+        "49 офисных работников, 22 с окнами и 27 без.",
+        "Без дневного света ниже оценки бодрости и хуже сон.",
+        "Подгруппа с датчиками (21 человек): у окна больше света и дольше сон.",
+        "У окна спали примерно на 46 минут дольше за ночь."
+      ],
+      "strength": "Маленькое пилотное исследование без рандомизации: группы могли отличаться не только светом.",
+      "inApp": "Слабый, но приятный довод почаще бывать на дневном свету, например в перерыве с подъёмом или в конце дня. Приложение подаёт это как совет, а не доказанный эффект."
+    }
+  }
+]

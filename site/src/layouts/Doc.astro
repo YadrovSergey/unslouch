@@ -39,6 +39,7 @@ const d = t(lang);
       <article class="prose">
         {notice && <p class="notice">{notice}</p>}
         <Fragment set:html={fixLinks(html, lang)} />
+        <slot name="article-end" />
       </article>
     </div>
     <div style="max-width:860px"><slot /></div>

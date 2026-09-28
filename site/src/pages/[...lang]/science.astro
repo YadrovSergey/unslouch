@@ -2,17 +2,47 @@
 import Doc from "../../layouts/Doc.astro";
 import * as en from "../../../../docs/science.en.md";
 import * as ru from "../../../../docs/science.ru.md";
-import { langPaths, t, type Lang } from "../../i18n";
+import { href, langPaths, t, type Lang } from "../../i18n";
 import Cta from "../../components/Cta.astro";
+import { REFERENCES_ANCHOR, SOURCES, authorsShort, sourceLinks, sourcePath, withDot } from "../../lib/references";
 
 export const getStaticPaths = langPaths;
 const { lang } = Astro.props as { lang: Lang };
 const md = { en, ru }[lang];
 const d = t(lang);
-const html = await md.compiledContent();
+const full = await md.compiledContent();
 const toc = md.getHeadings().filter((h) => h.depth === 2);
+// The markdown reference list is for GitHub. On the site it is replaced by the same list from docs/sources.json,
+// with a link to each source's own page.
+const refsAt = full.indexOf(`<h2 id="${REFERENCES_ANCHOR[lang]}"`);
+if (refsAt < 0) throw new Error(`science.${lang}.md: reference list heading not found`);
+const html = full.slice(0, refsAt);
+const refsTitle = toc.find((h) => h.slug === REFERENCES_ANCHOR[lang])?.text ?? "";
 ---
 
 <Doc lang={lang} path="/science/" title={d.meta.science.title} description={d.meta.science.description} html={html} toc={toc}>
+  <Fragment slot="article-end">
+    <h2 id={REFERENCES_ANCHOR[lang]}>{refsTitle}</h2>
+    <ol class="refs">
+      {
+        SOURCES.map((s) => (
+          <li value={s.n}>
+            <a href={href(lang, sourcePath(s))} lang="en">{s.title}</a>.{" "}
+            <span lang="en">{withDot(authorsShort(s, lang))}</span> <i lang="en">{s.journal}</i>
+            {s.year && <>, {s.year}</>}.{" "}
+            <span class="refs__links">
+              {sourceLinks(s, lang).map((l, i) => (
+                <>
+                  {i > 0 && " · "}
+                  <a href={l.url} rel="noopener">{l.label}</a>
+                </>
+              ))}
+            </span>
+          </li>
+        ))
+      }
+    </ol>
+    <p><a href={href(lang, "/science/sources/")}>{d.sources.allSourcesLong}</a></p>
+  </Fragment>
   <Cta lang={lang} />
 </Doc>

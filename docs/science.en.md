@@ -40,9 +40,12 @@ focuses the eye up close: it works for hours without rest. Looking into the dist
 
 ### What studies show
 
-- **American Academy of Ophthalmology (AAO).** People blink less at screens. Recommends every
-  20 minutes looking 20 seconds at something more than 6 metres (20 feet) away, artificial tears
-  for dryness, screen at arm's length. https://www.aao.org/eye-health/tips-prevention/computer-usage
+- **American Academy of Ophthalmology (AAO).** People blink 5-7 times a minute at screens instead
+  of about 15. Recommends looking into the distance regularly, artificial tears for dryness, screen
+  at about arm's length. The exact rule, every 20 minutes looking 20 seconds at something more than
+  6 metres (20 feet) away, is in the AAO article on blue-light glasses, which also says the Academy
+  does not recommend special eyewear for computer use.
+  https://www.aao.org/eye-health/tips-prevention/computer-usage ; https://www.aao.org/eye-health/tips-prevention/are-computer-glasses-worth-it
 - **American Optometric Association (AOA).** Screen 50-70 cm away, centre of the screen 15-20°
   below eye level, breaks, vision correction when needed.
   https://www.aoa.org/healthy-eyes/eye-and-vision-conditions/computer-vision-syndrome
@@ -53,15 +56,16 @@ focuses the eye up close: it works for hours without rest. Looking into the dist
   users ran reminder software for distance breaks for two weeks. Symptoms of digital eye strain
   and dry eye went down, objective signs barely changed. Small study, no control group.
   doi:10.1016/j.clae.2022.101744
-- **Kim et al., 2021, Contact Lens & Anterior Eye.** Complete-blink exercises in dry eye.
-  https://pubmed.ncbi.nlm.nih.gov/32409236/
-- **Contact Lens & Anterior Eye, 2025, "Optimisation of blinking exercises for dry eye disease".**
+- **Kim et al., 2021, Contact Lens & Anterior Eye 44(3):101329.** 41 people with dry eye did a short
+  blinking exercise every 20 minutes for four weeks. Symptoms went down and incomplete blinks fell
+  from 54% to 34%. No control group. https://pubmed.ncbi.nlm.nih.gov/32409236/
+- **Wolffsohn et al., 2025, Contact Lens & Anterior Eye 48(5):102453.**
   15 repetitions three times a day for two weeks reduced symptoms and incomplete blinks.
-  https://www.sciencedirect.com/science/article/pii/S1367048425000876
-- **npj Digital Medicine, 2025.** Randomised trial of app-based blink training, 40 people,
+  doi:10.1016/j.clae.2025.102453
+- **Xu et al., 2025, npj Digital Medicine 8:703.** Randomised trial of app-based blink training, 40 people,
   30 days. Small study. https://www.nature.com/articles/s41746-025-02053-8
-- **Singh et al., 2023, Cochrane Review CD013244.pub2.** Blue-light filtering lenses probably do
-  not reduce eye strain from screens: 17 randomised trials, 619 participants, low certainty.
+- **Singh et al., 2023, Cochrane Review CD013244.pub2.** Blue-light filtering lenses may not
+  reduce eye strain from screens: 17 randomised trials, 619 participants, low certainty.
   That is why we do not recommend them. doi:10.1002/14651858.CD013244.pub2
 
 ### When to see a doctor
@@ -101,11 +105,12 @@ shoulder pain, strength exercises for these muscles have the best evidence.
 - **Andersen et al., 2008, Journal of Applied Physiology.** 42 women with trapezius myalgia.
   Specific strength training cut pain by 42-49%, cycling did not.
   https://pubmed.ncbi.nlm.nih.gov/18948442/
-- **Andersen et al., 2011, Pain.** 198 office workers. 2 minutes a day, 5 days a week with an
+- **Andersen et al., 2011, Pain 152(2):440-446.** 198 working adults. 2 minutes a day, 5 days a week with an
   elastic band reduced neck and shoulder pain almost as much as 12 minutes.
-  https://www.sciencedirect.com/science/article/abs/pii/S0304395910007013
-- **Secondary analysis of the same trial.** Participants had fewer headaches.
-  https://pubmed.ncbi.nlm.nih.gov/21617837
+  doi:10.1016/j.pain.2010.11.016
+- **Andersen et al., 2011, Scandinavian Journal of Work, Environment & Health.** Secondary analysis
+  of the same trial: headache frequency fell by 43% (2 minutes a day) and 56% (12 minutes).
+  https://pubmed.ncbi.nlm.nih.gov/21617837/
 - **Mahmoud et al., 2019, Current Reviews in Musculoskeletal Medicine.** Forward head posture is
   associated with neck pain in adults. Causality is not shown. https://pubmed.ncbi.nlm.nih.gov/31773477/
 - **On neck circles.** There is no direct evidence of harm. Physiotherapists usually advise
@@ -179,7 +184,8 @@ loss, a history of cancer, severe night pain, or pain lasting longer than 4-6 we
 
 Mouse and keyboard keep the hands and forearms in one position for hours, which can cause fatigue
 and discomfort in the forearms. A link between computer use and carpal tunnel syndrome has not
-been established: heavy computer users do not get it more often than other people. So we do not
+been established: in studies, heavy computer users do not get it noticeably more often than
+other people, and the difference is within chance. So we do not
 claim the exercises protect against it. They are there to let the hands rest and change position.
 
 ### What the app does
@@ -192,9 +198,9 @@ claim the exercises protect against it. They are there to let the hands rest and
 - **Thomsen, Gerr & Atroshi, 2008, BMC Musculoskeletal Disorders.** Systematic review: evidence
   that computer work causes carpal tunnel syndrome is insufficient.
   https://pubmed.ncbi.nlm.nih.gov/18838001/
-- **Mediouni et al., 2014, Journal of Occupational and Environmental Medicine.** Meta-analysis:
-  computer users do not have carpal tunnel syndrome more often than the general population (OR 0.72).
-  https://journals.lww.com/joem/Fulltext/2014/02000/Is_Carpal_Tunnel_Syndrome_Related_to_Computer.18.aspx
+- **Mediouni et al., 2014, Journal of Occupational and Environmental Medicine.** Meta-analysis of
+  6 studies: a link between computer use and carpal tunnel syndrome could not be shown (odds ratio
+  1.67, 95% CI 0.79 to 3.55, not significant). https://pubmed.ncbi.nlm.nih.gov/24451617/
 - **Page et al., 2012, Cochrane Review CD009899.** Exercises for carpal tunnel syndrome: weak
   evidence. https://pubmed.ncbi.nlm.nih.gov/22696387/
 - **Kim, 2015, Journal of Physical Therapy Science.** Review of exercises for carpal tunnel
@@ -235,13 +241,15 @@ not been directly shown that office breaks prevent clots. Breaks do reduce swell
 ### What studies show
 
 - **Healy et al., 2010, Journal of the Royal Society of Medicine 103:447.** Case-control study:
-  people who sat 10 or more hours a day and at least 2 hours without getting up had roughly
-  2.8 times the risk of venous thromboembolism. We took the 2.8 figure from a secondary source
-  and have not checked it in the original. doi:10.1258/jrsm.2010.100155
-- **Braithwaite et al., 2016, JRSM Open.** Risk grows with each hour of uninterrupted sitting.
-  We have not verified the exact odds ratios. https://pubmed.ncbi.nlm.nih.gov/27540486/
-- **Randomised crossover trial on vascular function.** 2-minute walks every 30 minutes improved
-  blood flow in the popliteal artery. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7781669/
+  people who sat 10 or more hours a day and at least 2 hours without getting up had 2.8 times
+  the odds of venous thromboembolism (95% CI 1.2 to 6.1). doi:10.1258/jrsm.2010.100155
+- **Braithwaite et al., 2016, JRSM Open.** A second, larger study by the same group, 200 cases and
+  200 controls. The same definition of long sitting was not significantly linked to clots (odds
+  ratio 1.18), but each extra hour of average daily sitting raised the odds by about 8% (1.08).
+  A weak association. https://pubmed.ncbi.nlm.nih.gov/27540486/
+- **Peddie et al., 2021, PLOS ONE.** Randomised crossover trial, 18 adults. 2-minute walks every
+  30 minutes increased blood flow in the popliteal artery by about 80% compared with sitting;
+  standing still helped only briefly. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7781669/
 
 ### When to see a doctor
 
@@ -284,8 +292,8 @@ is not a scientific norm: we get water from food and from any drink, including t
   small. How well this applies to an ordinary office day is unclear.
 - **EFSA, 2010.** Adequate total water intake: 2.0 L a day for women, 2.5 L for men. This includes
   water from food (about 20-30%) and all drinks. doi:10.2903/j.efsa.2010.1459
-- **Valtin, 2002.** The "8 glasses a day" rule is not based on evidence.
-  https://geiselmed.dartmouth.edu/news/2002_h2/08aug2002_water.shtml
+- **Valtin, 2002, American Journal of Physiology.** Review: the "8 glasses a day" rule is not
+  based on evidence. https://geiselmed.dartmouth.edu/news/2002_h2/08aug2002_water.shtml
 
 ### When to see a doctor
 
@@ -350,7 +358,7 @@ Based on OSHA (US Occupational Safety and Health Administration) guidance:
 
 - Top of the screen at or slightly below eye level.
 - Screen at arm's length, 50-100 cm.
-- Elbows at about 90-110°, wrists straight.
+- Elbows at about 90–120°, wrists straight.
 - Feet flat on the floor or on a footrest.
 - Lower back supported by the backrest.
 - 2-3 fingers' width between the seat edge and the back of the knee.
@@ -360,7 +368,7 @@ Based on OSHA (US Occupational Safety and Health Administration) guidance:
 
 - **OSHA Computer Workstations eTool.** https://www.osha.gov/etools/computer-workstations ;
   monitors: https://www.osha.gov/etools/computer-workstations/components/monitors
-- **Hoe et al., 2018, Cochrane Review.** Extra breaks may reduce discomfort (low quality evidence).
+- **Hoe et al., 2018, Cochrane Review.** Extra breaks may reduce discomfort (very low quality evidence).
   Arm supports and alternative mice gave mixed results. Workstation adjustment, sit-stand desks
   and ergonomics training showed no effect. https://pubmed.ncbi.nlm.nih.gov/30350850/
 
@@ -430,49 +438,50 @@ If you have slept badly for more than three weeks or constantly lack energy or m
 
 ## References
 
-1. American Academy of Ophthalmology. Computers, Digital Devices and Eye Strain. https://www.aao.org/eye-health/tips-prevention/computer-usage
+1. American Academy of Ophthalmology. Computers, Digital Devices, and Eye Strain. https://www.aao.org/eye-health/tips-prevention/computer-usage ; https://www.aao.org/eye-health/tips-prevention/are-computer-glasses-worth-it
 2. American Optometric Association. Computer vision syndrome. https://www.aoa.org/healthy-eyes/eye-and-vision-conditions/computer-vision-syndrome
-3. Sheppard A.L., Wolffsohn J.S. Digital eye strain: prevalence, measurement and amelioration. BMJ Open Ophthalmology. 2018;3:e000146. doi:10.1136/bmjophth-2018-000146
-4. Talens-Estarelles C. et al. Contact Lens & Anterior Eye. 2023;46(2):101744. doi:10.1016/j.clae.2022.101744
-5. Kim A.D. et al. Contact Lens & Anterior Eye. 2021. https://pubmed.ncbi.nlm.nih.gov/32409236/
-6. Optimisation of blinking exercises for dry eye disease. Contact Lens & Anterior Eye. 2025. https://www.sciencedirect.com/science/article/pii/S1367048425000876
-7. App-based blink training, randomised trial. npj Digital Medicine. 2025. https://www.nature.com/articles/s41746-025-02053-8
-8. Singh S. et al. Blue-light filtering spectacle lenses for visual performance, sleep, and macular health in adults. Cochrane Database of Systematic Reviews. 2023. CD013244.pub2. doi:10.1002/14651858.CD013244.pub2
-9. Chen X. et al. Physical Therapy. 2018;98(1):40-62. https://pubmed.ncbi.nlm.nih.gov/29088401/
-10. Andersen L.L. et al. Journal of Applied Physiology. 2008. https://pubmed.ncbi.nlm.nih.gov/18948442/
-11. Andersen L.L. et al. Pain. 2011. https://www.sciencedirect.com/science/article/abs/pii/S0304395910007013
-12. Andersen L.L. et al. Secondary analysis: headache. https://pubmed.ncbi.nlm.nih.gov/21617837
-13. Mahmoud N.F. et al. The relationship between forward head posture and neck pain. Current Reviews in Musculoskeletal Medicine. 2019. https://pubmed.ncbi.nlm.nih.gov/31773477/
-14. Ekelund U. et al. Does physical activity attenuate, or even eliminate, the detrimental association of sitting time with mortality? The Lancet. 2016. https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(16)30370-1/abstract
-15. Bull F.C. et al. World Health Organization 2020 guidelines on physical activity and sedentary behaviour. British Journal of Sports Medicine. 2020. doi:10.1136/bjsports-2020-102955
-16. Dunstan D.W. et al. Breaking up prolonged sitting reduces postprandial glucose and insulin responses. Diabetes Care. 2012;35(5):976-983. doi:10.2337/dc11-1931
-17. Duran A.T., ..., Diaz K.M. Medicine & Science in Sports & Exercise. 2023;55(5):847-855. doi:10.1249/MSS.0000000000003109
-18. Shrestha N. et al. Workplace interventions for reducing sitting at work. Cochrane Database of Systematic Reviews. 2018. doi:10.1002/14651858.CD010912.pub5
-19. Swain C.T.V. et al. No consensus on causality of spine postures or physical exposure and low back pain. Journal of Biomechanics. 2020;102:109312. doi:10.1016/j.jbiomech.2019.08.006
-20. O'Sullivan P.B. et al. Back to basics: 10 facts every person should know about back pain. British Journal of Sports Medicine. 2020. https://pubmed.ncbi.nlm.nih.gov/31892534/
-21. Thomsen J.F., Gerr F., Atroshi I. Carpal tunnel syndrome and the use of computer mouse and keyboard: a systematic review. BMC Musculoskeletal Disorders. 2008. https://pubmed.ncbi.nlm.nih.gov/18838001/
-22. Mediouni Z. et al. Is carpal tunnel syndrome related to computer exposure at work? Journal of Occupational and Environmental Medicine. 2014. https://journals.lww.com/joem/Fulltext/2014/02000/Is_Carpal_Tunnel_Syndrome_Related_to_Computer.18.aspx
-23. Page M.J. et al. Exercise and mobilisation interventions for carpal tunnel syndrome. Cochrane Database of Systematic Reviews. 2012. CD009899. https://pubmed.ncbi.nlm.nih.gov/22696387/
-24. Kim S.D. Journal of Physical Therapy Science. 2015. https://pubmed.ncbi.nlm.nih.gov/26357452/
-25. McLean L. et al. Computer terminal work and the benefit of microbreaks. Applied Ergonomics. 2001. https://pubmed.ncbi.nlm.nih.gov/11394463/
-26. Galinsky T.L. et al. A field study of supplementary rest breaks for data-entry operators. Ergonomics. 2000. https://www.tandfonline.com/doi/abs/10.1080/001401300184297
-27. Galinsky T. et al. Supplementary breaks and stretching exercises for data entry operators: a follow-up field study. American Journal of Industrial Medicine. 2007. https://pubmed.ncbi.nlm.nih.gov/17514726/
-28. Healy B. et al. Journal of the Royal Society of Medicine. 2010;103:447. doi:10.1258/jrsm.2010.100155
-29. Braithwaite I. et al. JRSM Open. 2016. https://pubmed.ncbi.nlm.nih.gov/27540486/
-30. Randomised crossover trial: breaking up sitting and leg blood flow. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7781669/
-31. Wittbrodt M.T., Millard-Stafford M. Dehydration impairs cognitive performance: a meta-analysis. Medicine & Science in Sports & Exercise. 2018. https://journals.lww.com/acsm-msse/Fulltext/2018/11000/Dehydration_Impairs_Cognitive_Performance__A.21.aspx
-32. Armstrong L.E. et al. Mild dehydration affects mood in healthy young women. Journal of Nutrition. 2012. https://pubmed.ncbi.nlm.nih.gov/22190027/
-33. Ganio M.S. et al. Mild dehydration impairs cognitive performance and mood of men. British Journal of Nutrition. 2011. https://pubmed.ncbi.nlm.nih.gov/21736786/
-34. EFSA Panel on Dietetic Products, Nutrition and Allergies. Scientific Opinion on Dietary reference values for water. EFSA Journal. 2010. doi:10.2903/j.efsa.2010.1459
-35. Valtin H. "Drink at least eight glasses of water a day." Really? 2002. https://geiselmed.dartmouth.edu/news/2002_h2/08aug2002_water.shtml
-36. Zaccaro A. et al. How breath-control can change your life: a systematic review on psycho-physiological correlates of slow breathing. Frontiers in Human Neuroscience. 2018. https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6137615/
-37. Laborde S. et al. Effects of voluntary slow breathing on heart rate and heart rate variability: a systematic review and meta-analysis. Neuroscience & Biobehavioral Reviews. 2022. https://www.sciencedirect.com/science/article/abs/pii/S0149763422002007
-38. Fincham G.W. et al. Effect of breathwork on stress and mental health: a meta-analysis of randomised-controlled trials. Scientific Reports. 2023. https://www.nature.com/articles/s41598-022-27247-y
-39. Balban M.Y. et al. Brief structured respiration practices enhance mood and reduce physiological arousal. Cell Reports Medicine. 2023. https://www.cell.com/cell-reports-medicine/fulltext/S2666-3791(22)00474-8
-40. OSHA. Computer Workstations eTool. https://www.osha.gov/etools/computer-workstations ; Monitors: https://www.osha.gov/etools/computer-workstations/components/monitors
-41. Hoe V.C.W. et al. Cochrane Database of Systematic Reviews. 2018. https://pubmed.ncbi.nlm.nih.gov/30350850/
-42. Albulescu P. et al. "Give me a break!" A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance. PLOS ONE. 2022. https://pubmed.ncbi.nlm.nih.gov/36044424/
-43. Wendsche J., Lohmann-Haislah A. Frontiers in Psychology. 2017. https://pubmed.ncbi.nlm.nih.gov/28133454/
-44. Boubekri M. et al. Impact of windows and daylight exposure on overall health and sleep quality of office workers: a case-control pilot study. Journal of Clinical Sleep Medicine. 2014. https://pubmed.ncbi.nlm.nih.gov/24932139/
+3. Sheppard A.L., Wolffsohn J.S. Digital eye strain: prevalence, measurement and amelioration. BMJ Open Ophthalmology. 2018;3(1):e000146. doi:10.1136/bmjophth-2018-000146 https://pubmed.ncbi.nlm.nih.gov/29963645/
+4. Talens-Estarelles C. et al. The effects of breaks on digital eye strain, dry eye and binocular vision: Testing the 20-20-20 rule. Contact Lens & Anterior Eye. 2023;46(2):101744. doi:10.1016/j.clae.2022.101744 https://pubmed.ncbi.nlm.nih.gov/35963776/
+5. Kim A.D. et al. Therapeutic benefits of blinking exercises in dry eye disease. Contact Lens & Anterior Eye. 2021;44(3):101329. doi:10.1016/j.clae.2020.04.014 https://pubmed.ncbi.nlm.nih.gov/32409236/
+6. Wolffsohn J.S. et al. Optimisation of blinking exercises for dry eye disease. Contact Lens & Anterior Eye. 2025;48(5):102453. doi:10.1016/j.clae.2025.102453 https://pubmed.ncbi.nlm.nih.gov/40467388/
+7. Xu Z. et al. A smartphone-based blink training application for alleviating dry eye signs and symptoms. npj Digital Medicine. 2025;8(1):703. doi:10.1038/s41746-025-02053-8 https://pubmed.ncbi.nlm.nih.gov/41266739/
+8. Singh S. et al. Blue-light filtering spectacle lenses for visual performance, sleep, and macular health in adults. Cochrane Database of Systematic Reviews. 2023;(8):CD013244. doi:10.1002/14651858.CD013244.pub2 https://pubmed.ncbi.nlm.nih.gov/37593770/
+9. Chen X. et al. Workplace-Based Interventions for Neck Pain in Office Workers: Systematic Review and Meta-Analysis. Physical Therapy. 2018;98(1):40-62. doi:10.1093/ptj/pzx101 https://pubmed.ncbi.nlm.nih.gov/29088401/
+10. Andersen L.L. et al. Effect of physical training on function of chronically painful muscles: a randomized controlled trial. Journal of Applied Physiology. 2008;105(6):1796-1801. doi:10.1152/japplphysiol.91057.2008 https://pubmed.ncbi.nlm.nih.gov/18948442/
+11. Andersen L.L. et al. Effectiveness of small daily amounts of progressive resistance training for frequent neck/shoulder pain: randomised controlled trial. Pain. 2011;152(2):440-446. doi:10.1016/j.pain.2010.11.016 https://pubmed.ncbi.nlm.nih.gov/21177034/
+12. Andersen L.L. et al. Effect of brief daily exercise on headache among adults: secondary analysis of a randomized controlled trial. Scandinavian Journal of Work, Environment & Health. 2011;37(6):547-550. doi:10.5271/sjweh.3170 https://pubmed.ncbi.nlm.nih.gov/21617837/
+13. Mahmoud N.F. et al. The Relationship Between Forward Head Posture and Neck Pain: a Systematic Review and Meta-Analysis. Current Reviews in Musculoskeletal Medicine. 2019;12(4):562-577. doi:10.1007/s12178-019-09594-y https://pubmed.ncbi.nlm.nih.gov/31773477/
+14. Ekelund U. et al. Does physical activity attenuate, or even eliminate, the detrimental association of sitting time with mortality? A harmonised meta-analysis of data from more than 1 million men and women. The Lancet. 2016;388(10051):1302-1310. doi:10.1016/S0140-6736(16)30370-1 https://pubmed.ncbi.nlm.nih.gov/27475271/
+15. Bull F.C. et al. World Health Organization 2020 guidelines on physical activity and sedentary behaviour. British Journal of Sports Medicine. 2020;54(24):1451-1462. doi:10.1136/bjsports-2020-102955 https://pubmed.ncbi.nlm.nih.gov/33239350/
+16. Dunstan D.W. et al. Breaking up prolonged sitting reduces postprandial glucose and insulin responses. Diabetes Care. 2012;35(5):976-983. doi:10.2337/dc11-1931 https://pubmed.ncbi.nlm.nih.gov/22374636/
+17. Duran A.T. et al. Breaking Up Prolonged Sitting to Improve Cardiometabolic Risk: Dose-Response Analysis of a Randomized Crossover Trial. Medicine & Science in Sports & Exercise. 2023;55(5):847-855. doi:10.1249/MSS.0000000000003109 https://pubmed.ncbi.nlm.nih.gov/36728338/
+18. Shrestha N. et al. Workplace interventions for reducing sitting at work. Cochrane Database of Systematic Reviews. 2018;(12):CD010912. doi:10.1002/14651858.CD010912.pub5 https://pubmed.ncbi.nlm.nih.gov/30556590/
+19. Swain C.T.V. et al. No consensus on causality of spine postures or physical exposure and low back pain: A systematic review of systematic reviews. Journal of Biomechanics. 2020;102:109312. doi:10.1016/j.jbiomech.2019.08.006 https://pubmed.ncbi.nlm.nih.gov/31451200/
+20. O'Sullivan P.B. et al. Back to basics: 10 facts every person should know about back pain. British Journal of Sports Medicine. 2020;54(12):698-699. doi:10.1136/bjsports-2019-101611 https://pubmed.ncbi.nlm.nih.gov/31892534/
+21. Thomsen J.F., Gerr F., Atroshi I. Carpal tunnel syndrome and the use of computer mouse and keyboard: a systematic review. BMC Musculoskeletal Disorders. 2008;9:134. doi:10.1186/1471-2474-9-134 https://pubmed.ncbi.nlm.nih.gov/18838001/
+22. Mediouni Z. et al. Is carpal tunnel syndrome related to computer exposure at work? A review and meta-analysis. Journal of Occupational and Environmental Medicine. 2014;56(2):204-208. doi:10.1097/JOM.0000000000000080 https://pubmed.ncbi.nlm.nih.gov/24451617/
+23. Page M.J. et al. Exercise and mobilisation interventions for carpal tunnel syndrome. Cochrane Database of Systematic Reviews. 2012;(6):CD009899. doi:10.1002/14651858.CD009899 https://pubmed.ncbi.nlm.nih.gov/22696387/
+24. Kim S.D. Efficacy of tendon and nerve gliding exercises for carpal tunnel syndrome: a systematic review of randomized controlled trials. Journal of Physical Therapy Science. 2015;27(8):2645-2648. doi:10.1589/jpts.27.2645 https://pubmed.ncbi.nlm.nih.gov/26357452/
+25. McLean L. et al. Computer terminal work and the benefit of microbreaks. Applied Ergonomics. 2001;32(3):225-237. doi:10.1016/s0003-6870(00)00071-5 https://pubmed.ncbi.nlm.nih.gov/11394463/
+26. Galinsky T.L. et al. A field study of supplementary rest breaks for data-entry operators. Ergonomics. 2000;43(5):622-638. doi:10.1080/001401300184297 https://pubmed.ncbi.nlm.nih.gov/10877480/
+27. Galinsky T. et al. Supplementary breaks and stretching exercises for data entry operators: a follow-up field study. American Journal of Industrial Medicine. 2007;50(7):519-527. doi:10.1002/ajim.20472 https://pubmed.ncbi.nlm.nih.gov/17514726/
+28. Healy B. et al. Prolonged work- and computer-related seated immobility and risk of venous thromboembolism. Journal of the Royal Society of Medicine. 2010;103(11):447-454. doi:10.1258/jrsm.2010.100155 https://pubmed.ncbi.nlm.nih.gov/21037335/
+29. Braithwaite I. et al. Venous thromboembolism risk associated with protracted work- and computer-related seated immobility: A case-control study. JRSM Open. 2016;7(8):2054270416632670. doi:10.1177/2054270416632670 https://pubmed.ncbi.nlm.nih.gov/27540486/
+30. Peddie M.C. et al. The effects of prolonged sitting, prolonged standing, and activity breaks on vascular function, and postprandial glucose and insulin responses: A randomised crossover trial. PLOS ONE. 2021;16(1):e0244841. doi:10.1371/journal.pone.0244841 https://pubmed.ncbi.nlm.nih.gov/33395691/
+31. Wittbrodt M.T., Millard-Stafford M. Dehydration Impairs Cognitive Performance: A Meta-analysis. Medicine & Science in Sports & Exercise. 2018;50(11):2360-2368. doi:10.1249/MSS.0000000000001682 https://pubmed.ncbi.nlm.nih.gov/29933347/
+32. Armstrong L.E. et al. Mild dehydration affects mood in healthy young women. The Journal of Nutrition. 2012;142(2):382-388. doi:10.3945/jn.111.142000 https://pubmed.ncbi.nlm.nih.gov/22190027/
+33. Ganio M.S. et al. Mild dehydration impairs cognitive performance and mood of men. British Journal of Nutrition. 2011;106(10):1535-1543. doi:10.1017/S0007114511002005 https://pubmed.ncbi.nlm.nih.gov/21736786/
+34. EFSA Panel on Dietetic Products, Nutrition, and Allergies (NDA). Scientific Opinion on Dietary Reference Values for water. EFSA Journal. 2010;8(3):1459. doi:10.2903/j.efsa.2010.1459
+35. Valtin H. "Drink at least eight glasses of water a day." Really? Is there scientific evidence for "8 x 8"? American Journal of Physiology: Regulatory, Integrative and Comparative Physiology. 2002;283(5):R993-R1004. doi:10.1152/ajpregu.00365.2002 https://pubmed.ncbi.nlm.nih.gov/12376390/ https://geiselmed.dartmouth.edu/news/2002_h2/08aug2002_water.shtml
+36. Zaccaro A. et al. How Breath-Control Can Change Your Life: A Systematic Review on Psycho-Physiological Correlates of Slow Breathing. Frontiers in Human Neuroscience. 2018;12:353. doi:10.3389/fnhum.2018.00353 https://pubmed.ncbi.nlm.nih.gov/30245619/
+37. Laborde S. et al. Effects of voluntary slow breathing on heart rate and heart rate variability: A systematic review and a meta-analysis. Neuroscience & Biobehavioral Reviews. 2022;138:104711. doi:10.1016/j.neubiorev.2022.104711 https://pubmed.ncbi.nlm.nih.gov/35623448/
+38. Fincham G.W. et al. Effect of breathwork on stress and mental health: A meta-analysis of randomised-controlled trials. Scientific Reports. 2023;13(1):432. doi:10.1038/s41598-022-27247-y https://pubmed.ncbi.nlm.nih.gov/36624160/
+39. Balban M.Y. et al. Brief structured respiration practices enhance mood and reduce physiological arousal. Cell Reports Medicine. 2023;4(1):100895. doi:10.1016/j.xcrm.2022.100895 https://pubmed.ncbi.nlm.nih.gov/36630953/
+40. Occupational Safety and Health Administration (OSHA). Computer Workstations eTool. https://www.osha.gov/etools/computer-workstations ; https://www.osha.gov/etools/computer-workstations/components/monitors
+41. Hoe V.C. et al. Ergonomic interventions for preventing work-related musculoskeletal disorders of the upper limb and neck among office workers. Cochrane Database of Systematic Reviews. 2018;(10):CD008570. doi:10.1002/14651858.CD008570.pub3 https://pubmed.ncbi.nlm.nih.gov/30350850/
+42. Albulescu P. et al. "Give me a break!" A systematic review and meta-analysis on the efficacy of micro-breaks for increasing well-being and performance. PLOS ONE. 2022;17(8):e0272460. doi:10.1371/journal.pone.0272460 https://pubmed.ncbi.nlm.nih.gov/36044424/
+43. Wendsche J., Lohmann-Haislah A. A Meta-Analysis on Antecedents and Outcomes of Detachment from Work. Frontiers in Psychology. 2017;7:2072. doi:10.3389/fpsyg.2016.02072 https://pubmed.ncbi.nlm.nih.gov/28133454/
+44. Boubekri M. et al. Impact of windows and daylight exposure on overall health and sleep quality of office workers: a case-control pilot study. Journal of Clinical Sleep Medicine. 2014;10(6):603-611. doi:10.5664/jcsm.3780 https://pubmed.ncbi.nlm.nih.gov/24932139/
 
-Where we are not sure of a paper's exact title, we give only authors, journal, year and link.
+Each source also has a page on the website with a short summary in plain language:
+https://unslouch.health-diet.ru/science/sources/

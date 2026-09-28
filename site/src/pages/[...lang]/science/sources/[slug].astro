@@ -1,0 +1,160 @@
+---
+import Base from "../../../../layouts/Base.astro";
+import Cta from "../../../../components/Cta.astro";
+import { LANGS, DEFAULT_LANG, absolute, href, t, type Lang } from "../../../../i18n";
+import {
+  SECTION_INFO,
+  SOURCES,
+  authorsShort,
+  citeShort,
+  metaDescription,
+  withDot,
+  related,
+  sourceLinks,
+  sourcePath,
+  type ResearchSource,
+} from "../../../../lib/references";
+
+export function getStaticPaths() {
+  return LANGS.flatMap((lang) =>
+    SOURCES.map((source) => ({
+      params: { lang: lang === DEFAULT_LANG ? undefined : lang, slug: source.slug },
+      props: { lang, source },
+    })),
+  );
+}
+
+const { lang, source: s } = Astro.props as { lang: Lang; source: ResearchSource };
+const d = t(lang);
+const ds = d.sources;
+const text = s[lang];
+const path = sourcePath(s);
+const cite = citeShort(s);
+const title = `${text.short} (${cite}): ${ds.titleSuffix} | ${d.name}`;
+const description = metaDescription(text.summary);
+const links = sourceLinks(s, lang);
+const rel = related(s);
+const science = href(lang, "/science/");
+const index = href(lang, "/science/sources/");
+
+const scholarly: Record<string, unknown> = {
+  "@type": s.kind === "webpage" ? "WebPage" : "ScholarlyArticle",
+  name: s.title,
+  author: s.authors.includes("(") || s.kind === "webpage"
+    ? { "@type": "Organization", name: s.authors }
+    : s.authors.split(",").map((name) => ({ "@type": "Person", name: name.trim() })),
+  isPartOf: { "@type": s.kind === "webpage" ? "WebSite" : "Periodical", name: s.journal },
+  url: s.url,
+  sameAs: [s.doi && `https://doi.org/${s.doi}`, s.pmid && `https://pubmed.ncbi.nlm.nih.gov/${s.pmid}/`].filter(Boolean),
+};
+if (s.year) scholarly.datePublished = String(s.year);
+if (s.doi) scholarly.identifier = { "@type": "PropertyValue", propertyID: "DOI", value: s.doi };
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    inLanguage: lang,
+    headline: `${text.short} (${cite})`,
+    description,
+    url: absolute(lang, path),
+    mainEntityOfPage: absolute(lang, path),
+    publisher: { "@type": "Organization", name: d.name, url: absolute(lang, "/") },
+    about: { "@type": "Thing", name: s.title },
+    citation: scholarly,
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { name: d.nav.home, item: absolute(lang, "/") },
+      { name: d.nav.science, item: absolute(lang, "/science/") },
+      { name: ds.allSources, item: absolute(lang, "/science/sources/") },
+      { name: text.short, item: absolute(lang, path) },
+    ].map((x, i) => ({ "@type": "ListItem", position: i + 1, ...x })),
+  },
+];
+---
+
+<Base lang={lang} path={path} title={title} description={description}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+  <div class="wrap">
+    <div class="page-head source-head">
+      <nav class="crumbs" aria-label="breadcrumbs">
+        <a href={href(lang, "/")}>{d.nav.home}</a> / <a href={science}>{d.nav.science}</a> / <a href={index}>{ds.allSources}</a>
+      </nav>
+      <p class="kicker">{ds.kind[s.kind]} · {s.sections.map((sec) => SECTION_INFO[lang][sec].label).join(", ")}</p>
+      <h1 lang="en">{s.title}</h1>
+      {
+        lang !== "en" && text.titleTranslation && (
+          <p class="source-translation">
+            <span class="muted">{ds.translation}:</span> {text.titleTranslation}
+          </p>
+        )
+      }
+      <p class="source-meta">
+        <span lang="en">{withDot(authorsShort(s, lang))}</span> <i lang="en">{s.journal}</i>{s.year && <>, {s.year}</>}{
+          s.volume_pages && <>;&nbsp;{s.volume_pages}</>
+        }.
+      </p>
+      <ul class="source-links">
+        {
+          links.map((l) => (
+            <li>
+              <a href={l.url} rel="noopener">{l.label}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <article class="prose source">
+      <h2>{ds.inBrief}</h2>
+      <p>{text.summary}</p>
+
+      <h2>{ds.findings}</h2>
+      <ul>
+        {text.findings.map((f) => <li>{f}</li>)}
+      </ul>
+
+      <h2>{ds.strength}</h2>
+      <p>{text.strength}</p>
+
+      <h2>{ds.inApp}</h2>
+      <p>{text.inApp}</p>
+      <p>
+        {ds.readInScience}:{" "}
+        {
+          s.sections.map((sec, i) => (
+            <>
+              {i > 0 && ", "}
+              <a href={`${science}#${SECTION_INFO[lang][sec].anchor}`}>{SECTION_INFO[lang][sec].label}</a>
+            </>
+          ))
+        }
+        . <a href={`${href(lang, "/")}#download`}>{ds.download}</a>
+      </p>
+
+      {
+        rel.length > 0 && (
+          <>
+            <h2>{ds.related}</h2>
+            <ul class="source-related">
+              {rel.map((r) => (
+                <li>
+                  <a href={href(lang, sourcePath(r))}>{r[lang].short}</a> <span class="muted">({citeShort(r)})</span>
+                </li>
+              ))}
+            </ul>
+            <p>
+              <a href={index}>{ds.allSourcesLong}</a>
+            </p>
+          </>
+        )
+      }
+
+      <p class="notice">{ds.disclaimer}</p>
+    </article>
+    <div style="max-width:860px"><Cta lang={lang} /></div>
+  </div>
+</Base>

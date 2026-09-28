@@ -1,0 +1,80 @@
+---
+import Base from "../../../../layouts/Base.astro";
+import Cta from "../../../../components/Cta.astro";
+import { absolute, fill, href, langPaths, t, type Lang } from "../../../../i18n";
+import { SECTIONS, SECTION_INFO, SOURCES, citeShort, sourcePath } from "../../../../lib/references";
+
+export const getStaticPaths = langPaths;
+const { lang } = Astro.props as { lang: Lang };
+const d = t(lang);
+const ds = d.sources;
+const science = href(lang, "/science/");
+const groups = SECTIONS.map((sec) => ({ sec, info: SECTION_INFO[lang][sec], items: SOURCES.filter((s) => s.sections.includes(sec)) }));
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    inLanguage: lang,
+    name: ds.title,
+    description: ds.metaDescription,
+    url: absolute(lang, "/science/sources/"),
+    hasPart: SOURCES.map((s) => ({ "@type": "Article", headline: s[lang].short, url: absolute(lang, sourcePath(s)) })),
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { name: d.nav.home, item: absolute(lang, "/") },
+      { name: d.nav.science, item: absolute(lang, "/science/") },
+      { name: ds.allSources, item: absolute(lang, "/science/sources/") },
+    ].map((x, i) => ({ "@type": "ListItem", position: i + 1, ...x })),
+  },
+];
+---
+
+<Base lang={lang} path="/science/sources/" title={ds.metaTitle} description={ds.metaDescription}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+  <div class="wrap">
+    <div class="page-head">
+      <nav class="crumbs" aria-label="breadcrumbs">
+        <a href={href(lang, "/")}>{d.nav.home}</a> / <a href={science}>{d.nav.science}</a>
+      </nav>
+      <h1>{ds.title}</h1>
+      <p class="lead">{ds.lead}</p>
+      <p class="muted">{fill(ds.count, { n: SOURCES.length })}</p>
+    </div>
+    <div class="doc">
+      <nav class="toc" aria-label={ds.sectionsTitle}>
+        <b>{ds.sectionsTitle}</b>
+        <ul>
+          {groups.map((g) => <li><a href={`#${g.sec}`}>{g.info.label}</a></li>)}
+        </ul>
+      </nav>
+      <article class="prose">
+        {
+          groups.map((g) => (
+            <section>
+              <h2 id={g.sec}>{g.info.label}</h2>
+              <ul class="source-index">
+                {g.items.map((s) => (
+                  <li>
+                    <a href={href(lang, sourcePath(s))}>{s[lang].short}</a>
+                    <span class="muted">
+                      {" "}
+                      {citeShort(s)} · {ds.kind[s.kind]}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              <p class="source-index__more">
+                <a href={`${science}#${g.info.anchor}`}>{ds.readInScience}: {g.info.label}</a>
+              </p>
+            </section>
+          ))
+        }
+      </article>
+    </div>
+    <div style="max-width:860px"><Cta lang={lang} /></div>
+  </div>
+</Base>

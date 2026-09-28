@@ -116,6 +116,12 @@ The site's domain is `unslouch.health-diet.ru` (English at `/`, Russian at `/ru/
 with an HTTPS certificate, set the `CDN_BASE_URL` variable to `https://unslouch.health-diet.ru`. Update checks already go to
 `https://unslouch.health-diet.ru/releases/latest.json` first, with GitHub releases as the fallback.
 
+## How it's made
+
+Unslouch is built by one developer together with AI: the code, texts and translations are written with
+[Claude](https://claude.ai). Health advice is based on published research, linked in [docs/science.en.md](docs/science.en.md).
+Translations other than Russian and English have not been proofread by native speakers yet: corrections are welcome.
+
 ## Contributing
 
 Translations and fixes are welcome: [CONTRIBUTING.md](CONTRIBUTING.md). Security issues: [SECURITY.md](SECURITY.md).
@@ -155,6 +161,9 @@ Linux, 15 языков. Без аккаунтов, без сбора данны�
   - время по программам (только названия).
 - **Честные тексты о здоровье:** у каждого раздела «Зачем это», источники и «когда к врачу».
   Подробно: [docs/science.ru.md](docs/science.ru.md).
+
+Приложение делает один разработчик вместе с ИИ (Claude): код, тексты и переводы. Советы о здоровье опираются
+на опубликованные исследования со ссылками.
 
 Приложение не собирает никаких данных, сайт считает посещения Яндекс Метрикой только с согласия посетителя:
 [политика конфиденциальности](legal/privacy.ru.md), [согласие на обработку данных](legal/consent.ru.md).
