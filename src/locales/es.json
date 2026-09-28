@@ -38,7 +38,11 @@
     "updateFound": "Ya está la versión {{v}}, tienes la {{current}}. La aplicación se actualizará y se reiniciará.",
     "updateNow": "Actualizar",
     "later": "Más tarde",
-    "checkFailedLong": "No se pudieron buscar actualizaciones. Comprueba la conexión a internet."
+    "checkFailedLong": "No se pudieron buscar actualizaciones. Comprueba la conexión a internet.",
+    "downloading": "Descargando la actualización… {{pct}}%",
+    "downloadingNoPct": "Descargando la actualización…",
+    "installing": "Instalando la actualización…",
+    "installFailed": "No se pudo instalar la actualización. Comprueba la conexión e inténtalo de nuevo desde el menú."
   },
   "time": {
     "hm": "{{h}} h {{m}} min",

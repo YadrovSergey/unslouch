@@ -38,7 +38,11 @@
     "updateFound": "新版本 {{v}} 已发布，你的版本是 {{current}}。应用将更新并重启。",
     "updateNow": "更新",
     "later": "稍后",
-    "checkFailedLong": "无法检查更新，请检查网络连接。"
+    "checkFailedLong": "无法检查更新，请检查网络连接。",
+    "downloading": "正在下载更新… {{pct}}%",
+    "downloadingNoPct": "正在下载更新…",
+    "installing": "正在安装更新…",
+    "installFailed": "无法安装更新。请检查网络连接，然后在菜单中重试。"
   },
   "time": {
     "hm": "{{h}} 小时 {{m}} 分钟",

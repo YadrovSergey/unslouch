@@ -490,8 +490,15 @@ fn build_menu(
             updates::Check::Checking => ("tray.checking", false),
             updates::Check::UpToDate => ("tray.upToDate", true),
             updates::Check::Failed => ("tray.checkFailed", true),
+            updates::Check::Downloading(Some(_)) => ("tray.downloading", false),
+            updates::Check::Downloading(None) => ("tray.downloadingNoPct", false),
+            updates::Check::Installing => ("tray.installing", false),
         };
-        let text = i18n::t(lang, key, &[("v", env!("CARGO_PKG_VERSION"))]);
+        let pct = match check {
+            updates::Check::Downloading(Some(p)) => p.to_string(),
+            _ => String::new(),
+        };
+        let text = i18n::t(lang, key, &[("v", env!("CARGO_PKG_VERSION")), ("pct", &pct)]);
         menu.append(&MenuItem::with_id(app, "check_updates", text, enabled, None::<&str>)?)?;
     }
     menu.append(&PredefinedMenuItem::separator(app)?)?;
@@ -615,12 +622,37 @@ fn install_update(app: &AppHandle) {
     // The updater may end the process without the usual exit events (Windows): save now.
     inner.save_stats();
     inner.save_usage();
+    inner.update_check = updates::Check::Downloading(Some(0));
     drop(inner);
+    rebuild_tray(app);
+    let progress = app.clone();
     let handle = app.clone();
-    updates::install(app.clone(), update, move |failed| {
-        handle.state::<AppState>().0.lock().unwrap().update = Some(failed);
-        rebuild_tray(&handle);
-    });
+    updates::install(
+        app.clone(),
+        update,
+        move |check| {
+            progress.state::<AppState>().0.lock().unwrap().update_check = check;
+            rebuild_tray(&progress);
+        },
+        move |failed| {
+            let lang = {
+                let state = handle.state::<AppState>();
+                let mut inner = state.0.lock().unwrap();
+                inner.update = Some(failed);
+                inner.update_check = updates::Check::Idle;
+                inner.lang()
+            };
+            rebuild_tray(&handle);
+            use tauri_plugin_dialog::{DialogExt, MessageDialogButtons, MessageDialogKind};
+            handle
+                .dialog()
+                .message(i18n::t(lang, "tray.installFailed", &[]))
+                .title(i18n::t(lang, "app.name", &[]))
+                .kind(MessageDialogKind::Warning)
+                .buttons(MessageDialogButtons::OkCustom("OK".into()))
+                .show(|_| {});
+        },
+    );
 }
 
 /// The answer to "Check for updates" in a window: the tray item alone was easy to miss.

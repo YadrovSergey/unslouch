@@ -32,6 +32,9 @@ pub enum Check {
     Checking,
     UpToDate,
     Failed,
+    /// Downloading an update the user chose to install: percent, when the server gave the size.
+    Downloading(Option<u8>),
+    Installing,
 }
 
 /// Checks right away, from the user's click in the tray. `done` gets the update, `None` when this version is the
@@ -58,9 +61,30 @@ async fn tokio_sleep(sec: u64) {
 
 /// Downloads, installs and restarts. Called only from the user's click. If anything fails, the update goes
 /// back to `failed` so the tray item keeps working.
-pub fn install(app: AppHandle, update: Update, failed: impl FnOnce(Update) + Send + 'static) {
+/// `progress` gets the download percent each time it changes, then `Check::Installing`.
+pub fn install(
+    app: AppHandle,
+    update: Update,
+    progress: impl Fn(Check) + Send + Sync + 'static,
+    failed: impl FnOnce(Update) + Send + 'static,
+) {
     tauri::async_runtime::spawn(async move {
-        match update.download_and_install(|_, _| {}, || {}).await {
+        let mut done: u64 = 0;
+        let mut shown: Option<Option<u8>> = None;
+        let result = update
+            .download_and_install(
+                |chunk, total| {
+                    done += chunk as u64;
+                    let pct = total.filter(|t| *t > 0).map(|t| (done * 100 / t).min(100) as u8);
+                    if shown != Some(pct) {
+                        shown = Some(pct);
+                        progress(Check::Downloading(pct));
+                    }
+                },
+                || progress(Check::Installing),
+            )
+            .await;
+        match result {
             Ok(()) => app.restart(),
             Err(_) => failed(update),
         }

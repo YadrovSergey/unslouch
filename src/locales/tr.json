@@ -38,7 +38,11 @@
     "updateFound": "{{v}} sürümü çıktı, sizde {{current}} var. Uygulama güncellenip yeniden başlayacak.",
     "updateNow": "Güncelle",
     "later": "Sonra",
-    "checkFailedLong": "Güncellemeler denetlenemedi. İnternet bağlantınızı kontrol edin."
+    "checkFailedLong": "Güncellemeler denetlenemedi. İnternet bağlantınızı kontrol edin.",
+    "downloading": "Güncelleme indiriliyor… %{{pct}}",
+    "downloadingNoPct": "Güncelleme indiriliyor…",
+    "installing": "Güncelleme yükleniyor…",
+    "installFailed": "Güncelleme yüklenemedi. İnternet bağlantınızı kontrol edip menüden yeniden deneyin."
   },
   "time": {
     "hm": "{{h}} sa {{m}} dk",

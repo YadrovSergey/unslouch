@@ -38,7 +38,11 @@
     "updateFound": "{{v}} versiyasi chiqdi, sizda {{current}}. Ilova yangilanadi va qayta ishga tushadi.",
     "updateNow": "Yangilash",
     "later": "Keyinroq",
-    "checkFailedLong": "Yangilanishlarni tekshirib bo'lmadi. Internet aloqasini tekshiring."
+    "checkFailedLong": "Yangilanishlarni tekshirib bo'lmadi. Internet aloqasini tekshiring.",
+    "downloading": "Yangilanish yuklanmoqda… {{pct}}%",
+    "downloadingNoPct": "Yangilanish yuklanmoqda…",
+    "installing": "Yangilanish o'rnatilmoqda…",
+    "installFailed": "Yangilanishni o'rnatib bo'lmadi. Internetni tekshirib, menyudan qayta urinib ko'ring."
   },
   "time": {
     "hm": "{{h}} soat {{m}} daq",

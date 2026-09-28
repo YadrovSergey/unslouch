@@ -38,7 +38,11 @@
     "updateFound": "Version {{v}} is out, you have {{current}}. The app will update and restart.",
     "updateNow": "Update",
     "later": "Later",
-    "checkFailedLong": "Couldn't check for updates. Check your internet connection."
+    "checkFailedLong": "Couldn't check for updates. Check your internet connection.",
+    "downloading": "Downloading the update… {{pct}}%",
+    "downloadingNoPct": "Downloading the update…",
+    "installing": "Installing the update…",
+    "installFailed": "Couldn't install the update. Check your internet connection and try again from the menu."
   },
   "time": {
     "hm": "{{h}} h {{m}} min",

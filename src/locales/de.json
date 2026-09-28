@@ -38,7 +38,11 @@
     "updateFound": "Version {{v}} ist da, Sie haben {{current}}. Die App wird aktualisiert und neu gestartet.",
     "updateNow": "Aktualisieren",
     "later": "Später",
-    "checkFailedLong": "Updates konnten nicht geprüft werden. Prüfen Sie die Internetverbindung."
+    "checkFailedLong": "Updates konnten nicht geprüft werden. Prüfen Sie die Internetverbindung.",
+    "downloading": "Update wird geladen… {{pct}}%",
+    "downloadingNoPct": "Update wird geladen…",
+    "installing": "Update wird installiert…",
+    "installFailed": "Das Update konnte nicht installiert werden. Prüfen Sie die Internetverbindung und versuchen Sie es im Menü erneut."
   },
   "time": {
     "hm": "{{h}} Std. {{m}} Min.",
