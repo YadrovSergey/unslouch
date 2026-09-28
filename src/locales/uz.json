@@ -362,7 +362,8 @@
     "licenses": "Uchinchi tomon litsenziyalari",
     "translation": "Tarjimada xato topdingizmi?",
     "privacyShort": "Biz hech qanday maʼlumot toʻplamaymiz: hammasi faqat kompyuteringizda saqlanadi.",
-    "version": "Versiya {{v}}"
+    "version": "Versiya {{v}}",
+    "asIs": "Ilova «boricha», kafolatlarsiz taqdim etiladi va undan oʻz xavfingiz ostida foydalanasiz. Batafsil foydalanish shartlarida."
   },
   "onboarding": {
     "title": "Unslouch ishlayapti",

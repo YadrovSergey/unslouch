@@ -23,8 +23,10 @@ Windows is checked only by CI.
 
 ## Rules
 
-- **No data collection, ever.** No analytics, telemetry, crash reports, accounts, cookies on the site. The only
-  network request is the update check. Any change here must be reflected in `legal/privacy.*.md`.
+- **The app collects no data, ever.** No analytics, telemetry, crash reports, accounts. Its only network request is
+  the update check. The website has one exception: Yandex Metrica (counter 113120121) in
+  `site/src/components/CookieConsent.astro`, loaded only after "Accept" in the cookie notice (152-FZ and GDPR),
+  no `<noscript>` pixel. Any change here must be reflected in `legal/privacy.*.md` and `legal/consent.*.md`.
 - **Health texts:** "reduces discomfort/fatigue", never "treats", "prevents carpal tunnel/thrombosis", "fixes
   posture", no blue-light glasses. Every section has "when to see a doctor". No neck circles, nothing through pain.
   New claims need a source in `docs/science.*.md`.

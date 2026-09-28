@@ -362,7 +362,8 @@
     "licenses": "Lizenzen von Drittanbietern",
     "translation": "Fehler in der Übersetzung gefunden?",
     "privacyShort": "Wir sammeln keine Daten: Alles bleibt auf Ihrem Computer.",
-    "version": "Version {{v}}"
+    "version": "Version {{v}}",
+    "asIs": "Die App wird „wie besehen“ und ohne Gewähr bereitgestellt, die Nutzung erfolgt auf eigenes Risiko. Mehr in den Nutzungsbedingungen."
   },
   "onboarding": {
     "title": "Unslouch läuft",

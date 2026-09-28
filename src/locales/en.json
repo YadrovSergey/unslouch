@@ -362,7 +362,8 @@
     "licenses": "Third-party licenses",
     "translation": "Found a translation mistake?",
     "privacyShort": "We don't collect any data: everything stays on your computer.",
-    "version": "Version {{v}}"
+    "version": "Version {{v}}",
+    "asIs": "The app is provided \"as is\", without warranties, and you use it at your own risk. See the terms of use."
   },
   "onboarding": {
     "title": "Unslouch is running",

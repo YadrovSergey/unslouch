@@ -3,6 +3,7 @@ import "../styles/tokens.css";
 import "../styles/figures.css";
 import "../styles/site.css";
 import { GITHUB, EMAIL, LANGS, absolute, href, t, type Lang } from "../i18n";
+import CookieConsent from "../components/CookieConsent.astro";
 
 interface Props {
   lang: Lang;
@@ -134,6 +135,7 @@ const current = (p: string) => (path === p || (p !== "/" && path.startsWith(p)) 
           </a>
           <p>{d.footer.tagline}</p>
           <p>{d.footer.notDoctor}</p>
+          <p><a href={href(lang, "/terms/")}>{d.footer.asIs}</a></p>
         </div>
         <ul>
           <li><a href={href(lang, "/tools/")}>{d.nav.tools}</a></li>
@@ -144,12 +146,16 @@ const current = (p: string) => (path === p || (p !== "/" && path.startsWith(p)) 
         <ul>
           <li><a href={href(lang, "/privacy/")}>{d.footer.privacy}</a></li>
           <li><a href={href(lang, "/terms/")}>{d.footer.terms}</a></li>
+          <li><a href={href(lang, "/consent/")}>{d.footer.consent}</a></li>
+          <li><button class="linklike" type="button" data-open-consent>{d.footer.cookies}</button></li>
           <li><a href={GITHUB}>{d.footer.source}</a></li>
           <li><a href={`mailto:${EMAIL}`}>{d.footer.contact}: {EMAIL}</a></li>
           <li class="muted">{d.footer.author}</li>
         </ul>
       </div>
     </footer>
+
+    <CookieConsent lang={lang} />
 
     <script is:inline>
       // The EN/RU button remembers the choice, so the automatic language pick never overrides it.

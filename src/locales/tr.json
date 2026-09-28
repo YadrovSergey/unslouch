@@ -362,7 +362,8 @@
     "licenses": "Üçüncü taraf lisansları",
     "translation": "Çeviride hata mı buldunuz?",
     "privacyShort": "Hiçbir veri toplamıyoruz: her şey bilgisayarınızda kalır.",
-    "version": "Sürüm {{v}}"
+    "version": "Sürüm {{v}}",
+    "asIs": "Uygulama \"olduğu gibi\", garantisiz sunulur ve riski size aittir. Ayrıntılar kullanım koşullarında."
   },
   "onboarding": {
     "title": "Unslouch çalışıyor",

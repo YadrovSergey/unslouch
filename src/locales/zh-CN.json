@@ -358,7 +358,8 @@
     "licenses": "第三方许可",
     "translation": "发现翻译错误？",
     "privacyShort": "我们不收集任何数据：所有内容都只保存在您的电脑上。",
-    "version": "版本 {{v}}"
+    "version": "版本 {{v}}",
+    "asIs": "本应用按“原样”提供，不附带任何保证，使用风险由您自行承担。详见使用条款。"
   },
   "onboarding": {
     "title": "Unslouch 已在运行",

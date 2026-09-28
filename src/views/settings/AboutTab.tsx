@@ -9,6 +9,7 @@ export function AboutTab({ info }: { info: AppInfo }) {
     <Section title={t("app.name")}>
       <p>{t("about.text")}</p>
       <p className="notice">{t("about.disclaimer")}</p>
+      <p className="muted">{t("about.asIs")}</p>
       <ul className="links">
         <li>
           <ExternalLink href={SITE_URL}>{t("about.site")}</ExternalLink>

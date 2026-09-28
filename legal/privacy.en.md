@@ -1,10 +1,13 @@
 # Unslouch Privacy Policy
 
-Effective: 27 September 2026.
+Effective: 28 September 2026.
 
 In short: the app sends nothing about you to us or to anyone else. There are no accounts, ad
 networks, analytics, telemetry or crash reports. Everything the app remembers is stored in files
 on your computer, and only you can delete it.
+
+The app's website has a Yandex Metrica counter. It loads only if you click "Accept" in the cookie
+notice. Details in "The website" below.
 
 Unslouch (called «Засиделся» in Russian) is free and open source (MIT licence). Its author and
 rights holder is Sergey Yadrov, a private individual, referred to below as "we".
@@ -80,10 +83,28 @@ only if you click it.
 
 ## The website
 
-The unslouch.health-diet.ru website is static. It has no cookies, no visitor counters and no analytics.
-It is served by Selectel's CDN. Like any hosting provider, Selectel keeps standard technical
-request logs (IP address, time, requested file, browser). We do not analyse them or use them to
-identify you.
+The unslouch.health-diet.ru website is served by Selectel's CDN. Like any hosting provider,
+Selectel keeps standard technical request logs (IP address, time, requested file, browser).
+We do not analyse them or use them to identify you.
+
+**Visit statistics.** To understand which pages and tools are useful, the site has a Yandex Metrica
+counter. On the first visit the site shows a cookie notice:
+
+- until you click "Accept", the counter is not loaded, no cookies are set and nothing is collected;
+- after "Accept", Metrica receives cookie identifiers (for example `_ym_uid`, `_ym_d`, `_ym_isad`),
+  your IP address, browser and device details, pages viewed, the referring site, visit time and
+  actions on the page: clicks, scrolling, link clicks and downloads;
+- "Decline" is remembered and the notice does not come back.
+
+The data is processed by Yandex LLC as the owner of Yandex Metrica and stored in Russia. We see only
+aggregate statistics and do not use them for advertising. The terms are in a separate document:
+[consent to the processing of personal data](consent.en.md).
+
+You can change your mind at any time: "Cookies and statistics" at the bottom of any page.
+
+**What the site stores in your browser without consent.** Your chosen theme, language and your answer
+to the cookie notice, and in the free tools their settings. These are browser storage entries
+(localStorage), not cookies; they are not sent anywhere and cannot identify you.
 
 ## Other websites
 
@@ -114,11 +135,18 @@ All these checks happen on your computer, and their results are not sent anywher
 
 ## Data protection law (GDPR, Russian Federal Law 152-FZ)
 
-We do not receive or process personal data of the app's or website's users (the CDN technical
-logs mentioned above are kept by the hosting provider, and we do not use them to identify you).
-We therefore do not consider ourselves a data controller under the GDPR or a personal data
-operator under Russian Federal Law No. 152-FZ "On Personal Data". The settings and statistics
-files are created and stored on your device, and we have no access to them.
+**The app.** We do not receive or process personal data of the app's users. The settings and
+statistics files are created and stored on your device, and we have no access to them.
+
+**The website.** If you agreed to statistics, the data controller under the GDPR (and the personal
+data operator under Russian Federal Law No. 152-FZ "On Personal Data") is Sergey Yadrov. Legal
+basis: your consent (Article 6(1)(a) GDPR, Article 6(1)(1) of 152-FZ). Processor: Yandex LLC
+(Yandex Metrica). The data is processed in Russia.
+
+You have the right to know what data about you is processed, to have it corrected, restricted or
+erased, and to withdraw your consent. Write to support@health-diet.ru; we answer within 10 working
+days. You can also withdraw consent on the site itself: "Cookies and statistics" at the bottom of
+any page. If you are in the EU, you may also complain to your data protection authority.
 
 If you email us, we use your address and message only to reply and do not pass them on to
 third parties. Ask us to delete the correspondence and we will.
@@ -126,7 +154,7 @@ third parties. Ask us to delete the correspondence and we will.
 ## Children
 
 The app is not designed specifically for children and learns nothing about a user's age.
-Since we receive no data at all, we hold no data about children either.
+The app sends us no data at all. Website statistics are aggregate, and we do not learn visitors' ages.
 
 ## Changes
 

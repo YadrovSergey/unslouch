@@ -1,0 +1,80 @@
+---
+import { href, t, type Lang } from "../i18n";
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const c = t(lang).cookieBanner;
+---
+
+<!--
+  Yandex Metrica loads only after "Accept" (152-FZ since 1 Sep 2025 and GDPR both want consent before any
+  cookie or data is collected). No <noscript> pixel: it would count visitors who never agreed.
+-->
+<div class="consent" id="consent" role="region" aria-label={c.accept} hidden>
+  <p>
+    {c.text}{" "}
+    <a href={href(lang, "/consent/")}>{c.consent}</a> · <a href={href(lang, "/privacy/")}>{c.privacy}</a>
+  </p>
+  <div class="consent__actions">
+    <button class="btn" type="button" data-consent="no">{c.decline}</button>
+    <button class="btn is-primary" type="button" data-consent="yes">{c.accept}</button>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    var KEY = "unslouch.consent";
+    var ID = 113120121;
+    var bar = document.getElementById("consent");
+    function get() {
+      try { return localStorage.getItem(KEY); } catch (e) { return null; }
+    }
+    function set(v) {
+      try { localStorage.setItem(KEY, v); } catch (e) {}
+    }
+    function load() {
+      if (window.ym) return;
+      (function (m, e, t, r, i, k, a) {
+        m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments); };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) return; }
+        (k = e.createElement(t)), (a = e.getElementsByTagName(t)[0]), (k.async = 1), (k.src = r), a.parentNode.insertBefore(k, a);
+      })(window, document, "script", "https://mc.yandex.ru/metrika/tag.js?id=" + ID, "ym");
+      window.ym(ID, "init", {
+        ssr: true,
+        clickmap: true,
+        referrer: document.referrer,
+        url: location.href,
+        accurateTrackBounce: true,
+        trackLinks: true,
+      });
+    }
+    // Metrica cookies live on this domain; on "Decline" after an earlier "Accept" they are removed.
+    function dropCookies() {
+      document.cookie.split(";").forEach(function (c) {
+        var name = c.split("=")[0].trim();
+        if (name.indexOf("_ym") === 0) {
+          document.cookie = name + "=; Max-Age=0; path=/";
+          document.cookie = name + "=; Max-Age=0; path=/; domain=" + location.hostname;
+        }
+      });
+    }
+    var state = get();
+    if (state === "yes") load();
+    else if (state !== "no") bar.hidden = false;
+    bar.addEventListener("click", function (e) {
+      var v = e.target && e.target.getAttribute && e.target.getAttribute("data-consent");
+      if (!v) return;
+      var was = get();
+      set(v);
+      bar.hidden = true;
+      if (v === "yes") load();
+      else if (was === "yes") { dropCookies(); location.reload(); }
+    });
+    // "Cookies and statistics" in the footer opens the notice again.
+    document.querySelectorAll("[data-open-consent]").forEach(function (b) {
+      b.addEventListener("click", function () { bar.hidden = false; bar.querySelector("[data-consent='yes']").focus(); });
+    });
+  })();
+</script>

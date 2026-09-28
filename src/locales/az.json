@@ -362,7 +362,8 @@
     "licenses": "Üçüncü tərəf lisenziyaları",
     "translation": "Tərcümədə səhv tapdınız?",
     "privacyShort": "Heç bir məlumat toplamırıq: hər şey yalnız kompüterinizdə saxlanılır.",
-    "version": "Versiya {{v}}"
+    "version": "Versiya {{v}}",
+    "asIs": "Tətbiq «olduğu kimi», zəmanətsiz təqdim olunur və ondan öz riskinizlə istifadə edirsiniz. Ətraflı istifadə şərtlərində."
   },
   "onboarding": {
     "title": "Unslouch işləyir",

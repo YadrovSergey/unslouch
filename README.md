@@ -2,7 +2,7 @@
 
 A free, open-source app for people who spend the whole day at a computer. It reminds you to look into the
 distance, blink, stand up, stretch your neck, shoulders and hands, and drink water, following what research
-and doctors recommend. macOS, Windows and Linux. 15 languages. No accounts, no ads, no data collection.
+and doctors recommend. macOS, Windows and Linux. 15 languages. No accounts, no ads, and the app collects no data.
 
 [Русский ниже](#засиделся)
 
@@ -26,8 +26,9 @@ Presets: Recommended, Pomodoro (25/5), Hourly, Custom.
 
 ## Privacy
 
-Nothing leaves your computer. No analytics, telemetry, crash reports or accounts. The only network request
-is the daily update check, and you can turn it off. Details: [legal/privacy.en.md](legal/privacy.en.md).
+The app sends nothing from your computer. No analytics, telemetry, crash reports or accounts. The only network
+request is the daily update check, and you can turn it off. The website counts visits with Yandex Metrica only
+after the visitor clicks "Accept" in the cookie notice ([consent](legal/consent.en.md)). Details: [legal/privacy.en.md](legal/privacy.en.md).
 
 The app does not treat anything and does not replace a doctor: [legal/terms.en.md](legal/terms.en.md).
 
@@ -155,8 +156,10 @@ Linux, 15 языков. Без аккаунтов, без сбора данны�
 - **Честные тексты о здоровье:** у каждого раздела «Зачем это», источники и «когда к врачу».
   Подробно: [docs/science.ru.md](docs/science.ru.md).
 
-Мы не собираем никаких данных: [политика конфиденциальности](legal/privacy.ru.md).
-Приложение не лечит и не заменяет врача: [условия использования](legal/terms.ru.md).
+Приложение не собирает никаких данных, сайт считает посещения Яндекс Метрикой только с согласия посетителя:
+[политика конфиденциальности](legal/privacy.ru.md), [согласие на обработку данных](legal/consent.ru.md).
+Приложение и сайт предоставляются «как есть», без гарантий; приложение не лечит и не заменяет врача:
+[условия использования](legal/terms.ru.md).
 
 
 ## Как выпустить новую версию и выложить сайт

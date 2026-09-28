@@ -1739,3 +1739,59 @@ input[type="checkbox"] {
 .download__more a {
   color: var(--muted);
 }
+
+/* Cookie notice: bottom of the screen, never covers the whole page. */
+.consent {
+  position: fixed;
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  z-index: 50;
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  font-size: 14px;
+}
+
+.consent[hidden] {
+  display: none;
+}
+
+.consent p {
+  margin: 0;
+  flex: 1;
+}
+
+.consent__actions {
+  display: flex;
+  gap: 8px;
+  flex: none;
+}
+
+@media (max-width: 600px) {
+  .consent {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .consent__actions {
+    justify-content: flex-end;
+  }
+}
+
+.linklike {
+  border: 0;
+  background: none;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}

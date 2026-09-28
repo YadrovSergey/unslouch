@@ -1,9 +1,11 @@
 # Unslouch Terms of Use
 
-Effective: 27 September 2026.
+Effective: 28 September 2026.
 
-Unslouch (called «Засиделся» in Russian) was created by Sergey Yadrov, a private individual,
-referred to below as "we". By downloading, installing or running the app you agree to these terms.
+Unslouch (called «Засиделся» in Russian) and its website unslouch.health-diet.ru were created by
+Sergey Yadrov, a private individual, referred to below as "we". These terms cover the app, the website,
+the free tools on the website and the browser version. By downloading, installing or running the app,
+or by using the website, you agree to these terms.
 
 ## Free and open source
 
@@ -14,9 +16,19 @@ rights to the code, the licence prevails.
 
 ## As is
 
-The app is provided "as is", without warranties of any kind. We try to make it work without
-errors, but we do not promise it always will, on every computer and system, or that it will suit
-your purposes.
+The app, the website, the tools on the website and the browser version are provided "as is" and
+"as available", without warranties of any kind, express or implied. In particular, we do not warrant:
+
+- that they will work without errors or interruptions, on every computer, system and browser;
+- that they are fit for your purposes or will produce any health result;
+- that calculations and suggestions are accurate: for example, the desk height calculator uses
+  average body proportions and gives only a starting point;
+- that the research summaries are complete or up to date: they retell published studies and are not
+  medical advice;
+- that the website, downloads and updates will always be available: they depend on hosting, a CDN
+  and GitHub, which we do not control.
+
+We may change or stop the app, the website or their operation at any time.
 
 ## Not a medical product
 
@@ -33,16 +45,19 @@ your purposes.
 ## Limitation of liability
 
 To the extent permitted by law, we are not liable for any direct or indirect damage arising from
-using or being unable to use the app, including data loss, lost profits, or harm from exercises
-done against the advice above. The app is free and you use it at your own risk.
+using or being unable to use the app, the website or the tools, including loss of data or settings,
+failures and interruptions, lost profits, decisions made on the basis of suggestions or
+calculations, or harm from exercises done against the advice above. We are not responsible for
+third-party services and sites that links lead to (GitHub, Yandex Metrica, health-diet.ru and
+others). The app and the website are free and you use them at your own risk.
 
 This limitation does not apply where the law does not allow it, for example in cases of intent.
 
 ## Changes
 
 These terms may change. A new version takes effect from the date shown at the top. All previous
-versions are visible in the repository history on GitHub. By continuing to use the app after
-a change, you accept the new version.
+versions are visible in the repository history on GitHub. By continuing to use the app or the
+website after a change, you accept the new version.
 
 ## Governing law
 
