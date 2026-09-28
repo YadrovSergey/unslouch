@@ -11,26 +11,29 @@ const ds = d.sources;
 const science = href(lang, "/science/");
 const groups = SECTIONS.map((sec) => ({ sec, info: SECTION_INFO[lang][sec], items: SOURCES.filter((s) => s.sections.includes(sec)) }));
 
-const jsonLd = [
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    inLanguage: lang,
-    name: ds.title,
-    description: ds.metaDescription,
-    url: absolute(lang, "/science/sources/"),
-    hasPart: SOURCES.map((s) => ({ "@type": "Article", headline: s[lang].short, url: absolute(lang, sourcePath(s)) })),
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { name: d.nav.home, item: absolute(lang, "/") },
-      { name: d.nav.science, item: absolute(lang, "/science/") },
-      { name: ds.allSources, item: absolute(lang, "/science/sources/") },
-    ].map((x, i) => ({ "@type": "ListItem", position: i + 1, ...x })),
-  },
-];
+// One object with @graph: Safari fails on an array of objects that each carry @context
+// ("undefined is not an object (evaluating 'r["@context"].toLowerCase')").
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      inLanguage: lang,
+      name: ds.title,
+      description: ds.metaDescription,
+      url: absolute(lang, "/science/sources/"),
+      hasPart: SOURCES.map((s) => ({ "@type": "Article", headline: s[lang].short, url: absolute(lang, sourcePath(s)) })),
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { name: d.nav.home, item: absolute(lang, "/") },
+        { name: d.nav.science, item: absolute(lang, "/science/") },
+        { name: ds.allSources, item: absolute(lang, "/science/sources/") },
+      ].map((x, i) => ({ "@type": "ListItem", position: i + 1, ...x })),
+    },
+  ],
+};
 ---
 
 <Base lang={lang} path="/science/sources/" title={ds.metaTitle} description={ds.metaDescription}>

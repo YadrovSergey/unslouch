@@ -32,27 +32,30 @@ const cells = Array.from({ length: 26 * 7 }, (_, i) => {
   return i % 7 >= 5 ? 0 : v > 6 ? 3 : v > 3 ? 2 : v > 1 ? 1 : 0;
 });
 
-const jsonLd = [
-  {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: d.name,
-    alternateName: d.name === "Unslouch" ? "Засиделся" : "Unslouch",
-    description: d.meta.home.description,
-    applicationCategory: "HealthApplication",
-    operatingSystem: "macOS, Windows, Linux",
-    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-    downloadUrl: [DOWNLOADS.mac, DOWNLOADS.win, DOWNLOADS.linux].map((p) => ORIGIN + p),
-    license: "https://opensource.org/licenses/MIT",
-    author: { "@type": "Person", name: lang === "ru" ? "Сергей Ядров" : "Sergey Yadrov" },
-    inLanguage: lang,
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: h.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
-  },
-];
+// One object with @graph: Safari fails on an array of objects that each carry @context
+// ("undefined is not an object (evaluating 'r["@context"].toLowerCase')").
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      name: d.name,
+      alternateName: d.name === "Unslouch" ? "Засиделся" : "Unslouch",
+      description: d.meta.home.description,
+      applicationCategory: "HealthApplication",
+      operatingSystem: "macOS, Windows, Linux",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+      downloadUrl: [DOWNLOADS.mac, DOWNLOADS.win, DOWNLOADS.linux].map((p) => ORIGIN + p),
+      license: "https://opensource.org/licenses/MIT",
+      author: { "@type": "Person", name: lang === "ru" ? "Сергей Ядров" : "Sergey Yadrov" },
+      inLanguage: lang,
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: h.faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+    },
+  ],
+};
 ---
 
 <Base lang={lang} path="/" title={d.meta.home.title} description={d.meta.home.description}>

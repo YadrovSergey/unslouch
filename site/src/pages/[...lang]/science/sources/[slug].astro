@@ -50,30 +50,32 @@ const scholarly: Record<string, unknown> = {
 if (s.year) scholarly.datePublished = String(s.year);
 if (s.doi) scholarly.identifier = { "@type": "PropertyValue", propertyID: "DOI", value: s.doi };
 
-const jsonLd = [
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    inLanguage: lang,
-    headline: `${text.short} (${cite})`,
-    description,
-    url: absolute(lang, path),
-    mainEntityOfPage: absolute(lang, path),
-    publisher: { "@type": "Organization", name: d.name, url: absolute(lang, "/") },
-    about: { "@type": "Thing", name: s.title },
-    citation: scholarly,
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { name: d.nav.home, item: absolute(lang, "/") },
-      { name: d.nav.science, item: absolute(lang, "/science/") },
-      { name: ds.allSources, item: absolute(lang, "/science/sources/") },
-      { name: text.short, item: absolute(lang, path) },
-    ].map((x, i) => ({ "@type": "ListItem", position: i + 1, ...x })),
-  },
-];
+// One object with @graph: Safari fails on an array of objects that each carry @context.
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      inLanguage: lang,
+      headline: `${text.short} (${cite})`,
+      description,
+      url: absolute(lang, path),
+      mainEntityOfPage: absolute(lang, path),
+      publisher: { "@type": "Organization", name: d.name, url: absolute(lang, "/") },
+      about: { "@type": "Thing", name: s.title },
+      citation: scholarly,
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { name: d.nav.home, item: absolute(lang, "/") },
+        { name: d.nav.science, item: absolute(lang, "/science/") },
+        { name: ds.allSources, item: absolute(lang, "/science/sources/") },
+        { name: text.short, item: absolute(lang, path) },
+      ].map((x, i) => ({ "@type": "ListItem", position: i + 1, ...x })),
+    },
+  ],
+};
 ---
 
 <Base lang={lang} path={path} title={title} description={description}>
