@@ -34,7 +34,11 @@
     "checkUpdates": "Verificar atualizações",
     "checking": "Verificando atualizações…",
     "upToDate": "Você tem a versão mais recente, {{v}}",
-    "checkFailed": "Não foi possível verificar. Tentar de novo"
+    "checkFailed": "Não foi possível verificar. Tentar de novo",
+    "updateFound": "Saiu a versão {{v}}, você tem a {{current}}. O app vai atualizar e reiniciar.",
+    "updateNow": "Atualizar",
+    "later": "Depois",
+    "checkFailedLong": "Não foi possível verificar atualizações. Verifique a conexão com a internet."
   },
   "time": {
     "hm": "{{h}} h {{m}} min",
@@ -162,7 +166,7 @@
     "cuesSection": "Sinais discretos",
     "cuesHint": "Sem janelas nem botões, não atrapalham.",
     "blinkCue": "Piscar",
-    "blinkCueHint": "As bordas da tela escurecem por um segundo",
+    "blinkCueHint": "As bordas da tela escurecem por alguns segundos",
     "postureCue": "Mudar de posição",
     "postureCueHint": "Um pequeno aviso no topo por alguns segundos",
     "water": "Água",
@@ -217,7 +221,10 @@
     "defaults": "Restaurar recomendado",
     "min": "min",
     "sec": "s",
-    "showCue": "Mostrar"
+    "showCue": "Mostrar",
+    "blinkCueFor": "Duração",
+    "cueSound": "Som",
+    "cueSoundHint": "Um som suave a cada sinal"
   },
   "data": {
     "title": "Levar para outro computador",

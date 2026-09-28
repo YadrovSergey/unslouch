@@ -19,10 +19,12 @@ export interface Settings {
   longDurationMin: number;
   blinkCueEnabled: boolean;
   blinkIntervalMin: number;
+  blinkCueSec: number;
   postureCueEnabled: boolean;
   postureIntervalMin: number;
   waterEnabled: boolean;
   waterIntervalMin: number;
+  cueSound: boolean;
   neckDaily: boolean;
   breathingDaily: boolean;
   endOfDayEnabled: boolean;

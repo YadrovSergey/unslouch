@@ -317,12 +317,14 @@ fn preview_cue(app: AppHandle, window: WebviewWindow, state: State<AppState>, cu
         "water" => Cue::Water,
         _ => return Err("unknown cue".into()),
     };
-    let (lang, theme) = {
+    let (lang, s) = {
         let inner = state.0.lock().unwrap();
-        (inner.lang(), inner.settings.theme.clone())
+        (inner.lang(), inner.settings.clone())
     };
     let handle = app.clone();
-    app.run_on_main_thread(move || overlay::show_cue(&handle, cue, lang, i18n::is_cis(lang), &theme))
+    app.run_on_main_thread(move || {
+        overlay::show_cue(&handle, cue, lang, i18n::is_cis(lang), &s.theme, s.blink_cue_sec, s.cue_sound)
+    })
         .map_err(|e| e.to_string())
 }
 
@@ -605,6 +607,56 @@ fn start_break_now(app: &AppHandle, kind: BreakKind) {
     present_break(app, info, lang, settings.sound_enabled, tip);
 }
 
+/// Downloads and installs the update found earlier, then restarts. If it fails, the update stays in the tray.
+fn install_update(app: &AppHandle) {
+    let state = app.state::<AppState>();
+    let mut inner = state.0.lock().unwrap();
+    let Some(update) = inner.update.take() else { return };
+    // The updater may end the process without the usual exit events (Windows): save now.
+    inner.save_stats();
+    inner.save_usage();
+    drop(inner);
+    let handle = app.clone();
+    updates::install(app.clone(), update, move |failed| {
+        handle.state::<AppState>().0.lock().unwrap().update = Some(failed);
+        rebuild_tray(&handle);
+    });
+}
+
+/// The answer to "Check for updates" in a window: the tray item alone was easy to miss.
+/// `found` is the new version; without one, `check` says whether this version is the latest or the check failed.
+fn show_update_answer(app: &AppHandle, lang: &'static str, found: Option<String>, check: updates::Check) {
+    use tauri_plugin_dialog::{DialogExt, MessageDialogButtons, MessageDialogKind};
+    let current = env!("CARGO_PKG_VERSION");
+    let title = i18n::t(lang, "app.name", &[]);
+    match found {
+        Some(version) => {
+            let text = i18n::t(lang, "tray.updateFound", &[("v", &version), ("current", current)]);
+            let buttons =
+                MessageDialogButtons::OkCancelCustom(i18n::t(lang, "tray.updateNow", &[]), i18n::t(lang, "tray.later", &[]));
+            let handle = app.clone();
+            app.dialog().message(text).title(title).kind(MessageDialogKind::Info).buttons(buttons).show(move |install| {
+                if install {
+                    install_update(&handle);
+                }
+            });
+        }
+        None => {
+            let (text, kind) = if check == updates::Check::Failed {
+                (i18n::t(lang, "tray.checkFailedLong", &[]), MessageDialogKind::Warning)
+            } else {
+                (i18n::t(lang, "tray.upToDate", &[("v", current)]), MessageDialogKind::Info)
+            };
+            app.dialog()
+                .message(text)
+                .title(title)
+                .kind(kind)
+                .buttons(MessageDialogButtons::OkCustom("OK".into()))
+                .show(|_| {});
+        }
+    }
+}
+
 /// The site's "Say thanks" page in the app's language: English at the root, the others under /<code>/.
 fn donate_url(lang: &str) -> String {
     if lang == "en" {
@@ -643,28 +695,16 @@ fn on_menu(app: &AppHandle, id: &str) {
             let lang = app.state::<AppState>().0.lock().unwrap().lang();
             let _ = app.opener().open_url(donate_url(lang), None::<&str>);
         }
-        "update" => {
-            let state = app.state::<AppState>();
-            let mut inner = state.0.lock().unwrap();
-            let Some(update) = inner.update.take() else { return };
-            // The updater may end the process without the usual exit events (Windows): save now.
-            inner.save_stats();
-            inner.save_usage();
-            drop(inner);
-            let handle = app.clone();
-            updates::install(app.clone(), update, move |failed| {
-                handle.state::<AppState>().0.lock().unwrap().update = Some(failed);
-                rebuild_tray(&handle);
-            });
-        }
+        "update" => install_update(app),
         "check_updates" => {
             app.state::<AppState>().0.lock().unwrap().update_check = updates::Check::Checking;
             rebuild_tray(app);
             let handle = app.clone();
             updates::check_now(app.clone(), move |result| {
-                {
+                let (lang, found, check) = {
                     let state = handle.state::<AppState>();
                     let mut inner = state.0.lock().unwrap();
+                    let found = result.as_ref().ok().and_then(|u| u.as_ref().map(|u| u.version.clone()));
                     inner.update_check = match result {
                         Ok(Some(update)) => {
                             inner.update = Some(update);
@@ -673,8 +713,10 @@ fn on_menu(app: &AppHandle, id: &str) {
                         Ok(None) => updates::Check::UpToDate,
                         Err(()) => updates::Check::Failed,
                     };
-                }
+                    (inner.lang(), found, inner.update_check)
+                };
                 rebuild_tray(&handle);
+                show_update_answer(&handle, lang, found, check);
             });
         }
         "quit" => app.exit(0),
@@ -756,6 +798,7 @@ fn run_ticker(app: AppHandle) {
             let tip = inner.tip;
             let is_cis = i18n::is_cis(lang);
             let theme = s.theme.clone();
+            let (blink_sec, cue_sound) = (s.blink_cue_sec, s.cue_sound);
             drop(inner);
             if n % 5 == 0 || out.action != Action::None {
                 refresh_tray(&app);
@@ -767,7 +810,7 @@ fn run_ticker(app: AppHandle) {
                     let _ = app.run_on_main_thread(move || present_break(&handle, info, lang, sound, tip));
                 }
                 Action::Cue(cue) => {
-                    let _ = app.run_on_main_thread(move || overlay::show_cue(&handle, cue, lang, is_cis, &theme));
+                    let _ = app.run_on_main_thread(move || overlay::show_cue(&handle, cue, lang, is_cis, &theme, blink_sec, cue_sound));
                 }
                 Action::None => {}
             }

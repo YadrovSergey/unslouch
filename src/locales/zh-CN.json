@@ -34,7 +34,11 @@
     "checkUpdates": "检查更新",
     "checking": "正在检查更新…",
     "upToDate": "已是最新版本 {{v}}",
-    "checkFailed": "检查失败，点此重试"
+    "checkFailed": "检查失败，点此重试",
+    "updateFound": "新版本 {{v}} 已发布，你的版本是 {{current}}。应用将更新并重启。",
+    "updateNow": "更新",
+    "later": "稍后",
+    "checkFailedLong": "无法检查更新，请检查网络连接。"
   },
   "time": {
     "hm": "{{h}} 小时 {{m}} 分钟",
@@ -158,7 +162,7 @@
     "cuesSection": "轻提示",
     "cuesHint": "没有窗口和按钮，不打扰工作。",
     "blinkCue": "眨眼",
-    "blinkCueHint": "屏幕边缘暗一秒钟",
+    "blinkCueHint": "屏幕边缘变暗几秒钟",
     "postureCue": "换个姿势",
     "postureCueHint": "顶部出现几秒钟的小横幅",
     "water": "喝水",
@@ -213,7 +217,10 @@
     "defaults": "恢复推荐设置",
     "min": "分钟",
     "sec": "秒",
-    "showCue": "预览"
+    "showCue": "预览",
+    "blinkCueFor": "持续",
+    "cueSound": "声音",
+    "cueSoundHint": "每次提示时发出轻柔的声音"
   },
   "data": {
     "title": "迁移到另一台电脑",

@@ -34,7 +34,11 @@
     "checkUpdates": "Güncellemeleri denetle",
     "checking": "Güncellemeler denetleniyor…",
     "upToDate": "En son sürümü kullanıyorsunuz: {{v}}",
-    "checkFailed": "Denetlenemedi. Yeniden dene"
+    "checkFailed": "Denetlenemedi. Yeniden dene",
+    "updateFound": "{{v}} sürümü çıktı, sizde {{current}} var. Uygulama güncellenip yeniden başlayacak.",
+    "updateNow": "Güncelle",
+    "later": "Sonra",
+    "checkFailedLong": "Güncellemeler denetlenemedi. İnternet bağlantınızı kontrol edin."
   },
   "time": {
     "hm": "{{h}} sa {{m}} dk",
@@ -160,7 +164,7 @@
     "cuesSection": "Nazik işaretler",
     "cuesHint": "Pencere ya da düğme yok, işinizi bölmezler.",
     "blinkCue": "Göz kırp",
-    "blinkCueHint": "Ekran kenarları bir saniyeliğine kararır",
+    "blinkCueHint": "Ekran kenarları birkaç saniyeliğine kararır",
     "postureCue": "Pozisyon değiştir",
     "postureCueHint": "Üstte birkaç saniyelik küçük bir şerit",
     "water": "Su",
@@ -215,7 +219,10 @@
     "defaults": "Önerilene dön",
     "min": "dk",
     "sec": "sn",
-    "showCue": "Göster"
+    "showCue": "Göster",
+    "blinkCueFor": "Süre",
+    "cueSound": "Ses",
+    "cueSoundHint": "Her uyarıyla birlikte yumuşak bir ses"
   },
   "data": {
     "title": "Başka bilgisayara taşı",

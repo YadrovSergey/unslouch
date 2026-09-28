@@ -34,7 +34,11 @@
     "checkUpdates": "Buscar actualizaciones",
     "checking": "Buscando actualizaciones…",
     "upToDate": "Tienes la última versión, {{v}}",
-    "checkFailed": "No se pudo comprobar. Reintentar"
+    "checkFailed": "No se pudo comprobar. Reintentar",
+    "updateFound": "Ya está la versión {{v}}, tienes la {{current}}. La aplicación se actualizará y se reiniciará.",
+    "updateNow": "Actualizar",
+    "later": "Más tarde",
+    "checkFailedLong": "No se pudieron buscar actualizaciones. Comprueba la conexión a internet."
   },
   "time": {
     "hm": "{{h}} h {{m}} min",
@@ -162,7 +166,7 @@
     "cuesSection": "Avisos discretos",
     "cuesHint": "Sin ventanas ni botones, no estorban.",
     "blinkCue": "Parpadear",
-    "blinkCueHint": "Los bordes de la pantalla se oscurecen un segundo",
+    "blinkCueHint": "Los bordes de la pantalla se oscurecen unos segundos",
     "postureCue": "Cambiar de postura",
     "postureCueHint": "Un pequeño aviso arriba durante unos segundos",
     "water": "Agua",
@@ -217,7 +221,10 @@
     "defaults": "Volver a lo recomendado",
     "min": "min",
     "sec": "s",
-    "showCue": "Mostrar"
+    "showCue": "Mostrar",
+    "blinkCueFor": "Duración",
+    "cueSound": "Sonido",
+    "cueSoundHint": "Un sonido suave con cada aviso"
   },
   "data": {
     "title": "Pasar a otra computadora",

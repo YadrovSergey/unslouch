@@ -34,7 +34,11 @@
     "checkUpdates": "Rechercher des mises à jour",
     "checking": "Recherche des mises à jour…",
     "upToDate": "Vous avez la dernière version, {{v}}",
-    "checkFailed": "Échec de la vérification. Réessayer"
+    "checkFailed": "Échec de la vérification. Réessayer",
+    "updateFound": "La version {{v}} est sortie, vous avez la {{current}}. L’application va se mettre à jour et redémarrer.",
+    "updateNow": "Mettre à jour",
+    "later": "Plus tard",
+    "checkFailedLong": "Impossible de rechercher les mises à jour. Vérifiez votre connexion internet."
   },
   "time": {
     "hm": "{{h}} h {{m}} min",
@@ -162,7 +166,7 @@
     "cuesSection": "Signaux discrets",
     "cuesHint": "Sans fenêtres ni boutons, ils ne gênent pas.",
     "blinkCue": "Cligner des yeux",
-    "blinkCueHint": "Les bords de l’écran s’assombrissent une seconde",
+    "blinkCueHint": "Les bords de l’écran s’assombrissent quelques secondes",
     "postureCue": "Changer de position",
     "postureCueHint": "Un petit bandeau en haut pendant quelques secondes",
     "water": "Eau",
@@ -217,7 +221,10 @@
     "defaults": "Rétablir les recommandations",
     "min": "min",
     "sec": "s",
-    "showCue": "Afficher"
+    "showCue": "Afficher",
+    "blinkCueFor": "Durée",
+    "cueSound": "Son",
+    "cueSoundHint": "Un son discret avec chaque signal"
   },
   "data": {
     "title": "Transférer vers un autre ordinateur",

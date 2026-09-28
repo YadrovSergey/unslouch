@@ -34,7 +34,11 @@
     "checkUpdates": "Check for updates",
     "checking": "Checking for updates…",
     "upToDate": "You have the latest version, {{v}}",
-    "checkFailed": "Couldn't check for updates. Try again"
+    "checkFailed": "Couldn't check for updates. Try again",
+    "updateFound": "Version {{v}} is out, you have {{current}}. The app will update and restart.",
+    "updateNow": "Update",
+    "later": "Later",
+    "checkFailedLong": "Couldn't check for updates. Check your internet connection."
   },
   "time": {
     "hm": "{{h}} h {{m}} min",
@@ -160,7 +164,7 @@
     "cuesSection": "Gentle cues",
     "cuesHint": "No windows or buttons, they don't get in the way.",
     "blinkCue": "Blink",
-    "blinkCueHint": "The screen edges darken for a second",
+    "blinkCueHint": "The screen edges darken for a few seconds",
     "postureCue": "Change position",
     "postureCueHint": "A small banner at the top for a few seconds",
     "water": "Water",
@@ -215,7 +219,10 @@
     "defaults": "Restore recommended",
     "min": "min",
     "sec": "sec",
-    "showCue": "Show"
+    "showCue": "Show",
+    "blinkCueFor": "Stays for",
+    "cueSound": "Sound",
+    "cueSoundHint": "A soft sound with each cue"
   },
   "data": {
     "title": "Move to another computer",

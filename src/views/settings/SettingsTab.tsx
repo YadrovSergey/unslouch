@@ -138,6 +138,11 @@ export function SettingsTab({ info, update, onImported }: {
             </button>
           </Row>
         )}
+        {s.blinkCueEnabled && (
+          <Row label={t("settings.blinkCueFor")}>
+            <NumberSelect value={s.blinkCueSec} options={[2, 3, 4, 5, 7, 10]} unit={sec} onChange={(v) => update({ blinkCueSec: v })} />
+          </Row>
+        )}
         <Toggle label={t("settings.postureCue")} hint={t("settings.postureCueHint")} checked={s.postureCueEnabled} onChange={(v) => update({ postureCueEnabled: v })} />
         {s.postureCueEnabled && (
           <Row label={t("settings.every")}>
@@ -156,6 +161,7 @@ export function SettingsTab({ info, update, onImported }: {
             </button>
           </Row>
         )}
+        <Toggle label={t("settings.cueSound")} hint={t("settings.cueSoundHint")} checked={s.cueSound} onChange={(v) => update({ cueSound: v })} />
         <Why id="water" sources={SOURCES.water} />
       </Section>
 

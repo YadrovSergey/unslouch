@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { openUrl } from "@tauri-apps/plugin-opener";
 import { closeCue, waterDrunk } from "../api";
+import { playCue } from "../sound";
 
 const WATER_VISIBLE_MS = 15000;
 const MZR_WATER_URL = "https://health-diet.ru/?utm_source=unslouch&utm_medium=app&utm_campaign=unslouch&utm_content=water";
@@ -9,14 +10,18 @@ const MZR_WATER_URL = "https://health-diet.ru/?utm_source=unslouch&utm_medium=ap
 /** Gentle cues. Blink and posture live in a transparent click-through window; water is a small card. */
 export function CueView({ params }: { params: URLSearchParams }) {
   const cue = params.get("cue") ?? "blink";
+  const sound = params.get("sound") === "1";
+  useEffect(() => {
+    if (sound) playCue();
+  }, [sound]);
   if (cue === "water") return <WaterCard cis={params.get("cis") === "1"} />;
-  return <EdgeCue cue={cue} />;
+  return <EdgeCue cue={cue} sec={Number(params.get("sec") ?? 4)} />;
 }
 
-function EdgeCue({ cue }: { cue: string }) {
+function EdgeCue({ cue, sec }: { cue: string; sec: number }) {
   const { t } = useTranslation();
   return (
-    <div className={`cue cue--${cue}`}>
+    <div className={`cue cue--${cue}`} style={cue === "blink" ? { animationDuration: `${sec}s` } : undefined}>
       <div className="cue__pill">
         {cue === "blink" ? (
           <svg viewBox="0 0 40 20" aria-hidden="true">

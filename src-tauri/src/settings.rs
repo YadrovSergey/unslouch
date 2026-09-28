@@ -45,10 +45,14 @@ pub struct Settings {
 
     pub blink_cue_enabled: bool,
     pub blink_interval_min: u32,
+    /// How long the screen edges stay dark. 1.5 s was easy to miss.
+    pub blink_cue_sec: u32,
     pub posture_cue_enabled: bool,
     pub posture_interval_min: u32,
     pub water_enabled: bool,
     pub water_interval_min: u32,
+    /// A soft sound with every gentle cue (blink, posture, water). Off by default: the cues are meant to be quiet.
+    pub cue_sound: bool,
 
     /// Once a day: 2 minutes for neck and shoulders (Andersen 2011).
     pub neck_daily: bool,
@@ -103,10 +107,12 @@ impl Default for Settings {
             long_duration_min: 10,
             blink_cue_enabled: true,
             blink_interval_min: 5,
+            blink_cue_sec: 4,
             posture_cue_enabled: true,
             posture_interval_min: 30,
             water_enabled: true,
             water_interval_min: 90,
+            cue_sound: false,
             neck_daily: false,
             breathing_daily: false,
             end_of_day_enabled: false,
@@ -150,6 +156,7 @@ impl Settings {
         self.long_interval_min = self.long_interval_min.clamp(60, 480);
         self.long_duration_min = self.long_duration_min.clamp(5, 60);
         self.blink_interval_min = self.blink_interval_min.clamp(1, 60);
+        self.blink_cue_sec = self.blink_cue_sec.clamp(2, 10);
         self.posture_interval_min = self.posture_interval_min.clamp(10, 120);
         self.water_interval_min = self.water_interval_min.clamp(30, 240);
         self.snooze_min = self.snooze_min.clamp(1, 60);

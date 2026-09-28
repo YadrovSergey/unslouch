@@ -34,7 +34,11 @@
     "checkUpdates": "Yangilanishlarni tekshirish",
     "checking": "Yangilanishlar tekshirilmoqda…",
     "upToDate": "Sizda eng so'nggi versiya, {{v}}",
-    "checkFailed": "Tekshirib bo'lmadi. Qayta urinish"
+    "checkFailed": "Tekshirib bo'lmadi. Qayta urinish",
+    "updateFound": "{{v}} versiyasi chiqdi, sizda {{current}}. Ilova yangilanadi va qayta ishga tushadi.",
+    "updateNow": "Yangilash",
+    "later": "Keyinroq",
+    "checkFailedLong": "Yangilanishlarni tekshirib bo'lmadi. Internet aloqasini tekshiring."
   },
   "time": {
     "hm": "{{h}} soat {{m}} daq",
@@ -160,7 +164,7 @@
     "cuesSection": "Sokin signallar",
     "cuesHint": "Oynalar va tugmalarsiz, ishga xalaqit bermaydi.",
     "blinkCue": "Pirpiratish",
-    "blinkCueHint": "Ekran chetlari bir soniyaga qorayadi",
+    "blinkCueHint": "Ekran chetlari bir necha soniyaga qorayadi",
     "postureCue": "Holatni oʻzgartirish",
     "postureCueHint": "Yuqorida bir necha soniyalik kichik yozuv",
     "water": "Suv",
@@ -215,7 +219,10 @@
     "defaults": "Tavsiya etilganlarni qaytarish",
     "min": "daq",
     "sec": "s",
-    "showCue": "Ko'rsatish"
+    "showCue": "Ko'rsatish",
+    "blinkCueFor": "Davomiyligi",
+    "cueSound": "Ovoz",
+    "cueSoundHint": "Har bir signal bilan past ovoz"
   },
   "data": {
     "title": "Boshqa kompyuterga koʻchirish",

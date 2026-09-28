@@ -34,7 +34,11 @@
     "checkUpdates": "Nach Updates suchen",
     "checking": "Suche nach Updates…",
     "upToDate": "Sie haben die neueste Version, {{v}}",
-    "checkFailed": "Prüfung fehlgeschlagen. Erneut versuchen"
+    "checkFailed": "Prüfung fehlgeschlagen. Erneut versuchen",
+    "updateFound": "Version {{v}} ist da, Sie haben {{current}}. Die App wird aktualisiert und neu gestartet.",
+    "updateNow": "Aktualisieren",
+    "later": "Später",
+    "checkFailedLong": "Updates konnten nicht geprüft werden. Prüfen Sie die Internetverbindung."
   },
   "time": {
     "hm": "{{h}} Std. {{m}} Min.",
@@ -160,7 +164,7 @@
     "cuesSection": "Sanfte Hinweise",
     "cuesHint": "Ohne Fenster und Knöpfe, sie stören nicht.",
     "blinkCue": "Blinzeln",
-    "blinkCueHint": "Die Bildschirmränder werden kurz dunkler",
+    "blinkCueHint": "Die Bildschirmränder werden für ein paar Sekunden dunkler",
     "postureCue": "Haltung wechseln",
     "postureCueHint": "Ein kleines Banner oben für ein paar Sekunden",
     "water": "Wasser",
@@ -215,7 +219,10 @@
     "defaults": "Empfehlung wiederherstellen",
     "min": "Min.",
     "sec": "Sek.",
-    "showCue": "Zeigen"
+    "showCue": "Zeigen",
+    "blinkCueFor": "Dauer",
+    "cueSound": "Ton",
+    "cueSoundHint": "Ein leiser Ton zu jedem Hinweis"
   },
   "data": {
     "title": "Auf einen anderen Computer übertragen",

@@ -12,7 +12,6 @@ fn next_id() -> u64 {
     NEXT.fetch_add(1, Ordering::Relaxed)
 }
 
-const BLINK_CUE_MS: u64 = 2500;
 const POSTURE_CUE_MS: u64 = 4000;
 const WATER_CUE_W: f64 = 360.0;
 const WATER_CUE_H: f64 = 132.0;
@@ -126,7 +125,9 @@ fn close_later(app: &AppHandle, labels: Vec<String>, ms: u64) {
 
 /// Gentle cues. Blink and posture: a transparent window over every monitor, clicks pass through, focus stays
 /// where it was. Water: a small card in the corner of the main monitor with two buttons, gone by itself.
-pub fn show_cue(app: &AppHandle, cue: Cue, lang: &str, is_cis: bool, theme: &str) {
+/// `blink_sec`: how long the blink cue stays; `sound`: a soft sound with the cue.
+pub fn show_cue(app: &AppHandle, cue: Cue, lang: &str, is_cis: bool, theme: &str, blink_sec: u32, sound: bool) {
+    let sound = sound as u8;
     if app.webview_windows().keys().any(|l| l.starts_with("break-")) {
         return;
     }
@@ -158,7 +159,7 @@ pub fn show_cue(app: &AppHandle, cue: Cue, lang: &str, is_cis: bool, theme: &str
             let name = if cue == Cue::Blink { "blink" } else { "posture" };
             let mut labels = vec![];
             for (i, (monitor, _)) in monitors(app).into_iter().enumerate() {
-                let url = format!("index.html?view=cue&cue={name}&lang={lang}&theme={theme}");
+                let url = format!("index.html?view=cue&cue={name}&lang={lang}&theme={theme}&sec={blink_sec}&sound={sound}");
                 let label = format!("cue-{id}-{i}");
                 let Ok(builder) = cover_monitor(app, label.clone(), url) else { continue };
                 if let Ok(win) = builder.transparent(true).focused(false).focusable(false).build() {
@@ -168,7 +169,8 @@ pub fn show_cue(app: &AppHandle, cue: Cue, lang: &str, is_cis: bool, theme: &str
                     labels.push(label);
                 }
             }
-            close_later(app, labels, if cue == Cue::Blink { BLINK_CUE_MS } else { POSTURE_CUE_MS });
+            // The window outlives its fade-out by half a second.
+            close_later(app, labels, if cue == Cue::Blink { u64::from(blink_sec) * 1000 + 500 } else { POSTURE_CUE_MS });
         }
         Cue::Water => {
             close_prefix(app, "cue-water");
@@ -177,7 +179,7 @@ pub fn show_cue(app: &AppHandle, cue: Cue, lang: &str, is_cis: bool, theme: &str
             let pos = monitor.position().to_logical::<f64>(scale);
             let size = monitor.size().to_logical::<f64>(scale);
             let margin = 24.0;
-            let url = format!("index.html?view=cue&cue=water&cis={}&lang={lang}&theme={theme}", is_cis as u8);
+            let url = format!("index.html?view=cue&cue=water&cis={}&lang={lang}&theme={theme}&sound={sound}", is_cis as u8);
             let win = WebviewWindowBuilder::new(app, format!("cue-water-{id}"), WebviewUrl::App(url.into()))
                 .title("Unslouch")
                 .position(pos.x + size.width - WATER_CUE_W - margin, pos.y + size.height - WATER_CUE_H - margin * 3.0)

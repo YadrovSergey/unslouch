@@ -34,7 +34,11 @@
     "checkUpdates": "Yeniləmələri yoxla",
     "checking": "Yeniləmələr yoxlanılır…",
     "upToDate": "Sizdə son versiyadır, {{v}}",
-    "checkFailed": "Yoxlamaq alınmadı. Təkrarla"
+    "checkFailed": "Yoxlamaq alınmadı. Təkrarla",
+    "updateFound": "{{v}} versiyası çıxıb, sizdə {{current}}. Tətbiq yenilənəcək və yenidən başlayacaq.",
+    "updateNow": "Yenilə",
+    "later": "Sonra",
+    "checkFailedLong": "Yeniləmələri yoxlamaq alınmadı. İnternet bağlantısını yoxlayın."
   },
   "time": {
     "hm": "{{h}} saat {{m}} dəq",
@@ -160,7 +164,7 @@
     "cuesSection": "Sakit siqnallar",
     "cuesHint": "Pəncərə və düymə olmadan, işə mane olmur.",
     "blinkCue": "Göz qırp",
-    "blinkCueHint": "Ekranın kənarları bir saniyəlik qaralır",
+    "blinkCueHint": "Ekranın kənarları bir neçə saniyəlik qaralır",
     "postureCue": "Vəziyyəti dəyiş",
     "postureCueHint": "Yuxarıda bir neçə saniyəlik kiçik zolaq",
     "water": "Su",
@@ -215,7 +219,10 @@
     "defaults": "Tövsiyə olunanları qaytar",
     "min": "dəq",
     "sec": "san",
-    "showCue": "Göstər"
+    "showCue": "Göstər",
+    "blinkCueFor": "Müddət",
+    "cueSound": "Səs",
+    "cueSoundHint": "Hər siqnalla birlikdə sakit səs"
   },
   "data": {
     "title": "Başqa kompüterə köçürmə",

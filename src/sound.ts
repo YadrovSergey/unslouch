@@ -21,6 +21,11 @@ export function playChime() {
   tone([659.25, 880], 0.28, 0.18, 1.4);
 }
 
+/** A soft rising two-note sound with a gentle cue (blink, posture, water), if the user turned it on. */
+export function playCue() {
+  tone([587.33, 783.99], 0.12, 0.1, 0.7);
+}
+
 /** A quiet tick between steps of an exercise done with eyes closed. */
 export function playTick() {
   tone([523.25], 0, 0.08, 0.35);
