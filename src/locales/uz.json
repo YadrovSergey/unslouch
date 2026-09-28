@@ -214,7 +214,8 @@
     "checkUpdatesHint": "Kuniga bir marta versiya raqami yozilgan faylni yuklab olamiz. Boshqa hech narsa yuborilmaydi",
     "defaults": "Tavsiya etilganlarni qaytarish",
     "min": "daq",
-    "sec": "s"
+    "sec": "s",
+    "showCue": "Ko'rsatish"
   },
   "data": {
     "title": "Boshqa kompyuterga koʻchirish",

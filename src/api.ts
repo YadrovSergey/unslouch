@@ -142,6 +142,7 @@ export const saveWellbeing = (answers: Wellbeing) => invoke<void>("save_wellbein
 export const sendBreakResult = (result: BreakResult) => invoke<void>("break_result", { result });
 export const waterDrunk = () => invoke<void>("water_drunk");
 export const closeCue = () => invoke<void>("close_cue");
+export const previewCue = (cue: "blink" | "posture" | "water") => invoke<void>("preview_cue", { cue });
 export const exportData = (path: string) => invoke<void>("export_data", { path });
 export const importData = (path: string) => invoke<AppInfo>("import_data", { path });
 export const dismissWellbeing = () => invoke<void>("dismiss_wellbeing");

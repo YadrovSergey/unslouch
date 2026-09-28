@@ -1021,11 +1021,12 @@ html:has(body[data-view="cue"]) {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  animation: cue-in-out 1.5s ease-in-out forwards;
+  animation: cue-in-out 2.4s ease-in-out forwards;
 }
 
+/* Long and dark enough to notice from the corner of the eye while reading: 1.5 s at 0.6 was easy to miss. */
 .cue--blink {
-  box-shadow: inset 0 0 18vmin 6vmin rgba(8, 16, 14, 0.6);
+  box-shadow: inset 0 0 22vmin 8vmin rgba(8, 16, 14, 0.75);
 }
 
 .cue--posture {
@@ -1837,4 +1838,9 @@ input[type="number"] {
   width: 14px;
   height: 14px;
   fill: #7fd3a0;
+}
+
+/* "Show" next to a gentle cue's interval. */
+.chip--show {
+  margin-left: 8px;
 }

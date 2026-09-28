@@ -214,7 +214,8 @@
     "checkUpdatesHint": "Einmal am Tag laden wir eine Datei mit der Versionsnummer herunter. Sonst wird nichts gesendet",
     "defaults": "Empfehlung wiederherstellen",
     "min": "Min.",
-    "sec": "Sek."
+    "sec": "Sek.",
+    "showCue": "Zeigen"
   },
   "data": {
     "title": "Auf einen anderen Computer übertragen",

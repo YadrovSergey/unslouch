@@ -212,7 +212,8 @@
     "checkUpdatesHint": "每天下载一次包含版本号的文件。不发送任何其他内容",
     "defaults": "恢复推荐设置",
     "min": "分钟",
-    "sec": "秒"
+    "sec": "秒",
+    "showCue": "预览"
   },
   "data": {
     "title": "迁移到另一台电脑",

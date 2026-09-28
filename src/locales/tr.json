@@ -214,7 +214,8 @@
     "checkUpdatesHint": "Günde bir kez sürüm numarasını içeren bir dosya indiririz. Başka hiçbir şey gönderilmez",
     "defaults": "Önerilene dön",
     "min": "dk",
-    "sec": "sn"
+    "sec": "sn",
+    "showCue": "Göster"
   },
   "data": {
     "title": "Başka bilgisayara taşı",

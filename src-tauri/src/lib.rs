@@ -10,7 +10,7 @@ mod updates;
 mod usage;
 
 use chrono::{Datelike, Duration as ChronoDuration, Local, NaiveDate, NaiveDateTime, NaiveTime, Timelike};
-use scheduler::{Action, BreakKind, BreakResult, Context, Quiet, Scheduler};
+use scheduler::{Action, BreakKind, BreakResult, Context, Cue, Quiet, Scheduler};
 use serde::Serialize;
 use settings::{DayStats, Settings, Stats, Wellbeing, WellbeingLog};
 use std::path::PathBuf;
@@ -305,6 +305,25 @@ fn save_png(window: WebviewWindow, path: String, data: Vec<u8>) -> Result<(), St
         return Err("not a PNG".into());
     }
     std::fs::write(path, data).map_err(|e| e.to_string())
+}
+
+/// "Show" next to a gentle cue in the settings: the cue right now, whatever the schedule, work hours or calls say.
+#[tauri::command]
+fn preview_cue(app: AppHandle, window: WebviewWindow, state: State<AppState>, cue: String) -> Result<(), String> {
+    from_settings(&window)?;
+    let cue = match cue.as_str() {
+        "blink" => Cue::Blink,
+        "posture" => Cue::Posture,
+        "water" => Cue::Water,
+        _ => return Err("unknown cue".into()),
+    };
+    let (lang, theme) = {
+        let inner = state.0.lock().unwrap();
+        (inner.lang(), inner.settings.theme.clone())
+    };
+    let handle = app.clone();
+    app.run_on_main_thread(move || overlay::show_cue(&handle, cue, lang, i18n::is_cis(lang), &theme))
+        .map_err(|e| e.to_string())
 }
 
 /// A cue window closes itself, not the other cues that may be on screen.
@@ -777,6 +796,7 @@ pub fn run() {
             break_result,
             water_drunk,
             close_cue,
+            preview_cue,
             save_png,
             dismiss_wellbeing,
             export_data,

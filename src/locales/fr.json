@@ -216,7 +216,8 @@
     "checkUpdatesHint": "Une fois par jour, nous téléchargeons un fichier avec le numéro de version. Rien d’autre n’est envoyé",
     "defaults": "Rétablir les recommandations",
     "min": "min",
-    "sec": "s"
+    "sec": "s",
+    "showCue": "Afficher"
   },
   "data": {
     "title": "Transférer vers un autre ordinateur",

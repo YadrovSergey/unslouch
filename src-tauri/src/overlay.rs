@@ -12,7 +12,7 @@ fn next_id() -> u64 {
     NEXT.fetch_add(1, Ordering::Relaxed)
 }
 
-const BLINK_CUE_MS: u64 = 1600;
+const BLINK_CUE_MS: u64 = 2500;
 const POSTURE_CUE_MS: u64 = 4000;
 const WATER_CUE_W: f64 = 360.0;
 const WATER_CUE_H: f64 = 132.0;

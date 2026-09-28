@@ -214,7 +214,8 @@
     "checkUpdatesHint": "Gündə bir dəfə versiya nömrəsi olan fayl yükləyirik. Başqa heç nə göndərilmir",
     "defaults": "Tövsiyə olunanları qaytar",
     "min": "dəq",
-    "sec": "san"
+    "sec": "san",
+    "showCue": "Göstər"
   },
   "data": {
     "title": "Başqa kompüterə köçürmə",

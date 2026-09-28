@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { disable, enable, isEnabled } from "@tauri-apps/plugin-autostart";
 import { open as openDialog, save as saveDialog } from "@tauri-apps/plugin-dialog";
-import { AppInfo, PRESETS, Preset, Settings, SettingsPatch, clearUsage, exportData, importData } from "../../api";
+import { AppInfo, PRESETS, Preset, Settings, SettingsPatch, clearUsage, exportData, importData, previewCue } from "../../api";
 import type { Section as BodySection } from "../../exercises/catalog";
 import { LANGUAGE_NAMES } from "../../i18n";
 import { SOURCES } from "../../lib/sources";
@@ -133,18 +133,27 @@ export function SettingsTab({ info, update, onImported }: {
         {s.blinkCueEnabled && (
           <Row label={t("settings.every")}>
             <NumberSelect value={s.blinkIntervalMin} options={[2, 3, 5, 7, 10, 15]} unit={min} onChange={(v) => update({ blinkIntervalMin: v })} />
+            <button className="chip chip--show" onClick={() => previewCue("blink")}>
+              {t("settings.showCue")}
+            </button>
           </Row>
         )}
         <Toggle label={t("settings.postureCue")} hint={t("settings.postureCueHint")} checked={s.postureCueEnabled} onChange={(v) => update({ postureCueEnabled: v })} />
         {s.postureCueEnabled && (
           <Row label={t("settings.every")}>
             <NumberSelect value={s.postureIntervalMin} options={[15, 20, 30, 45, 60]} unit={min} onChange={(v) => update({ postureIntervalMin: v })} />
+            <button className="chip chip--show" onClick={() => previewCue("posture")}>
+              {t("settings.showCue")}
+            </button>
           </Row>
         )}
         <Toggle label={t("settings.water")} hint={t("settings.waterHint")} checked={s.waterEnabled} onChange={(v) => update({ waterEnabled: v })} />
         {s.waterEnabled && (
           <Row label={t("settings.every")}>
             <NumberSelect value={s.waterIntervalMin} options={[45, 60, 90, 120, 180]} unit={min} onChange={(v) => update({ waterIntervalMin: v })} />
+            <button className="chip chip--show" onClick={() => previewCue("water")}>
+              {t("settings.showCue")}
+            </button>
           </Row>
         )}
         <Why id="water" sources={SOURCES.water} />

@@ -214,7 +214,8 @@
     "checkUpdatesHint": "Once a day we download a file with the version number. Nothing else is sent",
     "defaults": "Restore recommended",
     "min": "min",
-    "sec": "sec"
+    "sec": "sec",
+    "showCue": "Show"
   },
   "data": {
     "title": "Move to another computer",

@@ -216,7 +216,8 @@
     "checkUpdatesHint": "Uma vez por dia baixamos um arquivo com o número da versão. Nada mais é enviado",
     "defaults": "Restaurar recomendado",
     "min": "min",
-    "sec": "s"
+    "sec": "s",
+    "showCue": "Mostrar"
   },
   "data": {
     "title": "Levar para outro computador",
