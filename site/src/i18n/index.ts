@@ -31,6 +31,8 @@ export const DOWNLOADS = {
   rpmArm: "/releases/latest/unslouch.aarch64.rpm",
 } as const;
 export const EMAIL = "support@health-diet.ru";
+/** Donations: CloudTips accepts Russian bank cards and SBP only. */
+export const DONATE = "https://pay.cloudtips.ru/p/9f9a4590";
 
 export const t = (lang: Lang): Dict => DICTS[lang];
 export const app = (lang: Lang) => APP[lang];

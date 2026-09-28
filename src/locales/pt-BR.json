@@ -367,7 +367,9 @@
     "translation": "Achou um erro de tradução?",
     "privacyShort": "Não coletamos nenhum dado: tudo fica no seu computador.",
     "version": "Versão {{v}}",
-    "asIs": "O app é fornecido \"como está\", sem garantias, e você o usa por sua conta e risco. Mais detalhes nos termos de uso."
+    "asIs": "O app é fornecido \"como está\", sem garantias, e você o usa por sua conta e risco. Mais detalhes nos termos de uso.",
+    "donate": "Apoiar o projeto",
+    "donateNote": "por enquanto só cartões de bancos russos e SBP"
   },
   "onboarding": {
     "title": "O Unslouch está funcionando",

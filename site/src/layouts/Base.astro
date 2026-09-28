@@ -2,7 +2,7 @@
 import "../styles/tokens.css";
 import "../styles/figures.css";
 import "../styles/site.css";
-import { GITHUB, EMAIL, LANGS, absolute, href, t, type Lang } from "../i18n";
+import { DONATE, GITHUB, EMAIL, LANGS, absolute, href, t, type Lang } from "../i18n";
 import CookieConsent from "../components/CookieConsent.astro";
 
 interface Props {
@@ -151,6 +151,7 @@ const current = (p: string) => (path === p || (p !== "/" && path.startsWith(p)) 
           <li><a href={GITHUB}>{d.footer.source}</a></li>
           <li><a href={`mailto:${EMAIL}`}>{d.footer.contact}: {EMAIL}</a></li>
           <li><a href={`${GITHUB}/issues/new?template=bug.yml`}>{d.footer.bug}</a></li>
+          <li><a href={DONATE} rel="noopener">{d.footer.donate}</a></li>
           <li class="muted">{d.footer.author}</li>
         </ul>
       </div>

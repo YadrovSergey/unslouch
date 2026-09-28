@@ -42,6 +42,12 @@ We may change or stop the app, the website or their operation at any time.
   to seek help. If something hurts, does not go away, or your vision, breathing or wellbeing
   suddenly get worse, see a doctor, and call emergency services if it is severe.
 
+## Donations
+
+The app and the website are free. You can support the project with a voluntary donation through
+CloudTips. A donation is not a payment, does not unlock any features and creates no obligations on
+our side. Refunds are possible only under the rules of CloudTips and your bank.
+
 ## Limitation of liability
 
 To the extent permitted by law, we are not liable for any direct or indirect damage arising from

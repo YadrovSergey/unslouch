@@ -363,7 +363,9 @@
     "translation": "Found a translation mistake?",
     "privacyShort": "We don't collect any data: everything stays on your computer.",
     "version": "Version {{v}}",
-    "asIs": "The app is provided \"as is\", without warranties, and you use it at your own risk. See the terms of use."
+    "asIs": "The app is provided \"as is\", without warranties, and you use it at your own risk. See the terms of use.",
+    "donate": "Support the project",
+    "donateNote": "Russian bank cards and SBP for now"
   },
   "onboarding": {
     "title": "Unslouch is running",

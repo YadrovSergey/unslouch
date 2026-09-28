@@ -4,7 +4,7 @@ import Download from "../../components/Download.astro";
 import WaterStage from "../../components/WaterStage.astro";
 import ToolGrid from "../../components/ToolGrid.astro";
 import { ExerciseLoop } from "../../components/islands/common";
-import { DOWNLOADS, GITHUB, ORIGIN, app, href, langPaths, t, type Lang } from "../../i18n";
+import { DONATE, DOWNLOADS, GITHUB, ORIGIN, app, href, langPaths, t, type Lang } from "../../i18n";
 import { ANCHORS } from "../../lib/science";
 
 export const getStaticPaths = langPaths;
@@ -206,7 +206,11 @@ const jsonLd = [
       <div class="card">
         <h2>{h.openTitle}</h2>
         <p class="muted">{h.openText}</p>
-        <a class="btn" href={GITHUB}>{h.openLink}</a>
+        <p class="button-row">
+          <a class="btn" href={GITHUB}>{h.openLink}</a>
+          <a class="btn" href={DONATE} rel="noopener">{h.donate}</a>
+        </p>
+        <p class="muted small">{h.donate}: {h.donateNote}</p>
       </div>
       {
         d.cis && (

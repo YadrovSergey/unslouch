@@ -106,6 +106,12 @@ You can change your mind at any time: "Cookies and statistics" at the bottom of 
 to the cookie notice, and in the free tools their settings. These are browser storage entries
 (localStorage), not cookies; they are not sent anywhere and cannot identify you.
 
+## Donations
+
+If you choose to support the project, the payment happens on the CloudTips page (T-Bank). Card and
+payment details are processed by CloudTips and the banks under their own rules; we do not receive them.
+We only see the amount and your comment, if you leave one.
+
 ## Other websites
 
 When you follow a link to another site, that site's rules apply. For example, health-diet.ru may

@@ -363,7 +363,9 @@
     "translation": "Çeviride hata mı buldunuz?",
     "privacyShort": "Hiçbir veri toplamıyoruz: her şey bilgisayarınızda kalır.",
     "version": "Sürüm {{v}}",
-    "asIs": "Uygulama \"olduğu gibi\", garantisiz sunulur ve riski size aittir. Ayrıntılar kullanım koşullarında."
+    "asIs": "Uygulama \"olduğu gibi\", garantisiz sunulur ve riski size aittir. Ayrıntılar kullanım koşullarında.",
+    "donate": "Projeyi destekle",
+    "donateNote": "şimdilik yalnızca Rus banka kartları ve SBP"
   },
   "onboarding": {
     "title": "Unslouch çalışıyor",

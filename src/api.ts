@@ -93,6 +93,8 @@ export type SettingsPatch = Partial<Settings> | ((s: Settings) => Partial<Settin
 
 export const REPO_URL = "https://github.com/YadrovSergey/unslouch";
 export const SITE_URL = "https://unslouch.health-diet.ru";
+/** Donations: CloudTips, Russian bank cards and SBP only for now. */
+export const DONATE_URL = "https://pay.cloudtips.ru/p/9f9a4590";
 
 /** Numbers behind each preset. "custom" keeps whatever the user set. */
 export const PRESETS: Record<Exclude<Preset, "custom">, Partial<Settings>> = {

@@ -1858,3 +1858,7 @@ input[type="checkbox"] {
   font-size: 14px;
   white-space: normal;
 }
+
+.small {
+  font-size: 13px;
+}
