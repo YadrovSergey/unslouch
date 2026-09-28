@@ -765,6 +765,12 @@ html:has(body[data-view="blink"]) {
   }
 }
 
+/* Fits its box and stays round: without a size the SVG takes the full width and spills out of a wide card. */
+.breath {
+  width: 100%;
+  height: 100%;
+}
+
 .breath__guide {
   fill: none;
   stroke: var(--figure-prop, rgba(233, 241, 238, 0.22));

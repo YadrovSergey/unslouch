@@ -30,7 +30,11 @@
     "about": "Sobre",
     "mzr": "Diário alimentar MZR",
     "quit": "Sair",
-    "update": "Instalar versão {{v}}"
+    "update": "Instalar versão {{v}}",
+    "checkUpdates": "Verificar atualizações",
+    "checking": "Verificando atualizações…",
+    "upToDate": "Você tem a versão mais recente, {{v}}",
+    "checkFailed": "Não foi possível verificar. Tentar de novo"
   },
   "time": {
     "hm": "{{h}} h {{m}} min",
@@ -366,6 +370,8 @@
     "terms": "Termos de uso",
     "licenses": "Licenças de terceiros",
     "translation": "Achou um erro de tradução?",
+    "bug": "Encontrou um erro?",
+    "contact": "Escrever ao autor",
     "privacyShort": "Não coletamos nenhum dado: tudo fica no seu computador.",
     "version": "Versão {{v}}",
     "asIs": "O app é fornecido \"como está\", sem garantias, e você o usa por sua conta e risco. Mais detalhes nos termos de uso.",

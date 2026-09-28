@@ -30,7 +30,11 @@
     "about": "Über",
     "mzr": "MZR-Ernährungstagebuch",
     "quit": "Beenden",
-    "update": "Version {{v}} installieren"
+    "update": "Version {{v}} installieren",
+    "checkUpdates": "Nach Updates suchen",
+    "checking": "Suche nach Updates…",
+    "upToDate": "Sie haben die neueste Version, {{v}}",
+    "checkFailed": "Prüfung fehlgeschlagen. Erneut versuchen"
   },
   "time": {
     "hm": "{{h}} Std. {{m}} Min.",
@@ -362,6 +366,8 @@
     "terms": "Nutzungsbedingungen",
     "licenses": "Lizenzen von Drittanbietern",
     "translation": "Fehler in der Übersetzung gefunden?",
+    "bug": "Einen Fehler gefunden?",
+    "contact": "Dem Autor schreiben",
     "privacyShort": "Wir sammeln keine Daten: Alles bleibt auf Ihrem Computer.",
     "version": "Version {{v}}",
     "asIs": "Die App wird „wie besehen“ und ohne Gewähr bereitgestellt, die Nutzung erfolgt auf eigenes Risiko. Mehr in den Nutzungsbedingungen.",

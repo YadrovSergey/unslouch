@@ -30,7 +30,11 @@
     "about": "关于",
     "mzr": "MZR 饮食日记",
     "quit": "退出",
-    "update": "安装版本 {{v}}"
+    "update": "安装版本 {{v}}",
+    "checkUpdates": "检查更新",
+    "checking": "正在检查更新…",
+    "upToDate": "已是最新版本 {{v}}",
+    "checkFailed": "检查失败，点此重试"
   },
   "time": {
     "hm": "{{h}} 小时 {{m}} 分钟",
@@ -358,6 +362,8 @@
     "terms": "使用条款",
     "licenses": "第三方许可",
     "translation": "发现翻译错误？",
+    "bug": "发现问题？",
+    "contact": "联系作者",
     "privacyShort": "我们不收集任何数据：所有内容都只保存在您的电脑上。",
     "version": "版本 {{v}}",
     "asIs": "本应用按“原样”提供，不附带任何保证，使用风险由您自行承担。详见使用条款。",

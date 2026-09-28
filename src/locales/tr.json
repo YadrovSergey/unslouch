@@ -30,7 +30,11 @@
     "about": "Hakkında",
     "mzr": "MZR beslenme günlüğü",
     "quit": "Çıkış",
-    "update": "{{v}} sürümünü yükle"
+    "update": "{{v}} sürümünü yükle",
+    "checkUpdates": "Güncellemeleri denetle",
+    "checking": "Güncellemeler denetleniyor…",
+    "upToDate": "En son sürümü kullanıyorsunuz: {{v}}",
+    "checkFailed": "Denetlenemedi. Yeniden dene"
   },
   "time": {
     "hm": "{{h}} sa {{m}} dk",
@@ -362,6 +366,8 @@
     "terms": "Kullanım koşulları",
     "licenses": "Üçüncü taraf lisansları",
     "translation": "Çeviride hata mı buldunuz?",
+    "bug": "Hata mı buldunuz?",
+    "contact": "Geliştiriciye yaz",
     "privacyShort": "Hiçbir veri toplamıyoruz: her şey bilgisayarınızda kalır.",
     "version": "Sürüm {{v}}",
     "asIs": "Uygulama \"olduğu gibi\", garantisiz sunulur ve riski size aittir. Ayrıntılar kullanım koşullarında.",

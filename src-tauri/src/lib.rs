@@ -65,6 +65,7 @@ struct Inner {
     tip: usize,
     config_dir: PathBuf,
     update: Option<tauri_plugin_updater::Update>,
+    update_check: updates::Check,
     /// "Not now" on the weekly wellbeing questions: ask again tomorrow.
     wellbeing_dismissed: Option<NaiveDate>,
 }
@@ -408,7 +409,12 @@ fn taskbar_dark() -> bool {
     false
 }
 
-fn build_menu(app: &AppHandle, lang: &str, update: Option<&str>) -> tauri::Result<(Menu<Wry>, TrayItems)> {
+fn build_menu(
+    app: &AppHandle,
+    lang: &str,
+    update: Option<&str>,
+    check: updates::Check,
+) -> tauri::Result<(Menu<Wry>, TrayItems)> {
     let t = |key: &str| i18n::t(lang, key, &[]);
     let item = |id: &str, key: &str| MenuItem::with_id(app, id, t(key), true, None::<&str>);
     let status = MenuItem::with_id(app, "status", "", false, None::<&str>)?;
@@ -451,10 +457,21 @@ fn build_menu(app: &AppHandle, lang: &str, update: Option<&str>) -> tauri::Resul
     if i18n::is_cis(lang) {
         menu.append(&item("mzr", "tray.mzr")?)?;
     }
+    menu.append(&PredefinedMenuItem::separator(app)?)?;
     if let Some(version) = update {
-        menu.append(&PredefinedMenuItem::separator(app)?)?;
         let text = i18n::t(lang, "tray.update", &[("v", version)]);
         menu.append(&MenuItem::with_id(app, "update", text, true, None::<&str>)?)?;
+    } else {
+        // "Check for updates", and the answer in the same item: macOS shows no notifications without a permission
+        // the app never asks for.
+        let (key, enabled) = match check {
+            updates::Check::Idle => ("tray.checkUpdates", true),
+            updates::Check::Checking => ("tray.checking", false),
+            updates::Check::UpToDate => ("tray.upToDate", true),
+            updates::Check::Failed => ("tray.checkFailed", true),
+        };
+        let text = i18n::t(lang, key, &[("v", env!("CARGO_PKG_VERSION"))]);
+        menu.append(&MenuItem::with_id(app, "check_updates", text, enabled, None::<&str>)?)?;
     }
     menu.append(&PredefinedMenuItem::separator(app)?)?;
     menu.append(&item("quit", "tray.quit")?)?;
@@ -466,11 +483,11 @@ fn rebuild_tray(app: &AppHandle) {
     let handle = app.clone();
     let _ = app.run_on_main_thread(move || {
         let state = handle.state::<AppState>();
-        let (lang, version) = {
+        let (lang, version, check) = {
             let inner = state.0.lock().unwrap();
-            (inner.lang(), inner.update.as_ref().map(|u| u.version.clone()))
+            (inner.lang(), inner.update.as_ref().map(|u| u.version.clone()), inner.update_check)
         };
-        let Ok((menu, items)) = build_menu(&handle, lang, version.as_deref()) else { return };
+        let Ok((menu, items)) = build_menu(&handle, lang, version.as_deref(), check) else { return };
         if let Some(tray) = handle.tray_by_id(TRAY_ID) {
             let _ = tray.set_menu(Some(menu));
         }
@@ -621,6 +638,26 @@ fn on_menu(app: &AppHandle, id: &str) {
                 rebuild_tray(&handle);
             });
         }
+        "check_updates" => {
+            app.state::<AppState>().0.lock().unwrap().update_check = updates::Check::Checking;
+            rebuild_tray(app);
+            let handle = app.clone();
+            updates::check_now(app.clone(), move |result| {
+                {
+                    let state = handle.state::<AppState>();
+                    let mut inner = state.0.lock().unwrap();
+                    inner.update_check = match result {
+                        Ok(Some(update)) => {
+                            inner.update = Some(update);
+                            updates::Check::Idle
+                        }
+                        Ok(None) => updates::Check::UpToDate,
+                        Err(()) => updates::Check::Failed,
+                    };
+                }
+                rebuild_tray(&handle);
+            });
+        }
         "quit" => app.exit(0),
         _ => {}
     }
@@ -763,11 +800,12 @@ pub fn run() {
                 tip: 0,
                 config_dir,
                 update: None,
+                update_check: updates::Check::Idle,
                 wellbeing_dismissed: None,
             };
 
             let handle = app.handle().clone();
-            let (menu, items) = build_menu(&handle, inner.lang(), None)?;
+            let (menu, items) = build_menu(&handle, inner.lang(), None, updates::Check::Idle)?;
             TrayIconBuilder::with_id(TRAY_ID)
                 .icon(tray_icon(taskbar_dark()))
                 .icon_as_template(cfg!(target_os = "macos"))

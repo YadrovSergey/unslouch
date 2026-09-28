@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { AppInfo, REPO_URL, SITE_URL, donatePage } from "../../api";
+import { AppInfo, REPO_URL, SITE_URL, SUPPORT_EMAIL, donatePage } from "../../api";
 import { ExternalLink, Section } from "./ui";
 
 export function AboutTab({ info }: { info: AppInfo }) {
@@ -36,6 +36,13 @@ export function AboutTab({ info }: { info: AppInfo }) {
         </li>
         <li>
           <ExternalLink href={`${REPO_URL}/blob/main/THIRD_PARTY_LICENSES.md`}>{t("about.licenses")}</ExternalLink>
+        </li>
+        <li>
+          <ExternalLink href={`${REPO_URL}/issues/new?template=bug.yml`}>{t("about.bug")}</ExternalLink>
+        </li>
+        <li>
+          <ExternalLink href={`mailto:${SUPPORT_EMAIL}`}>{t("about.contact")}</ExternalLink>{" "}
+          <span className="muted">{SUPPORT_EMAIL}</span>
         </li>
         <li>
           <ExternalLink href={`${REPO_URL}/issues/new?template=translation.yml`}>{t("about.translation")}</ExternalLink>

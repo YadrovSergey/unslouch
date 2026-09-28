@@ -30,7 +30,11 @@
     "about": "About",
     "mzr": "MZR food diary",
     "quit": "Quit",
-    "update": "Install version {{v}}"
+    "update": "Install version {{v}}",
+    "checkUpdates": "Check for updates",
+    "checking": "Checking for updates…",
+    "upToDate": "You have the latest version, {{v}}",
+    "checkFailed": "Couldn't check for updates. Try again"
   },
   "time": {
     "hm": "{{h}} h {{m}} min",
@@ -362,6 +366,8 @@
     "terms": "Terms of use",
     "licenses": "Third-party licenses",
     "translation": "Found a translation mistake?",
+    "bug": "Found a bug?",
+    "contact": "Write to the author",
     "privacyShort": "We don't collect any data: everything stays on your computer.",
     "version": "Version {{v}}",
     "asIs": "The app is provided \"as is\", without warranties, and you use it at your own risk. See the terms of use.",

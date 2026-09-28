@@ -30,7 +30,11 @@
     "about": "Acerca de",
     "mzr": "Diario de comidas MZR",
     "quit": "Salir",
-    "update": "Instalar versión {{v}}"
+    "update": "Instalar versión {{v}}",
+    "checkUpdates": "Buscar actualizaciones",
+    "checking": "Buscando actualizaciones…",
+    "upToDate": "Tienes la última versión, {{v}}",
+    "checkFailed": "No se pudo comprobar. Reintentar"
   },
   "time": {
     "hm": "{{h}} h {{m}} min",
@@ -366,6 +370,8 @@
     "terms": "Condiciones de uso",
     "licenses": "Licencias de terceros",
     "translation": "¿Encontraste un error de traducción?",
+    "bug": "¿Has encontrado un error?",
+    "contact": "Escribir al autor",
     "privacyShort": "No recopilamos ningún dato: todo se queda en tu computadora.",
     "version": "Versión {{v}}",
     "asIs": "La app se ofrece «tal cual», sin garantías, y la usas bajo tu propio riesgo. Más detalles en las condiciones de uso.",

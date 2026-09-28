@@ -30,7 +30,11 @@
     "about": "Proqram haqqında",
     "mzr": "MZR qidalanma gündəliyi",
     "quit": "Çıxış",
-    "update": "{{v}} versiyasını quraşdır"
+    "update": "{{v}} versiyasını quraşdır",
+    "checkUpdates": "Yeniləmələri yoxla",
+    "checking": "Yeniləmələr yoxlanılır…",
+    "upToDate": "Sizdə son versiyadır, {{v}}",
+    "checkFailed": "Yoxlamaq alınmadı. Təkrarla"
   },
   "time": {
     "hm": "{{h}} saat {{m}} dəq",
@@ -362,6 +366,8 @@
     "terms": "İstifadə şərtləri",
     "licenses": "Üçüncü tərəf lisenziyaları",
     "translation": "Tərcümədə səhv tapdınız?",
+    "bug": "Xəta tapdınız?",
+    "contact": "Müəllifə yazmaq",
     "privacyShort": "Heç bir məlumat toplamırıq: hər şey yalnız kompüterinizdə saxlanılır.",
     "version": "Versiya {{v}}",
     "asIs": "Tətbiq «olduğu kimi», zəmanətsiz təqdim olunur və ondan öz riskinizlə istifadə edirsiniz. Ətraflı istifadə şərtlərində.",

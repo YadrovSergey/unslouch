@@ -30,7 +30,11 @@
     "about": "Dastur haqida",
     "mzr": "MZR ovqatlanish kundaligi",
     "quit": "Chiqish",
-    "update": "{{v}} versiyasini oʻrnatish"
+    "update": "{{v}} versiyasini oʻrnatish",
+    "checkUpdates": "Yangilanishlarni tekshirish",
+    "checking": "Yangilanishlar tekshirilmoqda…",
+    "upToDate": "Sizda eng so'nggi versiya, {{v}}",
+    "checkFailed": "Tekshirib bo'lmadi. Qayta urinish"
   },
   "time": {
     "hm": "{{h}} soat {{m}} daq",
@@ -362,6 +366,8 @@
     "terms": "Foydalanish shartlari",
     "licenses": "Uchinchi tomon litsenziyalari",
     "translation": "Tarjimada xato topdingizmi?",
+    "bug": "Xato topdingizmi?",
+    "contact": "Muallifga yozish",
     "privacyShort": "Biz hech qanday maʼlumot toʻplamaymiz: hammasi faqat kompyuteringizda saqlanadi.",
     "version": "Versiya {{v}}",
     "asIs": "Ilova «boricha», kafolatlarsiz taqdim etiladi va undan oʻz xavfingiz ostida foydalanasiz. Batafsil foydalanish shartlarida.",

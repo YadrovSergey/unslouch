@@ -93,6 +93,7 @@ export type SettingsPatch = Partial<Settings> | ((s: Settings) => Partial<Settin
 
 export const REPO_URL = "https://github.com/YadrovSergey/unslouch";
 export const SITE_URL = "https://unslouch.health-diet.ru";
+export const SUPPORT_EMAIL = "support@health-diet.ru";
 /** The site's "thank the developer" page in the app's language: all ways to support live there,
  * so a new payment option never needs an app update. English is at the root, others under /<code>/. */
 export function donatePage(language: string): string {

@@ -30,7 +30,11 @@
     "about": "À propos",
     "mzr": "Journal alimentaire MZR",
     "quit": "Quitter",
-    "update": "Installer la version {{v}}"
+    "update": "Installer la version {{v}}",
+    "checkUpdates": "Rechercher des mises à jour",
+    "checking": "Recherche des mises à jour…",
+    "upToDate": "Vous avez la dernière version, {{v}}",
+    "checkFailed": "Échec de la vérification. Réessayer"
   },
   "time": {
     "hm": "{{h}} h {{m}} min",
@@ -366,6 +370,8 @@
     "terms": "Conditions d’utilisation",
     "licenses": "Licences tierces",
     "translation": "Une erreur de traduction ?",
+    "bug": "Vous avez trouvé un bug ?",
+    "contact": "Écrire à l'auteur",
     "privacyShort": "Nous ne collectons aucune donnée : tout reste sur votre ordinateur.",
     "version": "Version {{v}}",
     "asIs": "L’application est fournie « telle quelle », sans garantie, et vous l’utilisez à vos propres risques. Détails dans les conditions d’utilisation.",
