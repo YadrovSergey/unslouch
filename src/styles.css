@@ -1790,3 +1790,22 @@ input[type="number"] {
   height: 14px;
   fill: currentColor;
 }
+
+/* "Why I made Unslouch" in About: round photo next to the story. */
+.story {
+  display: grid;
+  grid-template-columns: 96px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.story__photo {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.story p:first-child {
+  margin-top: 0;
+}

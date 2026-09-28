@@ -371,9 +371,7 @@
     "privacyShort": "Wir sammeln keine Daten: Alles bleibt auf Ihrem Computer.",
     "version": "Version {{v}}",
     "asIs": "Die App wird „wie besehen“ und ohne Gewähr bereitgestellt, die Nutzung erfolgt auf eigenes Risiko. Mehr in den Nutzungsbedingungen.",
-    "donate": "Projekt unterstützen",
-    "author": "Autor: Sergey Yadrov",
-    "authorMzr": "Entwickler des Ernährungstagebuchs My Healthy Diet"
+    "donate": "Projekt unterstützen"
   },
   "onboarding": {
     "title": "Unslouch läuft",
@@ -515,5 +513,18 @@
       "in": "Durch die Nase einatmen",
       "out": "Langsam ausatmen"
     }
+  },
+  "story": {
+    "title": "Warum ich Unslouch gemacht habe",
+    "photoAlt": "Sergey Yadrov, Entwickler von Unslouch",
+    "mzr": "My Healthy Diet",
+    "paragraphs": [
+      "Ich heiße Sergey Yadrov und bin Entwickler. Außerdem mache ich {{mzr}}, ein Ernährungstagebuch auf Russisch.",
+      "Als ich anfing, viel zu programmieren, wurden meine Augen gegen Abend müde und trocken. Ich ging zum Augenarzt. Er erklärte, dass wir am Bildschirm zwei- bis dreimal seltener blinzeln und die Augen dadurch austrocknen. Der Rat war einfach: öfter blinzeln und alle 20 Minuten in die Ferne schauen, etwa 6 Meter weit.",
+      "Das umzusetzen war schwerer, als es zu verstehen. Bei der Arbeit denkt man nicht ans Blinzeln, geschweige denn an Pausen. Die guten Erinnerungs-Apps kosteten Geld, also habe ich meine eigene geschrieben. Dann kamen Pausen für Nacken, Rücken, Hände und Beine dazu: Am Computer werden nicht nur die Augen müde.",
+      "Unslouch ist kostenlos und quelloffen. Ich entwickle es allein, zusammen mit KI, und nutze es selbst."
+    ],
+    "support": "Wenn die App Ihre Augen und Ihren Rücken schont, spendieren Sie mir einen Kaffee. {{name}} bleibt kostenlos und werbefrei, die Unterstützung fließt in Hosting, neue Übungen und Fehlerbehebungen. Und jede Spende zeigt mir, dass sich die Arbeit lohnt.",
+    "supportButton": "Einen Kaffee spendieren"
   }
 }

@@ -375,9 +375,7 @@
     "privacyShort": "Não coletamos nenhum dado: tudo fica no seu computador.",
     "version": "Versão {{v}}",
     "asIs": "O app é fornecido \"como está\", sem garantias, e você o usa por sua conta e risco. Mais detalhes nos termos de uso.",
-    "donate": "Apoiar o projeto",
-    "author": "Autor: Sergey Yadrov",
-    "authorMzr": "desenvolvedor do diário alimentar My Healthy Diet"
+    "donate": "Apoiar o projeto"
   },
   "onboarding": {
     "title": "O Unslouch está funcionando",
@@ -519,5 +517,18 @@
       "in": "Inspire pelo nariz",
       "out": "Expire devagar"
     }
+  },
+  "story": {
+    "title": "Por que criei o Unslouch",
+    "photoAlt": "Sergey Yadrov, desenvolvedor do Unslouch",
+    "mzr": "My Healthy Diet",
+    "paragraphs": [
+      "Meu nome é Sergey Yadrov. Sou desenvolvedor e também faço o {{mzr}}, um diário alimentar em russo.",
+      "Quando comecei a programar muito, meus olhos ficavam cansados e secos no fim do dia. Fui ao oftalmologista. Ele explicou que, diante da tela, piscamos de duas a três vezes menos, e o olho resseca. O conselho foi simples: piscar mais e, a cada 20 minutos, olhar para longe, a uns 6 metros.",
+      "Seguir o conselho foi mais difícil do que entendê-lo. Trabalhando, a gente esquece de piscar, e mais ainda de fazer pausas. Os bons aplicativos de lembrete eram pagos, então escrevi o meu. Depois acrescentei pausas para o pescoço, as costas, as mãos e as pernas: no computador, não são só os olhos que se cansam.",
+      "O Unslouch é gratuito e de código aberto. Eu o desenvolvo sozinho, com a ajuda de IA, e eu mesmo o uso."
+    ],
+    "support": "Se o app cuida dos seus olhos e das suas costas, me paga um café. O {{name}} vai continuar gratuito e sem anúncios, e o apoio vai para a hospedagem, novos exercícios e correções. E cada contribuição me mostra que vale a pena continuar.",
+    "supportButton": "Me pagar um café"
   }
 }

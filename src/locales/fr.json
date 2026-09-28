@@ -375,9 +375,7 @@
     "privacyShort": "Nous ne collectons aucune donnée : tout reste sur votre ordinateur.",
     "version": "Version {{v}}",
     "asIs": "L’application est fournie « telle quelle », sans garantie, et vous l’utilisez à vos propres risques. Détails dans les conditions d’utilisation.",
-    "donate": "Soutenir le projet",
-    "author": "Auteur : Sergey Yadrov",
-    "authorMzr": "développeur du journal alimentaire My Healthy Diet"
+    "donate": "Soutenir le projet"
   },
   "onboarding": {
     "title": "Unslouch est lancé",
@@ -519,5 +517,18 @@
       "in": "Inspirez par le nez",
       "out": "Expirez lentement"
     }
+  },
+  "story": {
+    "title": "Pourquoi j'ai créé Unslouch",
+    "photoAlt": "Sergey Yadrov, développeur d'Unslouch",
+    "mzr": "My Healthy Diet",
+    "paragraphs": [
+      "Je m'appelle Sergey Yadrov. Je suis développeur et je crée aussi {{mzr}}, un journal alimentaire en russe.",
+      "Quand je me suis mis à beaucoup programmer, mes yeux étaient fatigués et secs le soir. Je suis allé voir un ophtalmologue. Il m'a expliqué que devant un écran on cligne des yeux deux à trois fois moins souvent, et que l'œil s'assèche. Le conseil était simple : cligner plus souvent et, toutes les 20 minutes, regarder au loin, à environ 6 mètres.",
+      "Le suivre s'est révélé plus difficile que le comprendre. Au travail, on oublie de cligner des yeux, et encore plus de faire des pauses. Les bonnes applications de rappel étaient payantes, alors j'ai écrit la mienne. Puis j'ai ajouté des pauses pour la nuque, le dos, les mains et les jambes : devant l'ordinateur, les yeux ne sont pas les seuls à se fatiguer.",
+      "Unslouch est gratuit et open source. Je le développe seul, avec l'aide de l'IA, et je l'utilise moi-même."
+    ],
+    "support": "Si l'application prend soin de vos yeux et de votre dos, offrez-moi un café. {{name}} restera gratuit et sans publicité, et votre soutien finance l'hébergement, de nouveaux exercices et des corrections. Et chaque don me montre que ce travail en vaut la peine.",
+    "supportButton": "M'offrir un café"
   }
 }
