@@ -226,7 +226,14 @@
     "showCue": "Ko'rsatish",
     "blinkCueFor": "Davomiyligi",
     "cueSound": "Ovoz",
-    "cueSoundHint": "Har bir signal bilan past ovoz"
+    "cueSoundHint": "Har bir signal bilan past ovoz",
+    "pages": {
+      "breaks": "Tanaffuslar",
+      "body": "Tana",
+      "cues": "Signallar",
+      "schedule": "Jadval",
+      "general": "Umumiy"
+    }
   },
   "data": {
     "title": "Boshqa kompyuterga koʻchirish",

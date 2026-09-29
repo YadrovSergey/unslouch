@@ -228,7 +228,14 @@
     "showCue": "Afficher",
     "blinkCueFor": "Durée",
     "cueSound": "Son",
-    "cueSoundHint": "Un son discret avec chaque signal"
+    "cueSoundHint": "Un son discret avec chaque signal",
+    "pages": {
+      "breaks": "Pauses",
+      "body": "Corps",
+      "cues": "Signaux",
+      "schedule": "Horaires",
+      "general": "Général"
+    }
   },
   "data": {
     "title": "Transférer vers un autre ordinateur",

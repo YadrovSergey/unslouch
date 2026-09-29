@@ -226,7 +226,14 @@
     "showCue": "Zeigen",
     "blinkCueFor": "Dauer",
     "cueSound": "Ton",
-    "cueSoundHint": "Ein leiser Ton zu jedem Hinweis"
+    "cueSoundHint": "Ein leiser Ton zu jedem Hinweis",
+    "pages": {
+      "breaks": "Pausen",
+      "body": "Körper",
+      "cues": "Hinweise",
+      "schedule": "Zeitplan",
+      "general": "Allgemein"
+    }
   },
   "data": {
     "title": "Auf einen anderen Computer übertragen",

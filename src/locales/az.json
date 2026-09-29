@@ -226,7 +226,14 @@
     "showCue": "Göstər",
     "blinkCueFor": "Müddət",
     "cueSound": "Səs",
-    "cueSoundHint": "Hər siqnalla birlikdə sakit səs"
+    "cueSoundHint": "Hər siqnalla birlikdə sakit səs",
+    "pages": {
+      "breaks": "Fasilələr",
+      "body": "Bədən",
+      "cues": "Siqnallar",
+      "schedule": "Cədvəl",
+      "general": "Ümumi"
+    }
   },
   "data": {
     "title": "Başqa kompüterə köçürmə",

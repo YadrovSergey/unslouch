@@ -224,7 +224,14 @@
     "showCue": "预览",
     "blinkCueFor": "持续",
     "cueSound": "声音",
-    "cueSoundHint": "每次提示时发出轻柔的声音"
+    "cueSoundHint": "每次提示时发出轻柔的声音",
+    "pages": {
+      "breaks": "休息",
+      "body": "身体",
+      "cues": "提示",
+      "schedule": "时间安排",
+      "general": "通用"
+    }
   },
   "data": {
     "title": "迁移到另一台电脑",

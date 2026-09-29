@@ -228,7 +228,14 @@
     "showCue": "Mostrar",
     "blinkCueFor": "Duração",
     "cueSound": "Som",
-    "cueSoundHint": "Um som suave a cada sinal"
+    "cueSoundHint": "Um som suave a cada sinal",
+    "pages": {
+      "breaks": "Pausas",
+      "body": "Corpo",
+      "cues": "Sinais",
+      "schedule": "Horários",
+      "general": "Geral"
+    }
   },
   "data": {
     "title": "Levar para outro computador",

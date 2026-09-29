@@ -226,7 +226,14 @@
     "showCue": "Göster",
     "blinkCueFor": "Süre",
     "cueSound": "Ses",
-    "cueSoundHint": "Her uyarıyla birlikte yumuşak bir ses"
+    "cueSoundHint": "Her uyarıyla birlikte yumuşak bir ses",
+    "pages": {
+      "breaks": "Molalar",
+      "body": "Vücut",
+      "cues": "Uyarılar",
+      "schedule": "Program",
+      "general": "Genel"
+    }
   },
   "data": {
     "title": "Başka bilgisayara taşı",

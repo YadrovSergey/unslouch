@@ -226,7 +226,14 @@
     "showCue": "Show",
     "blinkCueFor": "Stays for",
     "cueSound": "Sound",
-    "cueSoundHint": "A soft sound with each cue"
+    "cueSoundHint": "A soft sound with each cue",
+    "pages": {
+      "breaks": "Breaks",
+      "body": "Body",
+      "cues": "Cues",
+      "schedule": "Schedule",
+      "general": "General"
+    }
   },
   "data": {
     "title": "Move to another computer",

@@ -228,7 +228,14 @@
     "showCue": "Mostrar",
     "blinkCueFor": "Duración",
     "cueSound": "Sonido",
-    "cueSoundHint": "Un sonido suave con cada aviso"
+    "cueSoundHint": "Un sonido suave con cada aviso",
+    "pages": {
+      "breaks": "Pausas",
+      "body": "Cuerpo",
+      "cues": "Avisos",
+      "schedule": "Horario",
+      "general": "General"
+    }
   },
   "data": {
     "title": "Pasar a otra computadora",
