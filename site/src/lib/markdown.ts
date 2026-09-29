@@ -4,6 +4,7 @@ import { href, type Lang } from "../i18n";
 export function fixLinks(html: string, lang: Lang) {
   return html
     .replace(/href="(?:\.\.\/)?docs\/science\.(\w+)\.md(#[^"]*)?"/g, (_, _l, hash = "") => `href="${href(lang, "/science/")}${hash}"`)
-    .replace(/href="(?:\.\.\/)?legal\/(privacy|terms)\.(\w+)\.md(#[^"]*)?"/g, (_, page, _l, hash = "") => `href="${href(lang, `/${page}/`)}${hash}"`)
+    // Legal documents link to each other by file name ("consent.en.md") and from elsewhere by path ("legal/…").
+    .replace(/href="(?:(?:\.\.\/)?legal\/)?(privacy|terms|consent)\.(\w+)\.md(#[^"]*)?"/g, (_, page, _l, hash = "") => `href="${href(lang, `/${page}/`)}${hash}"`)
     .replace(/<a href="http/g, '<a rel="noopener" href="http');
 }

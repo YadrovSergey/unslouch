@@ -2,8 +2,8 @@
 
 Effective from 29 September 2026.
 
-The Yandex Metrica counter on unslouch.health-diet.ru loads as soon as I open a page. On the first
-visit a cookie notice at the bottom of the page tells me about the counter and how to turn it off. By
+The Yandex Metrica counter on unslouch.health-diet.ru loads as soon as I open a page. Until I answer,
+a cookie notice at the bottom of the page tells me about the counter and how to turn it off. By
 continuing to use the site after this notice (including by clicking "OK"), I freely and in my own
 interest consent to the processing of my personal data on the terms below. If I do not agree, I click
 "Decline": the counter is turned off, and the site works fully.

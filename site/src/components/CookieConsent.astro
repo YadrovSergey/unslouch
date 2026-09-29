@@ -69,6 +69,9 @@ const c = t(lang).cookieBanner;
       } catch (e) {}
     }
     var state = get();
+    // After "Decline" the counter may still have written its cookies while the page was unloading: clear them on
+    // every visit, as the privacy policy promises.
+    if (state === "no") dropCookies();
     if (state !== "no") load();
     if (state !== "no" && state !== "yes") bar.hidden = false;
     bar.addEventListener("click", function (e) {

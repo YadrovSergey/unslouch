@@ -27,8 +27,8 @@ Presets: Recommended, Pomodoro (25/5), Hourly, Custom.
 ## Privacy
 
 The app sends nothing from your computer. No analytics, telemetry, crash reports or accounts. The only network
-request is the daily update check, and you can turn it off. The website counts visits with Yandex Metrica only
-after the visitor clicks "Accept" in the cookie notice ([consent](legal/consent.en.md)). Details: [legal/privacy.en.md](legal/privacy.en.md).
+request is the daily update check, and you can turn it off. The website counts visits with Yandex Metrica; the cookie
+notice lets a visitor turn it off with "Decline" ([consent](legal/consent.en.md)). Details: [legal/privacy.en.md](legal/privacy.en.md).
 
 The app does not treat anything and does not replace a doctor: [legal/terms.en.md](legal/terms.en.md).
 
@@ -165,7 +165,7 @@ Linux, 15 языков. Без аккаунтов, без сбора данны�
 Приложение делает один разработчик вместе с ИИ (Claude): код, тексты и переводы. Советы о здоровье опираются
 на опубликованные исследования со ссылками.
 
-Приложение не собирает никаких данных, сайт считает посещения Яндекс Метрикой только с согласия посетителя:
+Приложение не собирает никаких данных, сайт считает посещения Яндекс Метрикой, отказаться можно кнопкой «Отказаться» в уведомлении о cookie:
 [политика конфиденциальности](legal/privacy.ru.md), [согласие на обработку данных](legal/consent.ru.md).
 Приложение и сайт предоставляются «как есть», без гарантий; приложение не лечит и не заменяет врача:
 [условия использования](legal/terms.ru.md).

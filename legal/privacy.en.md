@@ -28,9 +28,9 @@ sent anywhere.
 
 | File | Contents |
 |---|---|
-| `settings.json` | your settings: intervals, enabled reminders, work hours, language |
+| `settings.json` | your settings: intervals, enabled reminders, work hours, language, and your own reminders with their text (for example, "pills"), times and days |
 | `stats.json` | breaks per day, time at the computer, longest sitting stretch, glasses of water. Streaks and achievements are calculated from this on the fly and not stored separately |
-| `wellbeing.json` | your weekly self-ratings (0 to 3) for eyes, neck, back and hands |
+| `wellbeing.json` | your self-ratings (0 to 3) for eyes, neck, back and hands by day, and the notes you write to them |
 | `usage.json` | time per program: only the name of the program in the active window |
 
 Where the files live:
@@ -53,8 +53,8 @@ In settings you can:
 
 ### Export and import
 
-You can export all your data to one file and import it back: settings, statistics, wellbeing
-ratings and time per program. The file is saved wherever you choose and is not sent anywhere else.
+You can export all your data to one file and import it back: settings with your own reminders, statistics,
+wellbeing ratings with notes and time per program. The file is saved wherever you choose and is not sent anywhere else.
 If you share it, remember it contains all of the above.
 
 ## How to delete everything
@@ -94,7 +94,7 @@ counter. This is the site owner's decision: the counter runs until you turn it o
   cookie identifiers (for example `_ym_uid`, `_ym_d`, `_ym_isad`) and receives your IP address,
   browser and device details, pages viewed, the referring site, visit time and actions on the page:
   clicks, scrolling, link clicks and downloads.
-- On the first visit a notice at the bottom of the page explains this. "OK" closes the notice, and the counter keeps running.
+- Until you answer, a notice at the bottom of every page explains this. "OK" closes the notice, and the counter keeps running.
 - "Decline" turns the counter off: the site remembers your choice, removes the Metrica cookies from
   its own domain and reloads the page, and the counter is not loaded after that. Data Metrica
   received before you declined stays with Metrica. The choice is stored in this browser; in another
