@@ -328,6 +328,14 @@ fn preview_cue(app: AppHandle, window: WebviewWindow, state: State<AppState>, cu
         .map_err(|e| e.to_string())
 }
 
+/// A cue window is drawn and transparent: show it now (see overlay::show_cue).
+#[tauri::command]
+fn cue_ready(window: WebviewWindow) {
+    if window.label().starts_with("cue-") {
+        let _ = window.show();
+    }
+}
+
 /// A cue window closes itself, not the other cues that may be on screen.
 #[tauri::command]
 fn close_cue(window: WebviewWindow) {
@@ -871,6 +879,7 @@ pub fn run() {
             break_result,
             water_drunk,
             close_cue,
+            cue_ready,
             preview_cue,
             save_png,
             dismiss_wellbeing,

@@ -49,9 +49,13 @@ fn cover_monitor<'a>(
 /// Positions in physical pixels after the window exists: with monitors of different scale, a logical position
 /// can land on the wrong monitor on Windows.
 fn place_and_show(win: &WebviewWindow, monitor: &Monitor) {
+    place(win, monitor);
+    let _ = win.show();
+}
+
+fn place(win: &WebviewWindow, monitor: &Monitor) {
     let _ = win.set_position(*monitor.position());
     let _ = win.set_size(*monitor.size());
-    let _ = win.show();
 }
 
 #[cfg(target_os = "macos")]
@@ -164,13 +168,16 @@ pub fn show_cue(app: &AppHandle, cue: Cue, lang: &str, is_cis: bool, theme: &str
                 let Ok(builder) = cover_monitor(app, label.clone(), url) else { continue };
                 if let Ok(win) = builder.transparent(true).focused(false).focusable(false).build() {
                     let _ = win.set_ignore_cursor_events(true);
-                    place_and_show(&win, &monitor);
+                    // Shown by the page itself (`cue_ready`) once it is drawn and transparent: shown right away,
+                    // the window flashed the app's opaque background over the whole screen for a moment.
+                    place(&win, &monitor);
                     raise_above_menu_bar(&win);
                     labels.push(label);
                 }
             }
-            // The window outlives its fade-out by half a second.
-            close_later(app, labels, if cue == Cue::Blink { u64::from(blink_sec) * 1000 + 500 } else { POSTURE_CUE_MS });
+            // The page closes its window when the fade-out ends; this is the fallback if it never loads.
+            let ms = if cue == Cue::Blink { u64::from(blink_sec) * 1000 } else { POSTURE_CUE_MS };
+            close_later(app, labels, ms + 3000);
         }
         Cue::Water => {
             close_prefix(app, "cue-water");
@@ -191,6 +198,8 @@ pub fn show_cue(app: &AppHandle, cue: Cue, lang: &str, is_cis: bool, theme: &str
                 .transparent(true)
                 .shadow(false)
                 .focused(false)
+                // Shown by the page (`cue_ready`), like the edge cues, so no empty frame flashes first.
+                .visible(false)
                 // The first click on "Done" must press the button, not just activate the window.
                 .accept_first_mouse(true)
                 .visible_on_all_workspaces(true)
