@@ -117,7 +117,7 @@ export function SettingsView() {
         {tab === "stats" && <StatsTab info={info} update={update} />}
         {tab === "exercises" && <GalleryView />}
         {tab === "about" && <AboutTab info={info} />}
-        {info.isCis && (tab === "settings" || tab === "about") && <Promo url={`${info.mzrUrl}&utm_content=promo`} />}
+        {info.isCis && tab === "about" && <Promo url={`${info.mzrUrl}&utm_content=promo`} />}
       </div>
     </div>
   );
