@@ -13,9 +13,7 @@ export function CueView({ params }: { params: URLSearchParams }) {
   const sound = params.get("sound") === "1";
   useEffect(() => {
     if (sound) playCue();
-    // The window is created hidden: show it once the page is rendered and its background is transparent.
-    // Not requestAnimationFrame: a hidden window on macOS paints no frames, so it never fired and the cue never
-    // showed (only its sound played). The effect runs after React has put the transparent page in place.
+    // Cue windows are shown right away by Rust; this only matters for a window that was left hidden.
     cueReady();
   }, [sound]);
   if (cue === "water") return <WaterCard cis={params.get("cis") === "1"} />;

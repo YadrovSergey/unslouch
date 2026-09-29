@@ -2,6 +2,10 @@
 
 Everything noticeable that changes in Unslouch. Russian version: [CHANGELOG.ru.md](CHANGELOG.ru.md).
 
+## 0.1.13 · 29 September 2026
+
+- Fixed: the blink cue darkened only part of the screen without its label, and the screen flashed at first. The edges now darken across the whole screen, smoothly.
+
 ## 0.1.12 · 29 September 2026
 
 - Fixed: the blink and posture cues didn't appear on Mac, only their sound played.

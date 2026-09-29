@@ -129,24 +129,6 @@ pub fn show_reminder_cards(app: &AppHandle) {
     }
 }
 
-/// A window the page shows itself (`cue_ready`) is shown anyway after `ms`, if the page never got there:
-/// a hidden webview may not paint, and a reminder must not stay invisible for good.
-fn show_later(app: &AppHandle, label: String, ms: u64) {
-    let handle = app.clone();
-    std::thread::spawn(move || {
-        std::thread::sleep(std::time::Duration::from_millis(ms));
-        let h = handle.clone();
-        let _ = handle.run_on_main_thread(move || {
-            let breaking = h.webview_windows().keys().any(|l| l.starts_with("break-"));
-            if let Some(win) = h.get_webview_window(&label) {
-                if !breaking && !win.is_visible().unwrap_or(true) {
-                    let _ = win.show();
-                }
-            }
-        });
-    });
-}
-
 fn close_later(app: &AppHandle, labels: Vec<String>, ms: u64) {
     let handle = app.clone();
     std::thread::spawn(move || {
@@ -203,18 +185,15 @@ pub fn show_cue(app: &AppHandle, cue: Cue, lang: &str, is_cis: bool, theme: &str
                 let Ok(builder) = cover_monitor(app, label.clone(), url) else { continue };
                 if let Ok(win) = builder.transparent(true).focused(false).focusable(false).build() {
                     let _ = win.set_ignore_cursor_events(true);
-                    // Shown by the page itself (`cue_ready`) once it is drawn and transparent: shown right away,
-                    // the window flashed the app's opaque background over the whole screen for a moment.
-                    place(&win, &monitor);
+                    // Shown right away: the page has no background until it knows it is a cue, so nothing flashes.
+                    // (Waiting for the page to ask for it left the window at its default size on macOS.)
+                    place_and_show(&win, &monitor);
                     raise_above_menu_bar(&win);
                     labels.push(label);
                 }
             }
             // The page closes its window when the fade-out ends; this is the fallback if it never loads.
             let ms = if cue == Cue::Blink { u64::from(blink_sec) * 1000 } else { POSTURE_CUE_MS };
-            for label in &labels {
-                show_later(app, label.clone(), 800);
-            }
             close_later(app, labels, ms + 3000);
         }
         Cue::Water => {
@@ -236,15 +215,12 @@ pub fn show_cue(app: &AppHandle, cue: Cue, lang: &str, is_cis: bool, theme: &str
                 .transparent(true)
                 .shadow(false)
                 .focused(false)
-                // Shown by the page (`cue_ready`), like the edge cues, so no empty frame flashes first.
-                .visible(false)
                 // The first click on "Done" must press the button, not just activate the window.
                 .accept_first_mouse(true)
                 .visible_on_all_workspaces(true)
                 .build();
             if let Ok(win) = win {
                 raise_above_menu_bar(&win);
-                show_later(app, win.label().to_string(), 1500);
             }
         }
     }
@@ -254,8 +230,7 @@ const REMINDER_W: f64 = 380.0;
 const REMINDER_H: f64 = 170.0;
 
 /// A reminder of the user's own (pills, lunch): a card in the corner that stays until answered. Several at once
-/// stack upwards in the first free place. The page reads the title from the settings and shows the window when
-/// drawn. `preview` ("Show" in the settings) opens a separate card that doesn't touch the schedule.
+/// stack upwards in the first free place. The page reads the title from the settings. `preview` ("Show" in the settings) opens a separate card that doesn't touch the schedule.
 pub fn show_reminder(app: &AppHandle, id: &str, title: &str, lang: &str, theme: &str, sound: bool, preview: bool) {
     // Wayland lets no program keep a window on top: a system notification works everywhere.
     if std::env::var("XDG_SESSION_TYPE").is_ok_and(|t| t == "wayland") {
@@ -305,11 +280,9 @@ pub fn show_reminder(app: &AppHandle, id: &str, title: &str, lang: &str, theme: 
         .focused(false)
         .accept_first_mouse(true)
         .visible_on_all_workspaces(true)
-        .visible(false)
         .build();
     if let Ok(win) = win {
         raise_above_menu_bar(&win);
-        show_later(app, label, 1500);
     }
 }
 

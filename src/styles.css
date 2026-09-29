@@ -81,8 +81,9 @@ body {
   height: 100%;
 }
 
+/* No background until the page knows its view: cue windows are transparent, and an opaque body shown for a
+   moment before the view is set flashed over the whole screen. Views that need a background set it below. */
 body {
-  background: var(--bg);
   color: var(--text);
   user-select: none;
   cursor: default;
@@ -373,6 +374,11 @@ input[role="switch"]:checked::after {
 
 .legend__item--skipped::before {
   background: var(--skipped);
+}
+
+body[data-view="settings"],
+body[data-view="gallery"] {
+  background: var(--bg);
 }
 
 /* ---------- Break screen: always calm and dark, the screen should not glare ---------- */
