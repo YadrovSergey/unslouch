@@ -2,7 +2,7 @@
 
 Everything noticeable that changes in Unslouch. Russian version: [CHANGELOG.ru.md](CHANGELOG.ru.md).
 
-## Unreleased
+## 0.1.8 · 29 September 2026
 
 - Your own reminders: pills, lunch or anything else, at set times on chosen days or every few minutes. A card appears in the corner with "Done" and "In 10 min".
 - Statistics for a week, a month, 3 months and a year: time at the computer by day, your usual working day, start and end of work, breaks by day.
