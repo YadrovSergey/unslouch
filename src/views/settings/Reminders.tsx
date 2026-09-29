@@ -226,6 +226,12 @@ function IntervalPicker({ value, onChange }: { value: number; onChange: (v: numb
               const n = Math.round(Number(e.target.value));
               if (n >= 5 && n <= 480) onChange(n);
             }}
+            // Out of range or empty: show and save the nearest allowed value, never a number that wasn't saved.
+            onBlur={() => {
+              const n = Math.min(480, Math.max(5, Math.round(Number(text)) || value));
+              setText(String(n));
+              onChange(n);
+            }}
           />
           {t("settings.min")}
         </label>

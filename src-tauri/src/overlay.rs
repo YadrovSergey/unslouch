@@ -79,7 +79,14 @@ fn raise_above_menu_bar(_: &WebviewWindow) {}
 /// Returns how many windows were opened.
 pub fn show_break(app: &AppHandle, info: BreakInfo, lang: &str, sound: bool, tip: usize) -> usize {
     close_prefix(app, "break-");
-    close_prefix(app, "cue-");
+    // Gentle cues go; the user's own reminder cards wait hidden and come back when the break ends.
+    for (label, win) in app.webview_windows() {
+        if label.starts_with("cue-rem") {
+            let _ = win.hide();
+        } else if label.starts_with("cue-") {
+            let _ = win.destroy();
+        }
+    }
     let kind = match info.kind {
         BreakKind::Micro => "micro",
         BreakKind::Movement => "movement",
@@ -110,6 +117,34 @@ pub fn show_break(app: &AppHandle, info: BreakInfo, lang: &str, sound: bool, tip
 
 pub fn close_break(app: &AppHandle) {
     close_prefix(app, "break-");
+    show_reminder_cards(app);
+}
+
+/// The reminder cards hidden for a break, back on screen.
+pub fn show_reminder_cards(app: &AppHandle) {
+    for (label, win) in app.webview_windows() {
+        if label.starts_with("cue-rem") {
+            let _ = win.show();
+        }
+    }
+}
+
+/// A window the page shows itself (`cue_ready`) is shown anyway after `ms`, if the page never got there:
+/// a hidden webview may not paint, and a reminder must not stay invisible for good.
+fn show_later(app: &AppHandle, label: String, ms: u64) {
+    let handle = app.clone();
+    std::thread::spawn(move || {
+        std::thread::sleep(std::time::Duration::from_millis(ms));
+        let h = handle.clone();
+        let _ = handle.run_on_main_thread(move || {
+            let breaking = h.webview_windows().keys().any(|l| l.starts_with("break-"));
+            if let Some(win) = h.get_webview_window(&label) {
+                if !breaking && !win.is_visible().unwrap_or(true) {
+                    let _ = win.show();
+                }
+            }
+        });
+    });
 }
 
 fn close_later(app: &AppHandle, labels: Vec<String>, ms: u64) {
@@ -156,7 +191,7 @@ pub fn show_cue(app: &AppHandle, cue: Cue, lang: &str, is_cis: bool, theme: &str
         Cue::Blink | Cue::Posture => {
             // A new edge cue replaces an old one; the water card stays until the user answers it.
             for (label, win) in app.webview_windows() {
-                if label.starts_with("cue-") && !label.starts_with("cue-water") {
+                if label.starts_with("cue-") && !label.starts_with("cue-water") && !label.starts_with("cue-rem") {
                     let _ = win.destroy();
                 }
             }
@@ -206,32 +241,57 @@ pub fn show_cue(app: &AppHandle, cue: Cue, lang: &str, is_cis: bool, theme: &str
                 .build();
             if let Ok(win) = win {
                 raise_above_menu_bar(&win);
+                show_later(app, win.label().to_string(), 1500);
             }
         }
     }
 }
 
 const REMINDER_W: f64 = 380.0;
-const REMINDER_H: f64 = 150.0;
+const REMINDER_H: f64 = 170.0;
 
 /// A reminder of the user's own (pills, lunch): a card in the corner that stays until answered. Several at once
-/// stack upwards. The page reads the reminder's title from the settings and shows the window when drawn.
-pub fn show_reminder(app: &AppHandle, id: &str, lang: &str, theme: &str, sound: bool) {
-    let label = format!("cue-rem-{id}");
-    if app.get_webview_window(&label).is_some() {
+/// stack upwards in the first free place. The page reads the title from the settings and shows the window when
+/// drawn. `preview` ("Show" in the settings) opens a separate card that doesn't touch the schedule.
+pub fn show_reminder(app: &AppHandle, id: &str, title: &str, lang: &str, theme: &str, sound: bool, preview: bool) {
+    // Wayland lets no program keep a window on top: a system notification works everywhere.
+    if std::env::var("XDG_SESSION_TYPE").is_ok_and(|t| t == "wayland") {
+        use tauri_plugin_notification::NotificationExt;
+        let body = if title.is_empty() { crate::i18n::t(lang, "reminders.untitled", &[]) } else { title.to_string() };
+        let _ = app.notification().builder().title(crate::i18n::t(lang, "app.name", &[])).body(body).show();
         return;
     }
-    let others = app.webview_windows().keys().filter(|l| l.starts_with("cue-rem-")).count() as f64;
+    let label = if preview { format!("cue-remp-{id}") } else { format!("cue-rem-{id}") };
+    if let Some(old) = app.get_webview_window(&label) {
+        if !preview {
+            return;
+        }
+        let _ = old.destroy();
+    }
     let Some((monitor, _)) = monitors(app).into_iter().find(|(_, p)| *p) else { return };
     let scale = monitor.scale_factor();
     let pos = monitor.position().to_logical::<f64>(scale);
     let size = monitor.size().to_logical::<f64>(scale);
     let margin = 24.0;
-    let y = pos.y + size.height - REMINDER_H - margin * 3.0 - WATER_CUE_H - margin - others * (REMINDER_H + margin / 2.0);
-    let url = format!("index.html?view=cue&cue=reminder&rid={id}&lang={lang}&theme={theme}&sound={}", sound as u8);
-    let win = WebviewWindowBuilder::new(app, label, WebviewUrl::App(url.into()))
+    let step = REMINDER_H + margin / 2.0;
+    let slot_y = |i: usize| pos.y + size.height - REMINDER_H - margin * 3.0 - WATER_CUE_H - margin - i as f64 * step;
+    // The first place not taken by another card; answered cards leave gaps that new ones fill.
+    let taken: Vec<f64> = app
+        .webview_windows()
+        .iter()
+        .filter(|(l, _)| l.starts_with("cue-rem"))
+        .filter_map(|(_, w)| w.outer_position().ok())
+        .map(|p| p.to_logical::<f64>(scale).y)
+        .collect();
+    let slots = ((size.height - WATER_CUE_H - margin * 5.0) / step).floor().max(1.0) as usize;
+    let slot = (0..slots).find(|&i| !taken.iter().any(|y| (y - slot_y(i)).abs() < 5.0)).unwrap_or(0);
+    let url = format!(
+        "index.html?view=cue&cue=reminder&rid={id}&lang={lang}&theme={theme}&sound={}&preview={}",
+        sound as u8, preview as u8
+    );
+    let win = WebviewWindowBuilder::new(app, label.clone(), WebviewUrl::App(url.into()))
         .title("Unslouch")
-        .position(pos.x + size.width - REMINDER_W - margin, y)
+        .position(pos.x + size.width - REMINDER_W - margin, slot_y(slot))
         .inner_size(REMINDER_W, REMINDER_H)
         .decorations(false)
         .resizable(false)
@@ -246,6 +306,7 @@ pub fn show_reminder(app: &AppHandle, id: &str, lang: &str, theme: &str, sound: 
         .build();
     if let Ok(win) = win {
         raise_above_menu_bar(&win);
+        show_later(app, label, 1500);
     }
 }
 

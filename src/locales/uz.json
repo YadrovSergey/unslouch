@@ -605,7 +605,8 @@
     "cancel": "Bekor qilish",
     "edit": "Tahrirlash",
     "delete": "Oʻchirish",
-    "deleteConfirm": "Bu yozuv oʻchirilsinmi?"
+    "deleteConfirm": "Bu yozuv oʻchirilsinmi?",
+    "saveFailed": "Saqlab bo'lmadi"
   },
   "changelog": {
     "title": "Oʻzgarishlar tarixi",

@@ -81,6 +81,8 @@ pub struct State {
     worked: HashMap<String, u64>,
     /// "Later": id → show again at.
     snoozed: HashMap<String, NaiveDateTime>,
+    /// The day `worked` counts in: a new day starts every interval from zero.
+    day: Option<chrono::NaiveDate>,
 }
 
 impl State {
@@ -89,6 +91,10 @@ impl State {
     /// regardless, a pill reminder can't wait for work.
     pub fn due(&mut self, list: &[Reminder], now: NaiveDateTime, counting: bool, dt: u64) -> Vec<String> {
         let mut out = vec![];
+        if self.day != Some(now.date()) {
+            self.day = Some(now.date());
+            self.worked.clear();
+        }
         for r in list.iter().filter(|r| r.enabled) {
             if let Some(at) = self.snoozed.get(&r.id).copied() {
                 if now >= at {
@@ -130,6 +136,18 @@ impl State {
             self.fired.retain(|k| k.contains(&today));
         }
         out
+    }
+
+    /// A reminder just added or changed doesn't catch up with times already past today: added at 13:20,
+    /// a 13:00 lunch reminder waits for tomorrow instead of popping up while it is being edited.
+    pub fn skip_past(&mut self, r: &Reminder, now: NaiveDateTime) {
+        for t in &r.times {
+            let Some(time) = parse_hhmm(t) else { continue };
+            let slot = now.date().and_time(time);
+            if now >= slot {
+                self.fired.insert(format!("{}@{}", r.id, slot.format("%Y-%m-%d %H:%M")));
+            }
+        }
     }
 
     /// "Later": the same reminder again in `min` minutes.
@@ -242,6 +260,27 @@ mod tests {
         assert!(s.due(&list, at(28, 9, 9), true, 1).is_empty());
         assert_eq!(s.due(&list, at(28, 9, 10), true, 1), vec!["pills"]);
         assert!(s.due(&list, at(28, 9, 11), true, 1).is_empty());
+    }
+
+    #[test]
+    fn a_new_reminder_does_not_catch_up() {
+        let mut s = State::default();
+        let lunch = Reminder { id: "lunch".into(), times: vec!["13:00".into(), "18:00".into()], ..Default::default() };
+        s.skip_past(&lunch, at(28, 13, 20));
+        assert!(s.due(&[lunch.clone()], at(28, 13, 21), true, 1).is_empty());
+        assert_eq!(s.due(&[lunch], at(28, 18, 0), true, 1), vec!["lunch"]);
+    }
+
+    #[test]
+    fn work_counted_yesterday_does_not_carry_over() {
+        let mut s = State::default();
+        let list = [Reminder { id: "p".into(), kind: "interval".into(), interval_min: 60, ..Default::default() }];
+        for m in 0..55 {
+            s.due(&list, at(28, 18, m), true, 60);
+        }
+        for m in 0..5 {
+            assert!(s.due(&list, at(29, 9, m), true, 60).is_empty());
+        }
     }
 
     #[test]

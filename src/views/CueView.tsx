@@ -17,7 +17,7 @@ export function CueView({ params }: { params: URLSearchParams }) {
     requestAnimationFrame(() => requestAnimationFrame(() => cueReady()));
   }, [sound]);
   if (cue === "water") return <WaterCard cis={params.get("cis") === "1"} />;
-  if (cue === "reminder") return <ReminderCard id={params.get("rid") ?? ""} />;
+  if (cue === "reminder") return <ReminderCard id={params.get("rid") ?? ""} preview={params.get("preview") === "1"} />;
   return <EdgeCue cue={cue} sec={Number(params.get("sec") ?? 4)} />;
 }
 
@@ -88,7 +88,8 @@ function WaterCard({ cis }: { cis: boolean }) {
 const LATER_MIN = 10;
 
 /** A reminder of the user's own: stays until answered. The title comes from the settings. */
-function ReminderCard({ id }: { id: string }) {
+/** `preview`: opened by "Show" in the settings; its buttons only close it and leave the schedule alone. */
+function ReminderCard({ id, preview }: { id: string; preview: boolean }) {
   const { t } = useTranslation();
   const [title, setTitle] = useState("");
   useEffect(() => {
@@ -103,12 +104,12 @@ function ReminderCard({ id }: { id: string }) {
         <path d="M10 20.5 a2 2 0 0 0 4 0" />
       </svg>
       <div className="water__body">
-        <b>{title || t("reminders.untitled")}</b>
+        <b className="reminder__title">{title || t("reminders.untitled")}</b>
         <div className="water__actions">
-          <button className="water__button water__button--primary" onClick={() => reminderAnswer(id)}>
+          <button className="water__button water__button--primary" onClick={() => (preview ? closeCue() : reminderAnswer(id))}>
             {t("reminders.done")}
           </button>
-          <button className="water__button" onClick={() => reminderAnswer(id, LATER_MIN)}>
+          <button className="water__button" onClick={() => (preview ? closeCue() : reminderAnswer(id, LATER_MIN))}>
             {t("reminders.later", { n: LATER_MIN })}
           </button>
         </div>

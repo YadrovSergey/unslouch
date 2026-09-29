@@ -609,7 +609,8 @@
     "cancel": "Annuler",
     "edit": "Modifier",
     "delete": "Supprimer",
-    "deleteConfirm": "Supprimer cette entrée ?"
+    "deleteConfirm": "Supprimer cette entrée ?",
+    "saveFailed": "Échec de l’enregistrement"
   },
   "changelog": {
     "title": "Journal des modifications",

@@ -605,7 +605,8 @@
     "cancel": "Ləğv et",
     "edit": "Dəyiş",
     "delete": "Sil",
-    "deleteConfirm": "Bu qeyd silinsin?"
+    "deleteConfirm": "Bu qeyd silinsin?",
+    "saveFailed": "Saxlamaq alınmadı"
   },
   "changelog": {
     "title": "Dəyişikliklər tarixçəsi",

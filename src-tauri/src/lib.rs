@@ -158,7 +158,16 @@ fn get_app_info(app: AppHandle, state: State<AppState>) -> AppInfo {
 fn save_settings(app: AppHandle, state: State<AppState>, settings: Settings) -> AppInfo {
     let mut inner = state.0.lock().unwrap();
     let old_lang = inner.lang();
+    let old_reminders = std::mem::take(&mut inner.settings.reminders);
     inner.settings = settings.sanitized();
+    // Reminders added or given new times don't catch up with today's times already past.
+    let now = Local::now().naive_local();
+    for r in inner.settings.reminders.clone() {
+        let old = old_reminders.iter().find(|o| o.id == r.id);
+        if old.is_none_or(|o| o.times != r.times || o.days != r.days || o.kind != r.kind || !o.enabled) {
+            inner.reminders.skip_past(&r, now);
+        }
+    }
     settings::save(&inner.path("settings.json"), &inner.settings);
     let lang_changed = inner.lang() != old_lang;
     let info = app_info(&app, &inner);
@@ -285,8 +294,9 @@ fn preview_reminder(app: AppHandle, window: WebviewWindow, state: State<AppState
         let inner = state.0.lock().unwrap();
         (inner.lang(), inner.settings.clone())
     };
+    let title = s.reminders.iter().find(|r| r.id == id).map(|r| r.title.clone()).unwrap_or_default();
     let handle = app.clone();
-    app.run_on_main_thread(move || overlay::show_reminder(&handle, &id, lang, &s.theme, s.cue_sound))
+    app.run_on_main_thread(move || overlay::show_reminder(&handle, &id, &title, lang, &s.theme, s.cue_sound, true))
         .map_err(|e| e.to_string())
 }
 
@@ -878,7 +888,8 @@ fn run_ticker(app: AppHandle) {
             inner.quiet = out.quiet;
             if out.active {
                 let minute = (now.hour() * 60 + now.minute()) as u16;
-                let today = inner.today();
+                // The tick's own time for the day key too: at 23:59:59 the minute must not land in tomorrow.
+                let today = inner.stats.entry(day_key(now)).or_default();
                 today.active_sec += 1;
                 today.first_active_min.get_or_insert(minute);
                 today.last_active_min = Some(minute);
@@ -891,11 +902,12 @@ fn run_ticker(app: AppHandle) {
             if let Some(sec) = out.sitting_ended {
                 sitting_ended(&mut inner, sec);
             }
-            // Own reminders. Interval ones count only at the computer within working hours; during a break
-            // everything waits a minute.
-            let counting = out.active && scheduler::in_work_hours(&s, now);
+            // Own reminders. Interval ones count only at the computer within working hours and when nothing asks
+            // for quiet. During a break, a call, Do Not Disturb, focus, a pause or fullscreen everything waits a minute.
+            let quiet = matches!(out.quiet, Quiet::Call | Quiet::DoNotDisturb | Quiet::Focus | Quiet::Paused) || probe.fullscreen;
+            let counting = out.active && !quiet && scheduler::in_work_hours(&s, now);
             let mut due = inner.reminders.due(&s.reminders, now, counting, 1);
-            if inner.sched.current.is_some() {
+            if inner.sched.current.is_some() || quiet {
                 for id in &due {
                     inner.reminders.snooze(id, now, 1);
                 }
@@ -929,8 +941,9 @@ fn run_ticker(app: AppHandle) {
                 Action::None => {}
             }
             for id in due {
+                let title = s.reminders.iter().find(|r| r.id == id).map(|r| r.title.clone()).unwrap_or_default();
                 let (handle, theme) = (app.clone(), s.theme.clone());
-                let _ = app.run_on_main_thread(move || overlay::show_reminder(&handle, &id, lang, &theme, cue_sound));
+                let _ = app.run_on_main_thread(move || overlay::show_reminder(&handle, &id, &title, lang, &theme, cue_sound, false));
             }
         }
     });
@@ -1033,6 +1046,9 @@ pub fn run() {
             let waiting = app.state::<AppState>().0.lock().unwrap().sched.current.is_some();
             if !others && waiting {
                 finish_break(app, BreakResult::Skipped);
+            }
+            if !others {
+                overlay::show_reminder_cards(app);
             }
         }
         RunEvent::Exit => {

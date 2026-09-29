@@ -605,7 +605,8 @@
     "cancel": "İptal",
     "edit": "Düzenle",
     "delete": "Sil",
-    "deleteConfirm": "Bu kayıt silinsin mi?"
+    "deleteConfirm": "Bu kayıt silinsin mi?",
+    "saveFailed": "Kaydedilemedi"
   },
   "changelog": {
     "title": "Değişiklik geçmişi",

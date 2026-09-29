@@ -2,8 +2,14 @@
 
 Everything noticeable that changes in Unslouch. Russian version: [CHANGELOG.ru.md](CHANGELOG.ru.md).
 
-## 0.1.9 · 29 September 2026
+## 0.1.10 · 29 September 2026
 
+- An own reminder card no longer disappears when a break or a blink cue comes: it hides during the break and comes back.
+- Own reminders wait during a call, Do Not Disturb, focus, a pause or fullscreen.
+- A reminder just added doesn't go off at once if its time today has already passed.
+- "Show" on an own reminder no longer shifts its real schedule.
+- The "every N minutes of work" counter starts again each day.
+- The wellbeing journal warns when the chosen day already has an entry.
 - Own reminders "every N minutes of work" count only time at the computer: away for lunch, the counter waits. Intervals go up to 4 hours, or type your own number of minutes.
 
 ## 0.1.8 · 29 September 2026

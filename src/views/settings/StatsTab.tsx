@@ -44,7 +44,7 @@ export function StatsTab({ info, update }: { info: AppInfo; update: (p: Settings
           </button>
         ))}
       </div>
-      {sub === "overview" && <Overview days={days} />}
+      {sub === "overview" && <Overview days={days} nightShift={info.settings.workHoursEnabled && info.settings.workStart > info.settings.workEnd} />}
       {sub === "apps" && <Apps info={info} update={update} days={days} />}
       {sub === "wellbeing" && <WellbeingChart onAdd={() => setSub("journal")} />}
       {sub === "journal" && <Journal />}
@@ -81,7 +81,8 @@ function median(values: number[]): number | null {
   return v[Math.floor(v.length / 2)];
 }
 
-function Overview({ days }: { days: DayStats[] }) {
+/** `nightShift`: work hours go over midnight, so start and end by calendar day would mislead: they are hidden. */
+function Overview({ days, nightShift }: { days: DayStats[]; nightShift: boolean }) {
   const { t, i18n } = useTranslation();
   const [period, setPeriod] = useState<Period>(7);
   if (!days.length) return null;
@@ -93,8 +94,8 @@ function Overview({ days }: { days: DayStats[] }) {
   const offered = done + range.reduce((s, d) => s + d.skipped, 0);
   const starts = worked.map((d) => d.firstActiveMin).filter((m): m is number => m != null);
   const ends = worked.map((d) => d.lastActiveMin).filter((m): m is number => m != null);
-  const start = median(starts);
-  const end = median(ends);
+  const start = nightShift ? null : median(starts);
+  const end = nightShift ? null : median(ends);
   const longDays = range.filter((d) => d.longestSittingSec >= SITTING_RISK_SEC).length;
   const empty = days.every((d) => d.activeSec === 0);
 
@@ -111,7 +112,7 @@ function Overview({ days }: { days: DayStats[] }) {
           />
           <Tile label={t("stats.streak")} value={String(streak(days))} />
         </div>
-        {today.firstActiveMin != null && today.lastActiveMin != null && (
+        {!nightShift && today.firstActiveMin != null && today.lastActiveMin != null && (
           <p className="muted">
             {t("stats.workedToday", {
               start: clock(today.firstActiveMin),
@@ -136,7 +137,7 @@ function Overview({ days }: { days: DayStats[] }) {
             </div>
             <h3 className="chart-title">{t("stats.timeByDay")}</h3>
             <TimeBars days={range} period={period} locale={i18n.language} />
-            {period <= 30 && starts.length > 0 && (
+            {period <= 30 && starts.length > 0 && !nightShift && (
               <>
                 <h3 className="chart-title">{t("stats.workday")}</h3>
                 <WorkdayRanges days={range} locale={i18n.language} />
@@ -165,11 +166,12 @@ function TimeBars({ days, period, locale }: { days: DayStats[]; period: Period; 
   const weekly = period > 30;
   const buckets = useMemo(() => {
     if (!weekly) return days.map((d) => ({ key: d.day, sec: d.activeSec, day: d.day }));
+    // Weeks counted back from today, so the last bar is a full week and not a lone day.
     const out: { key: string; sec: number; day: string }[] = [];
-    days.forEach((d, i) => {
-      if (i % 7 === 0) out.push({ key: d.day, sec: 0, day: d.day });
-      out[out.length - 1].sec += d.activeSec;
-    });
+    for (let end = days.length; end > 0; end -= 7) {
+      const week = days.slice(Math.max(0, end - 7), end);
+      out.unshift({ key: week[0].day, sec: week.reduce((s, d) => s + d.activeSec, 0), day: week[0].day });
+    }
     return out;
   }, [days, weekly]);
   const max = Math.max(1, ...buckets.map((b) => b.sec));
@@ -533,6 +535,7 @@ function Journal() {
   const [editing, setEditing] = useState<string | null>(null);
   const [draftDay, setDraftDay] = useState(todayKey());
   const [draft, setDraft] = useState<Wellbeing>(EMPTY);
+  const [error, setError] = useState("");
   useEffect(() => {
     getWellbeing().then(setLog);
   }, []);
@@ -556,11 +559,16 @@ function Journal() {
     setEditing(day);
   };
   const save = async () => {
-    const next = await setWellbeing(draftDay, draft);
-    // Moving an entry to another day: the old one goes.
-    if (editing && editing !== "new" && editing !== draftDay) setLog(await deleteWellbeing(editing));
-    else setLog(next);
-    setEditing(null);
+    try {
+      const next = await setWellbeing(draftDay, draft);
+      // Moving an entry to another day: the old one goes.
+      if (editing && editing !== "new" && editing !== draftDay) setLog(await deleteWellbeing(editing));
+      else setLog(next);
+      setEditing(null);
+      setError("");
+    } catch (e) {
+      setError(`${t("journal.saveFailed")}: ${String(e)}`);
+    }
   };
   const remove = async (day: string) => {
     if (window.confirm(t("journal.deleteConfirm"))) setLog(await deleteWellbeing(day));
@@ -581,7 +589,8 @@ function Journal() {
           }}
         />
       </div>
-      {editing === "new" && log[draftDay] && <p className="muted">{t("journal.replaces")}</p>}
+      {log[draftDay] && draftDay !== editing && <p className="muted">{t("journal.replaces")}</p>}
+      {error && <p className="notice">{error}</p>}
       {WB_KEYS.map((k) => (
         <div key={k} className="row">
           <span className="row__label">{t(`wellbeing.${k}`)}</span>

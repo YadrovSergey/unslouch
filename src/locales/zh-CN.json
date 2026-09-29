@@ -601,7 +601,8 @@
     "cancel": "取消",
     "edit": "编辑",
     "delete": "删除",
-    "deleteConfirm": "删除这条记录？"
+    "deleteConfirm": "删除这条记录？",
+    "saveFailed": "保存失败"
   },
   "changelog": {
     "title": "更新日志",

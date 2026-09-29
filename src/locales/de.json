@@ -605,7 +605,8 @@
     "cancel": "Abbrechen",
     "edit": "Bearbeiten",
     "delete": "Löschen",
-    "deleteConfirm": "Diesen Eintrag löschen?"
+    "deleteConfirm": "Diesen Eintrag löschen?",
+    "saveFailed": "Speichern fehlgeschlagen"
   },
   "changelog": {
     "title": "Änderungsprotokoll",

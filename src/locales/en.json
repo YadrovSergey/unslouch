@@ -605,7 +605,8 @@
     "cancel": "Cancel",
     "edit": "Edit",
     "delete": "Delete",
-    "deleteConfirm": "Delete this entry?"
+    "deleteConfirm": "Delete this entry?",
+    "saveFailed": "Couldn't save"
   },
   "changelog": {
     "title": "Changelog",

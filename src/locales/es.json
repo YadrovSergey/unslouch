@@ -609,7 +609,8 @@
     "cancel": "Cancelar",
     "edit": "Editar",
     "delete": "Eliminar",
-    "deleteConfirm": "¿Eliminar este registro?"
+    "deleteConfirm": "¿Eliminar este registro?",
+    "saveFailed": "No se pudo guardar"
   },
   "changelog": {
     "title": "Historial de cambios",

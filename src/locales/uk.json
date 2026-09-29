@@ -613,7 +613,8 @@
     "cancel": "Скасувати",
     "edit": "Змінити",
     "delete": "Видалити",
-    "deleteConfirm": "Видалити цей запис?"
+    "deleteConfirm": "Видалити цей запис?",
+    "saveFailed": "Не вдалося зберегти"
   },
   "changelog": {
     "title": "Історія змін",
