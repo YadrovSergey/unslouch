@@ -48,3 +48,13 @@ Windows is checked only by CI.
 See "Releases and deploy" in README.md. Short version: bump the version in `package.json`, `src-tauri/Cargo.toml`,
 `src-tauri/tauri.conf.json`, tag `vX.Y.Z`, publish the draft release; `cdn.yml` copies it to Selectel.
 The site deploys by itself on push to `main`. Manual checks before a release: `docs/testing.md`.
+
+## Changelog
+
+`CHANGELOG.ru.md` (Russian) and `CHANGELOG.md` (English) list every noticeable change for users. The app shows it
+in "What's new" and the site at `/changelog/`.
+
+- Every user-visible change goes under "Готовится" / "Unreleased" in both files in the same commit as the change.
+- On a release the section becomes `## X.Y.Z · date`, and its lines are the release notes on GitHub.
+- Only what a user notices: no refactoring, no internal fixes. Plain words, same rules as other user texts
+  (`live-text-check`, no em dashes in Russian).
