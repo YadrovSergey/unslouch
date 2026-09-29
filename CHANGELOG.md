@@ -2,7 +2,7 @@
 
 Everything noticeable that changes in Unslouch. Russian version: [CHANGELOG.ru.md](CHANGELOG.ru.md).
 
-## Unreleased
+## 0.1.11 · 29 September 2026
 
 - In statistics, the "usual working day" time no longer spills out of its tile.
 - Start and end of work show for days before the update too: they come from time per program, to the hour.
