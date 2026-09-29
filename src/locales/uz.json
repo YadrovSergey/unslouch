@@ -585,14 +585,15 @@
     "titleLabel": "Eslatma matni",
     "when": "Qachon",
     "kindTimes": "Belgilangan vaqtda",
-    "kindInterval": "Har bir necha daqiqada",
+    "kindInterval": "Har N daqiqa ishdan keyin",
     "times": "Vaqtlar",
     "removeTime": "Vaqtni olib tashlash",
     "newTime": "Yangi vaqt",
     "addTime": "Qoʻshish",
-    "intervalHint": "Faqat ish vaqtida va siz kompyuterda boʻlganingizda",
+    "intervalHint": "Faqat ish vaqtida kompyuter oldidagi vaqt hisoblanadi: tushlikka ketsangiz, hisoblagich to'xtaydi",
     "delete": "Oʻchirish",
-    "deleteConfirm": "Bu eslatma oʻchirilsinmi?"
+    "deleteConfirm": "Bu eslatma oʻchirilsinmi?",
+    "ownInterval": "O'z qiymati"
   },
   "journal": {
     "title": "Holat jurnali",

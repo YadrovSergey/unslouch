@@ -589,14 +589,15 @@
     "titleLabel": "Texto do lembrete",
     "when": "Quando",
     "kindTimes": "Em horários definidos",
-    "kindInterval": "A cada poucos minutos",
+    "kindInterval": "A cada N minutos de trabalho",
     "times": "Horários",
     "removeTime": "Remover horário",
     "newTime": "Novo horário",
     "addTime": "Adicionar",
-    "intervalHint": "Só no horário de trabalho e enquanto você estiver no computador",
+    "intervalHint": "Conta só o tempo no computador no horário de trabalho: no almoço, o contador para",
     "delete": "Excluir",
-    "deleteConfirm": "Excluir este lembrete?"
+    "deleteConfirm": "Excluir este lembrete?",
+    "ownInterval": "Valor próprio"
   },
   "journal": {
     "title": "Diário de bem-estar",

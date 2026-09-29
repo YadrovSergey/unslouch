@@ -269,7 +269,7 @@ fn reminder_answer(window: WebviewWindow, state: State<AppState>, id: String, la
         let mut inner = state.0.lock().unwrap();
         match later_min {
             Some(min) => inner.reminders.snooze(&id, now, min.clamp(1, 240)),
-            None => inner.reminders.done(&id, now),
+            None => inner.reminders.done(&id),
         }
     }
     if window.label().starts_with("cue-") {
@@ -894,7 +894,7 @@ fn run_ticker(app: AppHandle) {
             // Own reminders. Interval ones count only at the computer within working hours; during a break
             // everything waits a minute.
             let counting = out.active && scheduler::in_work_hours(&s, now);
-            let mut due = inner.reminders.due(&s.reminders, now, counting);
+            let mut due = inner.reminders.due(&s.reminders, now, counting, 1);
             if inner.sched.current.is_some() {
                 for id in &due {
                     inner.reminders.snooze(id, now, 1);

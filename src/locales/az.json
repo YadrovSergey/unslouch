@@ -585,14 +585,15 @@
     "titleLabel": "Xatırlatmanın mətni",
     "when": "Nə vaxt",
     "kindTimes": "Təyin olunmuş vaxtda",
-    "kindInterval": "Hər bir neçə dəqiqədən bir",
+    "kindInterval": "Hər N dəqiqəlik işdən sonra",
     "times": "Vaxtlar",
     "removeTime": "Vaxtı sil",
     "newTime": "Yeni vaxt",
     "addTime": "Əlavə et",
-    "intervalHint": "Yalnız iş saatlarında və siz kompüter arxasında olanda",
+    "intervalHint": "Yalnız iş saatlarında kompüter arxasında keçən vaxt sayılır: nahara getsəniz, sayğac dayanır",
     "delete": "Sil",
-    "deleteConfirm": "Bu xatırlatma silinsin?"
+    "deleteConfirm": "Bu xatırlatma silinsin?",
+    "ownInterval": "Öz dəyəri"
   },
   "journal": {
     "title": "Özünühiss jurnalı",

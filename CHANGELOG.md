@@ -2,6 +2,10 @@
 
 Everything noticeable that changes in Unslouch. Russian version: [CHANGELOG.ru.md](CHANGELOG.ru.md).
 
+## Unreleased
+
+- Own reminders "every N minutes of work" count only time at the computer: away for lunch, the counter waits. Intervals go up to 4 hours, or type your own number of minutes.
+
 ## 0.1.8 · 29 September 2026
 
 - Your own reminders: pills, lunch or anything else, at set times on chosen days or every few minutes. A card appears in the corner with "Done" and "In 10 min".

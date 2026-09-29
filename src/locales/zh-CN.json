@@ -581,14 +581,15 @@
     "titleLabel": "提醒内容",
     "when": "什么时候",
     "kindTimes": "在指定时间",
-    "kindInterval": "每隔几分钟",
+    "kindInterval": "每工作 N 分钟",
     "times": "时间点",
     "removeTime": "删除时间",
     "newTime": "新时间",
     "addTime": "添加",
-    "intervalHint": "仅在工作时间且您在电脑前时",
+    "intervalHint": "只计算工作时间内在电脑前的时间：去吃午饭时计时会暂停",
     "delete": "删除",
-    "deleteConfirm": "删除这条提醒？"
+    "deleteConfirm": "删除这条提醒？",
+    "ownInterval": "自定义"
   },
   "journal": {
     "title": "身体感受日志",

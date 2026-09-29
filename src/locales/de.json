@@ -585,14 +585,15 @@
     "titleLabel": "Text der Erinnerung",
     "when": "Wann",
     "kindTimes": "Zu festen Zeiten",
-    "kindInterval": "Alle paar Minuten",
+    "kindInterval": "Alle N Minuten Arbeit",
     "times": "Uhrzeiten",
     "removeTime": "Uhrzeit entfernen",
     "newTime": "Neue Uhrzeit",
     "addTime": "Hinzufügen",
-    "intervalHint": "Nur während der Arbeitszeit und solange Sie am Computer sind",
+    "intervalHint": "Es zählt nur die Zeit am Computer während der Arbeitszeit: in der Mittagspause steht der Zähler",
     "delete": "Löschen",
-    "deleteConfirm": "Diese Erinnerung löschen?"
+    "deleteConfirm": "Diese Erinnerung löschen?",
+    "ownInterval": "Eigener Wert"
   },
   "journal": {
     "title": "Befindenstagebuch",

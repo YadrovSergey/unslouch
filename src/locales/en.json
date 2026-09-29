@@ -585,14 +585,15 @@
     "titleLabel": "Reminder text",
     "when": "When",
     "kindTimes": "At set times",
-    "kindInterval": "Every few minutes",
+    "kindInterval": "Every N minutes of work",
     "times": "Times",
     "removeTime": "Remove time",
     "newTime": "New time",
     "addTime": "Add",
-    "intervalHint": "Only in working hours, while you are at the computer",
+    "intervalHint": "Only time at the computer in working hours counts: away for lunch, the counter waits",
     "delete": "Delete",
-    "deleteConfirm": "Delete this reminder?"
+    "deleteConfirm": "Delete this reminder?",
+    "ownInterval": "Own value"
   },
   "journal": {
     "title": "Wellbeing journal",

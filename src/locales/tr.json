@@ -585,14 +585,15 @@
     "titleLabel": "Hatırlatıcı metni",
     "when": "Ne zaman",
     "kindTimes": "Belirli saatlerde",
-    "kindInterval": "Birkaç dakikada bir",
+    "kindInterval": "Her N dakikalık çalışmada",
     "times": "Saatler",
     "removeTime": "Saati kaldır",
     "newTime": "Yeni saat",
     "addTime": "Ekle",
-    "intervalHint": "Yalnızca çalışma saatlerinde ve bilgisayar başındayken",
+    "intervalHint": "Yalnızca çalışma saatlerinde bilgisayar başında geçen süre sayılır: öğle yemeğine çıkınca sayaç durur",
     "delete": "Sil",
-    "deleteConfirm": "Bu hatırlatıcı silinsin mi?"
+    "deleteConfirm": "Bu hatırlatıcı silinsin mi?",
+    "ownInterval": "Kendi değerim"
   },
   "journal": {
     "title": "Durum günlüğü",

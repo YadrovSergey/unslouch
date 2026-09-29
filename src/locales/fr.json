@@ -589,14 +589,15 @@
     "titleLabel": "Texte du rappel",
     "when": "Quand",
     "kindTimes": "À heures fixes",
-    "kindInterval": "Toutes les quelques minutes",
+    "kindInterval": "Toutes les N minutes de travail",
     "times": "Heures",
     "removeTime": "Supprimer l’heure",
     "newTime": "Nouvelle heure",
     "addTime": "Ajouter",
-    "intervalHint": "Seulement pendant les heures de travail, quand vous êtes devant l’ordinateur",
+    "intervalHint": "Seul compte le temps devant l’ordinateur pendant les heures de travail : pendant la pause déjeuner, le compteur s’arrête",
     "delete": "Supprimer",
-    "deleteConfirm": "Supprimer ce rappel ?"
+    "deleteConfirm": "Supprimer ce rappel ?",
+    "ownInterval": "Valeur personnalisée"
   },
   "journal": {
     "title": "Journal de bien-être",

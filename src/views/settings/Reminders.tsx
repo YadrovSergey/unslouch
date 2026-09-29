@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Reminder, SettingsPatch, previewReminder } from "../../api";
-import { NumberSelect, Row, Section, TimeInput, Toggle } from "./ui";
+import { formatDuration } from "../../format";
+import { Row, Section, TimeInput, Toggle } from "./ui";
 
 const DAYS = [1, 2, 3, 4, 5, 6, 7];
 const WEEKDAYS = [1, 2, 3, 4, 5];
@@ -99,7 +100,6 @@ function ReminderEditor({
 }) {
   const { t } = useTranslation();
   const [newTime, setNewTime] = useState("18:00");
-  const min = t("settings.min");
   return (
     <div className={`reminder-card ${r.enabled ? "" : "reminder-card--off"}`}>
       <div className="reminder-card__head">
@@ -166,7 +166,7 @@ function ReminderEditor({
         </>
       ) : (
         <Row label={t("settings.every")} hint={t("reminders.intervalHint")}>
-          <NumberSelect value={r.intervalMin} options={[15, 30, 45, 60, 90, 120]} unit={min} onChange={(v) => change({ intervalMin: v })} />
+          <IntervalPicker value={r.intervalMin} onChange={(v) => change({ intervalMin: v })} />
         </Row>
       )}
       <div className="button-row reminder-card__actions">
@@ -178,5 +178,58 @@ function ReminderEditor({
         </button>
       </div>
     </div>
+  );
+}
+
+const INTERVALS = [15, 30, 45, 60, 90, 120, 180, 240];
+
+/** Ready intervals up to 4 hours, or the user's own number of minutes (5 to 480). */
+function IntervalPicker({ value, onChange }: { value: number; onChange: (v: number) => void }) {
+  const { t, i18n } = useTranslation();
+  const [own, setOwn] = useState(!INTERVALS.includes(value));
+  const [text, setText] = useState(String(value));
+  return (
+    <span className="interval-picker">
+      <select
+        value={own ? "own" : value}
+        aria-label={t("settings.every")}
+        onChange={(e) => {
+          if (e.target.value === "own") {
+            setOwn(true);
+            setText(String(value));
+          } else {
+            setOwn(false);
+            onChange(Number(e.target.value));
+          }
+        }}
+      >
+        {INTERVALS.map((n) => (
+          <option key={n} value={n}>
+            {n % 60 === 0
+              ? new Intl.NumberFormat(i18n.language, { style: "unit", unit: "hour", unitDisplay: "short" }).format(n / 60)
+              : formatDuration(n * 60, true)}
+          </option>
+        ))}
+        <option value="own">{t("reminders.ownInterval")}</option>
+      </select>
+      {own && (
+        <label className="interval-picker__own">
+          <input
+            type="number"
+            min={5}
+            max={480}
+            step={5}
+            value={text}
+            aria-label={t("reminders.ownInterval")}
+            onChange={(e) => {
+              setText(e.target.value);
+              const n = Math.round(Number(e.target.value));
+              if (n >= 5 && n <= 480) onChange(n);
+            }}
+          />
+          {t("settings.min")}
+        </label>
+      )}
+    </span>
   );
 }

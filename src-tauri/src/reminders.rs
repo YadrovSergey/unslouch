@@ -17,7 +17,8 @@ pub struct Reminder {
     pub id: String,
     pub title: String,
     pub enabled: bool,
-    /// "times": at the given times on the given days. "interval": every N minutes of working hours at the computer.
+    /// "times": at the given times on the given days. "interval": every N minutes of work, counted like the breaks:
+    /// only while the user is at the computer within working hours.
     pub kind: String,
     /// "HH:MM"
     pub times: Vec<String>,
@@ -76,16 +77,17 @@ fn parse_hhmm(s: &str) -> Option<NaiveTime> {
 pub struct State {
     /// "id@2026-09-29 13:00": time slots already shown.
     fired: HashSet<String>,
-    /// Interval reminders: when each was shown last (or started counting).
-    last: HashMap<String, NaiveDateTime>,
+    /// Interval reminders: seconds of work counted since each was shown last.
+    worked: HashMap<String, u64>,
     /// "Later": id → show again at.
     snoozed: HashMap<String, NaiveDateTime>,
 }
 
 impl State {
-    /// Reminders to show now. `counting` is true while the user is at the computer within working hours:
-    /// only then interval reminders count time. Time slots fire regardless, a pill reminder can't wait for work.
-    pub fn due(&mut self, list: &[Reminder], now: NaiveDateTime, counting: bool) -> Vec<String> {
+    /// Reminders to show now. `counting` is true while the user is at the computer within working hours: only then
+    /// interval reminders count `dt` seconds of work, so a lunch away doesn't bring one closer. Time slots fire
+    /// regardless, a pill reminder can't wait for work.
+    pub fn due(&mut self, list: &[Reminder], now: NaiveDateTime, counting: bool, dt: u64) -> Vec<String> {
         let mut out = vec![];
         for r in list.iter().filter(|r| r.enabled) {
             if let Some(at) = self.snoozed.get(&r.id).copied() {
@@ -99,16 +101,11 @@ impl State {
                 if !counting {
                     continue;
                 }
-                let every = Duration::minutes(i64::from(r.interval_min.max(5)));
-                match self.last.get(&r.id).copied() {
-                    None => {
-                        self.last.insert(r.id.clone(), now);
-                    }
-                    Some(t) if now - t >= every => {
-                        self.last.insert(r.id.clone(), now);
-                        out.push(r.id.clone());
-                    }
-                    _ => {}
+                let worked = self.worked.entry(r.id.clone()).or_insert(0);
+                *worked += dt;
+                if *worked >= u64::from(r.interval_min.max(5)) * 60 {
+                    *worked = 0;
+                    out.push(r.id.clone());
                 }
                 continue;
             }
@@ -141,10 +138,10 @@ impl State {
     }
 
     /// An interval reminder that was answered counts its next time from now.
-    pub fn done(&mut self, id: &str, now: NaiveDateTime) {
+    pub fn done(&mut self, id: &str) {
         self.snoozed.remove(id);
-        if self.last.contains_key(id) {
-            self.last.insert(id.to_string(), now);
+        if let Some(worked) = self.worked.get_mut(id) {
+            *worked = 0;
         }
     }
 }
@@ -167,11 +164,11 @@ mod tests {
     fn a_time_slot_fires_once() {
         let mut s = State::default();
         let list = [pills()];
-        assert!(s.due(&list, at(28, 8, 59), true).is_empty());
-        assert_eq!(s.due(&list, at(28, 9, 0), true), vec!["pills"]);
-        assert!(s.due(&list, at(28, 9, 1), true).is_empty());
-        assert_eq!(s.due(&list, at(28, 21, 0), true), vec!["pills"]);
-        assert_eq!(s.due(&list, at(29, 9, 0), true), vec!["pills"]);
+        assert!(s.due(&list, at(28, 8, 59), true, 1).is_empty());
+        assert_eq!(s.due(&list, at(28, 9, 0), true, 1), vec!["pills"]);
+        assert!(s.due(&list, at(28, 9, 1), true, 1).is_empty());
+        assert_eq!(s.due(&list, at(28, 21, 0), true, 1), vec!["pills"]);
+        assert_eq!(s.due(&list, at(29, 9, 0), true, 1), vec!["pills"]);
     }
 
     #[test]
@@ -179,10 +176,10 @@ mod tests {
         let mut s = State::default();
         let list = [pills()];
         // The computer woke at 9:40: still show the 9:00 reminder.
-        assert_eq!(s.due(&list, at(28, 9, 40), false), vec!["pills"]);
+        assert_eq!(s.due(&list, at(28, 9, 40), false, 1), vec!["pills"]);
         let mut s = State::default();
         // At 10:30 the 9:00 slot is stale.
-        assert!(s.due(&list, at(28, 10, 30), false).is_empty());
+        assert!(s.due(&list, at(28, 10, 30), false, 1).is_empty());
     }
 
     #[test]
@@ -191,38 +188,60 @@ mod tests {
         let lunch = Reminder { id: "lunch".into(), days: vec![1, 2, 3, 4, 5], ..Default::default() };
         // 2026-10-03 is a Saturday.
         let saturday = NaiveDate::from_ymd_opt(2026, 10, 3).unwrap().and_hms_opt(13, 0, 0).unwrap();
-        assert!(s.due(&[lunch.clone()], saturday, true).is_empty());
-        assert_eq!(s.due(&[lunch], at(28, 13, 0), true), vec!["lunch"]);
+        assert!(s.due(&[lunch.clone()], saturday, true, 1).is_empty());
+        assert_eq!(s.due(&[lunch], at(28, 13, 0), true, 1), vec!["lunch"]);
     }
 
     #[test]
     fn disabled_reminders_stay_quiet() {
         let mut s = State::default();
         let r = Reminder { enabled: false, ..pills() };
-        assert!(s.due(&[r], at(28, 9, 0), true).is_empty());
+        assert!(s.due(&[r], at(28, 9, 0), true, 1).is_empty());
     }
 
     #[test]
-    fn interval_counts_only_while_counting() {
+    fn interval_counts_only_minutes_of_work() {
         let mut s = State::default();
         let r = Reminder { id: "posture".into(), kind: "interval".into(), interval_min: 60, ..Default::default() };
         let list = [r];
-        assert!(s.due(&list, at(28, 9, 0), true).is_empty()); // starts counting
-        assert!(s.due(&list, at(28, 9, 59), true).is_empty());
-        assert!(s.due(&list, at(28, 10, 30), false).is_empty()); // away or outside hours: no reminder
-        assert_eq!(s.due(&list, at(28, 10, 31), true), vec!["posture"]);
-        assert!(s.due(&list, at(28, 10, 32), true).is_empty());
+        // 40 minutes of work, then 40 minutes away (lunch): nothing yet.
+        for m in 0..40 {
+            assert!(s.due(&list, at(28, 9, m), true, 60).is_empty());
+        }
+        for m in 0..40 {
+            assert!(s.due(&list, at(28, 10, m), false, 60).is_empty());
+        }
+        // 20 more minutes of work make the hour.
+        for m in 40..59 {
+            assert!(s.due(&list, at(28, 10, m), true, 60).is_empty());
+        }
+        assert_eq!(s.due(&list, at(28, 10, 59), true, 60), vec!["posture"]);
+        assert!(s.due(&list, at(28, 11, 0), true, 60).is_empty());
+    }
+
+    #[test]
+    fn answering_starts_the_interval_again() {
+        let mut s = State::default();
+        let list = [Reminder { id: "p".into(), kind: "interval".into(), interval_min: 10, ..Default::default() }];
+        for m in 0..9 {
+            s.due(&list, at(28, 9, m), true, 60);
+        }
+        s.done("p");
+        for m in 9..18 {
+            assert!(s.due(&list, at(28, 9, m), true, 60).is_empty());
+        }
+        assert_eq!(s.due(&list, at(28, 9, 18), true, 60), vec!["p"]);
     }
 
     #[test]
     fn later_brings_it_back() {
         let mut s = State::default();
         let list = [pills()];
-        assert_eq!(s.due(&list, at(28, 9, 0), true), vec!["pills"]);
+        assert_eq!(s.due(&list, at(28, 9, 0), true, 1), vec!["pills"]);
         s.snooze("pills", at(28, 9, 0), 10);
-        assert!(s.due(&list, at(28, 9, 9), true).is_empty());
-        assert_eq!(s.due(&list, at(28, 9, 10), true), vec!["pills"]);
-        assert!(s.due(&list, at(28, 9, 11), true).is_empty());
+        assert!(s.due(&list, at(28, 9, 9), true, 1).is_empty());
+        assert_eq!(s.due(&list, at(28, 9, 10), true, 1), vec!["pills"]);
+        assert!(s.due(&list, at(28, 9, 11), true, 1).is_empty());
     }
 
     #[test]

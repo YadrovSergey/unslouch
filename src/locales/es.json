@@ -589,14 +589,15 @@
     "titleLabel": "Texto del recordatorio",
     "when": "Cuándo",
     "kindTimes": "A horas fijas",
-    "kindInterval": "Cada pocos minutos",
+    "kindInterval": "Cada N minutos de trabajo",
     "times": "Horas",
     "removeTime": "Quitar hora",
     "newTime": "Nueva hora",
     "addTime": "Añadir",
-    "intervalHint": "Solo en horario de trabajo y mientras estés en la computadora",
+    "intervalHint": "Solo cuenta el tiempo frente al ordenador en horario laboral: si sales a comer, el contador se detiene",
     "delete": "Eliminar",
-    "deleteConfirm": "¿Eliminar este recordatorio?"
+    "deleteConfirm": "¿Eliminar este recordatorio?",
+    "ownInterval": "Valor propio"
   },
   "journal": {
     "title": "Diario de bienestar",

@@ -2118,3 +2118,26 @@ input[type="number"] {
   height: 14px;
   line-height: 14px;
 }
+
+.interval-picker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.interval-picker__own {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+}
+
+.interval-picker__own input {
+  width: 70px;
+  font: inherit;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 4px 8px;
+  background: var(--bg);
+  color: var(--text);
+}
