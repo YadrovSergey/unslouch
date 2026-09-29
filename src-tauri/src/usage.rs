@@ -29,6 +29,21 @@ impl Default for DayUsage {
     }
 }
 
+impl DayUsage {
+    /// Start and end of work estimated from the hours, in minutes after midnight: for days recorded before the app
+    /// kept them (before 0.1.8). The first hour with activity is assumed to end busy, the last to start busy, so
+    /// 26 minutes in hour 8 give 8:34, 13 minutes in hour 10 give 10:12.
+    pub fn work_span(&self) -> (Option<u16>, Option<u16>) {
+        // Less than a minute in an hour is noise (a glance at the screen), not work.
+        let busy = |sec: u64| sec >= 60;
+        let first = self.hours.iter().position(|&s| busy(s));
+        let last = self.hours.iter().rposition(|&s| busy(s));
+        let start = first.map(|h| (h as u64 * 60 + 60 - self.hours[h].div_ceil(60).min(60)) as u16);
+        let end = last.map(|h| (h as u64 * 60 + self.hours[h].div_ceil(60).min(60) - 1) as u16);
+        (start, end)
+    }
+}
+
 /// Day ("2026-09-27") → usage.
 pub type Usage = BTreeMap<String, DayUsage>;
 
@@ -69,6 +84,17 @@ impl Tracker {
 
 #[cfg(test)]
 mod tests {
+    #[test]
+    fn work_span_from_hours() {
+        let mut d = super::DayUsage::default();
+        d.hours[8] = 26 * 60;
+        d.hours[9] = 3600;
+        d.hours[10] = 13 * 60;
+        d.hours[22] = 20; // a glance late in the evening doesn't count
+        assert_eq!(d.work_span(), (Some(8 * 60 + 34), Some(10 * 60 + 12)));
+        assert_eq!(super::DayUsage::default().work_span(), (None, None));
+    }
+
     use super::*;
 
     #[test]

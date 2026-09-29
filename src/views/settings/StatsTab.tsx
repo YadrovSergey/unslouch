@@ -19,8 +19,8 @@ import { Category, appCategory, appName } from "../../lib/apps";
 import { formatDuration } from "../../format";
 import { Section } from "./ui";
 
-type Sub = "overview" | "apps" | "wellbeing" | "journal" | "achievements";
-const SUBS: Sub[] = ["overview", "apps", "wellbeing", "journal", "achievements"];
+type Sub = "overview" | "apps" | "wellbeing" | "achievements";
+const SUBS: Sub[] = ["overview", "apps", "wellbeing", "achievements"];
 const SITTING_RISK_SEC = 2 * 3600;
 /** Periods to look at. Usage by program is kept 90 days, so "year" is only for the day stats. */
 const PERIODS = [7, 30, 90, 365] as const;
@@ -46,8 +46,7 @@ export function StatsTab({ info, update }: { info: AppInfo; update: (p: Settings
       </div>
       {sub === "overview" && <Overview days={days} nightShift={info.settings.workHoursEnabled && info.settings.workStart > info.settings.workEnd} />}
       {sub === "apps" && <Apps info={info} update={update} days={days} />}
-      {sub === "wellbeing" && <WellbeingChart onAdd={() => setSub("journal")} />}
-      {sub === "journal" && <Journal />}
+      {sub === "wellbeing" && <WellbeingPage />}
       {sub === "achievements" && <Achievements days={days} />}
     </>
   );
@@ -131,7 +130,10 @@ function Overview({ days, nightShift }: { days: DayStats[]; nightShift: boolean 
             <div className="stat-tiles">
               <Tile label={t("stats.atComputer")} value={bigDuration(total, i18n.language)} />
               <Tile label={t("stats.perDay")} value={worked.length ? formatDuration(Math.round(total / worked.length), true) : "–"} />
-              <Tile label={offered ? `${t("stats.breaksDone")} · ${Math.round((done / offered) * 100)}%` : t("stats.breaksDone")} value={String(done)} />
+              <Tile
+                label={offered ? `${t("stats.breaksDone")} · ${Math.round((done / offered) * 100)}%` : t("stats.breaksDone")}
+                value={String(done)}
+              />
               {/* A zero-width space after the dash: "10:23–18:40" wraps there when the tile is narrow. */}
               <Tile label={t("stats.usualDay")} value={start != null && end != null ? `${clock(start)}–\u200b${clock(end)}` : "–"} range />
               <Tile label={t("stats.longDays")} value={String(longDays)} warn={longDays > 0} />
@@ -177,7 +179,10 @@ function TimeBars({ days, period, locale }: { days: DayStats[]; period: Period; 
   }, [days, weekly]);
   const max = Math.max(1, ...buckets.map((b) => b.sec));
   // A week: weekdays. A month: day numbers, every fifth. Weeks of 3 months or a year: the date, a few of them.
-  const short = new Intl.DateTimeFormat(locale, period === 7 ? { weekday: "short" } : period === 30 ? { day: "numeric" } : { day: "numeric", month: "short" });
+  const short = new Intl.DateTimeFormat(
+    locale,
+    period === 7 ? { weekday: "short" } : period === 30 ? { day: "numeric" } : { day: "numeric", month: "short" },
+  );
   const labelEvery = period === 7 ? 1 : period === 30 ? 5 : Math.ceil(buckets.length / 4);
   return (
     <div className="bars" role="img" aria-label={t("stats.timeByDay")}>
@@ -470,12 +475,25 @@ function Apps({ info, update, days }: { info: AppInfo; update: (p: SettingsPatch
 
 const WB_KEYS = ["eyes", "neck", "back", "hands"] as const;
 
-function WellbeingChart({ onAdd }: { onAdd: () => void }) {
-  const { t, i18n } = useTranslation();
-  const [log, setLog] = useState<Record<string, Wellbeing>>({});
+type Log = Record<string, Wellbeing>;
+
+/** Wellbeing: the chart of recent entries and, under it, the journal to add, fix or delete them. One log for both,
+ * so an edit shows in the chart at once. */
+function WellbeingPage() {
+  const [log, setLog] = useState<Log>({});
   useEffect(() => {
     getWellbeing().then(setLog);
   }, []);
+  return (
+    <>
+      <WellbeingChart log={log} />
+      <Journal log={log} setLog={setLog} />
+    </>
+  );
+}
+
+function WellbeingChart({ log }: { log: Log }) {
+  const { t, i18n } = useTranslation();
   const entries = Object.entries(log)
     .sort(([a], [b]) => a.localeCompare(b))
     .slice(-12);
@@ -484,14 +502,7 @@ function WellbeingChart({ onAdd }: { onAdd: () => void }) {
     month: "short",
   });
   return (
-    <Section
-      title={t("wellbeing.chartTitle")}
-      aside={
-        <button className="button" onClick={onAdd}>
-          {t("wellbeing.add")}
-        </button>
-      }
-    >
+    <Section title={t("wellbeing.chartTitle")}>
       <p className="muted section__lead">{t("wellbeing.chartHint")}</p>
       {entries.length === 0 ? (
         <p className="muted">{t("wellbeing.empty")}</p>
@@ -530,16 +541,12 @@ const todayKey = () => {
 const EMPTY: Wellbeing = { eyes: 0, neck: 0, back: 0, hands: 0, note: "" };
 
 /** Wellbeing by day: add an entry for any past day, fix or delete one. */
-function Journal() {
+function Journal({ log, setLog }: { log: Log; setLog: (l: Log) => void }) {
   const { t, i18n } = useTranslation();
-  const [log, setLog] = useState<Record<string, Wellbeing>>({});
   const [editing, setEditing] = useState<string | null>(null);
   const [draftDay, setDraftDay] = useState(todayKey());
   const [draft, setDraft] = useState<Wellbeing>(EMPTY);
   const [error, setError] = useState("");
-  useEffect(() => {
-    getWellbeing().then(setLog);
-  }, []);
   const date = new Intl.DateTimeFormat(i18n.language, {
     weekday: "short",
     day: "numeric",

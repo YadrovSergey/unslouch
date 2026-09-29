@@ -197,7 +197,17 @@ fn get_stats(state: State<AppState>, days: u32) -> Vec<StatsDay> {
         .rev()
         .map(|back| {
             let day = (today - ChronoDuration::days(back)).format("%Y-%m-%d").to_string();
-            let stats = inner.stats.get(&day).copied().unwrap_or_default();
+            let mut stats = inner.stats.get(&day).copied().unwrap_or_default();
+            // Start and end came with 0.1.8: an earlier start from before the update, or a day with none recorded,
+            // is taken from the hours of the time-per-program data (to the minute within the hour).
+            if let Some((start, end)) = inner.usage.get(&day).map(|u| u.work_span()) {
+                if let Some(s) = start {
+                    stats.first_active_min = Some(stats.first_active_min.map_or(s, |f| f.min(s)));
+                }
+                if let Some(e) = end {
+                    stats.last_active_min = Some(stats.last_active_min.map_or(e, |l| l.max(e)));
+                }
+            }
             StatsDay { day, stats }
         })
         .collect()
