@@ -212,6 +212,9 @@ pub fn show_cue(app: &AppHandle, cue: Cue, lang: &str, is_cis: bool, theme: &str
             }
             // The page closes its window when the fade-out ends; this is the fallback if it never loads.
             let ms = if cue == Cue::Blink { u64::from(blink_sec) * 1000 } else { POSTURE_CUE_MS };
+            for label in &labels {
+                show_later(app, label.clone(), 800);
+            }
             close_later(app, labels, ms + 3000);
         }
         Cue::Water => {

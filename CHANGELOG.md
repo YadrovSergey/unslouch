@@ -2,6 +2,10 @@
 
 Everything noticeable that changes in Unslouch. Russian version: [CHANGELOG.ru.md](CHANGELOG.ru.md).
 
+## 0.1.12 · 29 September 2026
+
+- Fixed: the blink and posture cues didn't appear on Mac, only their sound played.
+
 ## 0.1.11 · 29 September 2026
 
 - In statistics, the "usual working day" time no longer spills out of its tile.

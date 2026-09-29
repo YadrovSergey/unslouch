@@ -13,8 +13,10 @@ export function CueView({ params }: { params: URLSearchParams }) {
   const sound = params.get("sound") === "1";
   useEffect(() => {
     if (sound) playCue();
-    // The window is created hidden: show it after the first frame is painted, transparent.
-    requestAnimationFrame(() => requestAnimationFrame(() => cueReady()));
+    // The window is created hidden: show it once the page is rendered and its background is transparent.
+    // Not requestAnimationFrame: a hidden window on macOS paints no frames, so it never fired and the cue never
+    // showed (only its sound played). The effect runs after React has put the transparent page in place.
+    cueReady();
   }, [sound]);
   if (cue === "water") return <WaterCard cis={params.get("cis") === "1"} />;
   if (cue === "reminder") return <ReminderCard id={params.get("rid") ?? ""} preview={params.get("preview") === "1"} />;
