@@ -1,0 +1,25 @@
+---
+import Doc from "../../layouts/Doc.astro";
+import { changelogHtml } from "../../lib/changelog";
+import { LEGAL_LANGS, langPaths, t, type Lang } from "../../i18n";
+
+export const getStaticPaths = langPaths;
+const { lang } = Astro.props as { lang: Lang };
+// The changelog is written in English and Russian only, like the legal pages. Other languages show the English
+// text with a notice on top, point their canonical to the English page and stay out of the sitemap and hreflang.
+const translated = LEGAL_LANGS.includes(lang);
+const d = t(lang);
+const html = await changelogHtml(lang);
+---
+
+<Doc
+  lang={lang}
+  path="/changelog/"
+  title={d.meta.changelog.title}
+  description={d.meta.changelog.description}
+  html={html}
+  notice={translated ? undefined : d.changelogNotice}
+  docLang={translated ? undefined : "en"}
+  langs={LEGAL_LANGS}
+  canonicalLang={translated ? undefined : "en"}
+/>

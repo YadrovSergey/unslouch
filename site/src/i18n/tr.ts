@@ -18,8 +18,8 @@ const tr: Dict = {
     language: "Dil",
   },
   cookieBanner: {
-    text: "Site, ziyaretleri Yandex Metrica ile sayabilir: çerez yerleştirir, IP adresinizi ve tarayıcı bilgilerinizi alır. Sayaç yalnızca siz kabul ederseniz başlar. Uygulamanın kendisi her durumda hiçbir şey toplamaz.",
-    accept: "Kabul et",
+    text: "Site, ziyaretleri Yandex Metrica ile sayar: çerez bırakır, IP adresinizi ve tarayıcı bilgilerinizi alır. İstemiyorsanız Reddet'e tıklayın. Uygulamanın kendisi hiçbir şey toplamaz.",
+    ok: "Tamam",
     decline: "Reddet",
     consent: "Veri işleme onayı",
     privacy: "Gizlilik politikası",
@@ -32,6 +32,7 @@ const tr: Dict = {
     terms: "Koşullar",
     consent: "Veri işleme onayı",
     cookies: "Çerezler ve istatistikler",
+    changelog: "Yenilikler",
     contact: "İletişim",
     bug: "GitHub'da hata bildirin",
     donate: "Projeyi destekleyin",
@@ -53,6 +54,7 @@ const tr: Dict = {
     other: "Diğer sistemler",
     all: "Tüm dosyalar GitHub'da",
     browser: "İş yerinde program yükleyemiyor musunuz? Tarayıcıda kullanın",
+    changelog: "{version} sürümündeki yenilikler",
   },
   meta: {
     home: {
@@ -65,7 +67,7 @@ const tr: Dict = {
       description: "Unslouch neden böyle çalışıyor: göz yorgunluğu, boyun ağrısı, uzun süre oturma, eller ve nefes üzerine araştırmalar, kaynakları ve ne zaman doktora gitmeniz gerektiği.",
     },
     privacy: { title: "Gizlilik politikası | Unslouch", description: "Unslouch uygulaması hiçbir şey toplamaz. Bilgisayarınızda neyi sakladığı, bunu nasıl sileceğiniz ve web sitesinin ziyaretleri nasıl saydığı." },
-    consent: { title: "Kişisel verilerin işlenmesine onay | Unslouch", description: "Kabul et'e tıklarsanız web sitesinin Yandex Metrica ile ziyaret istatistiği toplama koşulları." },
+    consent: { title: "Kişisel verilerin işlenmesine onay | Unslouch", description: "Web sitesinin Yandex Metrica ile ziyaret istatistiği toplama koşulları ve bunu nasıl reddedebileceğiniz." },
     terms: { title: "Kullanım koşulları | Unslouch", description: "Ücretsiz ve açık kaynak mola hatırlatıcısı Unslouch'un kullanım koşulları." },
     compare: {
       title: "Mola hatırlatıcı uygulamaları karşılaştırması: Stretchly, LookAway, BreakTimer, Time Out | Unslouch",
@@ -81,6 +83,7 @@ const tr: Dict = {
     },
     notFound: { title: "Sayfa bulunamadı | Unslouch", description: "Bu sayfa mevcut değil." },
     donate: { title: "Geliştiriciyi destekleyin | Unslouch", description: "Unslouch ücretsizdir ve ücretsiz kalacak. Teşekkür etmek isterseniz geliştiriciyi parayla ya da ücretsiz olarak nasıl destekleyebileceğinizi burada bulabilirsiniz." },
+    changelog: { title: "Unslouch'taki yenilikler", description: "Unslouch'un her sürümünde neler değişti: yeni özellikler ve düzeltmeler." },
   },
   home: {
     kicker: "Bütün gününü bilgisayar başında geçirenler için",
@@ -127,7 +130,7 @@ const tr: Dict = {
     ],
     statsDemo: { today: "Bugün bilgisayar başında", longest: "En uzun oturma", breaks: "Verilen molalar", streak: "Art arda gün", todayValue: "6 sa 40 dk", longestValue: "52 dk" },
     privacyTitle: "Uygulama hiçbir şey toplamaz",
-    privacyText: "Hesap, analitik, telemetri, çökme raporu veya reklam yok. Ayarlar ve istatistikler bilgisayarınızdaki dosyalardır. Uygulamanın yaptığı tek istek günlük güncelleme kontrolüdür ve bunu kapatabilirsiniz. Bu web sitesi ziyaretleri Yandex Metrica ile yalnızca siz kabul ederseniz sayar.",
+    privacyText: "Hesap, analitik, telemetri, çökme raporu veya reklam yok. Ayarlar ve istatistikler bilgisayarınızdaki dosyalardır. Uygulamanın yaptığı tek istek günlük güncelleme kontrolüdür ve bunu kapatabilirsiniz. Bu web sitesi ziyaretleri Yandex Metrica ile sayar, bunu reddedebilirsiniz.",
     privacyLink: "Gizlilik politikası",
     installTitle: "Kurulum",
     smartTitle: "Windows \"Windows bilgisayarınızı korudu\" uyarısı gösteriyor",
@@ -616,6 +619,7 @@ const tr: Dict = {
   /** Legal pages (privacy, terms, consent) exist in English and Russian only. Other languages show the English
    * text with this notice on top. */
   legalNotice: "Bu belge yalnızca İngilizce ve Rusça olarak mevcuttur. Aşağıda İngilizce sürümü yer alır ve geçerli olan da odur.",
+  changelogNotice: "Değişiklik geçmişi İngilizce ve Rusça tutulur. Aşağıda İngilizce sürümü yer alır.",
   cis: null,
   notFound: { title: "Sayfa bulunamadı", text: "Böyle bir sayfa yok. Belki taşınmıştır.", home: "Ana sayfaya dön" },
 };

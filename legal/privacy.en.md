@@ -1,13 +1,13 @@
 # Unslouch Privacy Policy
 
-Effective: 28 September 2026.
+Effective: 29 September 2026.
 
 In short: the app sends nothing about you to us or to anyone else. There are no accounts, ad
 networks, analytics, telemetry or crash reports. Everything the app remembers is stored in files
 on your computer, and only you can delete it.
 
-The app's website has a Yandex Metrica counter. It loads only if you click "Accept" in the cookie
-notice. Details in "The website" below.
+The app's website has a Yandex Metrica counter. It loads as soon as you open the site, and you can
+turn it off with "Decline" in the cookie notice. Details in "The website" below.
 
 Unslouch (called «Засиделся» in Russian) is free and open source (MIT licence). Its author and
 rights holder is Sergey Yadrov, a private individual, referred to below as "we".
@@ -88,21 +88,25 @@ Selectel keeps standard technical request logs (IP address, time, requested file
 We do not analyse them or use them to identify you.
 
 **Visit statistics.** To understand which pages and tools are useful, the site has a Yandex Metrica
-counter. On the first visit the site shows a cookie notice:
+counter. This is the site owner's decision: the counter runs until you turn it off.
 
-- until you click "Accept", the counter is not loaded, no cookies are set and nothing is collected;
-- after "Accept", Metrica receives cookie identifiers (for example `_ym_uid`, `_ym_d`, `_ym_isad`),
-  your IP address, browser and device details, pages viewed, the referring site, visit time and
-  actions on the page: clicks, scrolling, link clicks and downloads;
-- "Decline" is remembered and the notice does not come back.
+- The counter loads on every page you open, before you have answered the notice. Metrica sets
+  cookie identifiers (for example `_ym_uid`, `_ym_d`, `_ym_isad`) and receives your IP address,
+  browser and device details, pages viewed, the referring site, visit time and actions on the page:
+  clicks, scrolling, link clicks and downloads.
+- On the first visit a notice at the bottom of the page explains this. "OK" closes the notice, and the counter keeps running.
+- "Decline" turns the counter off: the site remembers your choice, removes the Metrica cookies from
+  its own domain and reloads the page, and the counter is not loaded after that. Data Metrica
+  received before you declined stays with Metrica. The choice is stored in this browser; in another
+  browser or after clearing the site data the notice appears again.
 
 The data is processed by Yandex LLC as the owner of Yandex Metrica and stored in Russia. We see only
 aggregate statistics and do not use them for advertising. The terms are in a separate document:
 [consent to the processing of personal data](consent.en.md).
 
-You can change your mind at any time: "Cookies and statistics" at the bottom of any page.
+You can also decline later: "Cookies and statistics" at the bottom of any page opens the same notice.
 
-**What the site stores in your browser without consent.** Your chosen theme, language and your answer
+**What else the site stores in your browser.** Your chosen theme, language and your answer
 to the cookie notice, and in the free tools their settings. These are browser storage entries
 (localStorage), not cookies; they are not sent anywhere and cannot identify you.
 
@@ -144,15 +148,16 @@ All these checks happen on your computer, and their results are not sent anywher
 **The app.** We do not receive or process personal data of the app's users. The settings and
 statistics files are created and stored on your device, and we have no access to them.
 
-**The website.** If you agreed to statistics, the data controller under the GDPR (and the personal
+**The website.** Until you decline statistics, the data controller under the GDPR (and the personal
 data operator under Russian Federal Law No. 152-FZ "On Personal Data") is Sergey Yadrov. Legal
-basis: your consent (Article 6(1)(a) GDPR, Article 6(1)(1) of 152-FZ). Processor: Yandex LLC
+basis: your consent, given by continuing to use the site after the notice (Article 6(1)(a) GDPR,
+Article 6(1)(1) of 152-FZ). Processor: Yandex LLC
 (Yandex Metrica). The data is processed in Russia.
 
 You have the right to know what data about you is processed, to have it corrected, restricted or
 erased, and to withdraw your consent. Write to support@health-diet.ru; we answer within 10 working
 days. You can also withdraw consent on the site itself: "Cookies and statistics" at the bottom of
-any page. If you are in the EU, you may also complain to your data protection authority.
+any page, then "Decline". If you are in the EU, you may also complain to your data protection authority.
 
 If you email us, we use your address and message only to reply and do not pass them on to
 third parties. Ask us to delete the correspondence and we will.

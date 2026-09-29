@@ -18,8 +18,8 @@ const es: Dict = {
     language: "Idioma",
   },
   cookieBanner: {
-    text: "El sitio puede contar las visitas con Yandex Metrica: instala cookies y recibe tu dirección IP y datos del navegador. El contador solo se activa si aceptas. La app no recopila nada en ningún caso.",
-    accept: "Aceptar",
+    text: "El sitio cuenta las visitas con Yandex Metrica: instala cookies y recibe tu dirección IP y datos del navegador. Si no quieres, haz clic en Rechazar. La app en sí no recopila nada.",
+    ok: "Entendido",
     decline: "Rechazar",
     consent: "Consentimiento para el tratamiento de datos",
     privacy: "Política de privacidad",
@@ -32,6 +32,7 @@ const es: Dict = {
     terms: "Condiciones",
     consent: "Consentimiento para el tratamiento de datos",
     cookies: "Cookies y estadísticas",
+    changelog: "Novedades",
     contact: "Contacto",
     bug: "Informar de un error en GitHub",
     donate: "Apoyar el proyecto",
@@ -53,6 +54,7 @@ const es: Dict = {
     other: "Otros sistemas",
     all: "Todas las descargas en GitHub",
     browser: "¿No puedes instalar programas en el trabajo? Úsala en el navegador",
+    changelog: "Novedades de la versión {version}",
   },
   meta: {
     home: {
@@ -65,7 +67,7 @@ const es: Dict = {
       description: "Por qué Unslouch funciona así: investigaciones sobre la fatiga visual, el dolor de cuello, estar mucho tiempo sentado, las manos y la respiración, con fuentes y cuándo ir al médico.",
     },
     privacy: { title: "Política de privacidad | Unslouch", description: "La app Unslouch no recopila nada. Qué guarda en tu computadora, cómo borrarlo y cómo cuenta las visitas el sitio web." },
-    consent: { title: "Consentimiento para el tratamiento de datos personales | Unslouch", description: "Las condiciones con las que el sitio recopila estadísticas de visitas con Yandex Metrica si haces clic en Aceptar." },
+    consent: { title: "Consentimiento para el tratamiento de datos personales | Unslouch", description: "Las condiciones con las que el sitio recopila estadísticas de visitas con Yandex Metrica, y cómo rechazarlo." },
     terms: { title: "Condiciones de uso | Unslouch", description: "Condiciones de uso de Unslouch, una app gratuita y de código abierto que recuerda hacer pausas." },
     compare: {
       title: "Comparativa de apps para recordar pausas: Stretchly, LookAway, BreakTimer, Time Out | Unslouch",
@@ -81,6 +83,7 @@ const es: Dict = {
     },
     notFound: { title: "Página no encontrada | Unslouch", description: "Esta página no existe." },
     donate: { title: "Apoya al desarrollador | Unslouch", description: "Unslouch es gratis y seguirá siéndolo. Si quieres dar las gracias, aquí te contamos cómo apoyar al desarrollador, con dinero o sin gastar nada." },
+    changelog: { title: "Novedades de Unslouch", description: "Qué cambió en cada versión de Unslouch: nuevas funciones y correcciones." },
   },
   home: {
     kicker: "Para quienes pasan todo el día frente a la computadora",
@@ -127,7 +130,7 @@ const es: Dict = {
     ],
     statsDemo: { today: "Hoy frente a la computadora", longest: "Tramo más largo sentado", breaks: "Pausas hechas", streak: "Días seguidos", todayValue: "6 h 40 min", longestValue: "52 min" },
     privacyTitle: "La app no recopila nada",
-    privacyText: "Sin cuentas, analíticas, telemetría, informes de errores ni anuncios. Los ajustes y las estadísticas son archivos en tu computadora. La única conexión que hace la app es buscar actualizaciones una vez al día, y puedes desactivarla. Este sitio web cuenta las visitas con Yandex Metrica solo si lo aceptas.",
+    privacyText: "Sin cuentas, analíticas, telemetría, informes de errores ni anuncios. Los ajustes y las estadísticas son archivos en tu computadora. La única conexión que hace la app es buscar actualizaciones una vez al día, y puedes desactivarla. Este sitio web cuenta las visitas con Yandex Metrica, y puedes rechazarlo.",
     privacyLink: "Política de privacidad",
     installTitle: "Instalación",
     smartTitle: "Windows muestra \"Windows protegió su PC\"",
@@ -616,6 +619,7 @@ const es: Dict = {
   /** Legal pages (privacy, terms, consent) exist in English and Russian only. Other languages show the English
    * text with this notice on top. */
   legalNotice: "Este documento solo está disponible en inglés y en ruso. A continuación está la versión en inglés, que es la que tiene validez.",
+  changelogNotice: "El historial de cambios se lleva en inglés y en ruso. A continuación está la versión en inglés.",
   cis: null,
   notFound: { title: "Página no encontrada", text: "Esta página no existe. Quizá se haya movido.", home: "Ir a la página de inicio" },
 };

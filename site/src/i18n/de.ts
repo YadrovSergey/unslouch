@@ -18,8 +18,8 @@ const de: Dict = {
     language: "Sprache",
   },
   cookieBanner: {
-    text: "Die Website kann Besuche mit Yandex Metrica zählen: Der Dienst setzt Cookies und erhält Ihre IP-Adresse und Angaben zu Ihrem Browser. Der Zähler startet nur, wenn Sie zustimmen. Die App selbst sammelt in keinem Fall etwas.",
-    accept: "Zustimmen",
+    text: "Die Website zählt Besuche mit Yandex Metrica: Der Dienst setzt Cookies und erhält Ihre IP-Adresse und Angaben zu Ihrem Browser. Wenn Sie das nicht möchten, klicken Sie auf „Ablehnen“. Die App selbst sammelt nichts.",
+    ok: "OK",
     decline: "Ablehnen",
     consent: "Einwilligung zur Datenverarbeitung",
     privacy: "Datenschutzerklärung",
@@ -32,6 +32,7 @@ const de: Dict = {
     terms: "Nutzungsbedingungen",
     consent: "Einwilligung zur Datenverarbeitung",
     cookies: "Cookies und Statistik",
+    changelog: "Neuigkeiten",
     contact: "Kontakt",
     bug: "Fehler auf GitHub melden",
     donate: "Projekt unterstützen",
@@ -53,6 +54,7 @@ const de: Dict = {
     other: "Andere Systeme",
     all: "Alle Downloads auf GitHub",
     browser: "Sie dürfen bei der Arbeit nichts installieren? Nutzen Sie die Browser-Version",
+    changelog: "Neu in Version {version}",
   },
   meta: {
     home: {
@@ -65,7 +67,7 @@ const de: Dict = {
       description: "Warum Unslouch so funktioniert: Studien zu müden Augen, Nackenschmerzen, langem Sitzen, Händen und Atmung, mit Quellen und Hinweisen, wann Sie zum Arzt gehen sollten.",
     },
     privacy: { title: "Datenschutzerklärung | Unslouch", description: "Die App Unslouch sammelt nichts. Was sie auf Ihrem Computer speichert, wie Sie es löschen und wie die Website Besuche zählt." },
-    consent: { title: "Einwilligung zur Verarbeitung personenbezogener Daten | Unslouch", description: "Die Bedingungen, unter denen die Website mit Yandex Metrica Besuchsstatistiken erhebt, wenn Sie auf „Zustimmen“ klicken." },
+    consent: { title: "Einwilligung zur Verarbeitung personenbezogener Daten | Unslouch", description: "Die Bedingungen, unter denen die Website mit Yandex Metrica Besuchsstatistiken erhebt, und wie Sie das ablehnen." },
     terms: { title: "Nutzungsbedingungen | Unslouch", description: "Nutzungsbedingungen für Unslouch, eine kostenlose Open-Source-App für Pausenerinnerungen." },
     compare: {
       title: "Apps für Pausenerinnerungen im Vergleich: Stretchly, LookAway, BreakTimer, Time Out | Unslouch",
@@ -81,6 +83,7 @@ const de: Dict = {
     },
     notFound: { title: "Seite nicht gefunden | Unslouch", description: "Diese Seite gibt es nicht." },
     donate: { title: "Den Entwickler unterstützen | Unslouch", description: "Unslouch ist kostenlos und bleibt es. Wenn Sie Danke sagen möchten: So können Sie den Entwickler unterstützen, mit Geld oder kostenlos." },
+    changelog: { title: "Neuigkeiten in Unslouch", description: "Was sich in jeder Version von Unslouch geändert hat: neue Funktionen und Fehlerbehebungen." },
   },
   home: {
     kicker: "Für alle, die den ganzen Tag am Computer sitzen",
@@ -127,7 +130,7 @@ const de: Dict = {
     ],
     statsDemo: { today: "Heute am Computer", longest: "Längstes Sitzen am Stück", breaks: "Gemachte Pausen", streak: "Tage in Folge", todayValue: "6 Std. 40 Min.", longestValue: "52 Min." },
     privacyTitle: "Die App sammelt nichts",
-    privacyText: "Keine Konten, keine Analyse, keine Telemetrie, keine Absturzberichte und keine Werbung. Einstellungen und Statistik sind Dateien auf Ihrem Computer. Die einzige Anfrage der App ist eine tägliche Suche nach Updates, und die können Sie ausschalten. Diese Website zählt Besuche mit Yandex Metrica nur, wenn Sie zustimmen.",
+    privacyText: "Keine Konten, keine Analyse, keine Telemetrie, keine Absturzberichte und keine Werbung. Einstellungen und Statistik sind Dateien auf Ihrem Computer. Die einzige Anfrage der App ist eine tägliche Suche nach Updates, und die können Sie ausschalten. Diese Website zählt Besuche mit Yandex Metrica, und Sie können das ablehnen.",
     privacyLink: "Datenschutzerklärung",
     installTitle: "Installation",
     smartTitle: "Windows zeigt „Der Computer wurde durch Windows geschützt“",
@@ -616,6 +619,7 @@ const de: Dict = {
   /** Legal pages (privacy, terms, consent) exist in English and Russian only. Other languages show the English
    * text with this notice on top. */
   legalNotice: "Dieses Dokument gibt es nur auf Englisch und Russisch. Unten steht die englische Fassung, und sie ist maßgeblich.",
+  changelogNotice: "Die Änderungsliste wird auf Englisch und Russisch geführt. Unten steht die englische Fassung.",
   cis: null,
   notFound: { title: "Seite nicht gefunden", text: "Diese Seite gibt es nicht. Vielleicht wurde sie verschoben.", home: "Zur Startseite" },
 };

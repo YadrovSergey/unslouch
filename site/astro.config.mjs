@@ -11,12 +11,12 @@ const SITE = "https://unslouch.health-diet.ru";
 const LOCALES = Object.fromEntries(
   ["en", "ru", "uk", "kk", "be", "uz", "hy", "ka", "az", "de", "es", "fr", "pt-BR", "tr", "zh-CN"].map((l) => [l.toLowerCase(), l]),
 );
-// Legal pages are written in English and Russian only; the other languages show the English text with a canonical
-// link to it, so they stay out of the sitemap.
-const LEGAL = /\/(privacy|terms|consent)\/$/;
+// Legal pages and the changelog are written in English and Russian only; the other languages show the English text
+// with a canonical link to it, so they stay out of the sitemap.
+const LEGAL = /\/(privacy|terms|consent|changelog)\/$/;
 /** @param {string} page */
 const legalCopy = (page) => {
-  const m = new URL(page).pathname.match(/^\/([a-z-]+)\/(privacy|terms|consent)\/$/);
+  const m = new URL(page).pathname.match(/^\/([a-z-]+)\/(privacy|terms|consent|changelog)\/$/);
   return Boolean(m && m[1] !== "ru" && LOCALES[m[1]]);
 };
 

@@ -18,8 +18,8 @@ const ptBR: Dict = {
     language: "Idioma",
   },
   cookieBanner: {
-    text: "O site pode contar visitas com o Yandex Metrica: ele grava cookies e recebe o seu endereço IP e dados do navegador. O contador só começa a funcionar se você concordar. O app em si não coleta nada, em nenhum caso.",
-    accept: "Aceitar",
+    text: "O site conta as visitas com o Yandex Metrica: ele grava cookies e recebe seu endereço IP e dados do navegador. Se não quiser, clique em Recusar. O app em si não coleta nada.",
+    ok: "Entendi",
     decline: "Recusar",
     consent: "Consentimento para o tratamento de dados",
     privacy: "Política de privacidade",
@@ -32,6 +32,7 @@ const ptBR: Dict = {
     terms: "Termos",
     consent: "Consentimento para o tratamento de dados",
     cookies: "Cookies e estatísticas",
+    changelog: "Novidades",
     contact: "Contato",
     bug: "Relatar um erro no GitHub",
     donate: "Apoiar o projeto",
@@ -53,6 +54,7 @@ const ptBR: Dict = {
     other: "Outros sistemas",
     all: "Todos os downloads no GitHub",
     browser: "Não pode instalar apps no trabalho? Use no navegador",
+    changelog: "Novidades da versão {version}",
   },
   meta: {
     home: {
@@ -65,7 +67,7 @@ const ptBR: Dict = {
       description: "Por que o Unslouch faz o que faz: estudos sobre cansaço visual, dor no pescoço, tempo sentado, mãos e respiração, com fontes e quando procurar um médico.",
     },
     privacy: { title: "Política de privacidade | Unslouch", description: "O app Unslouch não coleta nada. O que ele guarda no seu computador, como apagar e como o site conta as visitas." },
-    consent: { title: "Consentimento para o tratamento de dados pessoais | Unslouch", description: "As condições em que o site coleta estatísticas de visitas com o Yandex Metrica se você clicar em Aceitar." },
+    consent: { title: "Consentimento para o tratamento de dados pessoais | Unslouch", description: "As condições em que o site coleta estatísticas de visitas com o Yandex Metrica, e como recusar." },
     terms: { title: "Termos de uso | Unslouch", description: "Termos de uso do Unslouch, um app gratuito e de código aberto que lembra você de fazer pausas." },
     compare: {
       title: "Apps de lembrete de pausa comparados: Stretchly, LookAway, BreakTimer, Time Out | Unslouch",
@@ -81,6 +83,7 @@ const ptBR: Dict = {
     },
     notFound: { title: "Página não encontrada | Unslouch", description: "Esta página não existe." },
     donate: { title: "Apoie o desenvolvedor | Unslouch", description: "O Unslouch é gratuito e vai continuar gratuito. Se quiser agradecer, veja como apoiar o desenvolvedor, com dinheiro ou de graça." },
+    changelog: { title: "Novidades do Unslouch", description: "O que mudou em cada versão do Unslouch: novos recursos e correções." },
   },
   home: {
     kicker: "Para quem passa o dia inteiro no computador",
@@ -127,7 +130,7 @@ const ptBR: Dict = {
     ],
     statsDemo: { today: "Hoje no computador", longest: "Maior período sentado", breaks: "Pausas feitas", streak: "Dias seguidos", todayValue: "6 h 40 min", longestValue: "52 min" },
     privacyTitle: "O app não coleta nada",
-    privacyText: "Sem contas, análises, telemetria, relatórios de falhas ou anúncios. Configurações e estatísticas são arquivos no seu computador. A única conexão que o app faz é uma verificação diária de atualizações, e você pode desligá-la. Este site conta visitas com o Yandex Metrica só se você concordar.",
+    privacyText: "Sem contas, análises, telemetria, relatórios de falhas ou anúncios. Configurações e estatísticas são arquivos no seu computador. A única conexão que o app faz é uma verificação diária de atualizações, e você pode desligá-la. Este site conta visitas com o Yandex Metrica, e você pode recusar.",
     privacyLink: "Política de privacidade",
     installTitle: "Instalação",
     smartTitle: "O Windows mostra \"O Windows protegeu o computador\"",
@@ -613,6 +616,7 @@ const ptBR: Dict = {
     }
   },
   legalNotice: "Este documento está disponível apenas em inglês e russo. Abaixo está a versão em inglês, que é a versão válida.",
+  changelogNotice: "O histórico de mudanças é mantido em inglês e russo. Abaixo está a versão em inglês.",
   cis: null,
   notFound: { title: "Página não encontrada", text: "Esta página não existe. Talvez tenha mudado de endereço.", home: "Ir para a página inicial" },
 };

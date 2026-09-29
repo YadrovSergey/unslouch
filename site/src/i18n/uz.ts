@@ -18,8 +18,8 @@ const uz: Dict = {
     language: "Til",
   },
   cookieBanner: {
-    text: "Sayt tashriflarni Yandex Metrica yordamida hisoblashi mumkin: u cookie fayllarini oʻrnatadi va IP manzilingiz hamda brauzer haqidagi maʼlumotlarni oladi. Hisoblagich faqat siz rozi boʻlsangiz ishga tushadi. Dasturning oʻzi baribir hech narsa toʻplamaydi.",
-    accept: "Qabul qilish",
+    text: "Sayt tashriflarni Yandex Metrica bilan hisoblaydi: u cookie oʻrnatadi va IP manzil hamda brauzer haqidagi maʼlumotlarni oladi. Istamasangiz, «Rad etish» tugmasini bosing. Dasturning oʻzi hech narsa toʻplamaydi.",
+    ok: "Tushunarli",
     decline: "Rad etish",
     consent: "Maʼlumotlarni qayta ishlashga rozilik",
     privacy: "Maxfiylik siyosati",
@@ -32,6 +32,7 @@ const uz: Dict = {
     terms: "Shartlar",
     consent: "Maʼlumotlarni qayta ishlashga rozilik",
     cookies: "Cookie va statistika",
+    changelog: "Nima yangi",
     contact: "Bizga yozing",
     bug: "GitHub saytida xato haqida xabar berish",
     donate: "Loyihani qoʻllab-quvvatlash",
@@ -53,6 +54,7 @@ const uz: Dict = {
     other: "Boshqa tizimlar",
     all: "GitHub saytidagi barcha fayllar",
     browser: "Ishda dastur oʻrnatib boʻlmaydimi? Brauzerdagi versiyadan foydalaning",
+    changelog: "{version} versiyasida nima yangi",
   },
   meta: {
     home: {
@@ -65,7 +67,7 @@ const uz: Dict = {
       description: "Unslouch nima uchun aynan shunday ishlaydi: koʻz charchashi, boʻyin ogʻrigʻi, uzoq oʻtirish, qoʻllar va nafas haqidagi tadqiqotlar, manbalar va qachon shifokorga borish kerakligi.",
     },
     privacy: { title: "Maxfiylik siyosati | Unslouch", description: "Unslouch dasturi hech narsa toʻplamaydi. U kompyuteringizda nimani saqlaydi, uni qanday oʻchirish mumkin va sayt tashriflarni qanday hisoblaydi." },
-    consent: { title: "Shaxsiy maʼlumotlarni qayta ishlashga rozilik | Unslouch", description: "«Qabul qilish» tugmasini bossangiz, sayt Yandex Metrica orqali tashriflar statistikasini qanday shartlarda toʻplaydi." },
+    consent: { title: "Shaxsiy maʼlumotlarni qayta ishlashga rozilik | Unslouch", description: "Sayt Yandex Metrica orqali tashriflar statistikasini qanday shartlarda toʻplaydi va undan qanday voz kechish mumkin." },
     terms: { title: "Foydalanish shartlari | Unslouch", description: "Tanaffuslarni eslatuvchi bepul ochiq kodli Unslouch dasturidan foydalanish shartlari." },
     compare: {
       title: "Tanaffus eslatuvchi dasturlar taqqoslanganda: Stretchly, LookAway, BreakTimer, Time Out | Unslouch",
@@ -81,6 +83,7 @@ const uz: Dict = {
     },
     notFound: { title: "Sahifa topilmadi | Unslouch", description: "Bunday sahifa mavjud emas." },
     donate: { title: "Dasturchini qoʻllab-quvvatlash | Unslouch", description: "Unslouch bepul va bepulligicha qoladi. Minnatdorchilik bildirmoqchi boʻlsangiz, dasturchini pul bilan yoki bepul qanday qoʻllab-quvvatlash mumkinligi shu yerda." },
+    changelog: { title: "Unslouchda nima yangi", description: "Unslouchning har bir versiyasida nima oʻzgargan: yangi imkoniyatlar va tuzatishlar." },
   },
   home: {
     kicker: "Kun boʻyi kompyuterda oʻtiradiganlar uchun",
@@ -127,7 +130,7 @@ const uz: Dict = {
     ],
     statsDemo: { today: "Bugun kompyuterda", longest: "Eng uzoq oʻtirish", breaks: "Bajarilgan tanaffuslar", streak: "Ketma-ket kunlar", todayValue: "6 soat 40 daq", longestValue: "52 daq" },
     privacyTitle: "Dastur hech narsa toʻplamaydi",
-    privacyText: "Akkauntlar, analitika, telemetriya, xato hisobotlari va reklama yoʻq. Sozlamalar va statistika kompyuteringizdagi fayllarda saqlanadi. Dastur internetga yuboradigan yagona soʻrov: kuniga bir marta yangilanishlarni tekshirish, uni oʻchirib qoʻyish mumkin. Bu sayt tashriflarni Yandex Metrica bilan faqat siz rozi boʻlsangiz hisoblaydi.",
+    privacyText: "Akkauntlar, analitika, telemetriya, xato hisobotlari va reklama yoʻq. Sozlamalar va statistika kompyuteringizdagi fayllarda saqlanadi. Dastur internetga yuboradigan yagona soʻrov: kuniga bir marta yangilanishlarni tekshirish, uni oʻchirib qoʻyish mumkin. Bu sayt tashriflarni Yandex Metrica bilan hisoblaydi, undan voz kechish mumkin.",
     privacyLink: "Maxfiylik siyosati",
     installTitle: "Oʻrnatish",
     smartTitle: "Windows «Windows kompyuteringizni himoya qildi» deb yozadi",
@@ -613,6 +616,7 @@ const uz: Dict = {
     }
   },
   legalNotice: "Bu hujjat faqat ingliz va rus tillarida mavjud. Quyida uning inglizcha matni keltirilgan va aynan u amal qiladi.",
+  changelogNotice: "Oʻzgarishlar tarixi ingliz va rus tillarida yuritiladi. Quyida inglizcha matni keltirilgan.",
   cis: {
     title: "Bizdan yana: «Mening sogʻlom ratsionim»",
     text: "Mahsulotlar va retseptlar bazasiga ega, kaloriyalar, oqsillar, yogʻlar va uglevodlarni hisoblaydigan ovqatlanish kundaligi. Uni Unslouch dasturini yaratgan dasturchining oʻzi yaratadi.",

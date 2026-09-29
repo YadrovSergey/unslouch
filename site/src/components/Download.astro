@@ -1,5 +1,6 @@
 ---
 import { DOWNLOADS, RELEASES, fill, href, t, type Lang } from "../i18n";
+import { LATEST_VERSION } from "../lib/changelog";
 interface Props {
   lang: Lang;
   id?: string;
@@ -45,6 +46,7 @@ const more = [
     <span><span class="badge-free">{d.free}</span></span>
     <a href={RELEASES}>{d.all}</a>
     <a href={href(lang, "/app/")}>{d.browser}</a>
+    {LATEST_VERSION && <a href={href(lang, "/changelog/")}>{fill(d.changelog, { version: LATEST_VERSION })}</a>}
   </div>
 </div>
 

@@ -9,6 +9,8 @@ on:
     paths:
       - "site/**"
       - "docs/**"
+      - "CHANGELOG.md"
+      - "CHANGELOG.ru.md"
       - "legal/**"
       - "src/exercises/**"
       - "src/lib/**"

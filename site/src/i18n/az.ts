@@ -18,8 +18,8 @@ const az: Dict = {
     language: "Dil",
   },
   cookieBanner: {
-    text: "Sayt ziyarətləri Yandex Metrica ilə saya bilər: o, cookie faylları yazır və IP ünvanınızı, brauzeriniz haqqında məlumatları alır. Sayğac yalnız siz razılıq versəniz işə düşür. Proqramın özü isə heç bir halda heç nə toplamır.",
-    accept: "Qəbul et",
+    text: "Sayt ziyarətləri Yandex Metrica ilə sayır: o, cookie yerləşdirir, IP ünvanınızı və brauzer məlumatlarını alır. İstəmirsinizsə, «İmtina et» düyməsini basın. Proqramın özü heç nə toplamır.",
+    ok: "Aydındır",
     decline: "İmtina et",
     consent: "Məlumatların emalına razılıq",
     privacy: "Məxfilik siyasəti",
@@ -32,6 +32,7 @@ const az: Dict = {
     terms: "Şərtlər",
     consent: "Məlumatların emalına razılıq",
     cookies: "Cookie və statistika",
+    changelog: "Nə yenilik var",
     contact: "Bizə yazın",
     bug: "GitHub-da xəta barədə bildirin",
     donate: "Layihəni dəstəkləyin",
@@ -53,6 +54,7 @@ const az: Dict = {
     other: "Digər sistemlər",
     all: "Bütün fayllar GitHub-da",
     browser: "İşdə proqram quraşdırmaq olmur? Brauzer versiyasını açın",
+    changelog: "{version} versiyasında nə yenilik var",
   },
   meta: {
     home: {
@@ -65,7 +67,7 @@ const az: Dict = {
       description: "Unslouch niyə məhz belə qurulub: gözlərin yorulması, boyun ağrısı, uzun oturuş, əllər və nəfəs haqqında araşdırmalar. Mənbələr və nə vaxt həkimə müraciət etmək lazım olduğu ilə.",
     },
     privacy: { title: "Məxfilik siyasəti | Unslouch", description: "Unslouch proqramı heç nə toplamır. Kompüterinizdə nə saxlayır, bunu necə silmək olar və sayt ziyarətləri necə sayır." },
-    consent: { title: "Şəxsi məlumatların emalına razılıq | Unslouch", description: "«Qəbul et» düyməsini bassanız, saytın Yandex Metrica ilə ziyarət statistikasını hansı şərtlərlə topladığı." },
+    consent: { title: "Şəxsi məlumatların emalına razılıq | Unslouch", description: "Saytın Yandex Metrica ilə ziyarət statistikasını hansı şərtlərlə topladığı və ondan necə imtina etmək olar." },
     terms: { title: "İstifadə şərtləri | Unslouch", description: "Pulsuz, açıq mənbə kodlu fasilə xatırlatma proqramı Unslouch-un istifadə şərtləri." },
     compare: {
       title: "Fasilə xatırlatma proqramlarının müqayisəsi: Stretchly, LookAway, BreakTimer, Time Out | Unslouch",
@@ -81,6 +83,7 @@ const az: Dict = {
     },
     notFound: { title: "Səhifə tapılmadı | Unslouch", description: "Belə səhifə yoxdur." },
     donate: { title: "Tərtibatçını dəstəkləyin | Unslouch", description: "Unslouch pulsuzdur və pulsuz qalacaq. Təşəkkür etmək istəsəniz, tərtibatçını pulla və ya pulsuz necə dəstəkləmək olar." },
+    changelog: { title: "Unslouch-da nə yenilik var", description: "Unslouch-un hər versiyasında nə dəyişib: yeni imkanlar və düzəlişlər." },
   },
   home: {
     kicker: "Bütün günü kompüter arxasında oturanlar üçün",
@@ -127,7 +130,7 @@ const az: Dict = {
     ],
     statsDemo: { today: "Bu gün kompüter arxasında", longest: "Ən uzun oturuş", breaks: "Edilmiş fasilələr", streak: "Ardıcıl günlər", todayValue: "6 saat 40 dəq", longestValue: "52 dəq" },
     privacyTitle: "Proqram heç nə toplamır",
-    privacyText: "Hesab, analitika, telemetriya, çökmə hesabatları və reklam yoxdur. Ayarlar və statistika kompüterinizdəki fayllardır. Proqramın göndərdiyi yeganə sorğu gündəlik yeniləmə yoxlamasıdır və onu söndürə bilərsiniz. Bu sayt ziyarətləri Yandex Metrica ilə yalnız razılıq versəniz sayır.",
+    privacyText: "Hesab, analitika, telemetriya, çökmə hesabatları və reklam yoxdur. Ayarlar və statistika kompüterinizdəki fayllardır. Proqramın göndərdiyi yeganə sorğu gündəlik yeniləmə yoxlamasıdır və onu söndürə bilərsiniz. Bu sayt ziyarətləri Yandex Metrica ilə sayır, ondan imtina etmək olar.",
     privacyLink: "Məxfilik siyasəti",
     installTitle: "Quraşdırma",
     smartTitle: "Windows «Windows protected your PC» göstərir",
@@ -616,6 +619,7 @@ const az: Dict = {
   /** Legal pages (privacy, terms, consent) exist in English and Russian only. Other languages show the English
    * text with this notice on top. */
   legalNotice: "Bu sənəd yalnız ingilis və rus dillərində mövcuddur. Aşağıda ingilis versiyası verilib və qüvvədə olan məhz odur.",
+  changelogNotice: "Dəyişikliklər tarixçəsi ingilis və rus dillərində aparılır. Aşağıda ingilis versiyası verilib.",
   cis: {
     title: "Bizdən daha biri: «Mənim sağlam rasionum»",
     text: "Məhsul və resept bazası olan, kalori, zülal, yağ və karbohidratları hesablayan qidalanma gündəliyi. Onu Unslouch-u hazırlayan eyni tərtibatçı hazırlayır.",

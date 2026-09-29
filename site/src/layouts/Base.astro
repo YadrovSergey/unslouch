@@ -175,6 +175,7 @@ const current = (p: string) => (path === p || (p !== "/" && path.startsWith(p)) 
           <li><a href={href(lang, "/terms/")}>{d.footer.terms}</a></li>
           <li><a href={href(lang, "/consent/")}>{d.footer.consent}</a></li>
           <li><button class="linklike" type="button" data-open-consent>{d.footer.cookies}</button></li>
+          <li><a href={href(lang, "/changelog/")}>{d.footer.changelog}</a></li>
           <li><a href={GITHUB}>{d.footer.source}</a></li>
           <li><a href={`mailto:${EMAIL}`}>{d.footer.contact}: {EMAIL}</a></li>
           <li><a href={`${GITHUB}/issues/new?template=bug.yml`}>{d.footer.bug}</a></li>

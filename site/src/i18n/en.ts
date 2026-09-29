@@ -18,8 +18,8 @@ const en = {
     language: "Language",
   },
   cookieBanner: {
-    text: "The site can count visits with Yandex Metrica: it sets cookies and receives your IP address and browser details. The counter starts only if you agree. The app itself collects nothing either way.",
-    accept: "Accept",
+    text: "The site counts visits with Yandex Metrica: it sets cookies and receives your IP address and browser details. If you don't want that, click Decline. The app itself collects nothing.",
+    ok: "OK",
     decline: "Decline",
     consent: "Consent to data processing",
     privacy: "Privacy policy",
@@ -32,6 +32,7 @@ const en = {
     terms: "Terms",
     consent: "Consent to data processing",
     cookies: "Cookies and statistics",
+    changelog: "What's new",
     contact: "Contact",
     bug: "Report a bug on GitHub",
     donate: "Support the project",
@@ -53,6 +54,7 @@ const en = {
     other: "Other systems",
     all: "All downloads on GitHub",
     browser: "Can't install apps at work? Use it in the browser",
+    changelog: "What's new in version {version}",
   },
   meta: {
     home: {
@@ -65,7 +67,7 @@ const en = {
       description: "Why Unslouch does what it does: research on eye strain, neck pain, long sitting, hands and breathing, with sources and when to see a doctor.",
     },
     privacy: { title: "Privacy policy | Unslouch", description: "The Unslouch app collects nothing. What it stores on your computer, how to delete it, and how the website counts visits." },
-    consent: { title: "Consent to the processing of personal data | Unslouch", description: "The terms on which the website collects visit statistics with Yandex Metrica if you click Accept." },
+    consent: { title: "Consent to the processing of personal data | Unslouch", description: "The terms on which the website collects visit statistics with Yandex Metrica, and how to decline." },
     terms: { title: "Terms of use | Unslouch", description: "Terms of use for Unslouch, a free open-source break reminder app." },
     compare: {
       title: "Break reminder apps compared: Stretchly, LookAway, BreakTimer, Time Out | Unslouch",
@@ -81,6 +83,7 @@ const en = {
     },
     notFound: { title: "Page not found | Unslouch", description: "This page does not exist." },
     donate: { title: "Support the developer | Unslouch", description: "Unslouch is free and will stay free. If you want to say thanks, here is how to support the developer, with money or for free." },
+    changelog: { title: "What's new in Unslouch", description: "What changed in each version of Unslouch: new features and fixes." },
   },
   home: {
     kicker: "For people who sit at a computer all day",
@@ -127,7 +130,7 @@ const en = {
     ],
     statsDemo: { today: "Today at the computer", longest: "Longest sitting stretch", breaks: "Breaks taken", streak: "Day streak", todayValue: "6 h 40 min", longestValue: "52 min" },
     privacyTitle: "The app collects nothing",
-    privacyText: "No accounts, analytics, telemetry, crash reports or ads. Settings and statistics are files on your computer. The only request the app makes is a daily update check, and you can turn it off. This website counts visits with Yandex Metrica only if you agree.",
+    privacyText: "No accounts, analytics, telemetry, crash reports or ads. Settings and statistics are files on your computer. The only request the app makes is a daily update check, and you can turn it off. This website counts visits with Yandex Metrica, and you can decline.",
     privacyLink: "Privacy policy",
     installTitle: "Installing",
     smartTitle: "Windows shows \"Windows protected your PC\"",
@@ -618,6 +621,9 @@ const en = {
   /** Legal pages (privacy, terms, consent) exist in English and Russian only. Other languages show the English
    * text with this notice on top. */
   legalNotice: "",
+  /** The changelog (CHANGELOG.md, CHANGELOG.ru.md) exists in English and Russian only. Other languages show the
+   * English text with this notice on top. */
+  changelogNotice: "",
   cis: null as null | { title: string; text: string; link: string },
   notFound: { title: "Page not found", text: "There is no such page. Maybe it moved.", home: "Go to the home page" },
 };

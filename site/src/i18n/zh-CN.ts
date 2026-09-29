@@ -18,8 +18,8 @@ const zhCN: Dict = {
     language: "语言",
   },
   cookieBanner: {
-    text: "本网站可以通过 Yandex Metrica 统计访问量：它会设置 Cookie，并获取您的 IP 地址和浏览器信息。只有在您同意后，统计才会开始。无论您是否同意，应用本身都不收集任何数据。",
-    accept: "同意",
+    text: "本网站通过 Yandex Metrica 统计访问量：它会设置 Cookie，并获取您的 IP 地址和浏览器信息。如果您不愿意，请点击“拒绝”。应用本身不收集任何数据。",
+    ok: "知道了",
     decline: "拒绝",
     consent: "同意处理数据",
     privacy: "隐私政策",
@@ -32,6 +32,7 @@ const zhCN: Dict = {
     terms: "条款",
     consent: "同意处理数据",
     cookies: "Cookie 与统计",
+    changelog: "更新内容",
     contact: "联系我们",
     bug: "在 GitHub 上报告问题",
     donate: "支持项目",
@@ -53,6 +54,7 @@ const zhCN: Dict = {
     other: "其他系统",
     all: "GitHub 上的全部下载",
     browser: "公司电脑不能安装应用？可以在浏览器中使用",
+    changelog: "{version} 版的更新内容",
   },
   meta: {
     home: {
@@ -65,7 +67,7 @@ const zhCN: Dict = {
       description: "Unslouch 为什么这样做：关于眼睛疲劳、颈部疼痛、久坐、手部和呼吸的研究，附有来源和何时就医。",
     },
     privacy: { title: "隐私政策 | Unslouch", description: "Unslouch 应用不收集任何数据。它在您的电脑上保存什么、如何删除，以及网站如何统计访问量。" },
-    consent: { title: "同意处理个人数据 | Unslouch", description: "如果您点击“同意”，网站将按照这些条件通过 Yandex Metrica 收集访问统计。" },
+    consent: { title: "同意处理个人数据 | Unslouch", description: "网站通过 Yandex Metrica 收集访问统计的条件，以及如何拒绝。" },
     terms: { title: "使用条款 | Unslouch", description: "Unslouch 的使用条款。Unslouch 是一款免费开源的休息提醒应用。" },
     compare: {
       title: "休息提醒应用对比：Stretchly、LookAway、BreakTimer、Time Out | Unslouch",
@@ -81,6 +83,7 @@ const zhCN: Dict = {
     },
     notFound: { title: "页面未找到 | Unslouch", description: "此页面不存在。" },
     donate: { title: "支持开发者 | Unslouch", description: "Unslouch 是免费的，并将一直免费。如果您想表示感谢，这里介绍了支持开发者的方式，可以捐款，也可以免费帮忙。" },
+    changelog: { title: "Unslouch 更新内容", description: "Unslouch 每个版本的变化：新功能和修复。" },
   },
   home: {
     kicker: "献给整天坐在电脑前的人",
@@ -127,7 +130,7 @@ const zhCN: Dict = {
     ],
     statsDemo: { today: "今天使用电脑", longest: "最长连续久坐", breaks: "已完成休息", streak: "连续天数", todayValue: "6 小时 40 分钟", longestValue: "52 分钟" },
     privacyTitle: "应用不收集任何数据",
-    privacyText: "没有账号、分析、遥测、崩溃报告或广告。设置和统计都是您电脑上的文件。应用唯一的网络请求是每天检查一次更新，这也可以关闭。本网站只有在您同意后才会通过 Yandex Metrica 统计访问量。",
+    privacyText: "没有账号、分析、遥测、崩溃报告或广告。设置和统计都是您电脑上的文件。应用唯一的网络请求是每天检查一次更新，这也可以关闭。本网站通过 Yandex Metrica 统计访问量，您可以拒绝。",
     privacyLink: "隐私政策",
     installTitle: "安装",
     smartTitle: "Windows 显示“Windows 已保护你的电脑”",
@@ -613,6 +616,7 @@ const zhCN: Dict = {
     }
   },
   legalNotice: "本文件仅提供英文版和俄文版。以下为英文版，以英文版为准。",
+  changelogNotice: "更新日志只有英文版和俄文版。以下为英文版。",
   cis: null,
   notFound: { title: "页面未找到", text: "没有这个页面。它可能已经移动了。", home: "返回首页" },
 };

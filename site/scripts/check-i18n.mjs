@@ -62,6 +62,7 @@ for (const l of LANGS) {
   if (d.lang !== l) bad(`${l}: lang is ${d.lang}`);
   for (const [k, v] of Object.entries(d.tools.list)) if (v.slug !== en.tools.list[k].slug) bad(`${l}: slug of ${k} changed`);
   if (NEW.includes(l) && !d.legalNotice.trim()) bad(`${l}: legalNotice is empty`);
+  if (NEW.includes(l) && !d.changelogNotice.trim()) bad(`${l}: changelogNotice is empty`);
 }
 
 // ---- sources.json

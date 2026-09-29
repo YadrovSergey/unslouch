@@ -18,8 +18,8 @@ const fr: Dict = {
     language: "Langue",
   },
   cookieBanner: {
-    text: "Le site peut compter les visites avec Yandex Metrica : il dépose des cookies et reçoit votre adresse IP et des informations sur votre navigateur. Le compteur ne démarre que si vous l’acceptez. L’application elle-même ne collecte rien, dans tous les cas.",
-    accept: "Accepter",
+    text: "Le site compte les visites avec Yandex Metrica : le service dépose des cookies et reçoit votre adresse IP et des informations sur votre navigateur. Si vous ne le souhaitez pas, cliquez sur Refuser. L’application elle-même ne collecte rien.",
+    ok: "OK",
     decline: "Refuser",
     consent: "Consentement au traitement des données",
     privacy: "Politique de confidentialité",
@@ -32,6 +32,7 @@ const fr: Dict = {
     terms: "Conditions",
     consent: "Consentement au traitement des données",
     cookies: "Cookies et statistiques",
+    changelog: "Nouveautés",
     contact: "Contact",
     bug: "Signaler un bug sur GitHub",
     donate: "Soutenir le projet",
@@ -53,6 +54,7 @@ const fr: Dict = {
     other: "Autres systèmes",
     all: "Tous les téléchargements sur GitHub",
     browser: "Impossible d’installer des applications au travail ? Utilisez la version navigateur",
+    changelog: "Nouveautés de la version {version}",
   },
   meta: {
     home: {
@@ -65,7 +67,7 @@ const fr: Dict = {
       description: "Pourquoi Unslouch fait ce qu’il fait : études sur la fatigue oculaire, les douleurs de nuque, la position assise prolongée, les mains et la respiration, avec les sources et quand consulter un médecin.",
     },
     privacy: { title: "Politique de confidentialité | Unslouch", description: "L’application Unslouch ne collecte rien. Ce qu’elle enregistre sur votre ordinateur, comment le supprimer et comment le site compte les visites." },
-    consent: { title: "Consentement au traitement des données personnelles | Unslouch", description: "Les conditions dans lesquelles le site collecte des statistiques de visite avec Yandex Metrica si vous cliquez sur Accepter." },
+    consent: { title: "Consentement au traitement des données personnelles | Unslouch", description: "Les conditions dans lesquelles le site collecte des statistiques de visite avec Yandex Metrica, et comment refuser." },
     terms: { title: "Conditions d’utilisation | Unslouch", description: "Conditions d’utilisation d’Unslouch, une application gratuite et open source de rappels de pause." },
     compare: {
       title: "Applications de rappel de pause comparées : Stretchly, LookAway, BreakTimer, Time Out | Unslouch",
@@ -81,6 +83,7 @@ const fr: Dict = {
     },
     notFound: { title: "Page introuvable | Unslouch", description: "Cette page n’existe pas." },
     donate: { title: "Soutenir le développeur | Unslouch", description: "Unslouch est gratuit et le restera. Si vous voulez dire merci, voici comment soutenir le développeur, avec de l’argent ou gratuitement." },
+    changelog: { title: "Nouveautés d’Unslouch", description: "Ce qui a changé dans chaque version d’Unslouch : nouvelles fonctions et corrections." },
   },
   home: {
     kicker: "Pour celles et ceux qui passent la journée devant un ordinateur",
@@ -127,7 +130,7 @@ const fr: Dict = {
     ],
     statsDemo: { today: "Aujourd’hui devant l’ordinateur", longest: "Plus longue période assise", breaks: "Pauses faites", streak: "Jours d’affilée", todayValue: "6 h 40 min", longestValue: "52 min" },
     privacyTitle: "L’application ne collecte rien",
-    privacyText: "Pas de compte, d’analytique, de télémétrie, de rapports de plantage ni de publicité. Les réglages et les statistiques sont des fichiers sur votre ordinateur. La seule requête de l’application est une vérification quotidienne des mises à jour, que vous pouvez désactiver. Ce site ne compte les visites avec Yandex Metrica que si vous l’acceptez.",
+    privacyText: "Pas de compte, d’analytique, de télémétrie, de rapports de plantage ni de publicité. Les réglages et les statistiques sont des fichiers sur votre ordinateur. La seule requête de l’application est une vérification quotidienne des mises à jour, que vous pouvez désactiver. Ce site compte les visites avec Yandex Metrica, et vous pouvez refuser.",
     privacyLink: "Politique de confidentialité",
     installTitle: "Installation",
     smartTitle: "Windows affiche « Windows a protégé votre ordinateur »",
@@ -613,6 +616,7 @@ const fr: Dict = {
     }
   },
   legalNotice: "Ce document n’existe qu’en anglais et en russe. Voici la version anglaise, c’est elle qui fait foi.",
+  changelogNotice: "L’historique des changements est tenu en anglais et en russe. Voici la version anglaise.",
   cis: null,
   notFound: { title: "Page introuvable", text: "Cette page n’existe pas. Elle a peut-être été déplacée.", home: "Aller à l’accueil" },
 };
