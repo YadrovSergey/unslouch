@@ -2,6 +2,10 @@
 
 Everything noticeable that changes in Unslouch. Russian version: [CHANGELOG.ru.md](CHANGELOG.ru.md).
 
+## Unreleased
+
+- In statistics, the "usual working day" time no longer spills out of its tile.
+
 ## 0.1.10 · 29 September 2026
 
 - An own reminder card no longer disappears when a break or a blink cue comes: it hides during the break and comes back.

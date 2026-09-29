@@ -2156,3 +2156,11 @@ input[type="number"] {
   text-overflow: ellipsis;
   padding: 6px 4px;
 }
+
+.stat-tiles .tile {
+  min-width: 0;
+}
+
+.stat-tiles .tile--range b {
+  white-space: normal;
+}

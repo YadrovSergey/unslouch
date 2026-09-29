@@ -132,7 +132,8 @@ function Overview({ days, nightShift }: { days: DayStats[]; nightShift: boolean 
               <Tile label={t("stats.atComputer")} value={bigDuration(total, i18n.language)} />
               <Tile label={t("stats.perDay")} value={worked.length ? formatDuration(Math.round(total / worked.length), true) : "–"} />
               <Tile label={offered ? `${t("stats.breaksDone")} · ${Math.round((done / offered) * 100)}%` : t("stats.breaksDone")} value={String(done)} />
-              <Tile label={t("stats.usualDay")} value={start != null && end != null ? `${clock(start)}–${clock(end)}` : "–"} />
+              {/* A zero-width space after the dash: "10:23–18:40" wraps there when the tile is narrow. */}
+              <Tile label={t("stats.usualDay")} value={start != null && end != null ? `${clock(start)}–\u200b${clock(end)}` : "–"} range />
               <Tile label={t("stats.longDays")} value={String(longDays)} warn={longDays > 0} />
             </div>
             <h3 className="chart-title">{t("stats.timeByDay")}</h3>
@@ -779,9 +780,10 @@ async function shareCard(text: { title: string; streak: string; total: string; f
   return new Uint8Array(await blob.arrayBuffer());
 }
 
-function Tile({ label, value, warn }: { label: string; value: string; warn?: boolean }) {
+/** `range`: a value like "9:30–18:40" that may wrap after the dash instead of spilling out of the tile. */
+function Tile({ label, value, warn, range }: { label: string; value: string; warn?: boolean; range?: boolean }) {
   return (
-    <div className={`tile ${warn ? "tile--warn" : ""}`}>
+    <div className={`tile ${warn ? "tile--warn" : ""} ${range ? "tile--range" : ""}`}>
       <b>{value}</b>
       <span>{label}</span>
     </div>
