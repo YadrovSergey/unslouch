@@ -1,12 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { openUrl } from "@tauri-apps/plugin-opener";
-import { closeCue, cueReady, waterDrunk } from "../api";
+import { closeCue, cueReady, getAppInfo, reminderAnswer, waterDrunk } from "../api";
 import { playCue } from "../sound";
 
 const WATER_VISIBLE_MS = 15000;
-const MZR_WATER_URL =
-  "https://health-diet.ru/?utm_source=unslouch&utm_medium=app&utm_campaign=unslouch&utm_content=water";
+const MZR_WATER_URL = "https://health-diet.ru/?utm_source=unslouch&utm_medium=app&utm_campaign=unslouch&utm_content=water";
 
 /** Gentle cues. Blink and posture live in a transparent click-through window; water is a small card. */
 export function CueView({ params }: { params: URLSearchParams }) {
@@ -18,6 +17,7 @@ export function CueView({ params }: { params: URLSearchParams }) {
     requestAnimationFrame(() => requestAnimationFrame(() => cueReady()));
   }, [sound]);
   if (cue === "water") return <WaterCard cis={params.get("cis") === "1"} />;
+  if (cue === "reminder") return <ReminderCard id={params.get("rid") ?? ""} />;
   return <EdgeCue cue={cue} sec={Number(params.get("sec") ?? 4)} />;
 }
 
@@ -57,18 +57,12 @@ function WaterCard({ cis }: { cis: boolean }) {
     <div className="water">
       <svg className="water__icon" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M6 3 h12 l-1.6 17 a2 2 0 0 1 -2 1.8 h-4.8 a2 2 0 0 1 -2 -1.8 z" />
-        <path
-          className="water__level"
-          d="M7 10 h10 l-1 10 a1.4 1.4 0 0 1 -1.4 1.3 h-5.2 a1.4 1.4 0 0 1 -1.4 -1.3 z"
-        />
+        <path className="water__level" d="M7 10 h10 l-1 10 a1.4 1.4 0 0 1 -1.4 1.3 h-5.2 a1.4 1.4 0 0 1 -1.4 -1.3 z" />
       </svg>
       <div className="water__body">
         <b>{t("cue.water")}</b>
         <div className="water__actions">
-          <button
-            className="water__button water__button--primary"
-            onClick={() => waterDrunk()}
-          >
+          <button className="water__button water__button--primary" onClick={() => waterDrunk()}>
             {t("cue.drank")}
           </button>
           {cis && (
@@ -82,12 +76,40 @@ function WaterCard({ cis }: { cis: boolean }) {
               {t("cue.logInMzr")}
             </button>
           )}
-          <button
-            className="water__button"
-            aria-label={t("cue.close")}
-            onClick={() => closeCue()}
-          >
+          <button className="water__button" aria-label={t("cue.close")} onClick={() => closeCue()}>
             ✕
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const LATER_MIN = 10;
+
+/** A reminder of the user's own: stays until answered. The title comes from the settings. */
+function ReminderCard({ id }: { id: string }) {
+  const { t } = useTranslation();
+  const [title, setTitle] = useState("");
+  useEffect(() => {
+    getAppInfo()
+      .then((info) => setTitle(info.settings.reminders.find((r) => r.id === id)?.title ?? ""))
+      .catch(() => {});
+  }, [id]);
+  return (
+    <div className="water reminder">
+      <svg className="water__icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6 16 V11 a6 6 0 0 1 12 0 v5 l1.5 2 h-15 z" />
+        <path d="M10 20.5 a2 2 0 0 0 4 0" />
+      </svg>
+      <div className="water__body">
+        <b>{title || t("reminders.untitled")}</b>
+        <div className="water__actions">
+          <button className="water__button water__button--primary" onClick={() => reminderAnswer(id)}>
+            {t("reminders.done")}
+          </button>
+          <button className="water__button" onClick={() => reminderAnswer(id, LATER_MIN)}>
+            {t("reminders.later", { n: LATER_MIN })}
           </button>
         </div>
       </div>

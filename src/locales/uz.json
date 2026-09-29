@@ -104,9 +104,10 @@
     "level3": "Kuchli",
     "skip": "Hozir emas",
     "save": "Saqlash",
-    "chartTitle": "Haftalar boʻyicha holat",
-    "chartHint": "Dushanba kungi javoblaringiz. Yashil: bezovta qilmaydi, qizil: kuchli bezovta qiladi.",
-    "empty": "Hozircha javoblar yoʻq. Savollar birinchi tanaffusdan keyin dushanba kuni chiqadi."
+    "chartTitle": "Holat",
+    "chartHint": "Kunlar boʻyicha javoblaringiz. Yashil: bezovta qilmaydi, qizil: kuchli bezovta qiladi.",
+    "empty": "Hozircha yozuvlar yoʻq. Jurnalga qoʻshing yoki tanaffusda savollarga javob bering.",
+    "add": "Yozuv qoʻshish"
   },
   "cue": {
     "blink": "Koʻzingizni pirpirating",
@@ -232,7 +233,8 @@
       "body": "Tana",
       "cues": "Signallar",
       "schedule": "Jadval",
-      "general": "Umumiy"
+      "general": "Umumiy",
+      "reminders": "Eslatmalar"
     }
   },
   "data": {
@@ -301,7 +303,8 @@
       "overview": "Umumiy",
       "apps": "Dasturlar",
       "wellbeing": "Holat",
-      "achievements": "Yutuqlar"
+      "achievements": "Yutuqlar",
+      "journal": "Jurnal"
     },
     "today": "Bugun",
     "done": "Bajarildi",
@@ -329,7 +332,24 @@
     "otherApps": "Qolganlari",
     "byCategory": "Turkumlar boʻyicha",
     "byHour": "Soatlar boʻyicha",
-    "exclude": "Bu dasturni hisobga olmaslik"
+    "exclude": "Bu dasturni hisobga olmaslik",
+    "period": "Davr",
+    "periods": {
+      "7": "Hafta",
+      "30": "Oy",
+      "90": "3 oy",
+      "365": "Yil"
+    },
+    "workedToday": "Bugun kompyuterda {{start}} dan {{end}} gacha",
+    "periodTitle": "Davr davomida",
+    "perDay": "Bir ish kuniga oʻrtacha",
+    "breaksDone": "Bajarilgan tanaffuslar",
+    "usualDay": "Odatiy ish kuni",
+    "longDays": "2 soatdan ortiq uzluksiz oʻtirilgan kunlar",
+    "timeByDay": "Kompyuterdagi vaqt",
+    "workday": "Ish boshlanishi va tugashi",
+    "breaksByDay": "Kunlar boʻyicha tanaffuslar",
+    "inPrograms": "Dasturlar boʻyicha hisoblangan"
   },
   "achievements": {
     "title": "Yutuqlar",
@@ -390,7 +410,11 @@
     "privacyShort": "Biz hech qanday maʼlumot toʻplamaymiz: hammasi faqat kompyuteringizda saqlanadi.",
     "version": "Versiya {{v}}",
     "asIs": "Ilova «boricha», kafolatlarsiz taqdim etiladi va undan oʻz xavfingiz ostida foydalanasiz. Batafsil foydalanish shartlarida.",
-    "donate": "Loyihani qoʻllab-quvvatlash"
+    "donate": "Loyihani qoʻllab-quvvatlash",
+    "pages": {
+      "app": "Ilova haqida",
+      "changelog": "Oʻzgarishlar tarixi"
+    }
   },
   "onboarding": {
     "title": "Unslouch ishlayapti",
@@ -545,5 +569,45 @@
     ],
     "support": "Ilova ko'zingiz va belingizni asrayotgan bo'lsa, menga qahva olib bering. {{name}} bepul va reklamasiz qoladi, qo'llab-quvvatlash esa xosting, yangi mashqlar va tuzatishlarga ketadi. Har bir o'tkazma men uchun bu ish behuda emasligining belgisi.",
     "supportButton": "Qahva olib berish"
+  },
+  "reminders": {
+    "title": "Mening eslatmalarim",
+    "hint": "Eslatilishi kerak boʻlgan har qanday narsa: dori, tushlik, qoʻngʻiroq qilish. Ekran burchagida karta paydo boʻladi va siz javob berguningizcha kutadi.",
+    "untitled": "Eslatma",
+    "done": "Bajarildi",
+    "later": "{{n}} daqiqadan keyin",
+    "templates": {
+      "pills": "Dori",
+      "lunch": "Tushlik",
+      "own": "Oʻzim"
+    },
+    "titlePlaceholder": "Nima haqida eslatish kerak",
+    "titleLabel": "Eslatma matni",
+    "when": "Qachon",
+    "kindTimes": "Belgilangan vaqtda",
+    "kindInterval": "Har bir necha daqiqada",
+    "times": "Vaqtlar",
+    "removeTime": "Vaqtni olib tashlash",
+    "newTime": "Yangi vaqt",
+    "addTime": "Qoʻshish",
+    "intervalHint": "Faqat ish vaqtida va siz kompyuterda boʻlganingizda",
+    "delete": "Oʻchirish",
+    "deleteConfirm": "Bu eslatma oʻchirilsinmi?"
+  },
+  "journal": {
+    "title": "Holat jurnali",
+    "hint": "Istalgan kun uchun holatingizni belgilang, yozuvni tuzating yoki oʻchiring. Bu tibbiy test emas.",
+    "day": "Kun",
+    "replaces": "Bu kun uchun yozuv allaqachon bor: saqlaganda u almashtiriladi.",
+    "note": "Izoh",
+    "notePlaceholder": "Masalan: ekran oldida koʻp oʻtirdim, kechqurun boshim ogʻridi",
+    "cancel": "Bekor qilish",
+    "edit": "Tahrirlash",
+    "delete": "Oʻchirish",
+    "deleteConfirm": "Bu yozuv oʻchirilsinmi?"
+  },
+  "changelog": {
+    "title": "Oʻzgarishlar tarixi",
+    "englishOnly": "Oʻzgarishlar tarixi ingliz tilida."
   }
 }

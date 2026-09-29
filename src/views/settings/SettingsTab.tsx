@@ -1,32 +1,20 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { disable, enable, isEnabled } from "@tauri-apps/plugin-autostart";
-import {
-  open as openDialog,
-  save as saveDialog,
-} from "@tauri-apps/plugin-dialog";
-import {
-  AppInfo,
-  PRESETS,
-  Preset,
-  Settings,
-  SettingsPatch,
-  clearUsage,
-  exportData,
-  importData,
-  previewCue,
-} from "../../api";
+import { open as openDialog, save as saveDialog } from "@tauri-apps/plugin-dialog";
+import { AppInfo, PRESETS, Preset, Settings, SettingsPatch, clearUsage, exportData, importData, previewCue } from "../../api";
 import type { Section as BodySection } from "../../exercises/catalog";
 import { LANGUAGE_NAMES } from "../../i18n";
 import { SOURCES } from "../../lib/sources";
 import { NumberSelect, Row, Section, TimeInput, Toggle, Why } from "./ui";
 import { Checklist } from "./Checklist";
+import { Reminders } from "./Reminders";
 
 const BODY: BodySection[] = ["eyes", "neck", "back", "hands", "legs", "breath"];
 
 /** The settings in four short pages instead of one long scroll. */
-type Page = "breaks" | "body" | "cues" | "schedule" | "general";
-const PAGES: Page[] = ["breaks", "body", "cues", "schedule", "general"];
+type Page = "breaks" | "body" | "cues" | "reminders" | "schedule" | "general";
+const PAGES: Page[] = ["breaks", "body", "cues", "reminders", "schedule", "general"];
 const PAGE_KEY = "unslouch.settingsPage";
 
 function savedPage(): Page {
@@ -40,9 +28,7 @@ function savedPage(): Page {
 const DAYS = [1, 2, 3, 4, 5, 6, 7];
 
 /** Fields that belong to a preset: touching them switches the preset to "custom". */
-const PRESET_FIELDS = new Set(
-  Object.values(PRESETS).flatMap((p) => Object.keys(p)),
-);
+const PRESET_FIELDS = new Set(Object.values(PRESETS).flatMap((p) => Object.keys(p)));
 
 export function SettingsTab({
   info,
@@ -121,13 +107,7 @@ export function SettingsTab({
     <>
       <nav className="subtabs" role="tablist" aria-label={t("tabs.settings")}>
         {PAGES.map((id) => (
-          <button
-            key={id}
-            role="tab"
-            aria-selected={page === id}
-            className="subtabs__tab"
-            onClick={() => openPage(id)}
-          >
+          <button key={id} role="tab" aria-selected={page === id} className="subtabs__tab" onClick={() => openPage(id)}>
             {t(`settings.pages.${id}`)}
           </button>
         ))}
@@ -136,17 +116,9 @@ export function SettingsTab({
       {page === "breaks" && (
         <>
           <Section title={t("settings.rhythm")}>
-            <Row
-              label={t("settings.preset")}
-              hint={t(`settings.presetHint.${s.preset}`)}
-            >
-              <select
-                value={s.preset}
-                onChange={(e) => choosePreset(e.target.value as Preset)}
-              >
-                {(
-                  ["recommended", "pomodoro", "hourly", "custom"] as Preset[]
-                ).map((p) => (
+            <Row label={t("settings.preset")} hint={t(`settings.presetHint.${s.preset}`)}>
+              <select value={s.preset} onChange={(e) => choosePreset(e.target.value as Preset)}>
+                {(["recommended", "pomodoro", "hourly", "custom"] as Preset[]).map((p) => (
                   <option key={p} value={p}>
                     {t(`settings.presets.${p}`)}
                   </option>
@@ -163,20 +135,10 @@ export function SettingsTab({
               onChange={(v) => set({ microEnabled: v })}
             />
             <Row label={t("settings.every")} disabled={!s.microEnabled}>
-              <NumberSelect
-                value={s.microIntervalMin}
-                options={[10, 15, 20, 25, 30, 40]}
-                unit={min}
-                onChange={(v) => set({ microIntervalMin: v })}
-              />
+              <NumberSelect value={s.microIntervalMin} options={[10, 15, 20, 25, 30, 40]} unit={min} onChange={(v) => set({ microIntervalMin: v })} />
             </Row>
             <Row label={t("settings.lookFarFor")} disabled={!s.microEnabled}>
-              <NumberSelect
-                value={s.microLookSec}
-                options={[10, 20, 30, 45, 60]}
-                unit={sec}
-                onChange={(v) => set({ microLookSec: v })}
-              />
+              <NumberSelect value={s.microLookSec} options={[10, 20, 30, 45, 60]} unit={sec} onChange={(v) => set({ microLookSec: v })} />
             </Row>
           </Section>
 
@@ -196,12 +158,7 @@ export function SettingsTab({
               />
             </Row>
             <Row label={t("settings.duration")} disabled={!s.movementEnabled}>
-              <NumberSelect
-                value={s.movementDurationMin}
-                options={[2, 3, 5, 10]}
-                unit={min}
-                onChange={(v) => set({ movementDurationMin: v })}
-              />
+              <NumberSelect value={s.movementDurationMin} options={[2, 3, 5, 10]} unit={min} onChange={(v) => set({ movementDurationMin: v })} />
             </Row>
             <Toggle
               label={t("settings.longEnabled")}
@@ -220,12 +177,7 @@ export function SettingsTab({
                   />
                 </Row>
                 <Row label={t("settings.duration")}>
-                  <NumberSelect
-                    value={s.longDurationMin}
-                    options={[5, 10, 15, 20, 30]}
-                    unit={min}
-                    onChange={(v) => set({ longDurationMin: v })}
-                  />
+                  <NumberSelect value={s.longDurationMin} options={[5, 10, 15, 20, 30]} unit={min} onChange={(v) => set({ longDurationMin: v })} />
                 </Row>
               </>
             )}
@@ -247,10 +199,7 @@ export function SettingsTab({
             />
           </Section>
 
-          <button
-            className="button"
-            onClick={() => choosePreset("recommended")}
-          >
+          <button className="button" onClick={() => choosePreset("recommended")}>
             {t("settings.defaults")}
           </button>
         </>
@@ -265,9 +214,7 @@ export function SettingsTab({
                 label={t(`sections.${b}`)}
                 hint={t(`sections.${b}Hint`)}
                 checked={s.sections[b]}
-                onChange={(v) =>
-                  update((cur) => ({ sections: { ...cur.sections, [b]: v } }))
-                }
+                onChange={(v) => update((cur) => ({ sections: { ...cur.sections, [b]: v } }))}
               />
               <Why id={b} sources={SOURCES[b]} />
             </div>
@@ -286,28 +233,15 @@ export function SettingsTab({
           />
           {s.blinkCueEnabled && (
             <Row label={t("settings.every")}>
-              <NumberSelect
-                value={s.blinkIntervalMin}
-                options={[2, 3, 5, 7, 10, 15]}
-                unit={min}
-                onChange={(v) => update({ blinkIntervalMin: v })}
-              />
-              <button
-                className="chip chip--show"
-                onClick={() => previewCue("blink")}
-              >
+              <NumberSelect value={s.blinkIntervalMin} options={[2, 3, 5, 7, 10, 15]} unit={min} onChange={(v) => update({ blinkIntervalMin: v })} />
+              <button className="chip chip--show" onClick={() => previewCue("blink")}>
                 {t("settings.showCue")}
               </button>
             </Row>
           )}
           {s.blinkCueEnabled && (
             <Row label={t("settings.blinkCueFor")}>
-              <NumberSelect
-                value={s.blinkCueSec}
-                options={[2, 3, 4, 5, 7, 10]}
-                unit={sec}
-                onChange={(v) => update({ blinkCueSec: v })}
-              />
+              <NumberSelect value={s.blinkCueSec} options={[2, 3, 4, 5, 7, 10]} unit={sec} onChange={(v) => update({ blinkCueSec: v })} />
             </Row>
           )}
           <Toggle
@@ -324,20 +258,12 @@ export function SettingsTab({
                 unit={min}
                 onChange={(v) => update({ postureIntervalMin: v })}
               />
-              <button
-                className="chip chip--show"
-                onClick={() => previewCue("posture")}
-              >
+              <button className="chip chip--show" onClick={() => previewCue("posture")}>
                 {t("settings.showCue")}
               </button>
             </Row>
           )}
-          <Toggle
-            label={t("settings.water")}
-            hint={t("settings.waterHint")}
-            checked={s.waterEnabled}
-            onChange={(v) => update({ waterEnabled: v })}
-          />
+          <Toggle label={t("settings.water")} hint={t("settings.waterHint")} checked={s.waterEnabled} onChange={(v) => update({ waterEnabled: v })} />
           {s.waterEnabled && (
             <Row label={t("settings.every")}>
               <NumberSelect
@@ -346,23 +272,17 @@ export function SettingsTab({
                 unit={min}
                 onChange={(v) => update({ waterIntervalMin: v })}
               />
-              <button
-                className="chip chip--show"
-                onClick={() => previewCue("water")}
-              >
+              <button className="chip chip--show" onClick={() => previewCue("water")}>
                 {t("settings.showCue")}
               </button>
             </Row>
           )}
-          <Toggle
-            label={t("settings.cueSound")}
-            hint={t("settings.cueSoundHint")}
-            checked={s.cueSound}
-            onChange={(v) => update({ cueSound: v })}
-          />
+          <Toggle label={t("settings.cueSound")} hint={t("settings.cueSoundHint")} checked={s.cueSound} onChange={(v) => update({ cueSound: v })} />
           <Why id="water" sources={SOURCES.water} />
         </Section>
       )}
+
+      {page === "reminders" && <Reminders list={s.reminders} update={update} />}
 
       {page === "schedule" && (
         <>
@@ -377,25 +297,17 @@ export function SettingsTab({
               <>
                 <div className="row">
                   <span className="row__label">{t("settings.workDays")}</span>
-                  <div
-                    className="chips"
-                    role="group"
-                    aria-label={t("settings.workDays")}
-                  >
+                  <div className="chips" role="group" aria-label={t("settings.workDays")}>
                     {DAYS.map((d) => (
                       <button
                         key={d}
                         className="chip"
                         aria-pressed={s.workDays.includes(d)}
                         // The last day can't be turned off: no work days would silence the app.
-                        disabled={
-                          s.workDays.length === 1 && s.workDays.includes(d)
-                        }
+                        disabled={s.workDays.length === 1 && s.workDays.includes(d)}
                         onClick={() =>
                           update((cur) => ({
-                            workDays: cur.workDays.includes(d)
-                              ? cur.workDays.filter((x) => x !== d)
-                              : [...cur.workDays, d],
+                            workDays: cur.workDays.includes(d) ? cur.workDays.filter((x) => x !== d) : [...cur.workDays, d],
                           }))
                         }
                       >
@@ -405,16 +317,10 @@ export function SettingsTab({
                   </div>
                 </div>
                 <Row label={t("settings.from")}>
-                  <TimeInput
-                    value={s.workStart}
-                    onChange={(v) => update({ workStart: v })}
-                  />
+                  <TimeInput value={s.workStart} onChange={(v) => update({ workStart: v })} />
                 </Row>
                 <Row label={t("settings.to")}>
-                  <TimeInput
-                    value={s.workEnd}
-                    onChange={(v) => update({ workEnd: v })}
-                  />
+                  <TimeInput value={s.workEnd} onChange={(v) => update({ workEnd: v })} />
                 </Row>
               </>
             )}
@@ -426,10 +332,7 @@ export function SettingsTab({
             />
             {s.endOfDayEnabled && (
               <Row label={t("settings.at")}>
-                <TimeInput
-                  value={s.endOfDayTime}
-                  onChange={(v) => update({ endOfDayTime: v })}
-                />
+                <TimeInput value={s.endOfDayTime} onChange={(v) => update({ endOfDayTime: v })} />
               </Row>
             )}
           </Section>
@@ -443,40 +346,21 @@ export function SettingsTab({
             />
             <Toggle
               label={t("settings.pauseInFullscreen")}
-              hint={
-                info.wayland ? t("settings.waylandNoFullscreen") : undefined
-              }
+              hint={info.wayland ? t("settings.waylandNoFullscreen") : undefined}
               checked={s.pauseInFullscreen}
               onChange={(v) => update({ pauseInFullscreen: v })}
             />
             <Toggle
               label={t("settings.respectDnd")}
-              hint={
-                info.platform === "macos"
-                  ? t("settings.respectDndMac")
-                  : undefined
-              }
+              hint={info.platform === "macos" ? t("settings.respectDndMac") : undefined}
               checked={s.respectDnd}
               onChange={(v) => update({ respectDnd: v })}
             />
             <Row label={t("settings.snooze")}>
-              <NumberSelect
-                value={s.snoozeMin}
-                options={[5, 10, 15]}
-                unit={min}
-                onChange={(v) => update({ snoozeMin: v })}
-              />
+              <NumberSelect value={s.snoozeMin} options={[5, 10, 15]} unit={min} onChange={(v) => update({ snoozeMin: v })} />
             </Row>
-            <Row
-              label={t("settings.idleReset")}
-              hint={t("settings.idleResetHint")}
-            >
-              <NumberSelect
-                value={s.idleResetMin}
-                options={[2, 3, 5, 10, 15]}
-                unit={min}
-                onChange={(v) => update({ idleResetMin: v })}
-              />
+            <Row label={t("settings.idleReset")} hint={t("settings.idleResetHint")}>
+              <NumberSelect value={s.idleResetMin} options={[2, 3, 5, 10, 15]} unit={min} onChange={(v) => update({ idleResetMin: v })} />
             </Row>
           </Section>
         </>
@@ -486,22 +370,14 @@ export function SettingsTab({
         <>
           <Section title={t("settings.generalSection")}>
             <Row label={t("settings.theme")}>
-              <select
-                value={s.theme}
-                onChange={(e) =>
-                  update({ theme: e.target.value as Settings["theme"] })
-                }
-              >
+              <select value={s.theme} onChange={(e) => update({ theme: e.target.value as Settings["theme"] })}>
                 <option value="system">{t("settings.themeSystem")}</option>
                 <option value="light">{t("settings.themeLight")}</option>
                 <option value="dark">{t("settings.themeDark")}</option>
               </select>
             </Row>
             <Row label={t("settings.language")}>
-              <select
-                value={s.language ?? ""}
-                onChange={(e) => update({ language: e.target.value || null })}
-              >
+              <select value={s.language ?? ""} onChange={(e) => update({ language: e.target.value || null })}>
                 <option value="">{t("settings.systemLanguage")}</option>
                 {info.languages.map((code) => (
                   <option key={code} value={code}>
@@ -556,11 +432,7 @@ export function SettingsTab({
           <Section title={t("settings.usageSection")}>
             <Toggle
               label={t("settings.usageEnabled")}
-              hint={
-                info.usageSupported
-                  ? t("settings.usagePrivacy")
-                  : t("settings.usageUnsupported")
-              }
+              hint={info.usageSupported ? t("settings.usagePrivacy") : t("settings.usageUnsupported")}
               checked={s.usageEnabled}
               disabled={!info.usageSupported}
               onChange={(v) => update({ usageEnabled: v })}
@@ -568,9 +440,7 @@ export function SettingsTab({
             <div className="row row--column">
               <span className="row__label">
                 {t("settings.usageExcluded")}
-                <small className="row__hint">
-                  {t("settings.usageExcludedHint")}
-                </small>
+                <small className="row__hint">{t("settings.usageExcludedHint")}</small>
               </span>
               <div className="chips">
                 {s.usageExcluded.map((app) => (
@@ -580,9 +450,7 @@ export function SettingsTab({
                     aria-pressed
                     onClick={() =>
                       update((cur) => ({
-                        usageExcluded: cur.usageExcluded.filter(
-                          (a) => a !== app,
-                        ),
+                        usageExcluded: cur.usageExcluded.filter((a) => a !== app),
                       }))
                     }
                   >
@@ -596,28 +464,19 @@ export function SettingsTab({
                     const v = newExcluded.trim();
                     if (v)
                       update((cur) => ({
-                        usageExcluded: cur.usageExcluded.includes(v)
-                          ? cur.usageExcluded
-                          : [...cur.usageExcluded, v],
+                        usageExcluded: cur.usageExcluded.includes(v) ? cur.usageExcluded : [...cur.usageExcluded, v],
                       }));
                     setNewExcluded("");
                   }}
                 >
-                  <input
-                    value={newExcluded}
-                    placeholder={t("settings.usageAddPlaceholder")}
-                    onChange={(e) => setNewExcluded(e.target.value)}
-                  />
+                  <input value={newExcluded} placeholder={t("settings.usageAddPlaceholder")} onChange={(e) => setNewExcluded(e.target.value)} />
                 </form>
               </div>
             </div>
             <button
               className="button button--danger"
               onClick={() => {
-                if (window.confirm(t("settings.usageClearConfirm")))
-                  clearUsage().then(() =>
-                    setMessage(t("settings.usageCleared")),
-                  );
+                if (window.confirm(t("settings.usageClearConfirm"))) clearUsage().then(() => setMessage(t("settings.usageCleared")));
               }}
             >
               {t("settings.usageClear")}

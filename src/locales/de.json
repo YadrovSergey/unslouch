@@ -104,9 +104,10 @@
     "level3": "Stark",
     "skip": "Nicht jetzt",
     "save": "Speichern",
-    "chartTitle": "Befinden pro Woche",
-    "chartHint": "Ihre Antworten vom Montag. Grün: gut, rot: stört stark.",
-    "empty": "Noch keine Antworten. Die Fragen kommen am Montag nach der ersten Pause."
+    "chartTitle": "Befinden",
+    "chartHint": "Ihre Antworten pro Tag. Grün: gut, rot: stört stark.",
+    "empty": "Noch keine Einträge. Fügen Sie einen im Tagebuch hinzu oder beantworten Sie die Fragen in einer Pause.",
+    "add": "Eintrag hinzufügen"
   },
   "cue": {
     "blink": "Blinzeln",
@@ -232,7 +233,8 @@
       "body": "Körper",
       "cues": "Hinweise",
       "schedule": "Zeitplan",
-      "general": "Allgemein"
+      "general": "Allgemein",
+      "reminders": "Erinnerungen"
     }
   },
   "data": {
@@ -301,7 +303,8 @@
       "overview": "Übersicht",
       "apps": "Programme",
       "wellbeing": "Befinden",
-      "achievements": "Erfolge"
+      "achievements": "Erfolge",
+      "journal": "Tagebuch"
     },
     "today": "Heute",
     "done": "Erledigt",
@@ -329,7 +332,24 @@
     "otherApps": "Andere",
     "byCategory": "Nach Kategorie",
     "byHour": "Nach Stunde",
-    "exclude": "Dieses Programm nicht erfassen"
+    "exclude": "Dieses Programm nicht erfassen",
+    "period": "Zeitraum",
+    "periods": {
+      "7": "Woche",
+      "30": "Monat",
+      "90": "3 Monate",
+      "365": "Jahr"
+    },
+    "workedToday": "Heute am Computer von {{start}} bis {{end}}",
+    "periodTitle": "Im Zeitraum",
+    "perDay": "Pro Arbeitstag",
+    "breaksDone": "Pausen gemacht",
+    "usualDay": "Üblicher Arbeitstag",
+    "longDays": "Tage mit über 2 Stunden Sitzen am Stück",
+    "timeByDay": "Zeit am Computer",
+    "workday": "Arbeitsbeginn und -ende",
+    "breaksByDay": "Pausen pro Tag",
+    "inPrograms": "In Programmen erfasst"
   },
   "achievements": {
     "title": "Erfolge",
@@ -390,7 +410,11 @@
     "privacyShort": "Wir sammeln keine Daten: Alles bleibt auf Ihrem Computer.",
     "version": "Version {{v}}",
     "asIs": "Die App wird „wie besehen“ und ohne Gewähr bereitgestellt, die Nutzung erfolgt auf eigenes Risiko. Mehr in den Nutzungsbedingungen.",
-    "donate": "Projekt unterstützen"
+    "donate": "Projekt unterstützen",
+    "pages": {
+      "app": "App",
+      "changelog": "Neuigkeiten"
+    }
   },
   "onboarding": {
     "title": "Unslouch läuft",
@@ -545,5 +569,45 @@
     ],
     "support": "Wenn die App Ihre Augen und Ihren Rücken schont, spendieren Sie mir einen Kaffee. {{name}} bleibt kostenlos und werbefrei, die Unterstützung fließt in Hosting, neue Übungen und Fehlerbehebungen. Und jede Spende zeigt mir, dass sich die Arbeit lohnt.",
     "supportButton": "Einen Kaffee spendieren"
+  },
+  "reminders": {
+    "title": "Eigene Erinnerungen",
+    "hint": "Alles, woran Sie erinnert werden möchten: Tabletten, Mittagessen, ein Anruf. In der Bildschirmecke erscheint eine Karte und bleibt, bis Sie antworten.",
+    "untitled": "Erinnerung",
+    "done": "Erledigt",
+    "later": "In {{n}} Min.",
+    "templates": {
+      "pills": "Tabletten",
+      "lunch": "Mittagessen",
+      "own": "Eigene"
+    },
+    "titlePlaceholder": "Woran erinnern",
+    "titleLabel": "Text der Erinnerung",
+    "when": "Wann",
+    "kindTimes": "Zu festen Zeiten",
+    "kindInterval": "Alle paar Minuten",
+    "times": "Uhrzeiten",
+    "removeTime": "Uhrzeit entfernen",
+    "newTime": "Neue Uhrzeit",
+    "addTime": "Hinzufügen",
+    "intervalHint": "Nur während der Arbeitszeit und solange Sie am Computer sind",
+    "delete": "Löschen",
+    "deleteConfirm": "Diese Erinnerung löschen?"
+  },
+  "journal": {
+    "title": "Befindenstagebuch",
+    "hint": "Tragen Sie Ihr Befinden für einen beliebigen Tag ein, korrigieren oder löschen Sie einen Eintrag. Das ist kein medizinischer Test.",
+    "day": "Tag",
+    "replaces": "Für diesen Tag gibt es schon einen Eintrag: Beim Speichern wird er ersetzt.",
+    "note": "Notiz",
+    "notePlaceholder": "Zum Beispiel: viel Bildschirmzeit, abends Kopfschmerzen",
+    "cancel": "Abbrechen",
+    "edit": "Bearbeiten",
+    "delete": "Löschen",
+    "deleteConfirm": "Diesen Eintrag löschen?"
+  },
+  "changelog": {
+    "title": "Änderungsprotokoll",
+    "englishOnly": "Das Änderungsprotokoll ist auf Englisch."
   }
 }

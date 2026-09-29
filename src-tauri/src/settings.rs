@@ -53,6 +53,8 @@ pub struct Settings {
     pub water_interval_min: u32,
     /// A soft sound with every gentle cue (blink, posture, water). Off by default: the cues are meant to be quiet.
     pub cue_sound: bool,
+    /// The user's own reminders (pills, lunch…), see reminders.rs.
+    pub reminders: Vec<crate::reminders::Reminder>,
 
     /// Once a day: 2 minutes for neck and shoulders (Andersen 2011).
     pub neck_daily: bool,
@@ -113,6 +115,7 @@ impl Default for Settings {
             water_enabled: true,
             water_interval_min: 90,
             cue_sound: false,
+            reminders: vec![],
             neck_daily: false,
             breathing_daily: false,
             end_of_day_enabled: false,
@@ -157,6 +160,8 @@ impl Settings {
         self.long_duration_min = self.long_duration_min.clamp(5, 60);
         self.blink_interval_min = self.blink_interval_min.clamp(1, 60);
         self.blink_cue_sec = self.blink_cue_sec.clamp(2, 10);
+        self.reminders.truncate(crate::reminders::MAX_REMINDERS);
+        self.reminders = std::mem::take(&mut self.reminders).into_iter().enumerate().map(|(i, r)| r.sanitized(i)).collect();
         self.posture_interval_min = self.posture_interval_min.clamp(10, 120);
         self.water_interval_min = self.water_interval_min.clamp(30, 240);
         self.snooze_min = self.snooze_min.clamp(1, 60);
@@ -200,19 +205,35 @@ pub struct DayStats {
     pub longest_sitting_sec: u64,
     /// Stretches longer than 2 hours: the risk threshold from Healy 2010.
     pub sitting_over_2h: u32,
+    /// First and last active minute of the day (minutes after local midnight): when work started and ended.
+    pub first_active_min: Option<u16>,
+    pub last_active_min: Option<u16>,
 }
 
 /// Day ("2026-09-27") → counters.
 pub type Stats = BTreeMap<String, DayStats>;
 
-/// Week start ("2026-09-21", a Monday) → answers 0..=3 for eyes, neck, back, hands.
-#[derive(Serialize, Deserialize, Clone, Copy, Debug, Default, PartialEq)]
+/// Day ("2026-09-29") → answers 0..=3 for eyes, neck, back, hands and a short note. Before 0.1.8 the check was
+/// weekly and keyed by the week's Monday: those entries read as entries of that Monday.
+#[derive(Serialize, Deserialize, Clone, Debug, Default, PartialEq)]
 #[serde(default)]
 pub struct Wellbeing {
     pub eyes: u8,
     pub neck: u8,
     pub back: u8,
     pub hands: u8,
+    pub note: String,
+}
+
+impl Wellbeing {
+    pub fn sanitized(mut self) -> Self {
+        self.eyes = self.eyes.min(3);
+        self.neck = self.neck.min(3);
+        self.back = self.back.min(3);
+        self.hands = self.hands.min(3);
+        self.note = self.note.trim().chars().take(500).collect();
+        self
+    }
 }
 
 pub type WellbeingLog = BTreeMap<String, Wellbeing>;

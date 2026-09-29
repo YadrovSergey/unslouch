@@ -4,12 +4,13 @@ mod frontmost;
 mod fullscreen;
 mod i18n;
 mod overlay;
+mod reminders;
 mod scheduler;
 mod settings;
 mod updates;
 mod usage;
 
-use chrono::{Datelike, Duration as ChronoDuration, Local, NaiveDate, NaiveDateTime, NaiveTime, Timelike};
+use chrono::{Duration as ChronoDuration, Local, NaiveDate, NaiveDateTime, NaiveTime, Timelike};
 use scheduler::{Action, BreakKind, BreakResult, Context, Cue, Quiet, Scheduler};
 use serde::Serialize;
 use settings::{DayStats, Settings, Stats, Wellbeing, WellbeingLog};
@@ -48,11 +49,15 @@ fn day_key(now: NaiveDateTime) -> String {
     now.format("%Y-%m-%d").to_string()
 }
 
-/// Monday of the current week: the key for the weekly wellbeing check.
-fn week_key(now: NaiveDateTime) -> String {
-    let monday = now.date() - ChronoDuration::days(now.weekday().num_days_from_monday() as i64);
-    monday.format("%Y-%m-%d").to_string()
+/// The wellbeing questions come once a week: when there is no entry for the last 7 days and they were not put off
+/// today. Entries the user adds by hand in the journal count too.
+fn wellbeing_due(inner: &Inner, now: NaiveDateTime) -> bool {
+    let from = (now.date() - ChronoDuration::days(6)).format("%Y-%m-%d").to_string();
+    inner.wellbeing.range(from..).next().is_none() && inner.wellbeing_dismissed != Some(now.date())
 }
+
+/// Wellbeing entries kept: more than a year of daily entries.
+const WELLBEING_KEPT: usize = 400;
 
 struct Inner {
     settings: Settings,
@@ -68,6 +73,7 @@ struct Inner {
     update_check: updates::Check,
     /// "Not now" on the weekly wellbeing questions: ask again tomorrow.
     wellbeing_dismissed: Option<NaiveDate>,
+    reminders: reminders::State,
 }
 
 impl Inner {
@@ -139,7 +145,7 @@ fn app_info(app: &AppHandle, inner: &Inner) -> AppInfo {
         platform: std::env::consts::OS,
         wayland: std::env::var("XDG_SESSION_TYPE").is_ok_and(|t| t == "wayland"),
         usage_supported: frontmost::supported(),
-        wellbeing_due: !inner.wellbeing.contains_key(&week_key(now)) && inner.wellbeing_dismissed != Some(now.date()),
+        wellbeing_due: wellbeing_due(inner, now),
     }
 }
 
@@ -221,13 +227,67 @@ fn get_wellbeing(state: State<AppState>) -> WellbeingLog {
     state.0.lock().unwrap().wellbeing.clone()
 }
 
+/// The answers to the weekly questions on the break screen: today's entry.
 #[tauri::command]
 fn save_wellbeing(state: State<AppState>, answers: Wellbeing) {
     let mut inner = state.0.lock().unwrap();
-    let week = week_key(Local::now().naive_local());
-    inner.wellbeing.insert(week, answers);
-    settings::trim_days(&mut inner.wellbeing, 104);
+    let today = day_key(Local::now().naive_local());
+    inner.wellbeing.insert(today, answers.sanitized());
+    settings::trim_days(&mut inner.wellbeing, WELLBEING_KEPT);
     settings::save(&inner.path("wellbeing.json"), &inner.wellbeing);
+}
+
+/// The journal in the settings window: add or fix the entry of any past day.
+#[tauri::command]
+fn set_wellbeing(window: WebviewWindow, state: State<AppState>, day: String, answers: Wellbeing) -> Result<WellbeingLog, String> {
+    from_settings(&window)?;
+    let date = NaiveDate::parse_from_str(&day, "%Y-%m-%d").map_err(|_| "bad date".to_string())?;
+    if date > Local::now().date_naive() {
+        return Err("future date".into());
+    }
+    let mut inner = state.0.lock().unwrap();
+    inner.wellbeing.insert(date.format("%Y-%m-%d").to_string(), answers.sanitized());
+    settings::trim_days(&mut inner.wellbeing, WELLBEING_KEPT);
+    settings::save(&inner.path("wellbeing.json"), &inner.wellbeing);
+    Ok(inner.wellbeing.clone())
+}
+
+#[tauri::command]
+fn delete_wellbeing(window: WebviewWindow, state: State<AppState>, day: String) -> Result<WellbeingLog, String> {
+    from_settings(&window)?;
+    let mut inner = state.0.lock().unwrap();
+    inner.wellbeing.remove(&day);
+    settings::save(&inner.path("wellbeing.json"), &inner.wellbeing);
+    Ok(inner.wellbeing.clone())
+}
+
+/// "Done" or "Later" on a reminder card. The card closes itself.
+#[tauri::command]
+fn reminder_answer(window: WebviewWindow, state: State<AppState>, id: String, later_min: Option<i64>) {
+    let now = Local::now().naive_local();
+    {
+        let mut inner = state.0.lock().unwrap();
+        match later_min {
+            Some(min) => inner.reminders.snooze(&id, now, min.clamp(1, 240)),
+            None => inner.reminders.done(&id, now),
+        }
+    }
+    if window.label().starts_with("cue-") {
+        let _ = window.destroy();
+    }
+}
+
+/// "Show" next to a reminder in the settings.
+#[tauri::command]
+fn preview_reminder(app: AppHandle, window: WebviewWindow, state: State<AppState>, id: String) -> Result<(), String> {
+    from_settings(&window)?;
+    let (lang, s) = {
+        let inner = state.0.lock().unwrap();
+        (inner.lang(), inner.settings.clone())
+    };
+    let handle = app.clone();
+    app.run_on_main_thread(move || overlay::show_reminder(&handle, &id, lang, &s.theme, s.cue_sound))
+        .map_err(|e| e.to_string())
 }
 
 #[tauri::command]
@@ -817,7 +877,11 @@ fn run_ticker(app: AppHandle) {
             let out = inner.sched.tick(&s, &ctx);
             inner.quiet = out.quiet;
             if out.active {
-                inner.today().active_sec += 1;
+                let minute = (now.hour() * 60 + now.minute()) as u16;
+                let today = inner.today();
+                today.active_sec += 1;
+                today.first_active_min.get_or_insert(minute);
+                today.last_active_min = Some(minute);
                 if let Some(app_name) = front.filter(|_| out.quiet != Quiet::OutsideHours) {
                     let key = day_key(now);
                     let Inner { tracker, usage, .. } = &mut *inner;
@@ -826,6 +890,16 @@ fn run_ticker(app: AppHandle) {
             }
             if let Some(sec) = out.sitting_ended {
                 sitting_ended(&mut inner, sec);
+            }
+            // Own reminders. Interval ones count only at the computer within working hours; during a break
+            // everything waits a minute.
+            let counting = out.active && scheduler::in_work_hours(&s, now);
+            let mut due = inner.reminders.due(&s.reminders, now, counting);
+            if inner.sched.current.is_some() {
+                for id in &due {
+                    inner.reminders.snooze(id, now, 1);
+                }
+                due.clear();
             }
             if n % 60 == 0 {
                 inner.save_stats();
@@ -854,6 +928,10 @@ fn run_ticker(app: AppHandle) {
                 }
                 Action::None => {}
             }
+            for id in due {
+                let (handle, theme) = (app.clone(), s.theme.clone());
+                let _ = app.run_on_main_thread(move || overlay::show_reminder(&handle, &id, lang, &theme, cue_sound));
+            }
         }
     });
 }
@@ -876,6 +954,10 @@ pub fn run() {
             clear_usage,
             get_wellbeing,
             save_wellbeing,
+            set_wellbeing,
+            delete_wellbeing,
+            reminder_answer,
+            preview_reminder,
             break_result,
             water_drunk,
             close_cue,
@@ -906,6 +988,7 @@ pub fn run() {
                 update: None,
                 update_check: updates::Check::Idle,
                 wellbeing_dismissed: None,
+                reminders: reminders::State::default(),
             };
 
             let handle = app.handle().clone();

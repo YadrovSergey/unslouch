@@ -104,9 +104,10 @@
     "level3": "Çok",
     "skip": "Şimdi değil",
     "save": "Kaydet",
-    "chartTitle": "Haftalara göre durumunuz",
-    "chartHint": "Pazartesi yanıtlarınız. Yeşil: rahatsız etmiyor, kırmızı: çok rahatsız ediyor.",
-    "empty": "Henüz yanıt yok. Sorular ilk moladan sonra pazartesi gelir."
+    "chartTitle": "Durumunuz",
+    "chartHint": "Günlere göre yanıtlarınız. Yeşil: rahatsız etmiyor, kırmızı: çok rahatsız ediyor.",
+    "empty": "Henüz kayıt yok. Günlüğe ekleyin veya bir molada soruları yanıtlayın.",
+    "add": "Kayıt ekle"
   },
   "cue": {
     "blink": "Göz kırpın",
@@ -232,7 +233,8 @@
       "body": "Vücut",
       "cues": "Uyarılar",
       "schedule": "Program",
-      "general": "Genel"
+      "general": "Genel",
+      "reminders": "Hatırlatıcılar"
     }
   },
   "data": {
@@ -301,7 +303,8 @@
       "overview": "Genel bakış",
       "apps": "Programlar",
       "wellbeing": "İyi oluş",
-      "achievements": "Başarılar"
+      "achievements": "Başarılar",
+      "journal": "Günlük"
     },
     "today": "Bugün",
     "done": "Yapılan",
@@ -329,7 +332,24 @@
     "otherApps": "Diğerleri",
     "byCategory": "Kategoriye göre",
     "byHour": "Saate göre",
-    "exclude": "Bu programı sayma"
+    "exclude": "Bu programı sayma",
+    "period": "Dönem",
+    "periods": {
+      "7": "Hafta",
+      "30": "Ay",
+      "90": "3 ay",
+      "365": "Yıl"
+    },
+    "workedToday": "Bugün bilgisayar başında {{start}} ile {{end}} arası",
+    "periodTitle": "Dönem boyunca",
+    "perDay": "İş günü başına",
+    "breaksDone": "Yapılan molalar",
+    "usualDay": "Olağan iş günü",
+    "longDays": "2 saatten uzun aralıksız oturulan günler",
+    "timeByDay": "Bilgisayar başında geçen süre",
+    "workday": "İşin başlangıcı ve bitişi",
+    "breaksByDay": "Günlere göre molalar",
+    "inPrograms": "Programlarda sayılan"
   },
   "achievements": {
     "title": "Başarılar",
@@ -390,7 +410,11 @@
     "privacyShort": "Hiçbir veri toplamıyoruz: her şey bilgisayarınızda kalır.",
     "version": "Sürüm {{v}}",
     "asIs": "Uygulama \"olduğu gibi\", garantisiz sunulur ve riski size aittir. Ayrıntılar kullanım koşullarında.",
-    "donate": "Projeyi destekle"
+    "donate": "Projeyi destekle",
+    "pages": {
+      "app": "Uygulama",
+      "changelog": "Yenilikler"
+    }
   },
   "onboarding": {
     "title": "Unslouch çalışıyor",
@@ -545,5 +569,45 @@
     ],
     "support": "Uygulama gözlerinizi ve sırtınızı koruyorsa bana bir kahve ısmarlayın. {{name}} ücretsiz ve reklamsız kalacak; destek barındırmaya, yeni egzersizlere ve düzeltmelere gidiyor. Her bağış da bana bu işin boşuna olmadığını gösteriyor.",
     "supportButton": "Kahve ısmarla"
+  },
+  "reminders": {
+    "title": "Hatırlatıcılarım",
+    "hint": "Hatırlatılmasını istediğiniz her şey: ilaç, öğle yemeği, bir arama. Köşede bir kart belirir ve siz yanıt verene kadar kalır.",
+    "untitled": "Hatırlatıcı",
+    "done": "Yapıldı",
+    "later": "{{n}} dk sonra",
+    "templates": {
+      "pills": "İlaç",
+      "lunch": "Öğle yemeği",
+      "own": "Kendim"
+    },
+    "titlePlaceholder": "Ne hatırlatılsın",
+    "titleLabel": "Hatırlatıcı metni",
+    "when": "Ne zaman",
+    "kindTimes": "Belirli saatlerde",
+    "kindInterval": "Birkaç dakikada bir",
+    "times": "Saatler",
+    "removeTime": "Saati kaldır",
+    "newTime": "Yeni saat",
+    "addTime": "Ekle",
+    "intervalHint": "Yalnızca çalışma saatlerinde ve bilgisayar başındayken",
+    "delete": "Sil",
+    "deleteConfirm": "Bu hatırlatıcı silinsin mi?"
+  },
+  "journal": {
+    "title": "Durum günlüğü",
+    "hint": "Herhangi bir gün için nasıl hissettiğinizi işaretleyin, bir kaydı düzeltin veya silin. Bu tıbbi bir test değildir.",
+    "day": "Gün",
+    "replaces": "Bu gün için zaten bir kayıt var: kaydettiğinizde yerine geçecek.",
+    "note": "Not",
+    "notePlaceholder": "Örneğin: çok ekran süresi, akşam baş ağrısı",
+    "cancel": "İptal",
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "deleteConfirm": "Bu kayıt silinsin mi?"
+  },
+  "changelog": {
+    "title": "Değişiklik geçmişi",
+    "englishOnly": "Değişiklik geçmişi İngilizcedir."
   }
 }

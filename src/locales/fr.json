@@ -106,9 +106,10 @@
     "level3": "Beaucoup",
     "skip": "Pas maintenant",
     "save": "Enregistrer",
-    "chartTitle": "Bien-être par semaine",
-    "chartHint": "Vos réponses du lundi. Vert : ça va, rouge : gêne beaucoup.",
-    "empty": "Pas encore de réponses. Les questions arrivent le lundi après la première pause."
+    "chartTitle": "Bien-être",
+    "chartHint": "Vos réponses par jour. Vert : ça va, rouge : gêne beaucoup.",
+    "empty": "Pas encore d’entrées. Ajoutez-en une dans le journal ou répondez aux questions pendant une pause.",
+    "add": "Ajouter une entrée"
   },
   "cue": {
     "blink": "Clignez des yeux",
@@ -234,7 +235,8 @@
       "body": "Corps",
       "cues": "Signaux",
       "schedule": "Horaires",
-      "general": "Général"
+      "general": "Général",
+      "reminders": "Rappels"
     }
   },
   "data": {
@@ -303,7 +305,8 @@
       "overview": "Aperçu",
       "apps": "Programmes",
       "wellbeing": "Bien-être",
-      "achievements": "Succès"
+      "achievements": "Succès",
+      "journal": "Journal"
     },
     "today": "Aujourd’hui",
     "done": "Faites",
@@ -331,7 +334,24 @@
     "otherApps": "Autres",
     "byCategory": "Par catégorie",
     "byHour": "Par heure",
-    "exclude": "Ne pas suivre ce programme"
+    "exclude": "Ne pas suivre ce programme",
+    "period": "Période",
+    "periods": {
+      "7": "Semaine",
+      "30": "Mois",
+      "90": "3 mois",
+      "365": "Année"
+    },
+    "workedToday": "Aujourd’hui devant l’ordinateur de {{start}} à {{end}}",
+    "periodTitle": "Sur la période",
+    "perDay": "Par jour de travail",
+    "breaksDone": "Pauses faites",
+    "usualDay": "Journée de travail habituelle",
+    "longDays": "Jours avec plus de 2 h assis d’affilée",
+    "timeByDay": "Temps devant l’ordinateur",
+    "workday": "Début et fin du travail",
+    "breaksByDay": "Pauses par jour",
+    "inPrograms": "Compté dans les programmes"
   },
   "achievements": {
     "title": "Succès",
@@ -394,7 +414,11 @@
     "privacyShort": "Nous ne collectons aucune donnée : tout reste sur votre ordinateur.",
     "version": "Version {{v}}",
     "asIs": "L’application est fournie « telle quelle », sans garantie, et vous l’utilisez à vos propres risques. Détails dans les conditions d’utilisation.",
-    "donate": "Soutenir le projet"
+    "donate": "Soutenir le projet",
+    "pages": {
+      "app": "Application",
+      "changelog": "Nouveautés"
+    }
   },
   "onboarding": {
     "title": "Unslouch est lancé",
@@ -549,5 +573,45 @@
     ],
     "support": "Si l'application prend soin de vos yeux et de votre dos, offrez-moi un café. {{name}} restera gratuit et sans publicité, et votre soutien finance l'hébergement, de nouveaux exercices et des corrections. Et chaque don me montre que ce travail en vaut la peine.",
     "supportButton": "M'offrir un café"
+  },
+  "reminders": {
+    "title": "Mes rappels",
+    "hint": "Tout ce dont vous voulez qu’on vous rappelle : médicaments, déjeuner, un appel à passer. Une carte apparaît dans le coin et reste jusqu’à ce que vous répondiez.",
+    "untitled": "Rappel",
+    "done": "Fait",
+    "later": "Dans {{n}} min",
+    "templates": {
+      "pills": "Médicaments",
+      "lunch": "Déjeuner",
+      "own": "Personnalisé"
+    },
+    "titlePlaceholder": "De quoi vous rappeler",
+    "titleLabel": "Texte du rappel",
+    "when": "Quand",
+    "kindTimes": "À heures fixes",
+    "kindInterval": "Toutes les quelques minutes",
+    "times": "Heures",
+    "removeTime": "Supprimer l’heure",
+    "newTime": "Nouvelle heure",
+    "addTime": "Ajouter",
+    "intervalHint": "Seulement pendant les heures de travail, quand vous êtes devant l’ordinateur",
+    "delete": "Supprimer",
+    "deleteConfirm": "Supprimer ce rappel ?"
+  },
+  "journal": {
+    "title": "Journal de bien-être",
+    "hint": "Notez comment vous vous sentez n’importe quel jour, corrigez ou supprimez une entrée. Ce n’est pas un test médical.",
+    "day": "Jour",
+    "replaces": "Il y a déjà une entrée pour ce jour : l’enregistrement la remplacera.",
+    "note": "Note",
+    "notePlaceholder": "Par exemple : beaucoup d’écran, mal de tête le soir",
+    "cancel": "Annuler",
+    "edit": "Modifier",
+    "delete": "Supprimer",
+    "deleteConfirm": "Supprimer cette entrée ?"
+  },
+  "changelog": {
+    "title": "Journal des modifications",
+    "englishOnly": "Le journal des modifications est en anglais."
   }
 }

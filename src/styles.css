@@ -1872,3 +1872,249 @@ input[type="number"] {
   color: var(--text);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
 }
+
+/* Own reminders: one card per reminder in the settings. */
+.reminder-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-bottom: 12px;
+}
+
+.reminder-card--off {
+  opacity: 0.6;
+}
+
+.reminder-card__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.reminder-card__head .toggle {
+  border: 0;
+  padding: 0;
+  flex: none;
+}
+
+.reminder-card__title {
+  flex: 1;
+  font: inherit;
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 6px 8px;
+  background: none;
+  color: var(--text);
+}
+
+.reminder-card__title:hover,
+.reminder-card__title:focus {
+  border-color: var(--line);
+  background: var(--bg);
+}
+
+.reminder-card__actions {
+  justify-content: flex-end;
+  margin-top: 6px;
+}
+
+.reminder-add {
+  flex-wrap: wrap;
+}
+
+/* ---------- Statistics: period charts and the wellbeing journal ---------- */
+
+.chart-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 18px 0 8px;
+}
+
+.bars {
+  display: flex;
+  gap: 2px;
+  height: 130px;
+  align-items: stretch;
+}
+
+.bars__col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 0;
+}
+
+.bars__track {
+  flex: 1;
+  width: 100%;
+  max-width: 28px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.bars__track span {
+  width: 100%;
+  background: var(--accent);
+  border-radius: 3px 3px 0 0;
+  min-height: 1px;
+}
+
+.bars__col small,
+.workday small {
+  font-size: 11px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.workday {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.workday__row,
+.workday__axis {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 8px;
+  align-items: center;
+}
+
+.workday__track {
+  position: relative;
+  height: 10px;
+  background: var(--bg);
+  border-radius: 5px;
+}
+
+.workday__track span {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: var(--accent);
+  border-radius: 5px;
+}
+
+.workday__axis div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.apps__share {
+  color: var(--muted);
+}
+
+.journal {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.journal__item {
+  border-top: 1px solid var(--line);
+  padding: 10px 0;
+}
+
+.journal__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.journal__actions {
+  display: flex;
+  gap: 6px;
+}
+
+.journal__values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  margin-top: 6px;
+  font-size: 13px;
+}
+
+.journal__value {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.journal__note {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+  white-space: pre-wrap;
+}
+
+.journal-form {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 8px 14px 12px;
+  margin-bottom: 12px;
+}
+
+.journal-form textarea {
+  width: 100%;
+  font: inherit;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 6px 8px;
+  background: var(--bg);
+  color: var(--text);
+  resize: vertical;
+}
+
+.journal-form input[type="date"] {
+  font: inherit;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 4px 8px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.changelog h3 {
+  font-size: 15px;
+  margin: 16px 0 6px;
+}
+
+.changelog:first-of-type h3 {
+  margin-top: 4px;
+}
+
+.changelog ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.changelog li {
+  margin: 4px 0;
+}
+
+.bars__track {
+  position: relative;
+}
+
+.bars__track span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.stat-tiles .tile b {
+  font-size: 22px;
+  white-space: nowrap;
+}
+
+.bars__col small {
+  display: block;
+  height: 14px;
+  line-height: 14px;
+}

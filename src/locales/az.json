@@ -104,9 +104,10 @@
     "level3": "Çox",
     "skip": "İndi yox",
     "save": "Yadda saxla",
-    "chartTitle": "Həftələr üzrə özünühiss",
-    "chartHint": "Bazar ertəsi cavablarınız. Yaşıl: narahat etmir, qırmızı: çox narahat edir.",
-    "empty": "Hələ cavab yoxdur. Suallar ilk fasilədən sonra bazar ertəsi gələcək."
+    "chartTitle": "Özünühiss",
+    "chartHint": "Günlər üzrə cavablarınız. Yaşıl: narahat etmir, qırmızı: çox narahat edir.",
+    "empty": "Hələ qeyd yoxdur. Jurnalda əlavə edin və ya fasilədə suallara cavab verin.",
+    "add": "Qeyd əlavə et"
   },
   "cue": {
     "blink": "Göz qırpın",
@@ -232,7 +233,8 @@
       "body": "Bədən",
       "cues": "Siqnallar",
       "schedule": "Cədvəl",
-      "general": "Ümumi"
+      "general": "Ümumi",
+      "reminders": "Xatırlatmalar"
     }
   },
   "data": {
@@ -301,7 +303,8 @@
       "overview": "İcmal",
       "apps": "Proqramlar",
       "wellbeing": "Özünühiss",
-      "achievements": "Nailiyyətlər"
+      "achievements": "Nailiyyətlər",
+      "journal": "Jurnal"
     },
     "today": "Bu gün",
     "done": "Edilib",
@@ -329,7 +332,24 @@
     "otherApps": "Qalanları",
     "byCategory": "Kateqoriyalar üzrə",
     "byHour": "Saatlar üzrə",
-    "exclude": "Bu proqramı nəzərə alma"
+    "exclude": "Bu proqramı nəzərə alma",
+    "period": "Dövr",
+    "periods": {
+      "7": "Həftə",
+      "30": "Ay",
+      "90": "3 ay",
+      "365": "İl"
+    },
+    "workedToday": "Bu gün kompüter arxasında {{start}}-dan {{end}}-dək",
+    "periodTitle": "Dövr ərzində",
+    "perDay": "Bir iş gününə orta hesabla",
+    "breaksDone": "Edilən fasilələr",
+    "usualDay": "Adi iş günü",
+    "longDays": "2 saatdan çox ardıcıl oturduğunuz günlər",
+    "timeByDay": "Kompüter arxasında vaxt",
+    "workday": "İşin başlanğıcı və sonu",
+    "breaksByDay": "Günlər üzrə fasilələr",
+    "inPrograms": "Proqramlar üzrə hesablanıb"
   },
   "achievements": {
     "title": "Nailiyyətlər",
@@ -390,7 +410,11 @@
     "privacyShort": "Heç bir məlumat toplamırıq: hər şey yalnız kompüterinizdə saxlanılır.",
     "version": "Versiya {{v}}",
     "asIs": "Tətbiq «olduğu kimi», zəmanətsiz təqdim olunur və ondan öz riskinizlə istifadə edirsiniz. Ətraflı istifadə şərtlərində.",
-    "donate": "Layihəni dəstəkləmək"
+    "donate": "Layihəni dəstəkləmək",
+    "pages": {
+      "app": "Proqram haqqında",
+      "changelog": "Dəyişikliklər tarixçəsi"
+    }
   },
   "onboarding": {
     "title": "Unslouch işləyir",
@@ -545,5 +569,45 @@
     ],
     "support": "Tətbiq gözlərinizi və belinizi qoruyursa, mənə qəhvə alın. {{name}} pulsuz və reklamsız qalacaq, dəstək isə hostinqə, yeni məşqlərə və düzəlişlərə gedir. Hər köçürmə mənim üçün bu işi boş yerə görmədiyimin nişanəsidir.",
     "supportButton": "Qəhvə almaq"
+  },
+  "reminders": {
+    "title": "Mənim xatırlatmalarım",
+    "hint": "Xatırlatmaq lazım olan hər şey: dərman, nahar, zəng etmək. Ekranın küncündə kart görünəcək və siz cavab verənə qədər gözləyəcək.",
+    "untitled": "Xatırlatma",
+    "done": "Edildi",
+    "later": "{{n}} dəq sonra",
+    "templates": {
+      "pills": "Dərman",
+      "lunch": "Nahar",
+      "own": "Özüm"
+    },
+    "titlePlaceholder": "Nə barədə xatırladılsın",
+    "titleLabel": "Xatırlatmanın mətni",
+    "when": "Nə vaxt",
+    "kindTimes": "Təyin olunmuş vaxtda",
+    "kindInterval": "Hər bir neçə dəqiqədən bir",
+    "times": "Vaxtlar",
+    "removeTime": "Vaxtı sil",
+    "newTime": "Yeni vaxt",
+    "addTime": "Əlavə et",
+    "intervalHint": "Yalnız iş saatlarında və siz kompüter arxasında olanda",
+    "delete": "Sil",
+    "deleteConfirm": "Bu xatırlatma silinsin?"
+  },
+  "journal": {
+    "title": "Özünühiss jurnalı",
+    "hint": "İstənilən gün üçün özünühissinizi qeyd edin, qeydi düzəldin və ya silin. Bu tibbi test deyil.",
+    "day": "Gün",
+    "replaces": "Bu gün üçün artıq qeyd var: yadda saxlayanda o əvəz olunacaq.",
+    "note": "Qeyd",
+    "notePlaceholder": "Məsələn: ekran qarşısında çox oturdum, axşam başım ağrıdı",
+    "cancel": "Ləğv et",
+    "edit": "Dəyiş",
+    "delete": "Sil",
+    "deleteConfirm": "Bu qeyd silinsin?"
+  },
+  "changelog": {
+    "title": "Dəyişikliklər tarixçəsi",
+    "englishOnly": "Dəyişikliklər tarixçəsi ingilis dilindədir."
   }
 }

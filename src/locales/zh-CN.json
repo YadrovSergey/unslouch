@@ -102,9 +102,10 @@
     "level3": "很严重",
     "skip": "以后再说",
     "save": "保存",
-    "chartTitle": "每周身体感受",
-    "chartHint": "您每周一的回答。绿色：没有不适，红色：很严重。",
-    "empty": "还没有回答。问题会在周一第一次休息后出现。"
+    "chartTitle": "身体感受",
+    "chartHint": "您每天的回答。绿色：没有不适，红色：很严重。",
+    "empty": "还没有记录。可以在日志中添加，或在休息时回答问题。",
+    "add": "添加记录"
   },
   "cue": {
     "blink": "眨眨眼",
@@ -230,7 +231,8 @@
       "body": "身体",
       "cues": "提示",
       "schedule": "时间安排",
-      "general": "通用"
+      "general": "通用",
+      "reminders": "提醒"
     }
   },
   "data": {
@@ -299,7 +301,8 @@
       "overview": "概览",
       "apps": "程序",
       "wellbeing": "身体感受",
-      "achievements": "成就"
+      "achievements": "成就",
+      "journal": "日志"
     },
     "today": "今天",
     "done": "已完成",
@@ -327,7 +330,24 @@
     "otherApps": "其他",
     "byCategory": "按类别",
     "byHour": "按小时",
-    "exclude": "不统计此程序"
+    "exclude": "不统计此程序",
+    "period": "时间段",
+    "periods": {
+      "7": "周",
+      "30": "月",
+      "90": "3 个月",
+      "365": "年"
+    },
+    "workedToday": "今天在电脑前：{{start}} 至 {{end}}",
+    "periodTitle": "该时间段内",
+    "perDay": "每个工作日平均",
+    "breaksDone": "完成的休息",
+    "usualDay": "通常的工作日",
+    "longDays": "连续久坐超过 2 小时的天数",
+    "timeByDay": "使用电脑时间",
+    "workday": "开始和结束工作",
+    "breaksByDay": "每天的休息",
+    "inPrograms": "按程序统计"
   },
   "achievements": {
     "title": "成就",
@@ -386,7 +406,11 @@
     "privacyShort": "我们不收集任何数据：所有内容都只保存在您的电脑上。",
     "version": "版本 {{v}}",
     "asIs": "本应用按“原样”提供，不附带任何保证，使用风险由您自行承担。详见使用条款。",
-    "donate": "支持项目"
+    "donate": "支持项目",
+    "pages": {
+      "app": "关于应用",
+      "changelog": "更新内容"
+    }
   },
   "onboarding": {
     "title": "Unslouch 已在运行",
@@ -541,5 +565,45 @@
     ],
     "support": "如果这个应用在保护你的眼睛和背部，请我喝杯咖啡吧。{{name}} 会一直免费、没有广告，支持会用在服务器、新的练习和修复上。每一笔支持也让我知道，这件事值得继续做。",
     "supportButton": "请我喝杯咖啡"
+  },
+  "reminders": {
+    "title": "我的提醒",
+    "hint": "任何需要提醒的事：吃药、午饭、打个电话。屏幕角落会出现一张卡片，一直等到您回应。",
+    "untitled": "提醒",
+    "done": "已完成",
+    "later": "{{n}} 分钟后",
+    "templates": {
+      "pills": "吃药",
+      "lunch": "午饭",
+      "own": "自定义"
+    },
+    "titlePlaceholder": "提醒什么",
+    "titleLabel": "提醒内容",
+    "when": "什么时候",
+    "kindTimes": "在指定时间",
+    "kindInterval": "每隔几分钟",
+    "times": "时间点",
+    "removeTime": "删除时间",
+    "newTime": "新时间",
+    "addTime": "添加",
+    "intervalHint": "仅在工作时间且您在电脑前时",
+    "delete": "删除",
+    "deleteConfirm": "删除这条提醒？"
+  },
+  "journal": {
+    "title": "身体感受日志",
+    "hint": "记录任意一天的身体感受，修改或删除记录。这不是医学检测。",
+    "day": "日期",
+    "replaces": "这一天已有记录：保存后将替换它。",
+    "note": "备注",
+    "notePlaceholder": "例如：看屏幕时间很长，晚上头疼",
+    "cancel": "取消",
+    "edit": "编辑",
+    "delete": "删除",
+    "deleteConfirm": "删除这条记录？"
+  },
+  "changelog": {
+    "title": "更新日志",
+    "englishOnly": "更新日志为英文。"
   }
 }

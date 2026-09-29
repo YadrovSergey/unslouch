@@ -1,14 +1,30 @@
 import { useEffect, useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { save as saveDialog } from "@tauri-apps/plugin-dialog";
-import { AppInfo, DayStats, DayUsage, SettingsPatch, Wellbeing, getStats, getUsage, getWellbeing, savePng } from "../../api";
+import {
+  AppInfo,
+  DayStats,
+  DayUsage,
+  SettingsPatch,
+  Wellbeing,
+  deleteWellbeing,
+  getStats,
+  getUsage,
+  getWellbeing,
+  savePng,
+  setWellbeing,
+} from "../../api";
 import { achievements, streak } from "../../lib/achievements";
 import { Category, appCategory, appName } from "../../lib/apps";
 import { formatDuration } from "../../format";
 import { Section } from "./ui";
 
-type Sub = "overview" | "apps" | "wellbeing" | "achievements";
+type Sub = "overview" | "apps" | "wellbeing" | "journal" | "achievements";
+const SUBS: Sub[] = ["overview", "apps", "wellbeing", "journal", "achievements"];
 const SITTING_RISK_SEC = 2 * 3600;
+/** Periods to look at. Usage by program is kept 90 days, so "year" is only for the day stats. */
+const PERIODS = [7, 30, 90, 365] as const;
+type Period = (typeof PERIODS)[number];
 
 export function StatsTab({ info, update }: { info: AppInfo; update: (p: SettingsPatch) => void }) {
   const { t } = useTranslation();
@@ -22,27 +38,64 @@ export function StatsTab({ info, update }: { info: AppInfo; update: (p: Settings
   return (
     <>
       <div className="segmented" role="tablist">
-        {(["overview", "apps", "wellbeing", "achievements"] as Sub[]).map((id) => (
+        {SUBS.map((id) => (
           <button key={id} role="tab" aria-selected={sub === id} onClick={() => setSub(id)}>
             {t(`stats.tabs.${id}`)}
           </button>
         ))}
       </div>
-      {sub === "overview" && <Overview days={days.slice(-371)} />}
-      {sub === "apps" && <Apps info={info} update={update} />}
-      {sub === "wellbeing" && <WellbeingChart />}
+      {sub === "overview" && <Overview days={days} />}
+      {sub === "apps" && <Apps info={info} update={update} days={days} />}
+      {sub === "wellbeing" && <WellbeingChart onAdd={() => setSub("journal")} />}
+      {sub === "journal" && <Journal />}
       {sub === "achievements" && <Achievements days={days} />}
     </>
   );
 }
 
+function PeriodPicker({ value, onChange, options }: { value: number; onChange: (p: Period) => void; options: readonly Period[] }) {
+  const { t } = useTranslation();
+  return (
+    <div className="segmented segmented--small" role="tablist" aria-label={t("stats.period")}>
+      {options.map((p) => (
+        <button key={p} role="tab" aria-selected={value === p} onClick={() => onChange(p)}>
+          {t(`stats.periods.${p}`)}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+/** Long totals in whole hours ("152 h"): "152 h 30 min" doesn't fit a tile. */
+function bigDuration(sec: number, locale: string): string {
+  if (sec < 10 * 3600) return formatDuration(sec, true);
+  return new Intl.NumberFormat(locale, { style: "unit", unit: "hour", unitDisplay: "short", maximumFractionDigits: 0 }).format(sec / 3600);
+}
+
+/** "9:05" from minutes after midnight. */
+const clock = (min: number) => `${Math.floor(min / 60)}:${String(min % 60).padStart(2, "0")}`;
+
+function median(values: number[]): number | null {
+  if (!values.length) return null;
+  const v = [...values].sort((a, b) => a - b);
+  return v[Math.floor(v.length / 2)];
+}
+
 function Overview({ days }: { days: DayStats[] }) {
   const { t, i18n } = useTranslation();
+  const [period, setPeriod] = useState<Period>(7);
   if (!days.length) return null;
   const today = days[days.length - 1];
-  const week = days.slice(-7);
-  const max = Math.max(1, ...week.map((d) => d.done + d.skipped));
-  const weekday = new Intl.DateTimeFormat(i18n.language, { weekday: "short" });
+  const range = days.slice(-period);
+  const worked = range.filter((d) => d.activeSec > 0);
+  const total = range.reduce((s, d) => s + d.activeSec, 0);
+  const done = range.reduce((s, d) => s + d.done, 0);
+  const offered = done + range.reduce((s, d) => s + d.skipped, 0);
+  const starts = worked.map((d) => d.firstActiveMin).filter((m): m is number => m != null);
+  const ends = worked.map((d) => d.lastActiveMin).filter((m): m is number => m != null);
+  const start = median(starts);
+  const end = median(ends);
+  const longDays = range.filter((d) => d.longestSittingSec >= SITTING_RISK_SEC).length;
   const empty = days.every((d) => d.activeSec === 0);
 
   return (
@@ -58,36 +111,154 @@ function Overview({ days }: { days: DayStats[] }) {
           />
           <Tile label={t("stats.streak")} value={String(streak(days))} />
         </div>
+        {today.firstActiveMin != null && today.lastActiveMin != null && (
+          <p className="muted">
+            {t("stats.workedToday", {
+              start: clock(today.firstActiveMin),
+              end: clock(today.lastActiveMin),
+            })}
+          </p>
+        )}
         {today.longestSittingSec >= SITTING_RISK_SEC && <p className="notice">{t("stats.sittingWarning")}</p>}
       </Section>
 
-      <Section title={t("stats.week")}>
+      <Section title={t("stats.periodTitle")} aside={<PeriodPicker value={period} onChange={setPeriod} options={PERIODS} />}>
         {empty ? (
           <p className="muted">{t("stats.empty")}</p>
         ) : (
           <>
-            <div className="week" role="img" aria-label={t("stats.week")}>
-              {week.map((d) => (
-                <div className="week__day" key={d.day} title={`${t("stats.done")}: ${d.done}, ${t("stats.skipped")}: ${d.skipped}`}>
-                  <div className="week__bar">
-                    <div className="week__skipped" style={{ height: `${(d.skipped / max) * 100}%` }} />
-                    <div className="week__done" style={{ height: `${(d.done / max) * 100}%` }} />
-                  </div>
-                  <span className="week__label">{weekday.format(new Date(`${d.day}T12:00:00`))}</span>
-                </div>
-              ))}
+            <div className="stat-tiles">
+              <Tile label={t("stats.atComputer")} value={bigDuration(total, i18n.language)} />
+              <Tile label={t("stats.perDay")} value={worked.length ? formatDuration(Math.round(total / worked.length), true) : "–"} />
+              <Tile label={offered ? `${t("stats.breaksDone")} · ${Math.round((done / offered) * 100)}%` : t("stats.breaksDone")} value={String(done)} />
+              <Tile label={t("stats.usualDay")} value={start != null && end != null ? `${clock(start)}–${clock(end)}` : "–"} />
+              <Tile label={t("stats.longDays")} value={String(longDays)} warn={longDays > 0} />
             </div>
-            <div className="legend">
-              <span className="legend__item legend__item--done">{t("stats.done")}</span>
-              <span className="legend__item legend__item--skipped">{t("stats.skipped")}</span>
-            </div>
+            <h3 className="chart-title">{t("stats.timeByDay")}</h3>
+            <TimeBars days={range} period={period} locale={i18n.language} />
+            {period <= 30 && starts.length > 0 && (
+              <>
+                <h3 className="chart-title">{t("stats.workday")}</h3>
+                <WorkdayRanges days={range} locale={i18n.language} />
+              </>
+            )}
+            {period <= 30 && (
+              <>
+                <h3 className="chart-title">{t("stats.breaksByDay")}</h3>
+                <BreakBars days={range} locale={i18n.language} />
+              </>
+            )}
           </>
         )}
       </Section>
 
       <Section title={t("stats.year")}>
-        <Heatmap days={days} />
+        <Heatmap days={days.slice(-371)} />
       </Section>
+    </>
+  );
+}
+
+/** Minutes at the computer per day; for 3 months and a year, per week. */
+function TimeBars({ days, period, locale }: { days: DayStats[]; period: Period; locale: string }) {
+  const { t } = useTranslation();
+  const weekly = period > 30;
+  const buckets = useMemo(() => {
+    if (!weekly) return days.map((d) => ({ key: d.day, sec: d.activeSec, day: d.day }));
+    const out: { key: string; sec: number; day: string }[] = [];
+    days.forEach((d, i) => {
+      if (i % 7 === 0) out.push({ key: d.day, sec: 0, day: d.day });
+      out[out.length - 1].sec += d.activeSec;
+    });
+    return out;
+  }, [days, weekly]);
+  const max = Math.max(1, ...buckets.map((b) => b.sec));
+  // A week: weekdays. A month: day numbers, every fifth. Weeks of 3 months or a year: the date, a few of them.
+  const short = new Intl.DateTimeFormat(locale, period === 7 ? { weekday: "short" } : period === 30 ? { day: "numeric" } : { day: "numeric", month: "short" });
+  const labelEvery = period === 7 ? 1 : period === 30 ? 5 : Math.ceil(buckets.length / 4);
+  return (
+    <div className="bars" role="img" aria-label={t("stats.timeByDay")}>
+      {buckets.map((b, i) => (
+        <div key={b.key} className="bars__col" title={`${short.format(new Date(`${b.day}T12:00:00`))}: ${formatDuration(b.sec, true)}`}>
+          <div className="bars__track">
+            <span style={{ height: `${(b.sec / max) * 100}%` }} />
+          </div>
+          <small>{i % labelEvery === 0 ? short.format(new Date(`${b.day}T12:00:00`)) : " "}</small>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+/** When work started and ended each day, on a common time axis. */
+function WorkdayRanges({ days, locale }: { days: DayStats[]; locale: string }) {
+  const known = days.filter((d) => d.firstActiveMin != null && d.lastActiveMin != null);
+  const from = Math.floor(Math.min(...known.map((d) => d.firstActiveMin!)) / 60) * 60;
+  const to = Math.ceil(Math.max(...known.map((d) => d.lastActiveMin!)) / 60) * 60;
+  const span = Math.max(60, to - from);
+  const date = new Intl.DateTimeFormat(locale, {
+    weekday: "short",
+    day: "numeric",
+  });
+  return (
+    <div className="workday">
+      {known.map((d) => (
+        <div key={d.day} className="workday__row">
+          <small>{date.format(new Date(`${d.day}T12:00:00`))}</small>
+          <div className="workday__track">
+            {d.firstActiveMin != null && d.lastActiveMin != null && (
+              <span
+                style={{
+                  left: `${((d.firstActiveMin - from) / span) * 100}%`,
+                  width: `${Math.max(1, ((d.lastActiveMin - d.firstActiveMin) / span) * 100)}%`,
+                }}
+                title={`${clock(d.firstActiveMin)}–${clock(d.lastActiveMin)}`}
+              />
+            )}
+          </div>
+        </div>
+      ))}
+      <div className="workday__axis">
+        <small />
+        <div>
+          <small>{clock(from)}</small>
+          <small>{clock(from + Math.round(span / 2 / 60) * 60)}</small>
+          <small>{clock(to)}</small>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function BreakBars({ days, locale }: { days: DayStats[]; locale: string }) {
+  const { t } = useTranslation();
+  const max = Math.max(1, ...days.map((d) => d.done + d.skipped));
+  const short = new Intl.DateTimeFormat(locale, days.length <= 7 ? { weekday: "short" } : { day: "numeric" });
+  return (
+    <>
+      <div
+        className="week"
+        role="img"
+        aria-label={t("stats.breaksByDay")}
+        style={{
+          gridTemplateColumns: `repeat(${days.length}, 1fr)`,
+          gap: days.length > 7 ? 2 : 8,
+        }}
+      >
+        {days.map((d, i) => (
+          <div className="week__day" key={d.day} title={`${t("stats.done")}: ${d.done}, ${t("stats.skipped")}: ${d.skipped}`}>
+            <div className="week__bar">
+              <div className="week__skipped" style={{ height: `${(d.skipped / max) * 100}%` }} />
+              <div className="week__done" style={{ height: `${(d.done / max) * 100}%` }} />
+            </div>
+            <span className="week__label">{days.length <= 7 || i % 5 === 0 ? short.format(new Date(`${d.day}T12:00:00`)) : " "}</span>
+          </div>
+        ))}
+      </div>
+      <div className="legend">
+        <span className="legend__item legend__item--done">{t("stats.done")}</span>
+        <span className="legend__item legend__item--skipped">{t("stats.skipped")}</span>
+      </div>
     </>
   );
 }
@@ -102,13 +273,20 @@ function Heatmap({ days }: { days: DayStats[] }) {
     return [...Array(pad).fill(null), ...days];
   }, [days]);
   const level = (d: DayStats) => (d.done === 0 ? 0 : d.done < 5 ? 1 : d.done < 10 ? 2 : d.done < 16 ? 3 : 4);
-  const date = new Intl.DateTimeFormat(i18n.language, { day: "numeric", month: "short" });
+  const date = new Intl.DateTimeFormat(i18n.language, {
+    day: "numeric",
+    month: "short",
+  });
   return (
     <>
       <div className="heatmap" role="img" aria-label={t("stats.year")}>
         {cells.map((d, i) =>
           d ? (
-            <span key={d.day} className={`heatmap__cell heatmap__cell--${level(d)}`} title={`${date.format(new Date(`${d.day}T12:00:00`))}: ${d.done}`} />
+            <span
+              key={d.day}
+              className={`heatmap__cell heatmap__cell--${level(d)}`}
+              title={`${date.format(new Date(`${d.day}T12:00:00`))}: ${d.done}`}
+            />
           ) : (
             <span key={`pad-${i}`} className="heatmap__cell heatmap__cell--pad" />
           ),
@@ -126,10 +304,11 @@ function Heatmap({ days }: { days: DayStats[] }) {
 }
 
 const CATEGORIES: Category[] = ["work", "communication", "entertainment", "other"];
+const APP_PERIODS = [1, 7, 30, 90] as const;
 
-function Apps({ info, update }: { info: AppInfo; update: (p: SettingsPatch) => void }) {
-  const { t } = useTranslation();
-  const [range, setRange] = useState<1 | 7>(1);
+function Apps({ info, update, days }: { info: AppInfo; update: (p: SettingsPatch) => void; days: DayStats[] }) {
+  const { t, i18n } = useTranslation();
+  const [range, setRange] = useState<number>(7);
   const [usage, setUsage] = useState<DayUsage[]>([]);
   useEffect(() => {
     getUsage(range).then(setUsage);
@@ -148,24 +327,30 @@ function Apps({ info, update }: { info: AppInfo; update: (p: SettingsPatch) => v
   }
   const sorted = [...totals.entries()].sort((a, b) => b[1] - a[1]);
   const sum = sorted.reduce((s, [, v]) => s + v, 0);
-  const top = sorted.slice(0, 8);
-  const rest = sorted.slice(8).reduce((s, [, v]) => s + v, 0);
+  const top = sorted.slice(0, 10);
+  const rest = sorted.slice(10).reduce((s, [, v]) => s + v, 0);
   const byCategory = new Map<Category, number>();
   for (const [app, sec] of sorted) {
     const c = appCategory(app, info.settings.usageCategories);
     byCategory.set(c, (byCategory.get(c) ?? 0) + sec);
   }
   const maxHour = Math.max(1, ...hours);
+  const atComputer = days.slice(-range).reduce((s, d) => s + d.activeSec, 0);
+  const workedDays = days.slice(-range).filter((d) => d.activeSec > 0).length;
 
   return (
     <>
-      <div className="segmented segmented--small" role="tablist">
-        <button role="tab" aria-selected={range === 1} onClick={() => setRange(1)}>
-          {t("stats.today")}
-        </button>
-        <button role="tab" aria-selected={range === 7} onClick={() => setRange(7)}>
-          {t("stats.week")}
-        </button>
+      <div className="segmented segmented--small" role="tablist" aria-label={t("stats.period")}>
+        {APP_PERIODS.map((p) => (
+          <button key={p} role="tab" aria-selected={range === p} onClick={() => setRange(p)}>
+            {p === 1 ? t("stats.today") : t(`stats.periods.${p}`)}
+          </button>
+        ))}
+      </div>
+      <div className="stat-tiles">
+        <Tile label={t("stats.atComputer")} value={bigDuration(atComputer, i18n.language)} />
+        {range > 1 && <Tile label={t("stats.perDay")} value={workedDays ? formatDuration(Math.round(atComputer / workedDays), true) : "–"} />}
+        <Tile label={t("stats.inPrograms")} value={bigDuration(sum, i18n.language)} />
       </div>
       {sum === 0 ? (
         <p className="muted">{t("stats.appsEmpty")}</p>
@@ -173,7 +358,10 @@ function Apps({ info, update }: { info: AppInfo; update: (p: SettingsPatch) => v
         <>
           {longest && (
             <p className={longest.sec >= SITTING_RISK_SEC ? "notice" : "muted"}>
-              {t("stats.longestIn", { app: appName(longest.app), time: formatDuration(longest.sec, true) })}
+              {t("stats.longestIn", {
+                app: appName(longest.app),
+                time: formatDuration(longest.sec, true),
+              })}
             </p>
           )}
           <Section title={t("stats.programs")}>
@@ -187,7 +375,12 @@ function Apps({ info, update }: { info: AppInfo; update: (p: SettingsPatch) => v
                     aria-label={t("stats.category")}
                     onChange={(e) => {
                       const category = e.target.value;
-                      update((cur) => ({ usageCategories: { ...cur.usageCategories, [app]: category } }));
+                      update((cur) => ({
+                        usageCategories: {
+                          ...cur.usageCategories,
+                          [app]: category,
+                        },
+                      }));
                     }}
                   >
                     {CATEGORIES.map((c) => (
@@ -199,12 +392,19 @@ function Apps({ info, update }: { info: AppInfo; update: (p: SettingsPatch) => v
                   <span className="apps__bar">
                     <span style={{ width: `${(sec / sorted[0][1]) * 100}%` }} />
                   </span>
-                  <span className="apps__time">{formatDuration(sec, true)}</span>
+                  <span className="apps__time">
+                    {formatDuration(sec, true)}
+                    <small className="apps__share"> · {Math.round((sec / sum) * 100)}%</small>
+                  </span>
                   <button
                     className="apps__exclude"
                     title={t("stats.exclude")}
                     aria-label={`${t("stats.exclude")}: ${appName(app)}`}
-                    onClick={() => update((cur) => ({ usageExcluded: [...new Set([...cur.usageExcluded, app])] }))}
+                    onClick={() =>
+                      update((cur) => ({
+                        usageExcluded: [...new Set([...cur.usageExcluded, app])],
+                      }))
+                    }
                   >
                     ✕
                   </button>
@@ -226,13 +426,19 @@ function Apps({ info, update }: { info: AppInfo; update: (p: SettingsPatch) => v
           <Section title={t("stats.byCategory")}>
             <div className="stacked" role="img" aria-label={t("stats.byCategory")}>
               {CATEGORIES.filter((c) => byCategory.get(c)).map((c) => (
-                <span key={c} className={`stacked__part stacked__part--${c}`} style={{ flex: byCategory.get(c) }} title={t(`stats.categories.${c}`)} />
+                <span
+                  key={c}
+                  className={`stacked__part stacked__part--${c}`}
+                  style={{ flex: byCategory.get(c) }}
+                  title={t(`stats.categories.${c}`)}
+                />
               ))}
             </div>
             <div className="legend">
               {CATEGORIES.filter((c) => byCategory.get(c)).map((c) => (
                 <span key={c} className={`legend__item legend__item--${c}`}>
-                  {t(`stats.categories.${c}`)} · {Math.round(((byCategory.get(c) ?? 0) / sum) * 100)}%
+                  {t(`stats.categories.${c}`)} · {formatDuration(byCategory.get(c) ?? 0, true)} · {Math.round(((byCategory.get(c) ?? 0) / sum) * 100)}
+                  %
                 </span>
               ))}
             </div>
@@ -259,36 +465,49 @@ function Apps({ info, update }: { info: AppInfo; update: (p: SettingsPatch) => v
   );
 }
 
-function WellbeingChart() {
+const WB_KEYS = ["eyes", "neck", "back", "hands"] as const;
+
+function WellbeingChart({ onAdd }: { onAdd: () => void }) {
   const { t, i18n } = useTranslation();
   const [log, setLog] = useState<Record<string, Wellbeing>>({});
   useEffect(() => {
     getWellbeing().then(setLog);
   }, []);
-  const weeks = Object.entries(log).sort(([a], [b]) => a.localeCompare(b)).slice(-12);
-  const date = new Intl.DateTimeFormat(i18n.language, { day: "numeric", month: "short" });
-  const keys = ["eyes", "neck", "back", "hands"] as const;
+  const entries = Object.entries(log)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .slice(-12);
+  const date = new Intl.DateTimeFormat(i18n.language, {
+    day: "numeric",
+    month: "short",
+  });
   return (
-    <Section title={t("wellbeing.chartTitle")}>
+    <Section
+      title={t("wellbeing.chartTitle")}
+      aside={
+        <button className="button" onClick={onAdd}>
+          {t("wellbeing.add")}
+        </button>
+      }
+    >
       <p className="muted section__lead">{t("wellbeing.chartHint")}</p>
-      {weeks.length === 0 ? (
+      {entries.length === 0 ? (
         <p className="muted">{t("wellbeing.empty")}</p>
       ) : (
         <table className="wb-table">
           <thead>
             <tr>
               <th />
-              {weeks.map(([w]) => (
-                <th key={w}>{date.format(new Date(`${w}T12:00:00`))}</th>
+              {entries.map(([d]) => (
+                <th key={d}>{date.format(new Date(`${d}T12:00:00`))}</th>
               ))}
             </tr>
           </thead>
           <tbody>
-            {keys.map((k) => (
+            {WB_KEYS.map((k) => (
               <tr key={k}>
                 <th>{t(`wellbeing.${k}`)}</th>
-                {weeks.map(([w, v]) => (
-                  <td key={w}>
+                {entries.map(([d, v]) => (
+                  <td key={d}>
                     <span className={`wb-dot wb-dot--${v[k]}`} title={t(`wellbeing.level${v[k]}`)} />
                   </td>
                 ))}
@@ -301,13 +520,167 @@ function WellbeingChart() {
   );
 }
 
+const todayKey = () => {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+};
+const EMPTY: Wellbeing = { eyes: 0, neck: 0, back: 0, hands: 0, note: "" };
+
+/** Wellbeing by day: add an entry for any past day, fix or delete one. */
+function Journal() {
+  const { t, i18n } = useTranslation();
+  const [log, setLog] = useState<Record<string, Wellbeing>>({});
+  const [editing, setEditing] = useState<string | null>(null);
+  const [draftDay, setDraftDay] = useState(todayKey());
+  const [draft, setDraft] = useState<Wellbeing>(EMPTY);
+  useEffect(() => {
+    getWellbeing().then(setLog);
+  }, []);
+  const date = new Intl.DateTimeFormat(i18n.language, {
+    weekday: "short",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+  const entries = Object.entries(log).sort(([a], [b]) => b.localeCompare(a));
+
+  const startNew = () => {
+    const day = todayKey();
+    setDraftDay(day);
+    setDraft(log[day] ?? EMPTY);
+    setEditing("new");
+  };
+  const startEdit = (day: string) => {
+    setDraftDay(day);
+    setDraft({ ...EMPTY, ...log[day] });
+    setEditing(day);
+  };
+  const save = async () => {
+    const next = await setWellbeing(draftDay, draft);
+    // Moving an entry to another day: the old one goes.
+    if (editing && editing !== "new" && editing !== draftDay) setLog(await deleteWellbeing(editing));
+    else setLog(next);
+    setEditing(null);
+  };
+  const remove = async (day: string) => {
+    if (window.confirm(t("journal.deleteConfirm"))) setLog(await deleteWellbeing(day));
+  };
+
+  const form = (
+    <div className="journal-form">
+      <div className="row">
+        <span className="row__label">{t("journal.day")}</span>
+        <input
+          type="date"
+          value={draftDay}
+          max={todayKey()}
+          onChange={(e) => {
+            if (!e.target.value) return;
+            setDraftDay(e.target.value);
+            if (editing === "new") setDraft(log[e.target.value] ?? EMPTY);
+          }}
+        />
+      </div>
+      {editing === "new" && log[draftDay] && <p className="muted">{t("journal.replaces")}</p>}
+      {WB_KEYS.map((k) => (
+        <div key={k} className="row">
+          <span className="row__label">{t(`wellbeing.${k}`)}</span>
+          <div className="chips" role="radiogroup" aria-label={t(`wellbeing.${k}`)}>
+            {[0, 1, 2, 3].map((v) => (
+              <button
+                key={v}
+                className={`chip wb-chip wb-chip--${v}`}
+                role="radio"
+                aria-checked={draft[k] === v}
+                aria-pressed={draft[k] === v}
+                onClick={() => setDraft({ ...draft, [k]: v })}
+              >
+                {t(`wellbeing.level${v}`)}
+              </button>
+            ))}
+          </div>
+        </div>
+      ))}
+      <div className="row row--column">
+        <span className="row__label">{t("journal.note")}</span>
+        <textarea
+          rows={2}
+          maxLength={500}
+          value={draft.note}
+          placeholder={t("journal.notePlaceholder")}
+          onChange={(e) => setDraft({ ...draft, note: e.target.value })}
+        />
+      </div>
+      <div className="button-row">
+        <button className="button button--primary" onClick={save}>
+          {t("wellbeing.save")}
+        </button>
+        <button className="button" onClick={() => setEditing(null)}>
+          {t("journal.cancel")}
+        </button>
+      </div>
+    </div>
+  );
+
+  return (
+    <Section
+      title={t("journal.title")}
+      aside={
+        editing === null ? (
+          <button className="button" onClick={startNew}>
+            {t("wellbeing.add")}
+          </button>
+        ) : undefined
+      }
+    >
+      <p className="muted section__lead">{t("journal.hint")}</p>
+      {editing === "new" && form}
+      {entries.length === 0 && editing === null && <p className="muted">{t("wellbeing.empty")}</p>}
+      <ul className="journal">
+        {entries.map(([day, v]) =>
+          editing === day ? (
+            <li key={day} className="journal__item">
+              {form}
+            </li>
+          ) : (
+            <li key={day} className="journal__item">
+              <div className="journal__head">
+                <b>{date.format(new Date(`${day}T12:00:00`))}</b>
+                <span className="journal__actions">
+                  <button className="chip" onClick={() => startEdit(day)}>
+                    {t("journal.edit")}
+                  </button>
+                  <button className="chip" onClick={() => remove(day)}>
+                    {t("journal.delete")}
+                  </button>
+                </span>
+              </div>
+              <div className="journal__values">
+                {WB_KEYS.map((k) => (
+                  <span key={k} className="journal__value">
+                    <span className={`wb-dot wb-dot--${v[k]}`} /> {t(`wellbeing.${k}`)}: {t(`wellbeing.level${v[k]}`).toLowerCase()}
+                  </span>
+                ))}
+              </div>
+              {v.note && <p className="journal__note">{v.note}</p>}
+            </li>
+          ),
+        )}
+      </ul>
+    </Section>
+  );
+}
+
 function Achievements({ days }: { days: DayStats[] }) {
   const { t } = useTranslation();
   const list = achievements(days);
   const [message, setMessage] = useState("");
 
   const share = async () => {
-    const path = await saveDialog({ defaultPath: "unslouch.png", filters: [{ name: "PNG", extensions: ["png"] }] });
+    const path = await saveDialog({
+      defaultPath: "unslouch.png",
+      filters: [{ name: "PNG", extensions: ["png"] }],
+    });
     if (!path) return;
     const total = days.reduce((s, d) => s + d.done, 0);
     const png = await shareCard({
@@ -323,8 +696,19 @@ function Achievements({ days }: { days: DayStats[] }) {
   };
 
   return (
-    <Section title={t("achievements.title")} aside={<button className="button" onClick={share}>{t("share.button")}</button>}>
-      {message && <p className="muted" role="status">{message}</p>}
+    <Section
+      title={t("achievements.title")}
+      aside={
+        <button className="button" onClick={share}>
+          {t("share.button")}
+        </button>
+      }
+    >
+      {message && (
+        <p className="muted" role="status">
+          {message}
+        </p>
+      )}
       <ul className="badges">
         {list.map((a) => (
           <li key={a.id} className={`badge ${a.earned ? "badge--earned" : ""}`}>

@@ -104,9 +104,10 @@
     "level3": "A lot",
     "skip": "Not now",
     "save": "Save",
-    "chartTitle": "Wellbeing by week",
-    "chartHint": "Your Monday answers. Green: fine, red: bothers a lot.",
-    "empty": "No answers yet. The questions come on Monday after the first break."
+    "chartTitle": "Wellbeing",
+    "chartHint": "Your answers by day. Green: no trouble, red: a lot.",
+    "empty": "No entries yet. Add one in the journal or answer the questions on a break.",
+    "add": "Add entry"
   },
   "cue": {
     "blink": "Blink",
@@ -232,7 +233,8 @@
       "body": "Body",
       "cues": "Cues",
       "schedule": "Schedule",
-      "general": "General"
+      "general": "General",
+      "reminders": "Reminders"
     }
   },
   "data": {
@@ -301,7 +303,8 @@
       "overview": "Overview",
       "apps": "Programs",
       "wellbeing": "Wellbeing",
-      "achievements": "Achievements"
+      "achievements": "Achievements",
+      "journal": "Journal"
     },
     "today": "Today",
     "done": "Done",
@@ -329,7 +332,24 @@
     "otherApps": "Others",
     "byCategory": "By category",
     "byHour": "By hour",
-    "exclude": "Don't track this program"
+    "exclude": "Don't track this program",
+    "period": "Period",
+    "periods": {
+      "7": "Week",
+      "30": "Month",
+      "90": "3 months",
+      "365": "Year"
+    },
+    "workedToday": "Today at the computer from {{start}} to {{end}}",
+    "periodTitle": "Over the period",
+    "perDay": "Per working day",
+    "breaksDone": "Breaks done",
+    "usualDay": "Usual working day",
+    "longDays": "Days with 2+ hours sitting",
+    "timeByDay": "Time at the computer",
+    "workday": "Start and end of work",
+    "breaksByDay": "Breaks by day",
+    "inPrograms": "Counted in programs"
   },
   "achievements": {
     "title": "Achievements",
@@ -390,7 +410,11 @@
     "privacyShort": "We don't collect any data: everything stays on your computer.",
     "version": "Version {{v}}",
     "asIs": "The app is provided \"as is\", without warranties, and you use it at your own risk. See the terms of use.",
-    "donate": "Support the project"
+    "donate": "Support the project",
+    "pages": {
+      "app": "App",
+      "changelog": "What's new"
+    }
   },
   "onboarding": {
     "title": "Unslouch is running",
@@ -545,5 +569,45 @@
     ],
     "support": "If the app looks after your eyes and back, buy me a coffee. {{name}} will stay free and ad-free, and support pays for hosting, new exercises and fixes. Every donation also tells me the work is worth doing.",
     "supportButton": "Buy me a coffee"
+  },
+  "reminders": {
+    "title": "My reminders",
+    "hint": "Anything you want to be reminded of: pills, lunch, a call to make. A card appears in the corner and stays until you answer it.",
+    "untitled": "Reminder",
+    "done": "Done",
+    "later": "In {{n}} min",
+    "templates": {
+      "pills": "Pills",
+      "lunch": "Lunch",
+      "own": "My own"
+    },
+    "titlePlaceholder": "What to remind about",
+    "titleLabel": "Reminder text",
+    "when": "When",
+    "kindTimes": "At set times",
+    "kindInterval": "Every few minutes",
+    "times": "Times",
+    "removeTime": "Remove time",
+    "newTime": "New time",
+    "addTime": "Add",
+    "intervalHint": "Only in working hours, while you are at the computer",
+    "delete": "Delete",
+    "deleteConfirm": "Delete this reminder?"
+  },
+  "journal": {
+    "title": "Wellbeing journal",
+    "hint": "Mark how you feel on any day, fix or delete an entry. This is not a medical test.",
+    "day": "Day",
+    "replaces": "There is already an entry for this day: saving will replace it.",
+    "note": "Note",
+    "notePlaceholder": "For example: a lot of screen time, a headache in the evening",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "deleteConfirm": "Delete this entry?"
+  },
+  "changelog": {
+    "title": "Changelog",
+    "englishOnly": "The changelog is in English."
   }
 }

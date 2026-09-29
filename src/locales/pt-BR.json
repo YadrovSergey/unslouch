@@ -106,9 +106,10 @@
     "level3": "Muito",
     "skip": "Agora não",
     "save": "Salvar",
-    "chartTitle": "Bem-estar por semana",
-    "chartHint": "Suas respostas de segunda-feira. Verde: tudo bem, vermelho: incomoda muito.",
-    "empty": "Ainda não há respostas. As perguntas aparecem na segunda-feira, depois da primeira pausa."
+    "chartTitle": "Bem-estar",
+    "chartHint": "Suas respostas por dia. Verde: tudo bem, vermelho: incomoda muito.",
+    "empty": "Ainda não há registros. Adicione um no diário ou responda às perguntas durante uma pausa.",
+    "add": "Adicionar registro"
   },
   "cue": {
     "blink": "Pisque",
@@ -234,7 +235,8 @@
       "body": "Corpo",
       "cues": "Sinais",
       "schedule": "Horários",
-      "general": "Geral"
+      "general": "Geral",
+      "reminders": "Lembretes"
     }
   },
   "data": {
@@ -303,7 +305,8 @@
       "overview": "Visão geral",
       "apps": "Programas",
       "wellbeing": "Bem-estar",
-      "achievements": "Conquistas"
+      "achievements": "Conquistas",
+      "journal": "Diário"
     },
     "today": "Hoje",
     "done": "Feitas",
@@ -331,7 +334,24 @@
     "otherApps": "Outros",
     "byCategory": "Por categoria",
     "byHour": "Por hora",
-    "exclude": "Não registrar este programa"
+    "exclude": "Não registrar este programa",
+    "period": "Período",
+    "periods": {
+      "7": "Semana",
+      "30": "Mês",
+      "90": "3 meses",
+      "365": "Ano"
+    },
+    "workedToday": "Hoje no computador das {{start}} às {{end}}",
+    "periodTitle": "No período",
+    "perDay": "Por dia de trabalho",
+    "breaksDone": "Pausas feitas",
+    "usualDay": "Dia de trabalho típico",
+    "longDays": "Dias com mais de 2 horas sentado seguidas",
+    "timeByDay": "Tempo no computador",
+    "workday": "Início e fim do trabalho",
+    "breaksByDay": "Pausas por dia",
+    "inPrograms": "Contado nos programas"
   },
   "achievements": {
     "title": "Conquistas",
@@ -394,7 +414,11 @@
     "privacyShort": "Não coletamos nenhum dado: tudo fica no seu computador.",
     "version": "Versão {{v}}",
     "asIs": "O app é fornecido \"como está\", sem garantias, e você o usa por sua conta e risco. Mais detalhes nos termos de uso.",
-    "donate": "Apoiar o projeto"
+    "donate": "Apoiar o projeto",
+    "pages": {
+      "app": "Aplicativo",
+      "changelog": "Novidades"
+    }
   },
   "onboarding": {
     "title": "O Unslouch está funcionando",
@@ -549,5 +573,45 @@
     ],
     "support": "Se o app cuida dos seus olhos e das suas costas, me paga um café. O {{name}} vai continuar gratuito e sem anúncios, e o apoio vai para a hospedagem, novos exercícios e correções. E cada contribuição me mostra que vale a pena continuar.",
     "supportButton": "Me pagar um café"
+  },
+  "reminders": {
+    "title": "Meus lembretes",
+    "hint": "Qualquer coisa que você queira lembrar: remédios, almoço, uma ligação. Um cartão aparece no canto e fica até você responder.",
+    "untitled": "Lembrete",
+    "done": "Feito",
+    "later": "Em {{n}} min",
+    "templates": {
+      "pills": "Remédios",
+      "lunch": "Almoço",
+      "own": "Personalizado"
+    },
+    "titlePlaceholder": "Do que lembrar",
+    "titleLabel": "Texto do lembrete",
+    "when": "Quando",
+    "kindTimes": "Em horários definidos",
+    "kindInterval": "A cada poucos minutos",
+    "times": "Horários",
+    "removeTime": "Remover horário",
+    "newTime": "Novo horário",
+    "addTime": "Adicionar",
+    "intervalHint": "Só no horário de trabalho e enquanto você estiver no computador",
+    "delete": "Excluir",
+    "deleteConfirm": "Excluir este lembrete?"
+  },
+  "journal": {
+    "title": "Diário de bem-estar",
+    "hint": "Marque como você se sente em qualquer dia, corrija ou exclua um registro. Não é um teste médico.",
+    "day": "Dia",
+    "replaces": "Já existe um registro para este dia: ao salvar, ele será substituído.",
+    "note": "Nota",
+    "notePlaceholder": "Por exemplo: muito tempo de tela, dor de cabeça à noite",
+    "cancel": "Cancelar",
+    "edit": "Editar",
+    "delete": "Excluir",
+    "deleteConfirm": "Excluir este registro?"
+  },
+  "changelog": {
+    "title": "Histórico de alterações",
+    "englishOnly": "O histórico de alterações está em inglês."
   }
 }

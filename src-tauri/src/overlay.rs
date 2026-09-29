@@ -211,6 +211,44 @@ pub fn show_cue(app: &AppHandle, cue: Cue, lang: &str, is_cis: bool, theme: &str
     }
 }
 
+const REMINDER_W: f64 = 380.0;
+const REMINDER_H: f64 = 150.0;
+
+/// A reminder of the user's own (pills, lunch): a card in the corner that stays until answered. Several at once
+/// stack upwards. The page reads the reminder's title from the settings and shows the window when drawn.
+pub fn show_reminder(app: &AppHandle, id: &str, lang: &str, theme: &str, sound: bool) {
+    let label = format!("cue-rem-{id}");
+    if app.get_webview_window(&label).is_some() {
+        return;
+    }
+    let others = app.webview_windows().keys().filter(|l| l.starts_with("cue-rem-")).count() as f64;
+    let Some((monitor, _)) = monitors(app).into_iter().find(|(_, p)| *p) else { return };
+    let scale = monitor.scale_factor();
+    let pos = monitor.position().to_logical::<f64>(scale);
+    let size = monitor.size().to_logical::<f64>(scale);
+    let margin = 24.0;
+    let y = pos.y + size.height - REMINDER_H - margin * 3.0 - WATER_CUE_H - margin - others * (REMINDER_H + margin / 2.0);
+    let url = format!("index.html?view=cue&cue=reminder&rid={id}&lang={lang}&theme={theme}&sound={}", sound as u8);
+    let win = WebviewWindowBuilder::new(app, label, WebviewUrl::App(url.into()))
+        .title("Unslouch")
+        .position(pos.x + size.width - REMINDER_W - margin, y)
+        .inner_size(REMINDER_W, REMINDER_H)
+        .decorations(false)
+        .resizable(false)
+        .always_on_top(true)
+        .skip_taskbar(true)
+        .transparent(true)
+        .shadow(false)
+        .focused(false)
+        .accept_first_mouse(true)
+        .visible_on_all_workspaces(true)
+        .visible(false)
+        .build();
+    if let Ok(win) = win {
+        raise_above_menu_bar(&win);
+    }
+}
+
 pub fn show_settings(app: &AppHandle, tab: &str) {
     if let Some(win) = app.get_webview_window("settings") {
         let _ = win.eval(&format!("window.location.hash = '{tab}'"));

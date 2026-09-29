@@ -25,6 +25,7 @@ export interface Settings {
   waterEnabled: boolean;
   waterIntervalMin: number;
   cueSound: boolean;
+  reminders: Reminder[];
   neckDaily: boolean;
   breathingDaily: boolean;
   endOfDayEnabled: boolean;
@@ -61,6 +62,19 @@ export interface AppInfo {
   wellbeingDue: boolean;
 }
 
+/** A reminder of the user's own: at given times on given days, or every N minutes of working hours. */
+export interface Reminder {
+  id: string;
+  title: string;
+  enabled: boolean;
+  kind: "times" | "interval";
+  /** "HH:MM" */
+  times: string[];
+  /** 1 = Monday … 7 = Sunday */
+  days: number[];
+  intervalMin: number;
+}
+
 export interface DayStats {
   day: string;
   done: number;
@@ -72,6 +86,9 @@ export interface DayStats {
   activeSec: number;
   longestSittingSec: number;
   sittingOver2h: number;
+  /** Minutes after midnight: when work started and ended that day. Null before 0.1.8 or on days off. */
+  firstActiveMin: number | null;
+  lastActiveMin: number | null;
 }
 
 export interface DayUsage {
@@ -86,6 +103,7 @@ export interface Wellbeing {
   neck: number;
   back: number;
   hands: number;
+  note: string;
 }
 
 export type BreakResult = "done" | "skipped" | "postponed";
@@ -140,7 +158,11 @@ export const getStats = (days: number) => invoke<DayStats[]>("get_stats", { days
 export const getUsage = (days: number) => invoke<DayUsage[]>("get_usage", { days });
 export const clearUsage = () => invoke<void>("clear_usage");
 export const getWellbeing = () => invoke<Record<string, Wellbeing>>("get_wellbeing");
-export const saveWellbeing = (answers: Wellbeing) => invoke<void>("save_wellbeing", { answers });
+export const saveWellbeing = (answers: Omit<Wellbeing, "note">) => invoke<void>("save_wellbeing", { answers });
+export const setWellbeing = (day: string, answers: Wellbeing) => invoke<Record<string, Wellbeing>>("set_wellbeing", { day, answers });
+export const deleteWellbeing = (day: string) => invoke<Record<string, Wellbeing>>("delete_wellbeing", { day });
+export const reminderAnswer = (id: string, laterMin?: number) => invoke<void>("reminder_answer", { id, laterMin });
+export const previewReminder = (id: string) => invoke<void>("preview_reminder", { id });
 export const sendBreakResult = (result: BreakResult) => invoke<void>("break_result", { result });
 export const waterDrunk = () => invoke<void>("water_drunk");
 export const closeCue = () => invoke<void>("close_cue");
