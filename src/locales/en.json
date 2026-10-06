@@ -42,7 +42,8 @@
     "downloading": "Downloading the update… {{pct}}%",
     "downloadingNoPct": "Downloading the update…",
     "installing": "Installing the update…",
-    "installFailed": "Couldn't install the update. Check your internet connection and try again from the menu."
+    "installFailed": "Couldn't install the update. Check your internet connection and try again from the menu.",
+    "wellbeing": "How was your day?"
   },
   "time": {
     "hm": "{{h}} h {{m}} min",
@@ -80,7 +81,15 @@
       "Change position often. The best posture is the next one.",
       "Keep the mouse next to the keyboard so you don't reach for it.",
       "At lunch, get at least 10 minutes of daylight outside."
-    ]
+    ],
+    "confirmTitle": "Break's over. Did it work out?",
+    "confirmDone": "Done",
+    "confirmNot": "Not this time",
+    "confirmHint": "Did at least part of it? Press Done. Enter: done, Esc: not this time.",
+    "confirmPain": "If a movement hurt, skip it next time.",
+    "neckLoad": "If you have an elastic band or a 0.5 l bottle of water, hold it: your muscles get more work. Without them is fine too.",
+    "neckMore": "You do these regularly, so there are a few more repetitions now.",
+    "neckHeavier": "If it feels easy, take a tighter band or a bigger bottle. Never through pain."
   },
   "endOfDay": {
     "title": "The work day is over",
@@ -92,22 +101,46 @@
     "finish": "I'm done"
   },
   "wellbeing": {
-    "title": "How was this week?",
-    "hint": "Four questions once a week. Your answers show whether breaks help you in particular. This is not a medical test.",
+    "title": "How was your day?",
+    "hint": "Mark what bothered you today. Your answers stay only on your computer. This is not a medical test.",
     "eyes": "Eyes",
     "neck": "Neck and shoulders",
     "back": "Back",
     "hands": "Hands",
-    "level0": "Fine",
+    "level0": "All fine",
     "level1": "A little",
     "level2": "Noticeably",
     "level3": "A lot",
     "skip": "Not now",
     "save": "Save",
     "chartTitle": "Wellbeing",
-    "chartHint": "Your answers by day. Green: no trouble, red: a lot.",
-    "empty": "No entries yet. Add one in the journal or answer the questions on a break.",
-    "add": "Add entry"
+    "chartHint": "Your answers by day: 0 all fine, 3 a lot.",
+    "empty": "No entries yet. Answer the evening questions or add an entry in the journal.",
+    "add": "Add entry",
+    "titleWeek": "How was your week?",
+    "hintWeek": "How much did these bother you this week? Your answers stay on your computer. This is not a medical test.",
+    "allGood": "Nothing bothers me",
+    "incomplete": "Mark all four rows or press \"Nothing bothers me\".",
+    "saved": "Saved, thank you!",
+    "todaySummary": "Breaks today: {{n}}, {{time}} in all.",
+    "close": "Close",
+    "offerWeekly": "Evenings don't always leave room for questions. Ask once a week instead?",
+    "offerWeeklyYes": "Once a week",
+    "offerWeeklyNo": "Keep every evening",
+    "doctorHint": {
+      "eyes": "Your eyes have bothered you for a while now. If it goes on, have your eyesight checked. See a doctor right away if an eye hurts, turns red, you see double or your sight gets worse.",
+      "neck": "Your neck and shoulders have bothered you for a while now. If it goes on or gets in the way of work or sleep, see a doctor. See one right away if pain or numbness spreads to your arm or the arm gets weak.",
+      "back": "Your back has bothered you for a while now. If it goes on or gets in the way of work or sleep, see a doctor. See one right away if your groin goes numb, your legs get weak or the pain is strong at night.",
+      "hands": "Your wrists and hands have bothered you for a while now. If it goes on or gets in the way of work or sleep, see a doctor, especially if your thumb, index and middle fingers go numb, more often at night, or things slip from your hands."
+    },
+    "prefilled": "Rows that were \"All fine\" or \"A little\" show your last answers. Change them if today was different.",
+    "doctorPain": "While it bothers you, do the exercises only without pain and skip what hurts.",
+    "inline": {
+      "eyes": "eyes",
+      "neck": "neck and shoulders",
+      "back": "back",
+      "hands": "wrists and hands"
+    }
   },
   "cue": {
     "blink": "Blink",
@@ -176,9 +209,9 @@
     "waterHint": "A card in the corner that goes away by itself",
     "dailySection": "Once a day",
     "neckDaily": "Two minutes for neck and shoulders",
-    "neckDailyHint": "Strength routine after 11:00. Research shows 2 minutes a day reduces neck pain",
+    "neckDailyHint": "Strength routine a couple of hours into your work day. Research shows 2 minutes a day reduces neck pain",
     "breathingDaily": "A minute of breathing",
-    "breathingDailyHint": "After 15:00, instead of one eye break",
+    "breathingDailyHint": "Six hours into your work day, instead of one eye break",
     "endOfDay": "End of the work day",
     "endOfDayHint": "Reminds you to finish and shows the day's summary",
     "at": "At",
@@ -235,7 +268,14 @@
       "schedule": "Schedule",
       "general": "General",
       "reminders": "Reminders"
-    }
+    },
+    "honestSection": "After a break",
+    "confirmDone": "Ask whether it worked out",
+    "confirmDoneHint": "Only what you mark goes into the statistics. Enter: done, Esc: not this time. With no answer in 5 minutes, the break is recorded as \"Away\", or as skipped if you were working meanwhile.",
+    "wellbeingEvery": "Wellbeing questions",
+    "wellbeingEveryHint": "Four short questions at the end of the work day. Compare them with your breaks on the Result page in the statistics.",
+    "wellbeingDay": "Every evening",
+    "wellbeingWeek": "Once a week"
   },
   "data": {
     "title": "Move to another computer",
@@ -303,7 +343,8 @@
       "overview": "Overview",
       "apps": "Programs",
       "wellbeing": "Wellbeing",
-      "achievements": "Achievements"
+      "achievements": "Achievements",
+      "result": "Result"
     },
     "today": "Today",
     "done": "Done",
@@ -348,7 +389,47 @@
     "timeByDay": "Time at the computer",
     "workday": "Start and end of work",
     "breaksByDay": "Breaks by day",
-    "inPrograms": "Counted in programs"
+    "inPrograms": "Counted in programs",
+    "away": "Away",
+    "awayHint": "\"Away\": the break came, but nobody was at the computer. These breaks are left out of the share of breaks done."
+  },
+  "result": {
+    "thisWeek": "This week",
+    "done": "Breaks done",
+    "stoodUp": "Stood up to move",
+    "neckDays": "Days with neck minutes",
+    "breathing": "Breathing breaks",
+    "timeForYou": "Time on breaks",
+    "lastWeek": "Last week: breaks {{done}}, stood up {{stood}}, time on breaks {{time}}.",
+    "awayNote": "Breaks while you were away: {{n}}. That's rest too, these breaks just aren't counted as done.",
+    "byKind": "By kind of break",
+    "kinds": {
+      "micro": "Look into the distance",
+      "movement": "Stand up and move",
+      "long": "Long break",
+      "neck": "Neck and shoulders",
+      "breathing": "Breathing"
+    },
+    "notTried": "Not tried in this period yet: \"{{kind}}\".",
+    "tryNow": "Try now",
+    "periodTime": "Time on breaks in this period: {{time}}.",
+    "oldDays": "Days before the update were counted the old way: no split by kind and no \"Did it work out?\".",
+    "sitting": "Sitting",
+    "avgLongest": "Longest sitting, average per day",
+    "byWeek": "By week",
+    "byWeekHint": "Share of breaks done, time on them, and your evening answers averaged over the week: 0 all fine, 3 a lot.",
+    "week": "Week",
+    "share": "Done",
+    "minutes": "Time",
+    "compareTitle": "Weeks compared",
+    "compareEmpty": "The comparison appears once there are six weeks with evening answers. Weeks to go: {{n}}.",
+    "moreBreaks": "More breaks done ({{n}} wk)",
+    "fewerBreaks": "Fewer breaks done ({{n}} wk)",
+    "compareBetter": "In weeks when you did more of your breaks, these bothered you less on average: {{areas}}.",
+    "compareWorse": "In weeks when you did more of your breaks, these bothered you more on average: {{areas}}.",
+    "compareSame": "No clear difference yet.",
+    "compareNote": "These are your answers, not proof: workload, sleep and holidays change how you feel too.",
+    "compareFlat": "You did your breaks equally often every week, so there's nothing to compare yet."
   },
   "achievements": {
     "title": "Achievements",

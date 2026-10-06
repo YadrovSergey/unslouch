@@ -125,7 +125,7 @@ const uz: Dict = {
     stats: [
       "Kompyuterdagi vaqt va eng uzoq oʻtirish",
       "Ketma-ket kunlar, yil xaritasi va yutuqlar",
-      "Haftada bir marta holatni tekshirish: koʻzlar, boʻyin, bel, qoʻllar",
+      "Kechqurun holat haqida bir-ikki savol, «Natija» boʻlimida esa nima qilganingiz va oʻzingizni qanday his qilganingiz koʻrinadi",
       "Dasturlar boʻyicha vaqt, faqat dastur nomlari boʻyicha",
     ],
     statsDemo: { today: "Bugun kompyuterda", longest: "Eng uzoq oʻtirish", breaks: "Bajarilgan tanaffuslar", streak: "Ketma-ket kunlar", todayValue: "6 soat 40 daq", longestValue: "52 daq" },
@@ -143,7 +143,7 @@ const uz: Dict = {
       { q: "Bu shifokor oʻrnini bosadimi?", a: "Yoʻq. Dastur uzoq oʻtirishdan kelib chiqadigan noqulaylik va charchoqni kamaytiradi, lekin hech narsani davolamaydi. Agar biror joy ogʻrisa, oʻtmasa yoki yashashga xalaqit bersa, shifokorga koʻrining. Dasturning har bir boʻlimida qachon shifokorga borish kerakligi yozilgan." },
       { q: "Qoʻngʻiroqlarimni boʻlmaydimi?", a: "Yoʻq. Kamera yoki mikrofondan boshqa dastur foydalanayotganda eslatmalar kutadi. Butun ekran va «Bezovta qilmang» rejimida ham shunday." },
       { q: "Oraliqlarni oʻzgartirish mumkinmi?", a: "Ha. Tayyor rejimlar bor: «Tavsiya etilgan» (20 va 45 daqiqa), Pomodoro 25/5, «Soatiga bir» va oʻzingizniki." },
-      { q: "Dastur men haqimda nimani biladi?", a: "Faqat kompyuteringizda saqlanadigan narsalarni: sozlamalar, tanaffuslar statistikasi, haftalik holat javoblari va dasturlar boʻyicha vaqt. Hech narsa hech qayerga yuborilmaydi. Hammasini faylga saqlash yoki oʻchirish mumkin." },
+      { q: "Dastur men haqimda nimani biladi?", a: "Faqat kompyuteringizda saqlanadigan narsalarni: sozlamalar, tanaffuslar statistikasi, holat haqidagi javoblar va dasturlar boʻyicha vaqt. Hech narsa hech qayerga yuborilmaydi. Hammasini faylga saqlash yoki oʻchirish mumkin." },
       { q: "Ish kompyuterimga dastur oʻrnatib boʻlmaydi.", a: "Brauzerdagi versiyadan foydalaning: varaqni ochiq qoldiring, u har 20 daqiqada xuddi shu mashqlar bilan tanaffus koʻrsatadi." },
       { q: "Qaysi tillarda?", a: "15 tilda: ingliz, rus, ukrain, qozoq, belarus, oʻzbek, arman, gruzin, ozarbayjon, nemis, ispan, fransuz, portugal (Braziliya), turk va soddalashtirilgan xitoy tillari." },
       { q: "Loyihani qanday qoʻllab-quvvatlash mumkin?", a: "Dastur bepul va bepulligicha qoladi, qoʻllab-quvvatlash ixtiyoriy va hech qanday qoʻshimcha imkoniyat ochmaydi. Minnatdorchilik bildirmoqchi boʻlsangiz, buni CloudTips orqali Rossiya banki kartasi yoki SBP bilan, Boosty orqali esa istalgan davlat kartasi bilan qilishingiz mumkin.", link: "Dasturchiga qanday minnatdorchilik bildirish mumkin" },

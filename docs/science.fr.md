@@ -103,6 +103,10 @@ ces muscles qui ont les meilleures preuves.
   seul plan. Pas de cercles avec la tête.
 - En option : une routine quotidienne de 2 minutes de renforcement de la nuque et des épaules selon le
   protocole d’Andersen (par exemple haussements d’épaules ou élévations latérales avec un élastique).
+  Si vous la faites régulièrement, elle ajoute quelques répétitions, jusqu’à quatre, et propose de
+  tenir un élastique ou une petite bouteille d’eau : dans les essais d’Andersen, la charge augmentait
+  à mesure que les muscles s’y habituaient. Elle arrive deux ou trois heures après le début de la
+  journée de travail, et pour un poste de nuit, deux ou trois heures après le début du poste.
 - Un signal discret « changez de position » toutes les 30 minutes.
 
 ### Ce que montrent les études
@@ -461,8 +465,12 @@ Un court rituel de fin de journée aide à décrocher.
 ### Ce que fait l’application
 
 - Vous rappelle, si vous le souhaitez, d’arrêter de travailler à la fin de votre journée.
-- Une fois par semaine, vous demande d’évaluer l’état de vos yeux, de votre nuque, de votre dos et
-  de vos mains, de 0 à 3. Les réponses restent sur votre ordinateur.
+- Chaque soir (ou une fois par semaine, si vous le choisissez), vous demande à quel point vos yeux,
+  votre nuque, votre dos et vos mains vous ont gêné, de 0 à 3. Les réponses restent sur votre
+  ordinateur.
+- La page « Résultat » des statistiques place vos réponses à côté des pauses faites. C’est de
+  l’auto-observation, pas une preuve de ce qui aide : la charge de travail, le sommeil et les
+  vacances influencent aussi votre ressenti.
 
 ### Ce que montrent les études
 

@@ -8,13 +8,16 @@ export interface Achievement {
 }
 
 /** A day counts toward the streak when at least one break was done and no more were skipped than done.
- * Days without any computer time (weekends, holidays) do not break it. */
+ * Days without any computer time (weekends, holidays) do not break it, and neither do days when every break
+ * came while the user was away: stepping away is rest, not a failure. */
+const counts = (d: DayStats) => d.activeSec > 0 && d.done + d.skipped > 0;
+
 export function streak(days: DayStats[]): number {
   let count = 0;
   for (let i = days.length - 1; i >= 0; i--) {
     const d = days[i];
     const isToday = i === days.length - 1;
-    if (d.activeSec === 0) continue;
+    if (!counts(d)) continue;
     const good = d.done > 0 && d.done >= d.skipped;
     if (good) count++;
     else if (!isToday) break;
@@ -42,7 +45,7 @@ export function achievements(days: DayStats[]): Achievement[] {
   const water = sum((d) => d.water);
   const current = Math.max(
     streak(days),
-    bestRun(days, (d) => d.done > 0 && d.done >= d.skipped, (d) => d.activeSec > 0),
+    bestRun(days, (d) => d.done > 0 && d.done >= d.skipped, counts),
   );
   // Working days in a row without a 2-hour sitting stretch.
   const noLongSitting = bestRun(days, (d) => d.sittingOver2h === 0, (d) => d.activeSec >= 2 * 3600);

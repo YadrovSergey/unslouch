@@ -38,6 +38,18 @@ for (const file of readdirSync(dir).filter((f) => f.endsWith(".json"))) {
     }
   }
   if (!Object.keys(loc).some((k) => k.startsWith("break.seconds_other"))) errors.push(`${file}: no seconds_other`);
+  // Every plural key has exactly the forms the language needs (Russian: one, few, many, other; Chinese: other).
+  const lang = file.replace(".json", "");
+  const need = new Intl.PluralRules(lang).resolvedOptions().pluralCategories;
+  const forms = {};
+  for (const key of Object.keys(loc)) {
+    const m = key.match(PLURAL);
+    if (m) (forms[base(key)] ??= new Set()).add(m[1]);
+  }
+  for (const [key, have] of Object.entries(forms)) {
+    const missing = need.filter((c) => !have.has(c));
+    if (missing.length) errors.push(`${file}: ${key} lacks ${missing.join(", ")}`);
+  }
 }
 
 if (errors.length) {

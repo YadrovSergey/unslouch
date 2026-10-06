@@ -42,7 +42,8 @@
     "downloading": "Baixando a atualização… {{pct}}%",
     "downloadingNoPct": "Baixando a atualização…",
     "installing": "Instalando a atualização…",
-    "installFailed": "Não foi possível instalar a atualização. Verifique a internet e tente de novo pelo menu."
+    "installFailed": "Não foi possível instalar a atualização. Verifique a internet e tente de novo pelo menu.",
+    "wellbeing": "Como foi o dia?"
   },
   "time": {
     "hm": "{{h}} h {{m}} min",
@@ -82,7 +83,15 @@
       "Mude de posição com frequência. A melhor postura é a próxima.",
       "Deixe o mouse ao lado do teclado para não ter que esticar o braço.",
       "No almoço, fique pelo menos 10 minutos na luz do dia, ao ar livre."
-    ]
+    ],
+    "confirmTitle": "A pausa acabou. Deu certo?",
+    "confirmDone": "Feito",
+    "confirmNot": "Desta vez não",
+    "confirmHint": "Fez pelo menos uma parte? Clique em “Feito”. Enter: feito, Esc: desta vez não.",
+    "confirmPain": "Se algum movimento doeu, pule-o da próxima vez.",
+    "neckLoad": "Se você tiver uma faixa elástica ou uma garrafa de água de 0,5 l, segure-a: seus músculos trabalham mais. Sem elas também tudo bem.",
+    "neckMore": "Você faz a sequência com regularidade, então agora há algumas repetições a mais.",
+    "neckHeavier": "Se ficar fácil, use uma faixa mais firme ou uma garrafa maior. Nunca com dor."
   },
   "endOfDay": {
     "title": "O expediente acabou",
@@ -94,8 +103,8 @@
     "finish": "Terminei"
   },
   "wellbeing": {
-    "title": "Como foi esta semana?",
-    "hint": "Quatro perguntas uma vez por semana. As respostas mostram se as pausas ajudam você em particular. Isto não é um teste médico.",
+    "title": "Como foi o dia?",
+    "hint": "Marque o que incomodou você hoje. Suas respostas ficam só no seu computador. Isto não é um teste médico.",
     "eyes": "Olhos",
     "neck": "Pescoço e ombros",
     "back": "Costas",
@@ -107,9 +116,33 @@
     "skip": "Agora não",
     "save": "Salvar",
     "chartTitle": "Bem-estar",
-    "chartHint": "Suas respostas por dia. Verde: tudo bem, vermelho: incomoda muito.",
-    "empty": "Ainda não há registros. Adicione um no diário ou responda às perguntas durante uma pausa.",
-    "add": "Adicionar registro"
+    "chartHint": "Suas respostas por dia: 0 tudo bem, 3 muito.",
+    "empty": "Ainda não há registros. Responda às perguntas da noite ou adicione um registro no diário.",
+    "add": "Adicionar registro",
+    "titleWeek": "Como foi a semana?",
+    "hintWeek": "Quanto isto incomodou nesta semana? Suas respostas ficam no seu computador. Isto não é um teste médico.",
+    "allGood": "Nada incomoda",
+    "incomplete": "Marque as quatro linhas ou clique em “Nada incomoda”.",
+    "saved": "Salvo, obrigado!",
+    "todaySummary": "Pausas hoje: {{n}}, {{time}} no total.",
+    "close": "Fechar",
+    "offerWeekly": "À noite nem sempre sobra tempo para perguntas. Prefere que a gente pergunte uma vez por semana?",
+    "offerWeeklyYes": "Uma vez por semana",
+    "offerWeeklyNo": "Manter toda noite",
+    "doctorHint": {
+      "eyes": "Seus olhos estão incomodando há algum tempo. Se continuar, faça um exame de vista. Procure um médico logo se um olho doer ou ficar vermelho, se você enxergar dobrado ou se a visão piorar.",
+      "neck": "Pescoço e ombros estão incomodando há algum tempo. Se continuar ou atrapalhar o trabalho ou o sono, procure um médico. Procure logo se a dor ou a dormência descer para o braço ou se o braço ficar fraco.",
+      "back": "Suas costas estão incomodando há algum tempo. Se continuar ou atrapalhar o trabalho ou o sono, procure um médico. Procure logo se a virilha ficar dormente, as pernas ficarem fracas ou a dor for forte à noite.",
+      "hands": "Punhos e mãos estão incomodando há algum tempo. Se continuar ou atrapalhar o trabalho ou o sono, procure um médico, principalmente se o polegar, o indicador e o dedo médio ficarem dormentes, mais à noite, ou se as coisas escaparem das mãos."
+    },
+    "prefilled": "As linhas que estavam em “Tudo bem” ou “Um pouco” mostram suas últimas respostas. Mude se hoje foi diferente.",
+    "doctorPain": "Enquanto incomodar, faça os exercícios só sem dor e pule o que doer.",
+    "inline": {
+      "eyes": "olhos",
+      "neck": "pescoço e ombros",
+      "back": "costas",
+      "hands": "punhos e mãos"
+    }
   },
   "cue": {
     "blink": "Pisque",
@@ -178,9 +211,9 @@
     "waterHint": "Um cartão no canto que some sozinho",
     "dailySection": "Uma vez por dia",
     "neckDaily": "Dois minutos para pescoço e ombros",
-    "neckDailyHint": "Sequência de força depois das 11:00. Estudos mostram que 2 minutos por dia reduzem a dor no pescoço",
+    "neckDailyHint": "Sequência de força algumas horas depois do início do seu expediente. Estudos mostram que 2 minutos por dia reduzem a dor no pescoço",
     "breathingDaily": "Um minuto de respiração",
-    "breathingDailyHint": "Depois das 15:00, no lugar de uma pausa para os olhos",
+    "breathingDailyHint": "Seis horas depois do início do seu expediente, no lugar de uma pausa para os olhos",
     "endOfDay": "Fim do expediente",
     "endOfDayHint": "Lembra de encerrar e mostra o resumo do dia",
     "at": "Às",
@@ -237,7 +270,14 @@
       "schedule": "Horários",
       "general": "Geral",
       "reminders": "Lembretes"
-    }
+    },
+    "honestSection": "Depois da pausa",
+    "confirmDone": "Perguntar se deu certo",
+    "confirmDoneHint": "Só o que você marcar entra nas estatísticas. Enter: feito, Esc: desta vez não. Sem resposta em 5 minutos, a pausa é registrada como “Ausente”, ou como pulada se você estava trabalhando nesse meio-tempo.",
+    "wellbeingEvery": "Perguntas sobre bem-estar",
+    "wellbeingEveryHint": "Quatro perguntas curtas no fim do dia de trabalho. Compare com suas pausas na aba “Resultado” das estatísticas.",
+    "wellbeingDay": "Toda noite",
+    "wellbeingWeek": "Uma vez por semana"
   },
   "data": {
     "title": "Levar para outro computador",
@@ -305,7 +345,8 @@
       "overview": "Visão geral",
       "apps": "Programas",
       "wellbeing": "Bem-estar",
-      "achievements": "Conquistas"
+      "achievements": "Conquistas",
+      "result": "Resultado"
     },
     "today": "Hoje",
     "done": "Feitas",
@@ -350,7 +391,47 @@
     "timeByDay": "Tempo no computador",
     "workday": "Início e fim do trabalho",
     "breaksByDay": "Pausas por dia",
-    "inPrograms": "Contado nos programas"
+    "inPrograms": "Contado nos programas",
+    "away": "Ausente",
+    "awayHint": "“Ausente”: a pausa chegou, mas não havia ninguém no computador. Essas pausas ficam fora da porcentagem de pausas feitas."
+  },
+  "result": {
+    "thisWeek": "Esta semana",
+    "done": "Pausas feitas",
+    "stoodUp": "Levantou para se mexer",
+    "neckDays": "Dias com minutos para o pescoço",
+    "breathing": "Pausas de respiração",
+    "timeForYou": "Tempo em pausas",
+    "lastWeek": "Semana passada: pausas {{done}}, levantou para se mexer {{stood}}, tempo em pausas {{time}}.",
+    "awayNote": "Pausas enquanto você estava ausente: {{n}}. Isso também é descanso, só que essas pausas não contam como feitas.",
+    "byKind": "Por tipo de pausa",
+    "kinds": {
+      "micro": "Olhar para longe",
+      "movement": "Levantar e se mexer",
+      "long": "Pausa longa",
+      "neck": "Pescoço e ombros",
+      "breathing": "Respiração"
+    },
+    "notTried": "Ainda não experimentado neste período: “{{kind}}”.",
+    "tryNow": "Experimentar agora",
+    "periodTime": "Tempo em pausas neste período: {{time}}.",
+    "oldDays": "Os dias antes da atualização foram contados do jeito antigo: sem separar por tipo e sem “Deu certo?”.",
+    "sitting": "Sentado",
+    "avgLongest": "Maior tempo sentado, média por dia",
+    "byWeek": "Por semana",
+    "byWeekHint": "Porcentagem de pausas feitas, tempo nelas e suas respostas da noite em média por semana: 0 tudo bem, 3 muito.",
+    "week": "Semana",
+    "share": "Feitas",
+    "minutes": "Tempo",
+    "compareTitle": "Semanas comparadas",
+    "compareEmpty": "A comparação aparece quando houver seis semanas com respostas da noite. Faltam semanas: {{n}}.",
+    "moreBreaks": "Mais pausas feitas ({{n}} sem.)",
+    "fewerBreaks": "Menos pausas feitas ({{n}} sem.)",
+    "compareBetter": "Nas semanas em que você fez mais das suas pausas, isto incomodou menos em média: {{areas}}.",
+    "compareWorse": "Nas semanas em que você fez mais das suas pausas, isto incomodou mais em média: {{areas}}.",
+    "compareSame": "Ainda não há uma diferença clara.",
+    "compareNote": "São as suas respostas, não uma prova: carga de trabalho, sono e férias também mudam como você se sente.",
+    "compareFlat": "Você fez suas pausas com a mesma frequência toda semana, então ainda não há o que comparar."
   },
   "achievements": {
     "title": "Conquistas",

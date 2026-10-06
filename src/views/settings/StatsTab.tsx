@@ -3,6 +3,8 @@ import { useTranslation } from "react-i18next";
 import { save as saveDialog } from "@tauri-apps/plugin-dialog";
 import {
   AppInfo,
+  BREAK_KINDS,
+  BreakKind,
   DayStats,
   DayUsage,
   SettingsPatch,
@@ -10,25 +12,42 @@ import {
   deleteWellbeing,
   getStats,
   getUsage,
+  getResult,
   getWellbeing,
+  ResultView,
   savePng,
   setWellbeing,
+  startBreak,
 } from "../../api";
+import { WB_AREAS } from "../../lib/wellbeing";
 import { achievements, streak } from "../../lib/achievements";
 import { Category, appCategory, appName } from "../../lib/apps";
 import { formatDuration } from "../../format";
 import { Section } from "./ui";
 
-type Sub = "overview" | "apps" | "wellbeing" | "achievements";
-const SUBS: Sub[] = ["overview", "apps", "wellbeing", "achievements"];
+type Sub = "overview" | "result" | "apps" | "wellbeing" | "achievements";
+const SUBS: Sub[] = ["overview", "result", "apps", "wellbeing", "achievements"];
+const isSub = (id: string | null): id is Sub => (SUBS as (string | null)[]).includes(id);
 const SITTING_RISK_SEC = 2 * 3600;
 /** Periods to look at. Usage by program is kept 90 days, so "year" is only for the day stats. */
 const PERIODS = [7, 30, 90, 365] as const;
 type Period = (typeof PERIODS)[number];
 
-export function StatsTab({ info, update }: { info: AppInfo; update: (p: SettingsPatch) => void }) {
+/** `open`: the page asked for in the address ("#stats/wellbeing" from the tray); `n` changes on every visit. */
+export function StatsTab({
+  info,
+  update,
+  open,
+}: {
+  info: AppInfo;
+  update: (p: SettingsPatch) => void;
+  open?: { id: string | null; n: number };
+}) {
   const { t } = useTranslation();
-  const [sub, setSub] = useState<Sub>("overview");
+  const [sub, setSub] = useState<Sub>(isSub(open?.id ?? null) ? (open!.id as Sub) : "overview");
+  useEffect(() => {
+    if (open && isSub(open.id)) setSub(open.id);
+  }, [open?.n]);
   const [days, setDays] = useState<DayStats[]>([]);
   useEffect(() => {
     // All kept history (400 days): achievements are counted over it, the heatmap shows the last year.
@@ -39,12 +58,21 @@ export function StatsTab({ info, update }: { info: AppInfo; update: (p: Settings
     <>
       <div className="segmented" role="tablist">
         {SUBS.map((id) => (
-          <button key={id} role="tab" aria-selected={sub === id} onClick={() => setSub(id)}>
+          <button
+            key={id}
+            role="tab"
+            aria-selected={sub === id}
+            onClick={() => {
+              setSub(id);
+              window.location.hash = id === "overview" ? "stats" : `stats/${id}`;
+            }}
+          >
             {t(`stats.tabs.${id}`)}
           </button>
         ))}
       </div>
       {sub === "overview" && <Overview days={days} nightShift={info.settings.workHoursEnabled && info.settings.workStart > info.settings.workEnd} />}
+      {sub === "result" && <ResultPage info={info} />}
       {sub === "apps" && <Apps info={info} update={update} days={days} />}
       {sub === "wellbeing" && <WellbeingPage />}
       {sub === "achievements" && <Achievements days={days} />}
@@ -311,6 +339,219 @@ function Heatmap({ days }: { days: DayStats[] }) {
   );
 }
 
+const RESULT_PERIODS = [7, 30, 90] as const;
+/** A difference in average answers this big is worth a word; smaller is noise on a 0..3 scale. */
+const NOTABLE_DIFF = 0.5;
+
+function kindEnabled(kind: BreakKind, s: AppInfo["settings"]): boolean {
+  switch (kind) {
+    case "micro":
+      return s.microEnabled;
+    case "movement":
+      return s.movementEnabled;
+    case "long":
+      return s.longEnabled;
+    case "neck":
+      return s.neckDaily && s.sections.neck;
+    case "breathing":
+      return s.breathingDaily;
+  }
+}
+
+/** "Result": what the user did, and how they felt in weeks with more and fewer breaks. Starts with the actions,
+ * not with a percentage: a bad week still shows what was done. */
+function ResultPage({ info }: { info: AppInfo }) {
+  const { t, i18n } = useTranslation();
+  const [period, setPeriod] = useState<number>(30);
+  const [r, setR] = useState<ResultView | null>(null);
+  useEffect(() => {
+    getResult(period).then(setR, () => setR(null));
+  }, [period]);
+  if (!r) return null;
+  const s = info.settings;
+  const num = new Intl.NumberFormat(i18n.language, { maximumFractionDigits: 1, minimumFractionDigits: 1 });
+  const pct = new Intl.NumberFormat(i18n.language, { style: "percent", maximumFractionDigits: 0 });
+  const date = new Intl.DateTimeFormat(i18n.language, { day: "numeric", month: "short" });
+  const w = r.thisWeek;
+  const last = r.lastWeek;
+  const kinds = BREAK_KINDS.filter((k) => kindEnabled(k, s) || r.kinds[k].done + r.kinds[k].skipped + r.kinds[k].away > 0);
+  const startable = (k: BreakKind) => k !== "long";
+
+  return (
+    <>
+      <Section title={t("result.thisWeek")}>
+        <div className="stat-tiles">
+          <Tile label={t("result.done")} value={String(w.done)} />
+          {s.movementEnabled && <Tile label={t("result.stoodUp")} value={String(w.stoodUp)} />}
+          {/* A zero tile reads as a failure; "not tried yet" below says it kindly. */}
+          {s.neckDaily && w.neckDays > 0 && <Tile label={t("result.neckDays")} value={String(w.neckDays)} />}
+          {s.breathingDaily && w.breathingDone > 0 && <Tile label={t("result.breathing")} value={String(w.breathingDone)} />}
+          <Tile label={t("result.timeForYou")} value={formatDuration(w.breakSec, true)} />
+        </div>
+        {last.done + last.away > 0 && (
+          <p className="muted">
+            {t("result.lastWeek", { done: last.done, stood: last.stoodUp, time: formatDuration(last.breakSec, true) })}
+          </p>
+        )}
+        {w.away > 0 && <p className="muted">{t("result.awayNote", { n: w.away })}</p>}
+      </Section>
+
+      <Section
+        title={t("result.byKind")}
+        aside={
+          <div className="segmented segmented--small" role="tablist" aria-label={t("stats.period")}>
+            {RESULT_PERIODS.map((p) => (
+              <button key={p} role="tab" aria-selected={period === p} onClick={() => setPeriod(p)}>
+                {t(`stats.periods.${p}`)}
+              </button>
+            ))}
+          </div>
+        }
+      >
+        <div className="table-scroll" role="region" tabIndex={0} aria-label={t("result.byKind")}>
+          <table className="result-table">
+            <caption className="sr-only">{t("result.byKind")}</caption>
+            <thead>
+              <tr>
+                <td />
+                <th scope="col">{t("stats.done")}</th>
+                <th scope="col">{t("stats.skipped")}</th>
+                <th scope="col">{t("stats.away")}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {kinds.map((k) => {
+                const c = r.kinds[k];
+                return (
+                  <tr key={k}>
+                    <th scope="row">{t(`result.kinds.${k}`)}</th>
+                    <td>{c.done}</td>
+                    <td>{c.skipped}</td>
+                    <td>{c.away}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+        {kinds
+          .filter((k) => r.kinds[k].done === 0 && kindEnabled(k, s))
+          .map((k) => (
+            <p key={k} className="result-try">
+              <span>{t("result.notTried", { kind: t(`result.kinds.${k}`) })}</span>
+              {startable(k) && (
+                <button className="button" onClick={() => startBreak(k)}>
+                  {t("result.tryNow")}
+                </button>
+              )}
+            </p>
+          ))}
+        <p className="muted">{t("result.periodTime", { time: formatDuration(r.breakSec, true) })}</p>
+        <p className="muted">{t("stats.awayHint")}</p>
+        {r.oldDays > 0 && <p className="muted">{t("result.oldDays")}</p>}
+      </Section>
+
+      <Section title={t("result.sitting")}>
+        <div className="stat-tiles">
+          <Tile label={t("result.avgLongest")} value={r.daysWorked ? formatDuration(r.avgLongestSittingSec, true) : "–"} />
+          <Tile label={t("stats.longDays")} value={String(r.daysOver2h)} warn={r.daysOver2h > 0} />
+        </div>
+      </Section>
+
+      <Section title={t("result.byWeek")}>
+        <p className="muted section__lead">{t("result.byWeekHint")}</p>
+        <div className="table-scroll" role="region" tabIndex={0} aria-label={t("result.byWeek")}>
+          <table className="result-table">
+            <caption className="sr-only">{t("result.byWeek")}</caption>
+            <thead>
+              <tr>
+                <th scope="col">{t("result.week")}</th>
+                <th scope="col">{t("result.share")}</th>
+                <th scope="col">{t("result.minutes")}</th>
+                {WB_AREAS.map((a) => (
+                  <th key={a} scope="col">
+                    {t(`wellbeing.${a}`)}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {r.weeks.map((wk) => (
+                <tr key={wk.start}>
+                  <th scope="row">{date.format(new Date(`${wk.start}T12:00:00`))}</th>
+                  <td>{wk.share == null ? "–" : pct.format(wk.share)}</td>
+                  <td>{formatDuration(wk.breakSec, true)}</td>
+                  {WB_AREAS.map((a) => (
+                    <td key={a}>
+                      {wk.feel ? (
+                        <span className="result-feel">
+                          <span className={`wb-dot wb-dot--${Math.round(wk.feel[a])}`} aria-hidden="true" />
+                          {num.format(wk.feel[a])}
+                        </span>
+                      ) : (
+                        "–"
+                      )}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </Section>
+
+      <Section title={t("result.compareTitle")}>
+        {r.compare ? (
+          <Comparison c={r.compare} num={num} />
+        ) : (
+          <p className="muted">{r.compareNeeds > 0 ? t("result.compareEmpty", { n: r.compareNeeds }) : t("result.compareFlat")}</p>
+        )}
+      </Section>
+    </>
+  );
+}
+
+function Comparison({ c, num }: { c: NonNullable<ResultView["compare"]>; num: Intl.NumberFormat }) {
+  const { t, i18n } = useTranslation();
+  const notable = WB_AREAS.filter((a) => Math.abs(c.fewer[a] - c.more[a]) >= NOTABLE_DIFF);
+  // Area names as they read inside a sentence, joined the way the language joins a list.
+  const list = new Intl.ListFormat(i18n.language, { type: "conjunction" });
+  const names = (areas: readonly string[]) => list.format(areas.map((a) => t(`wellbeing.inline.${a}`)));
+  const better = notable.filter((a) => c.more[a] < c.fewer[a]);
+  const worse = notable.filter((a) => c.more[a] > c.fewer[a]);
+  return (
+    <>
+      <div className="table-scroll" role="region" tabIndex={0} aria-label={t("result.compareTitle")}>
+        <table className="result-table">
+          <caption className="sr-only">{t("result.compareTitle")}</caption>
+          <thead>
+            <tr>
+              <td />
+              <th scope="col">{t("result.moreBreaks", { n: c.moreWeeks })}</th>
+              <th scope="col">{t("result.fewerBreaks", { n: c.fewerWeeks })}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {WB_AREAS.map((a) => (
+              <tr key={a} className={notable.includes(a) ? "result-table__notable" : ""}>
+                <th scope="row">{t(`wellbeing.${a}`)}</th>
+                <td>{num.format(c.more[a])}</td>
+                <td>{num.format(c.fewer[a])}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p>
+        {better.length > 0 && t("result.compareBetter", { areas: names(better) })}{" "}
+        {worse.length > 0 && t("result.compareWorse", { areas: names(worse) })}
+        {notable.length === 0 && t("result.compareSame")}{" "}
+        {t("result.compareNote")}
+      </p>
+    </>
+  );
+}
+
 const CATEGORIES: Category[] = ["work", "communication", "entertainment", "other"];
 const APP_PERIODS = [1, 7, 30, 90] as const;
 
@@ -507,28 +748,34 @@ function WellbeingChart({ log }: { log: Log }) {
       {entries.length === 0 ? (
         <p className="muted">{t("wellbeing.empty")}</p>
       ) : (
+        <div className="table-scroll" role="region" tabIndex={0} aria-label={t("wellbeing.chartTitle")}>
         <table className="wb-table">
+          <caption className="sr-only">{t("wellbeing.chartTitle")}</caption>
           <thead>
             <tr>
-              <th />
+              <td />
               {entries.map(([d]) => (
-                <th key={d}>{date.format(new Date(`${d}T12:00:00`))}</th>
+                <th key={d} scope="col">{date.format(new Date(`${d}T12:00:00`))}</th>
               ))}
             </tr>
           </thead>
           <tbody>
             {WB_KEYS.map((k) => (
               <tr key={k}>
-                <th>{t(`wellbeing.${k}`)}</th>
+                <th scope="row">{t(`wellbeing.${k}`)}</th>
                 {entries.map(([d, v]) => (
                   <td key={d}>
-                    <span className={`wb-dot wb-dot--${v[k]}`} title={t(`wellbeing.level${v[k]}`)} />
+                    <span className={`wb-dot wb-dot--${v[k]}`} title={t(`wellbeing.level${v[k]}`)}>
+                      <span aria-hidden="true">{v[k]}</span>
+                      <span className="sr-only">{t(`wellbeing.level${v[k]}`)}</span>
+                    </span>
                   </td>
                 ))}
               </tr>
             ))}
           </tbody>
         </table>
+        </div>
       )}
     </Section>
   );

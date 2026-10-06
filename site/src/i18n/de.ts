@@ -125,7 +125,7 @@ const de: Dict = {
     stats: [
       "Zeit am Computer und die längste Zeit am Stück im Sitzen",
       "Serien, eine Jahresübersicht und Erfolge",
-      "Ein wöchentlicher Selbstcheck: Augen, Nacken, Rücken, Hände",
+      "Ein kurzer Selbstcheck am Abend und eine Seite „Ergebnis“, die zeigt, was Sie getan haben und wie es Ihnen ging",
       "Zeit pro Programm, nur nach Programmnamen",
     ],
     statsDemo: { today: "Heute am Computer", longest: "Längstes Sitzen am Stück", breaks: "Gemachte Pausen", streak: "Tage in Folge", todayValue: "6 Std. 40 Min.", longestValue: "52 Min." },
@@ -143,7 +143,7 @@ const de: Dict = {
       { q: "Ersetzt die App einen Arzt?", a: "Nein. Die App verringert Beschwerden und Ermüdung durch langes Sitzen. Sie behandelt nichts. Wenn etwas wehtut, nicht vergeht oder Sie im Alltag einschränkt, gehen Sie zum Arzt. In jedem Bereich der App steht, wann Sie zum Arzt gehen sollten." },
       { q: "Unterbricht die App meine Anrufe?", a: "Nein. Wenn ein anderes Programm Kamera oder Mikrofon nutzt, warten die Erinnerungen. Genauso im Vollbild und im Modus „Nicht stören“." },
       { q: "Kann ich die Abstände ändern?", a: "Ja. Es gibt Voreinstellungen: Empfohlen (20 und 45 Minuten), Pomodoro 25/5, Stündlich und Eigene." },
-      { q: "Was weiß die App über mich?", a: "Nur das, was auf Ihrem Computer gespeichert ist: Einstellungen, Pausenstatistik, Ihr wöchentlicher Selbstcheck und die Zeit pro Programm. Nichts davon wird irgendwohin gesendet. Sie können alles exportieren oder löschen." },
+      { q: "Was weiß die App über mich?", a: "Nur das, was auf Ihrem Computer gespeichert ist: Einstellungen, Pausenstatistik, Ihre Antworten im Selbstcheck und die Zeit pro Programm. Nichts davon wird irgendwohin gesendet. Sie können alles exportieren oder löschen." },
       { q: "Auf meinem Arbeitscomputer darf ich keine Apps installieren.", a: "Nutzen Sie die Browser-Version: Lassen Sie einen Tab offen, dann zeigt er alle 20 Minuten eine Pause mit denselben Übungen." },
       { q: "Welche Sprachen?", a: "15: Englisch, Russisch, Ukrainisch, Kasachisch, Belarussisch, Usbekisch, Armenisch, Georgisch, Aserbaidschanisch, Deutsch, Spanisch, Französisch, Portugiesisch (Brasilien), Türkisch und vereinfachtes Chinesisch." },
       { q: "Wie kann ich das Projekt unterstützen?", a: "Die App ist kostenlos und bleibt es. Unterstützung ist freiwillig und schaltet nichts frei. Wenn Sie Danke sagen möchten, geht das über CloudTips mit einer russischen Bankkarte oder SBP oder über Boosty mit einer Karte aus jedem Land.", link: "So unterstützen Sie den Entwickler" },

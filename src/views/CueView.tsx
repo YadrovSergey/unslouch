@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { openUrl } from "@tauri-apps/plugin-opener";
-import { closeCue, cueReady, getAppInfo, reminderAnswer, waterDrunk } from "../api";
+import { AppInfo, closeCue, cueReady, getAppInfo, reminderAnswer, waterDrunk } from "../api";
+import { WellbeingForm } from "./WellbeingForm";
 import { playCue } from "../sound";
 
 const WATER_VISIBLE_MS = 15000;
@@ -17,6 +18,7 @@ export function CueView({ params }: { params: URLSearchParams }) {
     cueReady();
   }, [sound]);
   if (cue === "water") return <WaterCard cis={params.get("cis") === "1"} />;
+  if (cue === "wellbeing") return <WellbeingCard />;
   if (cue === "reminder") return <ReminderCard id={params.get("rid") ?? ""} preview={params.get("preview") === "1"} />;
   return <EdgeCue cue={cue} sec={Number(params.get("sec") ?? 4)} />;
 }
@@ -81,6 +83,26 @@ function WaterCard({ cis }: { cis: boolean }) {
           </button>
         </div>
       </div>
+    </div>
+  );
+}
+
+/** The evening questions in a card in the corner. It never takes the focus: the user may be typing. */
+function WellbeingCard() {
+  const [info, setInfo] = useState<AppInfo | null>(null);
+  useEffect(() => {
+    getAppInfo().then(setInfo, () => closeCue());
+  }, []);
+  if (!info) return null;
+  return (
+    <div className="water wbcard">
+      <WellbeingForm
+        variant="card"
+        weekly={info.settings.wellbeingEvery === "week"}
+        offerWeekly={info.wellbeingOfferWeekly}
+        day={info.wellbeingDay}
+        onClose={() => closeCue()}
+      />
     </div>
   );
 }

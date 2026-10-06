@@ -18,7 +18,8 @@ and doctors recommend. macOS, Windows and Linux. 15 languages. No accounts, no a
 - **Doesn't get in the way.** Reminders wait during calls (when another app uses the camera or microphone),
   in fullscreen video, in Do Not Disturb, outside work hours, and during Focus 25/50. Being away counts as a break.
 - **Statistics.** Time at the computer, the longest stretch of sitting, streaks, a year heatmap, achievements,
-  a weekly self-check for eyes, neck, back and hands, and time per program (program names only).
+  an evening self-check for eyes, neck, back and hands with a "Result" page that sets it next to the breaks
+  you did, and time per program (program names only).
 - **Honest health texts.** Every section has "Why this", its sources and "when to see a doctor".
   See [docs/science.en.md](docs/science.en.md).
 
@@ -157,7 +158,7 @@ Linux, 15 языков. Без аккаунтов, без сбора данны�
 - **Статистика:**
   - время за компьютером и самый долгий отрезок сидя;
   - серии дней, карта года, достижения;
-  - самочувствие по неделям;
+  - самочувствие по вечерам и страница «Результат»: что сделано и как вы себя чувствовали по неделям;
   - время по программам (только названия).
 - **Честные тексты о здоровье:** у каждого раздела «Зачем это», источники и «когда к врачу».
   Подробно: [docs/science.ru.md](docs/science.ru.md).

@@ -1,6 +1,6 @@
 # Unslouch Privacy Policy
 
-Effective: 29 September 2026.
+Effective: 6 October 2026.
 
 In short: the app sends nothing about you to us or to anyone else. There are no accounts, ad
 networks, analytics, telemetry or crash reports. Everything the app remembers is stored in files
@@ -28,10 +28,13 @@ sent anywhere.
 
 | File | Contents |
 |---|---|
-| `settings.json` | your settings: intervals, enabled reminders, work hours, language, and your own reminders with their text (for example, "pills"), times and days |
-| `stats.json` | breaks per day, time at the computer, longest sitting stretch, glasses of water. Streaks and achievements are calculated from this on the fly and not stored separately |
+| `settings.json` | your settings: intervals, enabled reminders, work hours, language, and your own reminders with their text (for example, "pills"), times and days. Also service marks: the day you last put off the wellbeing questions and how many times in a row |
+| `stats.json` | breaks per day and per kind: done, skipped, and the ones that came while you were away; time spent on breaks, time at the computer, longest sitting stretch, glasses of water. Streaks, achievements and the Result page are calculated from this on the fly and not stored separately |
 | `wellbeing.json` | your self-ratings (0 to 3) for eyes, neck, back and hands by day, and the notes you write to them |
 | `usage.json` | time per program: only the name of the program in the active window |
+
+The files are not encrypted: anyone with access to your user account can read them, and they go into
+your backups (Time Machine and the like) together with your other files.
 
 Where the files live:
 

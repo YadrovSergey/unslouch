@@ -76,8 +76,8 @@ fn raise_above_menu_bar(win: &WebviewWindow) {
 #[cfg(not(target_os = "macos"))]
 fn raise_above_menu_bar(_: &WebviewWindow) {}
 
-/// Returns how many windows were opened.
-pub fn show_break(app: &AppHandle, info: BreakInfo, lang: &str, sound: bool, tip: usize) -> usize {
+/// Returns how many windows were opened. `confirm`: seconds the page waits for "Did it work out?", 0 = don't ask.
+pub fn show_break(app: &AppHandle, info: BreakInfo, lang: &str, sound: bool, tip: usize, confirm: u64) -> usize {
     close_prefix(app, "break-");
     // Gentle cues go; the user's own reminder cards wait hidden and come back when the break ends.
     for (label, win) in app.webview_windows() {
@@ -99,7 +99,7 @@ pub fn show_break(app: &AppHandle, info: BreakInfo, lang: &str, sound: bool, tip
     let mut opened = 0;
     for (i, (monitor, primary)) in monitors(app).into_iter().enumerate() {
         let url = format!(
-            "index.html?view=break&kind={kind}&dur={}&rot={}&primary={}&sound={}&tip={tip}&lang={lang}",
+            "index.html?view=break&kind={kind}&dur={}&rot={}&primary={}&sound={}&tip={tip}&confirm={confirm}&lang={lang}",
             info.duration_sec, info.rotation, primary as u8, (sound && primary) as u8,
         );
         let Ok(builder) = cover_monitor(app, format!("break-{id}-{i}"), url) else { continue };
@@ -226,6 +226,44 @@ pub fn show_cue(app: &AppHandle, cue: Cue, lang: &str, is_cis: bool, theme: &str
     }
 }
 
+const WELLBEING_W: f64 = 460.0;
+const WELLBEING_H: f64 = 470.0;
+
+/// The evening questions: a card in the corner of the main monitor that stays until answered. It never takes
+/// the focus (the user may be typing), and like a reminder card it hides for a break and comes back after it.
+pub const WELLBEING_LABEL: &str = "cue-rem-wellbeing";
+
+pub fn show_wellbeing(app: &AppHandle, lang: &str, theme: &str) {
+    let label = WELLBEING_LABEL;
+    if app.get_webview_window(label).is_some() || app.webview_windows().keys().any(|l| l.starts_with("break-")) {
+        return;
+    }
+    let Some((monitor, _)) = monitors(app).into_iter().find(|(_, p)| *p) else { return };
+    let scale = monitor.scale_factor();
+    let pos = monitor.position().to_logical::<f64>(scale);
+    let size = monitor.size().to_logical::<f64>(scale);
+    let margin = 24.0;
+    let url = format!("index.html?view=cue&cue=wellbeing&lang={lang}&theme={theme}");
+    let win = WebviewWindowBuilder::new(app, label, WebviewUrl::App(url.into()))
+        .title("Unslouch")
+        // Top right: the water and reminder cards stack up from the bottom right corner.
+        .position(pos.x + size.width - WELLBEING_W - margin, pos.y + margin * 2.0)
+        .inner_size(WELLBEING_W, WELLBEING_H)
+        .decorations(false)
+        .resizable(false)
+        .always_on_top(true)
+        .skip_taskbar(true)
+        .transparent(true)
+        .shadow(false)
+        .focused(false)
+        .accept_first_mouse(true)
+        .visible_on_all_workspaces(true)
+        .build();
+    if let Ok(win) = win {
+        raise_above_menu_bar(&win);
+    }
+}
+
 const REMINDER_W: f64 = 380.0;
 const REMINDER_H: f64 = 170.0;
 
@@ -291,18 +329,40 @@ pub fn show_settings(app: &AppHandle, tab: &str) {
         let _ = win.eval(&format!("window.location.hash = '{tab}'"));
         let _ = win.show();
         let _ = win.unminimize();
+        activate_app(&win);
         let _ = win.set_focus();
         return;
     }
     let url = format!("index.html?view=settings#{tab}");
-    let _ = WebviewWindowBuilder::new(app, "settings", WebviewUrl::App(url.into()))
+    let built = WebviewWindowBuilder::new(app, "settings", WebviewUrl::App(url.into()))
         .title("Unslouch")
         .inner_size(640.0, 760.0)
         .min_inner_size(480.0, 560.0)
         .center()
         .focused(true)
         .build();
+    // The app lives in the tray (Accessory on macOS) and is not active when a menu item is picked: a new window
+    // would open behind the frontmost app, so the first click on "Statistics" seemed to do nothing.
+    if let Ok(win) = built {
+        let _ = win.show();
+        activate_app(&win);
+        let _ = win.set_focus();
+    }
 }
+
+#[cfg(target_os = "macos")]
+fn activate_app(_: &WebviewWindow) {
+    use objc2::{class, msg_send, runtime::AnyObject};
+    unsafe {
+        let ns_app: *mut AnyObject = msg_send![class!(NSApplication), sharedApplication];
+        if !ns_app.is_null() {
+            let _: () = msg_send![&*ns_app, activateIgnoringOtherApps: true];
+        }
+    }
+}
+
+#[cfg(not(target_os = "macos"))]
+fn activate_app(_: &WebviewWindow) {}
 
 pub fn close_prefix(app: &AppHandle, prefix: &str) {
     for (label, win) in app.webview_windows() {

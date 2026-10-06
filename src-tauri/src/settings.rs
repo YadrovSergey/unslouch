@@ -1,3 +1,4 @@
+use crate::scheduler::{BreakKind, BreakResult};
 use serde::{Deserialize, Serialize};
 use std::collections::BTreeMap;
 use std::path::{Path, PathBuf};
@@ -71,6 +72,17 @@ pub struct Settings {
     pub work_start: String,
     pub work_end: String,
 
+    /// After the countdown the break waits for "Done" or "Not this time"; no answer means the user was away.
+    /// Off: the break counts as done when the countdown ends, as before 0.1.14.
+    pub confirm_done: bool,
+    /// "day" | "week": how often the evening wellbeing questions come.
+    pub wellbeing_every: String,
+    /// The work day ("2026-10-06") whose wellbeing questions were put off with "Not now".
+    pub wellbeing_dismissed: Option<String>,
+    /// "Not now" in a row: after three the questions offer to come once a week, once.
+    pub wellbeing_later: u32,
+    pub wellbeing_weekly_offered: bool,
+
     pub snooze_min: u32,
     /// Away from the computer this long counts as having got up.
     pub idle_reset_min: u32,
@@ -124,6 +136,11 @@ impl Default for Settings {
             work_days: vec![1, 2, 3, 4, 5],
             work_start: "09:00".into(),
             work_end: "19:00".into(),
+            confirm_done: true,
+            wellbeing_every: "day".into(),
+            wellbeing_dismissed: None,
+            wellbeing_later: 0,
+            wellbeing_weekly_offered: false,
             snooze_min: 5,
             idle_reset_min: 5,
             pause_on_calls: true,
@@ -185,17 +202,53 @@ impl Settings {
         if !["system", "light", "dark"].contains(&self.theme.as_str()) {
             self.theme = d.theme;
         }
+        if !["day", "week"].contains(&self.wellbeing_every.as_str()) {
+            self.wellbeing_every = d.wellbeing_every;
+        }
         self
     }
 }
 
+/// One kind of break in a day: done, skipped, or nobody answered (away).
+#[derive(Serialize, Deserialize, Clone, Copy, Debug, Default, PartialEq)]
+#[serde(default, rename_all = "camelCase")]
+pub struct KindCount {
+    pub done: u32,
+    pub skipped: u32,
+    pub away: u32,
+}
+
+#[derive(Serialize, Deserialize, Clone, Copy, Debug, Default, PartialEq)]
+#[serde(default, rename_all = "camelCase")]
+pub struct KindStats {
+    pub micro: KindCount,
+    pub movement: KindCount,
+    pub long: KindCount,
+    pub neck: KindCount,
+    pub breathing: KindCount,
+}
+
+/// `DayStats::v` of days counted with "Did it work out?": their "done" means the user said so.
+pub const STATS_CONFIRMED: u8 = 2;
+/// One break never adds more than this to the time on breaks, whatever the page says.
+const MAX_BREAK_SEC: u64 = 2 * 60 * 60;
+
 #[derive(Serialize, Deserialize, Clone, Copy, Debug, Default, PartialEq)]
 #[serde(default, rename_all = "camelCase")]
 pub struct DayStats {
-    /// Breaks of any kind finished to the end.
+    /// Breaks of any kind finished to the end (since 0.1.14 with confirmation: the user said "Done").
     pub done: u32,
     pub skipped: u32,
     pub postponed: u32,
+    /// Nobody answered and nobody was at the computer, or the user was away when the break fell due.
+    /// Neither done nor skipped: it stays out of the share of breaks done.
+    pub away: u32,
+    /// Seconds of breaks done.
+    pub break_sec: u64,
+    /// Since 0.1.14, per kind of break. Empty on older days.
+    pub kinds: KindStats,
+    /// `STATS_CONFIRMED` on days counted with confirmation; 0 on older days.
+    pub v: u8,
     pub micro_done: u32,
     pub movement_done: u32,
     pub water: u32,
@@ -212,6 +265,45 @@ pub struct DayStats {
 
 /// Day ("2026-09-27") → counters.
 pub type Stats = BTreeMap<String, DayStats>;
+
+impl DayStats {
+    /// A break finished with `result`. `sec`: how long it really took (done breaks only). `confirmed`: the
+    /// break screen asked "Did it work out?".
+    pub fn record(&mut self, kind: BreakKind, result: BreakResult, sec: u64, confirmed: bool) {
+        let count = match kind {
+            BreakKind::Micro => &mut self.kinds.micro,
+            BreakKind::Movement => &mut self.kinds.movement,
+            BreakKind::Long => &mut self.kinds.long,
+            BreakKind::NeckStrength => &mut self.kinds.neck,
+            BreakKind::Breathing => &mut self.kinds.breathing,
+            BreakKind::EndOfDay => return,
+        };
+        match result {
+            BreakResult::Done => {
+                count.done += 1;
+                self.done += 1;
+                self.break_sec += sec.min(MAX_BREAK_SEC);
+                match kind {
+                    BreakKind::Micro => self.micro_done += 1,
+                    BreakKind::Movement | BreakKind::Long => self.movement_done += 1,
+                    _ => {}
+                }
+            }
+            BreakResult::Skipped => {
+                count.skipped += 1;
+                self.skipped += 1;
+            }
+            BreakResult::Away => {
+                count.away += 1;
+                self.away += 1;
+            }
+            BreakResult::Postponed => self.postponed += 1,
+        }
+        if confirmed {
+            self.v = STATS_CONFIRMED;
+        }
+    }
+}
 
 /// Day ("2026-09-29") → answers 0..=3 for eyes, neck, back, hands and a short note. Before 0.1.8 the check was
 /// weekly and keyed by the week's Monday: those entries read as entries of that Monday.
@@ -283,6 +375,37 @@ mod tests {
         let s: Settings = serde_json::from_str(r#"{"breakIntervalMin": 20, "language": "ru"}"#).unwrap();
         assert_eq!(s.language.as_deref(), Some("ru"));
         assert_eq!(s.micro_interval_min, 20);
+    }
+
+    #[test]
+    fn records_breaks_by_kind() {
+        let mut d = DayStats::default();
+        d.record(BreakKind::Micro, BreakResult::Done, 45, true);
+        d.record(BreakKind::Movement, BreakResult::Away, 0, true);
+        d.record(BreakKind::Breathing, BreakResult::Skipped, 0, true);
+        d.record(BreakKind::Micro, BreakResult::Postponed, 0, true);
+        d.record(BreakKind::EndOfDay, BreakResult::Done, 0, true);
+        assert_eq!((d.done, d.skipped, d.away, d.postponed), (1, 1, 1, 1));
+        assert_eq!(d.kinds.micro, KindCount { done: 1, skipped: 0, away: 0 });
+        assert_eq!(d.kinds.movement.away, 1);
+        assert_eq!(d.kinds.breathing.skipped, 1);
+        assert_eq!((d.micro_done, d.break_sec, d.v), (1, 45, STATS_CONFIRMED));
+        d.record(BreakKind::Long, BreakResult::Done, 99_999, true);
+        assert_eq!(d.break_sec, 45 + MAX_BREAK_SEC);
+        assert_eq!(d.movement_done, 1);
+    }
+
+    #[test]
+    fn old_stats_file_still_loads() {
+        let stats: Stats = serde_json::from_str(
+            r#"{"2026-09-01": {"done": 7, "skipped": 2, "postponed": 0, "microDone": 5, "movementDone": 2,
+                "water": 1, "activeSec": 3600, "longestSittingSec": 1200, "sittingOver2h": 0,
+                "firstActiveMin": 540, "lastActiveMin": 1080}}"#,
+        )
+        .unwrap();
+        let d = stats["2026-09-01"];
+        assert_eq!((d.done, d.away, d.break_sec, d.v), (7, 0, 0, 0));
+        assert_eq!(d.kinds, KindStats::default());
     }
 
     #[test]

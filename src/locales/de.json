@@ -42,7 +42,8 @@
     "downloading": "Update wird geladen… {{pct}}%",
     "downloadingNoPct": "Update wird geladen…",
     "installing": "Update wird installiert…",
-    "installFailed": "Das Update konnte nicht installiert werden. Prüfen Sie die Internetverbindung und versuchen Sie es im Menü erneut."
+    "installFailed": "Das Update konnte nicht installiert werden. Prüfen Sie die Internetverbindung und versuchen Sie es im Menü erneut.",
+    "wellbeing": "Wie war Ihr Tag?"
   },
   "time": {
     "hm": "{{h}} Std. {{m}} Min.",
@@ -80,7 +81,15 @@
       "Wechseln Sie oft die Haltung. Die beste Haltung ist die nächste.",
       "Legen Sie die Maus direkt neben die Tastatur, damit Sie nicht nach ihr greifen müssen.",
       "Gehen Sie mittags mindestens 10 Minuten ins Tageslicht."
-    ]
+    ],
+    "confirmTitle": "Die Pause ist vorbei. Hat es geklappt?",
+    "confirmDone": "Erledigt",
+    "confirmNot": "Diesmal nicht",
+    "confirmHint": "Wenigstens einen Teil geschafft? Drücken Sie „Erledigt“. Enter: erledigt, Esc: diesmal nicht.",
+    "confirmPain": "Wenn eine Bewegung wehgetan hat, lassen Sie sie nächstes Mal weg.",
+    "neckLoad": "Wenn Sie ein Fitnessband oder eine 0,5-l-Wasserflasche haben, nehmen Sie es in die Hand: So arbeiten die Muskeln mehr. Ohne geht es auch.",
+    "neckMore": "Sie machen die Übungen regelmäßig, deshalb gibt es jetzt ein paar Wiederholungen mehr.",
+    "neckHeavier": "Wenn es leicht wird, nehmen Sie ein festeres Band oder eine größere Flasche. Nie gegen Schmerzen."
   },
   "endOfDay": {
     "title": "Der Arbeitstag ist vorbei",
@@ -92,22 +101,46 @@
     "finish": "Feierabend"
   },
   "wellbeing": {
-    "title": "Wie war diese Woche?",
-    "hint": "Vier Fragen einmal pro Woche. Ihre Antworten zeigen, ob die Pausen gerade Ihnen helfen. Das ist kein medizinischer Test.",
+    "title": "Wie war Ihr Tag?",
+    "hint": "Markieren Sie, was Sie heute gestört hat. Ihre Antworten bleiben nur auf Ihrem Computer. Das ist kein medizinischer Test.",
     "eyes": "Augen",
     "neck": "Nacken und Schultern",
     "back": "Rücken",
     "hands": "Hände",
-    "level0": "Gut",
+    "level0": "Alles gut",
     "level1": "Etwas",
     "level2": "Spürbar",
     "level3": "Stark",
     "skip": "Nicht jetzt",
     "save": "Speichern",
     "chartTitle": "Befinden",
-    "chartHint": "Ihre Antworten pro Tag. Grün: gut, rot: stört stark.",
-    "empty": "Noch keine Einträge. Fügen Sie einen im Tagebuch hinzu oder beantworten Sie die Fragen in einer Pause.",
-    "add": "Eintrag hinzufügen"
+    "chartHint": "Ihre Antworten pro Tag: 0 alles gut, 3 stark.",
+    "empty": "Noch keine Einträge. Beantworten Sie abends die Fragen oder fügen Sie einen Eintrag im Tagebuch hinzu.",
+    "add": "Eintrag hinzufügen",
+    "titleWeek": "Wie war Ihre Woche?",
+    "hintWeek": "Wie sehr hat Sie das diese Woche gestört? Ihre Antworten bleiben auf Ihrem Computer. Das ist kein medizinischer Test.",
+    "allGood": "Nichts stört mich",
+    "incomplete": "Markieren Sie alle vier Zeilen oder drücken Sie „Nichts stört mich“.",
+    "saved": "Gespeichert, danke!",
+    "todaySummary": "Pausen heute: {{n}}, insgesamt {{time}}.",
+    "close": "Schließen",
+    "offerWeekly": "Abends ist nicht immer Zeit für Fragen. Lieber einmal pro Woche fragen?",
+    "offerWeeklyYes": "Einmal pro Woche",
+    "offerWeeklyNo": "Weiter jeden Abend",
+    "doctorHint": {
+      "eyes": "Ihre Augen machen Ihnen schon eine Weile zu schaffen. Wenn das anhält, lassen Sie Ihre Augen untersuchen. Gehen Sie sofort zum Arzt, wenn ein Auge schmerzt oder rot wird, Sie doppelt sehen oder Ihre Sicht schlechter wird.",
+      "neck": "Nacken und Schultern machen Ihnen schon eine Weile zu schaffen. Wenn das anhält oder Sie bei der Arbeit oder beim Schlafen stört, gehen Sie zum Arzt. Sofort, wenn Schmerzen oder Taubheit in den Arm ausstrahlen oder der Arm schwach wird.",
+      "back": "Ihr Rücken macht Ihnen schon eine Weile zu schaffen. Wenn das anhält oder Sie bei der Arbeit oder beim Schlafen stört, gehen Sie zum Arzt. Sofort, wenn die Leistengegend taub wird, die Beine schwach werden oder die Schmerzen nachts stark sind.",
+      "hands": "Handgelenke und Hände machen Ihnen schon eine Weile zu schaffen. Wenn das anhält oder Sie bei der Arbeit oder beim Schlafen stört, gehen Sie zum Arzt, besonders wenn Daumen, Zeige- und Mittelfinger taub werden, öfter nachts, oder Ihnen Dinge aus der Hand fallen."
+    },
+    "prefilled": "Wo „Alles gut“ oder „Etwas“ stand, sind Ihre letzten Antworten eingetragen. Ändern Sie sie, wenn es heute anders war.",
+    "doctorPain": "Solange es Sie stört, machen Sie die Übungen nur ohne Schmerzen und lassen Sie weg, was wehtut.",
+    "inline": {
+      "eyes": "Augen",
+      "neck": "Nacken und Schultern",
+      "back": "Rücken",
+      "hands": "Handgelenke und Hände"
+    }
   },
   "cue": {
     "blink": "Blinzeln",
@@ -176,9 +209,9 @@
     "waterHint": "Eine Karte in der Ecke, die von selbst verschwindet",
     "dailySection": "Einmal am Tag",
     "neckDaily": "Zwei Minuten für Nacken und Schultern",
-    "neckDailyHint": "Krafttraining nach 11:00. Studien zeigen: 2 Minuten am Tag verringern Nackenschmerzen",
+    "neckDailyHint": "Krafttraining ein paar Stunden nach Beginn Ihres Arbeitstags. Studien zeigen: 2 Minuten am Tag verringern Nackenschmerzen",
     "breathingDaily": "Eine Minute atmen",
-    "breathingDailyHint": "Nach 15:00, anstelle einer Augenpause",
+    "breathingDailyHint": "Sechs Stunden nach Beginn Ihres Arbeitstags, anstelle einer Augenpause",
     "endOfDay": "Ende des Arbeitstags",
     "endOfDayHint": "Erinnert ans Aufhören und zeigt die Tagesbilanz",
     "at": "Um",
@@ -235,7 +268,14 @@
       "schedule": "Zeitplan",
       "general": "Allgemein",
       "reminders": "Erinnerungen"
-    }
+    },
+    "honestSection": "Nach der Pause",
+    "confirmDone": "Fragen, ob es geklappt hat",
+    "confirmDoneHint": "In die Statistik kommt nur, was Sie markieren. Enter: erledigt, Esc: diesmal nicht. Ohne Antwort in 5 Minuten wird die Pause als „Abwesend“ erfasst oder als übersprungen, wenn Sie in der Zeit gearbeitet haben.",
+    "wellbeingEvery": "Fragen zum Befinden",
+    "wellbeingEveryHint": "Vier kurze Fragen am Ende des Arbeitstags. Auf der Seite „Ergebnis“ in der Statistik können Sie sie mit Ihren Pausen vergleichen.",
+    "wellbeingDay": "Jeden Abend",
+    "wellbeingWeek": "Einmal pro Woche"
   },
   "data": {
     "title": "Auf einen anderen Computer übertragen",
@@ -303,7 +343,8 @@
       "overview": "Übersicht",
       "apps": "Programme",
       "wellbeing": "Befinden",
-      "achievements": "Erfolge"
+      "achievements": "Erfolge",
+      "result": "Ergebnis"
     },
     "today": "Heute",
     "done": "Erledigt",
@@ -348,7 +389,47 @@
     "timeByDay": "Zeit am Computer",
     "workday": "Arbeitsbeginn und -ende",
     "breaksByDay": "Pausen pro Tag",
-    "inPrograms": "In Programmen erfasst"
+    "inPrograms": "In Programmen erfasst",
+    "away": "Abwesend",
+    "awayHint": "„Abwesend“: Die Pause kam, aber niemand war am Computer. Diese Pausen zählen nicht zum Anteil der gemachten Pausen."
+  },
+  "result": {
+    "thisWeek": "Diese Woche",
+    "done": "Pausen gemacht",
+    "stoodUp": "Zum Bewegen aufgestanden",
+    "neckDays": "Tage mit Nackenübungen",
+    "breathing": "Atempausen",
+    "timeForYou": "Zeit für Pausen",
+    "lastWeek": "Letzte Woche: Pausen {{done}}, aufgestanden {{stood}}, Zeit für Pausen {{time}}.",
+    "awayNote": "Pausen, während Sie weg waren: {{n}}. Auch das ist Erholung, nur zählen diese Pausen nicht als erledigt.",
+    "byKind": "Nach Art der Pause",
+    "kinds": {
+      "micro": "In die Ferne schauen",
+      "movement": "Aufstehen und bewegen",
+      "long": "Lange Pause",
+      "neck": "Nacken und Schultern",
+      "breathing": "Atmen"
+    },
+    "notTried": "In diesem Zeitraum noch nicht ausprobiert: „{{kind}}“.",
+    "tryNow": "Jetzt ausprobieren",
+    "periodTime": "Zeit für Pausen in diesem Zeitraum: {{time}}.",
+    "oldDays": "Tage vor dem Update wurden noch auf die alte Art gezählt: ohne Aufteilung nach Art und ohne „Hat es geklappt?“.",
+    "sitting": "Sitzen",
+    "avgLongest": "Längstes Sitzen, im Schnitt pro Tag",
+    "byWeek": "Nach Wochen",
+    "byWeekHint": "Anteil der gemachten Pausen, Zeit dafür und Ihre Abendantworten im Wochenschnitt: 0 alles gut, 3 stark.",
+    "week": "Woche",
+    "share": "Erledigt",
+    "minutes": "Zeit",
+    "compareTitle": "Wochen im Vergleich",
+    "compareEmpty": "Der Vergleich erscheint, sobald es sechs Wochen mit Abendantworten gibt. Noch fehlende Wochen: {{n}}.",
+    "moreBreaks": "Mehr Pausen gemacht ({{n}} Wo.)",
+    "fewerBreaks": "Weniger Pausen gemacht ({{n}} Wo.)",
+    "compareBetter": "In Wochen, in denen Sie mehr Ihrer Pausen gemacht haben, haben Sie diese Bereiche im Schnitt weniger gestört: {{areas}}.",
+    "compareWorse": "In Wochen, in denen Sie mehr Ihrer Pausen gemacht haben, haben Sie diese Bereiche im Schnitt stärker gestört: {{areas}}.",
+    "compareSame": "Noch kein deutlicher Unterschied.",
+    "compareNote": "Das sind Ihre Antworten, kein Beweis: Auch Arbeitslast, Schlaf und Urlaub beeinflussen, wie Sie sich fühlen.",
+    "compareFlat": "Sie haben Ihre Pausen jede Woche gleich oft gemacht, es gibt also noch nichts zu vergleichen."
   },
   "achievements": {
     "title": "Erfolge",

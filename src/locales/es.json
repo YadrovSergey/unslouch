@@ -42,7 +42,8 @@
     "downloading": "Descargando la actualización… {{pct}}%",
     "downloadingNoPct": "Descargando la actualización…",
     "installing": "Instalando la actualización…",
-    "installFailed": "No se pudo instalar la actualización. Comprueba la conexión e inténtalo de nuevo desde el menú."
+    "installFailed": "No se pudo instalar la actualización. Comprueba la conexión e inténtalo de nuevo desde el menú.",
+    "wellbeing": "¿Qué tal el día?"
   },
   "time": {
     "hm": "{{h}} h {{m}} min",
@@ -82,7 +83,15 @@
       "Cambia de postura a menudo. La mejor postura es la siguiente.",
       "Ten el mouse junto al teclado para no tener que estirarte.",
       "A la hora de comer, sal a la luz del día al menos 10 minutos."
-    ]
+    ],
+    "confirmTitle": "Se acabó la pausa. ¿Pudiste hacerla?",
+    "confirmDone": "Hecho",
+    "confirmNot": "Esta vez no",
+    "confirmHint": "¿Hiciste al menos una parte? Pulsa «Hecho». Enter: hecho, Esc: esta vez no.",
+    "confirmPain": "Si algún movimiento te dolió, sáltalo la próxima vez.",
+    "neckLoad": "Si tienes una banda elástica o una botella de agua de 0,5 l, sujétala: tus músculos trabajarán más. Sin ellas también vale.",
+    "neckMore": "Haces la rutina con regularidad, así que ahora hay algunas repeticiones más.",
+    "neckHeavier": "Si te resulta fácil, usa una banda más firme o una botella más grande. Nunca con dolor."
   },
   "endOfDay": {
     "title": "Terminó la jornada",
@@ -94,22 +103,46 @@
     "finish": "Terminé"
   },
   "wellbeing": {
-    "title": "¿Qué tal esta semana?",
-    "hint": "Cuatro preguntas una vez por semana. Tus respuestas muestran si las pausas te ayudan a ti en particular. No es una prueba médica.",
+    "title": "¿Qué tal el día?",
+    "hint": "Marca lo que te molestó hoy. Tus respuestas se quedan solo en tu computadora. No es una prueba médica.",
     "eyes": "Ojos",
     "neck": "Cuello y hombros",
     "back": "Espalda",
     "hands": "Manos",
-    "level0": "Bien",
+    "level0": "Todo bien",
     "level1": "Un poco",
     "level2": "Bastante",
     "level3": "Mucho",
     "skip": "Ahora no",
     "save": "Guardar",
     "chartTitle": "Bienestar",
-    "chartHint": "Tus respuestas por día. Verde: bien, rojo: molesta mucho.",
-    "empty": "Aún no hay registros. Añade uno en el diario o responde las preguntas en una pausa.",
-    "add": "Añadir registro"
+    "chartHint": "Tus respuestas por día: 0 todo bien, 3 mucho.",
+    "empty": "Aún no hay registros. Responde las preguntas de la tarde o añade un registro en el diario.",
+    "add": "Añadir registro",
+    "titleWeek": "¿Qué tal la semana?",
+    "hintWeek": "¿Cuánto te molestó esta semana? Tus respuestas se quedan en tu computadora. No es una prueba médica.",
+    "allGood": "No me molesta nada",
+    "incomplete": "Marca las cuatro filas o pulsa «No me molesta nada».",
+    "saved": "Guardado, ¡gracias!",
+    "todaySummary": "Pausas hoy: {{n}}, {{time}} en total.",
+    "close": "Cerrar",
+    "offerWeekly": "Por la noche no siempre hay tiempo para preguntas. ¿Prefieres que te pregunte una vez por semana?",
+    "offerWeeklyYes": "Una vez por semana",
+    "offerWeeklyNo": "Seguir cada tarde",
+    "doctorHint": {
+      "eyes": "Los ojos te molestan desde hace un tiempo. Si sigue así, hazte revisar la vista. Ve al médico enseguida si te duele un ojo, se pone rojo, ves doble o tu vista empeora.",
+      "neck": "El cuello y los hombros te molestan desde hace un tiempo. Si sigue así o te impide trabajar o dormir, consulta a un médico. Ve enseguida si el dolor o el entumecimiento se extiende al brazo o el brazo se debilita.",
+      "back": "La espalda te molesta desde hace un tiempo. Si sigue así o te impide trabajar o dormir, consulta a un médico. Ve enseguida si se te entumece la ingle, se te debilitan las piernas o el dolor es fuerte por la noche.",
+      "hands": "Las muñecas y las manos te molestan desde hace un tiempo. Si sigue así o te impide trabajar o dormir, consulta a un médico, sobre todo si se te entumecen el pulgar, el índice y el dedo medio, más a menudo de noche, o se te caen las cosas de las manos."
+    },
+    "prefilled": "Las filas que estaban en «Todo bien» o «Un poco» muestran tus últimas respuestas. Cámbialas si hoy fue distinto.",
+    "doctorPain": "Mientras te moleste, haz los ejercicios solo sin dolor y salta lo que duela.",
+    "inline": {
+      "eyes": "ojos",
+      "neck": "cuello y hombros",
+      "back": "espalda",
+      "hands": "muñecas y manos"
+    }
   },
   "cue": {
     "blink": "Parpadea",
@@ -178,9 +211,9 @@
     "waterHint": "Una tarjeta en la esquina que desaparece sola",
     "dailySection": "Una vez al día",
     "neckDaily": "Dos minutos para cuello y hombros",
-    "neckDailyHint": "Rutina de fuerza después de las 11:00. Según los estudios, 2 minutos al día reducen el dolor de cuello",
+    "neckDailyHint": "Rutina de fuerza un par de horas después de empezar tu jornada. Según los estudios, 2 minutos al día reducen el dolor de cuello",
     "breathingDaily": "Un minuto de respiración",
-    "breathingDailyHint": "Después de las 15:00, en lugar de una pausa para los ojos",
+    "breathingDailyHint": "Seis horas después de empezar tu jornada, en lugar de una pausa para los ojos",
     "endOfDay": "Fin de la jornada",
     "endOfDayHint": "Te recuerda terminar y muestra el resumen del día",
     "at": "A las",
@@ -237,7 +270,14 @@
       "schedule": "Horario",
       "general": "General",
       "reminders": "Recordatorios"
-    }
+    },
+    "honestSection": "Después de la pausa",
+    "confirmDone": "Preguntar si pude hacerla",
+    "confirmDoneHint": "En las estadísticas entra solo lo que marques. Enter: hecho, Esc: esta vez no. Si nadie responde en 5 minutos, la pausa se registra como «Ausente», o como omitida si estabas trabajando mientras tanto.",
+    "wellbeingEvery": "Preguntas sobre bienestar",
+    "wellbeingEveryHint": "Cuatro preguntas cortas al final de la jornada. Compáralas con tus pausas en la pestaña «Resultado» de las estadísticas.",
+    "wellbeingDay": "Cada tarde",
+    "wellbeingWeek": "Una vez por semana"
   },
   "data": {
     "title": "Pasar a otra computadora",
@@ -305,7 +345,8 @@
       "overview": "Resumen",
       "apps": "Programas",
       "wellbeing": "Bienestar",
-      "achievements": "Logros"
+      "achievements": "Logros",
+      "result": "Resultado"
     },
     "today": "Hoy",
     "done": "Hechas",
@@ -350,7 +391,47 @@
     "timeByDay": "Tiempo frente a la computadora",
     "workday": "Inicio y fin del trabajo",
     "breaksByDay": "Pausas por día",
-    "inPrograms": "Contado en programas"
+    "inPrograms": "Contado en programas",
+    "away": "Ausente",
+    "awayHint": "«Ausente»: llegó la pausa, pero no había nadie frente a la computadora. Estas pausas no cuentan en el porcentaje de pausas hechas."
+  },
+  "result": {
+    "thisWeek": "Esta semana",
+    "done": "Pausas hechas",
+    "stoodUp": "Te levantaste a moverte",
+    "neckDays": "Días con minutos para el cuello",
+    "breathing": "Pausas de respiración",
+    "timeForYou": "Tiempo en pausas",
+    "lastWeek": "La semana pasada: pausas {{done}}, veces que te levantaste {{stood}}, tiempo en pausas {{time}}.",
+    "awayNote": "Pausas mientras no estabas: {{n}}. También es descanso, solo que estas pausas no cuentan como hechas.",
+    "byKind": "Por tipo de pausa",
+    "kinds": {
+      "micro": "Mirar a lo lejos",
+      "movement": "Levantarse y moverse",
+      "long": "Pausa larga",
+      "neck": "Cuello y hombros",
+      "breathing": "Respiración"
+    },
+    "notTried": "Aún no lo has probado en este periodo: «{{kind}}».",
+    "tryNow": "Probar ahora",
+    "periodTime": "Tiempo en pausas en este periodo: {{time}}.",
+    "oldDays": "Los días anteriores a la actualización se contaron a la antigua: sin separar por tipo y sin «¿Pudiste hacerla?».",
+    "sitting": "Sentado",
+    "avgLongest": "Más tiempo sentado, promedio por día",
+    "byWeek": "Por semana",
+    "byWeekHint": "Porcentaje de pausas hechas, tiempo en ellas y tus respuestas de la tarde en promedio por semana: 0 todo bien, 3 mucho.",
+    "week": "Semana",
+    "share": "Hechas",
+    "minutes": "Tiempo",
+    "compareTitle": "Comparación de semanas",
+    "compareEmpty": "La comparación aparecerá cuando haya seis semanas con respuestas de la tarde. Faltan semanas: {{n}}.",
+    "moreBreaks": "Más pausas hechas ({{n}} sem.)",
+    "fewerBreaks": "Menos pausas hechas ({{n}} sem.)",
+    "compareBetter": "En las semanas en que hiciste más de tus pausas, esto te molestó menos en promedio: {{areas}}.",
+    "compareWorse": "En las semanas en que hiciste más de tus pausas, esto te molestó más en promedio: {{areas}}.",
+    "compareSame": "Todavía no hay una diferencia clara.",
+    "compareNote": "Son tus respuestas, no una prueba: la carga de trabajo, el sueño y las vacaciones también influyen en cómo te sientes.",
+    "compareFlat": "Hiciste tus pausas con la misma frecuencia todas las semanas, así que aún no hay nada que comparar."
   },
   "achievements": {
     "title": "Logros",

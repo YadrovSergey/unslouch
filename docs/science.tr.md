@@ -95,7 +95,10 @@ için en güçlü kanıt bu kaslara yönelik güç egzersizlerindedir.
 - Mikro molalarda sırayla boyun egzersizleri yapılır: tek bir düzlemde yavaş eğilme ve dönmeler.
   Boyun çevirme (daire çizme) yok.
 - İsteğe bağlı: Andersen protokolüne göre günlük 2 dakikalık boyun ve omuz güç programı
-  (örneğin lastik bantla omuz silkme veya yana kol kaldırma).
+  (örneğin lastik bantla omuz silkme veya yana kol kaldırma). Düzenli yapıldığında tekrar sayısı
+  biraz artar, en fazla dörde kadar, ve uygulama bir lastik bant ya da küçük bir su şişesi tutmayı
+  önerir: Andersen çalışmalarında kaslar alıştıkça yük artırıldı. Program iş gününüz başladıktan
+  birkaç saat sonra gelir, gece vardiyasında da vardiyanın başından birkaç saat sonra.
 - Her 30 dakikada nazik bir "pozisyon değiştirin" işareti.
 
 ### Araştırmalar ne gösteriyor
@@ -426,8 +429,11 @@ ritüeli kafanızı işten ayırmanıza yardımcı olur.
 ### Uygulama ne yapar
 
 - İsterseniz iş gününüzün sonunda işi bitirmenizi hatırlatır.
-- Haftada bir kez gözlerinizin, boynunuzun, sırtınızın ve ellerinizin nasıl hissettiğini 0'dan 3'e
-  kadar puanlamanızı ister. Yanıtlar bilgisayarınızda kalır.
+- Her akşam (ya da isterseniz haftada bir kez) gözlerinizin, boynunuzun, sırtınızın ve
+  ellerinizin sizi ne kadar rahatsız ettiğini 0'dan 3'e kadar sorar. Yanıtlar bilgisayarınızda kalır.
+- İstatistiklerdeki "Sonuç" sayfası yanıtlarınızı yaptığınız molaların yanına koyar. Bu kendinizi
+  gözlemlemektir, neyin işe yaradığının kanıtı değildir: iş yükü, uyku ve tatil de nasıl
+  hissettiğinizi etkiler.
 
 ### Araştırmalar ne gösteriyor
 

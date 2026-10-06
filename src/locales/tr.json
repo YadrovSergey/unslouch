@@ -42,7 +42,8 @@
     "downloading": "Güncelleme indiriliyor… %{{pct}}",
     "downloadingNoPct": "Güncelleme indiriliyor…",
     "installing": "Güncelleme yükleniyor…",
-    "installFailed": "Güncelleme yüklenemedi. İnternet bağlantınızı kontrol edip menüden yeniden deneyin."
+    "installFailed": "Güncelleme yüklenemedi. İnternet bağlantınızı kontrol edip menüden yeniden deneyin.",
+    "wellbeing": "Gününüz nasıl geçti?"
   },
   "time": {
     "hm": "{{h}} sa {{m}} dk",
@@ -80,7 +81,15 @@
       "Pozisyonunuzu sık değiştirin. En iyi duruş, bir sonraki duruştur.",
       "Fareyi klavyenin yanında tutun, ona uzanmak zorunda kalmayın.",
       "Öğle arasında en az 10 dakika dışarıda gün ışığına çıkın."
-    ]
+    ],
+    "confirmTitle": "Mola bitti. Yapabildiniz mi?",
+    "confirmDone": "Yapıldı",
+    "confirmNot": "Bu sefer değil",
+    "confirmHint": "En azından bir kısmını yaptınız mı? “Yapıldı” düğmesine basın. Enter: yapıldı, Esc: bu sefer değil.",
+    "confirmPain": "Bir hareket canınızı acıttıysa bir dahaki sefere onu atlayın.",
+    "neckLoad": "Elinizde bir egzersiz bandı ya da 0,5 l'lik bir su şişesi varsa tutun: kaslarınız daha çok çalışır. Onlarsız da olur.",
+    "neckMore": "Bu egzersizleri düzenli yapıyorsunuz, bu yüzden tekrar sayısı biraz arttı.",
+    "neckHeavier": "Egzersizler kolay gelmeye başlarsa daha sıkı bir bant ya da daha büyük bir şişe alın. Ama asla ağrıya rağmen değil."
   },
   "endOfDay": {
     "title": "İş günü bitti",
@@ -92,22 +101,46 @@
     "finish": "Bitiriyorum"
   },
   "wellbeing": {
-    "title": "Bu hafta nasılsınız?",
-    "hint": "Haftada bir kez dört soru. Yanıtlarınız molaların size özellikle yardımcı olup olmadığını gösterir. Bu tıbbi bir test değildir.",
+    "title": "Gününüz nasıl geçti?",
+    "hint": "Bugün sizi neyin rahatsız ettiğini işaretleyin. Yanıtlarınız yalnızca bilgisayarınızda kalır. Bu tıbbi bir test değildir.",
     "eyes": "Gözler",
     "neck": "Boyun ve omuzlar",
     "back": "Sırt",
     "hands": "Eller",
-    "level0": "Rahatsız etmiyor",
+    "level0": "Her şey yolunda",
     "level1": "Biraz",
     "level2": "Belirgin",
     "level3": "Çok",
     "skip": "Şimdi değil",
     "save": "Kaydet",
     "chartTitle": "Durumunuz",
-    "chartHint": "Günlere göre yanıtlarınız. Yeşil: rahatsız etmiyor, kırmızı: çok rahatsız ediyor.",
-    "empty": "Henüz kayıt yok. Günlüğe ekleyin veya bir molada soruları yanıtlayın.",
-    "add": "Kayıt ekle"
+    "chartHint": "Günlere göre yanıtlarınız: 0 her şey yolunda, 3 çok.",
+    "empty": "Henüz kayıt yok. Akşam soruları yanıtlayın ya da günlüğe bir kayıt ekleyin.",
+    "add": "Kayıt ekle",
+    "titleWeek": "Haftanız nasıl geçti?",
+    "hintWeek": "Bu hafta bunlar sizi ne kadar rahatsız etti? Yanıtlarınız bilgisayarınızda kalır. Bu tıbbi bir test değildir.",
+    "allGood": "Hiçbir şey rahatsız etmiyor",
+    "incomplete": "Dört satırın hepsini işaretleyin ya da “Hiçbir şey rahatsız etmiyor” düğmesine basın.",
+    "saved": "Kaydedildi, teşekkürler!",
+    "todaySummary": "Bugünkü molalar: {{n}}, toplam {{time}}.",
+    "close": "Kapat",
+    "offerWeekly": "Akşamları sorulara her zaman vakit olmuyor. Haftada bir mi soralım?",
+    "offerWeeklyYes": "Haftada bir",
+    "offerWeeklyNo": "Her akşam sor",
+    "doctorHint": {
+      "eyes": "Gözleriniz bir süredir rahatsız ediyor. Devam ederse gözlerinizi muayene ettirin. Gözünüz ağrırsa, kızarırsa, çift görürseniz ya da görmeniz kötüleşirse hemen doktora başvurun.",
+      "neck": "Boynunuz ve omuzlarınız bir süredir rahatsız ediyor. Devam ederse ya da işinize veya uykunuza engel olursa doktora başvurun. Ağrı ya da uyuşma kolunuza yayılırsa veya kolunuz güçsüzleşirse hemen doktora başvurun.",
+      "back": "Sırtınız bir süredir rahatsız ediyor. Devam ederse ya da işinize veya uykunuza engel olursa doktora başvurun. Kasık bölgeniz uyuşursa, bacaklarınız güçsüzleşirse ya da gece ağrı şiddetliyse hemen doktora başvurun.",
+      "hands": "El bilekleriniz ve elleriniz bir süredir rahatsız ediyor. Devam ederse ya da işinize veya uykunuza engel olursa doktora başvurun; özellikle başparmak, işaret ve orta parmaklarınız, daha çok geceleri, uyuşuyorsa ya da eşyalar elinizden düşüyorsa."
+    },
+    "prefilled": "“Her şey yolunda” ya da “Biraz” olan satırlarda son yanıtlarınız duruyor. Bugün farklıysa değiştirin.",
+    "doctorPain": "Rahatsızlık sürdükçe egzersizleri yalnızca ağrısız yapın, acıtanları atlayın.",
+    "inline": {
+      "eyes": "gözler",
+      "neck": "boyun ve omuzlar",
+      "back": "sırt",
+      "hands": "el bilekleri ve eller"
+    }
   },
   "cue": {
     "blink": "Göz kırpın",
@@ -176,9 +209,9 @@
     "waterHint": "Köşede kendiliğinden kaybolan bir kart",
     "dailySection": "Günde bir kez",
     "neckDaily": "Boyun ve omuzlar için iki dakika",
-    "neckDailyHint": "Saat 11:00'den sonra güç egzersizi. Araştırmalara göre günde 2 dakika boyun ağrısını azaltır",
+    "neckDailyHint": "İş gününüz başladıktan birkaç saat sonra güç egzersizi. Araştırmalara göre günde 2 dakika boyun ağrısını azaltır",
     "breathingDaily": "Bir dakika nefes",
-    "breathingDailyHint": "Saat 15:00'ten sonra, bir göz molası yerine",
+    "breathingDailyHint": "İş gününüz başladıktan altı saat sonra, bir göz molası yerine",
     "endOfDay": "İş gününün sonu",
     "endOfDayHint": "Bitirmenizi hatırlatır ve günün özetini gösterir",
     "at": "Saat",
@@ -235,7 +268,14 @@
       "schedule": "Program",
       "general": "Genel",
       "reminders": "Hatırlatıcılar"
-    }
+    },
+    "honestSection": "Moladan sonra",
+    "confirmDone": "Yapıp yapamadığımı sor",
+    "confirmDoneHint": "İstatistiklere yalnızca işaretledikleriniz girer. Enter: yapıldı, Esc: bu sefer değil. 5 dakika içinde yanıt gelmezse mola “Uzakta” olarak, siz bu sırada çalışıyorsanız atlanmış olarak kaydedilir.",
+    "wellbeingEvery": "İyi oluş soruları",
+    "wellbeingEveryHint": "İş gününün sonunda dört kısa soru. İstatistiklerdeki “Sonuç” sayfasında bunları molalarınızla karşılaştırabilirsiniz.",
+    "wellbeingDay": "Her akşam",
+    "wellbeingWeek": "Haftada bir"
   },
   "data": {
     "title": "Başka bilgisayara taşı",
@@ -303,7 +343,8 @@
       "overview": "Genel bakış",
       "apps": "Programlar",
       "wellbeing": "İyi oluş",
-      "achievements": "Başarılar"
+      "achievements": "Başarılar",
+      "result": "Sonuç"
     },
     "today": "Bugün",
     "done": "Yapılan",
@@ -348,7 +389,47 @@
     "timeByDay": "Bilgisayar başında geçen süre",
     "workday": "İşin başlangıcı ve bitişi",
     "breaksByDay": "Günlere göre molalar",
-    "inPrograms": "Programlarda sayılan"
+    "inPrograms": "Programlarda sayılan",
+    "away": "Uzakta",
+    "awayHint": "“Uzakta”: mola geldi ama bilgisayar başında kimse yoktu. Bu molalar yapılan molaların oranına katılmaz."
+  },
+  "result": {
+    "thisWeek": "Bu hafta",
+    "done": "Yapılan molalar",
+    "stoodUp": "Kalkıp hareket etme",
+    "neckDays": "Boyun egzersizi yapılan günler",
+    "breathing": "Nefes molaları",
+    "timeForYou": "Molalara ayrılan süre",
+    "lastWeek": "Geçen hafta: molalar {{done}}, kalkıp hareket etme {{stood}}, molalara ayrılan süre {{time}}.",
+    "awayNote": "Siz yokken gelen molalar: {{n}}. Bu da dinlenmedir, yalnızca bu molalar yapılmış sayılmaz.",
+    "byKind": "Mola türüne göre",
+    "kinds": {
+      "micro": "Uzağa bakma",
+      "movement": "Kalk ve hareket et",
+      "long": "Uzun mola",
+      "neck": "Boyun ve omuzlar",
+      "breathing": "Nefes"
+    },
+    "notTried": "Bu dönemde henüz denenmedi: “{{kind}}”.",
+    "tryNow": "Şimdi dene",
+    "periodTime": "Bu dönemde molalara ayrılan süre: {{time}}.",
+    "oldDays": "Güncellemeden önceki günler eski yöntemle sayıldı: türlere ayrılmadan ve “Yapabildiniz mi?” sorusu olmadan.",
+    "sitting": "Oturma",
+    "avgLongest": "En uzun oturma, günlük ortalama",
+    "byWeek": "Haftalara göre",
+    "byWeekHint": "Yapılan molaların oranı, bunlara ayrılan süre ve akşam yanıtlarınızın haftalık ortalaması: 0 her şey yolunda, 3 çok.",
+    "week": "Hafta",
+    "share": "Yapılan",
+    "minutes": "Süre",
+    "compareTitle": "Haftaların karşılaştırması",
+    "compareEmpty": "Karşılaştırma, akşam yanıtları olan altı hafta birikince görünür. Kalan hafta: {{n}}.",
+    "moreBreaks": "Daha çok mola yapılan ({{n}} hafta)",
+    "fewerBreaks": "Daha az mola yapılan ({{n}} hafta)",
+    "compareBetter": "Molalarınızı daha çok yaptığınız haftalarda bunlar ortalamada daha az rahatsız etti: {{areas}}.",
+    "compareWorse": "Molalarınızı daha çok yaptığınız haftalarda bunlar ortalamada daha çok rahatsız etti: {{areas}}.",
+    "compareSame": "Henüz belirgin bir fark yok.",
+    "compareNote": "Bunlar sizin yanıtlarınız, kanıt değil: iş yükü, uyku ve tatil de nasıl hissettiğinizi etkiler.",
+    "compareFlat": "Her hafta molalarınızı aynı sıklıkta yaptınız, bu yüzden henüz karşılaştıracak bir şey yok."
   },
   "achievements": {
     "title": "Başarılar",

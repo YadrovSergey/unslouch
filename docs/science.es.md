@@ -100,6 +100,10 @@ para estos músculos son los que tienen mejores pruebas.
   plano. Sin círculos con el cuello.
 - Opcional: una rutina diaria de fuerza de 2 minutos para cuello y hombros según el protocolo de
   Andersen (por ejemplo, encogimientos de hombros o elevaciones laterales con una banda elástica).
+  Si la haces con regularidad, suma un par de repeticiones, hasta cuatro, y sugiere sujetar una
+  banda elástica o una botella pequeña de agua: en los ensayos de Andersen la carga aumentaba a
+  medida que los músculos se acostumbraban. Llega un par de horas después de empezar la jornada, y
+  en un turno de noche, un par de horas después de empezar el turno.
 - Un aviso discreto de "cambia de postura" cada 30 minutos.
 
 ### Qué muestran los estudios
@@ -443,8 +447,11 @@ ritual de fin de jornada ayuda a desconectar.
 ### Qué hace la app
 
 - Si quieres, te recuerda terminar de trabajar al final de tu jornada laboral.
-- Una vez a la semana te pide valorar de 0 a 3 cómo sientes los ojos, el cuello, la espalda y las
-  manos. Las respuestas se quedan en tu computadora.
+- Cada noche (o una vez a la semana, si lo eliges) te pregunta de 0 a 3 cuánto te molestaron los
+  ojos, el cuello, la espalda y las manos. Las respuestas se quedan en tu computadora.
+- La página "Resultado" de las estadísticas pone tus respuestas junto a las pausas que hiciste. Es
+  una forma de observarte, no una prueba de qué ayuda: la carga de trabajo, el sueño y las
+  vacaciones también cambian cómo te sientes.
 
 ### Qué muestran los estudios
 

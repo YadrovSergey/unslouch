@@ -125,7 +125,7 @@ const es: Dict = {
     stats: [
       "Tiempo frente a la computadora y el tramo más largo sentado",
       "Días seguidos, un mapa del año y logros",
-      "Un chequeo semanal de cómo te sientes: ojos, cuello, espalda, manos",
+      "Un breve chequeo por la noche y una página Resultado que muestra lo que hiciste junto a cómo te sentiste",
       "Tiempo por programa, solo por el nombre del programa",
     ],
     statsDemo: { today: "Hoy frente a la computadora", longest: "Tramo más largo sentado", breaks: "Pausas hechas", streak: "Días seguidos", todayValue: "6 h 40 min", longestValue: "52 min" },
@@ -143,7 +143,7 @@ const es: Dict = {
       { q: "¿Sustituye al médico?", a: "No. La app reduce las molestias y el cansancio de pasar mucho tiempo sentado. No trata ninguna enfermedad. Si algo te duele, no se te pasa o te dificulta la vida, ve al médico. Cada sección de la app indica \"cuándo ir al médico\"." },
       { q: "¿Interrumpirá mis llamadas?", a: "No. Cuando otro programa usa la cámara o el micrófono, los recordatorios esperan. Lo mismo a pantalla completa y en No molestar." },
       { q: "¿Puedo cambiar los intervalos?", a: "Sí. Hay modos predefinidos: Recomendado (20 y 45 minutos), Pomodoro 25/5, Cada hora y uno personalizado." },
-      { q: "¿Qué sabe de mí?", a: "Solo lo que se guarda en tu computadora: ajustes, estadísticas de pausas, tu chequeo semanal y el tiempo por programa. No se envía nada a ningún sitio. Puedes exportarlo o borrarlo todo." },
+      { q: "¿Qué sabe de mí?", a: "Solo lo que se guarda en tu computadora: ajustes, estadísticas de pausas, tus respuestas al chequeo y el tiempo por programa. No se envía nada a ningún sitio. Puedes exportarlo o borrarlo todo." },
       { q: "En la computadora del trabajo no me dejan instalar programas.", a: "Usa la versión para navegador: deja una pestaña abierta y te mostrará una pausa cada 20 minutos con los mismos ejercicios." },
       { q: "¿En qué idiomas?", a: "En 15: inglés, ruso, ucraniano, kazajo, bielorruso, uzbeko, armenio, georgiano, azerbaiyano, alemán, español, francés, portugués (Brasil), turco y chino simplificado." },
       { q: "¿Cómo puedo apoyar el proyecto?", a: "La app es gratis y seguirá siéndolo; el apoyo es voluntario y no desbloquea nada. Si quieres dar las gracias, puedes hacerlo por CloudTips con una tarjeta de un banco ruso o SBP, o por Boosty con una tarjeta de cualquier país.", link: "Cómo apoyar al desarrollador" },

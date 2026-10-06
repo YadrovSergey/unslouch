@@ -5,6 +5,7 @@ mod fullscreen;
 mod i18n;
 mod overlay;
 mod reminders;
+mod result;
 mod scheduler;
 mod settings;
 mod updates;
@@ -45,16 +46,57 @@ fn scale() -> u64 {
     }
 }
 
+/// Seconds the break screen waits for "Did it work out?", 0 when the question is off.
+fn confirm_sec(s: &Settings, kind: BreakKind) -> u64 {
+    if s.confirm_done {
+        scheduler::confirm_sec(kind, scale())
+    } else {
+        0
+    }
+}
+
 fn day_key(now: NaiveDateTime) -> String {
     now.format("%Y-%m-%d").to_string()
 }
 
-/// The wellbeing questions come once a week: when there is no entry for the last 7 days and they were not put off
-/// today. Entries the user adds by hand in the journal count too.
-fn wellbeing_due(inner: &Inner, now: NaiveDateTime) -> bool {
-    let from = (now.date() - ChronoDuration::days(6)).format("%Y-%m-%d").to_string();
-    inner.wellbeing.range(from..).next().is_none() && inner.wellbeing_dismissed != Some(now.date())
+/// The evening wellbeing questions: in the evening window of a work day (see `scheduler::evening`), after at
+/// least two hours at the computer, when this day (or, weekly, this week) has no entry yet and they were not put
+/// off today. Entries the user adds by hand in the journal count too. Returns the day the answers are about.
+fn wellbeing_due(inner: &Inner, now: NaiveDateTime) -> Option<NaiveDate> {
+    let s = &inner.settings;
+    let day = scheduler::evening(s, now)?;
+    let key = day.format("%Y-%m-%d").to_string();
+    if s.wellbeing_dismissed.as_deref() == Some(key.as_str()) {
+        return None;
+    }
+    // A night shift is split by midnight: its two calendar days together.
+    let mut days = vec![key.clone()];
+    if day_key(now) != key {
+        days.push(day_key(now));
+    }
+    let worked: u64 = days.iter().filter_map(|k| inner.stats.get(k)).map(|d| d.active_sec).sum();
+    if worked < 120 * scale() {
+        return None;
+    }
+    let from = if s.wellbeing_every == "week" { day - ChronoDuration::days(6) } else { day };
+    inner.wellbeing.range(from.format("%Y-%m-%d").to_string()..).next().is_none().then_some(day)
 }
+
+/// Neck minutes done on this many days of the last four weeks add a step of repetitions (Andersen 2011: the
+/// load grows as the muscles get used to it). Two steps at most; a break of a few weeks brings it back down.
+const NECK_STEP_DAYS: usize = 8;
+const NECK_MAX_LEVEL: usize = 2;
+
+fn neck_level(stats: &Stats, today: NaiveDate) -> u8 {
+    let days = (0..28)
+        .map(|back| (today - ChronoDuration::days(back)).format("%Y-%m-%d").to_string())
+        .filter(|k| stats.get(k).is_some_and(|d| d.kinds.neck.done > 0))
+        .count();
+    (days / NECK_STEP_DAYS).min(NECK_MAX_LEVEL) as u8
+}
+
+/// "Not now" three evenings in a row: the questions offer once to come weekly instead.
+const WELLBEING_LATER_OFFER: u32 = 3;
 
 /// Wellbeing entries kept: more than a year of daily entries.
 const WELLBEING_KEPT: usize = 400;
@@ -71,8 +113,8 @@ struct Inner {
     config_dir: PathBuf,
     update: Option<tauri_plugin_updater::Update>,
     update_check: updates::Check,
-    /// "Not now" on the weekly wellbeing questions: ask again tomorrow.
-    wellbeing_dismissed: Option<NaiveDate>,
+    /// The evening wellbeing card was shown for this work day: once is enough.
+    wellbeing_card: Option<NaiveDate>,
     reminders: reminders::State,
 }
 
@@ -128,13 +170,22 @@ struct AppInfo {
     platform: &'static str,
     wayland: bool,
     usage_supported: bool,
-    /// This week's wellbeing check is not answered yet and was not put off today.
+    /// The evening wellbeing questions are due (not answered, not put off).
     wellbeing_due: bool,
+    /// The work day the evening answers are about ("2026-10-06"); for a night shift, the day it started.
+    wellbeing_day: Option<String>,
+    /// "Not now" was pressed three evenings in a row: offer to ask once a week.
+    wellbeing_offer_weekly: bool,
+    /// Seconds the break screen waits for "Did it work out?"; 0 when the setting is off.
+    confirm_sec: u64,
+    /// 0..=2: how far the daily neck minutes have progressed, see `neck_level`.
+    neck_level: u8,
 }
 
 fn app_info(app: &AppHandle, inner: &Inner) -> AppInfo {
     let language = inner.lang();
     let now = Local::now().naive_local();
+    let due = wellbeing_due(inner, now);
     AppInfo {
         settings: inner.settings.clone(),
         language,
@@ -145,7 +196,13 @@ fn app_info(app: &AppHandle, inner: &Inner) -> AppInfo {
         platform: std::env::consts::OS,
         wayland: std::env::var("XDG_SESSION_TYPE").is_ok_and(|t| t == "wayland"),
         usage_supported: frontmost::supported(),
-        wellbeing_due: wellbeing_due(inner, now),
+        wellbeing_due: due.is_some(),
+        wellbeing_day: due.map(|d| d.format("%Y-%m-%d").to_string()),
+        wellbeing_offer_weekly: inner.settings.wellbeing_every == "day"
+            && inner.settings.wellbeing_later >= WELLBEING_LATER_OFFER
+            && !inner.settings.wellbeing_weekly_offered,
+        confirm_sec: confirm_sec(&inner.settings, BreakKind::Movement),
+        neck_level: neck_level(&inner.stats, now.date()),
     }
 }
 
@@ -159,6 +216,11 @@ fn save_settings(app: AppHandle, state: State<AppState>, settings: Settings) -> 
     let mut inner = state.0.lock().unwrap();
     let old_lang = inner.lang();
     let old_reminders = std::mem::take(&mut inner.settings.reminders);
+    // The window may hold an older copy of what the app itself keeps about the evening questions.
+    let mut settings = settings;
+    settings.wellbeing_dismissed = inner.settings.wellbeing_dismissed.clone();
+    settings.wellbeing_later = inner.settings.wellbeing_later;
+    settings.wellbeing_weekly_offered = inner.settings.wellbeing_weekly_offered;
     inner.settings = settings.sanitized();
     // Reminders added or given new times don't catch up with today's times already past.
     let now = Local::now().naive_local();
@@ -246,14 +308,43 @@ fn get_wellbeing(state: State<AppState>) -> WellbeingLog {
     state.0.lock().unwrap().wellbeing.clone()
 }
 
-/// The answers to the weekly questions on the break screen: today's entry.
+/// The answers to the evening questions: the entry of the work day they are about. `day` is the one the
+/// questions were asked for (a card may wait past midnight or past the evening); without it, the current work
+/// day (a night shift's answers in the morning belong to the day it started).
 #[tauri::command]
-fn save_wellbeing(state: State<AppState>, answers: Wellbeing) {
+fn save_wellbeing(app: AppHandle, window: WebviewWindow, state: State<AppState>, answers: Wellbeing, day: Option<String>) -> WellbeingLog {
     let mut inner = state.0.lock().unwrap();
-    let today = day_key(Local::now().naive_local());
-    inner.wellbeing.insert(today, answers.sanitized());
+    let now = Local::now().naive_local();
+    let asked = day
+        .and_then(|d| NaiveDate::parse_from_str(&d, "%Y-%m-%d").ok())
+        .filter(|d| *d <= now.date() && now.date() - *d <= ChronoDuration::days(2));
+    let day = asked
+        .or_else(|| scheduler::evening(&inner.settings, now))
+        .unwrap_or_else(|| scheduler::work_day(&inner.settings, now))
+        .format("%Y-%m-%d")
+        .to_string();
+    inner.wellbeing.insert(day, answers.sanitized());
     settings::trim_days(&mut inner.wellbeing, WELLBEING_KEPT);
     settings::save(&inner.path("wellbeing.json"), &inner.wellbeing);
+    if inner.settings.wellbeing_later > 0 {
+        inner.settings.wellbeing_later = 0;
+        settings::save(&inner.path("settings.json"), &inner.settings);
+    }
+    let log = inner.wellbeing.clone();
+    let info = app_info(&app, &inner);
+    drop(inner);
+    let _ = app.emit("app-info", &info);
+    close_wellbeing_card(&app, &window);
+    log
+}
+
+/// Answered or put off somewhere else (end of day screen, settings): the evening card has nothing left to ask.
+fn close_wellbeing_card(app: &AppHandle, from: &WebviewWindow) {
+    if from.label() == overlay::WELLBEING_LABEL {
+        return;
+    }
+    let handle = app.clone();
+    let _ = app.run_on_main_thread(move || overlay::close_prefix(&handle, overlay::WELLBEING_LABEL));
 }
 
 /// The journal in the settings window: add or fix the entry of any past day.
@@ -310,44 +401,64 @@ fn preview_reminder(app: AppHandle, window: WebviewWindow, state: State<AppState
         .map_err(|e| e.to_string())
 }
 
+/// "Not now" on the evening questions: not again for this work day. `weekly`: the answer to "Ask once a week?".
 #[tauri::command]
-fn dismiss_wellbeing(state: State<AppState>) {
-    state.0.lock().unwrap().wellbeing_dismissed = Some(Local::now().date_naive());
+fn dismiss_wellbeing(app: AppHandle, window: WebviewWindow, state: State<AppState>, weekly: Option<bool>) {
+    let mut inner = state.0.lock().unwrap();
+    let now = Local::now().naive_local();
+    let day = scheduler::evening(&inner.settings, now).unwrap_or_else(|| scheduler::work_day(&inner.settings, now));
+    let s = &mut inner.settings;
+    s.wellbeing_dismissed = Some(day.format("%Y-%m-%d").to_string());
+    match weekly {
+        Some(yes) => {
+            s.wellbeing_weekly_offered = true;
+            if yes {
+                s.wellbeing_every = "week".into();
+            }
+        }
+        None => s.wellbeing_later += 1,
+    }
+    settings::save(&inner.path("settings.json"), &inner.settings);
+    let info = app_info(&app, &inner);
+    drop(inner);
+    let _ = app.emit("app-info", &info);
+    close_wellbeing_card(&app, &window);
 }
 
+/// "Keep every evening" in answer to "Ask once a week?": the offer doesn't come back.
 #[tauri::command]
-fn break_result(app: AppHandle, result: String) {
+fn keep_wellbeing_daily(state: State<AppState>) {
+    let mut inner = state.0.lock().unwrap();
+    inner.settings.wellbeing_weekly_offered = true;
+    inner.settings.wellbeing_later = 0;
+    settings::save(&inner.path("settings.json"), &inner.settings);
+}
+
+/// The answer on the break screen. `sec`: how long the break program really took, counted for done breaks.
+/// "missed": nobody answered in time; the scheduler knows whether the user was at the computer meanwhile.
+#[tauri::command]
+fn break_result(app: AppHandle, state: State<AppState>, result: String, sec: Option<u64>) {
     let result = match result.as_str() {
         "done" => BreakResult::Done,
         "postponed" => BreakResult::Postponed,
+        "missed" => state.0.lock().unwrap().sched.timeout_result(),
         _ => BreakResult::Skipped,
     };
-    finish_break(&app, result);
+    finish_break(&app, result, sec.unwrap_or(0));
     overlay::close_break(&app);
 }
 
 /// Ends the current break: statistics, timers, tray. Also called when the break windows were closed
 /// without an answer (Alt+F4, a crashed page), so reminders never stop for good.
-fn finish_break(app: &AppHandle, result: BreakResult) {
+fn finish_break(app: &AppHandle, result: BreakResult, sec: u64) {
     let state = app.state::<AppState>();
     let mut inner = state.0.lock().unwrap();
     let settings = inner.settings.clone();
+    // The break goes to the day it started: an answer after midnight or after the laptop slept is still that day's.
+    let started = inner.sched.break_started.unwrap_or_else(|| Local::now().naive_local());
     if let Some((info, sitting)) = inner.sched.finish(&settings, result, scale()) {
-        let counted = info.kind != BreakKind::EndOfDay;
-        if counted {
-            let day = inner.today();
-            match result {
-                BreakResult::Done => {
-                    day.done += 1;
-                    match info.kind {
-                        BreakKind::Micro => day.micro_done += 1,
-                        BreakKind::Movement | BreakKind::Long => day.movement_done += 1,
-                        _ => {}
-                    }
-                }
-                BreakResult::Skipped => day.skipped += 1,
-                BreakResult::Postponed => day.postponed += 1,
-            }
+        if info.kind != BreakKind::EndOfDay {
+            inner.stats.entry(day_key(started)).or_default().record(info.kind, result, sec, settings.confirm_done);
             inner.tip += 1;
         }
         if let Some(sec) = sitting {
@@ -357,6 +468,28 @@ fn finish_break(app: &AppHandle, result: BreakResult) {
     }
     drop(inner);
     refresh_tray(app);
+}
+
+/// "Try now" on the Result page: that break right away, as from the tray.
+#[tauri::command]
+fn start_break(app: AppHandle, window: WebviewWindow, kind: String) -> Result<(), String> {
+    from_settings(&window)?;
+    let kind = match kind.as_str() {
+        "micro" => BreakKind::Micro,
+        "movement" => BreakKind::Movement,
+        "neck" => BreakKind::NeckStrength,
+        "breathing" => BreakKind::Breathing,
+        _ => return Err("unknown break".into()),
+    };
+    let handle = app.clone();
+    app.run_on_main_thread(move || start_break_now(&handle, kind)).map_err(|e| e.to_string())
+}
+
+/// The "Result" page: what was done and how the user felt, see result.rs.
+#[tauri::command]
+fn get_result(state: State<AppState>, days: u32) -> result::ResultView {
+    let inner = state.0.lock().unwrap();
+    result::build(&inner.stats, &inner.wellbeing, Local::now().date_naive(), days)
 }
 
 /// Water cue: the user tapped "I drank".
@@ -558,6 +691,7 @@ fn build_menu(
             &PredefinedMenuItem::separator(app)?,
             &today,
             &item("stats", "tray.stats")?,
+            &item("wellbeing", "tray.wellbeing")?,
             &item("settings", "tray.settings")?,
             &item("about", "tray.about")?,
             &item("thanks", "tabs.thanks")?,
@@ -686,9 +820,12 @@ fn tomorrow_morning() -> NaiveDateTime {
 
 /// Main thread: opens the break windows. If none could be opened, the break is dropped at once,
 /// otherwise the scheduler would wait for an answer that never comes.
-fn present_break(app: &AppHandle, info: scheduler::BreakInfo, lang: &'static str, sound: bool, tip: usize) {
-    if overlay::show_break(app, info, lang, sound, tip) == 0 {
-        app.state::<AppState>().0.lock().unwrap().sched.current = None;
+fn present_break(app: &AppHandle, info: scheduler::BreakInfo, lang: &'static str, sound: bool, tip: usize, confirm: u64) {
+    if overlay::show_break(app, info, lang, sound, tip, confirm) == 0 {
+        let state = app.state::<AppState>();
+        let mut inner = state.0.lock().unwrap();
+        inner.sched.current = None;
+        inner.sched.break_started = None;
     }
 }
 
@@ -696,10 +833,10 @@ fn start_break_now(app: &AppHandle, kind: BreakKind) {
     let state = app.state::<AppState>();
     let mut inner = state.0.lock().unwrap();
     let settings = inner.settings.clone();
-    let Some(info) = inner.sched.start_now(&settings, kind, scale()) else { return };
+    let Some(info) = inner.sched.start_now(&settings, kind, scale(), Local::now().naive_local()) else { return };
     let (lang, tip) = (inner.lang(), inner.tip);
     drop(inner);
-    present_break(app, info, lang, settings.sound_enabled, tip);
+    present_break(app, info, lang, settings.sound_enabled, tip, confirm_sec(&settings, info.kind));
 }
 
 /// Downloads and installs the update found earlier, then restarts. If it fails, the update stays in the tray.
@@ -806,6 +943,7 @@ fn on_menu(app: &AppHandle, id: &str) {
         "pause_tomorrow" => with_sched(app, |s| s.pause(tomorrow_morning())),
         "resume" => with_sched(app, |s| s.resume()),
         "stats" => overlay::show_settings(app, "stats"),
+        "wellbeing" => overlay::show_settings(app, "stats/wellbeing"),
         "settings" => overlay::show_settings(app, "settings"),
         "about" => overlay::show_settings(app, "about"),
         "mzr" => {
@@ -912,6 +1050,35 @@ fn run_ticker(app: AppHandle) {
             if let Some(sec) = out.sitting_ended {
                 sitting_ended(&mut inner, sec);
             }
+            // A break the user rested away from the computer: not shown, counted as away.
+            if let Some(info) = out.rested {
+                inner.stats.entry(day_key(now)).or_default().record(info.kind, BreakResult::Away, 0, s.confirm_done);
+            }
+            // The evening questions in a small card: once a work day, while the user is at the computer and nothing
+            // asks for quiet. On Wayland there is no card: the tray item is the way.
+            let wayland = std::env::var("XDG_SESSION_TYPE").is_ok_and(|t| t == "wayland");
+            // "Work day is over" asks the questions itself: no card after it, even after "Keep working".
+            if matches!(out.action, Action::Break(scheduler::BreakInfo { kind: BreakKind::EndOfDay, .. })) {
+                if let Some(day) = wellbeing_due(&inner, now) {
+                    inner.wellbeing_card = Some(day);
+                }
+            }
+            let evening_card = match wellbeing_due(&inner, now) {
+                Some(day)
+                    if out.active
+                        && out.quiet == Quiet::None
+                        && !probe.fullscreen
+                        && idle < scheduler::ACTIVE_IDLE_SEC
+                        && inner.sched.current.is_none()
+                        && out.action == Action::None
+                        && inner.wellbeing_card != Some(day)
+                        && !wayland =>
+                {
+                    inner.wellbeing_card = Some(day);
+                    true
+                }
+                _ => false,
+            };
             // Own reminders. Interval ones count only at the computer within working hours and when nothing asks
             // for quiet. During a break, a call, Do Not Disturb, focus, a pause or fullscreen everything waits a minute.
             let quiet = matches!(out.quiet, Quiet::Call | Quiet::DoNotDisturb | Quiet::Focus | Quiet::Paused) || probe.fullscreen;
@@ -941,9 +1108,21 @@ fn run_ticker(app: AppHandle) {
             }
 
             let handle = app.clone();
+            if let Some(result) = out.expired {
+                let h = app.clone();
+                let _ = app.run_on_main_thread(move || {
+                    finish_break(&h, result, 0);
+                    overlay::close_break(&h);
+                });
+            }
+            if evening_card {
+                let (h, theme) = (app.clone(), s.theme.clone());
+                let _ = app.run_on_main_thread(move || overlay::show_wellbeing(&h, lang, &theme));
+            }
             match out.action {
                 Action::Break(info) => {
-                    let _ = app.run_on_main_thread(move || present_break(&handle, info, lang, sound, tip));
+                    let confirm = confirm_sec(&s, info.kind);
+                    let _ = app.run_on_main_thread(move || present_break(&handle, info, lang, sound, tip, confirm));
                 }
                 Action::Cue(cue) => {
                     let _ = app.run_on_main_thread(move || overlay::show_cue(&handle, cue, lang, is_cis, &theme, blink_sec, cue_sound));
@@ -973,6 +1152,8 @@ pub fn run() {
             get_app_info,
             save_settings,
             get_stats,
+            get_result,
+            start_break,
             get_usage,
             clear_usage,
             get_wellbeing,
@@ -988,6 +1169,7 @@ pub fn run() {
             preview_cue,
             save_png,
             dismiss_wellbeing,
+            keep_wellbeing_daily,
             export_data,
             import_data
         ])
@@ -1010,7 +1192,7 @@ pub fn run() {
                 config_dir,
                 update: None,
                 update_check: updates::Check::Idle,
-                wellbeing_dismissed: None,
+                wellbeing_card: None,
                 reminders: reminders::State::default(),
             };
 
@@ -1055,7 +1237,7 @@ pub fn run() {
             let others = app.webview_windows().keys().any(|l| l.starts_with("break-") && *l != label);
             let waiting = app.state::<AppState>().0.lock().unwrap().sched.current.is_some();
             if !others && waiting {
-                finish_break(app, BreakResult::Skipped);
+                finish_break(app, BreakResult::Skipped, 0);
             }
             if !others {
                 overlay::show_reminder_cards(app);

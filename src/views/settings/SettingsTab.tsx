@@ -199,6 +199,15 @@ export function SettingsTab({
             />
           </Section>
 
+          <Section title={t("settings.honestSection")}>
+            <Toggle
+              label={t("settings.confirmDone")}
+              hint={t("settings.confirmDoneHint")}
+              checked={s.confirmDone}
+              onChange={(v) => update({ confirmDone: v })}
+            />
+          </Section>
+
           <button className="button" onClick={() => choosePreset("recommended")}>
             {t("settings.defaults")}
           </button>
@@ -335,6 +344,12 @@ export function SettingsTab({
                 <TimeInput value={s.endOfDayTime} onChange={(v) => update({ endOfDayTime: v })} />
               </Row>
             )}
+            <Row label={t("settings.wellbeingEvery")} hint={t("settings.wellbeingEveryHint")}>
+              <select value={s.wellbeingEvery} onChange={(e) => update({ wellbeingEvery: e.target.value as "day" | "week" })}>
+                <option value="day">{t("settings.wellbeingDay")}</option>
+                <option value="week">{t("settings.wellbeingWeek")}</option>
+              </select>
+            </Row>
           </Section>
 
           <Section title={t("settings.quietSection")}>

@@ -97,7 +97,11 @@ para esses músculos são os que têm as melhores evidências.
 - As micropausas alternam exercícios para o pescoço: inclinações e giros lentos, em um único plano.
   Sem giros circulares do pescoço.
 - Opcional: uma sequência diária de 2 minutos de força para pescoço e ombros, seguindo o protocolo
-  de Andersen (por exemplo, encolher os ombros ou elevação lateral com elástico).
+  de Andersen (por exemplo, encolher os ombros ou elevação lateral com elástico). Feita com
+  regularidade, a sequência ganha algumas repetições, até quatro, e sugere segurar um elástico ou
+  uma garrafa pequena de água: nos estudos de Andersen a carga aumentava conforme os músculos se
+  acostumavam. Ela aparece algumas horas depois do início do expediente, e num turno da noite,
+  algumas horas depois do início do turno.
 - Um sinal discreto de "mude de posição" a cada 30 minutos.
 
 ### O que os estudos mostram
@@ -430,8 +434,11 @@ melhores. Um pequeno ritual de fim de dia ajuda a desligar.
 ### O que o app faz
 
 - Se você quiser, lembra de encerrar o trabalho no fim do expediente.
-- Uma vez por semana pede que você avalie como estão os olhos, o pescoço, as costas e as mãos, de 0 a 3.
-  As respostas ficam no seu computador.
+- Toda noite (ou uma vez por semana, se você preferir) pergunta, de 0 a 3, quanto os olhos, o
+  pescoço, as costas e as mãos incomodaram. As respostas ficam no seu computador.
+- A página "Resultado" das estatísticas coloca as suas respostas ao lado das pausas feitas. É
+  auto-observação, não prova do que ajuda: carga de trabalho, sono e férias também mudam como você
+  se sente.
 
 ### O que os estudos mostram
 

@@ -42,7 +42,8 @@
     "downloading": "Yangilanish yuklanmoqda… {{pct}}%",
     "downloadingNoPct": "Yangilanish yuklanmoqda…",
     "installing": "Yangilanish o'rnatilmoqda…",
-    "installFailed": "Yangilanishni o'rnatib bo'lmadi. Internetni tekshirib, menyudan qayta urinib ko'ring."
+    "installFailed": "Yangilanishni o'rnatib bo'lmadi. Internetni tekshirib, menyudan qayta urinib ko'ring.",
+    "wellbeing": "Kun qanday oʻtdi?"
   },
   "time": {
     "hm": "{{h}} soat {{m}} daq",
@@ -80,7 +81,15 @@
       "Holatingizni tez-tez oʻzgartiring. Eng yaxshi holat bu keyingi holat.",
       "Sichqonchani klaviatura yonida tuting, unga choʻzilmaslik uchun.",
       "Tushlikda kamida 10 daqiqa tashqarida, kunduzgi yorugʻlikda boʻling."
-    ]
+    ],
+    "confirmTitle": "Tanaffus tugadi. Uddaladingizmi?",
+    "confirmDone": "Bajarildi",
+    "confirmNot": "Bu safar emas",
+    "confirmHint": "Hech boʻlmasa bir qismini qildingizmi? «Bajarildi»ni bosing. Enter: bajarildi, Esc: bu safar emas.",
+    "confirmPain": "Biror harakat ogʻriq bergan boʻlsa, keyingi safar uni oʻtkazib yuboring.",
+    "neckLoad": "Agar elastik lenta yoki 0,5 l suvli shisha boʻlsa, qoʻlingizga oling: mushaklarga koʻproq ish tushadi. Ularsiz ham boʻladi.",
+    "neckMore": "Siz mashqni muntazam qilyapsiz, shuning uchun takrorlar biroz koʻpaydi.",
+    "neckHeavier": "Mashqlar yengil boʻlib qolsa, qattiqroq lenta yoki kattaroq shisha oling. Faqat ogʻriqsiz."
   },
   "endOfDay": {
     "title": "Ish kuni tugadi",
@@ -92,22 +101,46 @@
     "finish": "Tugataman"
   },
   "wellbeing": {
-    "title": "Bu hafta qalaysiz?",
-    "hint": "Haftada bir marta toʻrtta savol. Javoblardan tanaffuslar aynan sizga yordam beryaptimi, yoʻqmi, koʻrinadi. Bu tibbiy test emas.",
+    "title": "Kun qanday oʻtdi?",
+    "hint": "Bugun nima bezovta qilganini belgilang. Javoblar faqat kompyuteringizda saqlanadi, bu tibbiy test emas.",
     "eyes": "Koʻzlar",
     "neck": "Boʻyin va yelkalar",
     "back": "Bel",
     "hands": "Qoʻllar",
-    "level0": "Bezovta qilmaydi",
+    "level0": "Bezovta qilmadi",
     "level1": "Biroz",
     "level2": "Sezilarli",
     "level3": "Kuchli",
     "skip": "Hozir emas",
     "save": "Saqlash",
     "chartTitle": "Holat",
-    "chartHint": "Kunlar boʻyicha javoblaringiz. Yashil: bezovta qilmaydi, qizil: kuchli bezovta qiladi.",
-    "empty": "Hozircha yozuvlar yoʻq. Jurnalga qoʻshing yoki tanaffusda savollarga javob bering.",
-    "add": "Yozuv qoʻshish"
+    "chartHint": "Kunlar boʻyicha javoblaringiz: 0 bezovta qilmadi, 3 kuchli.",
+    "empty": "Hozircha yozuvlar yoʻq. Kechqurun savollarga javob bering yoki jurnalga yozuv qoʻshing.",
+    "add": "Yozuv qoʻshish",
+    "titleWeek": "Hafta qanday oʻtdi?",
+    "hintWeek": "Shu hafta qanchalik bezovta qildi. Javoblar kompyuteringizda qoladi, bu tibbiy test emas.",
+    "allGood": "Hech narsa bezovta qilmaydi",
+    "incomplete": "Toʻrtala qatorni belgilang yoki «Hech narsa bezovta qilmaydi»ni bosing.",
+    "saved": "Yozib qoʻyildi, rahmat!",
+    "todaySummary": "Bugungi tanaffuslar: {{n}}, jami {{time}}.",
+    "close": "Yopish",
+    "offerWeekly": "Kechqurun har doim ham savollarga vaqt boʻlavermaydi. Haftada bir marta soʻraylikmi?",
+    "offerWeeklyYes": "Haftada bir marta",
+    "offerWeeklyNo": "Har kecha qolsin",
+    "doctorHint": {
+      "eyes": "Koʻzlar birinchi kun bezovta qilayotgani yoʻq. Shunday davom etsa, koʻrishingizni shifokorga tekshirtiring. Koʻz ogʻrisa, qizarsa, ikkita boʻlib koʻrinsa yoki koʻrish yomonlashsa, darhol shifokorga boring.",
+      "neck": "Boʻyin va yelkalar birinchi kun bezovta qilayotgani yoʻq. Shunday davom etsa yoki ishlash va uxlashga xalaqit bersa, shifokorga koʻrining. Ogʻriq yoki uvishish qoʻlga tarqalsa yoki qoʻl kuchsizlansa, darhol shifokorga boring.",
+      "back": "Bel birinchi kun bezovta qilayotgani yoʻq. Shunday davom etsa yoki ishlash va uxlashga xalaqit bersa, shifokorga koʻrining. Chov sohasi uvishsa, oyoqlar kuchsizlansa yoki tunda kuchli ogʻrisa, darhol shifokorga boring.",
+      "hands": "Qoʻllar birinchi kun bezovta qilayotgani yoʻq. Shunday davom etsa yoki ishlash va uxlashga xalaqit bersa, shifokorga koʻrining. Ayniqsa bosh barmoq, koʻrsatkich va oʻrta barmoqlar uvishsa, koʻproq tunda, yoki narsalar qoʻldan tushib ketsa."
+    },
+    "prefilled": "«Bezovta qilmadi» yoki «Biroz» boʻlgan qatorlarda oxirgi javoblaringiz turibdi. Bugun boshqacha boʻlsa, oʻzgartiring.",
+    "doctorPain": "Bezovta qilib turganda mashqlarni faqat ogʻriqsiz bajaring, ogʻritadiganini oʻtkazib yuboring.",
+    "inline": {
+      "eyes": "koʻzlar",
+      "neck": "boʻyin va yelkalar",
+      "back": "bel",
+      "hands": "qoʻllar"
+    }
   },
   "cue": {
     "blink": "Koʻzingizni pirpirating",
@@ -176,9 +209,9 @@
     "waterHint": "Burchakdagi karta, oʻzi yoʻqoladi",
     "dailySection": "Kuniga bir marta",
     "neckDaily": "Boʻyin va yelkalar uchun ikki daqiqa",
-    "neckDailyHint": "11:00 dan keyin kuch mashqi. Tadqiqotlarga koʻra, kuniga 2 daqiqa boʻyin ogʻrigʻini kamaytiradi",
+    "neckDailyHint": "Ish kuni boshlanganidan bir-ikki soat keyin kuch mashqi. Tadqiqotlarga koʻra, kuniga 2 daqiqa boʻyin ogʻrigʻini kamaytiradi",
     "breathingDaily": "Bir daqiqa nafas",
-    "breathingDailyHint": "15:00 dan keyin, koʻzlar uchun bitta pauza oʻrniga",
+    "breathingDailyHint": "Ish kuni boshlanganidan olti soat keyin, koʻzlar uchun bitta pauza oʻrniga",
     "endOfDay": "Ish kunining oxiri",
     "endOfDayHint": "Tugatishni eslatadi va kun yakunini koʻrsatadi",
     "at": "Soat",
@@ -235,7 +268,14 @@
       "schedule": "Jadval",
       "general": "Umumiy",
       "reminders": "Eslatmalar"
-    }
+    },
+    "honestSection": "Tanaffusdan keyin",
+    "confirmDone": "Uddalaganingizni soʻrash",
+    "confirmDoneHint": "Statistikaga faqat siz belgilagan narsa tushadi. Enter: bajarildi, Esc: bu safar emas. 5 daqiqa ichida javob boʻlmasa, tanaffus «Joyida yoʻq edi» deb yoziladi, agar shu vaqtda ishlagan boʻlsangiz, oʻtkazilgan deb yoziladi.",
+    "wellbeingEvery": "Holat haqida savollar",
+    "wellbeingEveryHint": "Ish kuni oxirida toʻrtta qisqa savol. Statistikadagi «Natija» boʻlimida ularni tanaffuslar bilan solishtirish mumkin.",
+    "wellbeingDay": "Har kecha",
+    "wellbeingWeek": "Haftada bir marta"
   },
   "data": {
     "title": "Boshqa kompyuterga koʻchirish",
@@ -303,7 +343,8 @@
       "overview": "Umumiy",
       "apps": "Dasturlar",
       "wellbeing": "Holat",
-      "achievements": "Yutuqlar"
+      "achievements": "Yutuqlar",
+      "result": "Natija"
     },
     "today": "Bugun",
     "done": "Bajarildi",
@@ -348,7 +389,47 @@
     "timeByDay": "Kompyuterdagi vaqt",
     "workday": "Ish boshlanishi va tugashi",
     "breaksByDay": "Kunlar boʻyicha tanaffuslar",
-    "inPrograms": "Dasturlar boʻyicha hisoblangan"
+    "inPrograms": "Dasturlar boʻyicha hisoblangan",
+    "away": "Joyida yoʻq edi",
+    "awayHint": "«Joyida yoʻq edi»: tanaffus vaqti keldi, lekin kompyuter oldida hech kim yoʻq edi. Bunday tanaffuslar bajarilganlar ulushiga kirmaydi."
+  },
+  "result": {
+    "thisWeek": "Shu hafta",
+    "done": "Bajarilgan tanaffuslar",
+    "stoodUp": "Turib harakatlandingiz",
+    "neckDays": "Boʻyin mashqi qilingan kunlar",
+    "breathing": "Nafas tanaffuslari",
+    "timeForYou": "Tanaffuslarga ketgan vaqt",
+    "lastWeek": "Oʻtgan hafta: tanaffuslar {{done}}, turib harakatlandingiz {{stood}}, tanaffuslarga ketgan vaqt {{time}}.",
+    "awayNote": "Siz joyingizda boʻlmagan paytdagi tanaffuslar: {{n}}. Bu ham dam olish, lekin bunday tanaffuslar «Bajarildi»ga kirmaydi.",
+    "byKind": "Tanaffus turlari boʻyicha",
+    "kinds": {
+      "micro": "Uzoqqa qarash",
+      "movement": "Turib harakatlanish",
+      "long": "Katta tanaffus",
+      "neck": "Boʻyin va yelkalar",
+      "breathing": "Nafas"
+    },
+    "notTried": "Bu davrda hali sinab koʻrilmagan: «{{kind}}».",
+    "tryNow": "Hozir sinab koʻrish",
+    "periodTime": "Davr ichida tanaffuslarga: {{time}}.",
+    "oldDays": "Yangilanishdan oldingi kunlar eski usulda hisoblangan: turlarga ajratilmasdan va «Uddaladingizmi?» savolisiz.",
+    "sitting": "Oʻtirish",
+    "avgLongest": "Eng uzoq oʻtirish, kuniga oʻrtacha",
+    "byWeek": "Haftalar boʻyicha",
+    "byWeekHint": "Bajarilgan tanaffuslar ulushi, ularga ketgan vaqt va haftalik oʻrtacha kechki javoblaringiz: 0 bezovta qilmadi, 3 kuchli.",
+    "week": "Hafta",
+    "share": "Bajarildi",
+    "minutes": "Vaqt",
+    "compareTitle": "Haftalarni solishtirish",
+    "compareEmpty": "Kechki javoblari bor olti hafta yigʻilganda solishtirish paydo boʻladi. Yetishmayotgan haftalar: {{n}}.",
+    "moreBreaks": "Tanaffuslar koʻproq bajarilgan ({{n}} hafta)",
+    "fewerBreaks": "Tanaffuslar kamroq bajarilgan ({{n}} hafta)",
+    "compareBetter": "Tanaffuslarni koʻproq bajargan haftalaringizda oʻrtacha kamroq bezovta qilgan: {{areas}}.",
+    "compareWorse": "Tanaffuslarni koʻproq bajargan haftalaringizda oʻrtacha kuchliroq bezovta qilgan: {{areas}}.",
+    "compareSame": "Hozircha sezilarli farq yoʻq.",
+    "compareNote": "Bu sizning javoblaringiz, isbot emas: holatga ish yuki ham, uyqu ham, taʼtil ham taʼsir qiladi.",
+    "compareFlat": "Har hafta tanaffuslarni bir xil tez-tez bajardingiz, hozircha solishtiradigan narsa yoʻq."
   },
   "achievements": {
     "title": "Yutuqlar",

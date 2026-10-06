@@ -93,7 +93,10 @@ shoulder pain, strength exercises for these muscles have the best evidence.
 - Micro-breaks rotate through neck exercises: slow tilts and turns in a single plane.
   No neck circles.
 - Optional: a daily 2-minute neck and shoulder strength routine following the Andersen protocol
-  (for example shrugs or lateral raises with an elastic band).
+  (for example shrugs or lateral raises with an elastic band). Done regularly, the routine adds a
+  couple of repetitions, up to four, and suggests holding an elastic band or a small bottle of water:
+  in the Andersen trials the load grew as the muscles got used to it. It comes a couple of hours
+  into your work day, and a night shift gets it a couple of hours into the shift.
 - A gentle "change posture" cue every 30 minutes.
 
 ### What studies show
@@ -418,8 +421,10 @@ end-of-day ritual helps you switch off.
 ### What the app does
 
 - Optionally reminds you to finish work at the end of your working day.
-- Once a week asks you to rate how your eyes, neck, back and hands feel, from 0 to 3.
-  Answers stay on your computer.
+- Every evening (or once a week, if you choose) asks how much your eyes, neck, back and hands
+  bothered you, from 0 to 3. Answers stay on your computer.
+- The "Result" page in the statistics sets your answers next to the breaks you did. It is
+  self-observation, not proof of what helps: workload, sleep and holidays change how you feel too.
 
 ### What studies show
 

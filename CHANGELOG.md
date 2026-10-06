@@ -2,6 +2,21 @@
 
 Everything noticeable that changes in Unslouch. Russian version: [CHANGELOG.ru.md](CHANGELOG.ru.md).
 
+## Unreleased
+
+- After a break the app asks "Did it work out?": "Done" (or Enter) or "Not this time" (or Esc). Only what you mark goes into the statistics, so the numbers may drop, but they show what you really did. With no answer in 5 minutes, the break is recorded as "Away". You can turn the question off in the settings.
+- If you step away from the computer, a break no longer opens in an empty room. If you were away for more than two minutes and longer than the break lasts, the absence counts as rest and the timer starts over, though it is not counted as done. If not, the break comes when you are back.
+- The wellbeing questions come every evening at the end of the work day instead of once a week. One tap on "Nothing bothers me" answers them, and rows that were fine or a little yesterday come preselected. You can switch back to weekly in the settings, and if you put the questions off several times in a row, the app offers it. The questions are gone from the break screen.
+- New tray item: "How was your day?".
+- New "Result" page in the statistics: breaks of each kind done, time spent on them, days with neck minutes, and how you felt week by week. After six weeks with answers, it compares weeks with more and fewer breaks.
+- If your eyes, neck, back or wrists keep bothering you, a hint after your answer says when to see a doctor.
+- Neck minutes or breathing missed because you were away come back once later that day.
+- Each dot in the wellbeing chart now shows a number: not everyone can tell the colors apart.
+- The 2-minute neck routine grows with you: done regularly, it adds a few repetitions, and the screen suggests holding an elastic band or a bottle of water.
+- Neck minutes and the breathing minute follow your shift: on a night shift they come two and six hours into it, not at its start.
+- The longest sitting stretch is counted more honestly: when you step away, the stretch ends when you left, not when you came back.
+- Fixed: "Statistics" in the menu opened only on the second click.
+
 ## 0.1.13 · 29 September 2026
 
 - Fixed: the blink cue darkened only part of the screen without its label, and the screen flashed at first. The edges now darken across the whole screen, smoothly.

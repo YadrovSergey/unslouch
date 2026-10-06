@@ -42,7 +42,8 @@
     "downloading": "Yeniləmə yüklənir… {{pct}}%",
     "downloadingNoPct": "Yeniləmə yüklənir…",
     "installing": "Yeniləmə quraşdırılır…",
-    "installFailed": "Yeniləməni quraşdırmaq alınmadı. İnterneti yoxlayın və menyudan yenidən cəhd edin."
+    "installFailed": "Yeniləməni quraşdırmaq alınmadı. İnterneti yoxlayın və menyudan yenidən cəhd edin.",
+    "wellbeing": "Gününüz necə keçdi?"
   },
   "time": {
     "hm": "{{h}} saat {{m}} dəq",
@@ -80,7 +81,15 @@
       "Vəziyyətinizi tez-tez dəyişin. Ən yaxşı duruş növbəti duruşdur.",
       "Siçanı klaviaturanın yanında saxlayın ki, ona uzanmayasınız.",
       "Nahar vaxtı ən azı 10 dəqiqəlik çölə, gün işığına çıxın."
-    ]
+    ],
+    "confirmTitle": "Fasilə bitdi. Alındı?",
+    "confirmDone": "Edildi",
+    "confirmNot": "Bu dəfə yox",
+    "confirmHint": "Heç olmasa bir hissəsini etdiniz? «Edildi» düyməsini basın. Enter: edildi, Esc: bu dəfə yox.",
+    "confirmPain": "Hansısa hərəkət ağrı verdisə, növbəti dəfə onu buraxın.",
+    "neckLoad": "Elastik lent və ya 0,5 l su butulkası varsa, əlinizə alın: əzələlərə daha çox iş düşəcək. Onlarsız da olar.",
+    "neckMore": "Məşqi müntəzəm edirsiniz, ona görə təkrarlar bir az artıb.",
+    "neckHeavier": "Məşqlər yüngül gəlməyə başlasa, daha sıx lent və ya daha böyük butulka götürün. Yalnız ağrısız."
   },
   "endOfDay": {
     "title": "İş günü bitdi",
@@ -92,22 +101,46 @@
     "finish": "Bitirirəm"
   },
   "wellbeing": {
-    "title": "Bu həftə necəsiniz?",
-    "hint": "Həftədə bir dəfə dörd sual. Cavablardan fasilələrin məhz sizə kömək edib-etmədiyi görünür. Bu, tibbi test deyil.",
+    "title": "Gününüz necə keçdi?",
+    "hint": "Bu gün sizi nəyin narahat etdiyini qeyd edin. Cavablar yalnız kompüterinizdə qalır. Bu, tibbi test deyil.",
     "eyes": "Gözlər",
     "neck": "Boyun və çiyinlər",
     "back": "Bel",
     "hands": "Əllər",
-    "level0": "Narahat etmir",
+    "level0": "Hər şey yaxşıdır",
     "level1": "Bir az",
     "level2": "Hiss olunur",
     "level3": "Çox",
     "skip": "İndi yox",
     "save": "Yadda saxla",
     "chartTitle": "Özünühiss",
-    "chartHint": "Günlər üzrə cavablarınız. Yaşıl: narahat etmir, qırmızı: çox narahat edir.",
-    "empty": "Hələ qeyd yoxdur. Jurnalda əlavə edin və ya fasilədə suallara cavab verin.",
-    "add": "Qeyd əlavə et"
+    "chartHint": "Günlər üzrə cavablarınız: 0 hər şey yaxşıdır, 3 çox.",
+    "empty": "Hələ qeyd yoxdur. Axşam suallara cavab verin və ya jurnalda qeyd əlavə edin.",
+    "add": "Qeyd əlavə et",
+    "titleWeek": "Həftəniz necə keçdi?",
+    "hintWeek": "Bu həftə bunlar sizi nə qədər narahat etdi? Cavablar kompüterinizdə qalır. Bu, tibbi test deyil.",
+    "allGood": "Heç nə narahat etmir",
+    "incomplete": "Dörd sətrin hamısını qeyd edin və ya «Heç nə narahat etmir» düyməsini basın.",
+    "saved": "Yazıldı, təşəkkürlər!",
+    "todaySummary": "Bu gün fasilələr: {{n}}, cəmi {{time}}.",
+    "close": "Bağla",
+    "offerWeekly": "Axşamlar suallara həmişə vaxt olmur. Bəlkə həftədə bir dəfə soruşaq?",
+    "offerWeeklyYes": "Həftədə bir dəfə",
+    "offerWeeklyNo": "Hər axşam qalsın",
+    "doctorHint": {
+      "eyes": "Gözləriniz artıq bir müddətdir narahat edir. Belə davam edərsə, görmənizi həkimdə yoxladın. Göz ağrıyırsa, qızarırsa, ikiləşirsə və ya görmə pisləşibsə, dərhal həkimə müraciət edin.",
+      "neck": "Boyun və çiyinləriniz artıq bir müddətdir narahat edir. Belə davam edərsə və ya işləməyə və yatmağa mane olarsa, həkimə müraciət edin. Ağrı və ya keyimə qola yayılırsa və ya qol zəifləyirsə, dərhal həkimə müraciət edin.",
+      "back": "Beliniz artıq bir müddətdir narahat edir. Belə davam edərsə və ya işləməyə və yatmağa mane olarsa, həkimə müraciət edin. Qasıq nahiyəsi keyiyirsə, ayaqlar zəifləyirsə və ya gecələr ağrı güclüdürsə, dərhal həkimə müraciət edin.",
+      "hands": "Biləkləriniz və əlləriniz artıq bir müddətdir narahat edir. Belə davam edərsə və ya işləməyə və yatmağa mane olarsa, həkimə müraciət edin, xüsusən baş, şəhadət və orta barmaqlar keyiyirsə, daha çox gecələr, və ya əşyalar əlinizdən düşürsə."
+    },
+    "prefilled": "«Hər şey yaxşıdır» və ya «Bir az» olan sətirlərdə son cavablarınız göstərilir. Bu gün fərqlidirsə, dəyişin.",
+    "doctorPain": "Narahat etdiyi müddətdə məşqləri yalnız ağrısız edin, ağrıdanları buraxın.",
+    "inline": {
+      "eyes": "gözlər",
+      "neck": "boyun və çiyinlər",
+      "back": "bel",
+      "hands": "biləklər və əllər"
+    }
   },
   "cue": {
     "blink": "Göz qırpın",
@@ -176,9 +209,9 @@
     "waterHint": "Küncdə özü yox olan kart",
     "dailySection": "Gündə bir dəfə",
     "neckDaily": "Boyun və çiyinlər üçün iki dəqiqə",
-    "neckDailyHint": "Saat 11:00-dan sonra güc məşqi. Araşdırmalara görə, gündə 2 dəqiqə boyun ağrısını azaldır",
+    "neckDailyHint": "İş günü başlayandan bir-iki saat sonra güc məşqi. Araşdırmalara görə, gündə 2 dəqiqə boyun ağrısını azaldır",
     "breathingDaily": "Bir dəqiqə nəfəs",
-    "breathingDailyHint": "Saat 15:00-dan sonra, bir göz fasiləsinin əvəzinə",
+    "breathingDailyHint": "İş günü başlayandan altı saat sonra, bir göz fasiləsinin əvəzinə",
     "endOfDay": "İş gününün sonu",
     "endOfDayHint": "Bitirməyi xatırladır və günün yekununu göstərir",
     "at": "Saat",
@@ -235,7 +268,14 @@
       "schedule": "Cədvəl",
       "general": "Ümumi",
       "reminders": "Xatırlatmalar"
-    }
+    },
+    "honestSection": "Fasilədən sonra",
+    "confirmDone": "Alınıb-alınmadığını soruş",
+    "confirmDoneHint": "Statistikaya yalnız qeyd etdikləriniz düşür. Enter: edildi, Esc: bu dəfə yox. 5 dəqiqə ərzində cavab olmasa, fasilə «Uzaqda» kimi yazılır, bu vaxt işləyirdinizsə, buraxılmış kimi.",
+    "wellbeingEvery": "Özünühiss sualları",
+    "wellbeingEveryHint": "İş gününün sonunda dörd qısa sual. Statistikada «Nəticə» bölməsində onları fasilələrlə müqayisə edə bilərsiniz.",
+    "wellbeingDay": "Hər axşam",
+    "wellbeingWeek": "Həftədə bir dəfə"
   },
   "data": {
     "title": "Başqa kompüterə köçürmə",
@@ -303,7 +343,8 @@
       "overview": "İcmal",
       "apps": "Proqramlar",
       "wellbeing": "Özünühiss",
-      "achievements": "Nailiyyətlər"
+      "achievements": "Nailiyyətlər",
+      "result": "Nəticə"
     },
     "today": "Bu gün",
     "done": "Edilib",
@@ -348,7 +389,47 @@
     "timeByDay": "Kompüter arxasında vaxt",
     "workday": "İşin başlanğıcı və sonu",
     "breaksByDay": "Günlər üzrə fasilələr",
-    "inPrograms": "Proqramlar üzrə hesablanıb"
+    "inPrograms": "Proqramlar üzrə hesablanıb",
+    "away": "Uzaqda",
+    "awayHint": "«Uzaqda»: fasilə gəldi, amma kompüter arxasında heç kim yox idi. Belə fasilələr edilən fasilələrin payına daxil edilmir."
+  },
+  "result": {
+    "thisWeek": "Bu həftə",
+    "done": "Edilən fasilələr",
+    "stoodUp": "Qalxıb hərəkət etdiniz",
+    "neckDays": "Boyun məşqi olan günlər",
+    "breathing": "Nəfəs fasilələri",
+    "timeForYou": "Fasilələrə sərf olunan vaxt",
+    "lastWeek": "Keçən həftə: fasilələr {{done}}, qalxıb hərəkət etmək {{stood}}, fasilələrə vaxt {{time}}.",
+    "awayNote": "Yerinizdə olmadığınız vaxt gələn fasilələr: {{n}}. Bu da istirahətdir, sadəcə belə fasilələr edilmiş sayılmır.",
+    "byKind": "Fasilə növləri üzrə",
+    "kinds": {
+      "micro": "Uzağa baxmaq",
+      "movement": "Qalxıb hərəkət etmək",
+      "long": "Uzun fasilə",
+      "neck": "Boyun və çiyinlər",
+      "breathing": "Nəfəs"
+    },
+    "notTried": "Bu dövrdə hələ sınamamısınız: «{{kind}}».",
+    "tryNow": "İndi sına",
+    "periodTime": "Bu dövrdə fasilələrə sərf olunan vaxt: {{time}}.",
+    "oldDays": "Yeniləmədən əvvəlki günlər köhnə qaydada sayılıb: növlərə bölünmədən və «Alındı?» sualı olmadan.",
+    "sitting": "Oturuş",
+    "avgLongest": "Ən uzun oturuş, gündə orta hesabla",
+    "byWeek": "Həftələr üzrə",
+    "byWeekHint": "Edilən fasilələrin payı, onlara sərf olunan vaxt və axşam cavablarınız, həftə üzrə orta hesabla: 0 hər şey yaxşıdır, 3 çox.",
+    "week": "Həftə",
+    "share": "Edilib",
+    "minutes": "Vaxt",
+    "compareTitle": "Həftələrin müqayisəsi",
+    "compareEmpty": "Müqayisə axşam cavabları olan altı həftə toplananda görünəcək. Çatışmayan həftə: {{n}}.",
+    "moreBreaks": "Daha çox fasilə edilib ({{n}} həftə)",
+    "fewerBreaks": "Daha az fasilə edilib ({{n}} həftə)",
+    "compareBetter": "Fasilələri daha tez-tez etdiyiniz həftələrdə orta hesabla daha az narahat edib: {{areas}}.",
+    "compareWorse": "Fasilələri daha tez-tez etdiyiniz həftələrdə orta hesabla daha çox narahat edib: {{areas}}.",
+    "compareSame": "Hələ nəzərəçarpan fərq yoxdur.",
+    "compareNote": "Bunlar sizin cavablarınızdır, sübut deyil: özünühissə iş yükü, yuxu və məzuniyyət də təsir edir.",
+    "compareFlat": "Bütün həftələrdə fasilələri eyni tezlikdə etmisiniz, hələ müqayisə ediləcək bir şey yoxdur."
   },
   "achievements": {
     "title": "Nailiyyətlər",

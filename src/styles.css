@@ -479,6 +479,52 @@ body[data-view="break"] {
   background: rgba(233, 241, 238, 0.14);
 }
 
+/* The break screen is dark whatever the theme: the system focus ring is hard to see on it. */
+.break__button:focus-visible,
+.wbform--break .wbform__option input:focus-visible + span {
+  outline: 2px solid #7fd3a0;
+  outline-offset: 3px;
+}
+
+/* Cards follow the theme: on a white card the light green ring would vanish. */
+.water__button:focus-visible,
+.wbform--card .wbform__option input:focus-visible + span {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.break__button[aria-disabled="true"] {
+  opacity: 0.6;
+}
+
+.break__button--big {
+  font-size: 17px;
+  padding: 12px 24px;
+  min-width: 140px;
+}
+
+.break__confirm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+}
+
+.break__confirm .break__actions {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
 .countdown {
   position: relative;
   width: 200px;
@@ -971,45 +1017,176 @@ html:has(body[data-view="blink"]) {
   font-size: 14px;
 }
 
-.wellbeing {
+/* ---------- Evening questions: on the dark break screen and in the corner card ---------- */
+
+.wbform {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  max-width: 720px;
+  gap: 8px;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 0 24px;
 }
 
-.wellbeing__row {
+.wbform__title {
+  font-weight: 600;
+  font-size: 17px;
+  margin: 0;
+}
+
+.wbform__lead,
+.wbform__missing,
+.wbform__doctor {
+  margin: 0;
+  font-size: 13px;
+}
+
+.wbform__missing:empty {
+  display: none;
+}
+
+.wbform__row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  width: 100%;
+  gap: 12px;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;
 }
 
-.wellbeing__scale {
-  display: flex;
-  gap: 6px;
-}
-
-.wellbeing__option {
-  border: 1px solid rgba(233, 241, 238, 0.25);
-  background: transparent;
-  color: #d4e2dd;
-  border-radius: 999px;
-  padding: 6px 12px;
-  cursor: pointer;
+.wbform__row legend {
+  float: left;
+  padding: 0;
   font-size: 14px;
 }
 
-.wellbeing__option[aria-checked="true"] {
+.wbform__scale {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
+.wbform__option {
+  position: relative;
+  cursor: pointer;
+}
+
+.wbform__option input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.wbform__option span {
+  display: inline-block;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.wbform__option input:checked + span {
+  opacity: 1;
+  font-weight: 600;
+}
+
+.wbform__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.wbform--break {
+  color: #d4e2dd;
+  text-align: left;
+}
+
+.wbform--break .wbform__lead,
+.wbform--break .wbform__missing {
+  color: #9fb7b1;
+}
+
+.wbform--break .wbform__option input:checked + span {
   background: #7fd3a0;
   border-color: #7fd3a0;
   color: #0f1d24;
 }
 
-.wellbeing .break__actions {
-  margin-top: 16px;
+.wbform--break .wbform__doctor {
+  background: rgba(240, 214, 166, 0.12);
+  color: #f0d6a6;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.wbform--card .wbform__lead {
+  color: var(--muted);
+}
+
+.wbform--card .wbform__option span {
+  color: var(--text);
+}
+
+.wbform--card .wbform__option input:checked + span {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+}
+
+.wbform--card .wbform__doctor {
+  background: var(--notice-bg);
+  color: var(--notice-text);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.water.wbcard {
+  align-items: flex-start;
+  overflow-y: auto;
+}
+
+.wbcard .wbform {
+  margin: 0;
+}
+
+.wbcard .wbform__title {
+  font-size: 15px;
+}
+
+/* The card is narrow: the area name goes above its answers, so long names and long answers both fit. */
+.wbcard .wbform__row {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.wbcard .wbform__row legend {
+  float: none;
+  font-size: 13px;
+}
+
+.wbcard .wbform__scale {
+  justify-content: flex-start;
+}
+
+.wbcard .wbform__scale {
+  gap: 3px;
+}
+
+.wbcard .wbform {
+  gap: 6px;
+}
+
+.wbcard .wbform__option span {
+  font-size: 12px;
+  padding: 3px 7px;
+  white-space: nowrap;
 }
 
 /* ---------- Gentle cues ---------- */
@@ -1495,9 +1672,16 @@ input[type="number"] {
 
 .wb-dot {
   display: inline-block;
-  width: 14px;
-  height: 14px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
+  /* The number inside: the colors alone are hard to tell apart for many people. */
+  font-size: 10px;
+  line-height: 16px;
+  font-weight: 600;
+  text-align: center;
+  color: #ffffff;
+  vertical-align: middle;
 }
 
 .wb-dot--0 {
@@ -1506,14 +1690,73 @@ input[type="number"] {
 
 .wb-dot--1 {
   background: color-mix(in srgb, var(--done) 40%, var(--skipped));
+  color: #0f1d24;
 }
 
 .wb-dot--2 {
   background: var(--skipped);
+  color: #0f1d24;
 }
 
 .wb-dot--3 {
-  background: #c0453b;
+  background: #b8613f;
+}
+
+/* ---------- Result page ---------- */
+
+.table-scroll {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.result-table {
+  border-collapse: collapse;
+  font-size: 13px;
+  margin: 4px 0 8px;
+  min-width: 100%;
+}
+
+.result-table th,
+.result-table td {
+  padding: 6px 10px 6px 0;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.result-table thead th {
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.result-table tbody th {
+  font-weight: 400;
+}
+
+.result-table tbody tr + tr {
+  border-top: 1px solid var(--line);
+}
+
+.result-table__notable {
+  font-weight: 600;
+}
+
+.result-feel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.result-feel .wb-dot {
+  width: 10px;
+  height: 10px;
+}
+
+.result-try {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 6px 0;
 }
 
 .badges {

@@ -32,7 +32,7 @@ Windows is checked only by CI.
   New claims need a source in `docs/science.*.md`.
 - **Eye rule wording:** Russian «20 минут, 20 секунд, 6 метров» (never «20-20-20», never feet). Feet only in English.
 - **Russian texts** for users: natural language, no em dashes, no «обратите внимание», «стало удобнее» and the like.
-  Check with `python3 ~/develop/mzr_js_app/.claude/skills/live-text-check/check.py <file>`.
+  Check with `python3 ~/develop/mzr_js_app/.claude/skills/my-live-text-check/check.py <file>`.
 - **Translations:** `src/locales/<code>.json`, the tray menu reads the same files. After changes: `npm run check:locales`.
   New keys go into all 15 languages (ru and en first, then the rest).
 - **MZR diary promo** is shown only for CIS languages (ru, uk, kk, be, uz, hy, ka, az) and never on the break screen.

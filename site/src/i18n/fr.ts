@@ -125,7 +125,7 @@ const fr: Dict = {
     stats: [
       "Temps devant l’ordinateur et plus longue période assise",
       "Séries, carte de l’année et succès",
-      "Une auto-évaluation chaque semaine : yeux, nuque, dos, mains",
+      "Une courte auto-évaluation le soir, et une page Résultat qui montre ce que vous avez fait à côté de votre ressenti",
       "Temps par programme, uniquement d’après le nom des programmes",
     ],
     statsDemo: { today: "Aujourd’hui devant l’ordinateur", longest: "Plus longue période assise", breaks: "Pauses faites", streak: "Jours d’affilée", todayValue: "6 h 40 min", longestValue: "52 min" },
@@ -143,7 +143,7 @@ const fr: Dict = {
       { q: "Est-ce que ça remplace un médecin ?", a: "Non. L’application réduit l’inconfort et la fatigue liés à la position assise prolongée. Elle ne soigne rien. Si quelque chose fait mal, ne passe pas ou vous gêne au quotidien, consultez un médecin. Chaque section de l’application indique « quand consulter un médecin »." },
       { q: "Va-t-elle interrompre mes appels ?", a: "Non. Quand un autre programme utilise la caméra ou le micro, les rappels attendent. De même en plein écran et en mode « Ne pas déranger »." },
       { q: "Puis-je modifier les intervalles ?", a: "Oui. Il existe des modes prédéfinis : Recommandé (20 et 45 minutes), Pomodoro 25/5, Chaque heure, et le vôtre." },
-      { q: "Que sait-elle de moi ?", a: "Seulement ce qui est enregistré sur votre ordinateur : réglages, statistiques des pauses, votre auto-évaluation hebdomadaire et le temps par programme. Rien n’est envoyé nulle part. Vous pouvez tout exporter ou tout supprimer." },
+      { q: "Que sait-elle de moi ?", a: "Seulement ce qui est enregistré sur votre ordinateur : réglages, statistiques des pauses, vos réponses à l’auto-évaluation et le temps par programme. Rien n’est envoyé nulle part. Vous pouvez tout exporter ou tout supprimer." },
       { q: "Mon ordinateur de travail ne permet pas d’installer des applications.", a: "Utilisez la version navigateur : gardez un onglet ouvert et il affichera une pause toutes les 20 minutes avec les mêmes exercices." },
       { q: "Quelles langues ?", a: "15 : anglais, russe, ukrainien, kazakh, biélorusse, ouzbek, arménien, géorgien, azerbaïdjanais, allemand, espagnol, français, portugais (Brésil), turc et chinois simplifié." },
       { q: "Comment soutenir le projet ?", a: "L’application est gratuite et le restera ; le soutien est volontaire et ne débloque rien. Si vous voulez dire merci, vous pouvez le faire via CloudTips avec une carte bancaire russe ou SBP, ou via Boosty avec une carte de n’importe quel pays.", link: "Comment soutenir le développeur" },

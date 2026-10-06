@@ -96,7 +96,10 @@ və çiyin ağrısı üçün ən güclü sübutlar bu əzələlərin güc məşq
 - Mikrofasilələrdə növbə ilə boyun məşqləri olur: bir müstəvidə yavaş əyilmələr və dönmələr.
   Boyunla dairəvi hərəkətlər yoxdur.
 - İstəyə görə: Andersen protokoluna əsaslanan gündəlik 2 dəqiqəlik boyun və çiyin güc məşqi
-  (məsələn, rezin lentlə çiyinləri qaldırmaq və ya qolları yana qaldırmaq).
+  (məsələn, rezin lentlə çiyinləri qaldırmaq və ya qolları yana qaldırmaq). Müntəzəm etsəniz,
+  təkrarlar bir az artır, ən çoxu dördə qədər, və tətbiq rezin lent və ya su butulkası götürməyi
+  məsləhət görür: Andersen tədqiqatlarında əzələlər alışdıqca yük artırılırdı. Məşq iş günü
+  başlayandan bir-iki saat sonra gəlir, gecə növbəsində də onun başlanğıcından.
 - Hər 30 dəqiqədən bir yumşaq «vəziyyəti dəyişin» siqnalı.
 
 ### Araşdırmalar nə göstərir
@@ -426,8 +429,11 @@ sonunda qısa ritual işdən ayrılmağa kömək edir.
 ### Proqram nə edir
 
 - İstəyə görə iş gününün sonunda işi bitirməyi xatırladır.
-- Həftədə bir dəfə gözlərinizin, boynunuzun, belinizin və əllərinizin vəziyyətini 0-dan 3-ə qədər
-  qiymətləndirməyi xahiş edir. Cavablar kompüterinizdə qalır.
+- Hər axşam (və ya istəsəniz, həftədə bir dəfə) gözlərinizin, boynunuzun, belinizin və
+  əllərinizin sizi nə qədər narahat etdiyini 0-dan 3-ə qədər soruşur. Cavablar kompüterinizdə qalır.
+- Statistikadakı «Nəticə» bölməsində cavablarınız etdiyiniz fasilələrin yanında görünür. Bu
+  özünümüşahidədir, nəyin kömək etdiyinin sübutu deyil: özünühissə iş yükü, yuxu və məzuniyyət də
+  təsir edir.
 
 ### Araşdırmalar nə göstərir
 

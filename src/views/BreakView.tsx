@@ -1,18 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { openUrl } from "@tauri-apps/plugin-opener";
-import {
-  AppInfo,
-  BreakResult,
-  DayStats,
-  Wellbeing,
-  dismissWellbeing,
-  donatePage,
-  getAppInfo,
-  getStats,
-  saveWellbeing,
-  sendBreakResult,
-} from "../api";
+import { AppInfo, BreakResult, DayStats, dismissWellbeing, donatePage, getAppInfo, getStats, saveWellbeing, sendBreakResult } from "../api";
+import { Answers, WellbeingForm } from "./WellbeingForm";
 import { Exercise, byId, exerciseSeconds, microRotation, movementProgram } from "../exercises/catalog";
 import { Visual } from "../exercises/Visual";
 import { locate } from "../exercises/useProgram";
@@ -20,12 +10,17 @@ import { playChime, playTick } from "../sound";
 import { formatDuration } from "../format";
 
 type Segment =
-  | { type: "intro"; sec: number; titleKey: string; hintKey: string }
+  | { type: "intro"; sec: number; titleKey: string; hintKey: string; extraKeys?: string[] }
   | { type: "exercise"; exercise: Exercise; sec: number }
   | { type: "far"; sec: number }
   | { type: "walk"; sec: number };
 
 const DONE_SEC = 2;
+/** Repetitions the daily neck minutes add per progression step (AppInfo.neckLevel). */
+const NECK_STEP_REPS = 2;
+/** Keys and clicks right after "Did it work out?" appears are ignored: a key pressed while coming back to the
+ * desk must not answer for the user. */
+const ARM_MS = 1000;
 
 /** The break as a list of segments. Exercises go first while the user still looks at the screen; looking into
  * the distance and walking come last, and the chime tells when to come back. */
@@ -67,16 +62,27 @@ function buildProgram(kind: string, dur: number, rotation: number, info: AppInfo
         },
         { type: "walk", sec: Math.max(60, dur - 4) },
       ];
-    case "neck":
+    case "neck": {
+      // Done regularly, the minutes grow by a couple of repetitions; the main way to make them harder is a band
+      // or a bottle of water in the hands (Andersen 2011 progressed the load, not the count).
+      const level = info.neckLevel ?? 0;
+      const extraKeys = ["break.neckLoad"];
+      if (level > 0) extraKeys.push("break.neckMore");
+      if (level >= 2) extraKeys.push("break.neckHeavier");
       return [
         {
           type: "intro",
-          sec: 5,
+          sec: 5 + 3 * extraKeys.length,
           titleKey: "break.neckTitle",
           hintKey: "break.neckHint",
+          extraKeys,
         },
-        ...["lateralRaise", "reverseFly", "shrugHold"].map((id) => ex(byId(id))),
+        ...["lateralRaise", "reverseFly", "shrugHold"].map((id) => {
+          const e = byId(id);
+          return ex({ ...e, reps: e.reps + NECK_STEP_REPS * level });
+        }),
       ];
+    }
     case "breathing":
       return [
         {
@@ -132,13 +138,16 @@ function BreakScreen({ params, info }: { params: URLSearchParams; info: AppInfo 
   const primary = params.get("primary") === "1";
   const sound = params.get("sound") === "1";
   const tipIndex = Number(params.get("tip") ?? 0);
+  // Seconds to wait for "Did it work out?"; 0: the break counts as done when the countdown ends.
+  const confirmSec = Number(params.get("confirm") ?? info.confirmSec ?? 0);
 
   const program = useMemo(() => buildProgram(kind, dur, rotation, info), [kind, dur, rotation, info]);
   const total = program.reduce((sum, s) => sum + s.sec, 0);
 
   const [elapsed, setElapsed] = useState(0);
-  const [askWellbeing, setAskWellbeing] = useState(false);
+  const [armed, setArmed] = useState(false);
   const finished = useRef(false);
+  const doneButton = useRef<HTMLButtonElement>(null);
   const lastStep = useRef("");
 
   useEffect(() => {
@@ -152,24 +161,33 @@ function BreakScreen({ params, info }: { params: URLSearchParams; info: AppInfo 
     return () => clearInterval(id);
   }, [kind, total]);
 
-  // Esc is the way out on the main monitor, the same as "Skip".
-  useEffect(() => {
-    if (!primary) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") finish("skipped");
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [primary]);
-
   const done = kind !== "endOfDay" && elapsed >= total;
+  const asking = done && confirmSec > 0;
   const current = at(program, elapsed);
 
   const finish = (result: BreakResult) => {
     if (finished.current || !primary) return;
     finished.current = true;
-    sendBreakResult(result);
+    // The real length of the program: the time on breaks counts what the user went through.
+    sendBreakResult(result, result === "done" ? total : undefined);
   };
+
+  // Esc is the way out on the main monitor, the same as "Skip", and "Not this time" once the break is over.
+  // Right after the question appears it waits a moment, like the buttons.
+  useEffect(() => {
+    if (!primary) return;
+    const onKey = (e: KeyboardEvent) => {
+      // A held key (something lying on the keyboard, typing that went on) never answers the question.
+      if (asking && e.repeat) {
+        e.preventDefault();
+        e.stopPropagation();
+        return;
+      }
+      if (e.key === "Escape" && (!asking || armed)) finish("skipped");
+    };
+    window.addEventListener("keydown", onKey, true);
+    return () => window.removeEventListener("keydown", onKey, true);
+  }, [primary, asking, armed]);
 
   // Soft tick when a step changes in exercises done with eyes closed or while breathing.
   const stepId =
@@ -187,20 +205,27 @@ function BreakScreen({ params, info }: { params: URLSearchParams; info: AppInfo 
     if (!done || !primary) return;
     const lookedAway = program.some((s) => s.type === "far" || s.type === "walk");
     if (sound && lookedAway) playChime();
-    // The weekly questions come after any break until answered or put off for today.
-    if (info.wellbeingDue) {
-      setAskWellbeing(true);
-      return;
+    if (!asking) {
+      const id = setTimeout(() => finish("done"), DONE_SEC * 1000);
+      return () => clearTimeout(id);
     }
-    const id = setTimeout(() => finish("done"), DONE_SEC * 1000);
-    return () => clearTimeout(id);
+    // "Did it work out?": no answer in time means nobody was there (or nobody said), the app doesn't guess "done".
+    const arm = setTimeout(() => {
+      setArmed(true);
+      doneButton.current?.focus();
+    }, ARM_MS);
+    const missed = setTimeout(() => finish("missed"), confirmSec * 1000);
+    return () => {
+      clearTimeout(arm);
+      clearTimeout(missed);
+    };
   }, [done]);
 
   const tips = t("break.tips", { returnObjects: true }) as string[];
   const tip = Array.isArray(tips) && tips.length ? tips[tipIndex % tips.length] : "";
 
   if (kind === "endOfDay") {
-    return <EndOfDay primary={primary} language={info.language} onFinish={finish} />;
+    return <EndOfDay primary={primary} info={info} onFinish={finish} />;
   }
 
   return (
@@ -215,10 +240,35 @@ function BreakScreen({ params, info }: { params: URLSearchParams; info: AppInfo 
         />
       )}
       <main className="break__center">
-        {askWellbeing ? (
-          <WellbeingQuestions onSaved={() => finish("done")} onLater={() => dismissWellbeing().finally(() => finish("done"))} />
+        {asking ? (
+          <div className="break__confirm">
+            <h1 className="break__title" id="break-confirm" aria-live="polite">
+              {t("break.confirmTitle")}
+            </h1>
+            {primary && (
+              <>
+                <div className="break__actions" role="group" aria-labelledby="break-confirm">
+                  <button
+                    ref={doneButton}
+                    className="break__button break__button--primary break__button--big"
+                    aria-disabled={!armed}
+                    onClick={() => armed && finish("done")}
+                  >
+                    {t("break.confirmDone")}
+                  </button>
+                  <button className="break__button break__button--big" aria-disabled={!armed} onClick={() => armed && finish("skipped")}>
+                    {t("break.confirmNot")}
+                  </button>
+                </div>
+                <p className="break__hint">{t("break.confirmHint")}</p>
+                <p className="break__caution">{t("break.confirmPain")}</p>
+              </>
+            )}
+          </div>
         ) : done || !current ? (
-          <h1 className="break__title">{t("break.done")}</h1>
+          <h1 className="break__title" aria-live="polite">
+            {t("break.done")}
+          </h1>
         ) : (
           <SegmentView segment={current.segment} t={current.t} left={current.left} primary={primary} />
         )}
@@ -262,6 +312,12 @@ function SegmentView({ segment, t: segT, left, primary }: { segment: Segment; t:
         <>
           <h1 className="break__title">{t(segment.titleKey)}</h1>
           {primary && <p className="break__hint">{t(segment.hintKey)}</p>}
+          {primary &&
+            segment.extraKeys?.map((key) => (
+              <p key={key} className="break__hint">
+                {t(key)}
+              </p>
+            ))}
         </>
       );
     case "far":
@@ -339,51 +395,6 @@ function Countdown({ progress, children }: { progress: number; children: React.R
   );
 }
 
-/** Weekly self-check: four questions, 0 (fine) to 3 (bothers a lot). Not a medical test. */
-function WellbeingQuestions({ onSaved, onLater }: { onSaved: () => void; onLater: () => void }) {
-  const { t } = useTranslation();
-  const [answers, setAnswers] = useState<Wellbeing>({
-    eyes: -1,
-    neck: -1,
-    back: -1,
-    hands: -1,
-  } as Wellbeing);
-  const keys = ["eyes", "neck", "back", "hands"] as const;
-  const complete = keys.every((k) => answers[k] >= 0);
-  return (
-    <div className="wellbeing">
-      <h1 className="break__title break__title--small">{t("wellbeing.title")}</h1>
-      <p className="break__hint">{t("wellbeing.hint")}</p>
-      {keys.map((k) => (
-        <div className="wellbeing__row" key={k}>
-          <span>{t(`wellbeing.${k}`)}</span>
-          <div className="wellbeing__scale" role="radiogroup" aria-label={t(`wellbeing.${k}`)}>
-            {[0, 1, 2, 3].map((v) => (
-              <button
-                key={v}
-                role="radio"
-                aria-checked={answers[k] === v}
-                className="wellbeing__option"
-                onClick={() => setAnswers({ ...answers, [k]: v })}
-              >
-                {t(`wellbeing.level${v}`)}
-              </button>
-            ))}
-          </div>
-        </div>
-      ))}
-      <div className="break__actions">
-        <button className="break__button" onClick={onLater}>
-          {t("wellbeing.skip")}
-        </button>
-        <button className="break__button break__button--primary" disabled={!complete} onClick={() => saveWellbeing(answers).finally(onSaved)}>
-          {t("wellbeing.save")}
-        </button>
-      </div>
-    </div>
-  );
-}
-
 /** "Say thanks" in the top right corner of the break screen: opens the site's support page. */
 function Thanks({ language, onOpened }: { language: string; onOpened: () => void }) {
   const { t } = useTranslation();
@@ -403,16 +414,31 @@ function Thanks({ language, onOpened }: { language: string; onOpened: () => void
   );
 }
 
-function EndOfDay({ primary, language, onFinish }: { primary: boolean; language: string; onFinish: (r: BreakResult) => void }) {
+/** "Work day is over": today's numbers, and the evening questions when they are due. "Finish" works without
+ * answering them: the screen's job is to help stop work, not to add a task. */
+function EndOfDay({ primary, info, onFinish }: { primary: boolean; info: AppInfo; onFinish: (r: BreakResult) => void }) {
   const { t } = useTranslation();
   const [today, setToday] = useState<DayStats | null>(null);
+  const [asking, setAsking] = useState(primary && info.wellbeingDue);
+  const touched = useRef<Answers | null>(null);
+  const leaving = useRef(false);
+  const finishButton = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     getStats(1).then((d) => setToday(d[0] ?? null));
   }, []);
+  // Leaving the screen with its own buttons: answers the user marked are kept; untouched questions are put off
+  // for tonight on "Finish" (no card later), and stay in the tray on "Keep working".
+  const leave = (r: BreakResult) => {
+    if (leaving.current) return;
+    leaving.current = true;
+    if (asking && touched.current) saveWellbeing({ ...touched.current, note: "" }, info.wellbeingDay).finally(() => onFinish(r));
+    else if (asking && r === "done") dismissWellbeing().finally(() => onFinish(r));
+    else onFinish(r);
+  };
   return (
     <div className="break break--endOfDay">
       <Horizon />
-      {primary && <Thanks language={language} onOpened={() => onFinish("skipped")} />}
+      {primary && <Thanks language={info.language} onOpened={() => onFinish("skipped")} />}
       <main className="break__center">
         <h1 className="break__title">{t("endOfDay.title")}</h1>
         {primary && <p className="break__hint">{t("endOfDay.hint")}</p>}
@@ -432,12 +458,26 @@ function EndOfDay({ primary, language, onFinish }: { primary: boolean; language:
             </div>
           </div>
         )}
+        {asking && (
+          <WellbeingForm
+            variant="break"
+            weekly={info.settings.wellbeingEvery === "week"}
+            offerWeekly={info.wellbeingOfferWeekly}
+            day={info.wellbeingDay}
+            onClose={() => {
+              setAsking(false);
+              // The form's buttons are gone: keep the keyboard on the screen, not on the page body.
+              setTimeout(() => finishButton.current?.focus(), 0);
+            }}
+            onTouched={(a) => (touched.current = a)}
+          />
+        )}
         {primary && (
           <div className="break__actions">
-            <button className="break__button" onClick={() => onFinish("skipped")}>
+            <button className="break__button" onClick={() => leave("skipped")}>
               {t("endOfDay.continue")}
             </button>
-            <button className="break__button break__button--primary" onClick={() => onFinish("done")}>
+            <button ref={finishButton} className="break__button break__button--primary" onClick={() => leave("done")}>
               {t("endOfDay.finish")}
             </button>
           </div>

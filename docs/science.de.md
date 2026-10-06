@@ -99,7 +99,11 @@ Nacken- und Schulterschmerzen im Büro haben Kraftübungen für diese Muskeln di
 - In den Kurzpausen wechseln sich Übungen für den Nacken ab: langsame Neigungen und Drehungen in
   einer Ebene. Kein Kopfkreisen.
 - Auf Wunsch: täglich 2 Minuten Krafttraining für Nacken und Schultern nach dem Andersen-Protokoll
-  (zum Beispiel Schulterheben oder seitliches Armheben mit einem Gummiband).
+  (zum Beispiel Schulterheben oder seitliches Armheben mit einem Gummiband). Wer es regelmäßig
+  macht, bekommt ein paar Wiederholungen mehr, höchstens vier, und den Vorschlag, ein Gummiband
+  oder eine kleine Wasserflasche in die Hand zu nehmen: In den Andersen-Studien stieg die Last,
+  sobald sich die Muskeln daran gewöhnt hatten. Das Training kommt ein paar Stunden nach Beginn
+  des Arbeitstags, bei einer Nachtschicht ein paar Stunden nach Schichtbeginn.
 - Alle 30 Minuten ein sanfter Hinweis „Haltung wechseln“.
 
 ### Was Studien zeigen
@@ -443,8 +447,12 @@ kurzes Ritual am Ende des Tages hilft beim Abschalten.
 ### Was die App tut
 
 - Erinnert Sie auf Wunsch am Ende Ihres Arbeitstags daran, Feierabend zu machen.
-- Fragt einmal pro Woche, wie sich Augen, Nacken, Rücken und Hände anfühlen, auf einer Skala von
-  0 bis 3. Die Antworten bleiben auf Ihrem Computer.
+- Fragt jeden Abend (oder einmal pro Woche, wenn Sie das wählen), wie sehr Augen, Nacken, Rücken
+  und Hände Sie gestört haben, auf einer Skala von 0 bis 3. Die Antworten bleiben auf Ihrem
+  Computer.
+- Die Seite „Ergebnis“ in der Statistik stellt Ihre Antworten neben die gemachten Pausen. Das ist
+  Selbstbeobachtung, kein Beweis dafür, was hilft: Arbeitslast, Schlaf und Urlaub beeinflussen Ihr
+  Befinden ebenfalls.
 
 ### Was Studien zeigen
 

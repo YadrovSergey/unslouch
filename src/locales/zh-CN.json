@@ -42,7 +42,8 @@
     "downloading": "正在下载更新… {{pct}}%",
     "downloadingNoPct": "正在下载更新…",
     "installing": "正在安装更新…",
-    "installFailed": "无法安装更新。请检查网络连接，然后在菜单中重试。"
+    "installFailed": "无法安装更新。请检查网络连接，然后在菜单中重试。",
+    "wellbeing": "今天过得怎么样？"
   },
   "time": {
     "hm": "{{h}} 小时 {{m}} 分钟",
@@ -78,7 +79,15 @@
       "经常变换姿势。最好的姿势是下一个姿势。",
       "鼠标放在键盘旁边，不用伸手去够。",
       "午饭时到户外晒晒太阳，至少 10 分钟。"
-    ]
+    ],
+    "confirmTitle": "休息结束了。做到了吗？",
+    "confirmDone": "做到了",
+    "confirmNot": "这次没有",
+    "confirmHint": "至少做了一部分？也请点“做到了”。Enter：做到了，Esc：这次没有。",
+    "confirmPain": "如果某个动作引起疼痛，下次跳过它。",
+    "neckLoad": "如果手边有弹力带或一瓶 0.5 升的水，可以拿在手里：肌肉会多用些力。没有也可以。",
+    "neckMore": "你一直在坚持练习，所以现在重复次数多了一点。",
+    "neckHeavier": "如果觉得轻松了，可以换更紧的弹力带或更大的瓶子。千万不要忍痛。"
   },
   "endOfDay": {
     "title": "今天的工作结束了",
@@ -90,22 +99,46 @@
     "finish": "下班了"
   },
   "wellbeing": {
-    "title": "这周感觉怎么样？",
-    "hint": "每周四个问题。从回答中可以看出休息是否对您有帮助。这不是医学检测。",
+    "title": "今天过得怎么样？",
+    "hint": "请标出今天哪里不舒服。回答只保存在您的电脑上。这不是医学检测。",
     "eyes": "眼睛",
     "neck": "颈部和肩膀",
     "back": "背部",
     "hands": "手和手腕",
-    "level0": "没有不适",
+    "level0": "一切都好",
     "level1": "有一点",
     "level2": "比较明显",
     "level3": "很严重",
     "skip": "以后再说",
     "save": "保存",
     "chartTitle": "身体感受",
-    "chartHint": "您每天的回答。绿色：没有不适，红色：很严重。",
-    "empty": "还没有记录。可以在日志中添加，或在休息时回答问题。",
-    "add": "添加记录"
+    "chartHint": "您每天的回答：0 一切都好，3 很严重。",
+    "empty": "还没有记录。可以在晚上回答问题，或在日志中添加记录。",
+    "add": "添加记录",
+    "titleWeek": "这周过得怎么样？",
+    "hintWeek": "这周这些部位有多不舒服？回答只保存在您的电脑上。这不是医学检测。",
+    "allGood": "没有不舒服",
+    "incomplete": "请把四行都选好，或点“没有不舒服”。",
+    "saved": "已保存，谢谢！",
+    "todaySummary": "今天休息：{{n}} 次，共 {{time}}。",
+    "close": "关闭",
+    "offerWeekly": "晚上不一定有空回答问题。改成每周问一次吗？",
+    "offerWeeklyYes": "每周一次",
+    "offerWeeklyNo": "继续每晚",
+    "doctorHint": {
+      "eyes": "眼睛已经不舒服一段时间了。如果持续下去，请去检查视力。如果眼睛疼痛、发红、看东西重影或视力下降，请立即就医。",
+      "neck": "颈部和肩膀已经不舒服一段时间了。如果持续下去，或影响工作和睡眠，请就医。如果疼痛或麻木放射到手臂，或手臂无力，请立即就医。",
+      "back": "背部已经不舒服一段时间了。如果持续下去，或影响工作和睡眠，请就医。如果腹股沟发麻、双腿无力或夜间疼痛剧烈，请立即就医。",
+      "hands": "手和手腕已经不舒服一段时间了。如果持续下去，或影响工作和睡眠，请就医，尤其是拇指、食指和中指发麻（夜间更常见），或手里的东西容易掉落。"
+    },
+    "prefilled": "之前选“一切都好”或“有一点”的行，已填入您上次的回答。如果今天不一样，请修改。",
+    "doctorPain": "不舒服期间，练习只做不痛的部分，会痛的动作请跳过。",
+    "inline": {
+      "eyes": "眼睛",
+      "neck": "颈部和肩膀",
+      "back": "背部",
+      "hands": "手和手腕"
+    }
   },
   "cue": {
     "blink": "眨眨眼",
@@ -174,9 +207,9 @@
     "waterHint": "角落里的小卡片，会自动消失",
     "dailySection": "每天一次",
     "neckDaily": "颈肩两分钟",
-    "neckDailyHint": "11:00 以后做力量练习。研究表明，每天 2 分钟可以减轻颈部疼痛",
+    "neckDailyHint": "开始工作两三个小时后做力量练习。研究表明，每天 2 分钟可以减轻颈部疼痛",
     "breathingDaily": "一分钟呼吸",
-    "breathingDailyHint": "15:00 以后，代替一次眼睛休息",
+    "breathingDailyHint": "开始工作六个小时后，代替一次眼睛休息",
     "endOfDay": "工作日结束",
     "endOfDayHint": "提醒您收工，并显示当天总结",
     "at": "时间",
@@ -233,7 +266,14 @@
       "schedule": "时间安排",
       "general": "通用",
       "reminders": "提醒"
-    }
+    },
+    "honestSection": "休息之后",
+    "confirmDone": "询问是否做到了",
+    "confirmDoneHint": "只有您标记的内容才会计入统计。Enter：做到了，Esc：这次没有。如果 5 分钟内没有回答，这次休息记为“不在电脑前”；如果这段时间您在工作，则记为跳过。",
+    "wellbeingEvery": "身体感受问题",
+    "wellbeingEveryHint": "工作日结束时的四个简短问题。可以在统计的“效果”页中与休息情况对比。",
+    "wellbeingDay": "每天晚上",
+    "wellbeingWeek": "每周一次"
   },
   "data": {
     "title": "迁移到另一台电脑",
@@ -301,7 +341,8 @@
       "overview": "概览",
       "apps": "程序",
       "wellbeing": "身体感受",
-      "achievements": "成就"
+      "achievements": "成就",
+      "result": "效果"
     },
     "today": "今天",
     "done": "已完成",
@@ -346,7 +387,47 @@
     "timeByDay": "使用电脑时间",
     "workday": "开始和结束工作",
     "breaksByDay": "每天的休息",
-    "inPrograms": "按程序统计"
+    "inPrograms": "按程序统计",
+    "away": "不在电脑前",
+    "awayHint": "“不在电脑前”：休息时间到了，但电脑前没有人。这类休息不计入完成比例。"
+  },
+  "result": {
+    "thisWeek": "本周",
+    "done": "完成的休息",
+    "stoodUp": "起身活动",
+    "neckDays": "做了颈部练习的天数",
+    "breathing": "呼吸休息",
+    "timeForYou": "休息用时",
+    "lastWeek": "上周：完成休息 {{done}} 次，起身活动 {{stood}} 次，休息用时 {{time}}。",
+    "awayNote": "您不在时的休息：{{n}} 次。这也是休息，只是不算作完成。",
+    "byKind": "按休息类型",
+    "kinds": {
+      "micro": "看远处",
+      "movement": "站起来活动",
+      "long": "长休息",
+      "neck": "颈部和肩膀",
+      "breathing": "呼吸"
+    },
+    "notTried": "这段时间还没试过：“{{kind}}”。",
+    "tryNow": "现在试试",
+    "periodTime": "这段时间用于休息：{{time}}。",
+    "oldDays": "更新之前的日子按旧方式统计：不分类型，也没有“做到了吗？”。",
+    "sitting": "久坐",
+    "avgLongest": "最长连续久坐，每天平均",
+    "byWeek": "按周",
+    "byWeekHint": "每周平均的休息完成比例、休息用时和晚间回答：0 一切都好，3 很严重。",
+    "week": "周",
+    "share": "完成",
+    "minutes": "用时",
+    "compareTitle": "各周对比",
+    "compareEmpty": "积累六周的晚间回答后会显示对比。还差 {{n}} 周。",
+    "moreBreaks": "完成休息较多（{{n}} 周）",
+    "fewerBreaks": "完成休息较少（{{n}} 周）",
+    "compareBetter": "完成休息较多的几周里，这些部位平均不适更轻：{{areas}}。",
+    "compareWorse": "完成休息较多的几周里，这些部位平均不适更重：{{areas}}。",
+    "compareSame": "暂时没有明显差别。",
+    "compareNote": "这是您自己的回答，不是证据：工作量、睡眠和假期也会影响身体感受。",
+    "compareFlat": "每周完成休息的频率都一样，暂时没有可比较的。"
   },
   "achievements": {
     "title": "成就",

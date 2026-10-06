@@ -125,7 +125,7 @@ const tr: Dict = {
     stats: [
       "Bilgisayar başında geçen süre ve en uzun kesintisiz oturma",
       "Art arda günler, yıllık ısı haritası ve başarılar",
-      "Haftalık öz değerlendirme: gözler, boyun, sırt, eller",
+      "Akşamları kısa bir öz değerlendirme ve ne yaptığınızı nasıl hissettiğinizle yan yana gösteren bir Sonuç sayfası",
       "Program başına süre, yalnızca program adlarına göre",
     ],
     statsDemo: { today: "Bugün bilgisayar başında", longest: "En uzun oturma", breaks: "Verilen molalar", streak: "Art arda gün", todayValue: "6 sa 40 dk", longestValue: "52 dk" },
@@ -143,7 +143,7 @@ const tr: Dict = {
       { q: "Doktorun yerini tutar mı?", a: "Hayır. Uygulama uzun süre oturmaktan kaynaklanan rahatsızlığı ve yorgunluğu azaltır. Hiçbir şeyi tedavi etmez. Bir yeriniz ağrıyorsa, ağrı geçmiyorsa veya hayatınızı zorlaştırıyorsa doktora başvurun. Uygulamanın her bölümünde \"ne zaman doktora gitmeli\" bilgisi var." },
       { q: "Görüşmelerimi böler mi?", a: "Hayır. Başka bir program kamerayı veya mikrofonu kullanırken hatırlatmalar bekler. Tam ekranda ve Rahatsız Etmeyin modunda da aynısı geçerlidir." },
       { q: "Aralıkları değiştirebilir miyim?", a: "Evet. Hazır modlar var: Önerilen (20 ve 45 dakika), Pomodoro 25/5, Saatlik ve kendi ayarınız." },
-      { q: "Uygulama hakkımda ne biliyor?", a: "Yalnızca bilgisayarınızda saklananları: ayarlar, mola istatistikleri, haftalık öz değerlendirmeniz ve program başına süre. Hiçbir şey bir yere gönderilmez. Her şeyi dışa aktarabilir veya silebilirsiniz." },
+      { q: "Uygulama hakkımda ne biliyor?", a: "Yalnızca bilgisayarınızda saklananları: ayarlar, mola istatistikleri, öz değerlendirme yanıtlarınız ve program başına süre. Hiçbir şey bir yere gönderilmez. Her şeyi dışa aktarabilir veya silebilirsiniz." },
       { q: "İş bilgisayarıma program yükleyemiyorum.", a: "Tarayıcı sürümünü kullanın: bir sekmeyi açık tutun, her 20 dakikada aynı egzersizlerle bir mola gösterir." },
       { q: "Hangi diller var?", a: "15 dil: İngilizce, Rusça, Ukraynaca, Kazakça, Belarusça, Özbekçe, Ermenice, Gürcüce, Azerbaycanca, Almanca, İspanyolca, Fransızca, Portekizce (Brezilya), Türkçe ve Basitleştirilmiş Çince." },
       { q: "Projeyi nasıl destekleyebilirim?", a: "Uygulama ücretsizdir ve ücretsiz kalacak; destek gönüllüdür ve hiçbir özelliğin kilidini açmaz. Teşekkür etmek isterseniz bunu Rus banka kartı veya SBP ile CloudTips üzerinden ya da herhangi bir ülkenin kartıyla Boosty üzerinden yapabilirsiniz.", link: "Geliştiriciyi nasıl destekleyebilirsiniz" },

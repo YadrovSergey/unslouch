@@ -14,16 +14,21 @@ import { GalleryView } from "./GalleryView";
 type Tab = "settings" | "stats" | "exercises" | "about";
 const TABS: Tab[] = ["settings", "stats", "exercises", "about"];
 
+/** "#stats/wellbeing": a tab and, for the statistics, its page (the tray's "How was your day?"). */
 function readHash(): Tab | "onboarding" {
-  const hash = window.location.hash.replace("#", "");
+  const hash = window.location.hash.replace("#", "").split("/")[0];
   if (hash === "onboarding") return "onboarding";
   return (TABS as string[]).includes(hash) ? (hash as Tab) : "settings";
 }
+
+const readSub = () => window.location.hash.replace("#", "").split("/")[1] ?? null;
 
 export function SettingsView() {
   const { t } = useTranslation();
   const [info, setInfo] = useState<AppInfo | null>(null);
   const [tab, setTab] = useState<Tab | "onboarding">(readHash());
+  // Bumped on every tray visit, so the same page asked twice still opens.
+  const [sub, setSub] = useState<{ id: string | null; n: number }>({ id: readSub(), n: 0 });
   // The latest settings, including changes still being saved: a second quick change builds on the first.
   const latest = useRef<AppInfo | null>(null);
   const pending = useRef(0);
@@ -47,7 +52,10 @@ export function SettingsView() {
       apply(i);
       if (!i.settings.onboardingDone) setTab("onboarding");
     });
-    const onHash = () => openTab(readHash());
+    const onHash = () => {
+      openTab(readHash());
+      setSub((s) => ({ id: readSub(), n: s.n + 1 }));
+    };
     window.addEventListener("hashchange", onHash);
     // Our own saves come back as this event too; while saves are queued, their answers are applied instead.
     const unlisten = listen<AppInfo>("app-info", (e) => {
@@ -114,7 +122,7 @@ export function SettingsView() {
       </nav>
       <div className={`app__body ${tab === "exercises" ? "app__body--flush" : ""}`}>
         {tab === "settings" && <SettingsTab info={info} update={update} onImported={apply} />}
-        {tab === "stats" && <StatsTab info={info} update={update} />}
+        {tab === "stats" && <StatsTab info={info} update={update} open={sub} />}
         {tab === "exercises" && <GalleryView />}
         {tab === "about" && <AboutTab info={info} />}
         {info.isCis && tab === "about" && <Promo url={`${info.mzrUrl}&utm_content=promo`} />}

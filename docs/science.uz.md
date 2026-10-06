@@ -101,7 +101,11 @@ boʻyin va yelka ogʻrigʻida shu mushaklar uchun kuch mashqlarining dalillari e
 - Mikropauzalarda boʻyin mashqlari navbatlashadi: bir tekislikda sekin egilish va burilishlar.
   Boshni aylantirish yoʻq.
 - Xohishga koʻra: Andersen protokoli boʻyicha kuniga 2 daqiqalik boʻyin va yelka kuch mashqlari
-  (masalan, rezina lenta bilan yelkalarni koʻtarish yoki qoʻllarni yonga koʻtarish).
+  (masalan, rezina lenta bilan yelkalarni koʻtarish yoki qoʻllarni yonga koʻtarish). Muntazam
+  qilinsa, takrorlar biroz koʻpayadi, koʻpi bilan toʻrttagacha, va ilova rezina lenta yoki suvli
+  shishani qoʻlga olishni maslahat beradi: Andersen tadqiqotlarida mushaklar oʻrgangan sari yuklama
+  oshib borgan. Mashq ish kuni boshlanganidan bir-ikki soat keyin keladi, tungi smenada ham uning
+  boshidan hisoblanadi.
 - Har 30 daqiqada «holatni oʻzgartiring» degan sokin signal.
 
 ### Tadqiqotlar nimani koʻrsatadi
@@ -452,8 +456,11 @@ oxiridagi qisqa odat ishdan chalgʻishga yordam beradi.
 ### Dastur nima qiladi
 
 - Xohishga koʻra ish kuni oxirida ishni tugatishni eslatadi.
-- Haftada bir marta koʻzlar, boʻyin, bel va qoʻllaringiz holatini 0 dan 3 gacha baholashni soʻraydi.
-  Javoblar kompyuteringizda qoladi.
+- Har kuni kechqurun (yoki xohlasangiz, haftada bir marta) koʻzlar, boʻyin, bel va qoʻllaringiz
+  qanchalik bezovta qilganini 0 dan 3 gacha baholashni soʻraydi. Javoblar kompyuteringizda qoladi.
+- Statistikadagi «Natija» boʻlimida javoblaringiz bajarilgan tanaffuslar yonida turadi. Bu
+  oʻzingizni kuzatish, nima yordam berishining isboti emas: holatga ish yuki, uyqu va taʼtil ham
+  taʼsir qiladi.
 
 ### Tadqiqotlar nimani koʻrsatadi
 

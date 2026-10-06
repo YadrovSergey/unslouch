@@ -125,7 +125,7 @@ const az: Dict = {
     stats: [
       "Kompüter arxasında vaxt və ən uzun fasiləsiz oturuş",
       "Ardıcıl günlər, illik istilik xəritəsi və nailiyyətlər",
-      "Həftəlik özünüyoxlama: gözlər, boyun, bel, əllər",
+      "Axşam özünühiss barədə bir-iki sual, «Nəticə» bölməsində isə nə etdiyiniz və özünüzü necə hiss etdiyiniz görünür",
       "Proqramlar üzrə vaxt, yalnız proqramların adları ilə",
     ],
     statsDemo: { today: "Bu gün kompüter arxasında", longest: "Ən uzun oturuş", breaks: "Edilmiş fasilələr", streak: "Ardıcıl günlər", todayValue: "6 saat 40 dəq", longestValue: "52 dəq" },
@@ -143,7 +143,7 @@ const az: Dict = {
       { q: "Həkimi əvəz edirmi?", a: "Xeyr. Proqram uzun oturuşdan yaranan narahatlığı və yorğunluğu azaldır. O, heç nəyi müalicə etmir. Nəsə ağrıyırsa, keçmirsə və ya yaşamağa mane olursa, həkimə müraciət edin. Proqramın hər bölməsində «nə vaxt həkimə müraciət etməli» var." },
       { q: "Zənglərimi kəsəcəkmi?", a: "Xeyr. Başqa proqram kameranı və ya mikrofonu istifadə edəndə xatırlatmalar gözləyir. Tam ekranda və «Narahat etməyin» rejimində də belədir." },
       { q: "İntervalları dəyişmək olar?", a: "Bəli. Hazır rejimlər var: Tövsiyə olunan (20 və 45 dəqiqə), Pomodoro 25/5, Saatda bir və öz rejiminiz." },
-      { q: "Proqram mənim haqqımda nə bilir?", a: "Yalnız kompüterinizdə saxlananları: ayarlar, fasilə statistikası, həftəlik özünüyoxlamanız və proqramlar üzrə vaxt. Heç nə heç yerə göndərilmir. Hamısını ixrac edə və ya silə bilərsiniz." },
+      { q: "Proqram mənim haqqımda nə bilir?", a: "Yalnız kompüterinizdə saxlananları: ayarlar, fasilə statistikası, özünüyoxlama cavablarınız və proqramlar üzrə vaxt. Heç nə heç yerə göndərilmir. Hamısını ixrac edə və ya silə bilərsiniz." },
       { q: "İş kompüterimdə proqram quraşdırmaq olmur.", a: "Brauzer versiyasından istifadə edin: vərəqi açıq saxlayın, o, eyni məşqlərlə hər 20 dəqiqədən bir fasilə göstərəcək." },
       { q: "Hansı dillər var?", a: "15: ingilis, rus, ukrayna, qazax, belarus, özbək, erməni, gürcü, azərbaycan, alman, ispan, fransız, portuqal (Braziliya), türk və sadələşdirilmiş Çin dili." },
       { q: "Layihəni necə dəstəkləmək olar?", a: "Proqram pulsuzdur və pulsuz qalacaq; dəstək könüllüdür və heç nəyi açmır. Təşəkkür etmək istəsəniz, bunu CloudTips vasitəsilə Rusiya bank kartı və ya SBP ilə, yaxud Boosty vasitəsilə istənilən ölkənin kartı ilə edə bilərsiniz.", link: "Tərtibatçını necə dəstəkləmək olar" },

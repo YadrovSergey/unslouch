@@ -125,7 +125,7 @@ const en = {
     stats: [
       "Time at the computer and the longest stretch of sitting",
       "Streaks, a year heatmap and achievements",
-      "A weekly self-check: eyes, neck, back, hands",
+      "A short evening self-check, and a Result page that shows what you did next to how you felt",
       "Time per program, by program names only",
     ],
     statsDemo: { today: "Today at the computer", longest: "Longest sitting stretch", breaks: "Breaks taken", streak: "Day streak", todayValue: "6 h 40 min", longestValue: "52 min" },
@@ -143,7 +143,7 @@ const en = {
       { q: "Does it replace a doctor?", a: "No. The app reduces discomfort and fatigue from long sitting. It does not treat anything. If something hurts, doesn't go away or gets in the way of your life, see a doctor. Every section of the app has \"when to see a doctor\"." },
       { q: "Will it interrupt my calls?", a: "No. When another program uses the camera or microphone, reminders wait. The same in fullscreen and in Do Not Disturb." },
       { q: "Can I change the intervals?", a: "Yes. There are presets: Recommended (20 and 45 minutes), Pomodoro 25/5, Hourly, and your own." },
-      { q: "What does it know about me?", a: "Only what is stored on your computer: settings, break statistics, your weekly self-check and time per program. Nothing is sent anywhere. You can export or delete everything." },
+      { q: "What does it know about me?", a: "Only what is stored on your computer: settings, break statistics, your self-check answers and time per program. Nothing is sent anywhere. You can export or delete everything." },
       { q: "My work computer doesn't allow installing apps.", a: "Use the browser version: keep a tab open and it will show a break every 20 minutes with the same exercises." },
       { q: "Which languages?", a: "15: English, Russian, Ukrainian, Kazakh, Belarusian, Uzbek, Armenian, Georgian, Azerbaijani, German, Spanish, French, Portuguese (Brazil), Turkish and Simplified Chinese." },
       { q: "How can I support the project?", a: "The app is free and will stay free; support is voluntary and does not unlock anything. If you want to say thanks, you can do it through CloudTips with a Russian bank card or SBP, or through Boosty with a card from any country.", link: "How to support the developer" },
