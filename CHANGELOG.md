@@ -2,7 +2,7 @@
 
 Everything noticeable that changes in Unslouch. Russian version: [CHANGELOG.ru.md](CHANGELOG.ru.md).
 
-## Unreleased
+## 0.1.14 · 6 October 2026
 
 - After a break the app asks "Did it work out?": "Done" (or Enter) or "Not this time" (or Esc). Only what you mark goes into the statistics, so the numbers may drop, but they show what you really did. With no answer in 5 minutes, the break is recorded as "Away". You can turn the question off in the settings.
 - If you step away from the computer, a break no longer opens in an empty room. If you were away for more than two minutes and longer than the break lasts, the absence counts as rest and the timer starts over, though it is not counted as done. If not, the break comes when you are back.
