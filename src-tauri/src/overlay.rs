@@ -48,6 +48,11 @@ fn cover_monitor<'a>(
 
 /// Positions in physical pixels after the window exists: with monitors of different scale, a logical position
 /// can land on the wrong monitor on Windows.
+///
+/// Cue windows (blink, change posture) are shown right after placing too; the flash on appear is handled by the
+/// transparent body (src/styles.css). Don't switch to "hidden window, page asks to be shown when ready": on macOS
+/// requestAnimationFrame doesn't fire in a hidden window, so the sound played with no window, and the window later
+/// came up 800×600 with part of the dimming. Cue window changes can't be checked in a browser, only in the real app.
 fn place_and_show(win: &WebviewWindow, monitor: &Monitor) {
     place(win, monitor);
     let _ = win.show();

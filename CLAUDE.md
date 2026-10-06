@@ -25,8 +25,8 @@ Windows is checked only by CI.
 
 - **The app collects no data, ever.** No analytics, telemetry, crash reports, accounts. Its only network request is
   the update check. The website has one exception: Yandex Metrica (counter 113120121) in
-  `site/src/components/CookieConsent.astro`, loaded only after "Accept" in the cookie notice (152-FZ and GDPR),
-  no `<noscript>` pixel. Any change here must be reflected in `legal/privacy.*.md` and `legal/consent.*.md`.
+  `site/src/components/CookieConsent.astro`: opt-out, it loads unless the visitor pressed "Decline" (the owner's
+  decision, the 152-FZ / GDPR risk is accepted; details in the component), no `<noscript>` pixel. Any change here must be reflected in `legal/privacy.*.md` and `legal/consent.*.md`.
 - **Health texts:** "reduces discomfort/fatigue", never "treats", "prevents carpal tunnel/thrombosis", "fixes
   posture", no blue-light glasses. Every section has "when to see a doctor". No neck circles, nothing through pain.
   New claims need a source in `docs/science.*.md`.
@@ -42,6 +42,14 @@ Windows is checked only by CI.
 - Tray menu calls only on the main thread and never while `AppState.0` is locked (see `refresh_tray` / `apply_tray`
   in `lib.rs`): a menu call waits for the main thread and would deadlock.
 - Scheduler logic lives in `src-tauri/src/scheduler.rs` as pure functions with tests: add a test for every rule change.
+
+## Product decisions
+
+- Name: «Засиделся» in Russian, Unslouch in all other languages (Deskbreak, Unsit, sitLess are taken).
+- Completely free, no accounts. Donations only: CloudTips and Boosty (boosty.to/unslouch), page `/donate/`.
+- Mac, Windows and Linux are first-class; the website also has web tools for SEO.
+- Legal documents are on behalf of Sergey Yadrov as an individual. Contact: support@health-diet.ru and GitHub Issues.
+- Website: https://unslouch.health-diet.ru (Selectel CDN + Let's Encrypt).
 
 ## Releases and deploy
 
