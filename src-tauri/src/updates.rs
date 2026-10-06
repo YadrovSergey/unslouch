@@ -1,8 +1,12 @@
 //! Update check: once a day, if allowed in settings. Nothing is downloaded until the user clicks
 //! "Install" in the tray, as the privacy policy says.
 
+use std::sync::atomic::{AtomicBool, Ordering};
 use tauri::AppHandle;
 use tauri_plugin_updater::{Update, UpdaterExt};
+
+/// The update is installed: start the new version once this process has exited (see `relaunch_if_installed`).
+static RELAUNCH: AtomicBool = AtomicBool::new(false);
 
 const FIRST_CHECK_DELAY_SEC: u64 = 60;
 const CHECK_EVERY_SEC: u64 = 24 * 60 * 60;
@@ -85,8 +89,37 @@ pub fn install(
             )
             .await;
         match result {
+            Ok(()) if cfg!(target_os = "macos") => {
+                RELAUNCH.store(true, Ordering::SeqCst);
+                app.exit(0);
+            }
             Ok(()) => app.restart(),
             Err(_) => failed(update),
         }
     });
+}
+
+/// Called on exit. Started at login, the app runs as a launchd job, and launchd ends the whole job when its main
+/// process exits: a new copy started as our child (what `restart()` does) died with it, and the app was gone after
+/// an update. LaunchServices starts the new version as a separate app instead. By the time this runs the
+/// single-instance socket is already removed, so the new copy doesn't hand over to this one and quit.
+pub fn relaunch_if_installed() {
+    if !RELAUNCH.load(Ordering::SeqCst) {
+        return;
+    }
+    #[cfg(target_os = "macos")]
+    if let Ok(exe) = std::env::current_exe() {
+        // …/Unslouch.app/Contents/MacOS/unslouch → …/Unslouch.app
+        match exe.ancestors().nth(3).filter(|b| b.extension().is_some_and(|e| e == "app")) {
+            // `status()`, not `spawn()`: `open` is our child and must finish handing the launch to LaunchServices
+            // before this process exits and launchd ends the job together with its children.
+            Some(bundle) => {
+                let _ = std::process::Command::new("/usr/bin/open").arg("-n").arg(bundle).status();
+            }
+            // Not in an app bundle (a development build): start the binary itself, as `restart()` would.
+            None => {
+                let _ = std::process::Command::new(&exe).spawn();
+            }
+        }
+    }
 }

@@ -6,6 +6,8 @@
   --line: #e2e6e3;
   --accent: #2f9e5a;
   --accent-text: #ffffff;
+  /* Accent for small text on light surfaces: --accent alone is under 4.5:1 there. */
+  --accent-strong: #237a45;
   --done: #2f9e5a;
   --skipped: #d9a441;
   --notice-bg: #fff6e6;
@@ -34,6 +36,7 @@
     --muted: #9aa59f;
     --line: #2e3632;
     --accent: #45b86f;
+    --accent-strong: #45b86f;
     --accent-text: #0e1a13;
     --done: #45b86f;
     --skipped: #d9a441;
@@ -57,6 +60,7 @@
   --muted: #9aa59f;
   --line: #2e3632;
   --accent: #45b86f;
+  --accent-strong: #45b86f;
   --accent-text: #0e1a13;
   --done: #45b86f;
   --skipped: #d9a441;
@@ -705,7 +709,8 @@ html:has(body[data-view="blink"]) {
 @media (prefers-reduced-motion: reduce) {
   .break,
   .eye__ball,
-  .countdown__bar {
+  .countdown__bar,
+  .water {
     animation: none;
     transition: none;
   }
@@ -1700,6 +1705,63 @@ input[type="number"] {
 
 .wb-dot--3 {
   background: #b8613f;
+}
+
+/* ---------- Summary after "Done" ---------- */
+
+.done {
+  align-items: flex-start;
+}
+
+.done--short {
+  align-items: center;
+  justify-content: center;
+}
+
+.done__body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  max-height: 100%;
+  overflow-y: auto;
+  padding-right: 24px;
+}
+
+.done__body p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.done__title {
+  font-weight: 600;
+  font-size: 15px !important;
+}
+
+.done__big b {
+  font-size: 30px;
+  font-weight: 600;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+
+.done__news {
+  color: var(--accent-strong);
+  font-weight: 600;
+}
+
+.done__close {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  min-width: 28px;
+  min-height: 28px;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 14px;
 }
 
 /* ---------- Result page ---------- */

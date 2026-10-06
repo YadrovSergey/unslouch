@@ -75,6 +75,8 @@ pub struct Settings {
     /// After the countdown the break waits for "Done" or "Not this time"; no answer means the user was away.
     /// Off: the break counts as done when the countdown ends, as before 0.1.14.
     pub confirm_done: bool,
+    /// After "Done", a short summary card: what was done today, the neck routine's progress.
+    pub show_summary: bool,
     /// "day" | "week": how often the evening wellbeing questions come.
     pub wellbeing_every: String,
     /// The work day ("2026-10-06") whose wellbeing questions were put off with "Not now".
@@ -137,6 +139,7 @@ impl Default for Settings {
             work_start: "09:00".into(),
             work_end: "19:00".into(),
             confirm_done: true,
+            show_summary: true,
             wellbeing_every: "day".into(),
             wellbeing_dismissed: None,
             wellbeing_later: 0,

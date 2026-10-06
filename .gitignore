@@ -44,3 +44,6 @@ AuthKey_*.p8
 
 # Private notes for Claude
 CLAUDE.local.md
+
+# Browser logs from local previews
+.playwright-mcp/

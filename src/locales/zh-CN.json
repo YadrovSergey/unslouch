@@ -273,7 +273,9 @@
     "wellbeingEvery": "身体感受问题",
     "wellbeingEveryHint": "工作日结束时的四个简短问题。可以在统计的“效果”页中与休息情况对比。",
     "wellbeingDay": "每天晚上",
-    "wellbeingWeek": "每周一次"
+    "wellbeingWeek": "每周一次",
+    "showSummary": "点“做到了”后显示小结",
+    "showSummaryHint": "今天休息了几次，颈肩练习进展如何。几秒后自动关闭。"
   },
   "data": {
     "title": "迁移到另一台电脑",
@@ -687,5 +689,30 @@
   "changelog": {
     "title": "更新日志",
     "englishOnly": "更新日志为英文。"
+  },
+  "summary": {
+    "short": "做到了。今天休息：{{n}} 次。",
+    "title": {
+      "micro": "做到了",
+      "breathing": "做到了",
+      "neck": "颈肩活动好了",
+      "movement": "站起来了，很好",
+      "long": "一次不错的休息"
+    },
+    "today": "今天休息：",
+    "neckWeek": "本周做颈肩练习的天数：{{n}}。",
+    "neckStep": "进入新阶段：从下次起每个动作多做 2 次。",
+    "neckToNext": "距离新阶段还需练习天数：{{n}}。",
+    "stoodUp": "今天起身活动：{{n}} 次。",
+    "weekAhead": "本周目前休息：{{now}} 次。上周到这一天：{{then}} 次。",
+    "streak": "连续休息天数：{{n}}。",
+    "better": {
+      "eyes": "根据您晚上的回答，这周眼睛不适比上周少。",
+      "neck": "根据您晚上的回答，这周颈部和肩膀不适比上周少。",
+      "back": "根据您晚上的回答，这周背部不适比上周少。",
+      "hands": "根据您晚上的回答，这周手和手腕不适比上周少。"
+    },
+    "all": "全部统计",
+    "hide": "不再显示"
   }
 }

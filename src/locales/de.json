@@ -275,7 +275,9 @@
     "wellbeingEvery": "Fragen zum Befinden",
     "wellbeingEveryHint": "Vier kurze Fragen am Ende des Arbeitstags. Auf der Seite „Ergebnis“ in der Statistik können Sie sie mit Ihren Pausen vergleichen.",
     "wellbeingDay": "Jeden Abend",
-    "wellbeingWeek": "Einmal pro Woche"
+    "wellbeingWeek": "Einmal pro Woche",
+    "showSummary": "Nach „Erledigt“ eine Übersicht zeigen",
+    "showSummaryHint": "Pausen heute und wie es mit den Nackenminuten läuft. Schließt sich nach ein paar Sekunden von selbst."
   },
   "data": {
     "title": "Auf einen anderen Computer übertragen",
@@ -691,5 +693,30 @@
   "changelog": {
     "title": "Änderungsprotokoll",
     "englishOnly": "Das Änderungsprotokoll ist auf Englisch."
+  },
+  "summary": {
+    "short": "Erledigt. Pausen heute: {{n}}.",
+    "title": {
+      "micro": "Erledigt",
+      "breathing": "Erledigt",
+      "neck": "Nacken und Schultern gelockert",
+      "movement": "Gut, dass Sie aufgestanden sind",
+      "long": "Eine gute Pause"
+    },
+    "today": "Pausen heute:",
+    "neckWeek": "Tage mit Nackenminuten diese Woche: {{n}}.",
+    "neckStep": "Neue Stufe: ab dem nächsten Mal zwei Wiederholungen mehr.",
+    "neckToNext": "Tage mit Nackenminuten bis zur nächsten Stufe: {{n}}.",
+    "stoodUp": "Heute zum Bewegen aufgestanden: {{n}}.",
+    "weekAhead": "Pausen diese Woche bisher: {{now}}. Bis zu diesem Tag letzte Woche: {{then}}.",
+    "streak": "Tage in Folge mit Pausen: {{n}}.",
+    "better": {
+      "eyes": "Laut Ihren Abendantworten haben Ihre Augen Sie diese Woche weniger gestört als letzte Woche.",
+      "neck": "Laut Ihren Abendantworten haben Nacken und Schultern Sie diese Woche weniger gestört als letzte Woche.",
+      "back": "Laut Ihren Abendantworten hat Ihr Rücken Sie diese Woche weniger gestört als letzte Woche.",
+      "hands": "Laut Ihren Abendantworten haben Ihre Hände Sie diese Woche weniger gestört als letzte Woche."
+    },
+    "all": "Alle Statistiken",
+    "hide": "Nicht mehr anzeigen"
   }
 }

@@ -275,7 +275,9 @@
     "wellbeingEvery": "Holat haqida savollar",
     "wellbeingEveryHint": "Ish kuni oxirida toʻrtta qisqa savol. Statistikadagi «Natija» boʻlimida ularni tanaffuslar bilan solishtirish mumkin.",
     "wellbeingDay": "Har kecha",
-    "wellbeingWeek": "Haftada bir marta"
+    "wellbeingWeek": "Haftada bir marta",
+    "showSummary": "«Bajarildi»dan keyin xulosani koʻrsatish",
+    "showSummaryHint": "Bugun nechta tanaffus boʻldi va boʻyin mashqi qanday ketyapti. Bir necha soniyadan keyin oʻzi yopiladi."
   },
   "data": {
     "title": "Boshqa kompyuterga koʻchirish",
@@ -691,5 +693,30 @@
   "changelog": {
     "title": "Oʻzgarishlar tarixi",
     "englishOnly": "Oʻzgarishlar tarixi ingliz tilida."
+  },
+  "summary": {
+    "short": "Bajarildi. Bugungi tanaffuslar: {{n}}.",
+    "title": {
+      "micro": "Bajarildi",
+      "breathing": "Bajarildi",
+      "neck": "Boʻyin va yelkalar yozildi",
+      "movement": "Turganingiz yaxshi boʻldi",
+      "long": "Yaxshi tanaffus"
+    },
+    "today": "Bugungi tanaffuslar:",
+    "neckWeek": "Bu hafta boʻyin mashqi qilingan kunlar: {{n}}.",
+    "neckStep": "Yangi bosqich: keyingi safardan 2 ta takrorlash koʻproq.",
+    "neckToNext": "Yangi bosqichgacha mashq kunlari: {{n}}.",
+    "stoodUp": "Bugun harakatlanish uchun turdingiz: {{n}}.",
+    "weekAhead": "Bu haftadagi tanaffuslar: {{now}}. Oʻtgan haftaning shu kunigacha: {{then}}.",
+    "streak": "Ketma-ket tanaffusli kunlar: {{n}}.",
+    "better": {
+      "eyes": "Kechki javoblaringizga koʻra, bu hafta koʻzlar oʻtgan haftadagidan kamroq bezovta qildi.",
+      "neck": "Kechki javoblaringizga koʻra, bu hafta boʻyin va yelkalar oʻtgan haftadagidan kamroq bezovta qildi.",
+      "back": "Kechki javoblaringizga koʻra, bu hafta bel oʻtgan haftadagidan kamroq bezovta qildi.",
+      "hands": "Kechki javoblaringizga koʻra, bu hafta qoʻllar oʻtgan haftadagidan kamroq bezovta qildi."
+    },
+    "all": "Barcha statistika",
+    "hide": "Boshqa koʻrsatilmasin"
   }
 }

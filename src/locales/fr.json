@@ -277,7 +277,9 @@
     "wellbeingEvery": "Questions de bien-être",
     "wellbeingEveryHint": "Quatre courtes questions en fin de journée de travail. Comparez-les avec vos pauses dans l’onglet « Résultat » des statistiques.",
     "wellbeingDay": "Chaque soir",
-    "wellbeingWeek": "Une fois par semaine"
+    "wellbeingWeek": "Une fois par semaine",
+    "showSummary": "Afficher un résumé après « Fait »",
+    "showSummaryHint": "Les pauses du jour et où en sont les minutes pour la nuque. Se ferme tout seul après quelques secondes."
   },
   "data": {
     "title": "Transférer vers un autre ordinateur",
@@ -695,5 +697,30 @@
   "changelog": {
     "title": "Journal des modifications",
     "englishOnly": "Le journal des modifications est en anglais."
+  },
+  "summary": {
+    "short": "Fait. Pauses aujourd’hui : {{n}}.",
+    "title": {
+      "micro": "Fait",
+      "breathing": "Fait",
+      "neck": "Nuque et épaules détendues",
+      "movement": "Bien, vous vous êtes levé",
+      "long": "Une bonne pause"
+    },
+    "today": "Pauses aujourd’hui :",
+    "neckWeek": "Jours avec les minutes pour la nuque cette semaine : {{n}}.",
+    "neckStep": "Nouveau palier : dès la prochaine fois, deux répétitions de plus.",
+    "neckToNext": "Jours avec les minutes pour la nuque avant le prochain palier : {{n}}.",
+    "stoodUp": "Levé pour bouger aujourd’hui : {{n}}.",
+    "weekAhead": "Pauses cette semaine pour l’instant : {{now}}. À ce jour la semaine dernière : {{then}}.",
+    "streak": "Jours d’affilée avec des pauses : {{n}}.",
+    "better": {
+      "eyes": "D’après vos réponses du soir, vos yeux vous ont moins gêné cette semaine que la semaine dernière.",
+      "neck": "D’après vos réponses du soir, votre nuque et vos épaules vous ont moins gêné cette semaine que la semaine dernière.",
+      "back": "D’après vos réponses du soir, votre dos vous a moins gêné cette semaine que la semaine dernière.",
+      "hands": "D’après vos réponses du soir, vos mains vous ont moins gêné cette semaine que la semaine dernière."
+    },
+    "all": "Toutes les statistiques",
+    "hide": "Ne plus afficher"
   }
 }

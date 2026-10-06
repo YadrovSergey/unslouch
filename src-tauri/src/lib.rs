@@ -115,6 +115,9 @@ struct Inner {
     update_check: updates::Check,
     /// The evening wellbeing card was shown for this work day: once is enough.
     wellbeing_card: Option<NaiveDate>,
+    /// The last full summary card after a break, and how many there were that day.
+    summary_last: Option<NaiveDateTime>,
+    summary_day: (Option<NaiveDate>, u8),
     reminders: reminders::State,
 }
 
@@ -444,19 +447,70 @@ fn break_result(app: AppHandle, state: State<AppState>, result: String, sec: Opt
         "missed" => state.0.lock().unwrap().sched.timeout_result(),
         _ => BreakResult::Skipped,
     };
-    finish_break(&app, result, sec.unwrap_or(0));
+    // The day the break counts for: an answer after midnight still belongs to the day it started.
+    let day = state.0.lock().unwrap().sched.break_started.map(day_key);
+    let kind = finish_break(&app, result, sec.unwrap_or(0));
     overlay::close_break(&app);
+    // Wayland lets no program keep a card on top: no summary there.
+    if result != BreakResult::Done || std::env::var("XDG_SESSION_TYPE").is_ok_and(|t| t == "wayland") {
+        return;
+    }
+    // "Done": a summary card instead of the break, which is over and counted already.
+    let now = Local::now().naive_local();
+    let day = day.unwrap_or_else(|| day_key(now));
+    let shown = {
+        let mut inner = state.0.lock().unwrap();
+        let Some(kind) = kind.filter(|_| inner.settings.show_summary && inner.settings.confirm_done) else { return };
+        let today = now.date();
+        let count = if inner.summary_day.0 == Some(today) { inner.summary_day.1 } else { 0 };
+        let Some(full) = result::summary_after(kind, inner.summary_last, count, now) else { return };
+        if full {
+            inner.summary_last = Some(now);
+            inner.summary_day = (Some(today), count + 1);
+        }
+        (kind, full, inner.lang(), inner.settings.theme.clone())
+    };
+    let handle = app.clone();
+    let _ = app.run_on_main_thread(move || overlay::show_done(&handle, shown.0, shown.1, &day, shown.2, &shown.3));
+}
+
+/// "All statistics" on the summary card: the card goes, the Result page opens in front.
+#[tauri::command]
+fn open_result(app: AppHandle, window: WebviewWindow) -> Result<(), String> {
+    if !window.label().starts_with(overlay::DONE_PREFIX) {
+        return Err("not allowed from this window".into());
+    }
+    let handle = app.clone();
+    app.run_on_main_thread(move || {
+        let _ = window.destroy();
+        overlay::show_settings(&handle, "stats/result");
+    })
+    .map_err(|e| e.to_string())
+}
+
+/// "Don't show again" on the summary card.
+#[tauri::command]
+fn hide_summary(app: AppHandle, window: WebviewWindow, state: State<AppState>) {
+    let mut inner = state.0.lock().unwrap();
+    inner.settings.show_summary = false;
+    settings::save(&inner.path("settings.json"), &inner.settings);
+    let info = app_info(&app, &inner);
+    drop(inner);
+    let _ = app.emit("app-info", &info);
+    let _ = window.destroy();
 }
 
 /// Ends the current break: statistics, timers, tray. Also called when the break windows were closed
 /// without an answer (Alt+F4, a crashed page), so reminders never stop for good.
-fn finish_break(app: &AppHandle, result: BreakResult, sec: u64) {
+fn finish_break(app: &AppHandle, result: BreakResult, sec: u64) -> Option<BreakKind> {
     let state = app.state::<AppState>();
     let mut inner = state.0.lock().unwrap();
     let settings = inner.settings.clone();
     // The break goes to the day it started: an answer after midnight or after the laptop slept is still that day's.
     let started = inner.sched.break_started.unwrap_or_else(|| Local::now().naive_local());
+    let mut finished = None;
     if let Some((info, sitting)) = inner.sched.finish(&settings, result, scale()) {
+        finished = Some(info.kind);
         if info.kind != BreakKind::EndOfDay {
             inner.stats.entry(day_key(started)).or_default().record(info.kind, result, sec, settings.confirm_done);
             inner.tip += 1;
@@ -468,6 +522,7 @@ fn finish_break(app: &AppHandle, result: BreakResult, sec: u64) {
     }
     drop(inner);
     refresh_tray(app);
+    finished
 }
 
 /// "Try now" on the Result page: that break right away, as from the tray.
@@ -1031,6 +1086,8 @@ fn run_ticker(app: AppHandle) {
                 dt: 1,
                 scale: scale(),
             };
+            // The summary card after a break: reminders and the evening card wait until it's gone.
+            let summary_open = app.webview_windows().keys().any(|l| l.starts_with(overlay::DONE_PREFIX));
             let mut inner = state.0.lock().unwrap();
             let out = inner.sched.tick(&s, &ctx);
             inner.quiet = out.quiet;
@@ -1070,6 +1127,7 @@ fn run_ticker(app: AppHandle) {
                         && !probe.fullscreen
                         && idle < scheduler::ACTIVE_IDLE_SEC
                         && inner.sched.current.is_none()
+                        && !summary_open
                         && out.action == Action::None
                         && inner.wellbeing_card != Some(day)
                         && !wayland =>
@@ -1084,7 +1142,7 @@ fn run_ticker(app: AppHandle) {
             let quiet = matches!(out.quiet, Quiet::Call | Quiet::DoNotDisturb | Quiet::Focus | Quiet::Paused) || probe.fullscreen;
             let counting = out.active && !quiet && scheduler::in_work_hours(&s, now);
             let mut due = inner.reminders.due(&s.reminders, now, counting, 1);
-            if inner.sched.current.is_some() || quiet {
+            if inner.sched.current.is_some() || quiet || summary_open {
                 for id in &due {
                     inner.reminders.snooze(id, now, 1);
                 }
@@ -1154,6 +1212,8 @@ pub fn run() {
             get_stats,
             get_result,
             start_break,
+            open_result,
+            hide_summary,
             get_usage,
             clear_usage,
             get_wellbeing,
@@ -1193,6 +1253,8 @@ pub fn run() {
                 update: None,
                 update_check: updates::Check::Idle,
                 wellbeing_card: None,
+                summary_last: None,
+                summary_day: (None, 0),
                 reminders: reminders::State::default(),
             };
 
@@ -1244,10 +1306,13 @@ pub fn run() {
             }
         }
         RunEvent::Exit => {
-            let state = app.state::<AppState>();
-            let mut inner = state.0.lock().unwrap();
-            inner.save_stats();
-            inner.save_usage();
+            {
+                let state = app.state::<AppState>();
+                let mut inner = state.0.lock().unwrap();
+                inner.save_stats();
+                inner.save_usage();
+            }
+            updates::relaunch_if_installed();
         }
         _ => {}
     });

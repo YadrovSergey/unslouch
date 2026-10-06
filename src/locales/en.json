@@ -275,7 +275,9 @@
     "wellbeingEvery": "Wellbeing questions",
     "wellbeingEveryHint": "Four short questions at the end of the work day. Compare them with your breaks on the Result page in the statistics.",
     "wellbeingDay": "Every evening",
-    "wellbeingWeek": "Once a week"
+    "wellbeingWeek": "Once a week",
+    "showSummary": "Show a summary after \"Done\"",
+    "showSummaryHint": "Breaks today and how the neck minutes are going. Closes by itself in a few seconds."
   },
   "data": {
     "title": "Move to another computer",
@@ -691,5 +693,30 @@
   "changelog": {
     "title": "Changelog",
     "englishOnly": "The changelog is in English."
+  },
+  "summary": {
+    "short": "Done. Breaks today: {{n}}.",
+    "title": {
+      "micro": "Done",
+      "breathing": "Done",
+      "neck": "Neck and shoulders done",
+      "movement": "Good, you stood up",
+      "long": "A good break"
+    },
+    "today": "Breaks today:",
+    "neckWeek": "Days with neck minutes this week: {{n}}.",
+    "neckStep": "A new step: two more repetitions from next time.",
+    "neckToNext": "Days with neck minutes to the next step: {{n}}.",
+    "stoodUp": "Stood up to move today: {{n}}.",
+    "weekAhead": "Breaks this week so far: {{now}}. By this day last week: {{then}}.",
+    "streak": "Days in a row with breaks: {{n}}.",
+    "better": {
+      "eyes": "By your evening answers, your eyes bothered you less this week than last week.",
+      "neck": "By your evening answers, your neck and shoulders bothered you less this week than last week.",
+      "back": "By your evening answers, your back bothered you less this week than last week.",
+      "hands": "By your evening answers, your wrists and hands bothered you less this week than last week."
+    },
+    "all": "All statistics",
+    "hide": "Don't show again"
   }
 }

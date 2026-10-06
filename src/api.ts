@@ -35,6 +35,7 @@ export interface Settings {
   workStart: string;
   workEnd: string;
   confirmDone: boolean;
+  showSummary: boolean;
   wellbeingEvery: "day" | "week";
   wellbeingDismissed: string | null;
   wellbeingLater: number;
@@ -228,6 +229,9 @@ export const getStats = (days: number) => invoke<DayStats[]>("get_stats", { days
 export const getResult = (days: number) => invoke<ResultView>("get_result", { days });
 /** "Try now" on the Result page: that break right away. */
 export const startBreak = (kind: BreakKind) => invoke<void>("start_break", { kind });
+/** On the summary card after "Done". */
+export const openResult = () => invoke<void>("open_result");
+export const hideSummary = () => invoke<void>("hide_summary");
 export const getUsage = (days: number) => invoke<DayUsage[]>("get_usage", { days });
 export const clearUsage = () => invoke<void>("clear_usage");
 export const getWellbeing = () => invoke<Record<string, Wellbeing>>("get_wellbeing");

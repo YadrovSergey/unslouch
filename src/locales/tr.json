@@ -275,7 +275,9 @@
     "wellbeingEvery": "İyi oluş soruları",
     "wellbeingEveryHint": "İş gününün sonunda dört kısa soru. İstatistiklerdeki “Sonuç” sayfasında bunları molalarınızla karşılaştırabilirsiniz.",
     "wellbeingDay": "Her akşam",
-    "wellbeingWeek": "Haftada bir"
+    "wellbeingWeek": "Haftada bir",
+    "showSummary": "“Yapıldı”dan sonra özet göster",
+    "showSummaryHint": "Bugün kaç mola verdiniz ve boyun egzersizi nasıl gidiyor. Birkaç saniye sonra kendiliğinden kapanır."
   },
   "data": {
     "title": "Başka bilgisayara taşı",
@@ -691,5 +693,30 @@
   "changelog": {
     "title": "Değişiklik geçmişi",
     "englishOnly": "Değişiklik geçmişi İngilizcedir."
+  },
+  "summary": {
+    "short": "Yapıldı. Bugünkü molalar: {{n}}.",
+    "title": {
+      "micro": "Yapıldı",
+      "breathing": "Yapıldı",
+      "neck": "Boyun ve omuzlar açıldı",
+      "movement": "Kalkmanız iyi oldu",
+      "long": "Güzel bir mola"
+    },
+    "today": "Bugünkü molalar:",
+    "neckWeek": "Bu hafta boyun egzersizi yapılan gün: {{n}}.",
+    "neckStep": "Yeni aşama: bir dahaki sefere 2 tekrar fazla.",
+    "neckToNext": "Yeni aşamaya kalan egzersiz günü: {{n}}.",
+    "stoodUp": "Bugün hareket için kalktınız: {{n}}.",
+    "weekAhead": "Bu haftaki molalar şimdiye kadar: {{now}}. Geçen hafta bu güne kadar: {{then}}.",
+    "streak": "Art arda molalı gün: {{n}}.",
+    "better": {
+      "eyes": "Akşam yanıtlarınıza göre bu hafta gözleriniz sizi geçen haftadan daha az rahatsız etti.",
+      "neck": "Akşam yanıtlarınıza göre bu hafta boyun ve omuzlarınız sizi geçen haftadan daha az rahatsız etti.",
+      "back": "Akşam yanıtlarınıza göre bu hafta sırtınız sizi geçen haftadan daha az rahatsız etti.",
+      "hands": "Akşam yanıtlarınıza göre bu hafta elleriniz sizi geçen haftadan daha az rahatsız etti."
+    },
+    "all": "Tüm istatistikler",
+    "hide": "Bir daha gösterme"
   }
 }

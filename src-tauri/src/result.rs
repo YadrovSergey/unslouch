@@ -2,7 +2,8 @@
 //! the day statistics and the wellbeing answers, so the numbers are covered by tests.
 
 use crate::settings::{DayStats, KindCount, KindStats, Stats, WellbeingLog, STATS_CONFIRMED};
-use chrono::{Datelike, Duration, NaiveDate};
+use crate::scheduler::BreakKind;
+use chrono::{Datelike, Duration, NaiveDate, NaiveDateTime};
 use serde::Serialize;
 
 /// Weeks looked at for the comparison.
@@ -178,6 +179,24 @@ fn compare(rows: &[WeekRow]) -> (Option<Compare>, u32) {
     (Some(Compare { more_weeks: more.len() as u32, fewer_weeks: fewer.len() as u32, more: m, fewer: f }), 0)
 }
 
+/// The full summary after a break comes this often at most, and this many times a day: praise twenty times a
+/// day turns into noise. Otherwise one line.
+const FULL_SUMMARY_EVERY_MIN: i64 = 120;
+const FULL_SUMMARY_PER_DAY: u8 = 3;
+
+/// After "Done": None for no summary, Some(false) for one line, Some(true) for the full card. The full one only
+/// after the breaks the user stood up or worked for (stand-up, long, neck minutes), within the limits above.
+pub fn summary_after(kind: BreakKind, last_full: Option<NaiveDateTime>, full_today: u8, now: NaiveDateTime) -> Option<bool> {
+    match kind {
+        BreakKind::EndOfDay => None,
+        BreakKind::Micro | BreakKind::Breathing => Some(false),
+        BreakKind::Movement | BreakKind::Long | BreakKind::NeckStrength => {
+            let recent = last_full.is_some_and(|t| (now - t).num_minutes() < FULL_SUMMARY_EVERY_MIN);
+            Some(!recent && full_today < FULL_SUMMARY_PER_DAY)
+        }
+    }
+}
+
 pub fn build(stats: &Stats, wellbeing: &WellbeingLog, today: NaiveDate, period: u32) -> ResultView {
     let from = today - Duration::days(period.clamp(1, 400) as i64 - 1);
     let mut kinds = KindStats::default();
@@ -245,6 +264,20 @@ mod tests {
 
     fn feel(v: u8) -> Wellbeing {
         Wellbeing { eyes: v, neck: v, back: v, hands: v, note: String::new() }
+    }
+
+    #[test]
+    fn full_summary_only_after_standing_up_and_not_too_often() {
+        let at = |h| date(10, 6).and_hms_opt(h, 0, 0).unwrap();
+        assert_eq!(summary_after(BreakKind::Micro, None, 0, at(10)), Some(false));
+        assert_eq!(summary_after(BreakKind::Breathing, None, 0, at(10)), Some(false));
+        assert_eq!(summary_after(BreakKind::EndOfDay, None, 0, at(19)), None);
+        assert_eq!(summary_after(BreakKind::NeckStrength, None, 0, at(11)), Some(true));
+        // An hour after the last full one: one line.
+        assert_eq!(summary_after(BreakKind::Movement, Some(at(11)), 1, at(12)), Some(false));
+        assert_eq!(summary_after(BreakKind::Movement, Some(at(11)), 1, at(13)), Some(true));
+        // Three a day at most.
+        assert_eq!(summary_after(BreakKind::Long, Some(at(11)), 3, at(16)), Some(false));
     }
 
     #[test]

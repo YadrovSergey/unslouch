@@ -277,7 +277,9 @@
     "wellbeingEvery": "Perguntas sobre bem-estar",
     "wellbeingEveryHint": "Quatro perguntas curtas no fim do dia de trabalho. Compare com suas pausas na aba “Resultado” das estatísticas.",
     "wellbeingDay": "Toda noite",
-    "wellbeingWeek": "Uma vez por semana"
+    "wellbeingWeek": "Uma vez por semana",
+    "showSummary": "Mostrar um resumo depois de “Feito”",
+    "showSummaryHint": "As pausas de hoje e como vão os minutos para o pescoço. Fecha sozinho em alguns segundos."
   },
   "data": {
     "title": "Levar para outro computador",
@@ -695,5 +697,30 @@
   "changelog": {
     "title": "Histórico de alterações",
     "englishOnly": "O histórico de alterações está em inglês."
+  },
+  "summary": {
+    "short": "Feito. Pausas hoje: {{n}}.",
+    "title": {
+      "micro": "Feito",
+      "breathing": "Feito",
+      "neck": "Pescoço e ombros em dia",
+      "movement": "Que bom que você se levantou",
+      "long": "Uma boa pausa"
+    },
+    "today": "Pausas hoje:",
+    "neckWeek": "Dias com minutos para o pescoço nesta semana: {{n}}.",
+    "neckStep": "Novo nível: a partir da próxima vez, duas repetições a mais.",
+    "neckToNext": "Dias com minutos para o pescoço até o próximo nível: {{n}}.",
+    "stoodUp": "Vezes que você se levantou para se mexer hoje: {{n}}.",
+    "weekAhead": "Pausas nesta semana até agora: {{now}}. Até este dia na semana passada: {{then}}.",
+    "streak": "Dias seguidos com pausas: {{n}}.",
+    "better": {
+      "eyes": "Pelas suas respostas da noite, os olhos incomodaram menos nesta semana do que na passada.",
+      "neck": "Pelas suas respostas da noite, o pescoço e os ombros incomodaram menos nesta semana do que na passada.",
+      "back": "Pelas suas respostas da noite, as costas incomodaram menos nesta semana do que na passada.",
+      "hands": "Pelas suas respostas da noite, as mãos incomodaram menos nesta semana do que na passada."
+    },
+    "all": "Todas as estatísticas",
+    "hide": "Não mostrar de novo"
   }
 }

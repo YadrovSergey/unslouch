@@ -275,7 +275,9 @@
     "wellbeingEvery": "Özünühiss sualları",
     "wellbeingEveryHint": "İş gününün sonunda dörd qısa sual. Statistikada «Nəticə» bölməsində onları fasilələrlə müqayisə edə bilərsiniz.",
     "wellbeingDay": "Hər axşam",
-    "wellbeingWeek": "Həftədə bir dəfə"
+    "wellbeingWeek": "Həftədə bir dəfə",
+    "showSummary": "«Edildi»dən sonra yekunu göstər",
+    "showSummaryHint": "Bu gün neçə fasilə oldu və boyun məşqi necə gedir. Bir neçə saniyədən sonra özü bağlanır."
   },
   "data": {
     "title": "Başqa kompüterə köçürmə",
@@ -691,5 +693,30 @@
   "changelog": {
     "title": "Dəyişikliklər tarixçəsi",
     "englishOnly": "Dəyişikliklər tarixçəsi ingilis dilindədir."
+  },
+  "summary": {
+    "short": "Edildi. Bu günkü fasilələr: {{n}}.",
+    "title": {
+      "micro": "Edildi",
+      "breathing": "Edildi",
+      "neck": "Boyun və çiyinlər açıldı",
+      "movement": "Qalxmağınız yaxşı oldu",
+      "long": "Yaxşı fasilə"
+    },
+    "today": "Bu günkü fasilələr:",
+    "neckWeek": "Bu həftə boyun məşqi edilən günlər: {{n}}.",
+    "neckStep": "Yeni pillə: növbəti dəfədən 2 təkrar artıq.",
+    "neckToNext": "Yeni pilləyə qədər məşq günləri: {{n}}.",
+    "stoodUp": "Bu gün hərəkət üçün qalxdınız: {{n}}.",
+    "weekAhead": "Bu həftəki fasilələr: {{now}}. Keçən həftə bu günə qədər: {{then}}.",
+    "streak": "Fasilə ilə ardıcıl günlər: {{n}}.",
+    "better": {
+      "eyes": "Axşam cavablarınıza görə, bu həftə gözlər sizi keçən həftəkindən az narahat edib.",
+      "neck": "Axşam cavablarınıza görə, bu həftə boyun və çiyinlər sizi keçən həftəkindən az narahat edib.",
+      "back": "Axşam cavablarınıza görə, bu həftə bel sizi keçən həftəkindən az narahat edib.",
+      "hands": "Axşam cavablarınıza görə, bu həftə əllər sizi keçən həftəkindən az narahat edib."
+    },
+    "all": "Bütün statistika",
+    "hide": "Daha göstərmə"
   }
 }

@@ -206,6 +206,13 @@ export function SettingsTab({
               checked={s.confirmDone}
               onChange={(v) => update({ confirmDone: v })}
             />
+            <Toggle
+              label={t("settings.showSummary")}
+              hint={t("settings.showSummaryHint")}
+              checked={s.showSummary}
+              disabled={!s.confirmDone}
+              onChange={(v) => update({ showSummary: v })}
+            />
           </Section>
 
           <button className="button" onClick={() => choosePreset("recommended")}>

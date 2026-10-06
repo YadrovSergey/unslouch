@@ -178,7 +178,12 @@ pub fn show_cue(app: &AppHandle, cue: Cue, lang: &str, is_cis: bool, theme: &str
         Cue::Blink | Cue::Posture => {
             // A new edge cue replaces an old one; the water card stays until the user answers it.
             for (label, win) in app.webview_windows() {
-                if label.starts_with("cue-") && !label.starts_with("cue-water") && !label.starts_with("cue-rem") {
+                // The water card, reminder cards and the summary after a break stay: an edge cue doesn't cover them.
+                if label.starts_with("cue-")
+                    && !label.starts_with("cue-water")
+                    && !label.starts_with("cue-rem")
+                    && !label.starts_with(DONE_PREFIX)
+                {
                     let _ = win.destroy();
                 }
             }
@@ -266,6 +271,57 @@ pub fn show_wellbeing(app: &AppHandle, lang: &str, theme: &str) {
         .build();
     if let Ok(win) = win {
         raise_above_menu_bar(&win);
+    }
+}
+
+pub const DONE_PREFIX: &str = "cue-done-";
+const DONE_W: f64 = 440.0;
+const DONE_FULL_H: f64 = 300.0;
+const DONE_SHORT_H: f64 = 84.0;
+/// The page closes the card itself; this is the fallback if it never loads or hangs.
+const DONE_FALLBACK_MS: u64 = 60_000;
+
+/// The summary after "Done": a card at the bottom of the main monitor, over everything but without the focus.
+/// `full`: today's numbers and the neck routine's progress; otherwise one line. Not a `break-` window: the break
+/// is over, and a new one closes the card like any other cue.
+pub fn show_done(app: &AppHandle, kind: BreakKind, full: bool, day: &str, lang: &str, theme: &str) {
+    // A new break may have opened while this waited for the main thread: it comes first.
+    if app.webview_windows().keys().any(|l| l.starts_with("break-")) {
+        return;
+    }
+    close_prefix(app, DONE_PREFIX);
+    let Some((monitor, _)) = monitors(app).into_iter().find(|(_, p)| *p) else { return };
+    let scale = monitor.scale_factor();
+    let pos = monitor.position().to_logical::<f64>(scale);
+    let size = monitor.size().to_logical::<f64>(scale);
+    let h = if full { DONE_FULL_H } else { DONE_SHORT_H };
+    let kind = match kind {
+        BreakKind::Micro => "micro",
+        BreakKind::Movement => "movement",
+        BreakKind::Long => "long",
+        BreakKind::NeckStrength => "neck",
+        BreakKind::Breathing => "breathing",
+        BreakKind::EndOfDay => return,
+    };
+    let label = format!("{DONE_PREFIX}{}", next_id());
+    let url = format!("index.html?view=cue&cue=done&kind={kind}&full={}&day={day}&lang={lang}&theme={theme}", full as u8);
+    let win = WebviewWindowBuilder::new(app, label.clone(), WebviewUrl::App(url.into()))
+        .title("Unslouch")
+        .position(pos.x + (size.width - DONE_W) / 2.0, pos.y + size.height - h - 72.0)
+        .inner_size(DONE_W, h)
+        .decorations(false)
+        .resizable(false)
+        .always_on_top(true)
+        .skip_taskbar(true)
+        .transparent(true)
+        .shadow(false)
+        .focused(false)
+        .accept_first_mouse(true)
+        .visible_on_all_workspaces(true)
+        .build();
+    if let Ok(win) = win {
+        raise_above_menu_bar(&win);
+        close_later(app, vec![label], DONE_FALLBACK_MS);
     }
 }
 
