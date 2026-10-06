@@ -2,7 +2,7 @@
 
 Everything noticeable that changes in Unslouch. Russian version: [CHANGELOG.ru.md](CHANGELOG.ru.md).
 
-## Unreleased
+## 0.1.15 · 6 October 2026
 
 - After "Done" a short summary appears at the bottom of the screen for a few seconds. After an eye or breathing break it's one line: breaks today. After the neck minutes or a stand-up break there's more, at most three times a day: neck minutes this week, days to the next step, how many times you stood up today. If your evening answers show something bothers you less, the summary says so. Turn it off right on it or in the settings.
 - Fixed: on Mac, after an update from the menu the app closed and didn't start again, so you had to open it by hand. The fix takes effect from the next update on.
