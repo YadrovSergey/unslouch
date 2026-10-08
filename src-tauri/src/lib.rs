@@ -1140,7 +1140,7 @@ fn run_ticker(app: AppHandle) {
             // Own reminders. Interval ones count only at the computer within working hours and when nothing asks
             // for quiet. During a break, a call, Do Not Disturb, focus, a pause or fullscreen everything waits a minute.
             let quiet = matches!(out.quiet, Quiet::Call | Quiet::DoNotDisturb | Quiet::Focus | Quiet::Paused) || probe.fullscreen;
-            let counting = out.active && !quiet && scheduler::in_work_hours(&s, now);
+            let counting = out.active && !quiet && inner.sched.in_hours(&s, now);
             let mut due = inner.reminders.due(&s.reminders, now, counting, 1);
             if inner.sched.current.is_some() || quiet || summary_open {
                 for id in &due {

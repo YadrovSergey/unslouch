@@ -186,6 +186,8 @@ pub struct Scheduler {
     neck_retried: Option<NaiveDate>,
     breathing_retried: Option<NaiveDate>,
     end_of_day: Option<NaiveDate>,
+    /// "Keep working" on "Work day is over": breaks go on after work hours until the next work day starts.
+    overtime: Option<NaiveDate>,
     /// Last tick the user was counted as at the computer: a long gap (night, sleep, pause) means they left.
     last_active: Option<NaiveDateTime>,
 }
@@ -310,7 +312,7 @@ impl Scheduler {
             self.open(info, c.now);
             return TickOut { action: Action::Break(info), ..TickOut::active() };
         }
-        if !in_work_hours(s, c.now) {
+        if !self.in_hours(s, c.now) {
             return TickOut::quiet(Quiet::OutsideHours);
         }
 
@@ -528,6 +530,11 @@ impl Scheduler {
         Some(BreakInfo { kind: BreakKind::EndOfDay, duration_sec: 0, rotation: 0 })
     }
 
+    /// Work hours, or the evening after "Keep working" on "Work day is over".
+    pub fn in_hours(&self, s: &Settings, now: NaiveDateTime) -> bool {
+        in_work_hours(s, now) || (s.work_hours_enabled && self.overtime == Some(shift(s, now).0))
+    }
+
     /// Once-a-day breaks are marked as shown so they don't come back after "skip".
     fn commit_break(&mut self, s: &Settings, info: &BreakInfo, c: &Context) {
         let today = daily_clock(s, c.now).0;
@@ -658,6 +665,8 @@ impl Scheduler {
                     }
                 }
             }
+            // Anything but "Finish": the user stays at the computer, and the breaks stay with them.
+            (BreakKind::EndOfDay, r) if r != BreakResult::Done => self.overtime = self.end_of_day,
             _ => {}
         }
         // Stood up for a stand-up break, or was away from the computer: the sitting stretch is over.
@@ -866,6 +875,31 @@ mod tests {
         assert_eq!(kind(advance(&mut sch, &s, 1, ctx(at(18, 30)))), BreakKind::EndOfDay);
         sch.finish(&s, BreakResult::Skipped, 60);
         assert_eq!(advance(&mut sch, &s, 10, ctx(at(18, 31))), Action::None);
+    }
+
+    #[test]
+    fn keep_working_after_end_of_day_keeps_the_breaks() {
+        let s = Settings { end_of_day_enabled: true, movement_enabled: false, ..settings() };
+        let mut sch = Scheduler::default();
+        assert_eq!(kind(advance(&mut sch, &s, 1, ctx(at(19, 0)))), BreakKind::EndOfDay);
+        sch.finish(&s, BreakResult::Skipped, 60);
+        assert_eq!(sch.tick(&s, &ctx(at(19, 1))).quiet, Quiet::None);
+        assert_eq!(kind(advance(&mut sch, &s, 20 * 60, ctx(at(19, 1)))), BreakKind::Micro);
+        sch.finish(&s, BreakResult::Done, 60);
+        // Still that evening after midnight; the next work day starts as usual.
+        let thursday = |h, m| NaiveDate::from_ymd_opt(2026, 10, 1).unwrap().and_hms_opt(h, m, 0).unwrap();
+        assert_eq!(sch.tick(&s, &ctx(thursday(1, 0))).quiet, Quiet::None);
+        let saturday = NaiveDate::from_ymd_opt(2026, 10, 3).unwrap().and_hms_opt(20, 0, 0).unwrap();
+        assert_eq!(sch.tick(&s, &ctx(saturday)).quiet, Quiet::OutsideHours);
+    }
+
+    #[test]
+    fn finish_after_end_of_day_keeps_the_evening_quiet() {
+        let s = Settings { end_of_day_enabled: true, ..settings() };
+        let mut sch = Scheduler::default();
+        assert_eq!(kind(advance(&mut sch, &s, 1, ctx(at(19, 0)))), BreakKind::EndOfDay);
+        sch.finish(&s, BreakResult::Done, 60);
+        assert_eq!(sch.tick(&s, &ctx(at(19, 1))).quiet, Quiet::OutsideHours);
     }
 
     #[test]
