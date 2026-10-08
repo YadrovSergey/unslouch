@@ -1,6 +1,6 @@
 [package]
 name = "unslouch"
-version = "0.1.15"
+version = "0.1.16"
 description = "Напоминание моргать и смотреть вдаль"
 authors = ["Sergey Yadrov"]
 license = "MIT"

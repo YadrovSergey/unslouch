@@ -2,7 +2,7 @@
 
 Everything noticeable that changes in Unslouch. Russian version: [CHANGELOG.ru.md](CHANGELOG.ru.md).
 
-## Unreleased
+## 0.1.16 · 8 October 2026
 
 - Fixed: after "Keep working" on the "Work day is over" screen, breaks and cues stopped until morning. Now they go on all evening, until the next work day starts.
 
